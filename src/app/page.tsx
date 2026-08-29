@@ -3,7 +3,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
-import { yearStemBranch, dayStemBranch, monthBranch } from "@/lib/eto";
+import { calculate } from "@/lib/calendar";
 import {
   sevenPlanetsLonDeg,
   lunarNodesMeanLonDeg,
@@ -160,6 +160,21 @@ setPlaceMsg("検索に失敗しました");
   // 入力日時（ローカル）
   const dObj = useMemo(() => new Date(date + "T" + time), [date, time]);
 
+  // 干支を CalendarEngine に一元化。
+  // 入力は現在 eto.ts に渡しているのと同じ dObj のローカル値をそのまま渡す。
+  // （timezone・入力値は変更しない）
+  const cal = useMemo(
+    () =>
+      calculate({
+        year: dObj.getFullYear(),
+        month: dObj.getMonth() + 1,
+        day: dObj.getDate(),
+        hour: dObj.getHours(),
+        minute: dObj.getMinutes(),
+      }),
+    [dObj]
+  );
+
   // ===== 真太陽時（MORIA表記に合わせる：標準子午線135E + 均時差）=====
   function equationOfTimeMinutes(d: Date): number {
     const rad = Math.PI / 180;
@@ -191,15 +206,6 @@ setPlaceMsg("検索に失敗しました");
     console.log("[ASC] ASC(+lon) =", ascLonPlus);
     console.log("[ASC] ASC(-lon) =", ascLonMinus);
   }, [dObj, trueSolarDate, lat, lon, ascLonPlus, ascLonMinus]);
-  
-  // 日干支の切替：子初(23:00)で日替わり
-  // 日干支の切替：子初(23:00)で日替わり
-  const dForDay = useMemo(() => {
-    if (!dObj) return null as Date | null;
-    const d = new Date(dObj.getTime());
-    if (d.getHours() >= 23) d.setHours(d.getHours() + 1);
-    return d;
-  }, [dObj]);
   
   // 日の出・日の入り（昼夜判定用）
   // 日の出・日の入り（昼夜判定用）
@@ -326,7 +332,7 @@ const mingBranch = useMemo(
   () => (mingMode === "handen" ? mingBranchHanden : mingBranchGetsu),
   [mingMode, mingBranchHanden, mingBranchGetsu]
 );  
-  const y = yearStemBranch(dObj);
+  const y = { stem: cal.yearStem, branch: cal.yearBranch };
 　const yearGanzhi = y.stem + y.branch;
 
 console.log("yearGanzhi =", yearGanzhi);
@@ -346,8 +352,8 @@ console.log("yearGanzhi =", yearGanzhi);
 
 const bigLimits = BigLimit.buildBigLimits(mingBranch as any, mingDegree);
 
-  const day = dayStemBranch(dForDay);
-  const mBr = monthBranch(dObj);
+  const day = { stem: cal.dayStem, branch: cal.dayBranch };
+  const mBr = cal.monthBranch;
 
   // ===== 命度（七政四餘・正規）=====
 
