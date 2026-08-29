@@ -1,0 +1,35 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
+export default function ClientHome({ kakkyokuResult }: { kakkyokuResult: any }) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  return (
+    <div>
+      {/* 格局 */}
+      <div style={{ marginTop: 16, padding: 12, border: "1px solid #ccc", borderRadius: 8 }}>
+        <div style={{ fontWeight: 700, marginBottom: 8 }}>格局</div>
+
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+          <div>
+            <div style={{ fontWeight: 700, marginBottom: 6 }}>吉（上位8）</div>
+
+            <ul style={{ paddingLeft: 18 }}>
+              {mounted
+                ? (kakkyokuResult?.good ?? []).slice(0, 8).map((name: string) => (
+                    <li key={`kg-${name}`}>{name}</li>
+                  ))
+                : <li>loading</li>
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
