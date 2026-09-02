@@ -1,15 +1,17 @@
 // src/components/ChartSVG.tsx
 
 import React, { useMemo } from "react";
-import { NYUUEN_MAP, SYOUDEN_MAP, KIRAKU_MAP } from "@/lib/nyuuen_syouden_kiraku";
+import { NYUUEN_MAP, SYOUDEN_MAP, KIRAKU_MAP, type Palace as StarPalace } from "@/lib/nyuuen_syouden_kiraku";
 import { SHITTEN_MAP } from "@/lib/shitten";
 import { angleFromLon, angleFromLonCCW, polar } from "@/lib/geom";
 import { parseOuboinCSV } from "@/lib/ouboin";
+import type { BodyPoint } from "@/lib/types";
 import {
   getNenganPalaceShensha,
   getNenshiPalaceShensha,
   mergePalaceShensha,
 } from "@/lib/shensha_engine";
+import type { PalaceMap } from "@/lib/shensha_engine";
 import { MONTH_BRANCH_TO_PALACE } from "@/lib/shensha_tables";
 import type { Stem, Branch as ShenshaBranch } from "@/lib/shensha_tables";
 import type { BigLimitMap } from "@/lib/big_limit";
@@ -44,12 +46,6 @@ const plotAngCW  = (lonDeg: number) => angleFromLon(plotLon(lonDeg));
 const mansionAng = (lonDeg: number) => {
   // 二十八宿：角宿開始(JIAO_START_LON_DEG=203°)を絶対黄経として、そのまま反時計回り(CCW)に進行
   return plotAngCCW(lonDeg);
-};
-
-type BodyPoint = {
-  id: string;
-  label: string;
-  lonDeg: number; // 0-360
 };
 
 type Props = {
@@ -244,9 +240,9 @@ console.log("juniunMap in ChartSVG =", juniunMap);
   const mansionThickIdx = new Set(Array.isArray(mansionGroupDividerIndices) ? mansionGroupDividerIndices : []);
 
   const shenshaByPalace = useMemo(() => {
-  const a = yearStem ? getNenganPalaceShensha(yearStem) : {};
-  const b = yearBranch ? getNenshiPalaceShensha(yearBranch) : {};
-  const c = monthBranch ? getMonthBranchPalaceShensha(monthBranch) : {};
+  const a: Partial<PalaceMap> = yearStem ? getNenganPalaceShensha(yearStem) : {};
+  const b: Partial<PalaceMap> = yearBranch ? getNenshiPalaceShensha(yearBranch) : {};
+  const c: Partial<PalaceMap> = monthBranch ? getMonthBranchPalaceShensha(monthBranch) : {};
 
   return mergePalaceShensha(
     mergePalaceShensha(a, b),
@@ -761,7 +757,9 @@ const sTxt = `S${s1},S${s13},S${s25}`;
 
   const starKey = normalizeStarKey(label);
 
-  const joureiStar = JOREI_BY_MONTH_BRANCH[String(props.monthBranch || "").trim()];
+  const joureiStar = JOREI_BY_MONTH_BRANCH[
+    String(props.monthBranch || "").trim() as keyof typeof JOREI_BY_MONTH_BRANCH
+  ];
   const jourei = starKey && joureiStar && starKey === joureiStar ? "乗令" : "";
 
   const shitsugai = SHITSUGAI_MAP[starKey]?.includes(palace) ? "失垣" : "";
@@ -771,14 +769,14 @@ const sTxt = `S${s1},S${s13},S${s25}`;
   const mansion = m?.mansion?.label;
 
   const shitten =
-    mansion && SHITTEN_MAP[starKey]?.includes(mansion)
+    mansion && SHITTEN_MAP[starKey as keyof typeof SHITTEN_MAP]?.includes(mansion)
       ? "失躔"
       : "";
 
-  const nyuuen = NYUUEN_MAP[starKey]?.includes(palace) ? "入垣" : "";
-  const syouden = SYOUDEN_MAP[starKey]?.includes(palace) ? "昇殿" : "";
-  const kiraku = KIRAKU_MAP[starKey]?.[palace] ?? "";
-  const kokuList = KOKU_MAP[starKey]?.[palace] ?? [];
+  const nyuuen = NYUUEN_MAP[starKey as keyof typeof NYUUEN_MAP]?.includes(palace as StarPalace) ? "入垣" : "";
+  const syouden = SYOUDEN_MAP[starKey as keyof typeof SYOUDEN_MAP]?.includes(palace as StarPalace) ? "昇殿" : "";
+  const kiraku = KIRAKU_MAP[starKey as keyof typeof KIRAKU_MAP]?.[palace as StarPalace] ?? "";
+  const kokuList = KOKU_MAP[starKey as keyof typeof KOKU_MAP]?.[palace as StarPalace] ?? [];
 　const kokuText = kokuList.join("");
   function placeLabelNoOverlap(
   cx: number,
@@ -792,7 +790,7 @@ const sTxt = `S${s1},S${s13},S${s25}`;
 ) {
   for (let t = 0; t <= maxTries; t++) {
     const r = baseR + t * stepR;
-    const p = polar(cx, cy, r, ang);mata
+    const p = polar(cx, cy, r, ang);
     const hit = placed.some(q => {
       const dx = p.x - q.x;
       const dy = p.y - q.y;

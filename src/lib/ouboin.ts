@@ -6,11 +6,8 @@ export type PalaceBranch =
 
 export type OuboinStatus = "旺" | "廟" | "陥";
 
-type OuboinMap = Record<string, Record<PalaceBranch, OuboinStatus>>;
-
-export type OuboinMap = Record<string, Record<string, string>>;
-
-export type OuboinMap = Record<string, Record<string, "旺" | "廟" | "陥">>;
+// 重複していた 3 つの OuboinMap 宣言を 1 本化（内容変更なし）。
+export type OuboinMap = Record<string, Record<string, OuboinStatus>>;
 
 function splitStars(cell: string): string[] {
   if (!cell) return [];
@@ -19,10 +16,6 @@ function splitStars(cell: string): string[] {
     .split(/[、,]/)
     .filter(Boolean);
 }
-
-// src/lib/ouboin.ts
-type OuboinStatus = "旺" | "廟" | "陥";
-export type OuboinMap = Record<string, Record<string, OuboinStatus>>;
 
 export function parseOuboinCSV(csv: string) {
   const lines = csv.trim().split(/\r?\n/);

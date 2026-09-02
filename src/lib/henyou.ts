@@ -58,7 +58,7 @@ export const HENYOU_TABLE: Record<YearStem, Record<HenyouTian, HenyouMark>> = {
 export function invertHenyouForStem(stem: YearStem) {
   const src = HENYOU_TABLE[stem];
   const out: Record<string,string> = {};
-  Object.keys(src).forEach((t:any)=>{
+  (Object.keys(src) as (keyof typeof src)[]).forEach((t)=>{
     out[src[t]] = t;
   });
   return out;

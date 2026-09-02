@@ -1,4 +1,16 @@
 // src/lib/eto.ts
+//
+// 【移行状況】
+//   干支計算は共通暦エンジン CalendarEngine（src/lib/calendar/）へ移行済み。
+//   年干支・月支・日干支・時支は calculate() の戻り値
+//   （yearStem/yearBranch, monthBranch, dayStem/dayBranch, hourBranch）を使う。
+//   本ファイルの計算関数（dayStemBranch / yearStemBranch / monthBranch）は
+//   固定日付ベースの旧「簡易版」であり、アプリ本体からは使用していない。
+//   互換確認用に tests/ganzhi_parity.manual.ts が参照しているため削除はせず @deprecated とする。
+//
+//   干支名テーブル STEMS / BRANCHES と型 Stem / Branch は現役
+//   （CalendarEngine・奇門遁甲が名称として再利用）。
+
 export const STEMS = ["甲","乙","丙","丁","戊","己","庚","辛","壬","癸"] as const;
 export const BRANCHES = ["子","丑","寅","卯","辰","巳","午","未","申","酉","戌","亥"] as const;
 
@@ -32,8 +44,12 @@ function civilDateForDayPillar(local: Date): { y: number; m: number; d: number }
 }
 
 /**
- * 日干支
+ * 日干支（固定日付ベースの旧簡易版）
  * アンカー: 1984-02-02 = 丙寅（ユーザー確認済み）
+ *
+ * @deprecated 共通暦エンジンへ移行済み。`src/lib/calendar` の
+ *   `calculate().dayStem` / `calculate().dayBranch` を使用すること。
+ *   本関数は互換確認テスト（tests/ganzhi_parity.manual.ts）専用。
  */
 export function dayStemBranch(local: Date): { stem: Stem; branch: Branch } {
   const anchorYMD = { y: 1984, m: 2, d: 2 };
@@ -53,9 +69,12 @@ export function dayStemBranch(local: Date): { stem: Stem; branch: Branch } {
 }
 
 /**
- * 年干支（立春基準の簡易版）
- * 1984-02-04 以降を甲子年の基準にする
- * 立春前は前年として扱う
+ * 年干支（立春基準の簡易版・固定日付 2/4）
+ * 1984-02-04 以降を甲子年の基準にする / 立春前は前年として扱う
+ *
+ * @deprecated 共通暦エンジンへ移行済み。`src/lib/calendar` の
+ *   `calculate().yearStem` / `calculate().yearBranch` を使用すること。
+ *   本関数は互換確認テスト（tests/ganzhi_parity.manual.ts）専用。
  */
 export function yearStemBranch(local: Date): { stem: Stem; branch: Branch } {
   const y = local.getFullYear();
@@ -89,6 +108,10 @@ export function yearStemBranch(local: Date): { stem: Stem; branch: Branch } {
  *
  * ※厳密な節入り時刻ではなく「日付固定」の簡易版
  * ※従来の「西暦月=月支」よりは大幅に正確
+ *
+ * @deprecated 共通暦エンジンへ移行済み。`src/lib/calendar` の
+ *   `calculate().monthBranch` を使用すること（節入り時刻を天文計算で判定）。
+ *   本関数は互換確認テスト（tests/ganzhi_parity.manual.ts）専用。
  */
 export function monthBranch(local: Date): Branch {
   const m = local.getMonth() + 1;

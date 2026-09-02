@@ -89,6 +89,8 @@ export type KakkyokuContext = {
   isDayBirth: boolean;
   monthBranch?: Branch;
   mingBranch?: Branch;
+  /** 身宮の十二支。buildKakkyokuContext がセット済み（型定義がこれまで欠けていた）。 */
+  shenBranch?: Branch;
   shenShaByPalace?: Record<Branch, string[]>;
   bodies: Array<{
     key: string;
@@ -198,6 +200,7 @@ export function buildKakkyokuContext(args: {
   isDayBirth: boolean;
   monthBranch?: Branch;
   mingBranch?: Branch;
+  shenBranch?: Branch;
   shenShaByPalace?: Record<Branch, string[]>;
 }): KakkyokuContext {
 
@@ -1765,12 +1768,13 @@ add(
   "日月拱命",
   "吉",
   () => {
-    if (!ctx.mingBranch) return false;
+    const mb = ctx.mingBranch;
+    if (!mb) return false;
 
-    const tri = TRINE_GROUPS.find(g => g.includes(ctx.mingBranch));
+    const tri = TRINE_GROUPS.find(g => g.includes(mb));
     if (!tri) return false;
 
-    const others = tri.filter(p => p !== ctx.mingBranch);
+    const others = tri.filter(p => p !== mb);
     if (others.length !== 2) return false;
 
     const pSun  = palaceOf("日");

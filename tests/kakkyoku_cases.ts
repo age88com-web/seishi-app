@@ -1,5 +1,5 @@
 import { evalKakkyoku } from "@/lib/kakkyoku_engine";
-import { KakkyokuContext } from "@/lib/types";
+import type { KakkyokuContext } from "@/lib/kakkyoku_engine";
 
 export const CASE_SHINKYO_ZAIHAKU: KakkyokuContext = {
   sex: "M",

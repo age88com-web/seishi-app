@@ -14,7 +14,6 @@ import {
 } from "@/lib/astro";
 import {
   monthGeneralFromSunLon,
-  hourBranchFromLocalDate,
   calcMingPalace,
   calcShenPalace_v2,
 } from "@/lib/ming_shen";
@@ -324,7 +323,8 @@ const bodiesWithMotion = useMemo(() => {
   const moonLon = pickLon("moon");
 
   const monthGeneral = monthGeneralFromSunLon(sunLon);
-  const hourBr = hourBranchFromLocalDate(dObj);
+  // 時支は共通暦エンジン CalendarEngine の出力を使用（hourBranchFromLocalDate は廃止）
+  const hourBr = cal.hourBranch;
   const mingBranchGetsu = useMemo(() => calcMingPalace(monthGeneral, hourBr), [monthGeneral, hourBr]);
 const mingBranchHanden = useMemo(() => branchFromLon(ascLonMinus) as any, [ascLonMinus]);
 
@@ -643,7 +643,7 @@ const shenShaByPalace = mergePalaceShensha(
       </div>
     </div>
     
-<button onClick={() => exportPDF(kakkyokuResult, y)} style={{
+<button onClick={() => exportPDF()} style={{
     marginTop: 10,
     padding: "6px 14px",
     fontSize: 14,
@@ -658,6 +658,7 @@ const shenShaByPalace = mergePalaceShensha(
 
     <div style={{textAlign:"center",marginBottom:"10mm"}}>
       <ChartSVG
+        sex={sex}
         yearStem={y.stem as any}
         yearBranch={y.branch as any}
         bodies={bodiesWithMotion as any}
@@ -689,6 +690,7 @@ const shenShaByPalace = mergePalaceShensha(
   }}
 >
   <ChartSVG
+    sex={sex}
     yearStem={y.stem as any}
     yearBranch={y.branch as any}
     bodies={bodiesWithMotion as any}
@@ -787,7 +789,7 @@ const shenShaByPalace = mergePalaceShensha(
             {Array.from(new Set((kakkyokuResult?.good ?? []).filter(Boolean)))
               .slice(0, kakkyokuLimit)
               .map((name, i) => (
-                <li key={`kg-${name}-${i}`}>{name}</li>
+                <li key={`kg-${String(name)}-${i}`}>{String(name)}</li>
               ))}
           </ul>
         </div>
@@ -831,7 +833,7 @@ const shenShaByPalace = mergePalaceShensha(
             {Array.from(new Set((kakkyokuResult?.bad ?? []).filter(Boolean)))
               .slice(0, 8)
               .map((name, i) => (
-                <li key={`kb-${name}-${i}`}>{name}</li>
+                <li key={`kb-${String(name)}-${i}`}>{String(name)}</li>
               ))}
           </ul>
         </div>

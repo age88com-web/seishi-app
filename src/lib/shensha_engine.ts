@@ -2,7 +2,7 @@
 import type { Stem, Branch } from "@/lib/shensha_tables";
 import { YEAR_STEM_TO_PALACE, YEAR_BRANCH_TO_PALACE } from "@/lib/shensha_tables";
 
-type PalaceMap = Record<Branch, string[]>;
+export type PalaceMap = Record<Branch, string[]>;
 
 // ChartSVG 側（BRANCHES_B）と一致させる：B基準の十二支順
 const PALACE_BRANCHES: readonly Branch[] = [
@@ -61,8 +61,14 @@ export function getNenshiPalaceShensha(yearBranch: Branch): PalaceMap {
   return out;
 }
 
-/** 年干神殺＋年支神殺などの合流（重複除去） */
-export function mergePalaceShensha(a?: PalaceMap, b?: PalaceMap): PalaceMap {
+/**
+ * 年干神殺＋年支神殺などの合流（重複除去）。
+ * 入力は宮が欠けていてもよい（部分マップ可）。出力は全宮そろった PalaceMap。
+ */
+export function mergePalaceShensha(
+  a?: Partial<PalaceMap>,
+  b?: Partial<PalaceMap>,
+): PalaceMap {
   const out = emptyMap();
 
   for (const br of PALACE_BRANCHES) {
