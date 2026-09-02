@@ -20,6 +20,18 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Tests
+
+テスト用フレームワークは未導入。`tests/` 配下のスクリプトを `npx tsx` で直接実行する（詳細は [`tests/README.md`](./tests/README.md)）。
+
+```bash
+# 奇門遁甲 排盤エンジンの 1080局 完全一致 回帰テスト
+npx tsx tests/qimen_1080.manual.ts
+```
+
+`1080 / 1080 PASS`（exit 0）なら成功。1件でも不一致なら局番号・項目・期待値・実測値を表示して exit 1。
+検証データ `tests/fixtures/qimen1080.json` は `docs/source/1080.pdf` からの機械転記であり、検証専用（仕様ではない）。
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
