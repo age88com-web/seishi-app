@@ -1221,47 +1221,8 @@ add(
   "命主が入垣"
 );
 
-// 「命主居財帛」：命宮主が財帛宮に入る
-add(
-  "命主居財帛",
-  "吉",
-  () => {
-    if (!ctx.mingBranch) return false;
-    const lord = getMingLord();
-    if (!lord) return false;
-    const target = palaceByOffset(ctx.mingBranch, PAL_OFF.財帛);
-    return getPal(lord) === target;
-  },
-  "命主が財帛宮"
-);
-
-// 「命主居田宅」：命宮主が田宅宮に入る
-add(
-  "命主居田宅",
-  "吉",
-  () => {
-    if (!ctx.mingBranch) return false;
-    const lord = getMingLord();
-    if (!lord) return false;
-    const target = palaceByOffset(ctx.mingBranch, PAL_OFF.田宅);
-    return getPal(lord) === target;
-  },
-  "命主が田宅宮"
-);
-
-// 「命主居妻妾」：命宮主が夫妻（妻妾）宮に入る
-add(
-  "命主居妻妾",
-  "吉",
-  () => {
-    if (!ctx.mingBranch) return false;
-    const lord = getMingLord();
-    if (!lord) return false;
-    const target = palaceByOffset(ctx.mingBranch, PAL_OFF.妻妾);
-    return getPal(lord) === target;
-  },
-  "命主が妻妾宮"
-);
+// 旧版格局「命主居財帛／命主居田宅／命主居妻妾」を削除。
+//   現行APIによる等価版（命臨財帛／命臨田宅／命臨妻位）が別名で既に稼働中のため。
 
 // 「命主清吉」：命宮主が旺となる
 add(
@@ -1274,19 +1235,7 @@ add(
   "命主が旺"
 );
 
-// 「命主居官禄」：命宮主が官禄宮に入る
-add(
-  "命主居官禄",
-  "吉",
-  () => {
-    if (!ctx.mingBranch) return false;
-    const lord = getMingLord();
-    if (!lord) return false;
-    const target = palaceByOffset(ctx.mingBranch, PAL_OFF.官禄);
-    return getPal(lord) === target;
-  },
-  "命主が官禄宮"
-);
+// 旧版格局「命主居官禄」を削除。現行APIによる等価版「命臨官禄」が既に稼働中のため。
 
 // 「命坐崇勲」：命宮 or 命主の宮に 崇勲
 add(
@@ -1295,7 +1244,7 @@ add(
   () => {
     if (!ctx.mingBranch) return false;
     const lord = getMingLord();
-    const lordPal = lord ? getPal(lord) : undefined;
+    const lordPal = lord ? palaceOf(lord) : undefined;
     return hasShenSha(ctx.mingBranch, "崇勲") || (!!lordPal && hasShenSha(lordPal, "崇勲"));
   },
   "命宮または命主の宮に崇勲"
@@ -1308,7 +1257,7 @@ add(
   () => {
     if (!ctx.mingBranch) return false;
     const lord = getMingLord();
-    const lordPal = lord ? getPal(lord) : undefined;
+    const lordPal = lord ? palaceOf(lord) : undefined;
     return hasShenSha(ctx.mingBranch, "貴人") || (!!lordPal && hasShenSha(lordPal, "貴人"));
   },
   "命宮または命主の宮に貴人"
@@ -1321,7 +1270,7 @@ add(
   () => {
     if (!ctx.mingBranch) return false;
     const lord = getMingLord();
-    const lordPal = lord ? getPal(lord) : undefined;
+    const lordPal = lord ? palaceOf(lord) : undefined;
     return hasShenSha(ctx.mingBranch, "斗杓") || (!!lordPal && hasShenSha(lordPal, "斗杓"));
   },
   "命宮または命主の宮に斗杓"
@@ -1334,7 +1283,7 @@ add(
   () => {
     if (!ctx.mingBranch) return false;
     const lord = getMingLord();
-    const lordPal = lord ? getPal(lord) : undefined;
+    const lordPal = lord ? palaceOf(lord) : undefined;
     return hasShenSha(ctx.mingBranch, "長生") || (!!lordPal && hasShenSha(lordPal, "長生"));
   },
   "命宮または命主の宮が長生"
@@ -2768,33 +2717,33 @@ add(
 // =====================================================
 // 凶格（妻／夫妻）
 // =====================================================
-add("妻星失躔", "凶", () => { const s = lordOfOff(PAL_OFF.夫妻); return !!s && isShitten(s); }, "夫妻主が失躔");
-add("妻星失垣", "凶", () => { const s = lordOfOff(PAL_OFF.夫妻); return !!s && hasShitsugai(z) (s); }, "夫妻主が失垣");
-add("妻星被尅", "凶", () => { const s = lordOfOff(PAL_OFF.夫妻); return !!s && isUke(s); }, "夫妻主が受尅");
-add("妻元泄气", "凶", () => { const s = lordOfOff(PAL_OFF.夫妻); return !!s && isXieqi(s); }, "夫妻主が泄気");
+add("妻星失躔", "凶", () => { const s = lordOfOff(PAL_OFF.妻妾); return !!s && isShitten(s); }, "夫妻主が失躔");
+add("妻星失垣", "凶", () => { const s = lordOfOff(PAL_OFF.妻妾); return !!s && hasShitsugai(s); }, "夫妻主が失垣");
+add("妻星被尅", "凶", () => { const s = lordOfOff(PAL_OFF.妻妾); return !!s && isUke(s); }, "夫妻主が受尅");
+add("妻元泄气", "凶", () => { const s = lordOfOff(PAL_OFF.妻妾); return !!s && isXieqi(s); }, "夫妻主が泄気");
 
 add(
   "妻主逢空",
   "凶",
   () => {
-    const s = lordOfOff(PAL_OFF.夫妻);
-    return shenshaInPalOrSameWithLord(PAL_OFF.夫妻, s, ["空亡", "天空"]);
+    const s = lordOfOff(PAL_OFF.妻妾);
+    return shenshaInPalOrSameWithLord(PAL_OFF.妻妾, s, ["空亡", "天空"]);
   },
   "夫妻主が空亡/天空と同宮 or 夫妻宮に空亡/天空"
 );
 
-add("妻入閑宮", "凶", () => { const s = lordOfOff(PAL_OFF.夫妻); return !!s && isXianJi(s); }, "夫妻主が閑極（兄弟宮・七政のみ）");
-add("妻陥奴宮", "凶", () => lordInOff(PAL_OFF.夫妻, PAL_OFF.奴僕), "夫妻主が奴僕宮");
-add("妻臨疾厄", "凶", () => lordInOff(PAL_OFF.夫妻, PAL_OFF.疾厄), "夫妻主が疾厄宮");
-add("妻居遷移", "凶", () => lordInOff(PAL_OFF.夫妻, PAL_OFF.遷移), "夫妻主が遷移宮");
-add("妻居貌位", "凶", () => lordInOff(PAL_OFF.夫妻, PAL_OFF.相貌), "夫妻主が相貌宮");
+add("妻入閑宮", "凶", () => { const s = lordOfOff(PAL_OFF.妻妾); return !!s && isXianJi(s); }, "夫妻主が閑極（兄弟宮・七政のみ）");
+add("妻陥奴宮", "凶", () => lordInOff(PAL_OFF.妻妾, PAL_OFF.奴僕), "夫妻主が奴僕宮");
+add("妻臨疾厄", "凶", () => lordInOff(PAL_OFF.妻妾, PAL_OFF.疾厄), "夫妻主が疾厄宮");
+add("妻居遷移", "凶", () => lordInOff(PAL_OFF.妻妾, PAL_OFF.遷移), "夫妻主が遷移宮");
+add("妻居貌位", "凶", () => lordInOff(PAL_OFF.妻妾, PAL_OFF.相貌), "夫妻主が相貌宮");
 
 add(
   "地雌戦室",
   "凶",
   () => {
-    const s = lordOfOff(PAL_OFF.夫妻);
-    return shenshaInPalOrSameWithLord(PAL_OFF.夫妻, s, ["地雌"]);
+    const s = lordOfOff(PAL_OFF.妻妾);
+    return shenshaInPalOrSameWithLord(PAL_OFF.妻妾, s, ["地雌"]);
   },
   "地雌が夫妻主と同宮 or 夫妻宮にある"
 );
@@ -2803,8 +2752,8 @@ add(
   "陽刃臨妻",
   "凶",
   () => {
-    const s = lordOfOff(PAL_OFF.夫妻);
-    return shenshaInPalOrSameWithLord(PAL_OFF.夫妻, s, ["陽刃"]);
+    const s = lordOfOff(PAL_OFF.妻妾);
+    return shenshaInPalOrSameWithLord(PAL_OFF.妻妾, s, ["陽刃"]);
   },
   "陽刃が夫妻主と同宮 or 夫妻宮にある"
 );
@@ -2840,7 +2789,7 @@ const OFF_BY_KEY: Record<string, number> = {
   財: PAL_OFF.財帛,
   田: PAL_OFF.田宅,
   嗣: PAL_OFF.男女,
-  妻: PAL_OFF.夫妻,
+  妻: PAL_OFF.妻妾,
   官: PAL_OFF.官禄,
   福: PAL_OFF.福徳,
   禄: PAL_OFF.官禄, // 禄＝官禄
@@ -2906,7 +2855,7 @@ add("福主児宮", "吉", () => {
   return palaceOf(fukuLord) === palN;
 }, "福徳主が男女宮に入る");
 
-add(ctx.isFemale ? "福守夫宮" : "福守妻妾", "吉", () => {
+add(ctx.sex === "F" ? "福守夫宮" : "福守妻妾", "吉", () => {
   if (!ctx.mingBranch) return false;
   const fukuLord = lordOfOff(PAL_OFF.福徳);
   const palF = palaceByOffsetFromMing(PAL_OFF.妻妾);
@@ -2930,7 +2879,7 @@ add("福入禄宮", "吉", () => {
   return palaceOf(fukuLord) === palK;
 }, "福徳主が官禄宮に入る");
 
-add(ctx.isFemale ? "嗣守夫宮" : "嗣守妻宮", "吉", () => {
+add(ctx.sex === "F" ? "嗣守夫宮" : "嗣守妻宮", "吉", () => {
   if (!ctx.mingBranch) return false;
 
   const ziLord = lordOfOff(PAL_OFF.男女);

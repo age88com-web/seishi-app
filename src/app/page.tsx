@@ -340,8 +340,8 @@ console.log("yearGanzhi =", yearGanzhi);
 
 
 　const juniunMap = useMemo(
-  () => calcJuniun(yearGanzhi, mingBranch),
-  [yearGanzhi, mingBranch]
+  () => calcJuniun(yearGanzhi),
+  [yearGanzhi]
 );
 
   const moonPalace = monthGeneralFromSunLon(moonLon);
@@ -447,8 +447,8 @@ const mingdoTextMansion = useMemo(() => {
   try {
       
       const shenShaByPalace = mergePalaceShensha(
-  getNenganPalaceShensha(y?.stem as any, mingBranch as any),
-  getNenshiPalaceShensha(y?.branch as any, mingBranch as any)
+  getNenganPalaceShensha(y?.stem as any),
+  getNenshiPalaceShensha(y?.branch as any)
 );
 
 const shenshaMerged = shenShaByPalace;
