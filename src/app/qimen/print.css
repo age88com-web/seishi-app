@@ -1,0 +1,233 @@
+/* src/app/qimen/print.css
+ *
+ * /qimen の印刷レイアウト専用スタイル。
+ *   - 画面表示は一切変更しない（.qm-print-doc は画面では display:none）。
+ *   - 印刷時のみ、操作系UIを隠し、A4縦の鑑定書レイアウトを出す。
+ *   - 1ページ目 = タイトル / 基本情報 / 定局 / 九宮盤 / 値符・値使・直符 /
+ *     吉格・凶格 / 選択宮の基本詳細（宮名〜凶格）まで。
+ *   - 剋應本文は 2ページ目の先頭から。
+ *   - page.tsx のインラインstyleに勝つ必要がある箇所は !important を使う。
+ */
+
+/* 画面では印刷用ドキュメントを出さない */
+.qm-print-doc {
+  display: none;
+}
+
+@media print {
+  /* ---- 通常UI（操作フォーム・地図・画面用パネル）を全部隠す ---- */
+  .qm-main > *:not(.qm-print-doc) {
+    display: none !important;
+  }
+  .qm-noprint {
+    display: none !important;
+  }
+
+  .qm-main {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #000 !important;
+    background: #fff !important;
+    font-family: "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
+  }
+
+  /* ---- 用紙 ---- */
+  @page {
+    size: A4 portrait;
+    margin: 9mm;
+  }
+
+  /* ---- 印刷用ドキュメント本体 ---- */
+  .qm-print-doc {
+    display: block !important;
+    color: #000;
+    background: #fff;
+    font-size: 9pt;
+    line-height: 1.3;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .qm-print-doc * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  .qm-print-doc h1 {
+    font-size: 13pt;
+    margin: 0 0 0.8mm;
+    padding-bottom: 0.6mm;
+    border-bottom: 2px solid #000;
+  }
+  .qm-print-doc h2 {
+    font-size: 9.5pt;
+    margin: 0.6mm 0 0.3mm;
+    padding-bottom: 0.3mm;
+    border-bottom: 1px solid #000;
+  }
+
+  .pd-block {
+    break-inside: avoid;
+    margin-bottom: 0.5mm;
+  }
+
+  /* 汎用 行（Row / 定局 / 基本情報 / 選択宮基本詳細） */
+  .qm-print-doc .qm-row {
+    display: flex !important;
+    gap: 4mm !important;
+    padding: 0.25mm 0 !important;
+    border-bottom: 1px solid #bbb !important;
+    font-size: 8pt !important;
+    line-height: 1.12 !important;
+    color: #000 !important;
+  }
+  .qm-print-doc .qm-row-k {
+    flex: 0 0 28mm !important;
+    color: #000 !important;
+    font-weight: 600 !important;
+  }
+  .qm-print-doc .qm-row-v {
+    flex: 1 !important;
+    color: #000 !important;
+  }
+
+  /* パネル外枠・見出しの画面用装飾は無効化 */
+  .qm-print-doc .qm-panel,
+  .qm-print-doc .qm-panel-title {
+    border: 0 !important;
+    background: transparent !important;
+    padding: 0 !important;
+  }
+
+  /* 吉格 / 凶格：名称のみコンパクトに横並び（ブロックごと次ページへ送らない） */
+  .qm-print-doc .qm-subtitle {
+    font-size: 8.5pt !important;
+    color: #000 !important;
+    font-weight: 700 !important;
+    border-top: 0 !important;
+    padding: 0.5mm 0 0.2mm !important;
+  }
+  .qm-print-doc .qm-namelist {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0.2mm 0 0 !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.2mm 3mm !important;
+  }
+  .qm-print-doc .qm-namelist li {
+    font-size: 8pt !important;
+  }
+
+  /* ---- 九宮盤（p.34 準拠の宮内レイアウトのまま、各宮を正方形に） ---- */
+  .pd-grid {
+    break-inside: avoid;
+  }
+  .qm-print-doc .qm-grid {
+    grid-template-columns: repeat(3, 41mm) !important;
+    grid-template-rows: repeat(3, 41mm) !important;
+    border: 1.4pt solid #000 !important;
+    margin-top: 0.3mm;
+  }
+  .qm-print-doc .qm-cell {
+    border: 0.7pt solid #000 !important;
+    background: #fff !important;
+    cursor: default !important;
+    color: #000 !important;
+    padding: 1.1mm 1.6mm !important;
+    overflow: hidden !important; /* 正方形セル維持: 万一あふれても隣宮に重ねない */
+  }
+  .qm-print-doc .qm-cl {
+    font-size: 7.5pt !important;
+    color: #000 !important;
+  }
+  .qm-print-doc .qm-mn {
+    font-size: 10pt !important;
+    font-weight: 700 !important;
+    margin: 1mm 0 1.2mm !important;
+    color: #000 !important;
+  }
+  .qm-print-doc .qm-dr {
+    margin-top: 0.8mm !important;
+  }
+  .qm-print-doc .qm-st {
+    font-size: 10.5pt !important;
+    font-weight: 700 !important;
+    color: #000 !important;
+  }
+  .qm-print-doc .qm-ss {
+    font-size: 7.8pt !important;
+    color: #000 !important;
+  }
+
+  /* 宮内の格局名（青=吉 / 赤=凶）。印刷でも同じ色分け。 */
+  .qm-print-doc .qm-kaku {
+    margin-top: auto !important;
+    padding-top: 0.4mm !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    line-height: 1.05 !important;
+    align-items: flex-start !important;
+    overflow: hidden !important;
+  }
+  .qm-print-doc .qm-kaku-ji {
+    font-size: 7.5pt !important;
+    color: #1f5fbf !important;
+  }
+  .qm-print-doc .qm-kaku-kyo {
+    font-size: 7.5pt !important;
+    color: #b42318 !important;
+  }
+  .qm-print-doc .qm-kaku-more {
+    font-size: 7.5pt !important;
+    color: #555 !important;
+  }
+
+  /* ---- 選択宮の基本詳細は 1ページ目に残す ---- */
+  .pd-palace-basic {
+    break-inside: avoid;
+    break-before: auto;
+  }
+
+  /* ---- 剋應は 2ページ目の先頭から ---- */
+  .pd-kokuo {
+    break-before: page;
+  }
+  .pd-kokuo > h2 {
+    margin-top: 0 !important;
+  }
+
+  /* 剋應の 1 系統ブロック */
+  .qm-print-doc .qm-kokuo-section {
+    padding: 1.2mm 0 !important;
+    border-bottom: 1px solid #999 !important;
+  }
+  .qm-print-doc .qm-kokuo-label {
+    font-size: 9.5pt !important;
+    font-weight: 700 !important;
+    color: #000 !important;
+    margin-bottom: 0.8mm !important;
+  }
+  /* 剋應の 1 エントリ（見出し＋本文）は可能な限り分断しない */
+  .qm-print-doc .qm-kokuo-entry {
+    break-inside: avoid;
+    margin-bottom: 2mm !important;
+  }
+  .qm-print-doc .qm-kokuo-meta {
+    font-size: 9pt !important;
+    font-weight: 700 !important;
+    color: #000 !important;
+  }
+  .qm-print-doc .qm-kokuo-body {
+    font-size: 9pt !important;
+    color: #000 !important;
+    white-space: pre-wrap !important;
+    line-height: 1.5 !important;
+  }
+
+  /* 「未実装」などの将来拡張枠は印刷しない */
+  .qm-print-doc .qm-pd-future {
+    display: none !important;
+  }
+}

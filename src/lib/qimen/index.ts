@@ -28,3 +28,12 @@ export type {
   KyokakuResult,
   KyokakuMatch,
 } from "./kyokaku";
+
+// 剋應（こくおう）: 算出済み QimenResult から剋應データを引くだけの参照層。
+export { lookupKokuo, resolveKokuoForPalace } from "./kokuo";
+export type {
+  KokuoCategory,
+  KokuoEntry,
+  KokuoLookupInput,
+  KokuoResult,
+} from "./kokuo";

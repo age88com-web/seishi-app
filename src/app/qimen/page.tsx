@@ -12,8 +12,11 @@
 
 import { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
-import { calculate } from "@/lib/qimen";
-import type { QimenResult } from "@/lib/qimen";
+import { calculate, resolveKokuoForPalace } from "@/lib/qimen";
+import type { QimenResult, KokuoEntry } from "@/lib/qimen";
+import AppSwitcher from "@/components/AppSwitcher";
+import { stripRuby } from "./stripRuby";
+import "./print.css";
 
 // Leaflet は window 依存のため SSR 無効で読み込む
 const MapPicker = dynamic(() => import("./MapPicker"), {
@@ -193,9 +196,18 @@ export default function QimenPage() {
     ? `${resolved.year}-${pad(resolved.month)}-${pad(resolved.day)} ${pad(resolved.hour)}:${pad(resolved.minute)}`
     : "—";
 
+  // 場所名（場所検索で選んだときに q へ入る）。取得できたときだけ印刷に出す。
+  const placeName = q.trim();
+  const shiftLabel =
+    resolved && resolved.shiftMin !== null
+      ? `${resolved.shiftMin >= 0 ? "+" : ""}${resolved.shiftMin}分`
+      : "—";
+
   return (
-    <main style={S.page}>
-      <h1 style={S.h1}>奇門遁甲 時盤</h1>
+    <>
+      <AppSwitcher />
+      <main style={S.page} className="qm-main">
+      <h1 style={S.h1}>奇門遁甲 排盤</h1>
 
       {/* ---- 入力 ---- */}
       <section style={S.inputs}>
@@ -249,6 +261,15 @@ export default function QimenPage() {
           <input type="checkbox" checked={trueSolar} onChange={(e) => setTrueSolar(e.target.checked)} />
           真太陽時（均時差＋経度時差）
         </label>
+        <button
+          type="button"
+          className="qm-noprint"
+          style={S.btn}
+          onClick={() => window.print()}
+          disabled={!result}
+        >
+          印刷
+        </button>
       </section>
 
       {/* ---- 使用時刻の表示 ---- */}
@@ -341,7 +362,7 @@ export default function QimenPage() {
         <div style={S.layout}>
           {/* ---- 九宮盤（講義資料 p.34 準拠・変更禁止部分） ---- */}
           <div style={S.gridWrap}>
-            <div style={S.grid}>
+            <div style={S.grid} className="qm-grid">
               {GRID_ORDER.map((n) => (
                 <PalaceCell
                   key={n}
@@ -383,23 +404,173 @@ export default function QimenPage() {
               <Row k="直符（八神）" v={result.baShen ? `${result.baShen.zhifu.god}　＠${result.baShen.zhifu.palace}宮` : "—（未算出）"} />
             </Panel>
 
-            <Panel title={`吉格（${result.jikaku.matches.length}）`}>
-              <NameList names={result.jikaku.matches.map((m) => m.name)} />
-            </Panel>
-
-            <Panel title={`凶格（${result.kyokaku.matches.length}）`}>
-              <NameList names={result.kyokaku.matches.map((m) => m.name)} />
-            </Panel>
+            {/* 盤外の「吉格一覧 / 凶格一覧」は今回は非表示（格局は九宮盤内と宮詳細に表示）。
+                内部データ result.jikaku / result.kyokaku は保持したまま。 */}
           </aside>
         </div>
       )}
-    </main>
+
+      {/* ---- 印刷専用ドキュメント（画面では非表示 / @media print でのみ表示） ---- */}
+      {result && (
+        <PrintDoc
+          result={result}
+          inputDateTime={`${date} ${time}`}
+          usedLabel={usedLabel}
+          placeName={placeName}
+          lat={lat}
+          lng={lng}
+          trueSolar={trueSolar}
+          shiftLabel={shiftLabel}
+          selectedPalace={selectedPalace}
+        />
+      )}
+      </main>
+    </>
+  );
+}
+
+// 印刷専用ドキュメント。画面には出さず（print.css で display:none）、
+// @media print のときだけ A4 縦の鑑定書レイアウトで表示する。
+// 排盤結果は既存 calculate() の戻り値のみを使う。
+function PrintDoc({
+  result,
+  inputDateTime,
+  usedLabel,
+  placeName,
+  lat,
+  lng,
+  trueSolar,
+  shiftLabel,
+  selectedPalace,
+}: {
+  result: QimenResult;
+  inputDateTime: string;
+  usedLabel: string;
+  placeName: string;
+  lat: number;
+  lng: number;
+  trueSolar: boolean;
+  shiftLabel: string;
+  selectedPalace: number | null;
+}) {
+  const c = result.calendar;
+  return (
+    <div className="qm-print-doc">
+      <h1>奇門遁甲 排盤</h1>
+
+      <section className="pd-block">
+        <h2>基本情報</h2>
+        <Row k="入力日時" v={inputDateTime} />
+        <Row k="排盤使用日時" v={usedLabel} />
+        {placeName && <Row k="場所" v={placeName} />}
+        <Row k="緯度経度" v={`${lat}, ${lng}`} />
+        <Row k="真太陽時" v={trueSolar ? "ON" : "OFF"} />
+        <Row k="補正分" v={shiftLabel} />
+      </section>
+
+      <section className="pd-block">
+        <h2>定局</h2>
+        <Row k="遁 / 局 / 元" v={`${result.dingju.dun}　${result.dingju.ju}局　${result.dingju.yuan}`} />
+        <Row k="節気" v={c.solarTerm} />
+        <Row
+          k="四柱"
+          v={`${c.yearStem}${c.yearBranch}　${c.monthStem}${c.monthBranch}　${c.dayStem}${c.dayBranch}　${c.hourStem}${c.hourBranch}`}
+        />
+        <Row k="旬首 / 六儀" v={`${result.xunShou.xunShou}　（${result.xunShou.liuyi}）`} />
+      </section>
+
+      <section className="pd-block pd-grid">
+        <h2>九宮盤</h2>
+        <div style={S.grid} className="qm-grid">
+          {GRID_ORDER.map((n) => (
+            <PalaceCell key={n} n={n} result={result} selected={false} onSelect={() => {}} />
+          ))}
+        </div>
+      </section>
+
+      <section className="pd-block">
+        <h2>値符・値使</h2>
+        <Row
+          k="値符（九星）"
+          v={result.jiuXing ? `${result.jiuXing.zhifu.star}　＠${result.jiuXing.zhifu.palace}宮` : "—"}
+        />
+        <Row
+          k="値使（八門）"
+          v={result.baMen ? `${result.baMen.zhishi.men}　＠${result.baMen.zhishi.palace}宮` : "—"}
+        />
+        <Row
+          k="直符（八神）"
+          v={result.baShen ? `${result.baShen.zhifu.god}　＠${result.baShen.zhifu.palace}宮` : "—"}
+        />
+      </section>
+
+      {/* 盤外の吉格 / 凶格一覧は非表示。格局は九宮盤の各宮内と、下の宮詳細に表示する。 */}
+
+      {selectedPalace !== null && (
+        <>
+          {/* 1ページ目: 選択宮の基本詳細のみ（剋應本文は含めない） */}
+          <section className="pd-block pd-palace-basic">
+            <h2>宮詳細（{PALACE_LABEL[selectedPalace] ?? `宮${selectedPalace}`}）</h2>
+            <PalaceDetailRows result={result} palace={selectedPalace} />
+          </section>
+
+          {/* 2ページ目以降: 剋應本文。該当なしの系統は省略。 */}
+          <section className="pd-kokuo">
+            <h2>剋應（{PALACE_LABEL[selectedPalace] ?? `宮${selectedPalace}`}）</h2>
+            <PalaceKokuo result={result} palace={selectedPalace} hideEmpty />
+          </section>
+        </>
+      )}
+    </div>
+  );
+}
+
+// 宮ごとに成立している格局（吉→凶の順・既存 matches の順序のまま）を最大5件抽出。
+//   吉格 = result.jikaku.matches のうち palaces に当該宮を含むもの
+//   凶格 = result.kyokaku.matches のうち palaces に当該宮を含むもの
+//   palaces=[] の全盤成立格は宮には属さないため対象外。
+type KakuItem = { name: string; kind: "ji" | "kyo" };
+
+function palaceKaku(
+  result: QimenResult,
+  palace: number,
+): { shown: KakuItem[]; more: number } {
+  const list: KakuItem[] = [
+    ...result.jikaku.matches
+      .filter((m) => m.palaces.includes(palace))
+      .map((m) => ({ name: m.name, kind: "ji" as const })),
+    ...result.kyokaku.matches
+      .filter((m) => m.palaces.includes(palace))
+      .map((m) => ({ name: m.name, kind: "kyo" as const })),
+  ];
+  return { shown: list.slice(0, 5), more: Math.max(0, list.length - 5) };
+}
+
+function KakuList({ result, palace }: { result: QimenResult; palace: number }) {
+  const { shown, more } = palaceKaku(result, palace);
+  if (shown.length === 0) return null;
+  return (
+    <div style={S.kaku} className="qm-kaku">
+      {shown.map((k, i) => (
+        <span
+          key={i}
+          style={k.kind === "ji" ? S.kakuJi : S.kakuKyo}
+          className={k.kind === "ji" ? "qm-kaku-ji" : "qm-kaku-kyo"}
+        >
+          {k.name}
+        </span>
+      ))}
+      {more > 0 && (
+        <span style={S.kakuMore} className="qm-kaku-more">+{more}</span>
+      )}
+    </div>
   );
 }
 
 // ==== 九宮盤（講義資料「排盤の完成」p.34 と同じレイアウト・変更禁止） ====
 //   宮名（左上）／ 八門（中央）／ 天盤干（左）・九星（右）／ 地盤干（左）・八神（右）
 //   中宮は地盤干のみ中央表示。色分けなし（講義資料はモノクロ）。
+//   ↑ この6要素の配置は不変。下部の空き部分にだけ格局名（青=吉/赤=凶）を追加する。
 function PalaceCell({
   n,
   result,
@@ -416,26 +587,29 @@ function PalaceCell({
   return (
     <div
       style={{ ...S.cell, cursor: "pointer", ...(selected ? S.cellSelected : {}) }}
+      className="qm-cell"
       onClick={onSelect}
     >
-      <div style={S.cellLabel}>{PALACE_LABEL[n]}</div>
+      <div style={S.cellLabel} className="qm-cl">{PALACE_LABEL[n]}</div>
       {isCenter ? (
-        <div style={S.centerBody}>
-          <span style={S.stem}>{p.diPanStem ?? "—"}</span>
+        <div style={S.centerBody} className="qm-cb">
+          <span style={S.stem} className="qm-st">{p.diPanStem ?? "—"}</span>
         </div>
       ) : (
         <>
-          <div style={S.men}>{p.baMen.join("・") || "—"}</div>
-          <div style={S.dataRow}>
-            <span style={S.stem}>{p.tianPanStem ?? "—"}</span>
-            <span style={S.starShen}>{p.jiuXing.join("・") || "—"}</span>
+          <div style={S.men} className="qm-mn">{p.baMen.join("・") || "—"}</div>
+          <div style={S.dataRow} className="qm-dr">
+            <span style={S.stem} className="qm-st">{p.tianPanStem ?? "—"}</span>
+            <span style={S.starShen} className="qm-ss">{p.jiuXing.join("・") || "—"}</span>
           </div>
-          <div style={S.dataRow}>
-            <span style={S.stem}>{p.diPanStem ?? "—"}</span>
-            <span style={S.starShen}>{p.baShen.join("・") || "—"}</span>
+          <div style={S.dataRow} className="qm-dr">
+            <span style={S.stem} className="qm-st">{p.diPanStem ?? "—"}</span>
+            <span style={S.starShen} className="qm-ss">{p.baShen.join("・") || "—"}</span>
           </div>
         </>
       )}
+      {/* 宮内の格局名（下部・空き部分）。中宮は成立格局があるときだけ出る。 */}
+      <KakuList result={result} palace={n} />
     </div>
   );
 }
@@ -461,22 +635,10 @@ function UnavailableNote({ result }: { result: QimenResult }) {
   );
 }
 
-// 格局は「格局名のみ」を一覧表示（meaning / detail / 成立条件は非表示。内部データは保持）
-function NameList({ names }: { names: string[] }) {
-  if (names.length === 0) return <div style={{ padding: "6px 10px", color: "#888" }}>該当なし</div>;
-  return (
-    <ul style={S.nameList}>
-      {names.map((n, i) => (
-        <li key={i} style={S.nameItem}>{n}</li>
-      ))}
-    </ul>
-  );
-}
-
 function Panel({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div style={S.panel}>
-      <div style={S.panelTitle}>{title}</div>
+    <div style={S.panel} className="qm-panel">
+      <div style={S.panelTitle} className="qm-panel-title">{title}</div>
       {children}
     </div>
   );
@@ -484,9 +646,9 @@ function Panel({ title, children }: { title: string; children: React.ReactNode }
 
 function Row({ k, v }: { k: string; v: string }) {
   return (
-    <div style={S.row}>
-      <span style={S.rowK}>{k}</span>
-      <span style={S.rowV}>{v}</span>
+    <div style={S.row} className="qm-row">
+      <span style={S.rowK} className="qm-row-k">{k}</span>
+      <span style={S.rowV} className="qm-row-v">{v}</span>
     </div>
   );
 }
@@ -501,7 +663,9 @@ const DIRECTION: Record<number, string> = {
 //   吉格/凶格は「その宮で成立しているもの」だけを抽出（palaces に当該宮を含むもの）。
 //   palaces=[] の全盤成立格は宮詳細には出さない（右側の一覧には従来どおり表示）。
 //   中宮(5)は地盤干のみ基本表示。存在しない段は「—」。
-function PalaceDetail({ result, palace }: { result: QimenResult; palace: number }) {
+// 選択宮の基本詳細（宮名〜凶格）。剋應は含めない。
+//   中宮(5)は地盤干のみ基本表示。存在しない段は「—」。
+function PalaceDetailRows({ result, palace }: { result: QimenResult; palace: number }) {
   const p = result.palaces[palace] ?? { jiuXing: [], baMen: [], baShen: [] };
   const isCenter = palace === 5;
 
@@ -524,13 +688,94 @@ function PalaceDetail({ result, palace }: { result: QimenResult; palace: number 
       <Row k="地盤干" v={p.diPanStem ?? "—"} />
       <Row k="吉格" v={jikaku.join("・") || "—"} />
       <Row k="凶格" v={kyokaku.join("・") || "—"} />
+    </div>
+  );
+}
 
-      {/* 将来拡張枠（今回はロジック・仮データを作らない） */}
-      <div style={S.detailSubTitle}>剋應・象意（将来拡張）</div>
-      <Row k="剋應" v="未登録" />
-      <Row k="象意" v="未実装" />
-      <Row k="用神" v="未実装" />
-      <Row k="判断" v="未実装" />
+// 選択宮の剋應5系統（資料本文をそのまま表示）。
+//   hideEmpty=true のとき、該当なしの系統は行ごと省略する（印刷用）。
+function PalaceKokuo({
+  result,
+  palace,
+  hideEmpty = false,
+}: {
+  result: QimenResult;
+  palace: number;
+  hideEmpty?: boolean;
+}) {
+  // 剋應（docs/source/kokuoo のみが根拠）。中宮(5)は全て空で返る。
+  const kokuo = resolveKokuoForPalace(result, palace);
+  return (
+    <div>
+      <KokuoSection label="十干剋應" entries={kokuo.jikkan} hideEmpty={hideEmpty} />
+      <KokuoSection label="八門剋應（門×門）" entries={kokuo.hachimonGate} hideEmpty={hideEmpty} />
+      <KokuoSection label="八門剋應（門×三奇）" entries={kokuo.hachimonWonder} hideEmpty={hideEmpty} />
+      <KokuoSection label="三奇到宮剋應" entries={kokuo.sankiTokyu} hideEmpty={hideEmpty} />
+      <KokuoSection label="九星値時剋應" entries={kokuo.kyuseiJichi} hideEmpty={hideEmpty} />
+    </div>
+  );
+}
+
+// 画面用: 基本詳細 ＋ 剋應（該当なしは「—」表示）＋ 将来拡張枠。
+function PalaceDetail({ result, palace }: { result: QimenResult; palace: number }) {
+  return (
+    <div>
+      <PalaceDetailRows result={result} palace={palace} />
+
+      {/* 剋應（資料本文をそのまま表示。該当が無ければ「—」） */}
+      <div style={S.detailSubTitle} className="qm-subtitle">剋應</div>
+      <PalaceKokuo result={result} palace={palace} />
+
+      {/* 将来拡張枠（今回はロジック・仮データを作らない。印刷では非表示） */}
+      <div className="qm-pd-future">
+        <div style={S.detailSubTitle} className="qm-subtitle">象意・用神・判断（将来拡張）</div>
+        <Row k="象意" v="未実装" />
+        <Row k="用神" v="未実装" />
+        <Row k="判断" v="未実装" />
+      </div>
+    </div>
+  );
+}
+
+const KOKUO_TRADITION_LABEL: Record<string, string> = {
+  kimon_tonkou_hiketsu_taizen: "奇門遁甲秘笈大全",
+  tonkou_engi: "遁甲演義",
+};
+
+// 剋應1系統の表示。資料本文(body)をそのまま出す。
+//   entries が空のとき: hideEmpty=false なら「—」、true なら何も描画しない。
+function KokuoSection({
+  label,
+  entries,
+  hideEmpty = false,
+}: {
+  label: string;
+  entries: KokuoEntry[];
+  hideEmpty?: boolean;
+}) {
+  if (entries.length === 0 && hideEmpty) return null;
+  return (
+    <div style={S.kokuoSection} className="qm-kokuo-section">
+      <div style={S.kokuoLabel} className="qm-kokuo-label">{label}</div>
+      {entries.length === 0 ? (
+        <div style={S.kokuoEmpty} className="qm-kokuo-empty">—</div>
+      ) : (
+        entries.map((e) => {
+          const meta = [
+            e.name,
+            e.fortuneRaw,
+            e.mode === "static" ? "静應" : e.mode === "dynamic" ? "動應" : null,
+            e.sourceTradition ? KOKUO_TRADITION_LABEL[e.sourceTradition] ?? e.sourceTradition : null,
+          ].filter(Boolean).join(" / ");
+          return (
+            <div key={e.id} style={S.kokuoEntry} className="qm-kokuo-entry">
+              {meta && <div style={S.kokuoMeta} className="qm-kokuo-meta">{meta}</div>}
+              {/* 表示時のみルビ（ふりがな行）を除去。元データ・改行は変更しない。 */}
+              <div style={S.kokuoBody} className="qm-kokuo-body">{stripRuby(e.body)}</div>
+            </div>
+          );
+        })
+      )}
     </div>
   );
 }
@@ -559,7 +804,9 @@ const S: Record<string, React.CSSProperties> = {
   coordNote: { fontSize: 11, color: "#888", lineHeight: 1.5 },
 
   gridWrap: { flex: "0 0 auto" },
-  grid: { display: "grid", gridTemplateColumns: "repeat(3, 156px)", gridTemplateRows: "repeat(3, 156px)", border: "2px solid #333" },
+  // 画面: 各宮は 156px 正方形が基準。格局名が多い宮だけ行が縦に伸びる（minmax）。
+  // 印刷は print.css が固定 41mm 角に上書きする。
+  grid: { display: "grid", gridTemplateColumns: "repeat(3, 156px)", gridTemplateRows: "repeat(3, minmax(156px, max-content))", border: "2px solid #333" },
   cell: { border: "1px solid #333", padding: "6px 10px", display: "flex", flexDirection: "column", justifyContent: "flex-start", position: "relative", color: "#222" },
   // 選択中の宮: レイアウトを崩さないモノクロ表現（内側2px枠＋淡いグレー）
   cellSelected: { background: "#ededed", boxShadow: "inset 0 0 0 2px #000" },
@@ -570,6 +817,12 @@ const S: Record<string, React.CSSProperties> = {
   starShen: { fontSize: 14, color: "#222" },
   centerBody: { display: "flex", alignItems: "center", justifyContent: "center", flex: 1 },
 
+  // 宮内の格局名（既存6要素より小さめ。下部の空き部分へ）
+  kaku: { marginTop: "auto", paddingTop: 3, display: "flex", flexDirection: "column", gap: 0, lineHeight: 1.12, alignItems: "flex-start" },
+  kakuJi: { fontSize: 10, color: "#1f5fbf" },   // 吉格 = 青
+  kakuKyo: { fontSize: 10, color: "#b42318" },  // 凶格 = 赤
+  kakuMore: { fontSize: 10, color: "#666" },
+
   warn: { marginTop: 8, fontSize: 12, color: "#a60", background: "#fff8e6", border: "1px solid #e5d29a", borderRadius: 4, padding: "6px 10px", maxWidth: 470 },
 
   side: { flex: "1 1 auto", display: "flex", flexDirection: "column", gap: 14, minWidth: 320 },
@@ -579,8 +832,12 @@ const S: Record<string, React.CSSProperties> = {
   rowK: { flex: "0 0 96px", color: "#888" },
   rowV: { flex: 1 },
 
-  nameList: { listStyle: "none", margin: 0, padding: "8px 10px", display: "flex", flexWrap: "wrap", gap: "4px 12px" },
-  nameItem: { fontSize: 13 },
-
   detailSubTitle: { fontSize: 11, color: "#999", padding: "8px 10px 2px", borderTop: "1px solid #eee" },
+
+  kokuoSection: { padding: "6px 10px", borderBottom: "1px solid #f0f0f0" },
+  kokuoLabel: { fontSize: 12, fontWeight: 600, color: "#555", marginBottom: 4 },
+  kokuoEmpty: { fontSize: 13, color: "#888" },
+  kokuoEntry: { marginBottom: 8 },
+  kokuoMeta: { fontSize: 12, fontWeight: 600, color: "#333", marginBottom: 2 },
+  kokuoBody: { fontSize: 12, color: "#444", whiteSpace: "pre-wrap", lineHeight: 1.6 },
 };

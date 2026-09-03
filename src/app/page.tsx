@@ -36,6 +36,7 @@ import {
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import * as BigLimit from "@/lib/big_limit";
+import AppSwitcher from "@/components/AppSwitcher";
 
 function exportPDF() {
   window.print();
@@ -490,8 +491,10 @@ const shenShaByPalace = mergePalaceShensha(
 );
 
  return (
+  <>
+  <AppSwitcher />
   <main style={{ padding: 18 }}>
-  
+
   <style jsx global>{`
   @media print {
     @page {
@@ -840,8 +843,9 @@ const shenShaByPalace = mergePalaceShensha(
       </div>
     </div>
   </>
-)} 
+)}
 </div>
 </main>
+  </>
 );
 }

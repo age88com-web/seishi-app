@@ -1,0 +1,4233 @@
+{
+  "schema_version": 1,
+  "source_policy": "添付の剋應.pdfのみ。一般知識・他流派・推測による補完なし。",
+  "modes": {
+    "static_gate": "静應: 人盤八門 × 地盤八門",
+    "static_stem": "静應: 人盤八門 × 天盤奇儀",
+    "dynamic_gate": "動應: 人盤八門 × 地盤八門"
+  },
+  "gates": [
+    "開門",
+    "休門",
+    "生門",
+    "傷門",
+    "杜門",
+    "景門",
+    "死門",
+    "驚門"
+  ],
+  "stems": [
+    "戊",
+    "乙",
+    "丙",
+    "丁",
+    "己",
+    "庚",
+    "辛",
+    "壬",
+    "癸"
+  ],
+  "logical_entry_count": 200,
+  "counts": {
+    "開門": {
+      "static_gate": 8,
+      "static_stem": 9,
+      "dynamic_gate": 8
+    },
+    "休門": {
+      "static_gate": 8,
+      "static_stem": 9,
+      "dynamic_gate": 8
+    },
+    "生門": {
+      "static_gate": 8,
+      "static_stem": 9,
+      "dynamic_gate": 8
+    },
+    "傷門": {
+      "static_gate": 8,
+      "static_stem": 9,
+      "dynamic_gate": 8
+    },
+    "杜門": {
+      "static_gate": 8,
+      "static_stem": 9,
+      "dynamic_gate": 8
+    },
+    "景門": {
+      "static_gate": 8,
+      "static_stem": 9,
+      "dynamic_gate": 8
+    },
+    "死門": {
+      "static_gate": 8,
+      "static_stem": 9,
+      "dynamic_gate": 8
+    },
+    "驚門": {
+      "static_gate": 8,
+      "static_stem": 9,
+      "dynamic_gate": 8
+    }
+  },
+  "notes": [
+    "静應と動應は別レコード。",
+    "動應の里・括弧内メートル換算は資料表記をそのまま保持し、外部換算はしない。",
+    "休門×壬および休門×癸は一つの共有本文から2論理キーへ展開し、shared_source_groupで原見出しを保持する。",
+    "各門の動應前置説明と占身命等の共通注記はgate_notesに保持する。"
+  ],
+  "gate_notes": [
+    {
+      "gate": "開門",
+      "static_intro_raw": "人盤八門を地盤八門に加える",
+      "dynamic_intro_raw": "人盤八門を地盤八門に加える",
+      "dynamic_tail_note_raw": "占身命（運勢判断）：金水の命の者には吉利がある。土命は平穏。火木の二命\nは訴訟を主り、疾病、破財で不利。\nまた歌に云く：「官を見て理を得る。作事は喜んで、人を捜すのは見つかる。\n上官に大利あり、求財は必らず遂げる。病人は安らかになる。出行は れ合い\nがいれば、旅人は帰ってこれる。貿易は開張する。移徙は喜ぶ、謁貴は救済が\nある。 作は安を獲る。百事に悉く吉。無不洞然（雑念が無く心が透き通って\n慎み深い）」。\n\n※無不洞然：奥深いところから聞こえてくる水の音の形容。『伝習録』は、明\nの時代に王陽明が起こした儒学の教えを上中下巻に纏めたもので、陽明学の入\n門書\n（193） 所謂「尊德性而道問學」一節至當歸一、更無可疑。此便是文蔚曾著實用工、然\n後能爲此言。此本不是險僻難見的道理。人或意見不同者、還是良知尚有纖翳潛伏。若除去\n此纖翳、卽自無不洞然矣。\n\n※里：古代中国の周代では里は面積の単位で、300 歩四方の面積を表していま\nした。その後、この 1 辺の長さが距離の単位となったとされています。周・漢\nの 1 歩は 1.3m 余りであったと推定され、したがって 1 里の長さは 400m ほどと\nなります。その後さらに改訂され、1 歩を 5 尺、360 歩（=1800 尺）を 1 里とし、\n清代まで続きました。清代における営 尺とメートル法の関係は清朝滅亡後の\n1915 年に定義され、1 尺=32cm であったため、1 里は 576m とされています。\n『奇門遁甲秘笈大全』は諸葛武候原著、劉伯温校正とされるが、これらの著者\n名は仮託された名前にすぎ、時代考証的には遡れても明代のものと思われ、そ\nの 1 里の長さの定義は漢代 1 里の 400m と考え表記しています。"
+    },
+    {
+      "gate": "休門",
+      "static_intro_raw": "人盤八門に地盤八門",
+      "dynamic_intro_raw": "人盤八門を地盤八門に加える",
+      "dynamic_tail_note_raw": "占身命：木命は大利がある。金命は脱耗（消耗）、土命は災疾、火命は大凶。\n丙、丁、戊、己、巳、午、辰、戌、丑、未の年月日時には不利である。"
+    },
+    {
+      "gate": "生門",
+      "static_intro_raw": "人盤八門に地盤八門",
+      "dynamic_intro_raw": "人盤八門を地盤八門に加える\n\n生門から出て、八里（3.2km）、十八里（7.2km）進めば貴人に会う。馬車、或\nいは公吏（公務員）が、皁衣（黒衣）を着ている人と う。\n乙奇が卯に臨めば、二匹の鼠が互い咬む。\n丙奇に臨めば、病人の足を見る。或いは二人が財を争う。騒がしい。\n丁奇、漁師を見る。この方は大利。百事に利を具える。",
+      "dynamic_tail_note_raw": "占身命：火土金の命は、大利がある。水木の命には、不利で、多くは厄難があ\n                                        しゅちょう\nる。甲乙寅卯の年月日時を忌み、不利である。若し、壬癸命ならば、 腫 脹\n（炎症などが原因で、からだの組織や器官の一部に血液成分が溜まってはれ上\nがること）の凶を主る。"
+    },
+    {
+      "gate": "傷門",
+      "static_intro_raw": "人盤八門に地盤八門",
+      "dynamic_intro_raw": "人盤八門を地盤八門に加える\n\n傷門から出れば、三十里進むと、人が争っているのを見る。漁師、或いは家畜\nが争っているのを見る。敵はこれを避けるのが宜しい。大吉。",
+      "dynamic_tail_note_raw": "占身命：水火木命には吉。金命は病を主る。土命には凶で、訴訟、刑罰を主\nる。"
+    },
+    {
+      "gate": "杜門",
+      "static_intro_raw": "人盤八門に地盤八門",
+      "dynamic_intro_raw": "人盤八門を地盤八門に加える\n\n杜門から出れば、三十里進むと、少女が歌唱団と同行しているのに     う。六十\n里進めば、悪人に う。\n\n乙奇が臨めば、色衣を着た若い婦人を見る。\n丙奇が臨めば、火の光が建物を焼いている、のろしを見る。\n                  きゅうど\n丁奇が臨めば、人が乗り物に乗って弓弩（弓といしゆみ）を帯びているのを見\nる。",
+      "dynamic_tail_note_raw": "占身命：火命は貴を発する。水命は富を発する。木命は平穏。金命は疾病。土\n命は訴訟によって凶。もし、金が年月日時、或いは土命が年月日時ならば不利\nである。例えば、水火の年月日時に えば吉である。"
+    },
+    {
+      "gate": "景門",
+      "static_intro_raw": "人盤八門に地盤八門",
+      "dynamic_intro_raw": "人盤八門を地盤八門に加える\n\n景門は三十里外に出れば、赤い紋様の大きい蛇を見る。七十里外に進めば、水\n火は失物する。もし、強く作用するのならば、東の家長また、子供を主る。",
+      "dynamic_tail_note_raw": ""
+    },
+    {
+      "gate": "死門",
+      "static_intro_raw": "人盤八門に地盤八門",
+      "dynamic_intro_raw": "人盤八門を地盤八門に加える\n\n死門から出れば、二十里すすむと病人に う。三十里進めば、喪服を着た人、\n血を見る災いを見る。三奇があるといえども、また不吉である。\n\n丙奇が臨めば、文書を抱えた人に   う。\n                  しさつ\n乙奇が臨めば、葬儀や祭事、或いは紙扎（道教のお祝いや葬式の供物として使\n用される伝統工芸品の一種）の物を見る。\n丁奇が臨めば、若い婦人が喪服を着て泣いているのを見る。",
+      "dynamic_tail_note_raw": "占身命：喪服が象徴される。病死の凶。水木命の年月日時は大凶である。それ\n以外は平。"
+    },
+    {
+      "gate": "驚門",
+      "static_intro_raw": "人盤八門に地盤八門",
+      "dynamic_intro_raw": "人盤八門を地盤八門に加える\n\n驚門から出れば、三十里進めば鳥の群れ、雀がさえずっているのに う。六畜\nは互いに闘う。四十里進めば、人が争い殴り合っているのを見るのは吉。も\n             せっそん\nし、七十里進めば、必らず折損（おれて破損すること）の凶がある。赴いては\nならない。",
+      "dynamic_tail_note_raw": ""
+    }
+  ],
+  "entries": [
+    {
+      "id": "hachimon-static-開門-開門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "開門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "開門"
+      },
+      "body": "開門を開門に加える：貴人、宝物、財運を主る。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-開門-休門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "開門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "休門"
+      },
+      "body": "開門を休門に加える：貴人に会う。（貴人に会うこと）、財運と開張（開店する、\n店開きする、創業する）店舗、貿易による大利を主る。",
+      "fortune_mentions": [
+        "大利"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-開門-生門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "開門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "生門"
+      },
+      "body": "開門を生門に加える：貴人に会う。（貴人に会うこと）、謀や望みあらゆること\nが意にかなう。\n                    い   し",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-開門-傷門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "開門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "傷門"
+      },
+      "body": "開門を傷門に加える：移動、変更する、移徙（引っ越し）などの事に皆不吉。",
+      "fortune_mentions": [
+        "不吉"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-開門-杜門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "開門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "杜門"
+      },
+      "body": "開門を杜門に加える：紛失を主り、印刷、契約書に小凶。",
+      "fortune_mentions": [
+        "小凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-開門-景門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "開門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "景門"
+      },
+      "body": "開門を景門に加える：貴人に会う。（貴人に会うこと）、文書に不利。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-開門-死門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "開門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "死門"
+      },
+      "body": "開門を死門に加える：訴訟を主り、驚き慌てふためく、混乱に陥る、先に憂い\nがあり、後に喜びがある。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-開門-驚門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "開門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "驚門"
+      },
+      "body": "開門を驚門に加える：あらゆる事に不利。\n\n人盤八門を天盤奇儀に加える",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-開門-戊",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "開門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "戊"
+      },
+      "body": "開門を戊に加える：財と名誉ともに得る。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-開門-乙",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "開門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "乙"
+      },
+      "body": "開門を乙に加える：小財を求めるべき。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-開門-丙",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "開門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "丙"
+      },
+      "body": "開門を丙に加える：貴人、印綬（昔の中国で官吏が天子から授かった印と、そ\nれをつるす紐）を主る。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-開門-丁",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "開門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "丁"
+      },
+      "body": "開門を丁に加える：消息は必ずある。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-開門-己",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "開門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "己"
+      },
+      "body": "開門を己に加える：仕事の段取りが心もとない。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-開門-庚",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "開門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "庚"
+      },
+      "body": "開門を庚に加える：道路、訴訟を主り、謀は二種類の意見が不統一となる。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-開門-辛",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "開門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "辛"
+      },
+      "body": "開門を辛に加える：女性、道路。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-開門-壬",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "開門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "壬"
+      },
+      "body": "開門を壬に加える：遠行（遠出する）は失うものがある、破財に注意。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-開門-癸",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "開門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "癸"
+      },
+      "body": "開門を癸に加える：女性は失財するため、小凶。",
+      "fortune_mentions": [
+        "小凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-開門-開門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "開門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "開門"
+      },
+      "body": "開門を開門に加える：門を出て、六里（2.4km）、十六里（6.4km）進めば、貴\n人に会う。また、殴り合いのけんかをする者を見れば應ずる。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "六里",
+          "metric_raw": "2.4km"
+        },
+        {
+          "li_raw": "十六里",
+          "metric_raw": "6.4km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-開門-休門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "開門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "休門"
+      },
+      "body": "開門を休門に加える：門を出て、一里（400m）、十一里（4.4km）進めば、四足\n                            くりぞめのきぬ\nの家畜が戦いに闘っているのに   う。婦人が 皁 衣 （黒衣）を着ているま\nた、文人の言は、功名の事。\n\n※皁衣（黒衣）：皂衣。皁衣は橡（とち）や栗などタンニンを含んだ、いちば\nん手に入りやすい灌木の樹皮などで染めた焦茶色の衣を意味する。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "一里",
+          "metric_raw": "400m"
+        },
+        {
+          "li_raw": "十一里",
+          "metric_raw": "4.4km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-開門-生門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "開門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "生門"
+      },
+      "body": "開門を生門に加える：門を出て、八里（3.2km）、十八里（7.2km）進めば、陰\n人並びに四足の動物、或いは陽人が競合する財帛の事で言い争うのに う。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "八里",
+          "metric_raw": "3.2km"
+        },
+        {
+          "li_raw": "十八里",
+          "metric_raw": "7.2km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-開門-傷門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "開門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "傷門"
+      },
+      "body": "開門を傷門に加える：門を出て、三里（1.2km）、十三里（5.2km）進めば、婦\n                ろうか\n人が馬車に乗り嫁に行く、弄火（火遊び）に う。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "三里",
+          "metric_raw": "1.2km"
+        },
+        {
+          "li_raw": "十三里",
+          "metric_raw": "5.2km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-開門-杜門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "開門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "杜門"
+      },
+      "body": "開門を杜門に加える：門を出て、四里（1.6km）、十四里（5.6km）進めば、陽\n人が激しく歌を歌っている或いは僧道に えば應ずる。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "四里",
+          "metric_raw": "1.6km"
+        },
+        {
+          "li_raw": "十四里",
+          "metric_raw": "5.6km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-開門-景門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "開門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "景門"
+      },
+      "body": "開門を景門に加える：門を出て、九里（3.6km）、十八里（7.6km）進めば、貴\n人が馬に乗る或いは文書を抱えているのに えば應ずる。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "九里",
+          "metric_raw": "3.6km"
+        },
+        {
+          "li_raw": "十八里",
+          "metric_raw": "7.6km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-開門-死門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "開門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "死門"
+      },
+      "body": "開門を死門に加える：門を出て、二里（800m）、十二里（4.8km）進めば、老人\nが声を上げて泣く或いは土を掘って埋葬しているの遇えば應ずる。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "二里",
+          "metric_raw": "800m"
+        },
+        {
+          "li_raw": "十二里",
+          "metric_raw": "4.8km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-開門-驚門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "開門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "驚門"
+      },
+      "body": "開門を驚門に加える：門を出て、七里（2.8km）、十七里（6.8km）進めば、兄\nと妹が同行しているの えば應ずる。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "七里",
+          "metric_raw": "2.8km"
+        },
+        {
+          "li_raw": "十七里",
+          "metric_raw": "6.8km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-休門-休門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "休門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "休門"
+      },
+      "body": "休門を休門に加える：求財、進人口、貴人に会う。（貴人に会うこと）吉利、\n上任、修 にまた大利。",
+      "fortune_mentions": [
+        "吉利",
+        "大利"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-休門-生門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "休門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "生門"
+      },
+      "body": "休門を生門に加える：女性が財物を得ることを主る、謁貴（貴人に謁見する）、\n謀や望みが、遅れてくるが吉。\n                きけい",
+      "fortune_mentions": [
+        "吉"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-休門-傷門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "休門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "傷門"
+      },
+      "body": "休門を傷門に加える：上官に喜慶（喜ばしいこと）、求財することができずに、\n親戚と財産を分与する。移動する事は不吉。",
+      "fortune_mentions": [
+        "不吉"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-休門-杜門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "休門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "杜門"
+      },
+      "body": "休門を杜門に加える：破財、失物（落とし物）は見つかり難い。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-休門-景門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "休門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "景門"
+      },
+      "body": "休門を景門に加える：文書や印信（官印、公印）を求める事は、目的を達せず、\n反して口舌（いざこざ）を招き小凶。",
+      "fortune_mentions": [
+        "小凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-休門-死門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "休門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "死門"
+      },
+      "body": "休門を死門に加える：公印（官公署の印）や文書による訴訟が不吉、遠行、僧\n道の事は不吉、占病には凶。",
+      "fortune_mentions": [
+        "不吉",
+        "凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-休門-驚門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "休門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "驚門"
+      },
+      "body": "休門を驚門に加える：財を損すること、厄介事を引き起こすこと、疾病、驚き\nおののくこと。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-休門-開門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "休門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "開門"
+      },
+      "body": "休門を開門に加える：開張（開店する、店開きする、創業する）と見貴、求財\nなどを喜び、大吉。\n\n人盤八門に天盤奇儀",
+      "fortune_mentions": [
+        "大吉"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-休門-戊",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "休門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "戊"
+      },
+      "body": "休門を戊に加える：財物が和合（親しみ合うこと）。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-休門-乙",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "休門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "乙"
+      },
+      "body": "休門を乙に加える：謀を重ねる（周密な計画を立て、極めて詳細に考慮する）\nことができない、求めるものを軽くするべき。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-休門-丙",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "休門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "丙"
+      },
+      "body": "休門を丙に加える：文書が和合（親しみ合うこと）、喜慶（喜ばしいこと）。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-休門-丁",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "休門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "丁"
+      },
+      "body": "休門を丁に加える：様々な訴訟が中断する。\n          ぐまい",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-休門-己",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "休門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "己"
+      },
+      "body": "休門を己に加える：愚昧（おろかで道理に暗いこと）で不安定、後に吉。",
+      "fortune_mentions": [
+        "吉"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-休門-庚",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "休門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "庚"
+      },
+      "body": "休門を庚に加える：文書による訴訟は、先に固まり、後に解かれる。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-休門-辛",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "休門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "辛"
+      },
+      "body": "休門を辛に加える：疾病は遅れて治る、失物（落とし物）見つけることができ\nない。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-休門-壬",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "休門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "壬"
+      },
+      "body": "休門に壬、癸を加える：女性は訴訟に牽   （巻き添えになる）。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      },
+      "shared_source_group": "休門-壬-癸"
+    },
+    {
+      "id": "hachimon-static-休門-癸",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "休門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "癸"
+      },
+      "body": "休門に壬、癸を加える：女性は訴訟に牽   （巻き添えになる）。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      },
+      "shared_source_group": "休門-壬-癸"
+    },
+    {
+      "id": "hachimon-dynamic-休門-休門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "休門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "休門"
+      },
+      "body": "休門を休門に加える：門を出て、一里（400m）、十一里（4.4km）進めば、青色\nの服（黒い服、粗末な服、緑色の服）に う。夫婦の歌唱は應ずる。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "一里",
+          "metric_raw": "400m"
+        },
+        {
+          "li_raw": "十一里",
+          "metric_raw": "4.4km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-休門-生門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "休門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "生門"
+      },
+      "body": "休門を生門に加える：門を出て、八里（3.2km）、十八里（7.2km）進めば、婦\n人が下には黒色、黄土色の服を着た人、或いは皁衣（黒衣）の服を着た公吏\n（公務員）の人に う。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "八里",
+          "metric_raw": "3.2km"
+        },
+        {
+          "li_raw": "十八里",
+          "metric_raw": "7.2km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-休門-傷門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "休門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "傷門"
+      },
+      "body": "休門を傷門に加える：門を出て、三里（1.2km）、十三里（5.2km）進めば、大\n工が木棍をもっている。或いは皁衣（黒衣）の服を着た公吏（公務員）人に\nう。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "三里",
+          "metric_raw": "1.2km"
+        },
+        {
+          "li_raw": "十三里",
+          "metric_raw": "5.2km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-休門-杜門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "休門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "杜門"
+      },
+      "body": "休門を杜門に加える：門を出て、四里（1.6km）、十四里（5.6km）進めば、青\n色の服（黒い服、粗末な服、緑色の服）を着た人に う。婦人引孩童歌を歌っ\nている。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "四里",
+          "metric_raw": "1.6km"
+        },
+        {
+          "li_raw": "十四里",
+          "metric_raw": "5.6km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-休門-景門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "休門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "景門"
+      },
+      "body": "休門を景門に加える：門を出て、九里（3.6km）、十八里（7.6km）進めば、皁\n衣（黒衣）の服を着た公吏（公務員）の人が乗り物に乗っているのに う。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "九里",
+          "metric_raw": "3.6km"
+        },
+        {
+          "li_raw": "十八里",
+          "metric_raw": "7.6km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-休門-死門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "休門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "死門"
+      },
+      "body": "休門を死門に加える：門を出て、二里（800m）、十二里（4.8km）進めば、孝服\n人が哭泣している。更には緑衣の人が相伴している人に う。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "二里",
+          "metric_raw": "800m"
+        },
+        {
+          "li_raw": "十二里",
+          "metric_raw": "4.8km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-休門-驚門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "休門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "驚門"
+      },
+      "body": "休門を驚門に加える：門を出て、七里（2.8km）、十七里（6.8km）進めば、皁\n衣（黒衣）の服を着た人に う。足をぶつけて、婦人は子供を引いているのを\n見る。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "七里",
+          "metric_raw": "2.8km"
+        },
+        {
+          "li_raw": "十七里",
+          "metric_raw": "6.8km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-休門-開門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "休門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "開門"
+      },
+      "body": "休門を開門に加える：門を出て、六里（2.4km）、十六里（6.4km）進めば、人\nが殴り合いのけんかをしているのを見る。溜め息を吐く、家畜が敵と戦ってい\nるのを見る。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "六里",
+          "metric_raw": "2.4km"
+        },
+        {
+          "li_raw": "十六里",
+          "metric_raw": "6.4km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-生門-生門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "生門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "生門"
+      },
+      "body": "生門を生門に加える：遠行（遠出する）を主る、求財に吉。",
+      "fortune_mentions": [
+        "吉"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-生門-傷門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "生門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "傷門"
+      },
+      "body": "生門を傷門に加える：親友、移動を主る。道路は不吉。",
+      "fortune_mentions": [
+        "不吉"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-生門-杜門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "生門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "杜門"
+      },
+      "body": "生門を杜門に加える：陰謀を主る。女性は破財で不利。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-生門-景門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "生門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "景門"
+      },
+      "body": "生門を景門に加える：女性を主る。子供への不安。文書にかかわることで、後\nに吉。",
+      "fortune_mentions": [
+        "吉"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-生門-死門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "生門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "死門"
+      },
+      "body": "生門を死門に加える：田宅（土地と家）、訴訟を主る。病は救い難い。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-生門-驚門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "生門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "驚門"
+      },
+      "body": "生門を驚門に加える：目上、財産、訴訟を主る。病は遅れて治るため、吉。",
+      "fortune_mentions": [
+        "吉"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-生門-開門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "生門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "開門"
+      },
+      "body": "生門を開門に加える：貴人に会う。（貴人に会うこと）を主る。求財は大きく\n発展する。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-生門-休門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "生門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "休門"
+      },
+      "body": "生門を休門に加える：女性の場所を主る。謀は財利あり、吉。\n\n人盤八門に天盤奇儀\n                           えっき",
+      "fortune_mentions": [
+        "吉"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-生門-戊",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "生門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "戊"
+      },
+      "body": "生門を戊に加える：嫁娶（嫁入りと嫁取り）、求財、謁貴 （貴人に謁見する）\nに皆吉。",
+      "fortune_mentions": [
+        "吉"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-生門-乙",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "生門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "乙"
+      },
+      "body": "生門を乙に加える：女性の出産を主る。遅れて吉となる。",
+      "fortune_mentions": [
+        "吉"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-生門-丙",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "生門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "丙"
+      },
+      "body": "生門を丙に加える：貴人、印綬（昔の中国で官吏が天子から授かった印と、そ\nれをつるす紐）を主る。婚姻、書信（書面による音信）、喜ばしいことがある。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-生門-丁",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "生門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "丁"
+      },
+      "body": "生門を丁に加える：訴訟を主る。婚姻、財利に大吉。",
+      "fortune_mentions": [
+        "大吉"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-生門-己",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "生門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "己"
+      },
+      "body": "生門を己に加える：貴人が来たることを主り、吉。",
+      "fortune_mentions": [
+        "吉"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-生門-庚",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "生門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "庚"
+      },
+      "body": "生門を庚に加える：財産、係争、破産を主り、不利。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-生門-辛",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "生門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "辛"
+      },
+      "body": "生門を辛に加える：産婦、疾病を主り、後に吉。",
+      "fortune_mentions": [
+        "吉"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-生門-壬",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "生門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "壬"
+      },
+      "body": "生門を壬に加える：遺失（置き忘れたり落としたりして、金品を失うこと）を\n\n主る。後で財を得る。賊盜は捕まえ易い。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-生門-癸",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "生門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "癸"
+      },
+      "body": "生門を癸に加える：婚姻に宜しくない、他の事は皆吉。",
+      "fortune_mentions": [
+        "吉"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-生門-生門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "生門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "生門"
+      },
+      "body": "生門を生門に加える：門を出て、八里（3.2km）、十八里（7.2km）進めば、朱\n衣の貴人に う。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "八里",
+          "metric_raw": "3.2km"
+        },
+        {
+          "li_raw": "十八里",
+          "metric_raw": "7.2km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-生門-傷門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "生門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "傷門"
+      },
+      "body": "生門を傷門に加える：門を出て、三里（1.2km）、十三里（5.2km）進めば、\n公吏（公務員）の人が棍を持っているのに う。或いは土寄せする、植栽して\nいる人に う。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "三里",
+          "metric_raw": "1.2km"
+        },
+        {
+          "li_raw": "十三里",
+          "metric_raw": "5.2km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-生門-杜門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "生門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "杜門"
+      },
+      "body": "生門を杜門に加える：門を出て、四里（1.6km）、十四里（5.6km）進めば、彩\n色の物を持って歌を歌っている人に う。または、長い溜息を吐く者に う。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "四里",
+          "metric_raw": "1.6km"
+        },
+        {
+          "li_raw": "十四里",
+          "metric_raw": "5.6km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-生門-景門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "生門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "景門"
+      },
+      "body": "生門を景門に加える：門を出て、九里（3.6km）、十八里（7.6km）進めば、貴\n                                あいしたが\n人が馬車に乗っているのに う。多くは人を伴って移動する（相 隨 う）。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "九里",
+          "metric_raw": "3.6km"
+        },
+        {
+          "li_raw": "十八里",
+          "metric_raw": "7.6km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-生門-死門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "生門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "死門"
+      },
+      "body": "生門を死門に加える：門を出て、二里（800m）、十二里（4.8km）進めば、喪服\nを着て泣いている人に う。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "二里",
+          "metric_raw": "800m"
+        },
+        {
+          "li_raw": "十二里",
+          "metric_raw": "4.8km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-生門-驚門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "生門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "驚門"
+      },
+      "body": "生門を驚門に加える：門を出て、七里（2.8km）、十七里（6.8km）進めば、人\nが家畜（※ペットなど）を追うのを見る。また、ある人が言うには訴訟となる\n事がある。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "七里",
+          "metric_raw": "2.8km"
+        },
+        {
+          "li_raw": "十七里",
+          "metric_raw": "6.8km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-生門-開門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "生門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "開門"
+      },
+      "body": "生門を開門に加える：門を出て、六里（2.4km）、十六里（6.4km）進めば、乗\nり物に乗った貴人に う。または、蛇が豬を咬むのを見る。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "六里",
+          "metric_raw": "2.4km"
+        },
+        {
+          "li_raw": "十六里",
+          "metric_raw": "6.4km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-生門-休門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "生門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "休門"
+      },
+      "body": "生門を休門に加える：門を出て、一里（400m）、十一里（4.4km）進めば、皁衣\n（黒衣）の服を着たと人に う。また、お金を担いだ人に う。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "一里",
+          "metric_raw": "400m"
+        },
+        {
+          "li_raw": "十一里",
+          "metric_raw": "4.4km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-傷門-傷門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "傷門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "傷門"
+      },
+      "body": "傷門を傷門に加える：移動、遠行は死傷（死ぬことと傷つくこと）のため、凶。\n\n                           しっこく",
+      "fortune_mentions": [
+        "凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-傷門-杜門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "傷門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "杜門"
+      },
+      "body": "傷門を杜門に加える：移動、紛失すること、訴訟、桎梏（「桎」は足かせ、「梏」\nは手かせの意味。人の行動を厳しく制限して自由を束縛するもの）、あらゆる\n事に凶。",
+      "fortune_mentions": [
+        "凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-傷門-景門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "傷門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "景門"
+      },
+      "body": "傷門を景門に加える：文書と印信（官印、公印）によって、口舌（いざこざ）、\n悶着を起こす。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-傷門-死門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "傷門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "死門"
+      },
+      "body": "傷門を死門に加える：訴訟、印信（官印、公印）に凶。出行を大変忌む、占病\nで凶。\n\n                       ゆうしゅう",
+      "fortune_mentions": [
+        "凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-傷門-驚門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "傷門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "驚門"
+      },
+      "body": "傷に驚門を加える：父母は疾病で驚きおののき 憂 愁 （       み込んでいる）、仲人\nに不利で凶。",
+      "fortune_mentions": [
+        "凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-傷門-開門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "傷門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "開門"
+      },
+      "body": "傷門を開門に加える：貴人に会う。（貴人に会うこと）、開張（開店する、店開\nきする、創業する）、出て行ったまま道に迷って帰らないなど移動の事に不利。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-傷門-休門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "傷門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "休門"
+      },
+      "body": "傷門を休門に加える：男性の移動、依頼の葉書、財と名誉に不利。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-傷門-生門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "傷門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "生門"
+      },
+      "body": "傷門を生門に加える：家屋敷、栽培する事業にとって凶。\n\n人盤八門に天盤奇儀",
+      "fortune_mentions": [
+        "凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-傷門-戊",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "傷門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "戊"
+      },
+      "body": "傷に戊を加える：紛失して捕らえ難し。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-傷門-乙",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "傷門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "乙"
+      },
+      "body": "傷門を乙に加える：謀をすることができない。反して財産の損失、盗難を防ぐ。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-傷門-丙",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "傷門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "丙"
+      },
+      "body": "傷門を丙に加える：道路の欠損。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-傷門-丁",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "傷門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "丁"
+      },
+      "body": "傷門を丁に加える：音信は目的を達せず。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-傷門-己",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "傷門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "己"
+      },
+      "body": "傷に己を加える：散財、人は病になる。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-傷門-庚",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "傷門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "庚"
+      },
+      "body": "傷に庚を加える：刑罰によって牢獄に身を落とし凶。",
+      "fortune_mentions": [
+        "凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-傷門-辛",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "傷門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "辛"
+      },
+      "body": "傷門を辛に加える：夫妻の個人的な打算、私怨（個人的なうらみ）を主る。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-傷門-壬",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "傷門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "壬"
+      },
+      "body": "傷門を壬に加える：盗難の牽   （巻き添えにする）を主る。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-傷門-癸",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "傷門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "癸"
+      },
+      "body": "傷門を癸に加える：訴訟、ぬれぎぬを着せられる。理にかなっているが、明ら\nかにし難い。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-傷門-傷門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "傷門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "傷門"
+      },
+      "body": "傷門を傷門に加える：門を出て、三里（1.2km）、十三里（5.2km）進めば、二\n台の車が道を塞いで争っているのを見る。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "三里",
+          "metric_raw": "1.2km"
+        },
+        {
+          "li_raw": "十三里",
+          "metric_raw": "5.2km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-傷門-杜門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "傷門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "杜門"
+      },
+      "body": "傷門を杜門に加える：門を出て、四里（1.6km）、十四里（5.6km）進めば、公\n吏（公務員）の人、また、木工職人が木を切っている。または、婦人が子供を\n抱いているのを見る。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "四里",
+          "metric_raw": "1.6km"
+        },
+        {
+          "li_raw": "十四里",
+          "metric_raw": "5.6km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-傷門-景門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "傷門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "景門"
+      },
+      "body": "傷門を景門に加える：門を出て、九里（3.6km）、十八里（7.6km）進めば、色\n衣の人が乗り物に乗っているのに う。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "九里",
+          "metric_raw": "3.6km"
+        },
+        {
+          "li_raw": "十八里",
+          "metric_raw": "7.6km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-傷門-死門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "傷門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "死門"
+      },
+      "body": "傷門を死門に加える：門を出て、二里（800m）、十二里（4.8km）進めば、埋葬\nをしており、また、喪服を着て泣いている人に う。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "二里",
+          "metric_raw": "800m"
+        },
+        {
+          "li_raw": "十二里",
+          "metric_raw": "4.8km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-傷門-驚門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "傷門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "驚門"
+      },
+      "body": "傷門を驚門に加える：門を出て、七里（2.8km）、十七里（6.8km）進めば、人\n殴り合いのけんかをしているのを見る。家畜を追いかける人、婦人と少女が同\n行している人たちに う。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "七里",
+          "metric_raw": "2.8km"
+        },
+        {
+          "li_raw": "十七里",
+          "metric_raw": "6.8km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-傷門-開門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "傷門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "開門"
+      },
+      "body": "傷門を開門に加える：門を出て、六里（2.4km）、十六里（6.4km）進めば、壁\nの工事、安門、民間工芸、或いは二匹の豚が互いに咬むのを見る。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "六里",
+          "metric_raw": "2.4km"
+        },
+        {
+          "li_raw": "十六里",
+          "metric_raw": "6.4km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-傷門-休門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "傷門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "休門"
+      },
+      "body": "傷門を休門に加える：門を出て、一里（400m）、十一里（4.4km）進めば、老婦\nと少年が同行しているのに う。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "一里",
+          "metric_raw": "400m"
+        },
+        {
+          "li_raw": "十一里",
+          "metric_raw": "4.4km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-傷門-生門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "傷門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "生門"
+      },
+      "body": "傷門を生門に加える：門を出て、八里（3.2km）、十八里（7.2km）進めば、木\nを切っている人、或いは土寄せしている人に う。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "八里",
+          "metric_raw": "3.2km"
+        },
+        {
+          "li_raw": "十八里",
+          "metric_raw": "7.2km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-杜門-杜門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "杜門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "杜門"
+      },
+      "body": "杜門を杜門に加える：父母の疾病を主る。田宅（土地と家）を売り払う、凶。",
+      "fortune_mentions": [
+        "凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-杜門-景門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "杜門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "景門"
+      },
+      "body": "杜門を景門に加える：文書、印を主り。手紙は妨げられへだたりができる。男\nの子の疾病、遅疑（すぐに決断しないこと）するため、不利。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-杜門-死門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "杜門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "死門"
+      },
+      "body": "杜門を死門に加える：田宅（土地と家）、文書をなくすことを主る。訴訟によ\nって破財するのため、小凶。",
+      "fortune_mentions": [
+        "小凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-杜門-驚門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "杜門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "驚門"
+      },
+      "body": "杜門を驚門に加える：門戸（家族）内での心配、恐れ驚きおののくことがあり、\n訴訟を主る。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-杜門-開門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "杜門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "開門"
+      },
+      "body": "杜門を開門に加える：貴人に会う。（貴人に会うこと）、官長（官史、将校、士\n官）を主る。謀事（事を計画する、計略、謀計）は、先に自分の財が破れて、\n後に吉。",
+      "fortune_mentions": [
+        "吉"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-杜門-休門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "杜門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "休門"
+      },
+      "body": "杜門を休門に加える：求財は有益。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-杜門-生門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "杜門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "生門"
+      },
+      "body": "杜門を生門に加える：男の子、破財を主る。田宅（土地と家）、求財に不利。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-杜門-傷門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "杜門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "傷門"
+      },
+      "body": "杜門を傷門に加える：兄弟が互いに争う、破財で不利。\n\n人盤八門に天盤奇儀",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-杜門-戊",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "杜門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "戊"
+      },
+      "body": "杜門を戊に加える：謀事（事を計画する、計略、謀計）に宜しくない。混みあ\nっている場所、求財は得る。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-杜門-乙",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "杜門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "乙"
+      },
+      "body": "杜門を乙に加える：密かに男性、財物を求めるのに宜しい。後にはっきりとし\nない訴訟を招く。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-杜門-丙",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "杜門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "丙"
+      },
+      "body": "杜門を丙に加える：契約書、遺失（置き忘れたり落としたりして、金品を失う\nこと）を主る。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-杜門-丁",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "杜門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "丁"
+      },
+      "body": "杜門を丁に加える：男性は訴訟を主る。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-杜門-己",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "杜門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "己"
+      },
+      "body": "杜門を己に加える：私的な謀害（人を陥れようとたくらむ）、厄介事を引き起\nこすこと。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-杜門-庚",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "杜門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "庚"
+      },
+      "body": "杜門を庚に加える：女性は訴訟によって刑に遭う。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-杜門-辛",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "杜門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "辛"
+      },
+      "body": "杜門を辛に加える：人を殴打して傷つける、訴訟、男の子、凶。",
+      "fortune_mentions": [
+        "凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-杜門-壬",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "杜門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "壬"
+      },
+      "body": "杜門を壬に加える：奸悪な盗賊、凶。",
+      "fortune_mentions": [
+        "凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-杜門-癸",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "杜門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "癸"
+      },
+      "body": "杜門を癸に加える：あらゆる事が皆妨げられ、病人は食事を食べない。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-杜門-杜門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "杜門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "杜門"
+      },
+      "body": "杜門を杜門に加える：門を出て、四里（1.6km）、十四里（5.6km）進めば、緑\n衣を着た婦人が孫を引き れているのを見る。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "四里",
+          "metric_raw": "1.6km"
+        },
+        {
+          "li_raw": "十四里",
+          "metric_raw": "5.6km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-杜門-景門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "杜門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "景門"
+      },
+      "body": "杜門を景門に加える：門を出て、九里（3.6km）、十八里（7.6km）進めば、妊\n婦が色衣を着ている、或いは公吏（公務員）の人が赤馬に乗っているのを見\nる。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "九里",
+          "metric_raw": "3.6km"
+        },
+        {
+          "li_raw": "十八里",
+          "metric_raw": "7.6km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-杜門-死門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "杜門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "死門"
+      },
+      "body": "杜門を死門に加える：門を出て、二里（800m）、十二里（4.8km）進めば、喪服\nを着て泣いている人に う。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "二里",
+          "metric_raw": "800m"
+        },
+        {
+          "li_raw": "十二里",
+          "metric_raw": "4.8km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-杜門-驚門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "杜門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "驚門"
+      },
+      "body": "杜門を驚門に加える：門を出て、七里（2.8km）、十七里（6.8km）進めば、歌\n  ら   こ\n唱と鑼鼓（どら）の音がする。或いは人が争うのを見る。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "七里",
+          "metric_raw": "2.8km"
+        },
+        {
+          "li_raw": "十七里",
+          "metric_raw": "6.8km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-杜門-開門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "杜門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "開門"
+      },
+      "body": "杜門を開門に加える：門を出て、六里（2.4km）、十六里（6.4km）進めば、歌\n唱する人、または、犬が豚を咬むのを見る。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "六里",
+          "metric_raw": "2.4km"
+        },
+        {
+          "li_raw": "十六里",
+          "metric_raw": "6.4km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-杜門-休門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "杜門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "休門"
+      },
+      "body": "杜門を休門に加える：門を出て、一里（400m）、十一里（4.4km）進めば、戯曲\nを歌う人、或いは皁衣（黒衣）を着た婦人が孫を抱いているのを見る。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "一里",
+          "metric_raw": "400m"
+        },
+        {
+          "li_raw": "十一里",
+          "metric_raw": "4.4km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-杜門-生門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "杜門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "生門"
+      },
+      "body": "杜門を生門に加える：門を出て、八里（3.2km）、十八里（7.2km）進めば、お\n金を運ぶ人、或いは手に食物を持って歌う人を見る。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "八里",
+          "metric_raw": "3.2km"
+        },
+        {
+          "li_raw": "十八里",
+          "metric_raw": "7.2km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-杜門-傷門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "杜門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "傷門"
+      },
+      "body": "杜門を傷門に加える：門を出て、三里（1.2km）、十三里（5.2km）進めば、木\n工職人が木棍を持っているのを見る。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "三里",
+          "metric_raw": "1.2km"
+        },
+        {
+          "li_raw": "十三里",
+          "metric_raw": "5.2km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-景門-景門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "景門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "景門"
+      },
+      "body": "景門を景門に加える：上司への報告書を主り、未だ動かないのは事前に予見す\nることがあるという意味。家庭内に男の子の心配事と苦しみがある。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-景門-死門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "景門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "死門"
+      },
+      "body": "景門を死門に加える：刑務所に入ることを主り、田宅（土地と家）の事で、互\nいに争う。厄介事を引き起こす。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-景門-驚門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "景門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "驚門"
+      },
+      "body": "景門を驚門に加える：刑務所に入ることを主り、女の子供の疾病となるため、\n凶。",
+      "fortune_mentions": [
+        "凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-景門-開門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "景門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "開門"
+      },
+      "body": "景門を開門に加える：官人（公務員）の栄転を主り、吉。公印（官公署の印）\nや文書を求めると、更に吉。",
+      "fortune_mentions": [
+        "吉"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-景門-休門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "景門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "休門"
+      },
+      "body": "景門を休門に加える：文書遺失（置き忘れたり落としたりして、金品を失うこ\nと）を主る。係争は止まず。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-景門-生門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "景門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "生門"
+      },
+      "body": "景門を生門に加える：女性の出産で大きな喜びごと。更には求財に旺利がある\nことを主る。行人（使者、旅人）は皆吉。\n\n          いんせき",
+      "fortune_mentions": [
+        "吉"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-景門-傷門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "景門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "傷門"
+      },
+      "body": "景門を傷門に加える：姻戚 （婚姻によってできた、血のつながりのない親戚）、\n子供の口舌（いざこざ）を主る。\n\n                   はいざい",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-景門-杜門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "景門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "杜門"
+      },
+      "body": "景門を杜門に加える：文書の紛失、敗財（金銭の損失）の後に平（穏やかであ\nる）。\n\n人盤八門に天盤奇儀",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-景門-戊",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "景門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "戊"
+      },
+      "body": "景門を戊に加える：財産の訴訟、遠行に吉。",
+      "fortune_mentions": [
+        "吉"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-景門-乙",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "景門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "乙"
+      },
+      "body": "景門を乙に加える：訴訟に宜しくない。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-景門-丙",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "景門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "丙"
+      },
+      "body": "景に丙を加える：文書は切迫している、すぐに不利となることを主る。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-景門-丁",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "景門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "丁"
+      },
+      "body": "景門を丁に加える：文書、公文書が厄介事を引き起こすこと。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-景門-己",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "景門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "己"
+      },
+      "body": "景門を己に加える：訴訟の牽    （巻き添え）。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-景門-庚",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "景門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "庚"
+      },
+      "body": "景門を庚に加える：訴える人が、自分で自分を責めることになる。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-景門-辛",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "景門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "辛"
+      },
+      "body": "景門を辛に加える：女性の訴訟。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-景門-壬",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "景門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "壬"
+      },
+      "body": "景門を壬に加える：盗人の牽     （巻き添え）。\n\n          ぬ   ひ",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-景門-癸",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "景門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "癸"
+      },
+      "body": "景門を癸に加える：奴婢（下男や下女）が受刑する。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-景門-景門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "景門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "景門"
+      },
+      "body": "景門を景門に加える：門を出て、九里（3.6km）、十八里（7.6km）進めば、文\n書を抱えた人に う。更には火の光が驚恐となる。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "九里",
+          "metric_raw": "3.6km"
+        },
+        {
+          "li_raw": "十八里",
+          "metric_raw": "7.6km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-景門-死門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "景門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "死門"
+      },
+      "body": "景門を死門に加える：門を出て、二里（800m）、十二里（4.8km）進めば、喪服\nを着て泣いている人に う。色衣の人が乗り物に乗っている。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "二里",
+          "metric_raw": "800m"
+        },
+        {
+          "li_raw": "十二里",
+          "metric_raw": "4.8km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-景門-驚門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "景門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "驚門"
+      },
+      "body": "景門を驚門に加える：門を出て、七里（2.8km）、十七里（6.8km）進めば、殴\nり合うの争いをしている人たちに う。これは避けるのが宜しい。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "七里",
+          "metric_raw": "2.8km"
+        },
+        {
+          "li_raw": "十七里",
+          "metric_raw": "6.8km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-景門-開門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "景門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "開門"
+      },
+      "body": "景門を開門に加える：門を出て、六里（2.4km）、十六里（6.4km）進めば、人\nが隊列しているのを見る。官人（官職を授かった人）が乗り物に乗っているの\nに う。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "六里",
+          "metric_raw": "2.4km"
+        },
+        {
+          "li_raw": "十六里",
+          "metric_raw": "6.4km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-景門-休門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "景門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "休門"
+      },
+      "body": "景門を休門に加える：門を出て、一里（400m）、十一里（4.4km）進めば、泣い\nている女性、魚を売っている人に う。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "一里",
+          "metric_raw": "400m"
+        },
+        {
+          "li_raw": "十一里",
+          "metric_raw": "4.4km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-景門-生門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "景門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "生門"
+      },
+      "body": "景門を生門に加える：門を出て、八里（3.2km）、十八里（7.2km）進めば、子\n供が牛を追いかける、背に金銭の入った袋を背負った人に う。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "八里",
+          "metric_raw": "3.2km"
+        },
+        {
+          "li_raw": "十八里",
+          "metric_raw": "7.2km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-景門-傷門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "景門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "傷門"
+      },
+      "body": "景門を傷門に加える：門を出て、三里（1.2km）、十三里（5.2km）進めば、色\n衣を着た女性が乗り物に乗っているのを見る。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "三里",
+          "metric_raw": "1.2km"
+        },
+        {
+          "li_raw": "十三里",
+          "metric_raw": "5.2km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-景門-杜門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "景門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "杜門"
+      },
+      "body": "景門を杜門に加える：門を出て、四里（1.6km）、十四里（5.6km）進めば、老\n婦と若い婦人が黒衣を着た子供を れているのを見る。\n\n景門占身命：火災を主る。水命は大凶。金命は疾病。木命は中平。土命は富。\nもし、金水の年月日時に値すれば、不利である。",
+      "fortune_mentions": [
+        "大凶"
+      ],
+      "distances": [
+        {
+          "li_raw": "四里",
+          "metric_raw": "1.6km"
+        },
+        {
+          "li_raw": "十四里",
+          "metric_raw": "5.6km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-死門-死門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "死門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "死門"
+      },
+      "body": "死門を死門に加える：訴訟となることは停滞し、引き延ばされる。印信（官印、\n公印）で体面を保てず、凶。",
+      "fortune_mentions": [
+        "凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-死門-驚門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "死門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "驚門"
+      },
+      "body": "死門を驚門に加える：訴訟することができない、心配して恐れ（心の病などに）\n罹病するため、凶。",
+      "fortune_mentions": [
+        "凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-死門-開門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "死門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "開門"
+      },
+      "body": "死門を開門に加える：貴人に会う。（貴人に会うこと）、印信（官印、公印）や\n文書にかかわる事を求めて大利がある。",
+      "fortune_mentions": [
+        "大利"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-死門-休門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "死門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "休門"
+      },
+      "body": "死門を休門に加える：求財物の事は不吉、もし僧道に問う（教えを求める）た\nめの方位ならば吉。\n\n          そうじ",
+      "fortune_mentions": [
+        "不吉",
+        "吉"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-死門-生門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "死門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "生門"
+      },
+      "body": "死門を生門に加える：喪事（葬式、葬儀）を主る。求財は得られる、占病死に\nおいては蘇生する。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-死門-傷門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "死門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "傷門"
+      },
+      "body": "死門を傷門に加える：訴訟のために動いて、刑罰に遭うため、凶。",
+      "fortune_mentions": [
+        "凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-死門-杜門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "死門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "杜門"
+      },
+      "body": "死門を杜門に加える：破財、女性のリューマチ、腹が腫れる。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-死門-景門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "死門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "景門"
+      },
+      "body": "死門を景門に加える：契約書、印信（官印、公印）財産の事で官を見る。先に\n怒り後に後に喜びかあるため、凶とはならず。\n\n人盤八門に天盤奇儀",
+      "fortune_mentions": [
+        "凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-死門-戊",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "死門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "戊"
+      },
+      "body": "死門を戊に加える：財を偽    する。（フィッシング詐欺）",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-死門-乙",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "死門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "乙"
+      },
+      "body": "死門を乙に加える：求めることが達成できない。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-死門-丙",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "死門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "丙"
+      },
+      "body": "死門を丙に加える：メッセージを心配して恐れる。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-死門-丁",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "死門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "丁"
+      },
+      "body": "死門を丁に加える：男性の老人の疾病。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-死門-己",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "死門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "己"
+      },
+      "body": "死門を己に加える：病気と訴訟は牽    （互いに関   がある）してやまずに凶。",
+      "fortune_mentions": [
+        "凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-死門-庚",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "死門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "庚"
+      },
+      "body": "死門を庚に加える：女性の出産、母子ともに凶。",
+      "fortune_mentions": [
+        "凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-死門-辛",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "死門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "辛"
+      },
+      "body": "死門を辛に加える：盗賊によって紛失し、捕らえ難し。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-死門-壬",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "死門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "壬"
+      },
+      "body": "死門を壬に加える：訴える人は自ら訴え自ら白状する。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-死門-癸",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "死門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "癸"
+      },
+      "body": "死門を癸に加える：婦女の嫁娶（嫁入りと嫁取り）は凶。",
+      "fortune_mentions": [
+        "凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-死門-死門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "死門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "死門"
+      },
+      "body": "死門を死門に加える：門を出て、二里（800m）、十二里（4.8km）進めば、婦人\nが泣いているのを見る。凶である。",
+      "fortune_mentions": [
+        "凶"
+      ],
+      "distances": [
+        {
+          "li_raw": "二里",
+          "metric_raw": "800m"
+        },
+        {
+          "li_raw": "十二里",
+          "metric_raw": "4.8km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-死門-驚門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "死門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "驚門"
+      },
+      "body": "死門を驚門に加える：門を出て、七里（2.8km）、十七里（6.8km）進めば、葬\n儀で泣いている人を見る。或いは死んだ家畜の類を見る。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "七里",
+          "metric_raw": "2.8km"
+        },
+        {
+          "li_raw": "十七里",
+          "metric_raw": "6.8km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-死門-開門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "死門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "開門"
+      },
+      "body": "死門を開門に加える：門を出て、六里（2.4km）、十六里（6.4km）進めば、墓\nを開けている、哭泣している人、或いは家畜が戦って傷ついているのを見る。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "六里",
+          "metric_raw": "2.4km"
+        },
+        {
+          "li_raw": "十六里",
+          "metric_raw": "6.4km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-死門-休門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "死門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "休門"
+      },
+      "body": "死門を休門に加える：門を出て、一里（400m）、十一里（4.4km）進めば、青色\nの服（黒い服、粗末な服、緑色の服）を着た婦人が哭泣しているのを見る。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "一里",
+          "metric_raw": "400m"
+        },
+        {
+          "li_raw": "十一里",
+          "metric_raw": "4.4km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-死門-生門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "死門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "生門"
+      },
+      "body": "死門を生門に加える：門を出て、八里（3.2km）、十八里（7.2km）進めば、孝\n行息子が慟哭しているのを見る。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "八里",
+          "metric_raw": "3.2km"
+        },
+        {
+          "li_raw": "十八里",
+          "metric_raw": "7.2km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-死門-傷門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "死門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "傷門"
+      },
+      "body": "死門を傷門に加える：門を出て、三里（1.2km）、十三里（5.2km）進めば、\nかんかく\n棺椁（棺は内棺、椁は外棺の意）を運ぶ人を見る。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "三里",
+          "metric_raw": "1.2km"
+        },
+        {
+          "li_raw": "十三里",
+          "metric_raw": "5.2km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-死門-杜門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "死門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "杜門"
+      },
+      "body": "死門を杜門に加える：門を出て、四里（1.6km）、十四里（5.6km）進めば、埋\n葬また、紙扎、彩色の物を見る。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "四里",
+          "metric_raw": "1.6km"
+        },
+        {
+          "li_raw": "十四里",
+          "metric_raw": "5.6km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-死門-景門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "死門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "景門"
+      },
+      "body": "死門を景門に加える：門を出て、九里（3.6km）、十八里（7.6km）進めば、孝\n行息子が哭泣しているのを見る。退くのが吉で、進むのが凶である。",
+      "fortune_mentions": [
+        "吉",
+        "凶"
+      ],
+      "distances": [
+        {
+          "li_raw": "九里",
+          "metric_raw": "3.6km"
+        },
+        {
+          "li_raw": "十八里",
+          "metric_raw": "7.6km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-驚門-驚門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "驚門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "驚門"
+      },
+      "body": "驚門を驚門に加える：疾病、憂慮、驚きおののくことを主る。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-驚門-開門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "驚門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "開門"
+      },
+      "body": "驚門を開門に加える：訴訟による心配と恐れ、貴人に会う。（貴人に会うこと）\nのため、凶とはならず。",
+      "fortune_mentions": [
+        "凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-驚門-休門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "驚門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "休門"
+      },
+      "body": "驚門を休門に加える：求財の事、或いは口舌（いざこざ）事を主り、遅れて吉\nとなる。",
+      "fortune_mentions": [
+        "吉"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-驚門-生門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "驚門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "生門"
+      },
+      "body": "驚門を生門に加える：女性の出産を主る。或いは、求財の事、驚きおののくこ\nと、憂愁、しかし皆吉となる。",
+      "fortune_mentions": [
+        "吉"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-驚門-傷門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "驚門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "傷門"
+      },
+      "body": "驚門を傷門に加える：商議すること、謀害（人を陥れようとたくらむ）、情報\nが漏洩し訴訟を引き起こすため、凶。",
+      "fortune_mentions": [
+        "凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-驚門-杜門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "驚門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "杜門"
+      },
+      "body": "驚門を杜門に加える：紛失し破財することを主り、驚きおののくことがある。\n凶とはならず。",
+      "fortune_mentions": [
+        "凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-驚門-景門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "驚門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "景門"
+      },
+      "body": "驚門を景門に加える：訴訟してやまないことを主り、子供の疾病、凶。",
+      "fortune_mentions": [
+        "凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-驚門-死門",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "驚門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "死門"
+      },
+      "body": "驚門を死門に加える：家の中で怪異が生じて、いさかいが起きるため、凶。\n\n人盤八門に天盤奇儀",
+      "fortune_mentions": [
+        "凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-驚門-戊",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "驚門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "戊"
+      },
+      "body": "驚門を戊に加える：財を損すること、手紙は妨げられることを主る。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-驚門-乙",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "驚門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "乙"
+      },
+      "body": "驚門を乙に加える：他人の財物を奪い取る謀の失敗。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-驚門-丙",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "驚門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "丙"
+      },
+      "body": "驚門を丙に加える：文書、印信（官印、公印）を主り、驚きおののくこと。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-驚門-丁",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "驚門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "丁"
+      },
+      "body": "驚門を丁に加える：訴訟による牽   （巻き添えにする）を主る。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-驚門-己",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "驚門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "己"
+      },
+      "body": "驚門を己に加える：獰猛な犬が人を傷つける、争いとなる。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-驚門-庚",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "驚門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "庚"
+      },
+      "body": "驚門を庚に加える：道路の損傷を主り、盗賊に遭うため、凶。",
+      "fortune_mentions": [
+        "凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-驚門-辛",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "驚門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "辛"
+      },
+      "body": "驚門を辛に加える：女性は争いとなるため、凶。",
+      "fortune_mentions": [
+        "凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-驚門-壬",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "驚門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "壬"
+      },
+      "body": "驚門を壬に加える：訴訟、監獄に入ることを主り、病人には大凶。",
+      "fortune_mentions": [
+        "大凶"
+      ],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-static-驚門-癸",
+      "type": "hachimon",
+      "mode": "static",
+      "key": {
+        "human_gate": "驚門",
+        "counterpart_type": "heaven_stem",
+        "counterpart": "癸"
+      },
+      "body": "驚門を癸に加える：盗難に遭うことを主り、失物（落とし物）は見つけ難し。",
+      "fortune_mentions": [],
+      "distances": [],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-驚門-驚門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "驚門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "驚門"
+      },
+      "body": "驚門を驚門に加える：門を出て、七里（2.8km）、十七里（6.8km）進めば、二\n人の女性が騒がしくしているのを見る。傍にいる人は訴訟をしろと促してい\nる。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "七里",
+          "metric_raw": "2.8km"
+        },
+        {
+          "li_raw": "十七里",
+          "metric_raw": "6.8km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-驚門-開門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "驚門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "開門"
+      },
+      "body": "驚門を開門に加える：門を出て、六里（2.4km）、十六里（6.4km）進めば、官\n     そうしょう\n吏、役人が 爭 訟 （訴訟を起こして争うこと。また、その事件）が起きている\nのを見る。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "六里",
+          "metric_raw": "2.4km"
+        },
+        {
+          "li_raw": "十六里",
+          "metric_raw": "6.4km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-驚門-休門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "驚門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "休門"
+      },
+      "body": "驚門を休門に加える：門を出て、一里（400m）、十一里（4.4km）進めば、青色\nの服（黒い服、粗末な服、緑色の服）を着た婦人が論争をしている。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "一里",
+          "metric_raw": "400m"
+        },
+        {
+          "li_raw": "十一里",
+          "metric_raw": "4.4km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-驚門-生門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "驚門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "生門"
+      },
+      "body": "驚門を生門に加える：門を出て、八里（3.2km）、十八里（7.2km）進めば、女\n性が童子を引き、牛を追いかける。子供が手に食べ物を持っている。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "八里",
+          "metric_raw": "3.2km"
+        },
+        {
+          "li_raw": "十八里",
+          "metric_raw": "7.2km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-驚門-傷門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "驚門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "傷門"
+      },
+      "body": "驚門を傷門に加える：門を出て、三里（1.2km）、十三里（5.2km）進めば、男\n女が騒がしく、子供を叩いている。引き返すのが宜しい。もし、強行すれば、\n乗り物が壊れることを主り、凶である。",
+      "fortune_mentions": [
+        "凶"
+      ],
+      "distances": [
+        {
+          "li_raw": "三里",
+          "metric_raw": "1.2km"
+        },
+        {
+          "li_raw": "十三里",
+          "metric_raw": "5.2km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-驚門-杜門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "驚門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "杜門"
+      },
+      "body": "驚門を杜門に加える：門を出て、四里（1.6km）、十四里（5.6km）進めば、僧\n侶と道士が同行している。或いは男女が相談しているのを見る。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "四里",
+          "metric_raw": "1.6km"
+        },
+        {
+          "li_raw": "十四里",
+          "metric_raw": "5.6km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-驚門-景門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "驚門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "景門"
+      },
+      "body": "驚門を景門に加える：門を出て、九里（3.6km）、十八里（7.6km）進めば、色\n衣の婦人が論争をしている。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "九里",
+          "metric_raw": "3.6km"
+        },
+        {
+          "li_raw": "十八里",
+          "metric_raw": "7.6km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    },
+    {
+      "id": "hachimon-dynamic-驚門-死門",
+      "type": "hachimon",
+      "mode": "dynamic",
+      "key": {
+        "human_gate": "驚門",
+        "counterpart_type": "earth_gate",
+        "counterpart": "死門"
+      },
+      "body": "驚門を死門に加える：門を出て、二里（800m）、十二里（4.8km）進めば、女性\n               そうぼう\nが哭泣している。また、人が喪亡（なくなること）するのを主る。",
+      "fortune_mentions": [],
+      "distances": [
+        {
+          "li_raw": "二里",
+          "metric_raw": "800m"
+        },
+        {
+          "li_raw": "十二里",
+          "metric_raw": "4.8km"
+        }
+      ],
+      "source": {
+        "document": "剋應.pdf",
+        "printed_pages": "262-279"
+      }
+    }
+  ]
+}
