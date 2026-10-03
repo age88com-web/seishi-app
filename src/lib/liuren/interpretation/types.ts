@@ -411,3 +411,50 @@ export interface StateTransitions {
   /** 旺相休囚死の遷移。月支がなければ null */
   seasonalTransitions: readonly [SeasonalTransition, SeasonalTransition] | null;
 }
+
+// ==== 気勢状態の分類（Phase 3H）。中立の内部分類で、進気・退気・吉凶は判断しない ====
+
+/**
+ * 十二長生の段階の大分類（古典語ではなく内部構造名。ユーザー指定 2026-10-03）。
+ *   emerging … 胎・養 / growing … 長生・沐浴・冠帯・臨官 / peak … 帝旺 / declining … 衰・病
+ *   terminal … 死・墓 / renewingBoundary … 絶（『六壬指南』「死生互換之交」。終端と再生の境界として terminal と分ける）
+ */
+export type GrowthPhase = "emerging" | "growing" | "peak" | "declining" | "terminal" | "renewingBoundary";
+
+/** 三伝1伝の気勢の状態（十二長生と旺相休囚死は別の軸のまま並べる。合成・数値化しない） */
+export interface TransmissionQiState {
+  position: TransmissionPosition;
+  branch: Branch;
+  growthStage: GrowthStage;
+  growthPhase: GrowthPhase;
+  /** 月支がなければ null */
+  seasonalStrength: SeasonalStrength | null;
+  isVoid: boolean;
+}
+
+/**
+ * 段階の境目（隣り合う大分類への変化）。
+ *   peakToDeclining … peak→declining / decliningToTerminal … declining→terminal
+ *   terminalToRenewing … terminal→renewingBoundary / renewingToEmerging … renewingBoundary→emerging
+ *   emergingToGrowing … emerging→growing / growingToPeak … growing→peak
+ */
+export type GrowthPhaseBoundary =
+  | "peakToDeclining" | "decliningToTerminal" | "terminalToRenewing"
+  | "renewingToEmerging" | "emergingToGrowing" | "growingToPeak";
+
+/** 大分類の遷移（初→中、中→末） */
+export interface GrowthPhaseTransition {
+  fromPosition: "initial" | "middle";
+  toPosition: "middle" | "final";
+  from: GrowthPhase;
+  to: GrowthPhase;
+  changed: boolean;
+  /** 上の6つの境目のどれかに当たれば、その名前。当たらなければ null（同じ大分類・飛び越し・逆向き） */
+  boundary: GrowthPhaseBoundary | null;
+}
+
+/** 三伝の気勢の状態 */
+export interface QiStates {
+  qiStates: Triple<TransmissionQiState>;
+  phaseTransitions: readonly [GrowthPhaseTransition, GrowthPhaseTransition];
+}
