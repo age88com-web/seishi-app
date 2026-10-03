@@ -117,3 +117,75 @@ export interface ElementTomb {
   element: Element;
   branch: Branch;
 }
+
+// ==== 三伝の流れ（Phase 3B）。構造だけを表し、吉凶・占目別の意味は持たない ====
+
+/** 三伝の位置 */
+export type TransmissionPosition = "initial" | "middle" | "final";
+
+/** 初伝・中伝・末伝の3つ組 */
+export interface Triple<T> {
+  initial: T;
+  middle: T;
+  final: T;
+}
+
+/**
+ * 三伝の支の進退。
+ *   進茹 … 初→中→末が十二支順に一支ずつ進む（亥→子→丑 のように子を越えてもよい）
+ *   退茹 … 初→中→末が十二支逆順に一支ずつ退く
+ *   その他 … どちらでもない（退間などは未判定）
+ */
+export type MovementPattern = "進茹" | "退茹" | "その他";
+
+/**
+ * 同じ向きの生（または剋）が連続するか。
+ *   amongTransmissions … 初→中・中→末 がどちらも成り立つ
+ *   transmissionsToDayStem … 上に加えて 末→日干（三伝遞生日干など）
+ *   dayStemToTransmissions … 日干→初 に加えて 初→中・中→末（日干から三伝へ流れる）
+ *   transmissionsToDayBranch / dayBranchToTransmissions … 日干の代わりに日支
+ */
+export interface ChainFlow {
+  amongTransmissions: boolean;
+  transmissionsToDayStem: boolean;
+  dayStemToTransmissions: boolean;
+  transmissionsToDayBranch: boolean;
+  dayBranchToTransmissions: boolean;
+}
+
+/** 三伝の流れ（三伝が確定している場合） */
+export interface TransmissionFlow {
+  status: "determined";
+  /** 初伝・中伝・末伝の支 */
+  branches: Triple<Branch>;
+  movementPattern: MovementPattern;
+  /** 三伝どうしの関係（from が前の伝） */
+  branchRelations: { initialToMiddle: RelationFact; middleToFinal: RelationFact };
+  /** 各伝 → 日干 の関係（from が伝。日干→伝 の向きは generatedBy などで読む） */
+  relationsToDayStem: Triple<RelationFact>;
+  /** 各伝 → 日支 の関係（同上） */
+  relationsToDayBranch: Triple<RelationFact>;
+  /** 生の連続（generates の連鎖） */
+  generationFlow: ChainFlow;
+  /** 剋の連続（overcomes の連鎖） */
+  overcomingFlow: ChainFlow;
+  /**
+   * 各伝の五行の旺相休囚死。月支を渡さなかった場合は null（未評価）。
+   * changed … 初中末の状態がすべて同じでなければ true（数値化はしない）
+   */
+  seasonalStrength: (Triple<SeasonalStrength> & { monthBranch: Branch; rulingElement: Element; changed: boolean }) | null;
+  /** 日干の五行を基準にした各伝の十二長生（五行生墓法） */
+  growthStages: Triple<GrowthStage>;
+  /** 長生・帝旺・墓・絶が三伝のどの位置にあるか（なければ空配列） */
+  keyGrowthStages: Record<"長生" | "帝旺" | "墓" | "絶", readonly TransmissionPosition[]>;
+  /** 各伝が空亡か。positions は空亡の位置（初→中→末の順） */
+  voidStages: Triple<boolean> & { positions: readonly TransmissionPosition[] };
+}
+
+/** 三伝未確定（facts.transmissions = null）のときの結果 */
+export interface TransmissionFlowUndetermined {
+  status: "undetermined";
+  reason: string;
+}
+
+export type TransmissionFlowResult = TransmissionFlow | TransmissionFlowUndetermined;
