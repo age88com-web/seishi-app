@@ -268,3 +268,65 @@ export interface DayMarkers {
   xunDing: BranchMarker;
   yima: BranchMarker;
 }
+
+// ==== 古典共通パターン（Phase 3E）。成立の検出だけで、吉凶・象意は持たない ====
+// 起課エンジンの sanchuan.pattern（九宗法の格）とは別物。
+
+/** 三伝の配列で決まるパターンの向き（初→中→末が十二支順なら forward） */
+export type PatternDirection = "forward" | "reverse";
+
+/** 元胎（四孟 寅巳申亥 の三伝。『六壬粹言』）。順＝生胎、逆＝病胎 */
+export interface YuanTaiPattern {
+  kind: "yuanTai";
+  direction: PatternDirection;
+  classicalName: "生胎" | "病胎";
+  branches: Triple<Branch>;
+}
+
+/** 関隔（四仲 子卯午酉 の三伝） */
+export interface GuanGePattern {
+  kind: "guanGe";
+  direction: PatternDirection;
+  branches: Triple<Branch>;
+}
+
+/**
+ * 稼穡（三伝がすべて四季 辰戌丑未。『六壬大全』「三傳辰戌丑未」。重複支も含む）。
+ * subtype は『六壬粹言』の列挙配列かどうか:
+ *   cuiyanForward … 順行三課 辰未戌・未戌丑・戌丑辰
+ *   cuiyanReverse … 逆行二課 丑戌未・戌未辰
+ *   general       … それ以外の四季神三伝（例: 辰丑戌・戌辰戌）
+ */
+export interface JiaSePattern {
+  kind: "jiaSe";
+  subtype: "cuiyanForward" | "cuiyanReverse" | "general";
+  branches: Triple<Branch>;
+}
+
+/** 四絶（『六壬粹言』「乙禄卯加申、丁己禄午加亥、辛禄酉加寅、癸禄子加巳」。日禄が指定の地盤支に臨む） */
+export interface FourJuePattern {
+  kind: "fourJue";
+  dayStem: Stem;
+  /** 日禄の支（天盤） */
+  salaryBranch: Branch;
+  /** 日禄が臨む地盤支（＝日干五行の絶地） */
+  earthBranch: Branch;
+  /** 日禄の支が空亡か（別の事実として持つだけ） */
+  salaryIsVoid: boolean;
+}
+
+/** 墓覆干頭（陽干の日干上神＝一課上神が、日干五行の墓庫支） */
+export interface TombOverStemPattern {
+  kind: "tombOverStem";
+  dayStem: Stem;
+  /** 日干上神（一課の上神） */
+  upper: Branch;
+  lessonIndex: 1;
+}
+
+export type ClassicalPattern =
+  | YuanTaiPattern
+  | GuanGePattern
+  | JiaSePattern
+  | FourJuePattern
+  | TombOverStemPattern;
