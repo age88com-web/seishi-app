@@ -17,11 +17,13 @@
 //
 // 五行墓庫（elementTombOf）:
 //   三合局（SANHE）の「墓」: 木＝未、火＝戌、金＝丑、水＝辰。土は火に従い戌。
-//   十二長生の「墓」（GrowthStage）とは別の概念。入墓の判断はしない。
+//   十二長生の「墓」（GrowthStage）とは別の概念。入墓の吉凶は判断しない。
+//   isElementInTomb / elementInTombOf … ある五行がその墓庫の支に臨んでいるか（五行墓庫への入墓。Phase 3C）。
+//   十二長生の墓（growthStageOf(...) === "墓"）とは別の関数・別の結果型（kind: "elementInTomb"）。
 
 import { BRANCHES, BRANCH_ELEMENT, ELEMENT_CONTROLS, ELEMENT_GENERATES, SANHE, STEM_ELEMENT } from "../constants";
 import type { Stem, Branch, Element } from "../types";
-import type { ElementTomb, GrowthStage, SeasonalStrength } from "./types";
+import type { ElementInTombFact, ElementTomb, GrowthStage, SeasonalStrength } from "./types";
 
 /** 対象五行の旺相休囚死（ruling＝月令の五行） */
 export function seasonalStrengthOf(target: Element, ruling: Element): SeasonalStrength {
@@ -73,4 +75,15 @@ export function growthStageOfStem(stem: Stem, branch: Branch): GrowthStage {
 /** 五行の墓庫（三合局の墓。土は火に従う） */
 export function elementTombOf(element: Element): ElementTomb {
   return { kind: "elementTomb", element, branch: sanheOf(element)[2] };
+}
+
+/** その五行が、その五行墓庫の支に臨んでいるか（五行墓庫への入墓） */
+export function isElementInTomb(element: Element, branch: Branch): boolean {
+  return elementTombOf(element).branch === branch;
+}
+
+/** 五行墓庫への入墓の事実（十二長生の墓とは別の結果型） */
+export function elementInTombOf(element: Element, branch: Branch): ElementInTombFact {
+  const tombBranch = elementTombOf(element).branch;
+  return { kind: "elementInTomb", element, branch, tombBranch, inTomb: tombBranch === branch };
 }

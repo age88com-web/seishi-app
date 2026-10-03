@@ -161,8 +161,8 @@ rel("子", "亥", ["sameElement"]);
 rel("子", "午", ["overcomes", "clashes"]);   // 水剋火・子午冲
 rel("午", "子", ["overcomeBy", "clashes"]);
 rel("寅", "申", ["overcomeBy", "clashes", "punishedBy"]); // 金剋木・寅申冲・申刑寅（XING）
-rel("寅", "巳", ["generates", "punishes"]);  // 木生火・寅刑巳
-rel("巳", "寅", ["generatedBy", "punishedBy"]);
+rel("寅", "巳", ["generates", "punishes", "harms"]);  // 木生火・寅刑巳・寅巳害（Phase 3C）
+rel("巳", "寅", ["generatedBy", "punishedBy", "harms"]);
 rel("子", "卯", ["generates", "punishes", "punishedBy"]); // 子卯の互刑
 rel("辰", "辰", ["sameElement", "punishes", "punishedBy"]); // 自刑
 rel("子", "子", ["sameElement"]);            // 自刑でない同支

@@ -4,19 +4,22 @@
 //   三伝（初伝 → 中伝 → 末伝）を1つの流れとして、構造だけを取り出す（FLOW層）。
 //   吉凶・占目別の意味は付けない。旺衰・十二長生を数値化しない。
 //
-//   支の進退   … 十二支順に一支ずつ進む＝進茹、退く＝退茹（子と亥の境界は循環）。退間などは判定しない
+//   支の進退   … 十二支順に一支ずつ進む＝進茹、退く＝退茹、一位を隔てて退く（−2・−2）＝退間（子と亥の境界は循環）。
+//                進間は判定しない（+2・+2 は「その他」）
 //   五行の関係 … relationBetween（Phase 2）で 初→中・中→末、各伝→日干・各伝→日支
 //   生剋の連続 … 同じ向きの generates / overcomes の連鎖（三伝遞生日干、日干から三伝へ流れる など）
 //   旺相休囚死 … 月支（calendar.monthBranch）を渡したときだけ。月将は使わない
 //   十二長生   … 日干基準の五行生墓法（growthStageOfStem。陰干も逆行しない）
 //   空亡       … facts.transmissions の isVoid を位置ごとに並べるだけ
+//   三合       … 初中末の3支が完全な三合局か（threeHarmonyOf。欠一神・凑合は扱わない）
+//   六合・破・害は relationBetween の結果に含まれる（FLOW 側で別の表は持たない）
 //
 // 三伝未確定（facts.transmissions = null）では解析せず、status: "undetermined" を返す。
 
 import { BRANCHES } from "../constants";
 import { elementOf } from "../relations";
 import type { Branch, Stem } from "../types";
-import { relationBetween } from "./relations";
+import { relationBetween, threeHarmonyOf } from "./relations";
 import { growthStageOfStem, rulingElementOfMonth, seasonalStrengthOf } from "./states";
 import type {
   ChainFlow, InterpretationFacts, MovementPattern, RelationFact, StructuralRelation,
@@ -35,6 +38,7 @@ function movementOf(t: Triple<Branch>): MovementPattern {
   const s2 = step(t.middle, t.final);
   if (s1 === 1 && s2 === 1) return "進茹";
   if (s1 === 11 && s2 === 11) return "退茹";
+  if (s1 === 10 && s2 === 10) return "退間";
   return "その他";
 }
 
@@ -94,6 +98,7 @@ export function analyzeTransmissionFlow(facts: InterpretationFacts, monthBranch?
     overcomingFlow: chainOf("overcomes", branches, dayStem, dayBranch),
     seasonalStrength,
     growthStages,
+    threeHarmony: threeHarmonyOf([branches.initial, branches.middle, branches.final]),
     keyGrowthStages: {
       長生: positionsOf((p) => growthStages[p] === "長生"),
       帝旺: positionsOf((p) => growthStages[p] === "帝旺"),

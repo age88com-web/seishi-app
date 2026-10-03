@@ -162,7 +162,7 @@ for (const [label, v, pos] of VOIDS) {
 }
 
 // ---- 720課 ----
-const counts: Record<string, number> = { 進茹: 0, 退茹: 0, その他: 0 };
+const counts: Record<string, number> = { 進茹: 0, 退茹: 0, 退間: 0, その他: 0 };
 for (let i = 0; i < 60; i++) {
   for (let o = 0; o < 12; o++) {
     const chart = calculateLiuren({ dayStem: STEMS[i % 10], dayBranch: BRANCHES[i % 12], divinationBranch: "子", monthGeneral: BRANCHES[o] });
@@ -195,7 +195,7 @@ for (let i = 0; i < 60; i++) {
 }
 check("720課に進茹がある", counts.進茹 > 0, JSON.stringify(counts));
 check("720課に退茹がある", counts.退茹 > 0, JSON.stringify(counts));
-check("720課の合計", counts.進茹 + counts.退茹 + counts.その他 === 720, JSON.stringify(counts));
+check("720課の合計", counts.進茹 + counts.退茹 + counts.退間 + counts.その他 === 720, JSON.stringify(counts));
 
 console.log(`720課の進退: ${JSON.stringify(counts)}`);
 console.log(`PASS ${pass} / FAIL ${failures.length}`);

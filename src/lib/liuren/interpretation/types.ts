@@ -81,13 +81,18 @@ export interface InterpretationFacts {
  *   clashes     … 冲（支どうしのみ）
  *   punishes    … from が to を刑す（支どうしのみ。講座 p32・p52 の刑表 XING）
  *   punishedBy  … to が from を刑す（同上）
+ *   combines    … 六合（支どうしのみ。向きなし）
+ *   breaks      … 破（支どうしのみ。向きなし）
+ *   harms       … 害（支どうしのみ。向きなし）
+ * 1組の支に複数の関係が同時に成り立つ（例: 寅亥＝combines＋breaks の破合）。
  */
 export type StructuralRelation =
   | "generates" | "generatedBy"
   | "overcomes" | "overcomeBy"
   | "sameElement"
   | "clashes"
-  | "punishes" | "punishedBy";
+  | "punishes" | "punishedBy"
+  | "combines" | "breaks" | "harms";
 
 export interface RelationFact {
   from: Stem | Branch;
@@ -134,9 +139,10 @@ export interface Triple<T> {
  * 三伝の支の進退。
  *   進茹 … 初→中→末が十二支順に一支ずつ進む（亥→子→丑 のように子を越えてもよい）
  *   退茹 … 初→中→末が十二支逆順に一支ずつ退く
- *   その他 … どちらでもない（退間などは未判定）
+ *   退間 … 初→中→末が一位を隔てて逆行して退く（−2・−2。例: 亥→酉→未、寅→子→戌）
+ *   その他 … どれでもない（進間は未判定）
  */
-export type MovementPattern = "進茹" | "退茹" | "その他";
+export type MovementPattern = "進茹" | "退茹" | "退間" | "その他";
 
 /**
  * 同じ向きの生（または剋）が連続するか。
@@ -176,6 +182,8 @@ export interface TransmissionFlow {
   seasonalStrength: (Triple<SeasonalStrength> & { monthBranch: Branch; rulingElement: Element; changed: boolean }) | null;
   /** 日干の五行を基準にした各伝の十二長生（五行生墓法） */
   growthStages: Triple<GrowthStage>;
+  /** 初中末の3支が完全な三合局か（順序は問わない。2支だけの場合は complete: false） */
+  threeHarmony: ThreeHarmony;
   /** 長生・帝旺・墓・絶が三伝のどの位置にあるか（なければ空配列） */
   keyGrowthStages: Record<"長生" | "帝旺" | "墓" | "絶", readonly TransmissionPosition[]>;
   /** 各伝が空亡か。positions は空亡の位置（初→中→末の順） */
@@ -189,3 +197,23 @@ export interface TransmissionFlowUndetermined {
 }
 
 export type TransmissionFlowResult = TransmissionFlow | TransmissionFlowUndetermined;
+
+// ==== 三合・入墓（Phase 3C）。構造だけを表し、吉凶の意味は持たない ====
+
+/** 3支が完全な三合局を構成するか（講座 p54。欠一神・凑合は扱わない） */
+export type ThreeHarmony =
+  | { complete: true; element: Element; branches: readonly [Branch, Branch, Branch] }
+  | { complete: false };
+
+/**
+ * ある五行が、その五行墓庫の支に臨んでいるか（五行墓庫への入墓）。
+ * 十二長生の「墓」（GrowthStage・growthStageOf）とは別の判定で、kind で区別する。入墓の吉凶は判断しない。
+ */
+export interface ElementInTombFact {
+  kind: "elementInTomb";
+  element: Element;
+  branch: Branch;
+  /** その五行の墓庫の支（elementTombOf） */
+  tombBranch: Branch;
+  inTomb: boolean;
+}
