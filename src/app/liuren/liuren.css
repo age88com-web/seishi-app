@@ -1,0 +1,227 @@
+/* src/app/liuren/liuren.css
+ * 六壬神課 課式ページ。奇門遁甲・擇日と同じモノクロ基調。
+ * PC は左カラム（上＝三伝、下＝四課）＋右カラム（天地盤）の2段組。
+ * 狭い画面では 三伝 → 四課 → 天地盤 の順に縦に積む（横スクロールなし）。 */
+
+.lr-page {
+  font-family: system-ui, "Hiragino Sans", sans-serif;
+  padding: 16px 20px;
+  color: #222;
+  max-width: 1040px;
+  box-sizing: border-box;
+}
+.lr-head { display: flex; align-items: baseline; gap: 14px; margin: 0 0 12px; }
+.lr-h1 { font-size: 18px; margin: 0; }
+.lr-print-btn {
+  font-size: 12px; padding: 2px 10px; border: 1px solid #bbb; border-radius: 4px;
+  background: #fff; color: #555; cursor: pointer;
+}
+.lr-print-btn:hover { border-color: #888; color: #222; }
+.lr-print-title { display: none; }
+.lr-h2 {
+  font-size: 13px; margin: 0 0 6px; padding-bottom: 3px; border-bottom: 1px solid #ccc;
+  display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+}
+.lr-h2-method { font-weight: 400; color: #555; font-size: 12px; }
+.lr-section { margin-bottom: 14px; }
+.lr-note { font-size: 11px; color: #666; margin: 4px 0 10px; line-height: 1.55; }
+.lr-muted { color: #777; font-size: 11px; }
+.lr-warn { font-size: 12px; color: #8a6d00; background: #fdf4e0; border: 1px solid #e6d3a3; padding: 4px 8px; border-radius: 4px; margin: 6px 0; }
+.lr-error { background: #fdecec; border: 1px solid #e0b4b4; color: #a33; padding: 6px 10px; border-radius: 4px; font-size: 13px; }
+
+/* ---- 入力 ---- */
+.lr-mode { display: flex; gap: 6px; margin-bottom: 10px; flex-wrap: wrap; }
+.lr-tab { font-size: 12px; padding: 4px 10px; border: 1px solid #ccc; border-radius: 4px; background: #fff; color: #555; cursor: pointer; }
+.lr-tab.is-active { color: #111; font-weight: 700; background: #ececec; border-color: #111; }
+.lr-inputs { display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-end; margin-bottom: 4px; }
+.lr-field { display: flex; flex-direction: column; font-size: 11px; color: #555; gap: 3px; }
+.lr-input { font-size: 13px; padding: 3px 6px; border: 1px solid #bbb; border-radius: 4px; background: #fff; }
+.lr-override { font-size: 12px; color: #444; }
+.lr-override summary { cursor: pointer; margin-bottom: 4px; }
+
+/* ---- 基本情報 ---- */
+/* 項目名｜値｜項目名｜値 の小さな表。項目の div は display: contents でグリッドのセルに展開する */
+.lr-info {
+  display: grid; grid-template-columns: repeat(2, max-content minmax(0, max-content));
+  width: max-content; max-width: 100%; margin: 0 0 14px;
+  border-top: 1px solid #d4d4d4; border-left: 1px solid #d4d4d4;
+  font-size: 12px; line-height: 1.4;
+}
+.lr-info-row { display: contents; }
+.lr-info-row dt, .lr-info-row dd {
+  margin: 0; padding: 2px 8px;
+  border-right: 1px solid #d4d4d4; border-bottom: 1px solid #d4d4d4;
+}
+.lr-info-row dt { background: #f6f6f6; color: #666; white-space: nowrap; }
+.lr-info-row dd { color: #222; }
+/* 項目数が奇数のとき、最後の行の右半分を空欄で埋める */
+.lr-info::after { content: ""; grid-column: span 2; border-right: 1px solid #d4d4d4; border-bottom: 1px solid #d4d4d4; }
+.lr-info:has(> .lr-info-row:nth-child(even):last-child)::after { display: none; }
+
+/* ---- 2段組（左＝三伝・四課、右＝天地盤） ---- */
+.lr-main { display: flex; gap: 24px; align-items: flex-start; }
+.lr-left { flex: 0 1 auto; min-width: 0; }
+.lr-right { flex: 0 0 auto; }
+
+/* ---- 天地盤 ---- */
+.lr-plate {
+  display: grid;
+  grid-template-columns: repeat(4, 66px);
+  grid-template-rows: repeat(4, 66px);
+  border: 2px solid #333;
+  width: max-content;
+}
+.lr-cell {
+  border: 1px solid #333;
+  display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+  padding: 3px 2px;
+  box-sizing: border-box;
+  min-width: 0;
+}
+.lr-cell.is-noble { box-shadow: inset 0 0 0 2px #000; background: #f2f2f2; }
+.lr-cell-general { font-size: 11px; color: #333; white-space: nowrap; }
+.lr-cell-heaven { font-size: 19px; font-weight: 700; line-height: 1; }
+.lr-cell-earth { font-size: 10px; color: #777; }
+.lr-void-mark { font-size: 10px; font-weight: 400; margin-left: 1px; vertical-align: super; }
+.lr-plate-center {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+  font-size: 12px; text-align: center; padding: 4px;
+}
+
+/* ---- 表（三伝・四課・涉害） ---- */
+.lr-table { border-collapse: collapse; font-size: 13px; }
+.lr-table th, .lr-table td { border: 1px solid #999; padding: 4px 10px; text-align: center; }
+/* 四課: 補助表示（干上神・支上神・寄宮）の有無で課名や支・干の位置がずれないよう上揃え */
+.lr-lessons th, .lr-lessons td { vertical-align: top; }
+.lr-lessons tbody th { vertical-align: middle; }
+.lr-table thead th { background: #f3f3f3; font-weight: 600; font-size: 12px; }
+.lr-table tbody th { background: #f8f8f8; font-weight: 500; font-size: 12px; }
+.lr-th-sub { display: block; font-size: 10px; color: #777; font-weight: 400; }
+.lr-lessons .lr-upper, .lr-transmissions .lr-branch { font-size: 17px; font-weight: 700; }
+.lr-lessons .lr-lower { font-size: 15px; }
+.lr-general { font-size: 12px; }
+.lr-shehai { font-size: 12px; margin-top: 6px; }
+.lr-shehai td, .lr-shehai th { padding: 2px 6px; }
+.lr-scroll { max-width: 100%; overflow-x: auto; }
+
+/* ---- 課体 ---- */
+.lr-method { font-size: 14px; font-weight: 700; color: #111; }
+.lr-trace { font-size: 12px; }
+.lr-trace summary { cursor: pointer; color: #444; }
+.lr-trace ol { margin: 6px 0; padding-left: 1.4em; line-height: 1.6; }
+.lr-trace-stage { display: inline-block; font-weight: 600; margin-right: 6px; }
+
+/* ---- PC（761px 以上）: 左右の余白と、三伝・四課・天地盤を約1.2倍 ----
+ * transform は使わず、セル・文字・余白の実寸を大きくする。基本情報の表は対象外。 */
+@media screen and (min-width: 761px) {
+  .lr-page {
+    padding-left: clamp(24px, 5vw, 80px);
+    padding-right: clamp(16px, 3vw, 48px);
+    max-width: 1240px;
+  }
+  .lr-main { gap: 32px; }
+  .lr-main .lr-h2 { font-size: 15px; margin-bottom: 7px; }
+  .lr-main .lr-h2-method { font-size: 14px; }
+  .lr-main .lr-method { font-size: 17px; }
+  .lr-main .lr-table { font-size: 15px; }
+  .lr-main .lr-table th, .lr-main .lr-table td { padding: 5px 12px; }
+  .lr-main .lr-table thead th, .lr-main .lr-table tbody th { font-size: 14px; }
+  .lr-main .lr-th-sub { font-size: 12px; }
+  .lr-main .lr-lessons .lr-upper, .lr-main .lr-transmissions .lr-branch { font-size: 20px; }
+  .lr-main .lr-lessons .lr-lower { font-size: 18px; }
+  .lr-main .lr-general { font-size: 14px; }
+  .lr-plate { grid-template-columns: repeat(4, 80px); grid-template-rows: repeat(4, 80px); }
+  .lr-cell { padding: 4px 2px; }
+  .lr-cell-general { font-size: 13px; }
+  .lr-cell-heaven { font-size: 23px; }
+  .lr-cell-earth { font-size: 12px; }
+  .lr-void-mark { font-size: 12px; }
+  .lr-plate-center { font-size: 14px; gap: 4px; }
+  .lr-plate-center .lr-muted { font-size: 13px; }
+  .lr-main .lr-note { font-size: 12px; }
+}
+
+/* ---- 狭い画面（1カラム: 三伝 → 四課 → 天地盤） ---- */
+@media screen and (max-width: 760px) {
+  .lr-page { padding: 10px 12px; }
+  .lr-main { flex-direction: column; gap: 0; }
+  .lr-left, .lr-right { width: 100%; }
+  .lr-info { grid-template-columns: max-content minmax(0, 1fr); width: 100%; }
+  .lr-info::after { display: none; }
+  .lr-table { width: 100%; }
+  .lr-table th, .lr-table td { padding: 4px 4px; }
+  .lr-lessons .lr-upper, .lr-transmissions .lr-branch { font-size: 16px; }
+  .lr-plate { grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: repeat(4, auto); width: 100%; max-width: 320px; }
+  .lr-cell { aspect-ratio: 1 / 1; }
+  .lr-cell-heaven { font-size: 17px; }
+  .lr-cell-general { font-size: 10px; }
+}
+
+/* ---- 印刷（A4 縦・1ページ） ----
+ * 画面用のレイアウト（PC の左右余白・約1.2倍・固定幅）から切り離す。
+ * 余白は全ページ共通の @page（上下左右22mm）に持たせる。Next.js はページ遷移後も
+ * 各ページのCSSを共有するため、@page を他ページと違う値にすると余白が混ざる。
+ * 課式全体は幅 166mm（A4 から左右22mmを除いた本文幅）で中央に置く。内部は割合で分ける。
+ *   上: タイトル「六壬神課」・基本情報 / 下: 左（三伝・四課）40% ＋ 間隔 5.4mm ＋ 右（天地盤）残り
+ * 紙で普通に読める大きさにし、A4 の上半分〜3分の2 程度を使う。
+ * 入力・ボタン・ナビ（AppSwitcher は自身の CSS で非表示）は出さない。
+ * 背景色に頼らず、罫線と文字だけで白黒でも読めるようにする。 */
+@media print {
+  @page { size: A4 portrait; margin: 22mm; }
+  html, body { margin: 0 !important; padding: 0 !important; width: auto !important; min-width: 0 !important; }
+  .lr-page, .lr-page *, .lr-page *::before, .lr-page *::after { box-sizing: border-box; }
+  .lr-page {
+    width: auto !important; max-width: 166mm !important; min-width: 0 !important;
+    margin: 0 auto !important; padding: 0 !important; transform: none !important;
+    color: #000;
+  }
+  .lr-head, .lr-mode, .lr-inputs, .lr-override, .lr-print-btn, .lr-error, .lr-warn { display: none !important; }
+  .lr-print-title { display: block; font-size: 13.5pt; font-weight: 700; margin: 0 0 3.6mm; }
+  .lr-chart { width: 100%; max-width: 100%; break-inside: avoid; page-break-inside: avoid; }
+
+  /* 基本情報: 項目名｜値｜項目名｜値（印刷幅いっぱい） */
+  .lr-info {
+    width: 100%; max-width: 100%; margin: 0 0 6.3mm;
+    grid-template-columns: max-content minmax(0, 1fr) max-content minmax(0, 1fr);
+    font-size: 9.9pt; line-height: 1.35; border-color: #000;
+  }
+  .lr-info::after { display: block; }
+  .lr-info-row dt, .lr-info-row dd, .lr-info::after { border-color: #000; padding: 1.2mm 2.7mm; }
+  .lr-info-row dt { background: none; color: #000; font-weight: 600; }
+  .lr-info-row dd { overflow-wrap: anywhere; }
+
+  /* 課式: 左 40% ＋ 間隔 5.4mm ＋ 右 残り（合計は必ず 100%） */
+  .lr-main {
+    display: grid !important; grid-template-columns: 40% minmax(0, 1fr); column-gap: 5.4mm;
+    width: 100%; max-width: 100%; align-items: start; break-inside: avoid;
+  }
+  .lr-left, .lr-right { width: auto; min-width: 0; max-width: 100%; margin: 0; padding: 0; }
+  .lr-section { margin-bottom: 6.3mm; }
+  .lr-h2 { font-size: 11.3pt; color: #000; border-bottom: 0.3mm solid #000; margin-bottom: 2.3mm; padding-bottom: 0.9mm; }
+  .lr-h2-method { font-size: 10.3pt; color: #000; }
+  .lr-method { font-size: 11.7pt; }
+
+  .lr-table { width: 100%; table-layout: fixed; font-size: 11.2pt; }
+  .lr-table th, .lr-table td { border: 0.3mm solid #000; padding: 2mm 0.5mm; }
+  .lr-table thead th, .lr-table tbody th { background: none; font-size: 9.9pt; }
+  .lr-th-sub { color: #000; font-size: 7.7pt; }
+  .lr-lessons .lr-upper, .lr-transmissions .lr-branch { font-size: 16.2pt; }
+  .lr-lessons .lr-lower { font-size: 14.4pt; }
+  .lr-general { font-size: 10.8pt; }
+
+  /* 天地盤: 右カラムいっぱい（約 94mm 四方） */
+  .lr-plate {
+    width: 100%; max-width: 100%;
+    grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: repeat(4, auto);
+    border: 0.7mm solid #000;
+  }
+  .lr-cell { aspect-ratio: 1 / 1; border: 0.3mm solid #000; padding: 1.4mm 0.5mm; min-width: 0; }
+  .lr-cell.is-noble { background: none; box-shadow: none; outline: 0.8mm solid #000; outline-offset: -1.2mm; }
+  .lr-cell-general { font-size: 9.9pt; color: #000; }
+  .lr-cell-heaven { font-size: 21.6pt; }
+  .lr-cell-earth { font-size: 8.1pt; color: #000; }
+  .lr-void-mark { font-size: 9pt; }
+  .lr-plate-center { font-size: 10.8pt; gap: 1.4mm; }
+  .lr-muted { color: #000; font-size: 9.5pt; }
+  .lr-note { font-size: 9pt; color: #000; margin: 1.8mm 0 0; }
+}
