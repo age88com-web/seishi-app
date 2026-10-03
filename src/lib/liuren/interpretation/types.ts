@@ -376,3 +376,38 @@ export interface PartialHarmonyPattern {
   transmissionPositions: readonly { branch: Branch; positions: readonly TransmissionPosition[] }[];
   missingBranchOccurrences: MissingBranchOccurrences;
 }
+
+// ==== 気勢の遷移（Phase 3G）。状態の並びと変化だけを表し、進気・退気・吉凶は判断しない ====
+// 支の移動（movementPattern）・五行の生剋（generationFlow など）とは別の FLOW。
+
+/** 十二長生の遷移（初→中、中→末） */
+export interface GrowthTransition {
+  fromPosition: "initial" | "middle";
+  toPosition: "middle" | "final";
+  from: GrowthStage;
+  to: GrowthStage;
+  /** 十二長生の循環（長生→沐浴→…→養→長生）を順に進んだ段数（0〜11。同じ段階なら 0） */
+  forwardSteps: number;
+  /** 逆に戻った段数（0〜11。同じ段階なら 0）。forwardSteps と合わせて両方持ち、近い方に潰さない */
+  backwardSteps: number;
+}
+
+/** 旺相休囚死の遷移（初→中、中→末）。段数・数値は持たない */
+export interface SeasonalTransition {
+  fromPosition: "initial" | "middle";
+  toPosition: "middle" | "final";
+  from: SeasonalStrength;
+  to: SeasonalStrength;
+  changed: boolean;
+}
+
+/** 三伝の気勢の遷移 */
+export interface StateTransitions {
+  /** 日干の五行を基準にした十二長生の並び（TransmissionFlow.growthStages） */
+  growthSequence: Triple<GrowthStage>;
+  growthTransitions: readonly [GrowthTransition, GrowthTransition];
+  /** 旺相休囚死の並び。月支がなければ null */
+  seasonalSequence: Triple<SeasonalStrength> | null;
+  /** 旺相休囚死の遷移。月支がなければ null */
+  seasonalTransitions: readonly [SeasonalTransition, SeasonalTransition] | null;
+}
