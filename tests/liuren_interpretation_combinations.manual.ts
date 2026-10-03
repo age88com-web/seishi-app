@@ -6,7 +6,7 @@
 //   1. 六合・破・害: 6組ずつ・正逆両方向・それ以外の支の組では成り立たない・干には付かない
 //   2. 複合: 寅亥・巳申＝combines＋breaks（巳申は刑・剋も）。複数の関係が失われない
 //   3. 三合: 4局 × 6通りの並び・2支だけ・重複・別局の混在
-//   4. 退間: −2・−2（12通りの起点）。+2・+2（進間）は「その他」。進茹・退茹は従来どおり
+//   4. 退間: −2・−2（12通りの起点）。+2・+2 は進間（Phase 3D）。進茹・退茹は従来どおり
 //   5. 五行墓庫への入墓: 5五行 × 12支。十二長生の墓とは別の関数・別の結果型
 //   6. 三伝FLOW: threeHarmony・初→中 の relationBetween に六合・破・害が含まれる
 //   7. 720課の監査: 進茹・退茹・退間・その他・完全三合局の件数（起課結果は書き換えない）
@@ -105,7 +105,7 @@ for (const b of ["亥酉未", "酉未巳", "未巳卯", "巳卯丑", "卯丑亥"
 }
 for (const b of ["子寅辰", "亥丑卯", "戌子寅"]) {
   const got = flowOf(b).movementPattern;
-  check(`+2・+2（進間は未判定）${b}＝その他`, got === "その他", got);
+  check(`+2・+2 ${b}＝進間（Phase 3D）`, got === "進間", got);
 }
 for (const b of ["亥酉申", "亥戌申", "子戌酉"]) {
   const got = flowOf(b).movementPattern;
@@ -144,7 +144,7 @@ check("入墓の結果はオブジェクト・十二長生の墓は文字列（�
 }
 
 // ---- 7. 720課の監査 ----
-const moves: Record<string, number> = { 進茹: 0, 退茹: 0, 退間: 0, その他: 0 };
+const moves: Record<string, number> = { 進茹: 0, 退茹: 0, 進間: 0, 退間: 0, その他: 0 };
 const harmony: Record<string, number> = { 木: 0, 火: 0, 金: 0, 水: 0 };
 let complete = 0;
 for (let i = 0; i < 60; i++) {
@@ -164,7 +164,7 @@ for (let i = 0; i < 60; i++) {
     check(`${STEMS[i % 10]}${BRANCHES[i % 12]}+${o} 不変`, JSON.stringify(chart) === before);
   }
 }
-check("720課 進退の合計", moves.進茹 + moves.退茹 + moves.退間 + moves.その他 === 720, JSON.stringify(moves));
+check("720課 進退の合計", moves.進茹 + moves.退茹 + moves.進間 + moves.退間 + moves.その他 === 720, JSON.stringify(moves));
 
 console.log(`720課 進退: ${JSON.stringify(moves)}`);
 console.log(`720課 完全三合局: ${complete}（${JSON.stringify(harmony)}）`);

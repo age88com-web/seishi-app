@@ -139,10 +139,11 @@ export interface Triple<T> {
  * 三伝の支の進退。
  *   進茹 … 初→中→末が十二支順に一支ずつ進む（亥→子→丑 のように子を越えてもよい）
  *   退茹 … 初→中→末が十二支逆順に一支ずつ退く
+ *   進間 … 初→中→末が一位を隔てて十二支順に進む（+2・+2。例: 子→寅→辰、亥→丑→卯）
  *   退間 … 初→中→末が一位を隔てて逆行して退く（−2・−2。例: 亥→酉→未、寅→子→戌）
- *   その他 … どれでもない（進間は未判定）
+ *   その他 … どれでもない（進間各配列の個別名は持たない）
  */
-export type MovementPattern = "進茹" | "退茹" | "退間" | "その他";
+export type MovementPattern = "進茹" | "退茹" | "進間" | "退間" | "その他";
 
 /**
  * 同じ向きの生（または剋）が連続するか。
@@ -216,4 +217,54 @@ export interface ElementInTombFact {
   /** その五行の墓庫の支（elementTombOf） */
   tombBranch: Branch;
   inTomb: boolean;
+}
+
+// ==== 盤上の標識となる支（Phase 3D）。どこに現れるかだけを表し、吉凶・象意は持たない ====
+
+/**
+ * 標識の種類。
+ *   dayVirtue … 日徳（日干から）
+ *   daySalary … 日禄（日干から）
+ *   xunDing   … 旬丁（日干支の旬で丁が遁する支）
+ *   yima      … 驛馬（basis の支の三合局の長生を冲する支）
+ */
+export type MarkerKind = "dayVirtue" | "daySalary" | "xunDing" | "yima";
+
+/**
+ * 標識を求めた基準。今回は日干・日干支（旬）・日支のみ。
+ * 驛馬は将来、年命・太歳・月建などを基準にしたものも並べられるように基準を持たせる。
+ */
+export type MarkerBasis = "dayStem" | "dayXun" | "dayBranch";
+
+/** 四課上神への出現（isVoid はその上神が空亡か） */
+export interface LessonOccurrence {
+  index: 1 | 2 | 3 | 4;
+  isVoid: boolean;
+}
+
+/** 三伝への出現（isVoid はその伝が空亡か。facts.transmissions の値） */
+export interface TransmissionOccurrence {
+  position: TransmissionPosition;
+  isVoid: boolean;
+}
+
+/** 特定の支と、その支が盤のどこに現れるか */
+export interface BranchMarker {
+  kind: MarkerKind;
+  basis: MarkerBasis;
+  branch: Branch;
+  /** 標識の支そのものが空亡か（facts.xun.voidBranches） */
+  isVoid: boolean;
+  /** その支を上神とする四課（重複課はすべて） */
+  lessons: readonly LessonOccurrence[];
+  /** その支である三伝の位置。三伝未確定なら null */
+  transmissions: readonly TransmissionOccurrence[] | null;
+}
+
+/** 日干支から求める標識一式（驛馬は日支基準の日馬） */
+export interface DayMarkers {
+  dayVirtue: BranchMarker;
+  daySalary: BranchMarker;
+  xunDing: BranchMarker;
+  yima: BranchMarker;
 }

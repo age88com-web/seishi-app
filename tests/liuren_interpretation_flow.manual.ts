@@ -50,7 +50,7 @@ function flowOf(day: string, branches: string, voids?: [boolean, boolean, boolea
 const MOVES: [string, TransmissionFlow["movementPattern"]][] = [
   ["寅卯辰", "進茹"], ["亥子丑", "進茹"], ["戌亥子", "進茹"],
   ["辰卯寅", "退茹"], ["丑子亥", "退茹"], ["子亥戌", "退茹"],
-  ["寅辰午", "その他"], ["寅寅寅", "その他"], ["子丑子", "その他"], ["寅卯巳", "その他"], ["辰卯卯", "その他"],
+  ["寅辰午", "進間"], ["寅辰巳", "その他"], ["寅寅寅", "その他"], ["子丑子", "その他"], ["寅卯巳", "その他"], ["辰卯卯", "その他"],
 ];
 for (const [b, m] of MOVES) {
   const got = flowOf("甲子", b).movementPattern;
@@ -162,7 +162,7 @@ for (const [label, v, pos] of VOIDS) {
 }
 
 // ---- 720課 ----
-const counts: Record<string, number> = { 進茹: 0, 退茹: 0, 退間: 0, その他: 0 };
+const counts: Record<string, number> = { 進茹: 0, 退茹: 0, 進間: 0, 退間: 0, その他: 0 };
 for (let i = 0; i < 60; i++) {
   for (let o = 0; o < 12; o++) {
     const chart = calculateLiuren({ dayStem: STEMS[i % 10], dayBranch: BRANCHES[i % 12], divinationBranch: "子", monthGeneral: BRANCHES[o] });
@@ -195,7 +195,7 @@ for (let i = 0; i < 60; i++) {
 }
 check("720課に進茹がある", counts.進茹 > 0, JSON.stringify(counts));
 check("720課に退茹がある", counts.退茹 > 0, JSON.stringify(counts));
-check("720課の合計", counts.進茹 + counts.退茹 + counts.退間 + counts.その他 === 720, JSON.stringify(counts));
+check("720課の合計", counts.進茹 + counts.退茹 + counts.進間 + counts.退間 + counts.その他 === 720, JSON.stringify(counts));
 
 console.log(`720課の進退: ${JSON.stringify(counts)}`);
 console.log(`PASS ${pass} / FAIL ${failures.length}`);
