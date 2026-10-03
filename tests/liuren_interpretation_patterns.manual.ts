@@ -151,7 +151,7 @@ for (let i = 0; i < 60; i++) {
     const before = JSON.stringify(chart);
     const facts = buildInterpretationFacts(chart);
     const ps = detectClassicalPatterns(facts);
-    for (const p of ps) counts[labelOf(p)] += 1;
+    for (const p of ps) if (labelOf(p) in counts) counts[labelOf(p)] += 1; // 全局課・欠一神（Phase 3F）は別のテスト
     for (const p of ps) {
       if (p.kind === "jiaSe" && p.subtype === "general") {
         const k = `${p.branches.initial}${p.branches.middle}${p.branches.final}`;

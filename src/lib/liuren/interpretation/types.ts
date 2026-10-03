@@ -329,4 +329,50 @@ export type ClassicalPattern =
   | GuanGePattern
   | JiaSePattern
   | FourJuePattern
-  | TombOverStemPattern;
+  | TombOverStemPattern
+  | FullHarmonyPattern
+  | PartialHarmonyPattern;
+
+// ==== 全局課・三合欠一神（Phase 3F）。成立の検出だけで、吉凶・象意・応期は持たない ====
+
+/** 全局課（三伝が完全三合局。threeHarmonyOf）。木＝曲直・火＝炎上・金＝従革・水＝潤下。土の稼穡は jiaSe で別に持つ */
+export interface FullHarmonyPattern {
+  kind: "fullHarmony";
+  element: Element;
+  classicalName: "曲直" | "炎上" | "従革" | "潤下";
+  branches: Triple<Branch>;
+}
+
+/** 欠けた一神（missingBranch）が盤のどこにあるか（凑合格を将来判定するための調査用。日干は支でないので含めない） */
+export interface MissingBranchOccurrences {
+  /** 日支そのもの */
+  dayBranch: boolean;
+  /** その支を上神とする四課 */
+  lessonUppers: readonly (1 | 2 | 3 | 4)[];
+  /** その支を地盤支（lowerBranch。一課は日干の寄宮支）とする四課 */
+  lessonLowerBranches: readonly (1 | 2 | 3 | 4)[];
+  /** 日干上神（一課上神） */
+  dayStemUpper: boolean;
+  /** 日支上神（三課上神） */
+  dayBranchUpper: boolean;
+}
+
+/**
+ * 三合局の欠一神（三伝の異なる支のうち、ちょうど2支が1つの三合局に属し、残る1支が三伝にない）。
+ * 完全三合局（fullHarmony）のときは成立させない。重複伝（例: 寅午午）は異なる支で数える。
+ * 『六壬大全』「三合入伝缺一神」＝折腰格・虚一待用格。名称を持つだけで占断は付けない。
+ * 凑合格（「若日辰偶足之」）は「日辰」の対応が未確定のため判定しない（missingBranchOccurrences で調査できる）。
+ */
+export interface PartialHarmonyPattern {
+  kind: "partialHarmony";
+  missingOneOfThree: true;
+  element: Element;
+  classicalNames: readonly ["折腰格", "虚一待用格"];
+  /** 三伝にある局の2支（三合局の生・旺・墓の順） */
+  presentBranches: readonly [Branch, Branch];
+  /** 三伝にない局の1支 */
+  missingBranch: Branch;
+  /** 局の2支それぞれが三伝のどこにあるか */
+  transmissionPositions: readonly { branch: Branch; positions: readonly TransmissionPosition[] }[];
+  missingBranchOccurrences: MissingBranchOccurrences;
+}
