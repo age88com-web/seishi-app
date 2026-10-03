@@ -8,7 +8,7 @@
 //   interpretation → 起課エンジンの型・関係関数 のみ。起課エンジン側からは参照しない。
 
 import type {
-  Stem, Branch, HeavenlyGeneral, SixRelation, HeavenEarthPlate, GeneralsLayout,
+  Stem, Branch, Element, HeavenlyGeneral, SixRelation, HeavenEarthPlate, GeneralsLayout,
   LiurenChart, SanchuanResult,
 } from "../types";
 
@@ -93,4 +93,27 @@ export interface RelationFact {
   from: Stem | Branch;
   to: Stem | Branch;
   relations: readonly StructuralRelation[];
+}
+
+// ==== 基礎状態（Phase 3A）。状態だけを表し、吉凶の意味は持たない ====
+
+/** 旺相休囚死（月令の五行を旺とした、対象五行の状態） */
+export type SeasonalStrength = "旺" | "相" | "休" | "囚" | "死";
+
+/**
+ * 十二長生の段階（十二長生上の「墓」はここに含まれる）。
+ * 六壬の五行生墓法（『六壬粹言』五行十干生墓第四）で求める。五行墓庫（ElementTomb）とは別の概念。
+ */
+export type GrowthStage =
+  | "長生" | "沐浴" | "冠帯" | "臨官" | "帝旺" | "衰"
+  | "病" | "死" | "墓" | "絶" | "胎" | "養";
+
+/**
+ * 五行の墓庫（三合局の生・旺・墓の「墓」。講座 p54、土は『六壬粹言』土墓従火第五）。
+ * 十二長生の「墓」（GrowthStage）とは別の概念で、kind で区別する。入墓の判断はしない。
+ */
+export interface ElementTomb {
+  kind: "elementTomb";
+  element: Element;
+  branch: Branch;
 }
