@@ -10,6 +10,7 @@
 //     六親         … facts.lessons[0].relation
 //     日禄・日徳・旬丁・驛馬 … dayMarkersOf の四課（一課）への出現
 //     空亡         … facts.xun.voidBranches
+//     坐空         … isSeatedOnVoid（上神が加わる地盤支＝日干の寄宮支が旬空。Phase 3M-C）
 //     十二長生・GrowthPhase … growthStageOfStem（五行生墓法）・growthPhaseOf
 //     旺相休囚死   … seasonalStrengthOf(上神の五行, rulingElementOfMonth(月支))。月支がなければ null
 //   path は transmissionDayStemFlowOf（Phase 3K）の結果をそのまま持つ。
@@ -21,6 +22,7 @@ import { dayMarkersOf } from "./markers";
 import { growthPhaseOf } from "./qiState";
 import { relationBetween } from "./relations";
 import { growthStageOfStem, rulingElementOfMonth, seasonalStrengthOf } from "./states";
+import { isSeatedOnVoid } from "./voidStructure";
 import type { BranchMarker, DayStemStandingState, InterpretationFacts, StandingAndTransmissionPath } from "./types";
 
 const onFirstLesson = (m: BranchMarker) => m.lessons.some((l) => l.index === 1);
@@ -42,6 +44,7 @@ export function dayStemStandingOf(facts: InterpretationFacts, monthBranch?: Bran
     isXunDing: onFirstLesson(markers.xunDing),
     isYima: onFirstLesson(markers.yima),
     isVoid: facts.xun.voidBranches.includes(branch),
+    isSeatedOnVoid: isSeatedOnVoid(facts, branch),
     growthStage,
     growthPhase: growthPhaseOf(growthStage),
     seasonalStrength: monthBranch ? seasonalStrengthOf(element, rulingElementOfMonth(monthBranch)) : null,

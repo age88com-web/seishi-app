@@ -566,16 +566,34 @@ export interface TransmissionDayStemState {
   isDayVirtue: boolean;
   isXunDing: boolean;
   isYima: boolean;
+  /** 伝の支そのものが占日の旬空（dayXunVoid。facts.transmissions の isVoid） */
   isVoid: boolean;
+  /** 伝の支（天盤）が加わる地盤支が占日の旬空（坐空。Phase 3M-C） */
+  isSeatedOnVoid: boolean;
   growthStage: GrowthStage;
   growthPhase: GrowthPhase;
   /** 当月の月令に対する状態。月支がなければ null（将来月は含めない） */
   seasonalStrength: SeasonalStrength | null;
 }
 
+/**
+ * 三伝の空亡の構造（Phase 3M-C）。日旬空と坐空を別々に持つ。
+ * 三伝皆空・踏脚空亡などの判定、旬をたどる空亡（本旬→後旬→外後旬）は持たない。
+ */
+export interface TransmissionVoidStructure {
+  /** 各伝の支そのものが占日の旬空（既存の isVoid と同じ値） */
+  dayXunVoid: Triple<boolean>;
+  /** 各伝の支が加わる地盤支が占日の旬空 */
+  seatedOnVoid: Triple<boolean>;
+  finalIsDayXunVoid: boolean;
+  finalIsSeatedOnVoid: boolean;
+}
+
 /** 三伝と日干の作用関係の流れ */
 export interface TransmissionDayStemFlow {
   states: Triple<TransmissionDayStemState>;
+  /** 三伝の空亡の構造（Phase 3M-C） */
+  voidStructure: TransmissionVoidStructure;
   /** 季節内の進気・退気（区間の FACT。Phase 3J） */
   initialToMiddle: SeasonalBranchDirectionFact;
   middleToFinal: SeasonalBranchDirectionFact;
@@ -599,7 +617,10 @@ export interface DayStemStandingState {
   isDayVirtue: boolean;
   isXunDing: boolean;
   isYima: boolean;
+  /** 上神そのものが占日の旬空 */
   isVoid: boolean;
+  /** 上神（天盤）が加わる地盤支（＝日干の寄宮支）が占日の旬空（坐空。Phase 3M-C） */
+  isSeatedOnVoid: boolean;
   growthStage: GrowthStage;
   growthPhase: GrowthPhase;
   /** 当月の月令に対する状態。月支がなければ null */
