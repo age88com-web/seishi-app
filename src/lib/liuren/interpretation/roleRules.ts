@@ -10,14 +10,19 @@
 //   FACT の条件（matcher）は小さな宣言的ユニオンで、AND だけ（OR・NOT・入れ子の式は持たない。任意コードも埋め込まない）。
 //   割り当てをまとめて行う applySemanticRoleRules はまだ実装しない（1ルールの照合 roleRuleMatches だけ）。
 //   本番の registry には、プロジェクト資料で読み方を確認できたルールだけを入れる（原典未確認の候補は入れない）。
+//
+//   天将の matcher（Phase 4C）: Phase 4B の heavenlyGeneralStateOfResolution で、その anchor の天盤支に乗る天将を照合する。
+//   四課は上神、干上・三伝はその支。日干そのもの・日支そのものは天将を持たないので常に当てはまらない
+//   （日干の解決が持つ standing を代わりに使わない）。天将の象意・吉凶は持たず、天将を使うルールはまだ登録しない。
 
 import type { AnchorResolution } from "./anchorResolver";
+import { heavenlyGeneralStateOfResolution } from "./heavenlyGeneralState";
 import type {
   BoardAnchor, DomainSubtype, InterpretationContext, InterpretationDomain, InterpretationGoal, RoleConfidence,
   RoleEvidenceKind, SemanticRole,
 } from "./roles";
-import type { SixRelation } from "../types";
-import type { GrowthStage, TransmissionToDayStemRelation } from "./types";
+import type { HeavenlyGeneral, SixRelation } from "../types";
+import type { GrowthStage, InterpretationFacts, TransmissionToDayStemRelation } from "./types";
 
 /** 出典の種類 */
 export type RuleSourceType =
@@ -55,7 +60,8 @@ export type RoleMatcher =
   | { kind: "sixRelation"; value: SixRelation }
   | { kind: "relationToDayStem"; value: TransmissionToDayStemRelation }
   | { kind: "growthStage"; value: GrowthStage }
-  | { kind: "marker"; marker: "daySalary" | "dayVirtue" | "xunDing" | "yima" };
+  | { kind: "marker"; marker: "daySalary" | "dayVirtue" | "xunDing" | "yima" }
+  | { kind: "heavenlyGeneral"; value: HeavenlyGeneral };
 
 /** 問占条件（domain を省くと全般。subtype・goal は必要なルールだけ） */
 export interface RoleRuleCondition<D extends InterpretationDomain = InterpretationDomain> {
@@ -101,16 +107,23 @@ function matchTarget(r: AnchorResolution) {
 /**
  * 1つのルールが、1つの CONTEXT と、そのルールの source を解決した結果に当てはまるか（監査用の小さな純粋関数）。
  * 四課は上神で見る。制約（旬空・坐空）や地点どうしの生剋は見ない。
+ * 天将の matcher は天将盤を読むため facts が要る（渡さずに天将の matcher を照合しようとしたらエラー）。
  */
-export function roleRuleMatches(rule: SemanticRoleRule, context: InterpretationContext, resolution: AnchorResolution): boolean {
+export function roleRuleMatches(
+  rule: SemanticRoleRule, context: InterpretationContext, resolution: AnchorResolution, facts?: InterpretationFacts,
+): boolean {
   const w = rule.when;
   if (w.domain !== undefined && w.domain !== context.domain) return false;
   if (w.subtype !== undefined && w.subtype !== context.subtype) return false;
   if (w.goal !== undefined && w.goal !== context.goal) return false;
   if (!rule.matchers?.length) return true;
   const t = matchTarget(resolution);
-  if (!t) return false;
   return rule.matchers.every((m) => {
+    if (m.kind === "heavenlyGeneral") {
+      if (!facts) throw new Error(`heavenlyGeneral の matcher には facts が必要です: ${rule.id}`);
+      return heavenlyGeneralStateOfResolution(facts, resolution)?.general === m.value;
+    }
+    if (!t) return false;
     switch (m.kind) {
       case "sixRelation": return t.sixRelation === m.value;
       case "relationToDayStem": return t.relationToDayStem === m.value;

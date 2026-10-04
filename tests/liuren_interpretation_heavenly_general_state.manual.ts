@@ -25,6 +25,7 @@ import {
   standingHeavenlyGeneralStateOf, transmissionHeavenlyGeneralStatesOf,
 } from "../src/lib/liuren/interpretation/heavenlyGeneralState";
 import type { HeavenlyGeneralPositionState } from "../src/lib/liuren/interpretation/types";
+import { SEMANTIC_ROLE_RULES } from "../src/lib/liuren/interpretation/roleRules";
 import type { BoardAnchor } from "../src/lib/liuren/interpretation/roles";
 
 let pass = 0;
@@ -172,8 +173,8 @@ check("古典例は5例以上", new Set(CLASSICS.map((c) => c[0])).size >= 5);
   const hit = ["auspicious", "benefic", "malefic", "good", "bad", "strong", "weak", "吉", "凶", "theft", "document", "wealth", "illness",
     "self", "counterparty", "resource", "obstacle", "authority", "domain", "GENERALS", "nobleBranch", "direction", "constraints", "siteState"].filter((w) => src.includes(w));
   check("heavenlyGeneralState.ts に評価語・象意・ROLE・DOMAIN・天将配置・制約・SiteState が出てこない", hit.length === 0, hit.join(","));
-  const roleRules = readFileSync("src/lib/liuren/interpretation/roleRules.ts", "utf8");
-  check("RoleMatcher は変更していない（heavenlyGeneral の matcher なし）", !roleRules.includes("heavenlyGeneral"));
+  // Phase 4C で RoleMatcher に heavenlyGeneral を追加した。本番 registry には天将を使うルールを入れていない
+  check("本番 registry に天将の matcher を使うルールがない", SEMANTIC_ROLE_RULES.every((r) => !r.matchers?.some((m) => m.kind === "heavenlyGeneral")));
 }
 
 const fmt = (o: Record<string, number>) => GENERALS.map((g) => `${g}${o[g] ?? 0}`).join(" ");
