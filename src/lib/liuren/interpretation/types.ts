@@ -535,3 +535,50 @@ export interface TransmissionSeasonalDirection {
   initialToMiddle: SeasonalBranchDirectionFact;
   middleToFinal: SeasonalBranchDirectionFact;
 }
+
+// ==== 三伝と日干の作用関係（Phase 3K）。既存 FACT を三伝単位にまとめるだけの中立 FACT ====
+// 宜進・宜退・好転・悪化・吉凶・score は持たない。
+
+/**
+ * その伝が日干に対してどう作用するか（向きは「伝 → 日干」）。relationBetween(伝, 日干) の五行関係を言い換えたもの。
+ *   transmissionGeneratesDayStem … 伝が日干を生ずる（伝生干）
+ *   sameElement                  … 比和
+ *   dayStemGeneratesTransmission … 日干が伝を生ずる（干生伝）
+ *   transmissionOvercomesDayStem … 伝が日干を剋す（伝剋干）
+ *   dayStemOvercomesTransmission … 日干が伝を剋す（干剋伝）
+ */
+export type TransmissionToDayStemRelation =
+  | "transmissionGeneratesDayStem"
+  | "sameElement"
+  | "dayStemGeneratesTransmission"
+  | "transmissionOvercomesDayStem"
+  | "dayStemOvercomesTransmission";
+
+/** 三伝1伝の、日干との関係と状態（各値は既存の FACT・FLOW・MARKER・STATE から転記） */
+export interface TransmissionDayStemState {
+  position: TransmissionPosition;
+  branch: Branch;
+  element: Element;
+  relationToDayStem: TransmissionToDayStemRelation;
+  /** 六親（facts.transmissions の relation） */
+  sixRelation: SixRelation;
+  isDaySalary: boolean;
+  isDayVirtue: boolean;
+  isXunDing: boolean;
+  isYima: boolean;
+  isVoid: boolean;
+  growthStage: GrowthStage;
+  growthPhase: GrowthPhase;
+  /** 当月の月令に対する状態。月支がなければ null（将来月は含めない） */
+  seasonalStrength: SeasonalStrength | null;
+}
+
+/** 三伝と日干の作用関係の流れ */
+export interface TransmissionDayStemFlow {
+  states: Triple<TransmissionDayStemState>;
+  /** 季節内の進気・退気（区間の FACT。Phase 3J） */
+  initialToMiddle: SeasonalBranchDirectionFact;
+  middleToFinal: SeasonalBranchDirectionFact;
+  /** 支の移動（三伝全体の FLOW） */
+  movementPattern: MovementPattern;
+}
