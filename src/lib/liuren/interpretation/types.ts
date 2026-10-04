@@ -929,3 +929,30 @@ export interface HeavenlyGeneralIntrinsicAttributes {
   /** 所属干支に添えられた五行（p56。例: 貴人＝己丑土 の 土） */
   element: Element;
 }
+
+// ==== 天将の固有属性と、乗る天盤支・加臨先との関係（Phase 4H）。中立 FACT ====
+// 入力は HeavenlyGeneralPositionState（Phase 4B）・HeavenlyGeneralIntrinsicAttributes（Phase 4G）・SiteState（Phase 4A）。
+// 五行の関係は「支の五行 → 天将の五行」の向きで持つ（逆向きは reverseElementRelation で求める）。
+// 支の一致は boolean だけで、入廟・本家などの意味づけ・十二長生・旺相休囚死・吉凶・強弱は持たない。
+
+export interface HeavenlyGeneralPlacementRelations {
+  general: HeavenlyGeneral;
+  /** 天将の固有五行（Phase 4G の element） */
+  generalElement: Element;
+  /** 天将の所属支（Phase 4G の affiliatedBranch） */
+  affiliatedBranch: Branch;
+  /** 天将が乗る天盤支（Phase 4B の skyBranch） */
+  skyBranch: Branch;
+  /** 天盤支の五行（SiteState の skyElement） */
+  skyElement: Element;
+  /** 天盤支の五行 → 天将の五行 */
+  skyToGeneral: ElementRelation;
+  /** 天盤支が加わる地盤支（SiteState の siteBranch） */
+  siteBranch: Branch;
+  /** 地盤支の五行 */
+  siteElement: Element;
+  /** 地盤支の五行 → 天将の五行 */
+  siteToGeneral: ElementRelation;
+  skyBranchMatchesAffiliatedBranch: boolean;
+  siteBranchMatchesAffiliatedBranch: boolean;
+}
