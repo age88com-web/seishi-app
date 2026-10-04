@@ -8,7 +8,7 @@ import { isYangStem } from "../constants";
 import { controls } from "../relations";
 import type {
   Stem, Branch, FourLessons, HeavenEarthPlate, Lesson, DecisionStep,
-  SanchuanMethod, ShehaiCandidateTrace,
+  InitialTransmissionOrigin, SanchuanMethod, ShehaiCandidateTrace,
 } from "../types";
 
 export interface SanchuanContext {
@@ -44,6 +44,17 @@ export function isKe(l: Lesson): boolean {
   return controls(l.upper, l.lower);
 }
 
+/**
+ * 候補の課（初伝として選んだ上神をもつもの）から発用元を作る（Phase 3Z）。
+ * 選択処理が既に持っている候補の課を渡すだけで、初伝の決め方には関係しない。
+ */
+export function originFromLessons(lessons: readonly Lesson[], branch: Branch, method: SanchuanMethod): InitialTransmissionOrigin {
+  const indexes = lessons.map((l) => l.index);
+  return indexes.length === 1
+    ? { kind: "uniqueLesson", lesson: indexes[0], branch, method }
+    : { kind: "ambiguousLessons", lessons: indexes, branch, method };
+}
+
 export function lessonLabel(l: Lesson): string {
   return `${l.index}課 ${l.upper}/${l.lower}`;
 }
@@ -57,6 +68,8 @@ export type InitialSelection =
       pattern: string | null;
       steps: DecisionStep[];
       shehai?: ShehaiCandidateTrace[];
+      /** 初伝を選んだ地点で記録した発用元（Phase 3Z） */
+      origin: InitialTransmissionOrigin;
     }
   | {
       ok: false;

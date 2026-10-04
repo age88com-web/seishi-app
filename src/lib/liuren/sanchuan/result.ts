@@ -4,7 +4,7 @@
 //   三伝の結果オブジェクトを組み立てる共通処理。
 
 import type {
-  Branch, DecisionStep, EvidenceLevel, SanchuanDetermined, SanchuanMethod,
+  Branch, DecisionStep, EvidenceLevel, InitialTransmissionOrigin, SanchuanDetermined, SanchuanMethod,
   SanchuanUndetermined, ShehaiCandidateTrace,
 } from "../types";
 import type { SanchuanContext } from "./context";
@@ -18,6 +18,7 @@ export function determined(args: {
   middleFinalEvidence?: EvidenceLevel;
   steps: DecisionStep[];
   shehai?: ShehaiCandidateTrace[];
+  initialOrigin: InitialTransmissionOrigin;
 }): SanchuanDetermined {
   const r: SanchuanDetermined = {
     status: "determined",
@@ -28,6 +29,7 @@ export function determined(args: {
     final: args.final,
     middleFinalEvidence: args.middleFinalEvidence ?? "textbook",
     trace: args.steps,
+    initialOrigin: args.initialOrigin,
   };
   if (args.shehai) r.shehai = args.shehai;
   return r;

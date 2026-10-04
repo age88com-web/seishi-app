@@ -28,6 +28,7 @@ import { BRANCHES, JIGONG, MENG, ZHONG, STEMS } from "../constants";
 import { controls } from "../relations";
 import type { Stem, Branch, Lesson, DecisionStep, ShehaiCandidateTrace } from "../types";
 import type { SanchuanContext, InitialSelection } from "./context";
+import { originFromLessons } from "./context";
 
 /** 支 → その支に寄宮する干（十干寄宮表の逆引き。STEMS 順） */
 const STEMS_LODGED_AT: Record<Branch, Stem[]> = (() => {
@@ -62,6 +63,9 @@ export function selectByShehai(
   candidates: readonly Lesson[],
   steps: DecisionStep[],
 ): InitialSelection {
+  /** 採用した候補（同じ上神の候補はすべて）から発用元を作る（Phase 3Z） */
+  const originOf = (picked: readonly ShehaiCandidateTrace[]) =>
+    originFromLessons(candidates.filter((l) => picked.some((t) => t.lessonIndex === l.index)), picked[0].upper, "涉害");
   const traces: ShehaiCandidateTrace[] = candidates.map((l) => {
     const path = shehaiPath(l.lowerBranch, l.upper);
     const zei = path.filter((x) => controls(x, l.upper));
@@ -82,7 +86,7 @@ export function selectByShehai(
   const deepest = traces.filter((t) => t.depth === maxDepth);
   if (new Set(deepest.map((t) => t.upper)).size === 1) {
     steps.push({ stage: "涉害①深浅", detail: `最も深い ${deepest[0].upper}（${maxDepth}）を初伝とする`, source: "講座 p17・p20" });
-    return { ok: true, initial: deepest[0].upper, method: "涉害", pattern: "涉害課", steps, shehai: traces };
+    return { ok: true, initial: deepest[0].upper, method: "涉害", pattern: "涉害課", steps, shehai: traces, origin: originOf(deepest) };
   }
   steps.push({ stage: "涉害①深浅", detail: `涉害数が同数（${maxDepth}）で決まらない`, source: "講座 p19・p21" });
 
@@ -96,7 +100,7 @@ export function selectByShehai(
       detail: `${rankDetail} → ${best[0].rank}の ${best[0].upper} を初伝とする`,
       source: pattern === "見機格" ? "講座 p19" : "講座 p20",
     });
-    return { ok: true, initial: best[0].upper, method: "涉害", pattern, steps, shehai: traces };
+    return { ok: true, initial: best[0].upper, method: "涉害", pattern, steps, shehai: traces, origin: originOf(best) };
   }
   steps.push({ stage: "涉害②孟仲季", detail: `${rankDetail} → 一意に決まらない`, source: "講座 p21" });
 
@@ -113,7 +117,7 @@ export function selectByShehai(
       detail: `日干${ctx.dayStem}の寄宮支${jigong}から順行した距離 ${distanceDetail} → 最も遠い ${initial} を初伝とする`,
       source: "講座 p21（同支＝12 は七百二十課式便覧表から確定した補足規則）",
     });
-    return { ok: true, initial, method: "涉害", pattern: "綴瑕格", steps, shehai: traces };
+    return { ok: true, initial, method: "涉害", pattern: "綴瑕格", steps, shehai: traces, origin: originOf(farthest.map((x) => x.t)) };
   }
 
   // (b) 最終フォールバック: 陽日は干上神、陰日は支上神
@@ -126,7 +130,12 @@ export function selectByShehai(
         : `陰日のため支上神（三課の上神）${initial} を初伝とする`),
     source: "講座 p17",
   });
-  return { ok: true, initial, method: "涉害", pattern: "綴瑕格", steps, shehai: traces };
+  return {
+    ok: true, initial, method: "涉害", pattern: "綴瑕格", steps, shehai: traces,
+    origin: ctx.yangDay
+      ? { kind: "ruleLesson", lesson: 1, rule: "dayStemUpper", branch: initial, method: "涉害" }
+      : { kind: "ruleLesson", lesson: 3, rule: "dayBranchUpper", branch: initial, method: "涉害" },
+  };
 }
 
 /** 日干の寄宮支から順行して上神までの支の数。同じ支は一周した 12 とする */

@@ -111,6 +111,21 @@ export interface ShehaiCandidateTrace {
   rank: "孟" | "仲" | "季";
 }
 
+/**
+ * 初伝がどこから発用したか（Phase 3Z。三伝の決め方は変えず、決めた地点で既に持っている情報を記録するだけ）。
+ *   uniqueLesson     … 四課の候補から選び、その上神をもつ候補の課が1つ
+ *   ambiguousLessons … 四課の候補から選んだが、同じ上神をもつ候補の課が複数（起課規則が課を区別しない。エラーではない）
+ *   ruleLesson       … 規則で干上神（一課）または支上神（三課）を取った（伏吟・涉害の最終判定）
+ *   derived          … 四課の上神ではない規則で決めた（昴星・別責・八専・返吟の無親格）
+ * method は初伝を選んだ方式（返吟の無依格では、初伝を選んだ賊剋法の方式。それ以外は結果の method と同じ）。
+ * branch は初伝の支。
+ */
+export type InitialTransmissionOrigin =
+  | { kind: "uniqueLesson"; lesson: 1 | 2 | 3 | 4; branch: Branch; method: SanchuanMethod }
+  | { kind: "ambiguousLessons"; lessons: readonly (1 | 2 | 3 | 4)[]; branch: Branch; method: SanchuanMethod }
+  | { kind: "ruleLesson"; lesson: 1 | 3; rule: "dayStemUpper" | "dayBranchUpper"; branch: Branch; method: SanchuanMethod }
+  | { kind: "derived"; branch: Branch; method: SanchuanMethod };
+
 /** 三伝の決定結果 */
 export interface SanchuanDetermined {
   status: "determined";
@@ -126,6 +141,8 @@ export interface SanchuanDetermined {
   trace: readonly DecisionStep[];
   /** 涉害に進んだ場合の候補ごとの記録 */
   shehai?: readonly ShehaiCandidateTrace[];
+  /** 初伝の発用元（Phase 3Z。内部メタデータ） */
+  initialOrigin: InitialTransmissionOrigin;
 }
 
 /** 講座の記述だけでは三伝を決められない場合 */

@@ -34,6 +34,7 @@ export function resolveFanyin(ctx: SanchuanContext, steps: DecisionStep[]): Sanc
     });
     return determined({
       method: "返吟", pattern: "無依格", initial, middle, final, steps, shehai: sel.shehai,
+      initialOrigin: sel.origin, // 無依格は賊剋法（sel.method）で四課の候補から発用
     });
   }
 
@@ -49,5 +50,8 @@ export function resolveFanyin(ctx: SanchuanContext, steps: DecisionStep[]): Sanc
     return undetermined("返吟", `${day}日の返吟で賊剋がない場合は講座に記載なし`, steps);
   }
   steps.push({ stage: "返吟・無親格", detail: `中伝は支上神 ${ctx.zhiUpper}、末伝は干上神 ${ctx.ganUpper}`, source: "講座 p40・p41" });
-  return determined({ method: "返吟", pattern: "無親格", initial, middle: ctx.zhiUpper, final: ctx.ganUpper, steps });
+  return determined({
+    method: "返吟", pattern: "無親格", initial, middle: ctx.zhiUpper, final: ctx.ganUpper, steps,
+    initialOrigin: { kind: "derived", branch: initial, method: "返吟" },
+  });
 }

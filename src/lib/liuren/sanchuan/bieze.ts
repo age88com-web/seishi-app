@@ -35,7 +35,7 @@ export function resolveBieze(ctx: SanchuanContext, steps: DecisionStep[]): Sanch
       detail: `陰日: 日支${ctx.dayBranch}の三合局で次の支 ${initial} を初伝、中伝・末伝は干上神 ${ctx.ganUpper}`,
       source: "講座 p26・p54（三合の循環は確定実装仕様）",
     });
-    return determined({ method: "別責", pattern: null, initial, middle: ctx.ganUpper, final: ctx.ganUpper, steps });
+    return determined({ method: "別責", pattern: null, initial, middle: ctx.ganUpper, final: ctx.ganUpper, steps, initialOrigin: { kind: "derived", branch: initial, method: "別責" } });
   }
   const partner = GANHE[ctx.dayStem];
   const initial = ctx.plate.heavenOn[JIGONG[partner]];
@@ -45,5 +45,5 @@ export function resolveBieze(ctx: SanchuanContext, steps: DecisionStep[]): Sanch
       `中伝・末伝は干上神 ${ctx.ganUpper}`,
     source: ctx.dayStem === "戊" ? "講座 p26・p27" : "講座 p26（干合表は確定実装仕様）",
   });
-  return determined({ method: "別責", pattern: null, initial, middle: ctx.ganUpper, final: ctx.ganUpper, steps });
+  return determined({ method: "別責", pattern: null, initial, middle: ctx.ganUpper, final: ctx.ganUpper, steps, initialOrigin: { kind: "derived", branch: initial, method: "別責" } });
 }

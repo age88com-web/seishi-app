@@ -17,7 +17,7 @@ export function resolveMaoxing(ctx: SanchuanContext, steps: DecisionStep[]): San
       detail: `陽日: 地盤酉の上神 ${initial} を初伝、中伝は支上神 ${ctx.zhiUpper}、末伝は干上神 ${ctx.ganUpper}`,
       source: "講座 p24",
     });
-    return determined({ method: "昴星", pattern: "虎視格", initial, middle: ctx.zhiUpper, final: ctx.ganUpper, steps });
+    return determined({ method: "昴星", pattern: "虎視格", initial, middle: ctx.zhiUpper, final: ctx.ganUpper, steps, initialOrigin: { kind: "derived", branch: initial, method: "昴星" } });
   }
   const initial = ctx.plate.earthUnder["酉"];
   steps.push({
@@ -25,5 +25,5 @@ export function resolveMaoxing(ctx: SanchuanContext, steps: DecisionStep[]): San
     detail: `陰日: 天盤酉の下の地盤支 ${initial} を初伝、中伝は干上神 ${ctx.ganUpper}、末伝は支上神 ${ctx.zhiUpper}`,
     source: "講座 p25",
   });
-  return determined({ method: "昴星", pattern: "冬蛇掩目", initial, middle: ctx.ganUpper, final: ctx.zhiUpper, steps });
+  return determined({ method: "昴星", pattern: "冬蛇掩目", initial, middle: ctx.ganUpper, final: ctx.zhiUpper, steps, initialOrigin: { kind: "derived", branch: initial, method: "昴星" } });
 }

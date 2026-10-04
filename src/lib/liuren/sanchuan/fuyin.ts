@@ -93,5 +93,11 @@ export function resolveFuyin(ctx: SanchuanContext, steps: DecisionStep[]): Sanch
     steps.push({ stage: "伏吟・末伝", detail: `${middle}が刑する ${final} を末伝`, source: "講座 p33〜35" });
   }
 
-  return determined({ method: "伏吟", pattern, initial, middle, final, steps });
+  return determined({
+    method: "伏吟", pattern, initial, middle, final, steps,
+    // 規則で干上神（一課）か支上神（三課）を取った地点の記録（上神の一致からは推測しない）
+    initialOrigin: useGan
+      ? { kind: "ruleLesson", lesson: 1, rule: "dayStemUpper", branch: initial, method: "伏吟" }
+      : { kind: "ruleLesson", lesson: 3, rule: "dayBranchUpper", branch: initial, method: "伏吟" },
+  });
 }

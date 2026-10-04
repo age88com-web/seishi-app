@@ -43,7 +43,7 @@ export function resolveSanchuan(
     steps.push({ stage: "中伝・末伝", detail: `初伝 ${sel.initial} の上神 ${middle} を中伝、その上神 ${final} を末伝`, source: "講座 p11" });
     return determined({
       method: sel.method, pattern: sel.pattern, initial: sel.initial, middle, final,
-      steps, shehai: sel.shehai,
+      steps, shehai: sel.shehai, initialOrigin: sel.origin,
     });
   }
   steps.push({ stage: "賊剋", detail: "四課に賊剋なし", source: "講座 p11" });

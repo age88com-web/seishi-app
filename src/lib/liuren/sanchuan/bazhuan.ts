@@ -37,5 +37,5 @@ export function resolveBazhuan(ctx: SanchuanContext, steps: DecisionStep[]): San
       `、中伝・末伝は干上神 ${ctx.ganUpper}${pattern ? "（三伝が同じ支のため独足格）" : ""}`,
     source: ctx.yangDay ? "講座 p28・p29" : pattern ? "講座 p28・p31" : "講座 p28・p30",
   });
-  return determined({ method: "八専", pattern, initial, middle, final, steps });
+  return determined({ method: "八専", pattern, initial, middle, final, steps, initialOrigin: { kind: "derived", branch: initial, method: "八専" } });
 }

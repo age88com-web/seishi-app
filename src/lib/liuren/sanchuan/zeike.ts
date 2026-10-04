@@ -20,7 +20,7 @@
 
 import { isYang } from "../relations";
 import type { DecisionStep } from "../types";
-import { isZei, isKe, lessonLabel } from "./context";
+import { isZei, isKe, lessonLabel, originFromLessons } from "./context";
 import type { SanchuanContext, InitialSelection } from "./context";
 import { selectByShehai } from "./shehai";
 
@@ -54,7 +54,8 @@ export function selectByZeike(ctx: SanchuanContext, steps: DecisionStep[]): Init
           `このときの法名（重審・元首か比用か）は講座に記載なし`,
       source: "講座 p11・p39",
     });
-    return { ok: true, initial, method: baseMethod, pattern: null, steps };
+    // 候補の課はすべて同じ上神（initial）。重複課なら複数のまま記録する
+    return { ok: true, initial, method: baseMethod, pattern: null, steps, origin: originFromLessons(candidates, initial, baseMethod) };
   }
 
   // 比用（知一）
@@ -67,7 +68,8 @@ export function selectByZeike(ctx: SanchuanContext, steps: DecisionStep[]): Init
     source: "講座 p15・p16",
   });
   if (matchedUppers.size === 1) {
-    return { ok: true, initial: matched[0].upper, method: "比用", pattern: null, steps };
+    // 陰陽が同じ候補の課はすべて同じ上神（matchedUppers が1つ）
+    return { ok: true, initial: matched[0].upper, method: "比用", pattern: null, steps, origin: originFromLessons(matched, matched[0].upper, "比用") };
   }
   if (matchedUppers.size === 0) {
     steps.push({

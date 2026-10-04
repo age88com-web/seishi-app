@@ -16,6 +16,7 @@ import { controls, isYang } from "../relations";
 import type { Branch, DecisionStep, SanchuanResult } from "../types";
 import type { SanchuanContext } from "./context";
 import { determined, undetermined, upperChain } from "./result";
+import { originFromLessons } from "./context";
 
 /** 遥剋が成立するか（候補となる上神があるか） */
 export function yaokeCandidates(ctx: SanchuanContext): { kind: "蒿矢格" | "弾射格"; uppers: Branch[] } | null {
@@ -58,5 +59,7 @@ export function resolveYaoke(
   return determined({
     method: "遥剋", pattern: found.kind, initial, middle, final,
     middleFinalEvidence: "reference", steps,
+    // 遥剋の候補は四課の上神（yaokeCandidates）。選んだ上神をもつ課をそのまま記録する（同じ上神の課は同じ条件を満たす）
+    initialOrigin: originFromLessons(ctx.lessons.filter((l) => l.upper === initial), initial, "遥剋"),
   });
 }
