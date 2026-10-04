@@ -914,3 +914,18 @@ export interface DayNightNobleBranchPairState {
   /** 天将盤で採用された側（Phase 4E の FACT をそのまま参照） */
   selected: DayNightNobleBranchState;
 }
+
+// ==== 十二天将の固有属性（Phase 4G）。『六壬神課講座』p56「十二天将象意」表の「所属干支」列 ====
+// 天将そのものが持つ固定の属性で、盤によらない。天将が今どの天盤支にいるか（HeavenlyGeneralPositionState・Phase 4B）、
+// その下の地盤支（SiteState の siteBranch・Phase 4A）とは別の FACT。
+// p56 の「象意」列（象意語・色・数）は入れない。五行どうしの生剋・吉凶・ROLE は持たない。
+
+export interface HeavenlyGeneralIntrinsicAttributes {
+  general: HeavenlyGeneral;
+  /** 所属干支の干（p56。例: 貴人＝己丑土 の 己） */
+  affiliatedStem: Stem;
+  /** 所属干支の支（p56。例: 貴人＝己丑土 の 丑）。天将が今乗っている天盤支ではない */
+  affiliatedBranch: Branch;
+  /** 所属干支に添えられた五行（p56。例: 貴人＝己丑土 の 土） */
+  element: Element;
+}
