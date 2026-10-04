@@ -7,6 +7,8 @@
 //     3. 貴人の位置: 天盤の貴人支の下の地盤支（p9）
 //     4. 位置が亥子丑寅卯辰なら順布、巳午未申酉戌なら逆布（p9）
 //     5. 位置から地盤を順または逆に進み、貴蛇雀合陳龍空虎常武陰后を天盤支に載せる
+//   nobleBranches（Phase 4F）: 同じ表から日干の昼貴人支・夜貴人支の対を、参照用のメタデータとして結果に残す。
+//   配置（1〜5）には使わず、採用した側は従来どおり nobleBranch。
 //
 // 未確定（講座内の矛盾）:
 //   講座の例題⑤（辛卯日・未時）の回答は、p8 の規則（昼＝辛の昼貴人寅）では
@@ -33,5 +35,6 @@ export function placeGenerals(dayStem: Stem, divinationBranch: Branch, plate: He
   if (BRANCHES.some((b) => !generalOn[b])) {
     throw new Error("十二天将の配置に欠けがあります");
   }
-  return { dayOrNight, nobleBranch, noblePosition, direction, generalOn };
+  const nobleBranches = { day: NOBLE_DAY[dayStem], night: NOBLE_NIGHT[dayStem] };
+  return { dayOrNight, nobleBranch, noblePosition, direction, generalOn, nobleBranches };
 }

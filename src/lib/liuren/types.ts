@@ -78,6 +78,11 @@ export interface GeneralsLayout {
   direction: "順" | "逆";
   /** 天盤支 → 乗っている天将 */
   generalOn: Record<Branch, HeavenlyGeneral>;
+  /**
+   * 日干の昼貴人支・夜貴人支の対（Phase 4F。講座 p8 の表 NOBLE_DAY・NOBLE_NIGHT をそのまま残す参照用メタデータ）。
+   * 天将盤で採用した側は nobleBranch（昼占なら day、夜占なら night と同じ）。天将の配置には使わない。
+   */
+  nobleBranches: { day: Branch; night: Branch };
 }
 
 /** 九宗法の法名 */

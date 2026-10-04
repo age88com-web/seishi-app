@@ -899,3 +899,18 @@ export interface DayNightNobleBranchState {
   /** 起課エンジンが採用した昼夜区分（generals.dayOrNight。昼＝day、夜＝night） */
   period: "day" | "night";
 }
+
+// ==== 日干の昼貴人支・夜貴人支の対（Phase 4F）。採用された側（Phase 4E）とは別の FACT ====
+// 起課エンジンの generals.nobleBranches（昼・夜の両方）と、採用された側（DayNightNobleBranchState）へ到達するためのもの。
+// 占時が昼だから夜貴人を捨てる、といった選び分けはしない（両方をそのまま持つ）。
+// 反対側の貴人支を簾幕貴人とみなす等の規則は持たない。十二天将の貴人・人物の貴人とは別。ROLE・吉凶は持たない。
+
+export interface DayNightNobleBranchPairState {
+  kind: "dayNightNobleBranchPair";
+  /** 日干の昼貴人支（generals.nobleBranches.day） */
+  dayBranch: Branch;
+  /** 日干の夜貴人支（generals.nobleBranches.night） */
+  nightBranch: Branch;
+  /** 天将盤で採用された側（Phase 4E の FACT をそのまま参照） */
+  selected: DayNightNobleBranchState;
+}
