@@ -582,3 +582,33 @@ export interface TransmissionDayStemFlow {
   /** 支の移動（三伝全体の FLOW） */
   movementPattern: MovementPattern;
 }
+
+// ==== 干上の現在地と三伝の経路（Phase 3L）。比較のための中立 FACT。宜進・宜退・評価は持たない ====
+
+/**
+ * 日干上神（一課上神）の、日干との関係と状態（TransmissionDayStemState と同じ項目）。
+ * relationToDayStem の向きは「上神 → 日干」（TransmissionToDayStemRelation の「伝」を「上神」と読む）。
+ */
+export interface DayStemStandingState {
+  branch: Branch;
+  element: Element;
+  relationToDayStem: TransmissionToDayStemRelation;
+  /** 六親（facts.lessons[0].relation） */
+  sixRelation: SixRelation;
+  isDaySalary: boolean;
+  isDayVirtue: boolean;
+  isXunDing: boolean;
+  isYima: boolean;
+  isVoid: boolean;
+  growthStage: GrowthStage;
+  growthPhase: GrowthPhase;
+  /** 当月の月令に対する状態。月支がなければ null */
+  seasonalStrength: SeasonalStrength | null;
+}
+
+/** 干上に留まる側（standing）と三伝へ進む側（path）を並べたもの */
+export interface StandingAndTransmissionPath {
+  standing: DayStemStandingState;
+  /** Phase 3K の三伝と日干の作用関係。三伝未確定なら null */
+  path: TransmissionDayStemFlow | null;
+}
