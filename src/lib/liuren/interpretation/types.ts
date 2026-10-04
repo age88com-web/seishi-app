@@ -830,3 +830,29 @@ export interface FourLessonsState {
   /** 上神どうしの順方向6組: 1→2・1→3・1→4・2→3・2→4・3→4 */
   internalRelations: readonly FourLessonInternalRelation[];
 }
+
+// ==== 日支そのものの状態（Phase 3V）。三課の上神ではなく、その日の支そのもの。ROLE・吉凶は持たない ====
+
+/** 日支に当てはまる制約（日支は天盤の上神ではないので坐空は対象外。旬空だけ） */
+export type DayBranchConstraint = Extract<ActualizationConstraint, "dayXunVoid">;
+
+export interface DayBranchState {
+  anchor: "dayBranch";
+  branch: Branch;
+  element: Element;
+  /** 日支 → 日干 の五行関係（TransmissionToDayStemRelation の「伝」を「日支」と読む） */
+  relationToDayStem: TransmissionToDayStemRelation;
+  /** 日干からみた日支の六親 */
+  sixRelation: SixRelation;
+  growthStage: GrowthStage;
+  growthPhase: GrowthPhase;
+  /** 月支がなければ null */
+  seasonalStrength: SeasonalStrength | null;
+  /** 日支そのものが日禄・日徳・旬丁・驛馬の支か */
+  markers: { daySalary: boolean; dayVirtue: boolean; xunDing: boolean; yima: boolean };
+  /** 日支そのものが占日の旬空か（既存の旬空 FACT から求める。特別扱いはしない） */
+  isDayXunVoid: boolean;
+  /** 日支に当てはめる制約の種類（坐空は対象外） */
+  applicableConstraints: readonly DayBranchConstraint[];
+  constraints: readonly DayBranchConstraint[];
+}
