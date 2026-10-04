@@ -876,3 +876,13 @@ export interface SiteState {
   /** relationBetween(skyBranch, siteBranch)（合・冲・刑・害・破を含む） */
   structural: RelationFact;
 }
+
+// ==== 天盤支に乗る天将（Phase 4B）。位置だけの中立 FACT。吉凶・象意・ROLE・DOMAIN は持たない ====
+// SiteState（Phase 4A）とは別の FACT。天将は起課エンジンの天将盤（generals.generalOn）から取るだけで、配置は計算し直さない。
+
+export interface HeavenlyGeneralPositionState {
+  /** 天盤支 */
+  skyBranch: Branch;
+  /** その天盤支に乗る天将（facts.generals.generalOn[skyBranch]） */
+  general: HeavenlyGeneral;
+}
