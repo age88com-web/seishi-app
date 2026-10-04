@@ -506,3 +506,32 @@ export interface TransmissionSeasonalTimeline extends SeasonalTimeline {
 export interface DayStemSeasonalTimeline extends SeasonalTimeline {
   dayStem: Stem;
 }
+
+// ==== 季節内の進気・退気（Phase 3J）。同じ季節・同じ五行の二支の順逆だけを表す中立 FACT ====
+// 進茹・退茹（movementPattern）、十二長生、旺相休囚死、宜進・宜退とは別の概念。吉凶・占断は持たない。
+
+/**
+ * 支→支の季節内の向き。
+ *   advancing  … 寅→卯・巳→午・申→酉・亥→子
+ *   retreating … 卯→寅・午→巳・酉→申・子→亥
+ *   none       … 上の8組に当たらない（悪い・弱い・停滞という意味ではない）
+ */
+export type SeasonalBranchDirection = "advancing" | "retreating" | "none";
+
+export type SeasonName = "spring" | "summer" | "autumn" | "winter";
+
+export interface SeasonalBranchDirectionFact {
+  from: Branch;
+  to: Branch;
+  direction: SeasonalBranchDirection;
+  /** advancing / retreating のときの二支の五行。none は null */
+  element: Element | null;
+  /** advancing / retreating のときの季節。none は null */
+  season: SeasonName | null;
+}
+
+/** 三伝の2区間の季節内の向き */
+export interface TransmissionSeasonalDirection {
+  initialToMiddle: SeasonalBranchDirectionFact;
+  middleToFinal: SeasonalBranchDirectionFact;
+}
