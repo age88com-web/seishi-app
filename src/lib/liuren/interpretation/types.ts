@@ -748,3 +748,39 @@ export interface StandingPathInternalRelations {
   /** 順方向の6組: 干上→初・干上→中・干上→末・初→中・初→末・中→末 */
   all: readonly PathInternalRelation[];
 }
+
+// ==== 実現の制約（Phase 3S）。象意が「存在するか」ではなく、
+// 「その象意が現実化・作用するときに古典上考慮される制約 FACT が付いているか」を持つ層。
+// 制約があるから作用しない、とはしない（有効・無効・虚実・吉凶・score は持たない）。
+
+/** 今回扱う制約（既存 FACT の isVoid・isSeatedOnVoid をそのまま言い換えたもの） */
+export type ActualizationConstraint = "dayXunVoid" | "seatedOnVoid";
+
+/** 1地点に存在する FACT と、その地点の制約 */
+export interface PositionActualizationState {
+  position: ComparisonPosition;
+  branch: Branch;
+  /** なければ []。順は dayXunVoid → seatedOnVoid */
+  constraints: readonly ActualizationConstraint[];
+  relationToDayStem: TransmissionToDayStemRelation;
+  sixRelation: SixRelation;
+  growthStage: GrowthStage;
+  growthPhase: GrowthPhase;
+  markers: { daySalary: boolean; dayVirtue: boolean; xunDing: boolean; yima: boolean };
+  /** 元の FACT（Phase 3L・3K の状態。isVoid・isSeatedOnVoid はここに残る） */
+  source: DayStemStandingState | TransmissionDayStemState;
+}
+
+/** 地点どうしの関係（Phase 3R）と、その両端の制約 */
+export interface InternalRelationConstraints {
+  relation: PathInternalRelation;
+  fromConstraints: readonly ActualizationConstraint[];
+  toConstraints: readonly ActualizationConstraint[];
+}
+
+export interface StandingPathActualization {
+  /** 干上・初伝・中伝・末伝 */
+  states: readonly [PositionActualizationState, PositionActualizationState, PositionActualizationState, PositionActualizationState];
+  /** Phase 3R の順方向6組と同じ順 */
+  internalRelations: readonly InternalRelationConstraints[];
+}
