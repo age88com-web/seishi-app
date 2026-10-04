@@ -655,3 +655,67 @@ export interface DirectionEvidence {
   /** 末伝の空亡（Phase 3M-C の voidStructure） */
   terminal: { dayXunVoid: boolean; seatedOnVoid: boolean };
 }
+
+// ==== 干上と三伝の比較（Phase 3P）。4段階（干上→初伝→中伝→末伝）を同じ軸で並べるだけの中立 FACT ====
+// 宜進・宜退・宜守、実効性（空亡が禄・旺を無効にする等）の判定、評価語は持たない。
+
+/** 比較の位置（干上と三伝） */
+export type ComparisonPosition = "standing" | TransmissionPosition;
+
+/** 干上→初伝→中伝→末伝 の4段階 */
+export interface StandingPathSequence<T> {
+  standing: T;
+  initial: T;
+  middle: T;
+  final: T;
+}
+
+/** 1段階の値の変化（from→to をそのまま持つ） */
+export interface ValueChange<T> {
+  from: T;
+  to: T;
+  changed: boolean;
+}
+
+/** 隣り合う2段階の変化（同じ軸で並べる） */
+export interface ComparisonStep {
+  fromPosition: ComparisonPosition;
+  toPosition: TransmissionPosition;
+  relationToDayStem: ValueChange<TransmissionToDayStemRelation>;
+  sixRelation: ValueChange<SixRelation>;
+  growthStage: ValueChange<GrowthStage>;
+  growthPhase: ValueChange<GrowthPhase>;
+  dayXunVoid: ValueChange<boolean>;
+  seatedOnVoid: ValueChange<boolean>;
+  daySalary: ValueChange<boolean>;
+  dayVirtue: ValueChange<boolean>;
+}
+
+/** 干上（現在地）と三伝（経路）の比較 */
+export interface StandingPathComparison {
+  /** Phase 3N の三伝の向き（比較の結果には使わない） */
+  movementDirection: MovementDirection;
+  movementPattern: MovementPattern;
+  /** 干上（Phase 3L の値をそのまま参照） */
+  standing: DayStemStandingState;
+  /** 三伝（Phase 3K の値をそのまま参照） */
+  path: Triple<TransmissionDayStemState>;
+  transitions: { standingToInitial: ComparisonStep; initialToMiddle: ComparisonStep; middleToFinal: ComparisonStep };
+  sequences: {
+    relationToDayStem: StandingPathSequence<TransmissionToDayStemRelation>;
+    sixRelation: StandingPathSequence<SixRelation>;
+    growthStage: StandingPathSequence<GrowthStage>;
+  };
+  /** 日禄・日徳・旬丁・驛馬が現れる位置（干上→末伝の順。なければ []） */
+  markerPositions: {
+    daySalary: readonly ComparisonPosition[];
+    dayVirtue: readonly ComparisonPosition[];
+    xunDing: readonly ComparisonPosition[];
+    yima: readonly ComparisonPosition[];
+  };
+  /** 旬空・坐空の位置（別々に持つ。干上を含む） */
+  voidPositions: {
+    dayXunVoid: readonly ComparisonPosition[];
+    seatedOnVoid: readonly ComparisonPosition[];
+  };
+}
