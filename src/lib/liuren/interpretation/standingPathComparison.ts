@@ -5,12 +5,15 @@
 //   値はすべて DirectionEvidence（Phase 3N。中身は Phase 3K・3L・3M-C）を参照するだけで、新しい計算はしない。
 //   宜進・宜退・宜守、実効性（空亡が禄・旺を無効にする等）、評価語（improving など）は持たない。
 //   「実の旺禄」のように複数の条件を1つの boolean にまとめない（禄・帝旺・空亡・関係を別々に並べる）。
+//   地点どうしの関係（Phase 3R）は relationBetween(from, to) の五行関係で、順方向の6組だけを持つ（逆向きは保存しない）。
 
 import type { Branch } from "../types";
 import { directionEvidenceOf } from "./directionEvidence";
+import { relationBetween } from "./relations";
 import type {
-  ComparisonPosition, ComparisonStep, DayStemStandingState, DirectionEvidence, InterpretationFacts,
-  StandingPathComparison, TransmissionDayStemState, TransmissionPosition, ValueChange,
+  ComparisonPosition, ComparisonStep, DayStemStandingState, DirectionEvidence, ElementRelation, InterpretationFacts,
+  PathInternalRelation, RelationFact, StandingPathComparison, StandingPathInternalRelations, TransmissionDayStemState,
+  TransmissionPosition, ValueChange,
 } from "./types";
 
 type StageState = DayStemStandingState | TransmissionDayStemState;
@@ -30,6 +33,31 @@ function stepOf(fromPosition: ComparisonPosition, a: StageState, toPosition: Tra
     daySalary: change(a.isDaySalary, b.isDaySalary),
     dayVirtue: change(a.isDayVirtue, b.isDayVirtue),
   };
+}
+
+/** relationBetween の結果から五行の関係を1つ取り出す（五行の関係はちょうど1つ） */
+export function elementRelationOf(r: RelationFact): ElementRelation {
+  const found = (["generates", "sameElement", "generatedBy", "overcomes", "overcomeBy"] as const).find((k) => r.relations.includes(k));
+  if (!found) throw new Error(`五行の関係がありません: ${r.from}→${r.to}`);
+  return found;
+}
+
+function internalRelationsOf(stages: readonly [ComparisonPosition, StageState][]): StandingPathInternalRelations {
+  const all: PathInternalRelation[] = [];
+  for (let i = 0; i < stages.length; i++) {
+    for (let j = i + 1; j < stages.length; j++) {
+      const [fromPosition, a] = stages[i];
+      const [toPosition, b] = stages[j];
+      const structural = relationBetween(a.branch, b.branch);
+      all.push({
+        fromPosition, toPosition: toPosition as TransmissionPosition,
+        fromBranch: a.branch, toBranch: b.branch,
+        relation: elementRelationOf(structural), structural,
+      });
+    }
+  }
+  const pick = (f: ComparisonPosition, t: ComparisonPosition) => all.find((r) => r.fromPosition === f && r.toPosition === t)!;
+  return { adjacent: [pick("standing", "initial"), pick("initial", "middle"), pick("middle", "final")], all };
 }
 
 /** DirectionEvidence → 干上と三伝の比較 */
@@ -64,6 +92,7 @@ export function standingPathComparisonFrom(e: DirectionEvidence): StandingPathCo
       dayXunVoid: where((x) => x.isVoid),
       seatedOnVoid: where((x) => x.isSeatedOnVoid),
     },
+    internalRelations: internalRelationsOf(stages),
   };
 }
 

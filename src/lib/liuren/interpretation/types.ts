@@ -718,4 +718,33 @@ export interface StandingPathComparison {
     dayXunVoid: readonly ComparisonPosition[];
     seatedOnVoid: readonly ComparisonPosition[];
   };
+  /** 地点どうしの関係（Phase 3R） */
+  internalRelations: StandingPathInternalRelations;
+}
+
+// ==== 干上・三伝の地点どうしの関係（Phase 3R）。生剋の向きだけを持ち、吉凶は持たない ====
+
+/**
+ * 2つの支の五行の関係（向きは from → to。relationBetween(from, to) の五行関係）。
+ *   generates … from が to を生ずる / sameElement … 同じ五行 / generatedBy … from が to に生じられる
+ *   overcomes … from が to を剋す / overcomeBy … from が to に剋される
+ */
+export type ElementRelation = Extract<StructuralRelation, "generates" | "sameElement" | "generatedBy" | "overcomes" | "overcomeBy">;
+
+/** 地点どうしの関係（順方向のみ。逆向きは保存しない） */
+export interface PathInternalRelation {
+  fromPosition: ComparisonPosition;
+  toPosition: TransmissionPosition;
+  fromBranch: Branch;
+  toBranch: Branch;
+  relation: ElementRelation;
+  /** relationBetween(from, to) の結果そのもの（冲・刑・六合・破・害も含む） */
+  structural: RelationFact;
+}
+
+export interface StandingPathInternalRelations {
+  /** 隣り合う3組: 干上→初伝・初伝→中伝・中伝→末伝（all の同じオブジェクト） */
+  adjacent: readonly [PathInternalRelation, PathInternalRelation, PathInternalRelation];
+  /** 順方向の6組: 干上→初・干上→中・干上→末・初→中・初→末・中→末 */
+  all: readonly PathInternalRelation[];
 }
