@@ -633,3 +633,25 @@ export interface StandingAndTransmissionPath {
   /** Phase 3K の三伝と日干の作用関係。三伝未確定なら null */
   path: TransmissionDayStemFlow | null;
 }
+
+// ==== 進退判断の材料（Phase 3N）。方向のシグナルを並べるだけの中立 FACT ====
+// 宜進・宜退・宜守の判定、score は持たない。季節内の進気・退気（SeasonalBranchDirection）とは別。
+
+/**
+ * 三伝の支の移動の向き（movementPattern を言い換えたもの）。
+ *   advancing … 進茹・進間 / retreating … 退茹・退間 / neutral … その他
+ * advancing＝宜進、retreating＝宜退 ではない。
+ */
+export type MovementDirection = "advancing" | "retreating" | "neutral";
+
+/** 進退判断に使う材料（三伝の向き・末伝の空亡・干上の現在地・三伝の経路を分けたまま持つ） */
+export interface DirectionEvidence {
+  movementDirection: MovementDirection;
+  movementPattern: MovementPattern;
+  /** 干上（日干上神）の現在地（Phase 3L） */
+  standing: DayStemStandingState;
+  /** 三伝の経路（Phase 3K・3M-C） */
+  path: TransmissionDayStemFlow;
+  /** 末伝の空亡（Phase 3M-C の voidStructure） */
+  terminal: { dayXunVoid: boolean; seatedOnVoid: boolean };
+}

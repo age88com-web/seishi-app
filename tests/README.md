@@ -10,6 +10,7 @@
 | `ganzhi_parity.manual.ts` | 旧 eto.ts と CalendarEngine の干支計算の互換性確認 | `TZ=Asia/Tokyo npx tsx tests/ganzhi_parity.manual.ts` |
 | `kakkyoku_cases.ts` | 七政四餘 格局エンジンの動作確認 | `npx tsx tests/kakkyoku_cases.ts` |
 | `liuren_interpretation_void_structure.manual.ts` | 六壬神課 解釈エンジン Phase 3M-C（空亡の構造 FACT）のテスト。dayXunVoid（既存 isVoid）と seatedOnVoid（坐空＝支が加わる地盤支が旬空）を分離。古典例（丁巳・乙卯・壬子・甲午・丙午）の値、甲子日退間（戌→申→午）の末伝午が日旬空・坐空では表せない未実装領域であること、720課×月支12 で既存 isVoid と完全一致・三伝（Phase 3K）と干上（Phase 3L）の isSeatedOnVoid が一致すること、720課の位置別・組合せ・movementPattern 別の監査値を確認。 | `npx tsx tests/liuren_interpretation_void_structure.manual.ts` |
+| `liuren_interpretation_direction_evidence.manual.ts` | 六壬神課 解釈エンジン Phase 3N（進退判断の材料 FACT）のテスト。720課×月支12 で DirectionEvidence（movementDirection・standing・path・末伝の空亡）が既存 FACT と一致すること、古典4例と丁巳日の FACT 出力（結論はコードで出さない）、720課の向き別の監査値を確認。 | `npx tsx tests/liuren_interpretation_direction_evidence.manual.ts` |
 | `liuren_audit_lianru_void.manual.ts` | **監査（audit）用。本番の回帰テストではない。** 六壬神課 Phase 3M-A・3M-B の連茹空亡の古典構造監査。古典9例（壬子・甲午・丁巳・戊申・乙卯・甲子・丙午・甲申・丙辰）の日旬空・坐空・天空と、旬をたどる空亡の候補規則（R1〜R5）を並べ、720課での成立件数を出す。候補規則は本番に実装していない（研究資料）。 | `npx tsx tests/liuren_audit_lianru_void.manual.ts` |
 
 ## qimen_1080.manual.ts
