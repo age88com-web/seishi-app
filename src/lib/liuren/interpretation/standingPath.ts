@@ -25,30 +25,38 @@ import { growthStageOfStem, rulingElementOfMonth, seasonalStrengthOf } from "./s
 import { isSeatedOnVoid } from "./voidStructure";
 import type { BranchMarker, DayStemStandingState, InterpretationFacts, StandingAndTransmissionPath } from "./types";
 
-const onFirstLesson = (m: BranchMarker) => m.lessons.some((l) => l.index === 1);
-
-/** 日干上神（一課上神）の状態 */
-export function dayStemStandingOf(facts: InterpretationFacts, monthBranch?: Branch | null): DayStemStandingState {
+/**
+ * 四課の上神（一課〜四課のどれか）の状態。干上（一課上神）と二課〜四課の上神で共通に使う（Phase 3U）。
+ * 項目と規則は三伝の各伝（Phase 3K）と同じ。
+ */
+export function lessonUpperStateOf(facts: InterpretationFacts, index: 1 | 2 | 3 | 4, monthBranch?: Branch | null): DayStemStandingState {
   const { dayStem } = facts.basic;
-  const branch = facts.lessons[0].upper;
+  const lesson = facts.lessons[index - 1];
+  const branch = lesson.upper;
   const element = elementOf(branch);
   const markers = dayMarkersOf(facts);
+  const onLesson = (m: BranchMarker) => m.lessons.some((l) => l.index === index);
   const growthStage = growthStageOfStem(dayStem, branch);
   return {
     branch,
     element,
     relationToDayStem: transmissionToDayStemRelation(relationBetween(branch, dayStem)),
-    sixRelation: facts.lessons[0].relation,
-    isDaySalary: onFirstLesson(markers.daySalary),
-    isDayVirtue: onFirstLesson(markers.dayVirtue),
-    isXunDing: onFirstLesson(markers.xunDing),
-    isYima: onFirstLesson(markers.yima),
+    sixRelation: lesson.relation,
+    isDaySalary: onLesson(markers.daySalary),
+    isDayVirtue: onLesson(markers.dayVirtue),
+    isXunDing: onLesson(markers.xunDing),
+    isYima: onLesson(markers.yima),
     isVoid: facts.xun.voidBranches.includes(branch),
     isSeatedOnVoid: isSeatedOnVoid(facts, branch),
     growthStage,
     growthPhase: growthPhaseOf(growthStage),
     seasonalStrength: monthBranch ? seasonalStrengthOf(element, rulingElementOfMonth(monthBranch)) : null,
   };
+}
+
+/** 日干上神（一課上神）の状態 */
+export function dayStemStandingOf(facts: InterpretationFacts, monthBranch?: Branch | null): DayStemStandingState {
+  return lessonUpperStateOf(facts, 1, monthBranch);
 }
 
 /** 干上（standing）と三伝の経路（path）。三伝未確定なら path は null */

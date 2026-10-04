@@ -784,3 +784,49 @@ export interface StandingPathActualization {
   /** Phase 3R の順方向6組と同じ順 */
   internalRelations: readonly InternalRelationConstraints[];
 }
+
+// ==== 四課の状態（Phase 3U）。一課〜四課の上神を三伝と同じ項目で持つ中立 FACT。ROLE・吉凶は持たない ====
+
+export type LessonPosition = "lesson1" | "lesson2" | "lesson3" | "lesson4";
+
+/** 下神→上神 の関係（下神は一課では日干そのもの〔干〕、二〜四課では地盤支） */
+export interface LessonLowerToUpper {
+  from: Stem | Branch;
+  to: Branch;
+  /** relationBetween(下神, 上神) の五行関係（干が下神のときは五行の関係だけになる） */
+  relation: ElementRelation;
+  structural: RelationFact;
+  /** 既存の四課の剋関係（Phase 2 の LessonFact.zeike） */
+  zeike: LessonZeike;
+}
+
+/** 四課1課の状態 */
+export interface FourLessonState {
+  position: LessonPosition;
+  index: 1 | 2 | 3 | 4;
+  /** 下神（一課は日干そのもの） */
+  lower: Stem | Branch;
+  /** 地盤支（一課は日干の寄宮支） */
+  lowerBranch: Branch;
+  /** 上神の状態（干上の DayStemStandingState と同じ形・同じ規則） */
+  upper: DayStemStandingState;
+  /** Phase 3S と同じ規則の制約（上神の旬空・坐空） */
+  constraints: readonly ActualizationConstraint[];
+  lowerToUpper: LessonLowerToUpper;
+}
+
+/** 四課の上神どうしの関係（順方向のみ） */
+export interface FourLessonInternalRelation {
+  fromPosition: LessonPosition;
+  toPosition: LessonPosition;
+  fromBranch: Branch;
+  toBranch: Branch;
+  relation: ElementRelation;
+  structural: RelationFact;
+}
+
+export interface FourLessonsState {
+  lessons: readonly [FourLessonState, FourLessonState, FourLessonState, FourLessonState];
+  /** 上神どうしの順方向6組: 1→2・1→3・1→4・2→3・2→4・3→4 */
+  internalRelations: readonly FourLessonInternalRelation[];
+}
