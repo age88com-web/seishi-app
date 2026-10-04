@@ -886,3 +886,16 @@ export interface HeavenlyGeneralPositionState {
   /** その天盤支に乗る天将（facts.generals.generalOn[skyBranch]） */
   general: HeavenlyGeneral;
 }
+
+// ==== 日干の昼夜貴人支（Phase 4E）。十二天将の「貴人」（HeavenlyGeneralPositionState）とは別の FACT ====
+// 起課エンジンが天将盤を作るときに採用した昼夜区分と貴人支（generals.dayOrNight・generals.nobleBranch）をそのまま持つ。
+// 昼夜貴人表は複製しない。採用しなかった側（昼占なら夜貴人支）は起課結果に残っていないので持たない。
+// ROLE・吉凶は持たない。
+
+export interface DayNightNobleBranchState {
+  kind: "dayNightNobleBranch";
+  /** 起課エンジンが採用した貴人支（generals.nobleBranch。日干は facts.basic.dayStem） */
+  branch: Branch;
+  /** 起課エンジンが採用した昼夜区分（generals.dayOrNight。昼＝day、夜＝night） */
+  period: "day" | "night";
+}
