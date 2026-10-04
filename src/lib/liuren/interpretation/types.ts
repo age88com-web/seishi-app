@@ -458,3 +458,51 @@ export interface QiStates {
   qiStates: Triple<TransmissionQiState>;
   phaseTransitions: readonly [GrowthPhaseTransition, GrowthPhaseTransition];
 }
+
+// ==== 時令の気勢タイムライン（Phase 3I）。月令の推移による旺相休囚死の変化だけを表す ====
+// 進気・退気・吉凶・数値順位は持たない。空亡・墓・生剋・六親・天将・神煞による補正もしない。
+
+/** ある五行の、current から offset か月ずれた月令での旺相休囚死 */
+export interface SeasonalTimelinePoint {
+  /** current からのずれ（月令の順 寅→卯→…→丑→寅 で数える） */
+  offset: number;
+  monthBranch: Branch;
+  rulingElement: Element;
+  strength: SeasonalStrength;
+}
+
+/** 隣り合う2点の旺相休囚死の変化 */
+export interface SeasonalTimelineTransition {
+  fromOffset: number;
+  toOffset: number;
+  fromMonthBranch: Branch;
+  toMonthBranch: Branch;
+  from: SeasonalStrength;
+  to: SeasonalStrength;
+  changed: boolean;
+}
+
+/** ある五行の時令タイムライン（前月・当月・翌月・翌々月） */
+export interface SeasonalTimeline {
+  element: Element;
+  currentMonthBranch: Branch;
+  /** offset −1・0・+1・+2 の順 */
+  points: readonly SeasonalTimelinePoint[];
+  previous: SeasonalTimelinePoint;
+  current: SeasonalTimelinePoint;
+  next: SeasonalTimelinePoint;
+  next2: SeasonalTimelinePoint;
+  /** current→next、next→next2 */
+  transitions: readonly [SeasonalTimelineTransition, SeasonalTimelineTransition];
+}
+
+/** 三伝1伝の地支自身の五行の時令タイムライン（日干の五行ではない） */
+export interface TransmissionSeasonalTimeline extends SeasonalTimeline {
+  position: TransmissionPosition;
+  branch: Branch;
+}
+
+/** 日干の五行の時令タイムライン */
+export interface DayStemSeasonalTimeline extends SeasonalTimeline {
+  dayStem: Stem;
+}
