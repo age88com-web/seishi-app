@@ -856,3 +856,23 @@ export interface DayBranchState {
   applicableConstraints: readonly DayBranchConstraint[];
   constraints: readonly DayBranchConstraint[];
 }
+
+// ==== 天盤支が乗る地盤位置での状態（Phase 4A）。中立 FACT。ROLE・DOMAIN・吉凶・強弱は持たない ====
+// 既存の growthStage（日干の五行を基準に、その天盤支を見る）とは別物。
+// こちらは天盤支自身の五行を基準に、その天盤支が乗る地盤支を見る。旺相休囚死は地盤支で変わらないので持たない。
+
+export interface SiteState {
+  /** 天盤支 */
+  skyBranch: Branch;
+  /** 天盤支が乗る地盤支（facts.plate.earthUnder[skyBranch]） */
+  siteBranch: Branch;
+  /** 天盤支自身の五行 */
+  skyElement: Element;
+  /** skyElement を siteBranch に当てた十二長生（五行生墓法） */
+  growthStageAtSite: GrowthStage;
+  growthPhaseAtSite: GrowthPhase;
+  /** relationBetween(skyBranch, siteBranch) の五行関係（向きは 天盤支 → 地盤支） */
+  relation: ElementRelation;
+  /** relationBetween(skyBranch, siteBranch)（合・冲・刑・害・破を含む） */
+  structural: RelationFact;
+}
