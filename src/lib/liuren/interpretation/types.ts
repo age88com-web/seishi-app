@@ -956,3 +956,19 @@ export interface HeavenlyGeneralPlacementRelations {
   skyBranchMatchesAffiliatedBranch: boolean;
   siteBranchMatchesAffiliatedBranch: boolean;
 }
+
+// ==== 天将の固有五行を加臨先（地盤支）に当てた十二長生（Phase 4I）。中立 FACT ====
+// 天将の五行は Phase 4G、加臨先は Phase 4A の siteBranch（Phase 4H の関係 FACT 経由）。十二長生は六壬の五行生墓法（growthStageOf）。
+// SiteState の growthStageAtSite（天盤支の五行を地盤支に当てる）とは別の FACT。天盤支・所属支には当てない。
+// 旺相休囚死・吉凶・強弱は持たない。
+
+export interface HeavenlyGeneralSiteGrowthState {
+  general: HeavenlyGeneral;
+  /** 天将の固有五行（Phase 4G） */
+  generalElement: Element;
+  /** 天将が乗る天盤支の下の地盤支（Phase 4A の siteBranch） */
+  siteBranch: Branch;
+  /** generalElement を siteBranch に当てた十二長生 */
+  growthStageAtSite: GrowthStage;
+  growthPhaseAtSite: GrowthPhase;
+}
