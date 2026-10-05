@@ -1001,3 +1001,14 @@ export interface DerivedBranchDayStemState {
   /** 日干からみた支の六親（起課エンジンの sixRelation） */
   sixRelation: SixRelation;
 }
+
+// ==== 太歳（Phase 4L-1）。占年の年支（『六壬神課講座』p65「太歳（年支）」）。解釈時に参照する時間側の FACT ====
+// 起課の入力ではなく、四課・三伝・天地盤・天将盤に影響しない。年支は明示的に受け取る（暦計算の年支は使わず、年境界も決めない）。
+// 年干・上神・陰神・天将・六親・十二長生・空亡・標識・吉凶は持たない（必要なら支から既存の FACT で求める）。
+// 本命・年命（人物側の FACT）とは別の構造。
+
+export interface TaiSuiState {
+  kind: "taiSui";
+  /** 太歳の支（占年の年支。明示入力） */
+  branch: Branch;
+}
