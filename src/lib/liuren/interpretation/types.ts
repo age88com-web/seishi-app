@@ -987,3 +987,17 @@ export interface YinSpiritState {
   /** 陰神の支に乗る天将（facts.generals.generalOn。Phase 4B） */
   yinSpiritGeneral: HeavenlyGeneral;
 }
+
+// ==== 任意の支と日干の関係（Phase 4K）。陰神・上神・行年など、盤上の関係から得た支にも使える共通 FACT ====
+// 「Derived」は推論・吉凶の意味ではなく、盤上の関係から得た支にも使えるという意味。
+// 日干との五行関係（支 → 日干）と六親だけを持つ。十二長生・旺相休囚死・標識・空亡・天将・SiteState・吉凶は持たない。
+
+export interface DerivedBranchDayStemState {
+  branch: Branch;
+  /** 支の五行（elementOf） */
+  element: Element;
+  /** 支 → 日干 の五行関係（TransmissionToDayStemRelation の「伝」を「支」と読む） */
+  relationToDayStem: TransmissionToDayStemRelation;
+  /** 日干からみた支の六親（起課エンジンの sixRelation） */
+  sixRelation: SixRelation;
+}
