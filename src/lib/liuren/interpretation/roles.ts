@@ -39,7 +39,8 @@ export type InterpretationDomain =
 export interface DomainSubtypes {
   wealth: "general";
   work: "employment" | "jobChange" | "promotion" | "transfer" | "currentWork" | "resignation" | "independence";
-  exam: "general";
+  /** 文試（civil）・武試（military）は『六壬断案２』例54 で評価が分かれる（Phase 5A） */
+  exam: "general" | "civil" | "military";
   house: "residence" | "moving";
   marriage: "general";
   travel: "departure";
