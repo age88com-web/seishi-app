@@ -12,7 +12,8 @@
 //
 //   ROLE を自動で割り当てる関数（assignRoles）はまだ実装しない（下の AssignRoles は型だけ）。
 
-import type { ComparisonPosition, InterpretationFacts, NatalYearState, StandingPathActualization } from "./types";
+import type { Branch } from "../types";
+import type { ComparisonPosition, InterpretationFacts, NatalYearState, StandingPathActualization, TaiSuiState } from "./types";
 
 // ---- CONTEXT（問う内容） ----
 
@@ -102,6 +103,29 @@ export interface InterpretationContext<D extends InterpretationDomain = Interpre
   subjectPersonId?: PersonContextId;
   /** 相手にあたる人物の ID。盤上の起点 counterpartyAnchor とは別 */
   counterpartyPersonId?: PersonContextId;
+  /** 太歳（Phase 4L-1。時間側の FACT）。人物（persons）には入れない。年・暦の値はここに持たない */
+  taiSui?: TaiSuiState;
+}
+
+// ---- 盤外の支（Phase 4N）。CONTEXT から得る支を、出典つきで参照する。BoardAnchor（盤上の位置）とは別の型 ----
+
+/** 盤外の支の出典。人物の本命は personId で指定する（subjectPersonId などから自動では選ばない） */
+export type ContextBranchSource =
+  | { kind: "personNatalYear"; personId: PersonContextId }
+  | { kind: "taiSui" };
+
+/** 解決できた盤外の支（出典つき。生年干などは持たない） */
+export interface ContextBranchResolution {
+  status: "resolved";
+  source: ContextBranchSource;
+  branch: Branch;
+}
+
+/** 解決できなかった理由（人物がいない・本命がない・太歳がないを区別する） */
+export interface ContextBranchUnresolved {
+  status: "unresolved";
+  source: ContextBranchSource;
+  reason: "personNotFound" | "natalYearMissing" | "taiSuiMissing";
 }
 
 // ---- ROLE ----
