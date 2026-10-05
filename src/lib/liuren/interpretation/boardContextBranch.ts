@@ -45,8 +45,8 @@ function boardAnchorOf(a: RelationAnchor): BoardAnchor {
   return a.kind === "lesson" ? { kind: "lesson", index: a.index } : a;
 }
 
-/** 盤側の支（resolveAnchor の結果から読むだけ） */
-function boardBranchOf(a: RelationAnchor, ctx: AnchorResolutionContext): { branch: Branch } | { reason: BoardBranchUnavailableReason } {
+/** 盤側の支（resolveAnchor の結果から読むだけ。Phase 4P の派生した支との比較でも使う） */
+export function boardBranchOf(a: RelationAnchor, ctx: AnchorResolutionContext): { branch: Branch } | { reason: BoardBranchUnavailableReason } {
   const r = resolveAnchor(boardAnchorOf(a), ctx);
   if (!r) return { reason: "positionUnavailable" };
   switch (r.kind) {
