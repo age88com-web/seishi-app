@@ -12,7 +12,7 @@
 //
 //   ROLE を自動で割り当てる関数（assignRoles）はまだ実装しない（下の AssignRoles は型だけ）。
 
-import type { ComparisonPosition, InterpretationFacts, StandingPathActualization } from "./types";
+import type { ComparisonPosition, InterpretationFacts, NatalYearState, StandingPathActualization } from "./types";
 
 // ---- CONTEXT（問う内容） ----
 
@@ -68,6 +68,22 @@ export type BoardAnchor =
   | { kind: "lesson"; index: 1 | 2 | 3 | 4 }
   | { kind: "position"; position: ComparisonPosition };
 
+// ---- 人物（Phase 4M）。問占に関わる人物の入力。盤上の起点（BoardAnchor）とも ROLE とも別の概念 ----
+
+/** 人物の識別子（同じ CONTEXT の中で人物を区別するだけ。実名は持たない） */
+export type PersonContextId = string;
+
+/**
+ * 問占に関わる人物（問う人・相手など）。本命・年命は人物ごとに違う属性なので、ここに持つ。
+ * 起課の FACT（LiurenChart・InterpretationFacts）には入れない。太歳（時間側の FACT）は持たない。
+ * 生年月日・性別・年齢・行年・実名・ROLE は持たない。
+ */
+export interface InterpretationPerson {
+  id: PersonContextId;
+  /** 本命・年命（Phase 4L-2）。分からなければ省く */
+  natalYear?: NatalYearState;
+}
+
 export interface InterpretationContext<D extends InterpretationDomain = InterpretationDomain> {
   domain: D;
   subtype?: DomainSubtype<D>;
@@ -80,6 +96,12 @@ export interface InterpretationContext<D extends InterpretationDomain = Interpre
   goal?: InterpretationGoal;
   /** 現在の状況の説明（自由記述。例: 現在勤務中・すでに妊娠中） */
   currentState?: string;
+  /** 問占に関わる人物（Phase 4M）。ID は重複させない（validateInterpretationPersons で確かめる） */
+  persons?: readonly InterpretationPerson[];
+  /** 問う人（主体）にあたる人物の ID。盤上の起点 subjectAnchor とは別。ROLE を自動では付けない */
+  subjectPersonId?: PersonContextId;
+  /** 相手にあたる人物の ID。盤上の起点 counterpartyAnchor とは別 */
+  counterpartyPersonId?: PersonContextId;
 }
 
 // ---- ROLE ----
