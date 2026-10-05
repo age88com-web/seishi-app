@@ -972,3 +972,18 @@ export interface HeavenlyGeneralSiteGrowthState {
   growthStageAtSite: GrowthStage;
   growthPhaseAtSite: GrowthPhase;
 }
+
+// ==== 陰神（Phase 4J）。四課の上神を地盤の位置として、その上に来る天盤支と、そこに乗る天将 ====
+// 『六壬断案２』の用法（例32「四課は玄武〔三課戌〕の陰神」、例55「酉が太常、その上神戌が玄武」、例36「子の陰神は寅、寅の陰神は辰」など）
+// に合わせ、陰神＝plate.heavenOn[上神]（四課を作るのと同じ天地盤の写像）。支（天地盤）と天将（天将盤）は別の項目。
+// 五行・六親・SiteState・天将の固有属性・関係・十二長生・意味づけ・吉凶は持たない。一段だけで、陰神の陰神はたどらない。
+
+export interface YinSpiritState {
+  lessonIndex: 1 | 2 | 3 | 4;
+  /** 基準の支（その課の上神） */
+  sourceBranch: Branch;
+  /** 陰神の支（plate.heavenOn[sourceBranch]。基準の支を地盤として、その上の天盤支） */
+  yinSpiritBranch: Branch;
+  /** 陰神の支に乗る天将（facts.generals.generalOn。Phase 4B） */
+  yinSpiritGeneral: HeavenlyGeneral;
+}
