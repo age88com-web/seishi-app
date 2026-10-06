@@ -158,8 +158,9 @@ export interface ActivityProfile {
   /**
    * COMPOSITE型（六黄道。2026-09-10、六黄道COMPOSITE本番実装フェーズで追加）。
    * neta：神殺象意.pdf「〔青龍〕〔明堂〕〔寶光〕〔玉堂〕〔司命〕爲六黄道日，
-   * 與吉神併，則從所宜，與凶神併，則從所忌」。原文に明記された5神
-   * （青龍・明堂・寶光・玉堂・司命）だけに true を立てる。金匱は原文の
+   * 與吉神併，則從所宜，與凶神併，則從所忌」。原文に明記された5神のうち
+   * 青龍・明堂・寶光・玉堂の4神に true を立てる（司命は監修確定 2026-10-06 により
+   * 一般的な吉日を示す吉神として扱い、立てない。generalAuspiciousDay 参照）。金匱は原文の
    * 列挙に含まれないため立てない（docs/takujitsu_liuhuangdao_composite_analysis.md 2章）。
    *
    * true の場合、evaluateActivities() の第2パスで、同日に成立している
@@ -174,6 +175,12 @@ export interface ActivityProfile {
    * 置換しない。第1パスでは他の吉神と同様にLIST型として評価される。
    */
   composite?: boolean;
+  /**
+   * 一般的な吉日を示す吉神（監修確定 2026-10-06。現在は司命のみ）。
+   * 特定の用事に個別の宜忌を与えず、その日が一般的に吉であることを示す日次評価の要素として保持する。
+   * evaluateActivities() は個別用事の宜忌に展開しない（favorable/unfavorable は空、composite も立てない）。
+   */
+  generalAuspiciousDay?: boolean;
   /**
    * docs/takujitsu_activity_rules.mdで「保留」「本文中に見当たらず」等と
    * 確認済みの理由、または表構造上の注記（自由文）。favorable/unfavorable

@@ -14,6 +14,7 @@
 
 import { evaluateActivities, computeVerdict } from "../src/lib/takujitsu/activity/evaluateActivities";
 import { ACTIVITY_BY_ID } from "../src/lib/takujitsu/activity/activityDefinitions";
+import { getActivityProfile } from "../src/lib/takujitsu/activity/activityProfiles";
 import type { ResolvedShinsatsuEntry, ResolvedShinsatsuResult } from "../src/lib/takujitsu/resolution/types";
 import type { JianchuResult } from "../src/lib/takujitsu/jianchu";
 import type { Shuku28Info } from "../src/lib/takujitsu/shuku28";
@@ -410,9 +411,10 @@ check("4. どちらもなし → neutral", computeVerdict(0, 0) === "neutral");
   check("F. 金匱＋三合：家族会議は金匱のLIST型宜として残る", kaigi?.positiveSources.some((s) => s.sourceName === "金匱") === true);
 }
 
-// L. 家族会議・遠行 → 六黄道6神すべてで既存positiveが維持されている
+// L. 家族会議・遠行 → 六黄道のうち司命を除く5神で既存positiveが維持されている
+//    （司命は監修確定 2026-10-06 により個別用事に展開しない。下の S を参照）
 {
-  for (const name of ["青龍", "明堂", "金匱", "寶光", "玉堂", "司命"]) {
+  for (const name of ["青龍", "明堂", "金匱", "寶光", "玉堂"]) {
     const r = resolution([entry(name, "active")], []);
     const result = evaluateActivities({ resolution: r, buildingDay: JIANCHU_JIAN });
     const kaigi = result.evaluations.find((e) => e.activityId === "家族会議");
@@ -508,6 +510,22 @@ check("4. どちらもなし → neutral", computeVerdict(0, 0) === "neutral");
   check("M. 裁衣に青龍・明堂の両方がcomposite追従（参照元は三合、互いではない）",
     !!saii && saii.positiveSources.some((s) => s.sourceName === "青龍" && s.note === "吉神「三合」の宜に従う") &&
     saii.positiveSources.some((s) => s.sourceName === "明堂" && s.note === "吉神「三合」の宜に従う"));
+}
+
+// S. 司命（監修確定 2026-10-06）：一般的な吉日を示す吉神。個別用事の宜忌に展開せず、
+//    他の吉神の宜・凶神の忌にも追従しない。
+{
+  const alone = evaluateActivities({ resolution: resolution([entry("司命", "active")], []), buildingDay: JIANCHU_JIAN });
+  check("S. 司命単独：個別用事に司命由来の宜忌が1件も出ない",
+    !alone.evaluations.some((e) => [...e.positiveSources, ...e.negativeSources].some((s) => s.sourceName === "司命")));
+  const withOthers = evaluateActivities({
+    resolution: resolution([entry("司命", "active"), entry("三合", "active")], [entry("月殺", "active")]),
+    buildingDay: JIANCHU_JIAN,
+  });
+  check("S. 司命＋三合＋月殺：司命は三合の宜にも月殺の忌にも追従しない",
+    !withOthers.evaluations.some((e) => [...e.positiveSources, ...e.negativeSources].some((s) => s.sourceName === "司命")));
+  check("S. 司命のプロファイルは一般吉日（generalAuspiciousDay）で、composite を持たない",
+    getActivityProfile("kichijin", "司命")?.generalAuspiciousDay === true && getActivityProfile("kichijin", "司命")?.composite !== true);
 }
 
 // N. COMPOSITE不成立日は第2パスが何もしない（金匱＋三合と同じくregression）

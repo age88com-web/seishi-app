@@ -19,8 +19,8 @@
 //   （ShinsatsuResult.kichijin）は変更しない。
 //   docs/takujitsu_geppo_deity_suppression_analysis.md。
 //
-//   第2パス（2026-09-10追加）: COMPOSITE型（六黄道の5神。青龍・明堂・寶光・
-//   玉堂・司命）は、第1パス（＋第1.5パスの抑制後）で確定した他の吉神由来
+//   第2パス（2026-09-10追加）: COMPOSITE型（六黄道の青龍・明堂・寶光・玉堂の4神。
+//   司命は監修確定 2026-10-06 により対象外＝一般的な吉日を示す吉神）は、第1パス（＋第1.5パスの抑制後）で確定した他の吉神由来
 //   positive・他の凶神由来negative（resolution適用後の有効な忌のみ）を、
 //   自身の宜/忌としても追従させる（神殺象意.pdf「與吉神併則從所宜、與凶神
 //   併則從所忌」。docs/takujitsu_liuhuangdao_composite_analysis.md）。金匱は
@@ -411,7 +411,7 @@ export function evaluateActivities(input: EvaluateActivitiesInput): ActivityEval
   }
 
   // -------------------------------------------------------------------------
-  // 第2パス: COMPOSITE型（六黄道の5神。青龍・明堂・寶光・玉堂・司命）
+  // 第2パス: COMPOSITE型（六黄道の青龍・明堂・寶光・玉堂の4神。司命は 2026-10-06 監修確定で対象外）
   //
   // 神殺象意.pdf「〔青龍〕〔明堂〕〔寶光〕〔玉堂〕〔司命〕爲六黄道日，與吉神
   // 併，則從所宜，與凶神併，則從所忌」。同日に成立している他の吉神由来の

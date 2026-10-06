@@ -37,9 +37,10 @@
 //         四離・四絶）だけに適用。exceptionActivityIdsは「不忌」であり
 //         「宜」ではない（他に宜の根拠が無い限りpositiveにはならない）。
 //     いずれも該当する6/11件以外はLIST型（既存どおり明示列挙）のまま。
-//   ・COMPOSITE型（composite: true）＝六黄道の5神（青龍・明堂・寶光・玉堂・
-//     司命）だけに適用（神殺象意.pdf「爲六黄道日、與吉神併則從所宜、與凶神
-//     併則從所忌」）。金匱は原文の列挙に無いため対象外。composite は
+//   ・COMPOSITE型（composite: true）＝六黄道のうち青龍・明堂・寶光・玉堂の4神に適用
+//     （神殺象意.pdf「爲六黄道日、與吉神併則從所宜、與凶神併則從所忌」）。金匱は原文の
+//     列挙に無いため対象外。司命は原文の列挙にあるが、監修確定（2026-10-06）により
+//     一般的な吉日を示す吉神として扱い、追従させない（generalAuspiciousDay）。composite は
 //     favorableActivityIds（家族会議・遠行）を置換しない追加フラグで、
 //     評価はevaluateActivities()の第2パスが担う（docs/takujitsu_liuhuangdao_composite_analysis.md）。
 //   ・小時のみreducedStillUnfavorableActivityIdsを持つ（「與徳合等併、
@@ -303,7 +304,11 @@ export const ACTIVITY_PROFILES: ActivityProfile[] = [
   { sourceType: "kichijin", sourceName: "金匱", favorableActivityIds: ["家族会議", "遠行"], unfavorableActivityIds: [] },
   { sourceType: "kichijin", sourceName: "寶光", favorableActivityIds: ["家族会議", "遠行"], unfavorableActivityIds: [], composite: true },
   { sourceType: "kichijin", sourceName: "玉堂", favorableActivityIds: ["家族会議", "遠行"], unfavorableActivityIds: [], composite: true },
-  { sourceType: "kichijin", sourceName: "司命", favorableActivityIds: ["家族会議", "遠行"], unfavorableActivityIds: [], composite: true },
+  // 司命：監修確定（2026-10-06）。特定の用事に個別の宜を与える神ではなく、一般的な吉日を示す吉神
+  // （擇日テキスト p.15「吉の象意としての特別な意味はなく、一般的な吉日である」）。個別用事の宜忌には
+  // 展開せず（家族会議・遠行の宜も持たない）、六黄道の追従（COMPOSITE）も行わない。日次評価の要素として
+  // generalAuspiciousDay を立てる。
+  { sourceType: "kichijin", sourceName: "司命", favorableActivityIds: [], unfavorableActivityIds: [], generalAuspiciousDay: true, notes: "一般的な吉日（個別用事には展開しない）" },
   { sourceType: "kichijin", sourceName: "解神", favorableActivityIds: ["上表彰", "剃頭", "掃舎宇", "整手足甲", "求醫療病", "沐浴", "解除"], unfavorableActivityIds: [] },
   { sourceType: "kichijin", sourceName: "臨日", favorableActivityIds: ["上官赴任", "臨政親民"], unfavorableActivityIds: [], notes: "" },
   { sourceType: "kichijin", sourceName: "兵福", favorableActivityIds: ["出兵"], unfavorableActivityIds: [] },
