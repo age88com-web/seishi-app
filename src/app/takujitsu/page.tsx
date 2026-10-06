@@ -1011,6 +1011,11 @@ function SearchView({ timezone, onOpenDay }: { timezone: string; onOpenDay: (iso
                               ※ この日は「吉凶混在」です。宜の根拠と忌の根拠の両方があります（吉日ではありません）。
                             </p>
                           )}
+                          {d.evaluation && d.evaluation.verdict === "good" && d.evaluation.hasCaution && (
+                            <p className="tj-mixed-warn">
+                              ※ 注意あり：影響の弱い神殺の忌があります（吉の判定は変えていません）。
+                            </p>
+                          )}
                           {d.evaluation && d.evaluation.positiveSources.length > 0 && (
                             <SourceBlock title="宜（良いとする根拠）" tone="good" sources={d.evaluation.positiveSources} />
                           )}
@@ -1110,6 +1115,7 @@ function VerdictBlock({
                       <span className="tj-vcard-caret">{isOpen ? "▾" : "▸"}</span>
                       {main}
                       {ev.hasPendingSource && <span className="tj-vcard-pending">保留</span>}
+                      {ev.verdict === "good" && ev.hasCaution && <span className="tj-vcard-caution">注意あり</span>}
                     </span>
                     {sub && <span className="tj-vcard-sub">{sub}</span>}
                     <span className="tj-vcard-cat">
@@ -1269,9 +1275,11 @@ function SourceBlock({
   const items: { label: string; status?: string }[] = [];
   for (const s of sources) {
     const label = sourceLabel(s);
-    const status = s.resolutionStatus && s.resolutionStatus !== "active"
+    const resStatus = s.resolutionStatus && s.resolutionStatus !== "active"
       ? (RES_STATUS_LABEL[s.resolutionStatus] || s.resolutionStatus)
       : undefined;
+    // 影響の弱い神殺（埋兒凶宿・龍禁）の忌は「弱・注意」と明示する。
+    const status = s.weak ? [resStatus, "弱・注意"].filter(Boolean).join("・") : resStatus;
     const key = `${label}|${status ?? ""}`;
     if (seen.has(key)) continue;
     seen.add(key);
@@ -1399,6 +1407,7 @@ const CSS = `
 .tj-vcard-name { font-size: 13px; font-weight: 600; color: #222; }
 .tj-vcard-caret { color: #999; font-size: 11px; margin-right: 4px; }
 .tj-vcard-pending { margin-left: 6px; font-size: 10px; font-weight: 700; color: #8a6d00; }
+.tj-vcard-caution { margin-left: 6px; font-size: 10px; font-weight: 700; color: #1f5f8b; }
 .tj-vcard-sub { font-size: 11px; color: #777; }
 .tj-vcard-cat { font-size: 10px; color: #999; display: flex; flex-wrap: wrap; gap: 2px 8px; }
 .tj-vcard-yg { color: #aaa; }

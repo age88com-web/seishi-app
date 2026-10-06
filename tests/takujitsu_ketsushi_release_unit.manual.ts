@@ -21,7 +21,7 @@
 
 import { RESOLUTION_RULES } from "../src/lib/takujitsu";
 import { resolve } from "../src/lib/takujitsu/resolution";
-import { evaluateActivities } from "../src/lib/takujitsu/activity";
+import { evaluateActivities, ACTIVITY_PROFILES } from "../src/lib/takujitsu/activity";
 import { computeVerdict } from "../src/lib/takujitsu/activity/evaluateActivities";
 
 let pass = 0;
@@ -119,6 +119,19 @@ for (const a of ["安床", "造船", "乗船渡水"]) {
 }
 // 歳徳合なし → 血支（安床を忌とする強い凶神）が残るので、安床は強い凶神の判定（凶）
 check("歳徳合なし: 安床 は血支と重なり凶（強い凶神を優先）", withoutSG.get("安床")?.verdict === "bad", `実測=${withoutSG.get("安床")?.verdict}`);
+// 宜あり＋弱い忌のみ → 吉のまま（降格しない）、hasCaution で「注意あり」（監修確定 2026-10-06）
+{
+  const pairs: [string, string][] = [["安床", "埋兒凶宿"], ["乗船渡水", "龍禁"], ["造船", "龍禁"]];
+  const hit = pairs.flatMap(([act, weak]) =>
+    ACTIVITY_PROFILES.filter((p) => p.sourceType === "kichijin" && !p.composite && p.favorableActivityIds.includes(act))
+      .map((p) => ({ act, weak, kichi: p.sourceName })));
+  check("安床・乗船渡水・造船のいずれかを宜とする吉神がある（検証の前提）", hit.length > 0);
+  for (const { act, weak, kichi } of hit) {
+    const e = evalOf([kichi], [weak]).get(act);
+    check(`${kichi}＋${weak}: ${act} は吉のまま`, e?.verdict === "good", `実測=${e?.verdict}`);
+    check(`${kichi}＋${weak}: ${act} は注意あり`, e?.hasCaution === true);
+  }
+}
 check("computeVerdict: 弱い忌だけ → caution", computeVerdict(0, 0, 1) === "caution");
 check("computeVerdict: 宜＋弱い忌だけ → good", computeVerdict(1, 0, 1) === "good");
 check("computeVerdict: 強い忌＋弱い忌 → bad", computeVerdict(0, 1, 1) === "bad");

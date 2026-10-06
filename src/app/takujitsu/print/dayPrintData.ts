@@ -81,11 +81,14 @@ export type TakujitsuDayPrintData = {
  * 正式な用事名〔canonicalName〕だけで、読み・宜忌の根拠・補足は付けない。中立〔判定結果なしを含む〕は入れない）
  */
 export function activityNamesByVerdict(data: TakujitsuFullResult): PrintActivityNames {
-  const byId = new Map(data.activities.evaluations.map((e) => [e.activityId, e.verdict]));
+  const byId = new Map(data.activities.evaluations.map((e) => [e.activityId, e]));
   const out: PrintActivityNames = { good: [], mixed: [], bad: [], caution: [] };
   for (const def of ACTIVITY_DEFINITIONS) {
-    const v = byId.get(def.id);
-    if (v === "good" || v === "mixed" || v === "bad" || v === "caution") out[v].push(def.canonicalName);
+    const e = byId.get(def.id);
+    const v = e?.verdict;
+    // 吉で弱い神殺の忌がある用事は「（注意あり）」を付ける（判定は吉のまま）。
+    if (v === "good" && e?.hasCaution) out.good.push(`${def.canonicalName}（注意あり）`);
+    else if (v === "good" || v === "mixed" || v === "bad" || v === "caution") out[v].push(def.canonicalName);
   }
   return out;
 }
