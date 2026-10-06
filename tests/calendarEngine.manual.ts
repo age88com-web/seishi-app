@@ -67,5 +67,23 @@ function check(label: string, actual: unknown, expected: unknown): void {
   check("solarTermDateTime is ISO", /Z$/.test(r.solarTermDateTime), true);
 }
 
+// --- 節入り時刻（太陽の視黄経。2026-10-06 修正前は幾何学的黄経で一律約8.3分早かった）---
+{
+  console.log("節入り時刻（視黄経）");
+  const jst = (iso: string) => new Date(new Date(iso).getTime() + 9 * 3600e3).toISOString().slice(0, 16).replace("T", " ");
+  const at = (y: number, m: number, d: number, h: number, mi: number) =>
+    calculate({ year: y, month: m, day: d, hour: h, minute: mi, timezone: "Asia/Tokyo" });
+  // 公表値（UTC）: 2024 春分 3/20 03:06・夏至 6/20 20:51・秋分 9/22 12:44・冬至 12/21 09:20
+  check("2024 春分", jst(at(2024, 3, 21, 0, 0).solarTermDateTime), "2024-03-20 12:06");
+  check("2024 夏至", jst(at(2024, 6, 22, 0, 0).solarTermDateTime), "2024-06-21 05:50");
+  check("2024 秋分", jst(at(2024, 9, 23, 0, 0).solarTermDateTime), "2024-09-22 21:43");
+  check("2024 冬至", jst(at(2024, 12, 22, 0, 0).solarTermDateTime), "2024-12-21 18:20");
+  // 2025 立春は 2/3 23:10 JST。節入りの前後で年・月干支が切り替わる
+  check("2025 立春", jst(at(2025, 2, 4, 12, 0).solarTermDateTime), "2025-02-03 23:10");
+  const b = at(2025, 2, 3, 23, 5), a = at(2025, 2, 3, 23, 12);
+  check("2025-02-03 23:05 年月", `${b.yearStem}${b.yearBranch}${b.monthStem}${b.monthBranch}`, "甲辰丁丑");
+  check("2025-02-03 23:12 年月", `${a.yearStem}${a.yearBranch}${a.monthStem}${a.monthBranch}`, "乙巳戊寅");
+}
+
 console.log(`\n${pass} passed, ${fail} failed`);
 process.exit(fail === 0 ? 0 : 1);

@@ -33,6 +33,7 @@ export interface CalendarResult {
   julianDay: number;
   deltaT: number;
 
+  /** 対象時刻の太陽視黄経（度, 0..360）。節気・月干支の判定に使う値（astro.ts の sunApparentLonDeg） */
   sunLongitude: number;
   /** 対象時刻が属する節気の名称 */
   solarTerm: string;

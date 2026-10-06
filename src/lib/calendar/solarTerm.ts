@@ -2,25 +2,27 @@
 //
 // 役割:
 //   太陽黄経から二十四節気を判定し、節入り日時を求める。
-//   - sunLongitude       : 対象時刻の太陽黄経（度, 0..360）
+//   - sunLongitude       : 対象時刻の太陽視黄経（度, 0..360）
 //   - solarTerm          : 対象時刻が属する節気の名称
 //   - solarTermDateTime  : solarTerm の節入り日時（UTC の ISO 8601 文字列）
 //
 // 実装方針（docs/02）:
 //   - 固定日付は一切使わない。太陽黄経が 15° 刻みの境界
 //     （立春 315° 〜 大寒 300°）に達した時刻を節入りとする。
-//   - 太陽黄経は astro.ts の sunLonDeg(d: Date) を利用し再実装しない。
+//   - 太陽黄経は astro.ts の sunApparentLonDeg(d: Date)（視黄経。光行差・章動を含む）を利用し再実装しない。
+//     節気の標準的な定義（国立天文台の暦要項など）は視黄経による。幾何学的な地心黄経 sunLonDeg() を
+//     使うと節入りが約8分早くなるため、節気判定ではこちらを使う（sunLonDeg() 自体は他用途のため変更しない）。
 //   - 節入り時刻は二分法で数値的に求める（太陽黄経は単調増加のため一意）。
 //
 // docs: 02_共通暦エンジン要件 / 03_共通暦エンジン設計
 
-import { sunLonDeg } from "../astro";
+import { sunApparentLonDeg } from "../astro";
 import { SOLAR_TERMS } from "./types";
 
 const MS_PER_DAY = 86_400_000;
 
 export interface SolarTermResult {
-  /** 対象時刻の太陽黄経（度, 0..360） */
+  /** 対象時刻の太陽視黄経（度, 0..360） */
   sunLongitude: number;
   /** 対象時刻が属する節気の名称 */
   solarTerm: string;
@@ -53,7 +55,7 @@ export function findSolarTermCrossing(before: Date, targetLongitude: number): Da
   // 下限で必ず「境界前（負）」になるまで遡る（通常は不要。安全策）。
   let guard = 0;
   while (
-    signedDelta(sunLonDeg(new Date(loMs)), targetLongitude) >= 0 &&
+    signedDelta(sunApparentLonDeg(new Date(loMs)), targetLongitude) >= 0 &&
     guard < 6
   ) {
     loMs -= 20 * MS_PER_DAY;
@@ -63,7 +65,7 @@ export function findSolarTermCrossing(before: Date, targetLongitude: number): Da
   // 二分法：g<0 なら crossing はまだ先、g>=0 なら crossing は手前。
   for (let i = 0; i < 60; i += 1) {
     const midMs = (loMs + hiMs) / 2;
-    const g = signedDelta(sunLonDeg(new Date(midMs)), targetLongitude);
+    const g = signedDelta(sunApparentLonDeg(new Date(midMs)), targetLongitude);
     if (g < 0) {
       loMs = midMs;
     } else {
@@ -79,7 +81,7 @@ export function findSolarTermCrossing(before: Date, targetLongitude: number): Da
  * 対象時刻（UTC）が属する節気と、その節入り日時を返す。
  */
 export function resolveSolarTerm(utc: Date): SolarTermResult {
-  const lon = norm360(sunLonDeg(utc));
+  const lon = norm360(sunApparentLonDeg(utc));
   const boundary = Math.floor(lon / 15) * 15; // 0, 15, ..., 345
 
   const def = SOLAR_TERMS.find((t) => t.longitude === boundary);

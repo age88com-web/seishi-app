@@ -15,6 +15,8 @@
 import { calculate as calculateCalendar } from "../src/lib/calendar";
 import type { CalendarInput } from "../src/lib/calendar";
 import { calculate as calculateQimen } from "../src/lib/qimen";
+import { resolveDingju } from "../src/lib/qimen/dingju";
+import type { Stem, Branch } from "../src/lib/eto";
 import {
   resolveDingjuContext,
   resolveSolsticeAnchor,
@@ -157,6 +159,44 @@ function expectJu(
   const q = calculateQimen({ year: 2012, month: 3, day: 6, hour: 6, minute: 0, timezone: "Asia/Tokyo" });
   check("2012 定局", `${q.dingju.dun}${q.dingju.yuan}${q.dingju.ju}`, "陽遁上元1");
   check("2012 日・時干支", `${q.calendar.dayStem}${q.calendar.dayBranch}${q.calendar.hourStem}${q.calendar.hourBranch}`, "丙寅辛卯");
+}
+
+// ---- 局数表（講義 p14・p15。雨水の下元は監修訂正で 3）----
+{
+  console.log("局数表（雨水の下元は講義表 2 → 監修訂正 3）");
+  const TABLE: Record<string, [number, number, number]> = {
+    冬至: [1, 7, 4], 啓蟄: [1, 7, 4], 小寒: [2, 8, 5], 春分: [3, 9, 6], 大寒: [3, 9, 6], 芒種: [6, 3, 9],
+    穀雨: [5, 2, 8], 小満: [5, 2, 8], 立春: [8, 5, 2], 立夏: [4, 1, 7], 清明: [4, 1, 7], 雨水: [9, 6, 3],
+    夏至: [9, 3, 6], 白露: [9, 3, 6], 小暑: [8, 2, 5], 秋分: [7, 1, 4], 大暑: [7, 1, 4], 立秋: [2, 5, 8],
+    霜降: [5, 8, 3], 小雪: [5, 8, 3], 大雪: [4, 7, 1], 処暑: [1, 4, 7], 立冬: [6, 9, 3], 寒露: [6, 9, 3],
+  };
+  // 上元の符頭（甲子）・中元（己巳）・下元（甲戌）
+  const futou: [Stem, Branch][] = [["甲", "子"], ["己", "巳"], ["甲", "戌"]];
+  for (const [term, jus] of Object.entries(TABLE)) {
+    futou.forEach(([st, br], i) => check(`${term} ${["上元", "中元", "下元"][i]}`, resolveDingju({ solarTerm: term, dayStem: st, dayBranch: br }).ju, jus[i]));
+  }
+  // 実日付: 2026-03-01〜05（甲戌〜戊寅）は雨水の下元 → 陽遁3局
+  for (let d = 1; d <= 5; d += 1) {
+    expectJu(`2026-03-0${d}`, ctxAt(2026, 3, d), "雨水", "陽遁", "下元", 3, false);
+  }
+}
+
+// ---- 局所判定と逐次適用の一致（1900〜2100）----
+{
+  console.log("局所判定 = 逐次適用（1900〜2100 の二至）");
+  let prev = resolveSolsticeAnchor(1900, "夏至").shangYuanSerial;
+  let bad = 0;
+  for (let y = 1900; y <= 2100; y += 1) {
+    for (const s of ["夏至", "冬至"] as Solstice[]) {
+      if (y === 1900 && s === "夏至") continue;
+      const a = resolveSolsticeAnchor(y, s);
+      const candidate = prev + 180;
+      const expected = a.daySerial - candidate >= LEAP_THRESHOLD_DAYS ? candidate + 15 : candidate;
+      if (a.shangYuanSerial !== expected) bad += 1;
+      prev = expected;
+    }
+  }
+  check("1900〜2100 の二至で逐次適用と異なる上元符頭", bad, 0);
 }
 
 // ---- 局所判定と逐次適用の一致（1974 正授から）----

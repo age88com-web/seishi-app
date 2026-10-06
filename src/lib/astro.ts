@@ -41,6 +41,16 @@ function geoLon(body: Astronomy.Body, d: Date): number {
 export function sunLonDeg(d: Date): number {
   return geoLon(Astronomy.Body.Sun, d);
 }
+/**
+ * 太陽の視黄経（度, 0..360）。節気（二十四節気の節入り）判定専用。
+ * 光行差・光の伝播時間・章動を含む、日付の真黄道・真分点基準の値（astronomy-engine の SunPosition）。
+ * 国立天文台の暦要項など、節気の標準的な定義はこの視黄経による。
+ * 既存の sunLonDeg()（幾何学的な地心黄経）は他用途（七政四餘など）で使われているため変更しない。
+ */
+export function sunApparentLonDeg(d: Date): number {
+  return norm360(Astronomy.SunPosition(new Astronomy.AstroTime(d)).elon);
+}
+
 export function moonLonDeg(d: Date): number {
   return geoLon(Astronomy.Body.Moon, d);
 }

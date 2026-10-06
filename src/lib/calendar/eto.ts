@@ -42,7 +42,7 @@ function mod(n: number, m: number): number {
 export interface GanzhiInput {
   /** 出生の瞬間（UTC）。年干支の立春境界判定に使用 */
   utc: Date;
-  /** resolveSolarTerm が返す太陽黄経（度, 0..360）。月干支・月支に使用 */
+  /** resolveSolarTerm が返す太陽視黄経（度, 0..360）。月干支・月支に使用 */
   sunLongitude: number;
   /** タイムゾーン適用後の現地壁時計 */
   localYear: number;
