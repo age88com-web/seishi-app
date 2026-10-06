@@ -63,9 +63,6 @@ const CHECKS: Record<string, () => boolean> = {
   "wenru-wenchu-3": () =>
     has(resolveKyoushinGroup6({ ...BASE, monthBranch: "辰", lunarDay: 3 }), "瘟入") &&
     has(resolveKyoushinGroup6({ ...BASE, monthBranch: "辰", lunarDay: 4 }), "瘟出"),
-  "changxing-9": () =>
-    has(resolveKyoushinGroup6({ ...BASE, monthBranch: "戌", lunarDay: 4 }), "長星") &&
-    !has(resolveKyoushinGroup6({ ...BASE, monthBranch: "戌", lunarDay: 3 }), "長星"),
 };
 
 console.log("[台帳] 原文値と採用値（src/lib/takujitsu/shinsatsu/sourceCorrections.ts）\n");

@@ -92,6 +92,28 @@ check("短星：九月lunarDay=16（該当・複数値の1つ目）", { ...BASE,
 check("短星：九月lunarDay=17（該当・複数値の2つ目）", { ...BASE, monthBranch: "戌", lunarDay: 17 }, ["短星"]);
 check("短星：九月lunarDay=15（非該当）", { ...BASE, monthBranch: "戌", lunarDay: 15 }, [], ["短星"]);
 
+// ---- 29）長星・短星：監修確定の全12か月の値を固定（2026-10-06） ----
+// 正式採用値は擇日テキスト p.34 の表。九月の長星は4日のみ（擇日実例.pdf の「三日四日長星」は採用しない）。
+// 月基準は表見出し「月令」により節月（正月＝寅 … 十二月＝丑）。各月 lunarDay 1〜30 の全日で、
+// 表の日だけ成立し、それ以外の日は成立しないことを確認する。
+{
+  const SETSU = ["寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥", "子", "丑"];
+  const CHOUSEI: number[][] = [[7], [4], [1], [9], [15], [10], [8], [2, 5], [4], [1], [12], [9]];
+  const TANSEI: number[][] = [[21], [19], [16], [25], [25], [20], [22], [18, 19], [16, 17], [14], [22], [25]];
+  for (let mi = 0; mi < 12; mi += 1) {
+    for (let lunarDay = 1; lunarDay <= 30; lunarDay += 1) {
+      const out = resolveKyoushinGroup6({ ...BASE, monthBranch: SETSU[mi], lunarDay }).kyojin;
+      const label = `${mi + 1}月（節月${SETSU[mi]}）lunarDay=${lunarDay}`;
+      if (CHOUSEI[mi].includes(lunarDay)) check(`長星：${label}（該当）`, { ...BASE, monthBranch: SETSU[mi], lunarDay }, ["長星"]);
+      else if (out.includes("長星")) check(`長星：${label}（非該当）`, { ...BASE, monthBranch: SETSU[mi], lunarDay }, [], ["長星"]);
+      if (TANSEI[mi].includes(lunarDay)) check(`短星：${label}（該当）`, { ...BASE, monthBranch: SETSU[mi], lunarDay }, ["短星"]);
+      else if (out.includes("短星")) check(`短星：${label}（非該当）`, { ...BASE, monthBranch: SETSU[mi], lunarDay }, [], ["短星"]);
+    }
+  }
+  check("長星：九月（戌）lunarDay=3 は非該当（実例PDFの「三日」は不採用）", { ...BASE, monthBranch: "戌", lunarDay: 3 }, [], ["長星"]);
+  check("長星：九月（戌）lunarDay=4 は該当", { ...BASE, monthBranch: "戌", lunarDay: 4 }, ["長星"]);
+}
+
 // ---- 35）揚公忌（節月ごと。七月は2値） ----
 check("揚公忌：正月lunarDay=13（該当）", { ...BASE, monthBranch: "寅", lunarDay: 13 }, ["揚公忌"]);
 check("揚公忌：七月lunarDay=1（該当・複数値の1つ目）", { ...BASE, monthBranch: "申", lunarDay: 1 }, ["揚公忌"]);
