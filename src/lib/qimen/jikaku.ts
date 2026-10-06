@@ -21,9 +21,8 @@
 //   青龍返首  用事の時干支の六儀（旬首）となる天盤と地盤丙が同宮する
 //   飛鳥跌穴  天盤丙と用事の時干支の六儀（旬首）となる地盤が同宮
 //   玉女守門  人盤値使門に地盤丁が同宮。
-//             さらに旬ごとの用事の時干支の対応（ユーザー確定仕様）:
-//               甲子旬→庚午 / 甲戌旬→己卯 / 甲申旬→戊子 /
-//               甲午旬→丁酉 / 甲辰旬→丙午 / 甲寅旬→乙卯
+//             → 監修確定: 値使門の宮の地盤に丁がある（坤二宮へ寄宮した地盤丁を含む）。
+//               旬ごとの時干支の表は独立した追加条件として掛けない。
 //   天遁      生門に天盤丙と地盤丁が同宮　または生門と天盤丙、地盤戊が同宮
 //   地遁      開門と天盤乙と地盤己が同宮
 //   人遁      休門と天盤丁に太陰が同宮
@@ -65,6 +64,9 @@
 //   ・龍遁: docs/source/虎遁、龍遁.png（表 No.12）の注記『御定奇門寶鑑』「休、開、生三吉門と天盤乙奇が地盤癸に臨む。或いは、
 //     休、開、生三吉門と天盤乙奇が坎一宮に臨む」を正式仕様として維持する。1080.pdf は
 //     「休門＋天盤乙＋（地盤癸 または 坎一宮）」で一致する（既知の定義差。tests/qimen_jikaku.manual.ts）。
+//   ・玉女守門: 正式条件は「値使門の宮の地盤に丁がある」（『奇門寶鑑御定』系の条件「地盤六丁守直使之門」）。
+//     坤二宮へ寄宮した地盤丁を含む。旬ごとの時干支の表（旧実装の旬条件）は独立した追加条件として
+//     掛けない。1080.pdf と宮単位 136/0/0 で完全一致（tests/qimen_jikaku.manual.ts）。
 //   ・五假: docs/source/五か.png（表 No.23〜27）＝講義PDF p51 ＝
 //     本実装の定義を正式仕様として維持する。1080.pdf の五假ラベルは7件のみで別体系または限定的掲載の
 //     可能性があり、合わせて変更しない。1080.pdf の「物假」と鬼假の対応は未確定。
@@ -115,21 +117,7 @@ export interface JikakuInput {
   liuyi: DiPanStem;
   /** 人盤の値使門が配置された宮（玉女守門の判定用）。八門が未算出なら null。 */
   zhishiPalace: number | null;
-  /** 旬首の干支（例: "甲子"）。玉女守門の旬条件の判定用。xunShou.xunShou をそのまま渡す。 */
-  xunShou: string;
-  /** 用事の時干支（例: "庚午"）。玉女守門の旬条件の判定用。 */
-  hourGanzhi: string;
 }
-
-/** 玉女守門: 旬首の干支 → その旬で玉女守門が成立する用事の時干支（ユーザー確定仕様）。 */
-const GYOJO_SHUMON_XUN_TABLE: Record<string, string> = {
-  "甲子": "庚午",
-  "甲戌": "己卯",
-  "甲申": "戊子",
-  "甲午": "丁酉",
-  "甲辰": "丙午",
-  "甲寅": "乙卯",
-};
 
 export interface JikakuMatch {
   /** 吉格名（講義スライドの表記そのまま）。 */
@@ -252,17 +240,12 @@ const RULES: readonly Rule[] = [
     meaning: "宴会、喜び事、女性の結婚",
     source: S1,
     needs: ["人盤値使門"],
-    // 主条件「人盤値使門の宮に地盤丁が同宮」＋ 旬条件（旬首の干支に対応する用事の
-    // 時干支と一致すること）の両方を満たすときに成立させる。
+    // 「値使門の宮の地盤に丁がある」（坤二宮へ寄宮した地盤丁を含む。監修確定 2026-10-06）。
+    // 旬ごとの時干支の表は追加条件として掛けない。
     match: (input) => {
       const zp = input.zhishiPalace;
       if (zp === null) return [];
-      // 主条件: 値使門の宮に地盤丁
-      if (!dp(input.palaces[zp], "丁")) return [];
-      // 旬条件: 旬首の干支 → 対応する用事の時干支に一致
-      const expectedHour = GYOJO_SHUMON_XUN_TABLE[input.xunShou];
-      if (expectedHour === undefined || expectedHour !== input.hourGanzhi) return [];
-      return [zp];
+      return dp(input.palaces[zp], "丁") ? [zp] : [];
     },
   },
   {
@@ -608,8 +591,6 @@ export function resolveJikakuFromQimen(qimen: QimenResult): JikakuResult {
     palaces: qimen.effectivePalaces.palaces,
     liuyi: qimen.xunShou.liuyi as DiPanStem,
     zhishiPalace: qimen.baMen?.zhishi.palace ?? null,
-    xunShou: qimen.xunShou.xunShou,
-    hourGanzhi: `${qimen.calendar.hourStem}${qimen.calendar.hourBranch}`,
   });
 }
 

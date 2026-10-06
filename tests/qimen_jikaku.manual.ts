@@ -88,6 +88,7 @@ interface Row {
   eff: Record<number, EffectivePalace>;
   centerStem: DiPanStem | null;
   liuyi: DiPanStem;
+  zhishiPalace: number;
   result: JikakuResult;
 }
 
@@ -116,10 +117,8 @@ const rows: Row[] = charts.map((c, i) => {
     palaces: eff.palaces,
     liuyi,
     zhishiPalace: baMen.zhishi.palace,
-    xunShou: xs.xunShou,
-    hourGanzhi: `${c.hourStem}${c.hourBranch}`,
   });
-  return { chart: c, labels: labelsByPalace(labelCharts[i]), eff: eff.palaces, centerStem: eff.centerStem, liuyi, result };
+  return { chart: c, labels: labelsByPalace(labelCharts[i]), eff: eff.palaces, centerStem: eff.centerStem, liuyi, zhishiPalace: baMen.zhishi.palace, result };
 });
 
 const palacesOf = (r: Row, name: string) => new Set(r.result.matches.find((m) => m.name === name)?.palaces ?? []);
@@ -157,6 +156,7 @@ function compare(
     ["人遁", "人遁", 12],
     ["神遁", "神遁", 20],
     ["虎遁", "虎遁", 26],
+    ["玉女守門", "玉女守門", 136],
     ["乙奇升殿", "乙奇昇殿", 135],
     ["丙奇升殿", "丙奇昇殿", 136],
     ["丁奇升殿", "丁奇昇殿", 135],
@@ -189,6 +189,23 @@ function compare(
     (palace === 8 && p.baMen.includes("休門") && p.tianPanStems.includes("乙"))), "26/16/0");
 }
 
+// ---- D2. 玉女守門: 値使門の宮の地盤丁（坤二宮の寄宮丁を含む）。旬ごとの時干支表は掛けない ----
+{
+  console.log("D2. 玉女守門（値使門の宮の地盤丁。寄宮丁を含み、旬表は掛けない）");
+  check("玉女守門の宮＝値使門の宮", rows.every((r) => [...palacesOf(r, "玉女守門")].every((p) => p === r.zhishiPalace)), true);
+  // 坤二宮の寄宮干（中宮から寄宮した地盤丁）だけで成立する宮
+  const viaJigong = rows.filter((r) => palacesOf(r, "玉女守門").has(2) && r.eff[2].diPanStems[0] !== "丁");
+  check("寄宮丁だけで成立する局", viaJigong.length, 26);
+  check("その26局すべて 1080.pdf の坤二宮に玉女守門ラベル", viaJigong.every((r) => (r.labels[2] ?? "").includes("玉女守門")), true);
+  // 旧実装（旬ごとの時干支表を追加条件として掛ける）では成立しない宮が出る
+  const XUN_TABLE: Record<string, string> = { 甲子: "庚午", 甲戌: "己卯", 甲申: "戊子", 甲午: "丁酉", 甲辰: "丙午", 甲寅: "乙卯" };
+  check("参考: 旬表を掛けた旧実装", compare("玉女守門", "玉女守門", (p, palace, r) => {
+    const hs = r.chart.hourStem as Stem, hb = r.chart.hourBranch as Branch;
+    return palace === r.zhishiPalace && p.diPanStems.includes("丁") &&
+      XUN_TABLE[resolveXunShou({ hourStem: hs, hourBranch: hb }).xunShou] === `${hs}${hb}`;
+  }), "108/0/28");
+}
+
 // ---- E. 1080.pdf との既知の定義差（定義は変えずに固定） ----
 {
   console.log("E. 1080.pdf との既知の定義差");
@@ -202,7 +219,6 @@ function compare(
   check("人假", compare("人假", "人假"), "0/11/1");
   check("神假", compare("神假", "神假"), "0/87/1");
   // 監修判断が未了の定義差（現状の定義のまま固定）
-  check("玉女守門", compare("玉女守門", "玉女守門"), "108/0/28");
   check("鬼遁", compare("鬼遁", "鬼遁"), "19/27/0");
   check("風遁", compare("風遁", "風遁"), "36/0/41");
   check("雲遁", compare("雲遁", "雲遁"), "45/11/42");
@@ -215,7 +231,7 @@ function compare(
 {
   console.log("F. 各吉格の成立局数");
   const expected: Record<string, number> = {
-    青龍返首: 120, 飛鳥跌穴: 130, 玉女守門: 108, 天遁: 28, 地遁: 19, 人遁: 12, 神遁: 20,
+    青龍返首: 120, 飛鳥跌穴: 130, 玉女守門: 136, 天遁: 28, 地遁: 19, 人遁: 12, 神遁: 20,
     鬼遁: 46, 風遁: 36, 雲遁: 56, 龍遁: 100, 虎遁: 26, 乙奇得使: 238, 丙奇得使: 239, 丁奇得使: 232,
     乙奇升殿: 135, 丙奇升殿: 136, 丁奇升殿: 135, 真詐: 167, 重詐: 148, 休詐: 154,
     天假: 59, 地假: 148, 人假: 11, 神假: 87, 鬼假: 53,

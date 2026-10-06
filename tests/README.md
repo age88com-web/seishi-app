@@ -8,7 +8,7 @@
 | `qimen_1080.manual.ts` | 奇門遁甲 排盤エンジンの **1080局 完全一致 回帰テスト**（地盤・旬首・天盤・九星・八門・八神）。検証データは `fixtures/qimen1080.json`（`docs/source/1080.pdf` からの機械転記・検証専用）。 | `npx tsx tests/qimen_1080.manual.ts` |
 | `qimen_dingju_context.manual.ts` | 奇門遁甲 **日時→定局 回帰テスト**（超神・接気・置閏）。1974〜1979 の講義例、1976年置閏の受け入れ条件、講義例 2012・2015、23:00 境界、規則から導出した検証例。 | `npx tsx tests/qimen_dingju_context.manual.ts` |
 | `qimen_kyokaku.manual.ts` | 奇門遁甲 **凶格の回帰テスト**。監修確定事項（大格＝庚加癸、時格の別名＝伏吟格・時干格、直符伏吟・直符反吟、歳格・月格・日格・時格の共通構造）と監修原則（中宮の寄宮、遁甲）。1080局を駆動し、1080.pdf の格局名ラベル（`fixtures/qimen1080_labels.json`）と宮単位で照合。既知の差 61件を固定。 | `npx tsx tests/qimen_kyokaku.manual.ts` |
-| `qimen_jikaku.manual.ts` | 奇門遁甲 **吉格の回帰テスト**。中宮の寄宮、青龍返首（転動天盤干のみ）、虎遁（休門のみ）、龍遁・五假の定義維持。1080.pdf の格局名ラベルと宮単位で照合し、完全一致する格と既知の定義差を固定。 | `npx tsx tests/qimen_jikaku.manual.ts` |
+| `qimen_jikaku.manual.ts` | 奇門遁甲 **吉格の回帰テスト**。中宮の寄宮、青龍返首（転動天盤干のみ）、虎遁（休門のみ）、玉女守門（値使門の宮の地盤丁、寄宮丁を含む、旬表なし）、龍遁・五假の定義維持。1080.pdf の格局名ラベルと宮単位で照合し、完全一致する格と既知の定義差を固定。 | `npx tsx tests/qimen_jikaku.manual.ts` |
 | `calendarEngine.manual.ts` | CalendarEngine.calculate() の代表ケース確認 | `npx tsx tests/calendarEngine.manual.ts` |
 | `ganzhi_parity.manual.ts` | 旧 eto.ts と CalendarEngine の干支計算の互換性確認 | `TZ=Asia/Tokyo npx tsx tests/ganzhi_parity.manual.ts` |
 | `kakkyoku_cases.ts` | 七政四餘 格局エンジンの動作確認 | `npx tsx tests/kakkyoku_cases.ts` |
@@ -139,5 +139,5 @@ npx tsx tests/qimen_kyokaku.manual.ts
 | 日時 → 排盤の統合（`qimenEngine.calculate()`） | 対象外 | 2015・2012 の講義例のみ |
 | 冬至側の置閏 | — | 規則から導出した例（1978年）のみ。講義資料に冬至側の年月日例は無い |
 | 凶格（寄宮後の有効配置・遁甲・監修確定事項） | 対象外 | 対象外（`qimen_kyokaku.manual.ts` が1080局すべてで保証。1080.pdf のラベルと宮単位で照合、既知の差61件） |
-| 吉格（寄宮後の有効配置・青龍返首・虎遁・龍遁・五假） | 対象外 | 対象外（`qimen_jikaku.manual.ts` が1080局すべてで保証。1080.pdf のラベルと宮単位で照合） |
+| 吉格（寄宮後の有効配置・青龍返首・虎遁・玉女守門・龍遁・五假） | 対象外 | 対象外（`qimen_jikaku.manual.ts` が1080局すべてで保証。1080.pdf のラベルと宮単位で照合） |
 | 上記以外の格局判定 | 対象外 | 対象外 |
