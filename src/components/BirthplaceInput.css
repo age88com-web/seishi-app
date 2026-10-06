@@ -1,0 +1,27 @@
+/* src/components/BirthplaceInput.css
+ * 共通の出生地入力UI。共通入力UI（NatalProfileForm.css の .np-field / .np-input）と同じ見た目。印刷時は非表示。 */
+
+.bp-field { display: flex; flex-direction: column; font-size: 11px; color: #555; gap: 3px; position: relative; }
+.bp-wrap { position: relative; display: block; }
+.bp-input {
+  font-size: 14px; padding: 4px 6px; border: 1px solid #bbb; border-radius: 4px; background: #fff;
+  color: #222; width: 16em; min-width: 0; box-sizing: border-box;
+}
+.bp-list {
+  position: absolute; z-index: 50; top: calc(100% + 2px); left: 0; min-width: 100%; width: max-content; max-width: 28em;
+  margin: 0; padding: 3px 0; list-style: none; background: #fff; border: 1px solid #bbb; border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12); font-size: 13px; color: #222;
+}
+.bp-option { padding: 4px 10px; cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bp-option.is-active { background: #ececec; }
+.bp-note { padding: 4px 10px; color: #777; }
+.bp-error { color: #a33; }
+.bp-hint { font-size: 10px; color: #8a6d00; }
+
+@media (max-width: 600px) {
+  .bp-input { width: 100%; }
+}
+
+@media print {
+  .bp-field { display: none !important; }
+}
