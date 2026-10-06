@@ -27,6 +27,9 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 ```bash
 # 奇門遁甲 排盤エンジンの 1080局 完全一致 回帰テスト
 npx tsx tests/qimen_1080.manual.ts
+
+# 奇門遁甲 日時→定局（超神・接気・置閏）の回帰テスト
+npx tsx tests/qimen_dingju_context.manual.ts
 ```
 
 `1080 / 1080 PASS`（exit 0）なら成功。1件でも不一致なら局番号・項目・期待値・実測値を表示して exit 1。

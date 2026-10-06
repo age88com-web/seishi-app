@@ -6,6 +6,7 @@
 | ファイル | 内容 | 実行コマンド |
 |---|---|---|
 | `qimen_1080.manual.ts` | 奇門遁甲 排盤エンジンの **1080局 完全一致 回帰テスト**（地盤・旬首・天盤・九星・八門・八神）。検証データは `fixtures/qimen1080.json`（`docs/source/1080.pdf` からの機械転記・検証専用）。 | `npx tsx tests/qimen_1080.manual.ts` |
+| `qimen_dingju_context.manual.ts` | 奇門遁甲 **日時→定局 回帰テスト**（超神・接気・置閏）。1974〜1979 の講義例、1976年置閏の受け入れ条件、講義例 2012・2015、23:00 境界、規則から導出した検証例。 | `npx tsx tests/qimen_dingju_context.manual.ts` |
 | `calendarEngine.manual.ts` | CalendarEngine.calculate() の代表ケース確認 | `npx tsx tests/calendarEngine.manual.ts` |
 | `ganzhi_parity.manual.ts` | 旧 eto.ts と CalendarEngine の干支計算の互換性確認 | `TZ=Asia/Tokyo npx tsx tests/ganzhi_parity.manual.ts` |
 | `kakkyoku_cases.ts` | 七政四餘 格局エンジンの動作確認 | `npx tsx tests/kakkyoku_cases.ts` |
@@ -47,7 +48,51 @@ npx tsx tests/qimen_1080.manual.ts
 - `bamen.ts` … 八門（外周8宮）＋ 値使（門・宮）
 - `bashen.ts` … 八神（外周8宮）
 
-`dingju.ts` / `CalendarEngine` / `qimenEngine.ts` は「日時→局／排盤」の入口で、1080.pdf は
-(局, 時干支) を索引に持つためこの fixture からは直接駆動できない。`qimenEngine.calculate()` は
-上記6モジュールをこの順で呼ぶ薄い統合層であり、本テストはその中核を全数で固定している。
-日時→排盤の疎通は `calendarEngine.manual.ts` 等が担保する。
+`dingju.ts` / `dingjuContext.ts` / `CalendarEngine` / `qimenEngine.ts` は「日時→局／排盤」の入口で、
+1080.pdf は (局, 時干支) を索引に持つためこの fixture からは直接駆動できない。日時→定局は
+`qimen_dingju_context.manual.ts` が検証する（下記「保証範囲」参照）。
+
+## qimen_dingju_context.manual.ts
+
+### 目的
+
+`src/lib/qimen/dingjuContext.ts`（超神・接気・置閏）による「日時→定局」を回帰テストとして固定する。
+仕様は `docs/qimen-spec/03_超神接気・置閏.md`。
+
+### 実行
+
+```
+npx tsx tests/qimen_dingju_context.manual.ts
+```
+
+全項目 PASS で `N passed, 0 failed` を表示して exit 0。1件でも失敗すれば FAIL 行を表示して exit 1。
+
+### 検証内容
+
+期待値は次の3区分で、テスト内のコメントにも区分を明記している。
+
+- **講義資料の例**
+  - 1974-06-22 正授
+  - 1975-06-22 超神・置閏なし
+  - 1976-06-06〜10 通常の陽九局、6/11〜15 陽六局・6/16〜20 陽三局・6/21〜25 陽九局（置閏）、6/26 陰九局
+  - 1976-06-22 天文上の節気（夏至・陰遁）と定局節気（芒種・陽遁・9局）の同時保持
+  - 1979-06-22 接気（符頭 6/26 甲子）
+  - 2015-09-08 10:00（p18・p21）、2012-03-06 卯刻（p25）
+- **実装規則**（ユーザー確定 2026-10-06）
+  - 置閏の閾値: 二至当日を含めず、符頭が二至の9日以上前
+  - 日の境: 23:00（1976-06-10 22:59 / 23:30）
+- **規則から導出した検証例**（講義資料の具体例ではない）
+  - 1975-06-17〜21 の局、1978年冬至の置閏、1994年夏至（23:39 節入り → 翌日扱いで正授）
+  - 1974〜1980年の二至で、局所判定と 1974年正授からの逐次適用が一致
+  - 1974-06-01〜1980-06-30 の毎日で例外が無く、置閏期間が 1976夏至・1978冬至の各15日のみ
+
+## 保証範囲
+
+| 範囲 | `qimen_1080.manual.ts` | `qimen_dingju_context.manual.ts` |
+|---|---|---|
+| (陰陽遁, 局, 時干支) → 地盤・旬首・天盤・九星・値符・八門・値使・八神 | **全1080通りを保証** | 対象外 |
+| 日時 → 天文上の節気・日干支（CalendarEngine） | 対象外 | 講義例・検証例の日付のみ |
+| 日時 → 定局節気・陰陽遁・三元・局（超神・接気・置閏、23:00 境界） | 対象外 | 講義例と規則から導出した検証例（主に 1974〜1980）。全日付の網羅ではない |
+| 日時 → 排盤の統合（`qimenEngine.calculate()`） | 対象外 | 2015・2012 の講義例のみ |
+| 冬至側の置閏 | — | 規則から導出した例（1978年）のみ。講義資料に冬至側の年月日例は無い |
+| 格局判定 | 対象外 | 対象外 |
