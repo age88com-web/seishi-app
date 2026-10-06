@@ -33,6 +33,9 @@ npx tsx tests/qimen_dingju_context.manual.ts
 
 # 奇門遁甲 凶格（監修確定事項）の回帰テスト
 npx tsx tests/qimen_kyokaku.manual.ts
+
+# 奇門遁甲 吉格の回帰テスト
+npx tsx tests/qimen_jikaku.manual.ts
 ```
 
 `1080 / 1080 PASS`（exit 0）なら成功。1件でも不一致なら局番号・項目・期待値・実測値を表示して exit 1。

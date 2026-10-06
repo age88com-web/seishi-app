@@ -177,8 +177,7 @@ export function calculate(input: CalendarInput): QimenResult {
   const effectivePalaces = resolveEffectivePalaces(palaces);
 
   // 11. 格局（吉格・凶格）: 排盤まで組み立てた QimenResult を jikaku.ts / kyokaku.ts の
-  //     *FromQimen ラッパに渡して判定する。凶格は effectivePalaces、吉格は palaces を参照する
-  //     （吉格への寄宮原則の適用は未実施）。
+  //     *FromQimen ラッパに渡して判定する。吉格・凶格とも effectivePalaces（寄宮後の有効配置）を参照する。
   const base: Omit<QimenResult, "jikaku" | "kyokaku"> = {
     calendar,
     dingju,
