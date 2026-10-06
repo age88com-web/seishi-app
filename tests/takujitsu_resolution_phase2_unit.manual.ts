@@ -213,6 +213,24 @@ const DEHE_MEMBERS = ["天徳", "天徳合", "月徳", "月徳合", "歳徳", "�
   }
 }
 
+// ---- No.13a 四撃〜五虚 × 土旺（監修確定 2026-10-06：土旺＝土王用事の期間）→ 増悪 ----
+{
+  for (const name of ["四撃", "四耗", "四廢", "四忌", "四窮", "五虚"]) {
+    check(`13a. ${name}＋土王用事→aggravated`, findEntry(resolve(raw([], [name, "土王用事"])).kyojin, name)?.status, "aggravated");
+    check(`13a. ${name}のみ→active`, findEntry(resolve(raw([], [name])).kyojin, name)?.status, "active");
+  }
+  // 13b（徳合・六合で解除）と同時成立する場合は、本文に優先順位が無いため pending
+  check("13a×13b. 四撃＋土王用事＋月徳→pending", findEntry(resolve(raw(["月徳"], ["四撃", "土王用事"])).kyojin, "四撃")?.status, "pending");
+}
+
+// ---- No.6 満日（天狗）：「歳徳・月徳が同宮すれば忌まない」→ 解除 ----
+{
+  check("6. 天狗のみ→active", findEntry(resolve(raw([], ["天狗"])).kyojin, "天狗")?.status, "active");
+  check("6. 天狗＋歳徳→cancelled", findEntry(resolve(raw(["歳徳"], ["天狗"])).kyojin, "天狗")?.status, "cancelled");
+  check("6. 天狗＋月徳→cancelled", findEntry(resolve(raw(["月徳"], ["天狗"])).kyojin, "天狗")?.status, "cancelled");
+  check("6. 天狗＋天徳（本文に無い）→active", findEntry(resolve(raw(["天徳"], ["天狗"])).kyojin, "天狗")?.status, "active");
+}
+
 console.log(`完全一致: ${pass} / ${pass + fail}`);
 console.log(`不一致:   ${fail} / ${pass + fail}`);
 

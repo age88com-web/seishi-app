@@ -87,6 +87,12 @@
 //     「土旺が重なると更に忌む」は解除条件と同様、記録のみに留める。
 //   ・31）土王用事（土用）自体は本文に明確な判定式（四立の18日前）が
 //     あるため、独立した凶神として実装する。
+//   → 監修確定（2026-10-06）で上記の保留を解消:
+//     ・「土旺」＝「土王用事（土用）」とする。
+//     ・土王用事は「四立の18日前」の当日だけでなく、その日から四立の前日までの期間とする
+//       （isDoyouPeriod）。
+//     ・四撃〜五虚の「土旺が重なると更に忌む」は、この期間に重なるとき増悪
+//       （resolution/rules.ts No.13a）。母倉の「土用の後は巳午」もこの期間を使う。
 //
 // 検証区分:
 //   docs/source/擇日実例.pdf の吉凶神煞一覧表は「月令＋日辰（60干支）」
@@ -215,6 +221,25 @@ function solarTermStartingOn(input: CalendarInput, deltaDays: number): string | 
   return startKey === ymdKey(year, month, day) ? sample.solarTerm : undefined;
 }
 
+/** 土王用事（土用）の期間の日数（四立の18日前〜四立の前日）。 */
+export const DOYOU_PERIOD_DAYS = 18;
+
+/**
+ * 対象日が土王用事（土用）の期間に入っているか。
+ * 期間は「四立（立春・立夏・立秋・立冬）の18日前の日」から「四立の節入り日の前日」まで
+ * （原文 p.34「四立の18日前」。監修訂正 2026-10-06 により当日だけでなく期間とする）。
+ * 1〜18日後のいずれかの日に四立の節入りがあれば期間内。
+ * 母倉（吉神第2グループ、p.7「土王用事つまり土用の後は必ず巳午」）と、
+ * 四撃〜五虚の増悪（p.28「土旺が重なると更に忌む」、resolution No.13a）も同じ期間を使う。
+ */
+export function isDoyouPeriod(input: CalendarInput): boolean {
+  for (let k = 1; k <= DOYOU_PERIOD_DAYS; k += 1) {
+    const term = solarTermStartingOn(input, k);
+    if (term !== undefined && SHI_RITSU.includes(term)) return true;
+  }
+  return false;
+}
+
 /**
  * 「日家凶神」第5グループ（四離・四絶・八節日・土王用事・氣往亡）を
  * 判定する。吉神は今回対象外のため kichijin は常に空配列。
@@ -240,10 +265,9 @@ export function resolveKyoushinGroup5(input: CalendarInput): ShinsatsuResult {
     kyojin.push("八節日");
   }
 
-  // 31）土王用事（土用）：四立の「18日前」＝18日後（+18日）が
-  // 四立の節入り日であるかで判定する。
-  const plus18Term = solarTermStartingOn(input, 18);
-  if (plus18Term !== undefined && SHI_RITSU.includes(plus18Term)) {
+  // 31）土王用事（土用）：四立の18日前から四立の前日までの期間（監修訂正 2026-10-06。
+  // 原文 p.34「四立の18日前」を、監修により「その日だけでなく期間」と確定）。
+  if (isDoyouPeriod(input)) {
     kyojin.push("土王用事");
   }
 

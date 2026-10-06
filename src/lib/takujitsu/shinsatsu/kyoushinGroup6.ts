@@ -38,7 +38,7 @@
 //   ・monthBranch（月令＝月建）固定表: 月厭・厭對・受死日
 //   ・monthBranch三合トリオ（季節）: 四方耗・刀砧日
 //   ・dayStem＋dayBranch（日干支）固定列挙: なし（本グループでは無し）
-//   ・yearStem固定表: 上朔
+//   ・yearStem固定表＋lunarDay＝1: 上朔（2026-10-06 本文「陰暦の1日で新月をいう」を条件に追加）
 //   ・yearBranch陰陽（子寅辰午申戌＝陽／丑卯巳未酉亥＝陰）＋lunarMonth
 //     ペア月グループ: 上兀（留紳）・下兀（赤口）
 //   ・yearBranch六冲グループ（子午/丑未/寅申/卯酉/辰戌/巳亥）＋lunarMonth
@@ -210,7 +210,7 @@ const TOCHINBI_BY_SEASON: readonly (readonly string[])[] = [
   ["申", "酉"],
 ];
 
-/** ［区分B］25）上朔（p.29）。yearStemごとに固定1干支。 */
+/** ［区分B］25）上朔（印刷 p.32）。yearStemごとに固定1干支。陰暦（農暦）の1日であることも条件（本文）。 */
 const JOSAKU_BY_YEARSTEM: Record<string, string> = {
   甲: "癸亥", 乙: "己巳", 丙: "乙亥", 丁: "辛巳", 戊: "丁亥",
   己: "癸巳", 庚: "己亥", 辛: "乙巳", 壬: "辛亥", 癸: "丁巳",
@@ -443,9 +443,11 @@ export function resolveKyoushinGroup6(input: ShinsatsuInput): ShinsatsuResult {
     kyojin.push("埋兒凶宿");
   }
 
-  // 25）上朔（yearStem固定表）
+  // 25）上朔（p.32「陰暦の1日で新月をいう。」＋年干の表）。
+  // 年干の表の日干支であり、かつ陰暦（農暦）の1日であるときに成立する
+  // （本文の「陰暦の1日」を条件として実装。lunarDay が無い入力では成立させない）。
   const { dayStem } = input;
-  if (JOSAKU_BY_YEARSTEM[yearStem] === `${dayStem}${dayBranch}`) kyojin.push("上朔");
+  if (lunarDay === 1 && JOSAKU_BY_YEARSTEM[yearStem] === `${dayStem}${dayBranch}`) kyojin.push("上朔");
 
   // lunarDayのみで決まる項目
   if (lunarDay !== undefined) {

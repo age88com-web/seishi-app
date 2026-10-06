@@ -64,6 +64,13 @@ export interface ShinsatsuInput {
    * 凶神第6グループの伏斷日・埋兒凶宿のみが使用する。
    */
   lodge28?: string;
+  /**
+   * 対象日が土王用事（土用）の期間に入っているか（kyoushinGroup5.ts の isDoyouPeriod）。
+   * 母倉（p.7「土王用事つまり土用の後は必ず巳午となる」）だけが使用する。
+   * 干支だけの入力（擇日実例.pdf の60干支対照表など）では undefined となり、
+   * その場合は土用の条件を満たさないものとして扱う。
+   */
+  isDoyou?: boolean;
 }
 
 /** 神殺判定の出力。今回は凶神は未実装のため常に空配列。 */

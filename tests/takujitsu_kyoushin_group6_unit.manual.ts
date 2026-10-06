@@ -55,10 +55,12 @@ check("刀砧日：春(卯月)子日（該当）", { ...BASE, monthBranch: "卯"
 check("刀砧日：春(卯月)寅日（非該当）", { ...BASE, monthBranch: "卯", dayBranch: "寅" }, [], ["刀砧日"]);
 check("刀砧日：秋(酉月)巳日（該当）", { ...BASE, monthBranch: "酉", dayBranch: "巳" }, ["刀砧日"]);
 
-// ---- 25）上朔（yearStem固定表） ----
-check("上朔：甲年癸亥日（該当）", { ...BASE, yearStem: "甲", dayStem: "癸", dayBranch: "亥" }, ["上朔"]);
-check("上朔：甲年癸丑日（非該当）", { ...BASE, yearStem: "甲", dayStem: "癸", dayBranch: "丑" }, [], ["上朔"]);
-check("上朔：庚年己亥日（該当）", { ...BASE, yearStem: "庚", dayStem: "己", dayBranch: "亥" }, ["上朔"]);
+// ---- 25）上朔（p.32「陰暦の1日で新月をいう。」＋年干の表） ----
+check("上朔：甲年癸亥日・陰暦1日（該当）", { ...BASE, yearStem: "甲", dayStem: "癸", dayBranch: "亥", lunarDay: 1 }, ["上朔"]);
+check("上朔：甲年癸丑日・陰暦1日（非該当）", { ...BASE, yearStem: "甲", dayStem: "癸", dayBranch: "丑", lunarDay: 1 }, [], ["上朔"]);
+check("上朔：庚年己亥日・陰暦1日（該当）", { ...BASE, yearStem: "庚", dayStem: "己", dayBranch: "亥", lunarDay: 1 }, ["上朔"]);
+check("上朔：甲年癸亥日・陰暦2日（陰暦1日でないため非該当）", { ...BASE, yearStem: "甲", dayStem: "癸", dayBranch: "亥", lunarDay: 2 }, [], ["上朔"]);
+check("上朔：甲年癸亥日・陰暦日なし（判定不能のため非該当）", { ...BASE, yearStem: "甲", dayStem: "癸", dayBranch: "亥" }, [], ["上朔"]);
 
 // ---- 27）月忌日（lunarDayのみ） ----
 check("月忌日：lunarDay=14（該当）", { ...BASE, lunarDay: 14 }, ["月忌日"]);

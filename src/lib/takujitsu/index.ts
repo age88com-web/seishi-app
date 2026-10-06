@@ -66,7 +66,7 @@ import { resolveKyoushinGroup1 } from "./shinsatsu/kyoushinGroup1";
 import { resolveKyoushinGroup2 } from "./shinsatsu/kyoushinGroup2";
 import { resolveKyoushinGroup3 } from "./shinsatsu/kyoushinGroup3";
 import { resolveKyoushinGroup4 } from "./shinsatsu/kyoushinGroup4";
-import { resolveKyoushinGroup5 } from "./shinsatsu/kyoushinGroup5";
+import { resolveKyoushinGroup5, isDoyouPeriod } from "./shinsatsu/kyoushinGroup5";
 import { resolveKyoushinGroup6 } from "./shinsatsu/kyoushinGroup6";
 import type { ShinsatsuInput, ShinsatsuResult } from "./types";
 import { resolveJianchu } from "./jianchu";
@@ -177,6 +177,7 @@ export function calculateShinsatsu(input: CalendarInput): ShinsatsuResult {
     lunarMonth: calendar.lunarMonth,
     lunarDay: calendar.lunarDay,
     lodge28: calendar.lodge28,
+    isDoyou: isDoyouPeriod(input),
   });
   const ky5 = resolveKyoushinGroup5(input);
   return {
@@ -237,6 +238,7 @@ export function calculateTakujitsu(input: CalendarInput, calendar?: CalendarResu
     lunarMonth: cal.lunarMonth,
     lunarDay: cal.lunarDay,
     lodge28: cal.lodge28,
+    isDoyou: isDoyouPeriod(input),
   });
   // 凶神第5グループ（四離・四絶・八節日・土王用事・氣往亡）は節気の
   // 節入り日時を基準とするため CalendarInput をそのまま渡す（calculateShinsatsu と同じ理由）。

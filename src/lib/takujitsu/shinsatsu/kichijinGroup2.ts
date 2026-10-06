@@ -9,7 +9,8 @@
 //
 // 唯一の仕様根拠:
 //   docs/source/擇日テキスト.pdf（このPDF以外は一切参照していない）。
-//     ・10）母倉               p.7
+//     ・10）母倉               p.7（2026-10-06: 本文「土王用事つまり土用の後は必ず巳午となる」を
+//                                土用期間だけの条件として実装。input.isDoyou を参照）
 //     ・12）四相               p.8
 //     ・13）時徳               p.8
 //     ・14）王官守相民日       p.8（王日・官日・守日・相日・民日の5項目）
@@ -48,21 +49,33 @@ function seasonIndexOf(monthBranch: string): number {
   return SEASON_GROUPS.findIndex((group) => group.includes(monthBranch));
 }
 
-/** 母倉（p.7）。月令ごとに複数の地支があり得るため配列で持つ。 */
+/**
+ * 母倉（p.7）。本文「春は亥子、夏は寅卯、秋は辰戌丑未、冬は申酉」の部分。
+ * 月令ごとに複数の地支があり得るため配列で持つ。
+ */
 const MUCANG: Record<string, readonly string[]> = {
   寅: ["亥", "子"],
   卯: ["亥", "子"],
-  辰: ["亥", "子", "巳", "午"],
+  辰: ["亥", "子"],
   巳: ["寅", "卯"],
   午: ["寅", "卯"],
-  未: ["寅", "卯", "巳", "午"],
+  未: ["寅", "卯"],
   申: ["辰", "戌", "丑", "未"],
   酉: ["辰", "戌", "丑", "未"],
-  戌: ["辰", "戌", "丑", "未", "巳", "午"],
+  戌: ["辰", "戌", "丑", "未"],
   亥: ["申", "酉"],
   子: ["申", "酉"],
-  丑: ["申", "酉", "巳", "午"],
+  丑: ["申", "酉"],
 };
+
+/**
+ * 母倉の土用条件（p.7）。本文「土王用事つまり土用の後は必ず巳午となる」。
+ * 表では辰・未・戌・丑の月令の行に「巳午」が併記されているが、本文どおり
+ * 土王用事（土用）の期間（input.isDoyou）にだけ巳午を母倉とする。
+ * 土用の期間は四季の最後の月（辰・未・戌・丑）にしか来ないため、月令もこの4つに限る。
+ */
+const MUCANG_DOYOU_MONTHS: readonly string[] = ["辰", "未", "戌", "丑"];
+const MUCANG_DOYOU_BRANCHES: readonly string[] = ["巳", "午"];
 
 /** 四相（p.8）。季節区分ごとに天干2つ。春=丙丁、夏=戊己、秋=壬癸、冬=甲乙。 */
 const SIXIANG_BY_SEASON: readonly (readonly string[])[] = [
@@ -92,7 +105,11 @@ export function resolveKichijinGroup2(input: ShinsatsuInput): ShinsatsuResult {
 
   const kichijin: string[] = [];
 
-  if (MUCANG[monthBranch]?.includes(dayBranch)) kichijin.push("母倉");
+  const mucangDoyou =
+    input.isDoyou === true &&
+    MUCANG_DOYOU_MONTHS.includes(monthBranch) &&
+    MUCANG_DOYOU_BRANCHES.includes(dayBranch);
+  if (MUCANG[monthBranch]?.includes(dayBranch) || mucangDoyou) kichijin.push("母倉");
 
   if (season !== -1) {
     if (SIXIANG_BY_SEASON[season].includes(dayStem)) kichijin.push("四相");
