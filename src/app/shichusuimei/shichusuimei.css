@@ -1,0 +1,81 @@
+/* src/app/shichusuimei/shichusuimei.css
+ * 四柱推命 Phase 1 検証ページ。他ページと同じモノクロ基調・装飾は最小限。
+ * 狭い画面では入力欄を縦に積み、表は枠内で横スクロール（ページ自体は横スクロールしない）。 */
+
+.sc-page {
+  font-family: system-ui, "Hiragino Sans", sans-serif;
+  padding: 16px;
+  color: #222;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+.sc-h1 { font-size: 18px; margin: 0 0 4px; }
+.sc-h2 { font-size: 14px; margin: 0 0 6px; padding-bottom: 3px; border-bottom: 1px solid #ccc; }
+.sc-section { margin: 18px 0; }
+.sc-note { font-size: 11px; color: #666; margin: 4px 0 8px; line-height: 1.55; }
+.sc-muted { color: #777; font-size: 11px; }
+.sc-line { font-size: 13px; margin: 4px 0 8px; }
+.sc-error { background: #fdecec; border: 1px solid #e0b4b4; color: #a33; padding: 6px 10px; border-radius: 4px; font-size: 13px; margin-top: 12px; }
+
+.sc-form { display: flex; gap: 10px 14px; flex-wrap: wrap; align-items: flex-end; margin-top: 10px; }
+.sc-field { display: flex; flex-direction: column; font-size: 11px; color: #555; gap: 3px; }
+.sc-check { display: flex; align-items: center; gap: 4px; font-size: 12px; color: #444; padding-bottom: 4px; }
+.sc-input { font-size: 14px; padding: 4px 6px; border: 1px solid #bbb; border-radius: 4px; background: #fff; min-width: 0; }
+.sc-button { font-size: 14px; padding: 5px 16px; border: 1px solid #111; border-radius: 4px; background: #111; color: #fff; cursor: pointer; }
+
+.sc-scroll { overflow-x: auto; }
+.sc-kv, .sc-grid { border-collapse: collapse; font-size: 13px; }
+.sc-kv th, .sc-kv td, .sc-grid th, .sc-grid td { border: 1px solid #ddd; padding: 4px 8px; text-align: left; vertical-align: top; }
+.sc-kv th, .sc-grid th { background: #f5f5f5; font-weight: 600; white-space: nowrap; }
+.sc-kv td { word-break: break-all; }
+.sc-grid td { white-space: nowrap; }
+.sc-big { font-size: 16px; font-weight: 700; }
+
+/* ---- 命式・大運（左）＋補正情報（右）。狭い画面では補正情報を下へ ---- */
+.sc-layout { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 0 24px; align-items: start; }
+.sc-main, .sc-side { min-width: 0; }
+.sc-h2-sub { font-weight: 400; font-size: 12px; color: #555; margin-left: 10px; }
+
+.sc-pillars { display: flex; gap: 8px; }
+.sc-pillar {
+  flex: 1 1 0; min-width: 64px; border: 1px solid #ccc; border-radius: 4px;
+  padding: 6px 4px; text-align: center; box-sizing: border-box;
+}
+.sc-pillar-label { font-size: 11px; color: #666; }
+.sc-tsuhen { font-size: 11px; color: #444; min-height: 1.4em; }
+.sc-char { font-size: 26px; font-weight: 700; line-height: 1.25; }
+.sc-zokan { font-size: 12px; margin-top: 4px; line-height: 1.5; border-top: 1px dashed #ddd; padding-top: 3px; }
+.sc-age { font-size: 11px; color: #444; margin-top: 2px; white-space: nowrap; }
+.sc-tags { display: flex; flex-wrap: wrap; gap: 2px; justify-content: center; margin-top: 4px; border-top: 1px dashed #ddd; padding-top: 4px; }
+.sc-tag { font-size: 11px; border: 1px solid #bbb; border-radius: 3px; padding: 0 3px; background: #fafafa; }
+
+/* 大運: 第1大運を右端に置き、右から左へ並べる（direction: rtl。狭い画面では右端から横スクロール） */
+.sc-daiun { display: flex; gap: 6px; overflow-x: auto; direction: rtl; padding-bottom: 4px; }
+.sc-daiun > .sc-luck { direction: ltr; flex: 0 0 72px; min-width: 72px; }
+.sc-luck .sc-char { font-size: 22px; }
+.sc-luck-tsuhen { margin-top: 2px; border-top: 1px dashed #ddd; padding-top: 2px; min-height: 0; }
+.sc-luck-rel { margin-top: 4px; border-top: 1px dashed #ddd; padding-top: 3px; font-size: 11px; line-height: 1.45; text-align: left; }
+.sc-luck-rel-line { display: flex; flex-wrap: wrap; gap: 0 4px; }
+.sc-luck-rel-item { white-space: nowrap; }
+
+/* ---- 強弱・格局候補・内格補助 ---- */
+.sc-ref { font-size: 12px; color: #8a6d00; background: #fdf4e0; border: 1px solid #e6d3a3; padding: 4px 8px; border-radius: 4px; margin-bottom: 8px; }
+.sc-kk { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.sc-kk-box { border: 1px solid #ccc; border-radius: 4px; padding: 6px 8px; font-size: 12px; line-height: 1.6; min-width: 0; }
+.sc-h3 { font-size: 13px; margin: 0 0 4px; }
+.sc-kk-main { font-size: 15px; font-weight: 700; }
+.sc-kk-decision { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: flex-end; }
+.sc-kk-decision .sc-h3 { width: 100%; }
+.sc-kk-help { padding-left: 4px; }
+.sc-kk-note { font-size: 11px; color: #8a6d00; }
+.sc-kk-final { margin-top: 4px; padding-top: 3px; border-top: 1px dashed #ddd; font-size: 11px; color: #444; }
+
+@media (max-width: 860px) {
+  .sc-kk { grid-template-columns: minmax(0, 1fr); }
+  .sc-layout { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .sc-form { flex-direction: column; align-items: stretch; }
+  .sc-button { align-self: flex-start; }
+}
