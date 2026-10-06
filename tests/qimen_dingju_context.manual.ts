@@ -137,10 +137,11 @@ function expectJu(
   // 1976-06-10 23:30 は 6/11 の日干支（甲午）として扱う → 置閏期間の陽六局
   expectJu("1976-06-10 22:59", ctxAt(1976, 6, 10, 22, 59), "芒種", "陽遁", "下元", 9, false);
   expectJu("1976-06-10 23:30", ctxAt(1976, 6, 10, 23, 30), "芒種", "陽遁", "上元", 6, true);
-  // 1994 夏至の節入りは 6/21 23:39 JST → 6/22（甲子）の日として扱い、正授（規則から導出）
+  // 1994 夏至の節入りは 6/21 23:39 JST → 6/22（己卯。符頭）の日として扱い、正授（規則から導出）
   const a = resolveSolsticeAnchor(1994, "夏至");
   check("1994 夏至 節入り日", new Date(a.daySerial * 86_400_000).toISOString().slice(0, 10), "1994-06-22");
   check("1994 夏至 関係", a.relation, "正授");
+  check("1994-06-21 23:50 日干支（23:00 以降は翌日）", (() => { const c = calculateCalendar({ year: 1994, month: 6, day: 21, hour: 23, minute: 50, timezone: "Asia/Tokyo" }); return `${c.dayStem}${c.dayBranch}`; })(), "己卯");
 }
 
 // ---- 講義例 2015 / 2012（現行結果の維持）----
