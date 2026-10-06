@@ -61,6 +61,9 @@ import type { BaMenResult, BaMenName } from "./bamen";
 import { resolveBaShen } from "./bashen";
 import type { BaShenResult, BaShenName } from "./bashen";
 
+import { resolveEffectivePalaces } from "./effectivePalaces";
+import type { EffectivePalacesResult } from "./effectivePalaces";
+
 import { resolveJikakuFromQimen } from "./jikaku";
 import type { JikakuResult } from "./jikaku";
 
@@ -92,8 +95,13 @@ export interface QimenResult {
   baMenError: string | null;
   baShen: BaShenResult | null;
   baShenError: string | null;
-  /** 九宮(1〜9)ごとに、地盤・天盤・九星・八門・八神をまとめた最終的な式盤。 */
+  /** 九宮(1〜9)ごとに、地盤・天盤・九星・八門・八神をまとめた最終的な式盤（排盤の原盤。中宮5を含む）。 */
   palaces: Record<number, PalaceSummary>;
+  /**
+   * 寄宮後の有効配置（外周8宮のみ）。中宮の地盤干は坤二宮、中宮由来の天盤干は芮禽宮へ寄宮する
+   * （監修原則 2026-10-06）。凶格判定はこれを使う。
+   */
+  effectivePalaces: EffectivePalacesResult;
   /** 吉格判定（jikaku.ts）。天盤・八門・八神が未算出の格は unavailable に載る。 */
   jikaku: JikakuResult;
   /** 凶格判定（kyokaku.ts）。同上。 */
@@ -165,9 +173,12 @@ export function calculate(input: CalendarInput): QimenResult {
     };
   }
 
-  // 10. 格局（吉格・凶格）: 排盤まで組み立てた QimenResult を jikaku.ts / kyokaku.ts の
-  //     *FromQimen ラッパに渡して判定する。両ラッパは QimenResult の
-  //     palaces / xunShou / baMen / baShen / jiuXing / calendar / dingju のみ参照する。
+  // 10. 寄宮後の有効配置（中宮要素を寄宮先へ移した外周8宮。排盤データ自体は変更しない）
+  const effectivePalaces = resolveEffectivePalaces(palaces);
+
+  // 11. 格局（吉格・凶格）: 排盤まで組み立てた QimenResult を jikaku.ts / kyokaku.ts の
+  //     *FromQimen ラッパに渡して判定する。凶格は effectivePalaces、吉格は palaces を参照する
+  //     （吉格への寄宮原則の適用は未実施）。
   const base: Omit<QimenResult, "jikaku" | "kyokaku"> = {
     calendar,
     dingju,
@@ -183,6 +194,7 @@ export function calculate(input: CalendarInput): QimenResult {
     baShen,
     baShenError,
     palaces,
+    effectivePalaces,
   };
 
   const jikaku = resolveJikakuFromQimen(base as QimenResult);

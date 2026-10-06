@@ -35,6 +35,7 @@ OUT = ROOT / "tests" / "fixtures" / "qimen1080_labels.json"
 
 TITLE_RE = re.compile(r"^(陽遁|陰遁).局..日..時$")
 PALACE_NAMES = set("坎艮震巽離坤兌乾")
+PALACE_NUM = {"坎": 1, "艮": 8, "震": 3, "巽": 4, "離": 9, "坤": 2, "兌": 7, "乾": 6}
 JOIN_DIST = 15.0
 ANGLE_TOL = math.radians(35)
 
@@ -101,7 +102,13 @@ def main():
             for w in labels:
                 w["x"] = round(w["x"] - ox, 1)
                 w["y"] = round(w["y"] - oy, 1)
-            charts.append({"no": len(charts) + 1, "title": seg[0][4], "labels": labels})
+            # 宮名（坎・艮…）の中心座標。ラベルを最寄りの宮へ割り当てるために使う
+            palaces = {}
+            for i in range(8):
+                b = seg[2 + 2 * i]
+                cx, cy = center(b)
+                palaces[str(PALACE_NUM[b[4]])] = [round(cx - ox, 1), round(cy - oy, 1)]
+            charts.append({"no": len(charts) + 1, "title": seg[0][4], "palaces": palaces, "labels": labels})
 
     assert len(charts) == 1080, len(charts)
     out = {
@@ -114,9 +121,11 @@ def main():
             "extraction": (
                 "PyMuPDF のテキストブロック。各局の [43:-18] をラベル領域とし、"
                 "抽出順・近接（<15pt）・向きの一致でブロックを連結。x/y は題名左上を原点とする語の中心座標（pt）。"
+                "palaces は外周8宮の宮名（坎・艮…）の中心座標（同じ原点）。"
             ),
             "notes": [
                 "隣接ラベルが1語に連結される場合があるため、照合は「文字列に格局名を含むか」で行う。",
+                "ラベルの宮は、palaces のうち最も近い宮名とみなす（宮単位の照合用。経験的な割り当て）。",
                 "1080.pdf の格局名の体系は講義資料と同一ではない（例: 講義の上格＝1080.pdf の小格、講義の時格＝1080.pdf の時干格）。",
                 "chart の並び・no は tests/fixtures/qimen1080.json と同一。",
                 "生成スクリプト: tests/fixtures/gen_qimen1080_labels.py",

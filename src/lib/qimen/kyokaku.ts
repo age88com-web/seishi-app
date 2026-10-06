@@ -84,6 +84,18 @@
 //   宮迫      地盤九宮が人盤八門を剋す。休門が離宮、死門が坎宮、傷・杜門が坤・艮宮、
 //             開・驚門が震・巽宮、景門が乾・兌宮
 //
+// 監修原則（2026-10-06）— 中宮の寄宮と遁甲:
+//   ・格局判定は外周8宮のみで行い、中宮5を独立した宮として判定しない。
+//     中宮の地盤干は坤二宮の寄宮干、中宮由来の天盤干は芮禽宮の天盤干として扱う
+//     （effectivePalaces.ts の有効配置。坤二宮・芮禽宮は複数干を持ちうる）。
+//     干の条件は「その宮の天盤干（地盤干）のいずれかが該当する」で判定する。
+//   ・甲は表に出さず六儀に隠す（遁甲）。時干が甲なら旬首の六儀、日干が甲なら戊として判定する。
+//     年干・月干の甲（歳格・月格・年悖格・月悖格）は未確定のため変換しない。
+//     五不遇時・時干入墓は時干支（日干）の対応表なので、変換前の干支で引く。
+//   ・1080.pdf との既知の差: 坤二宮の寄宮干が時干・日干と同じ局で、本実装は時格・日格・伏干格・
+//     時悖格を判定するが 1080.pdf にはラベルが無い（tests/qimen_kyokaku.manual.ts に固定）。
+//     どちらが誤りとも断定せず、寄宮原則による本実装と 1080.pdf との既知の差として記録する。
+//
 // 推測しない範囲（TODO 参照）:
 //   ・条件が本文どおり一致する別名格（奇格の地盤丙、三奇受刑／各奇入墓 等）は
 //     スライドの記載どおり別々の格として保持し、統合はしない。
@@ -91,7 +103,9 @@
 //     本文に判定規則が無いため実装しない。
 //   ・複数格が同時成立した場合の優先順位、吉格との相殺はスライドに記載が無いため付けない。
 
-import type { QimenResult, PalaceSummary } from "./qimenEngine";
+import type { QimenResult } from "./qimenEngine";
+import type { EffectivePalace } from "./effectivePalaces";
+import { OUTER_PALACES, concealJiaHourStem, concealJiaDayStem } from "./effectivePalaces";
 import type { Dun } from "./dingju";
 import type { DiPanStem } from "./dipan";
 import type { BaMenName } from "./bamen";
@@ -144,8 +158,8 @@ const MEN_NATAL: Record<number, BaMenName> = {
 
 /** 洛書九宮の外周8宮を時計回りにたどった順（bashen.ts 等の RING の再掲）。 */
 const RING: readonly number[] = [4, 9, 2, 7, 6, 1, 8, 3];
-/** 中宮5を除く外周8宮。 */
-const OUTER: readonly number[] = [1, 2, 3, 4, 6, 7, 8, 9];
+/** 中宮5を除く外周8宮（格局判定は外周8宮のみで行う）。 */
+const OUTER: readonly number[] = OUTER_PALACES;
 
 /** 環上で相沖（正反対、+4宮）の宮を返す。 */
 function opposite(palace: number): number {
@@ -220,18 +234,22 @@ const KYU_HAKU: Partial<Record<BaMenName, readonly number[]>> = {
 type Segment = "天盤" | "八門" | "八神" | "九星" | "値符";
 
 export interface KyokakuInput {
-  /** 九宮(1〜9) → 地盤干・天盤干・八門・八神・九星。 */
-  palaces: Record<number, PalaceSummary>;
+  /** 寄宮後の有効配置（外周8宮のみ。effectivePalaces.ts）。坤二宮・芮禽宮は複数干を持ちうる。 */
+  palaces: Record<number, EffectivePalace>;
   /** 陰陽遁。現在の判定では未使用（直符伏吟/反吟は天盤・地盤の干で判定する。監修確定 2026-10-06）。 */
   dun: Dun;
   /** 用事の年干。calendar.yearStem をそのまま渡す。 */
   yearStem: string;
   /** 用事の月干。calendar.monthStem をそのまま渡す。 */
   monthStem: string;
-  /** 用事の日干。calendar.dayStem をそのまま渡す。 */
+  /** 用事の日干（変換前）。calendar.dayStem をそのまま渡す。五不遇時の対応表に使う。 */
   dayStem: string;
-  /** 用事の時干。calendar.hourStem をそのまま渡す。 */
+  /** 用事の時干（変換前）。calendar.hourStem をそのまま渡す。 */
   hourStem: string;
+  /** 遁甲変換後の日干（甲→戊）。日格・日悖格・伏干格・飛干格に使う。 */
+  effectiveDayStem: string;
+  /** 遁甲変換後の時干（甲→旬首の六儀）。時格・時悖格・天網四張・地網遮蔽に使う。 */
+  effectiveHourStem: string;
   /** 用事の時干支（例: "庚午"）。 */
   hourGanzhi: string;
   /** 値符（九星値符＝八神直符、通常は同一宮）の宮。九星・八神とも未算出なら null。 */
@@ -260,16 +278,29 @@ export interface KyokakuResult {
 
 // --- 宮ごとのアクセサ -----------------------------------------------------
 
-function tp(p: PalaceSummary | undefined): DiPanStem | undefined {
-  return p?.tianPanStem;
+/** その宮の天盤干（寄宮干を含む）。 */
+function tps(p: EffectivePalace | undefined): DiPanStem[] {
+  return p?.tianPanStems ?? [];
 }
-function dp(p: PalaceSummary | undefined): DiPanStem | undefined {
-  return p?.diPanStem;
+/** その宮の地盤干（寄宮干を含む）。 */
+function dps(p: EffectivePalace | undefined): DiPanStem[] {
+  return p?.diPanStems ?? [];
 }
-function hasStar(p: PalaceSummary | undefined, star: string): boolean {
-  return !!p && p.jiuXing.includes(star as PalaceSummary["jiuXing"][number]);
+/** 天盤干のいずれかが stem か。 */
+function tp(p: EffectivePalace | undefined, stem: string): boolean {
+  return tps(p).some((s) => s === stem);
 }
-function hasMen(p: PalaceSummary | undefined, men: BaMenName): boolean {
+/** 地盤干のいずれかが stem か。 */
+function dp(p: EffectivePalace | undefined, stem: string): boolean {
+  return dps(p).some((s) => s === stem);
+}
+function sameStems(a: readonly DiPanStem[], b: readonly DiPanStem[]): boolean {
+  return a.length > 0 && a.length === b.length && [...a].sort().join() === [...b].sort().join();
+}
+function hasStar(p: EffectivePalace | undefined, star: string): boolean {
+  return !!p && p.jiuXing.includes(star as EffectivePalace["jiuXing"][number]);
+}
+function hasMen(p: EffectivePalace | undefined, men: BaMenName): boolean {
   return !!p && p.baMen.includes(men);
 }
 
@@ -279,7 +310,7 @@ function segmentAvailable(seg: Segment, input: KyokakuInput): boolean {
   const list = Object.values(input.palaces);
   switch (seg) {
     case "天盤":
-      return list.some((p) => p.tianPanStem !== undefined);
+      return list.some((p) => p.tianPanStems.length > 0);
     case "八門":
       return list.some((p) => p.baMen.length > 0);
     case "八神":
@@ -293,25 +324,25 @@ function segmentAvailable(seg: Segment, input: KyokakuInput): boolean {
 
 // --- 盤全体の伏吟／反吟の判定 ------------------------------------------
 
-function jiuxingFuyin(palaces: Record<number, PalaceSummary>): boolean {
+function jiuxingFuyin(palaces: Record<number, EffectivePalace>): boolean {
   return OUTER.every((p) => hasStar(palaces[p], STAR_NATAL[p]));
 }
-function jiuxingFanyin(palaces: Record<number, PalaceSummary>): boolean {
+function jiuxingFanyin(palaces: Record<number, EffectivePalace>): boolean {
   return OUTER.every((p) => hasStar(palaces[p], STAR_NATAL[opposite(p)]));
 }
-function bamenFuyin(palaces: Record<number, PalaceSummary>): boolean {
+function bamenFuyin(palaces: Record<number, EffectivePalace>): boolean {
   return OUTER.every((p) => hasMen(palaces[p], MEN_NATAL[p]));
 }
-function bamenFanyin(palaces: Record<number, PalaceSummary>): boolean {
+function bamenFanyin(palaces: Record<number, EffectivePalace>): boolean {
   return OUTER.every((p) => hasMen(palaces[p], MEN_NATAL[opposite(p)]));
 }
-/** 直符伏吟: 外周8宮すべてで、天盤の奇子（干）が地盤の奇子と同じ（監修確定 2026-10-06）。 */
-function zhifuFuyin(palaces: Record<number, PalaceSummary>): boolean {
-  return OUTER.every((p) => tp(palaces[p]) !== undefined && tp(palaces[p]) === dp(palaces[p]));
+/** 直符伏吟: 外周8宮すべてで、天盤の奇子（干）が地盤の奇子と同じ（監修確定 2026-10-06。寄宮干を含めて比較）。 */
+function zhifuFuyin(palaces: Record<number, EffectivePalace>): boolean {
+  return OUTER.every((p) => sameStems(tps(palaces[p]), dps(palaces[p])));
 }
-/** 直符反吟: 外周8宮すべてで、天盤の奇子（干）が対宮の地盤の奇子と同じ（監修確定 2026-10-06）。 */
-function zhifuFanyin(palaces: Record<number, PalaceSummary>): boolean {
-  return OUTER.every((p) => tp(palaces[p]) !== undefined && tp(palaces[p]) === dp(palaces[opposite(p)]));
+/** 直符反吟: 外周8宮すべてで、天盤の奇子（干）が対宮の地盤の奇子と同じ（監修確定 2026-10-06。寄宮干を含めて比較）。 */
+function zhifuFanyin(palaces: Record<number, EffectivePalace>): boolean {
+  return OUTER.every((p) => sameStems(tps(palaces[p]), dps(palaces[opposite(p)])));
 }
 
 // --- 凶格ルール ---------------------------------------------------------
@@ -328,12 +359,13 @@ interface Rule {
   detail?: (input: KyokakuInput, palaces: number[]) => string | undefined;
 }
 
+/** 外周8宮を走査する（中宮5は独立した宮として判定しない）。 */
 function scan(
   input: KyokakuInput,
-  pred: (p: PalaceSummary | undefined, palace: number, input: KyokakuInput) => boolean,
+  pred: (p: EffectivePalace | undefined, palace: number, input: KyokakuInput) => boolean,
 ): number[] {
   const out: number[] = [];
-  for (let palace = 1; palace <= 9; palace += 1) {
+  for (const palace of OUTER) {
     if (pred(input.palaces[palace], palace, input)) out.push(palace);
   }
   return out;
@@ -356,7 +388,7 @@ const RULES: readonly Rule[] = [
     meaning: "挙兵すれば主客ともに傷つく。商売では破財、百事の凶となる。",
     source: S1,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === "乙" && dp(p) === "辛"),
+    match: (i) => scan(i, (p) => tp(p, "乙") && dp(p, "辛")),
   },
   {
     name: "白虎猖狂",
@@ -364,7 +396,7 @@ const RULES: readonly Rule[] = [
       "挙事（武装発起・暴動）すれば主客ともに傷つく驚恐のことがあり、遠行では災禍が多い、婚姻・修造は大凶",
     source: S1,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === "辛" && dp(p) === "乙"),
+    match: (i) => scan(i, (p) => tp(p, "辛") && dp(p, "乙")),
   },
   {
     name: "朱雀投江",
@@ -372,7 +404,7 @@ const RULES: readonly Rule[] = [
       "文書に関係、音信が途絶え訴訟や口舌、或いは驚恐の怪異、奸謀や詭詐（偽り、嘘）、百事に凶",
     source: S1,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === "丁" && dp(p) === "癸"),
+    match: (i) => scan(i, (p) => tp(p, "丁") && dp(p, "癸")),
   },
   {
     name: "騰蛇夭矯",
@@ -380,7 +412,7 @@ const RULES: readonly Rule[] = [
       "百事に不利、いらぬことに驚き心理は安寧できず、文書（訴状）や訴訟がある。",
     source: S1,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === "癸" && dp(p) === "丁"),
+    match: (i) => scan(i, (p) => tp(p, "癸") && dp(p, "丁")),
   },
 
   // --- 凶格２ -------------------------------------------------------
@@ -389,14 +421,14 @@ const RULES: readonly Rule[] = [
     meaning: "退避するのが良い。進撃は最悪",
     source: S2,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === "丙" && dp(p) === "庚"),
+    match: (i) => scan(i, (p) => tp(p, "丙") && dp(p, "庚")),
   },
   {
     name: "太白入熒",
     meaning: "客を利して主に不利。盗賊や強盗を防ぎ、固守するのが吉。",
     source: S2,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === "庚" && dp(p) === "丙"),
+    match: (i) => scan(i, (p) => tp(p, "庚") && dp(p, "丙")),
   },
   {
     name: "大格",
@@ -405,14 +437,14 @@ const RULES: readonly Rule[] = [
     source: S2,
     needs: ["天盤"],
     // 監修確定（2026-10-06）: 天盤庚が地盤癸に臨む（庚加癸）。講義 p53 の「地盤丙」は誤記。
-    match: (i) => scan(i, (p) => tp(p) === "庚" && dp(p) === "癸"),
+    match: (i) => scan(i, (p) => tp(p, "庚") && dp(p, "癸")),
   },
   {
     name: "上格",
     meaning: "出行すれば道に迷い、求謀は得られず、破財や疾病。",
     source: S2,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === "庚" && dp(p) === "壬"),
+    match: (i) => scan(i, (p) => tp(p, "庚") && dp(p, "壬")),
   },
 
   // --- 凶格３ -------------------------------------------------------
@@ -421,7 +453,7 @@ const RULES: readonly Rule[] = [
     meaning: "訴訟、受刑、商売の破財、出行しては病気になる",
     source: S3,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === "庚" && dp(p) === "己"),
+    match: (i) => scan(i, (p) => tp(p, "庚") && dp(p, "己")),
   },
   {
     name: "奇格",
@@ -429,7 +461,7 @@ const RULES: readonly Rule[] = [
     source: S3,
     needs: ["天盤"],
     match: (i) =>
-      scan(i, (p) => tp(p) === "庚" && (dp(p) === "乙" || dp(p) === "丙" || dp(p) === "丁")),
+      scan(i, (p) => tp(p, "庚") && (dp(p, "乙") || dp(p, "丙") || dp(p, "丁"))),
   },
   {
     name: "歳格",
@@ -437,7 +469,7 @@ const RULES: readonly Rule[] = [
       "この時、行軍、遠行、謀事はみな不利である。ただ盜賊を逮捕するか或いは行方不明者を捜索するのは良い",
     source: S3,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === "庚" && dp(p) === i.yearStem),
+    match: (i) => scan(i, (p) => tp(p, "庚") && dp(p, i.yearStem)),
   },
   {
     name: "月格",
@@ -445,7 +477,7 @@ const RULES: readonly Rule[] = [
       "この時、行軍、遠行、謀事はみな不利である。ただ盜賊を逮捕するか或いは行方不明者を捜索するのは良い",
     source: S3,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === "庚" && dp(p) === i.monthStem),
+    match: (i) => scan(i, (p) => tp(p, "庚") && dp(p, i.monthStem)),
   },
   {
     name: "日格",
@@ -455,7 +487,7 @@ const RULES: readonly Rule[] = [
     needs: ["天盤"],
     // 本文「別名（伏干格）」。凶格５の「伏干格＝日干格」も条件が同一（天盤庚＋地盤日干）。
     detail: () => "別名: 伏干格・日干格",
-    match: (i) => scan(i, (p) => tp(p) === "庚" && dp(p) === i.dayStem),
+    match: (i) => scan(i, (p) => tp(p, "庚") && dp(p, i.effectiveDayStem)),
   },
   {
     name: "時格",
@@ -465,7 +497,7 @@ const RULES: readonly Rule[] = [
     needs: ["天盤"],
     // 監修確定（2026-10-06）: 別名は「時干格」。講義 p54 の「別名（伏吟格）」は誤記。
     detail: () => "別名: 時干格",
-    match: (i) => scan(i, (p) => tp(p) === "庚" && dp(p) === i.hourStem),
+    match: (i) => scan(i, (p) => tp(p, "庚") && dp(p, i.effectiveHourStem)),
   },
 
   // --- 凶格４ -------------------------------------------------------
@@ -474,28 +506,28 @@ const RULES: readonly Rule[] = [
     meaning: "大凶で、些細なことでもまた災禍の発端になる",
     source: S4,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === "丙" && dp(p) === i.yearStem),
+    match: (i) => scan(i, (p) => tp(p, "丙") && dp(p, i.yearStem)),
   },
   {
     name: "月悖格",
     meaning: "大凶で、些細なことでもまた災禍の発端になる",
     source: S4,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === "丙" && dp(p) === i.monthStem),
+    match: (i) => scan(i, (p) => tp(p, "丙") && dp(p, i.monthStem)),
   },
   {
     name: "日悖格",
     meaning: "大凶で、些細なことでもまた災禍の発端になる",
     source: S4,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === "丙" && dp(p) === i.dayStem),
+    match: (i) => scan(i, (p) => tp(p, "丙") && dp(p, i.effectiveDayStem)),
   },
   {
     name: "時悖格",
     meaning: "大凶で、些細なことでもまた災禍の発端になる",
     source: S4,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === "丙" && dp(p) === i.hourStem),
+    match: (i) => scan(i, (p) => tp(p, "丙") && dp(p, i.effectiveHourStem)),
   },
   {
     name: "五不遇時",
@@ -515,7 +547,7 @@ const RULES: readonly Rule[] = [
     match: (i) => {
       const e = HOUR_TOMB[i.hourGanzhi];
       if (!e) return [];
-      return tp(i.palaces[e.palace]) === e.stem ? [e.palace] : [];
+      return tp(i.palaces[e.palace], e.stem) ? [e.palace] : [];
     },
   },
 
@@ -529,14 +561,14 @@ const RULES: readonly Rule[] = [
     // 「天盤の庚が地盤の日干に臨んで加わる」。本文「日干格」は同義。
     // 凶格３の「日格（別名 伏干格）」と条件が一致する（TODO 参照）。
     detail: () => "別名: 日干格",
-    match: (i) => scan(i, (p) => tp(p) === "庚" && dp(p) === i.dayStem),
+    match: (i) => scan(i, (p) => tp(p, "庚") && dp(p, i.effectiveDayStem)),
   },
   {
     name: "飛干格",
     meaning: "大凶となり、主客は両者ともに傷つく。万事に不利である。",
     source: S5,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === i.dayStem && dp(p) === "庚"),
+    match: (i) => scan(i, (p) => tp(p, i.effectiveDayStem) && dp(p, "庚")),
   },
   {
     name: "伏宮格天乙格",
@@ -546,7 +578,7 @@ const RULES: readonly Rule[] = [
     needs: ["天盤", "値符"],
     // 「天盤の庚が地盤の値符に臨む」＝ 値符の宮の天盤干が庚。
     match: (i) =>
-      i.zhifuPalace !== null && tp(i.palaces[i.zhifuPalace]) === "庚"
+      i.zhifuPalace !== null && tp(i.palaces[i.zhifuPalace], "庚")
         ? [i.zhifuPalace]
         : [],
   },
@@ -557,7 +589,7 @@ const RULES: readonly Rule[] = [
     needs: ["天盤", "値符"],
     // 「天盤の値符が地盤の庚に臨む」＝ 値符の宮の地盤干が庚。
     match: (i) =>
-      i.zhifuPalace !== null && dp(i.palaces[i.zhifuPalace]) === "庚"
+      i.zhifuPalace !== null && dp(i.palaces[i.zhifuPalace], "庚")
         ? [i.zhifuPalace]
         : [],
   },
@@ -566,7 +598,7 @@ const RULES: readonly Rule[] = [
     meaning: "突然の災いや事故、命の危険、行き詰まり、損失",
     source: S5,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === "庚" && dp(p) === "庚"),
+    match: (i) => scan(i, (p) => tp(p, "庚") && dp(p, "庚")),
   },
 
   // --- 凶格６ -------------------------------------------------------
@@ -577,7 +609,7 @@ const RULES: readonly Rule[] = [
     needs: ["天盤", "値符"],
     // 「天盤丙が地盤値符と同宮」＝ 値符の宮の天盤干が丙。
     match: (i) =>
-      i.zhifuPalace !== null && tp(i.palaces[i.zhifuPalace]) === "丙"
+      i.zhifuPalace !== null && tp(i.palaces[i.zhifuPalace], "丙")
         ? [i.zhifuPalace]
         : [],
   },
@@ -588,7 +620,7 @@ const RULES: readonly Rule[] = [
     needs: ["天盤", "値符"],
     // 「天盤値符が地盤丙奇と同宮」＝ 値符の宮の地盤干が丙。
     match: (i) =>
-      i.zhifuPalace !== null && dp(i.palaces[i.zhifuPalace]) === "丙"
+      i.zhifuPalace !== null && dp(i.palaces[i.zhifuPalace], "丙")
         ? [i.zhifuPalace]
         : [],
   },
@@ -598,7 +630,7 @@ const RULES: readonly Rule[] = [
       "百事に宜しからざる。謀事は尽き果て吉を不吉にする。凶を凶とはせず。無力の象意。",
     source: S6,
     needs: ["天盤"],
-    match: (i) => scan(i, (p, palace) => tp(p) === "乙" && (palace === 2 || palace === 6)),
+    match: (i) => scan(i, (p, palace) => tp(p, "乙") && (palace === 2 || palace === 6)),
   },
   {
     name: "丙奇入墓",
@@ -606,7 +638,7 @@ const RULES: readonly Rule[] = [
       "百事に宜しからざる。謀事は尽き果て吉を不吉にする。凶を凶とはせず。無力の象意。",
     source: S6,
     needs: ["天盤"],
-    match: (i) => scan(i, (p, palace) => tp(p) === "丙" && palace === 6),
+    match: (i) => scan(i, (p, palace) => tp(p, "丙") && palace === 6),
   },
   {
     name: "丁奇入墓",
@@ -614,7 +646,7 @@ const RULES: readonly Rule[] = [
       "百事に宜しからざる。謀事は尽き果て吉を不吉にする。凶を凶とはせず。無力の象意。",
     source: S6,
     needs: ["天盤"],
-    match: (i) => scan(i, (p, palace) => tp(p) === "丁" && palace === 8),
+    match: (i) => scan(i, (p, palace) => tp(p, "丁") && palace === 8),
   },
 
   // --- 凶格７ -------------------------------------------------------
@@ -627,9 +659,9 @@ const RULES: readonly Rule[] = [
       scan(
         i,
         (p, palace) =>
-          (tp(p) === "乙" && (palace === 6 || palace === 2)) ||
-          (tp(p) === "丙" && palace === 6) ||
-          (tp(p) === "丁" && palace === 8),
+          (tp(p, "乙") && (palace === 6 || palace === 2)) ||
+          (tp(p, "丙") && palace === 6) ||
+          (tp(p, "丁") && palace === 8),
       ),
   },
   {
@@ -639,10 +671,7 @@ const RULES: readonly Rule[] = [
     source: S7,
     needs: ["天盤"],
     match: (i) =>
-      scan(i, (p, palace) => {
-        const s = tp(p);
-        return s !== undefined && SIX_YI_XING[s] === palace;
-      }),
+      scan(i, (p, palace) => tps(p).some((s) => SIX_YI_XING[s] === palace)),
     detail: (i, palaces) => {
       const label: Record<string, string> = {
         "戊": "戊儀撃刑",
@@ -652,10 +681,11 @@ const RULES: readonly Rule[] = [
         "壬": "壬儀撃刑",
         "癸": "癸儀撃刑",
       };
-      const hit = palaces
-        .map((pl) => tp(i.palaces[pl]))
-        .filter((s): s is DiPanStem => s !== undefined)
-        .map((s) => label[s]);
+      const hit = palaces.flatMap((pl) =>
+        tps(i.palaces[pl])
+          .filter((s) => SIX_YI_XING[s] === pl)
+          .map((s) => label[s]),
+      );
       return hit.length > 0 ? Array.from(new Set(hit)).join("・") : undefined;
     },
   },
@@ -699,7 +729,7 @@ const RULES: readonly Rule[] = [
     source: S8,
     needs: ["天盤"],
     // 「天盤癸儀が地盤の用事となる時干に臨んで加わる」
-    match: (i) => scan(i, (p) => tp(p) === "癸" && dp(p) === i.hourStem),
+    match: (i) => scan(i, (p) => tp(p, "癸") && dp(p, i.effectiveHourStem)),
   },
 
   // --- 凶格９ -------------------------------------------------------
@@ -709,7 +739,7 @@ const RULES: readonly Rule[] = [
     source: S9,
     needs: ["天盤"],
     // 「天盤壬が地盤の用事となる時干の宮に入宮」
-    match: (i) => scan(i, (p) => tp(p) === "壬" && dp(p) === i.hourStem),
+    match: (i) => scan(i, (p) => tp(p, "壬") && dp(p, i.effectiveHourStem)),
   },
   {
     name: "門迫",
@@ -799,17 +829,19 @@ export function resolveKyokaku(input: KyokakuInput): KyokakuResult {
 
 /**
  * QimenResult（qimenEngine.calculate() の戻り値）から直接凶格判定を行う薄いラッパ。
- * qimenEngine 側は一切変更しない。
+ * 寄宮後の有効配置（effectivePalaces）と、遁甲変換後の日干・時干で判定する。
  * 値符の宮は 九星値符 を優先し、無ければ 八神直符 を用いる（両者は通常同一宮）。
  */
 export function resolveKyokakuFromQimen(qimen: QimenResult): KyokakuResult {
   return resolveKyokaku({
-    palaces: qimen.palaces,
+    palaces: qimen.effectivePalaces.palaces,
     dun: qimen.dingju.dun,
     yearStem: qimen.calendar.yearStem,
     monthStem: qimen.calendar.monthStem,
     dayStem: qimen.calendar.dayStem,
     hourStem: qimen.calendar.hourStem,
+    effectiveDayStem: concealJiaDayStem(qimen.calendar.dayStem),
+    effectiveHourStem: concealJiaHourStem(qimen.calendar.hourStem, qimen.xunShou.liuyi as DiPanStem),
     hourGanzhi: `${qimen.calendar.hourStem}${qimen.calendar.hourBranch}`,
     zhifuPalace: qimen.jiuXing?.zhifu.palace ?? qimen.baShen?.zhifu.palace ?? null,
   });

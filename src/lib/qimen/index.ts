@@ -24,6 +24,9 @@ export type {
   QimenLeapAdjustment,
 } from "./dingjuContext";
 
+export { resolveEffectivePalaces } from "./effectivePalaces";
+export type { EffectivePalace, EffectivePalacesResult } from "./effectivePalaces";
+
 export { resolveJikakuFromQimen } from "./jikaku";
 export type {
   JikakuResult,

@@ -7,7 +7,7 @@
 |---|---|---|
 | `qimen_1080.manual.ts` | 奇門遁甲 排盤エンジンの **1080局 完全一致 回帰テスト**（地盤・旬首・天盤・九星・八門・八神）。検証データは `fixtures/qimen1080.json`（`docs/source/1080.pdf` からの機械転記・検証専用）。 | `npx tsx tests/qimen_1080.manual.ts` |
 | `qimen_dingju_context.manual.ts` | 奇門遁甲 **日時→定局 回帰テスト**（超神・接気・置閏）。1974〜1979 の講義例、1976年置閏の受け入れ条件、講義例 2012・2015、23:00 境界、規則から導出した検証例。 | `npx tsx tests/qimen_dingju_context.manual.ts` |
-| `qimen_kyokaku.manual.ts` | 奇門遁甲 **凶格の監修確定事項（2026-10-06）の回帰テスト**（大格＝庚加癸、時格の別名＝時干格、直符伏吟・直符反吟）。1080局を駆動し、1080.pdf の格局名ラベル（`fixtures/qimen1080_labels.json`）とも照合。 | `npx tsx tests/qimen_kyokaku.manual.ts` |
+| `qimen_kyokaku.manual.ts` | 奇門遁甲 **凶格の回帰テスト**。監修確定事項（大格＝庚加癸、時格の別名＝時干格、直符伏吟・直符反吟）と監修原則（中宮の寄宮、遁甲）。1080局を駆動し、1080.pdf の格局名ラベル（`fixtures/qimen1080_labels.json`）と宮単位で照合。既知の差 61件を固定。 | `npx tsx tests/qimen_kyokaku.manual.ts` |
 | `calendarEngine.manual.ts` | CalendarEngine.calculate() の代表ケース確認 | `npx tsx tests/calendarEngine.manual.ts` |
 | `ganzhi_parity.manual.ts` | 旧 eto.ts と CalendarEngine の干支計算の互換性確認 | `TZ=Asia/Tokyo npx tsx tests/ganzhi_parity.manual.ts` |
 | `kakkyoku_cases.ts` | 七政四餘 格局エンジンの動作確認 | `npx tsx tests/kakkyoku_cases.ts` |
@@ -91,13 +91,21 @@ npx tsx tests/qimen_dingju_context.manual.ts
 
 ### 目的
 
-`src/lib/qimen/kyokaku.ts` に反映した監修確定事項（2026-10-06）を回帰テストとして固定する。
-仕様は `docs/qimen-spec/12_格局（凶格）.md`。
+`src/lib/qimen/kyokaku.ts`・`src/lib/qimen/effectivePalaces.ts` に反映した監修確定事項・監修原則（2026-10-06）を
+回帰テストとして固定する。仕様は `docs/qimen-spec/12_格局（凶格）.md`。
 
 - 大格 ＝ 天盤庚が地盤癸に臨む（庚加癸）。太白入熒 ＝ 庚加丙
 - 時格の別名 ＝ 時干格（凶格８の伏吟格とは別物）
 - 伏吟格・反吟格の三種は 九星／八門／直符。直符伏吟 ＝ 天盤干＝地盤干、直符反吟 ＝ 天盤干＝対宮の地盤干。
   「値符伏吟／値符反吟」は使わない
+- 中宮の寄宮: 地盤原盤は中宮5を保持。格局判定は外周8宮のみで、中宮の地盤干は坤二宮、中宮由来の天盤干は
+  芮禽宮へ寄宮した有効配置で判定する（有効配置の天盤は 1080.pdf の天盤表示と 1080/1080 一致）
+- 遁甲: 時干甲→旬首の六儀、日干甲→戊として判定（五不遇時・時干入墓は変換前の干支で引く）
+- 1080.pdf と宮単位で完全一致: 干の組合せで決まる9格・六儀撃刑・飛干格
+- 1080.pdf との既知の差 61件（`KNOWN_DIFFS`）: 坤二宮の寄宮干が時干・日干と同じ局で、本実装は
+  時格・伏干格（日格）・時悖格を判定するが 1080.pdf にラベルが無い。寄宮原則による本実装と 1080.pdf との
+  既知の差として固定する（どちらが誤りとも断定しない）
+- 各凶格の成立件数を固定
 
 ### 実行
 
@@ -113,9 +121,9 @@ npx tsx tests/qimen_kyokaku.manual.ts
   - 生成: `python3 tests/fixtures/gen_qimen1080_labels.py`（要 `pip install pymupdf`）。
   - **仕様ではない。講義資料（`docs/source/奇門遁甲講義案N.pdf`）と監修確定事項より下位** に置き、
     このラベルを根拠に格局ロジックを変更しない。
-  - 再構成は経験的処理で、隣接ラベルの連結や分割が残りうる。照合は「文字列に格局名を含むか」で行い、
-    方向は「判定が成立した局に 1080.pdf の該当ラベルがある」の一方向のみ
-    （1080.pdf の格局名体系は講義と同一ではなく、中宮の干の扱いの差もあるため逆方向は照合しない）。
+  - 再構成は経験的処理で、隣接ラベルの連結や分割が残りうる。照合は宮ごとにラベル文字列を連結し
+    「格局名を含むか」で行う。ラベルの宮は fixture の `palaces`（宮名の位置）のうち最寄りの宮とする。
+  - 照合は宮単位で両方向（判定のみ／ラベルのみ）を数え、完全一致する格と既知の差を固定している。
   - 1080.pdf の名称は講義と異なる場合がある（例: 講義の時格＝1080.pdf の時干格、講義の上格＝1080.pdf の小格）。
 
 ## 保証範囲
@@ -127,5 +135,5 @@ npx tsx tests/qimen_kyokaku.manual.ts
 | 日時 → 定局節気・陰陽遁・三元・局（超神・接気・置閏、23:00 境界） | 対象外 | 講義例と規則から導出した検証例（主に 1974〜1980）。全日付の網羅ではない |
 | 日時 → 排盤の統合（`qimenEngine.calculate()`） | 対象外 | 2015・2012 の講義例のみ |
 | 冬至側の置閏 | — | 規則から導出した例（1978年）のみ。講義資料に冬至側の年月日例は無い |
-| 凶格: 大格・太白入熒・時格・伏吟格・反吟格（監修確定事項） | 対象外 | 対象外（`qimen_kyokaku.manual.ts` が1080局すべてで保証。1080.pdf のラベルとは一方向の照合） |
+| 凶格（寄宮後の有効配置・遁甲・監修確定事項） | 対象外 | 対象外（`qimen_kyokaku.manual.ts` が1080局すべてで保証。1080.pdf のラベルと宮単位で照合、既知の差61件） |
 | 上記以外の格局判定 | 対象外 | 対象外 |
