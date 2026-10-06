@@ -13,9 +13,10 @@
 //   ・jikaku.ts は既に確定済みの吉格判定であり、凶格追加のために触りたくない。
 //   吉格・凶格を一括で扱いたい場合は、両モジュールを呼ぶ薄いラッパを別途用意する想定。
 //
-// 仕様の出典（唯一の根拠）:
-//   docs/source/ に凶格の講義資料PDFが無いため、元Keynote「奇門遁甲講義案N.key」の
-//   凶格スライド10枚の本文を直接デコードして確認したものを一次資料とする。
+// 仕様の出典:
+//   講義資料 docs/source/奇門遁甲講義案N.pdf p52〜p61（元Keynote「奇門遁甲講義案N.key」の
+//   凶格スライド10枚。本文は PDF のテキストと Keynote のデコード結果で一致を確認済み）。
+//   ただし下記「監修確定事項」は講義本文より優先する。
 //     ・格局詳細（凶格１）Index/Slide-3952（青龍逃走・白虎猖狂・朱雀投江・騰蛇夭矯）
 //     ・格局詳細（凶格２）Index/Slide-3999（熒入太白・太白入熒・大格・上格）
 //     ・格局詳細（凶格３）Index/Slide-4046（刑格・奇格・歳格・月格・日格・時格）
@@ -26,8 +27,16 @@
 //     ・格局詳細（凶格７）Index/Slide-4286（三奇受刑・六儀撃刑）
 //     ・格局詳細（凶格８）Index/Slide-4333（伏吟格・反吟格・天網四張）
 //     ・格局詳細（凶格９）Index/Slide-4380（地網遮蔽・門迫・宮迫）
-//   docs/qimen-spec/12_格局（凶格）.md は補助資料。低解像度由来の誤り（例:「大格＝天盤庚が
-//   地盤癸」「艮六宮」「五不遇時の対応表」等）を含むため採用しない。
+//   docs/qimen-spec/12_格局（凶格）.md は本ファイルの仕様書（監修確定事項を反映済み）。
+//
+// 監修確定事項（2026-10-06）— 講義本文より優先する:
+//   1. 大格: 講義 p53 の「天盤庚が地盤丙と同宮」は誤記。大格 ＝ 天盤庚が地盤癸に臨む（庚加癸）。
+//      太白入熒は 庚加丙 のまま。
+//   2. 伏吟格・反吟格は 九星／八門／直符 の三種（「値符伏吟／値符反吟」ではなく「直符伏吟／直符反吟」）。
+//      直符伏吟 ＝ 地盤と天盤の奇子（六儀三奇の干）が同じになる。
+//      直符反吟 ＝ 地盤上の奇子と天盤上の奇子が対宮する。
+//      八神の直符の位置・九星の値符の位置では判定しない。
+//   3. 時格: 講義 p54 の「別名（伏吟格）」は誤記。時格の別名は「時干格」。凶格８の伏吟格とは別物。
 //
 // 各スライド本文の該当箇所（デコード原文、条件部分のみ）:
 //   青龍逃走  天盤乙が地盤辛と同宮
@@ -36,14 +45,14 @@
 //   騰蛇夭矯  天盤癸が地丁と同宮
 //   熒入太白  天盤丙が地盤庚と同宮
 //   太白入熒  天盤庚が地盤丙と同宮
-//   大格      天盤庚が地盤丙と同宮
+//   大格      天盤庚が地盤丙と同宮　→ 監修確定: 天盤庚が地盤癸（講義本文は誤記）
 //   上格      天盤庚が地盤壬と同宮
 //   刑格      天盤庚が地盤己と同宮
 //   奇格      天盤庚が地盤乙、丙、丁と同宮
 //   歳格      天盤庚が地盤の年干に臨む
 //   月格      天盤庚が地盤の月干に臨む
 //   日格      天盤庚が地盤の日干に臨む　　別名（伏干格）
-//   時格      天盤庚が地盤の時干に臨む　　別名（伏吟格）
+//   時格      天盤庚が地盤の時干に臨む　　別名（伏吟格）→ 監修確定: 別名は時干格（講義本文は誤記）
 //   年悖格    天盤丙奇が地盤の用事となる年干と同宮
 //   月悖格    天盤丙奇が地盤の用事となる月干と同宮
 //   日悖格    天盤丙奇が地盤の用事となる日干と同宮
@@ -65,7 +74,9 @@
 //   三奇受刑  天盤乙が乾六宮または坤二宮に入宮／天盤丙が乾六宮に入宮／天盤丁が艮八宮に入宮
 //   六儀撃刑  天盤戊が地盤震三宮／己が坤二宮／庚が艮八宮／辛が離九宮／壬が巽四宮／癸が巽四宮 に臨む
 //   伏吟格    天盤九星・人盤八門が地盤定位から動かない（九星伏吟・値符伏吟・八門伏吟の三種）
+//             → 監修確定: 九星伏吟・八門伏吟・直符伏吟（地盤と天盤の奇子が同じ）
 //   反吟格    九星・八門・値符が相沖する地盤の定位（九星反吟・値符反吟・八門反吟の三種）
+//             → 監修確定: 九星反吟・八門反吟・直符反吟（地盤上の奇子と天盤上の奇子が対宮）
 //   天網四張  天盤癸儀が地盤の用事となる時干に臨んで加わる
 //   地網遮蔽  天盤壬が地盤の用事となる時干の宮に入宮
 //   門迫      人盤八門が地盤九宮を剋す。休門が坤・艮宮、生死門が震巽宮、景門が坎宮、
@@ -74,7 +85,7 @@
 //             開・驚門が震・巽宮、景門が乾・兌宮
 //
 // 推測しない範囲（TODO 参照）:
-//   ・条件が本文どおり一致する別名格（太白入熒／大格、奇格の地盤丙、三奇受刑／各奇入墓 等）は
+//   ・条件が本文どおり一致する別名格（奇格の地盤丙、三奇受刑／各奇入墓 等）は
 //     スライドの記載どおり別々の格として保持し、統合はしない。
 //   ・六儀撃刑・時格の (甲子)(甲申)… や 六儀撃刑の旬注記、天網四張の高格／低格の区別は
 //     本文に判定規則が無いため実装しない。
@@ -141,14 +152,6 @@ function opposite(palace: number): number {
   const i = RING.indexOf(palace);
   if (i < 0) throw new Error(`宮${palace}は外周環に含まれません`);
   return RING[(i + 4) % 8];
-}
-
-/**
- * 八神「直符」の定位。bashen.ts 本文より
- * 「陽遁は直符が坎一宮」「陰遁は直符が離九宮」。
- */
-function shenZhifuNatalPalace(dun: Dun): number {
-  return dun === "陽遁" ? 1 : 9;
 }
 
 /** 五不遇時: 日干 → 用事の時干支（Slide-4096 本文の対応表）。 */
@@ -219,7 +222,7 @@ type Segment = "天盤" | "八門" | "八神" | "九星" | "値符";
 export interface KyokakuInput {
   /** 九宮(1〜9) → 地盤干・天盤干・八門・八神・九星。 */
   palaces: Record<number, PalaceSummary>;
-  /** 陰陽遁（伏吟格/反吟格の値符定位の判定用）。 */
+  /** 陰陽遁。現在の判定では未使用（直符伏吟/反吟は天盤・地盤の干で判定する。監修確定 2026-10-06）。 */
   dun: Dun;
   /** 用事の年干。calendar.yearStem をそのまま渡す。 */
   yearStem: string;
@@ -269,9 +272,6 @@ function hasStar(p: PalaceSummary | undefined, star: string): boolean {
 function hasMen(p: PalaceSummary | undefined, men: BaMenName): boolean {
   return !!p && p.baMen.includes(men);
 }
-function hasZhifuShen(p: PalaceSummary | undefined): boolean {
-  return !!p && p.baShen.includes("直符");
-}
 
 // --- 段の可用性チェック --------------------------------------------------
 
@@ -305,11 +305,13 @@ function bamenFuyin(palaces: Record<number, PalaceSummary>): boolean {
 function bamenFanyin(palaces: Record<number, PalaceSummary>): boolean {
   return OUTER.every((p) => hasMen(palaces[p], MEN_NATAL[opposite(p)]));
 }
-function zhifuFuyin(palaces: Record<number, PalaceSummary>, dun: Dun): boolean {
-  return hasZhifuShen(palaces[shenZhifuNatalPalace(dun)]);
+/** 直符伏吟: 外周8宮すべてで、天盤の奇子（干）が地盤の奇子と同じ（監修確定 2026-10-06）。 */
+function zhifuFuyin(palaces: Record<number, PalaceSummary>): boolean {
+  return OUTER.every((p) => tp(palaces[p]) !== undefined && tp(palaces[p]) === dp(palaces[p]));
 }
-function zhifuFanyin(palaces: Record<number, PalaceSummary>, dun: Dun): boolean {
-  return hasZhifuShen(palaces[opposite(shenZhifuNatalPalace(dun))]);
+/** 直符反吟: 外周8宮すべてで、天盤の奇子（干）が対宮の地盤の奇子と同じ（監修確定 2026-10-06）。 */
+function zhifuFanyin(palaces: Record<number, PalaceSummary>): boolean {
+  return OUTER.every((p) => tp(palaces[p]) !== undefined && tp(palaces[p]) === dp(palaces[opposite(p)]));
 }
 
 // --- 凶格ルール ---------------------------------------------------------
@@ -402,8 +404,8 @@ const RULES: readonly Rule[] = [
       "百事が凶。求人は失敗し、商売は破財、出行して車は破れ馬は死ぬ。ただ犯罪者を逮捕するのに良い",
     source: S2,
     needs: ["天盤"],
-    // 本文どおり「天盤庚が地盤丙」。太白入熒 と条件が一致する（TODO 参照）。
-    match: (i) => scan(i, (p) => tp(p) === "庚" && dp(p) === "丙"),
+    // 監修確定（2026-10-06）: 天盤庚が地盤癸に臨む（庚加癸）。講義 p53 の「地盤丙」は誤記。
+    match: (i) => scan(i, (p) => tp(p) === "庚" && dp(p) === "癸"),
   },
   {
     name: "上格",
@@ -461,8 +463,8 @@ const RULES: readonly Rule[] = [
       "この時、行軍、遠行、謀事はみな不利である。ただ盜賊を逮捕するか或いは行方不明者を捜索するのは良い",
     source: S3,
     needs: ["天盤"],
-    // 本文「別名（伏吟格）」。凶格８の構造的な伏吟格とは別物（同名・TODO 参照）。
-    detail: () => "別名: 伏吟格（凶格８の伏吟格とは別）",
+    // 監修確定（2026-10-06）: 別名は「時干格」。講義 p54 の「別名（伏吟格）」は誤記。
+    detail: () => "別名: 時干格",
     match: (i) => scan(i, (p) => tp(p) === "庚" && dp(p) === i.hourStem),
   },
 
@@ -668,9 +670,8 @@ const RULES: readonly Rule[] = [
     board: (i) => {
       const v: string[] = [];
       if (segmentAvailable("九星", i) && jiuxingFuyin(i.palaces)) v.push("九星伏吟");
-      // 値符伏吟: 八神「直符」が定位（陽遁=坎一/陰遁=離九）にあること。
-      // 「値符」を八神直符と解釈している（TODO 参照）。
-      if (segmentAvailable("八神", i) && zhifuFuyin(i.palaces, i.dun)) v.push("値符伏吟");
+      // 直符伏吟: 地盤と天盤の奇子が同じ（監修確定 2026-10-06）。
+      if (segmentAvailable("天盤", i) && zhifuFuyin(i.palaces)) v.push("直符伏吟");
       if (segmentAvailable("八門", i) && bamenFuyin(i.palaces)) v.push("八門伏吟");
       return { hit: v.length > 0, detail: v.join("・") };
     },
@@ -685,8 +686,8 @@ const RULES: readonly Rule[] = [
     board: (i) => {
       const v: string[] = [];
       if (segmentAvailable("九星", i) && jiuxingFanyin(i.palaces)) v.push("九星反吟");
-      // 値符反吟: 八神「直符」が定位の相沖宮にあること（TODO 参照）。
-      if (segmentAvailable("八神", i) && zhifuFanyin(i.palaces, i.dun)) v.push("値符反吟");
+      // 直符反吟: 地盤上の奇子と天盤上の奇子が対宮（監修確定 2026-10-06）。
+      if (segmentAvailable("天盤", i) && zhifuFanyin(i.palaces)) v.push("直符反吟");
       if (segmentAvailable("八門", i) && bamenFanyin(i.palaces)) v.push("八門反吟");
       return { hit: v.length > 0, detail: v.join("・") };
     },
