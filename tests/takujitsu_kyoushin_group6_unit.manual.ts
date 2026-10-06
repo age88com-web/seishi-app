@@ -129,12 +129,12 @@ check("四方耗：巳酉丑月lunarDay=5（該当）", { ...BASE, monthBranch: 
 check("冰消瓦解：子午年正月lunarDay=1（該当）", { ...BASE, yearBranch: "子", monthBranch: "寅", lunarDay: 1 }, ["冰消瓦解"]);
 check("冰消瓦解：子午年正月lunarDay=2（非該当）", { ...BASE, yearBranch: "午", monthBranch: "寅", lunarDay: 2 }, [], ["冰消瓦解"]);
 check(
-  "冰消瓦解：丑未年十月lunarDay=1（原本の不規則値・該当）",
+  "冰消瓦解：丑未年十月lunarDay=1（表の記載値・該当）",
   { ...BASE, yearBranch: "未", monthBranch: "亥", lunarDay: 1 },
   ["冰消瓦解"],
 );
 check(
-  "冰消瓦解：丑未年十月lunarDay=3（規則性から推測される値だが原本にはない・非該当）",
+  "冰消瓦解：丑未年十月lunarDay=3（表に無い日・非該当）",
   { ...BASE, yearBranch: "丑", monthBranch: "亥", lunarDay: 3 },
   [],
   ["冰消瓦解"],
@@ -181,7 +181,7 @@ check("下兀：陽年(子)正月lunarDay=6（該当）", { ...BASE, yearBranch:
 check("上兀：陰年(丑)正月lunarDay=1（該当・陽年とは異なる列）", { ...BASE, yearBranch: "丑", lunarMonth: 1, lunarDay: 1 }, ["上兀"]);
 check("下兀：陰年(丑)正月lunarDay=3（該当）", { ...BASE, yearBranch: "丑", lunarMonth: 1, lunarDay: 3 }, ["下兀"]);
 check("上兀：陽年(子)正月lunarDay=1（非該当・陰年の値なので混同していない）", { ...BASE, yearBranch: "子", lunarMonth: 1, lunarDay: 1 }, [], ["上兀"]);
-check("下兀：陽年(子)三月lunarDay=23（原本の不規則値・該当）", { ...BASE, yearBranch: "子", lunarMonth: 3, lunarDay: 23 }, ["下兀"]);
+check("下兀：陽年(子)三月lunarDay=23（表の記載値・該当）", { ...BASE, yearBranch: "子", lunarMonth: 3, lunarDay: 23 }, ["下兀"]);
 
 // ---- 44）伏斷日（dayBranch＋lodge28） ----
 check("伏斷日：子日で虚宿（該当）", { ...BASE, dayBranch: "子", lodge28: "虚" }, ["伏斷日"]);

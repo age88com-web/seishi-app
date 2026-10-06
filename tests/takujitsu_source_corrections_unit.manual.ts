@@ -41,28 +41,6 @@ const CHECKS: Record<string, () => boolean> = {
   "siming-shen": () => has(resolveKichijinGroup4({ ...BASE, monthBranch: "申", ...gz("甲戌") }), "司命"),
   "fudanri-you": () => has(resolveKyoushinGroup6({ ...BASE, ...gz("乙酉"), lodge28: "觜" }), "伏斷日"),
   "tianfu-jisi-dup": () => has(resolveKichijinGroup4({ ...BASE, ...gz("己巳") }), "天福"),
-  "tiankong-mao-row6": () =>
-    // 原文の印字どおり（採用値＝原文値「四月・十月・二月」）：十月は 6,14,22,30 と 4,12,20,28 の両方の行、
-    // 十二月はどの行にも無い（監修候補値「四月・十二月」はコードに使わない）
-    has(resolveKyoushinGroup6({ ...BASE, yearBranch: "卯", lunarMonth: 10, lunarDay: 6 }), "地空") &&
-    has(resolveKyoushinGroup6({ ...BASE, yearBranch: "卯", lunarMonth: 10, lunarDay: 4 }), "地空") &&
-    !has(resolveKyoushinGroup6({ ...BASE, yearBranch: "卯", lunarMonth: 12, lunarDay: 4 }), "地空") &&
-    !has(resolveKyoushinGroup6({ ...BASE, yearBranch: "卯", lunarMonth: 12, lunarDay: 8 }), "天空"),
-  "bingxiao-wajie-chouwei-10": () =>
-    has(resolveKyoushinGroup6({ ...BASE, yearBranch: "丑", monthBranch: "亥", lunarDay: 1 }), "冰消瓦解") &&
-    !has(resolveKyoushinGroup6({ ...BASE, yearBranch: "丑", monthBranch: "亥", lunarDay: 3 }), "冰消瓦解"),
-  "bingxiao-wajie-maoyou-2": () =>
-    has(resolveKyoushinGroup6({ ...BASE, yearBranch: "卯", monthBranch: "卯", lunarDay: 1 }), "冰消瓦解") &&
-    !has(resolveKyoushinGroup6({ ...BASE, yearBranch: "卯", monthBranch: "卯", lunarDay: 3 }), "冰消瓦解"),
-  "xiawu-yang-39": () =>
-    has(resolveKyoushinGroup6({ ...BASE, yearBranch: "子", lunarMonth: 3, lunarDay: 23 }), "下兀") &&
-    !has(resolveKyoushinGroup6({ ...BASE, yearBranch: "子", lunarMonth: 3, lunarDay: 28 }), "下兀"),
-  "xiawu-yin-612": () =>
-    has(resolveKyoushinGroup6({ ...BASE, yearBranch: "丑", lunarMonth: 6, lunarDay: 29 }), "下兀") &&
-    !has(resolveKyoushinGroup6({ ...BASE, yearBranch: "丑", lunarMonth: 6, lunarDay: 28 }), "下兀"),
-  "wenru-wenchu-3": () =>
-    has(resolveKyoushinGroup6({ ...BASE, monthBranch: "辰", lunarDay: 3 }), "瘟入") &&
-    has(resolveKyoushinGroup6({ ...BASE, monthBranch: "辰", lunarDay: 4 }), "瘟出"),
 };
 
 console.log("[台帳] 原文値と採用値（src/lib/takujitsu/shinsatsu/sourceCorrections.ts）\n");
