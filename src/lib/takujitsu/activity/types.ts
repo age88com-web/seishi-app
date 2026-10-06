@@ -146,6 +146,21 @@ export interface ActivityProfile {
    */
   reducedStillUnfavorableActivityIds?: string[];
   /**
+   * 原典が特定の用事について「用いてはいけない」と個別に禁止している忌
+   * （吉神による解除不可。監修確定 2026-10-06：洪氏錦嚢の「用いてはいけない」は
+   * 神殺全体の解除不可ではなく、記載された用事に対する個別禁止として扱う）。
+   * その凶神が resolution で cancelled／reduced になっても、この配列の用事
+   * （かつ unfavorableActivityIds に含まれるもの）は忌のまま残す。
+   */
+  nonReleasableUnfavorableActivityIds?: string[];
+  /**
+   * 擇日上あまり重視されない、影響の弱い神殺（監修確定 2026-10-06：埋兒凶宿・龍禁）。
+   * 忌は原文で直接関係する用事（unfavorableActivityIds）だけに限定し、一般用事へは
+   * 展開しない。評価結果の ActivitySource.weak に引き継ぎ、画面で「弱い凶作用・注意」
+   * として区別できるようにする（判定ロジックは重み付けをしない）。
+   */
+  weakInfluence?: boolean;
+  /**
    * 特定の二十四節気区間でのみ追加される宜/忌（2026-09-09、十二建除
    * 執・危・収 季節条件完成フェーズで追加）。神殺象意.pdfが「霜降後，
    * 立春前，宜畋獵」のように、通常の宜/忌とは別に季節限定の宜/忌を
@@ -235,6 +250,8 @@ export interface ActivitySource {
   resolutionStatus?: ResolutionStatusLike;
   /** ActivityProfile.notes、またはresolutionのreason/noteなど、人が読める補足。 */
   note?: string;
+  /** ActivityProfile.weakInfluence の神殺由来（弱い凶作用・注意）なら true。 */
+  weak?: boolean;
   /**
    * reduced状態で、原典に用途限定の残存忌が記載されているが、具体的な
    * ActivityDefinitionへの対応がまだ確定していない場合の生テキスト

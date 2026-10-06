@@ -335,7 +335,7 @@ export const ACTIVITY_PROFILES: ActivityProfile[] = [
   { sourceType: "kyojin", sourceName: "血支", favorableActivityIds: [], unfavorableActivityIds: ["上官赴任", "修置産室", "修造動土", "出庫", "出貨財", "堅柱上樑", "嫁娶", "安床", "宴會", "求醫療病", "祭祀", "納采", "結婚姻", "進人口", "鍼灸", "開倉庫", "開市", "開渠穿井"] },
   { sourceType: "kyojin", sourceName: "劫殺", favorableActivityIds: [], negativeMode: "all_except", unfavorableActivityIds: [], exceptionActivityIds: ["伐木", "入学求師", "取魚", "平治道塗", "捕捉", "掃舎宇", "沐浴", "畋獵", "祭祀"], notes: "" },
   { sourceType: "kyojin", sourceName: "災殺", favorableActivityIds: [], negativeMode: "all_except", unfavorableActivityIds: [], exceptionActivityIds: ["伐木", "入学求師", "取魚", "平治道塗", "捕捉", "掃舎宇", "沐浴", "畋獵", "祭祀"], notes: "" },
-  { sourceType: "kyojin", sourceName: "月殺", favorableActivityIds: [], negativeMode: "all_except", unfavorableActivityIds: [], exceptionActivityIds: ["伐木", "入学求師", "取魚", "平治道塗", "捕捉", "掃舎宇", "沐浴", "畋獵", "祭祀"], notes: "" },
+  { sourceType: "kyojin", sourceName: "月殺", favorableActivityIds: [], negativeMode: "all_except", unfavorableActivityIds: [], exceptionActivityIds: ["伐木", "入学求師", "取魚", "平治道塗", "捕捉", "掃舎宇", "沐浴", "畋獵", "祭祀", "開市", "結婚納采"], notes: "洪氏錦嚢の用事別記載を優先（監修確定 2026-10-06）：開市＝「問題ない」（開帳店肆忌例 印字p.55）、結婚納采＝「用いて良い」（結婚納采忌例 印字p.62）のため不忌。上官赴任＝「吉神にあうなど条件が合えば用いて良い」（印字p.61）は吉神の範囲が未確定のため忌のまま。安葬日忌例の「月殺凶日」は月殺と同一か未確認のため一般化しない。" },
   { sourceType: "kyojin", sourceName: "月厭", favorableActivityIds: ["祈福"], negativeMode: "all_except", unfavorableActivityIds: [], exceptionActivityIds: ["入学求師", "取魚", "捕捉", "掃舎宇", "沐浴", "畋獵", "祭祀"], notes: "" },
   { sourceType: "kyojin", sourceName: "厭對", favorableActivityIds: [], unfavorableActivityIds: ["乗船渡水", "取魚", "嫁娶"] },
   { sourceType: "kyojin", sourceName: "月刑", favorableActivityIds: [], negativeMode: "all_except", unfavorableActivityIds: [], exceptionActivityIds: ["伐木", "入学求師", "取魚", "平治道塗", "捕捉", "掃舎宇", "沐浴", "畋獵", "祭祀"], notes: "" },
@@ -381,7 +381,7 @@ export const ACTIVITY_PROFILES: ActivityProfile[] = [
   { sourceType: "kyojin", sourceName: "冰消瓦碎", favorableActivityIds: [], unfavorableActivityIds: ["修造", "蓋屋", "開井"] },
   { sourceType: "kyojin", sourceName: "受死日", favorableActivityIds: [], unfavorableActivityIds: ["上表彰", "修造", "嫁娶", "祭祀"] },
   { sourceType: "kyojin", sourceName: "伏斷日", favorableActivityIds: [], unfavorableActivityIds: ["伐木", "経絡"] },
-  { sourceType: "kyojin", sourceName: "埋兒凶宿", favorableActivityIds: [], unfavorableActivityIds: [], notes: "" },
+  { sourceType: "kyojin", sourceName: "埋兒凶宿", favorableActivityIds: [], unfavorableActivityIds: ["安床"], nonReleasableUnfavorableActivityIds: ["安床"], weakInfluence: true, notes: "影響の弱い神殺（監修確定 2026-10-06）。忌は安床だけに限定し、一般用事へは展開しない。洪氏錦嚢 安床忌例「埋兒宿」用いてはいけない（監修確定 2026-10-06：埋兒宿＝埋兒凶宿。安床に対する個別禁止で、吉神による解除不可）。" },
   { sourceType: "kyojin", sourceName: "周堂殺", favorableActivityIds: [], unfavorableActivityIds: ["嫁娶"] },
   { sourceType: "kyojin", sourceName: "天空", favorableActivityIds: [], unfavorableActivityIds: ["堅柱上樑"] },
   { sourceType: "kyojin", sourceName: "地空", favorableActivityIds: [], unfavorableActivityIds: ["安葬"] },
@@ -393,7 +393,7 @@ export const ACTIVITY_PROFILES: ActivityProfile[] = [
   { sourceType: "kyojin", sourceName: "短星", favorableActivityIds: [], unfavorableActivityIds: [], notes: "" },
   { sourceType: "kyojin", sourceName: "揚公忌", favorableActivityIds: [], unfavorableActivityIds: [], notes: "" },
   { sourceType: "kyojin", sourceName: "刀砧日", favorableActivityIds: [], unfavorableActivityIds: ["伐木", "牧養", "納畜", "造畜柵"] },
-  { sourceType: "kyojin", sourceName: "龍禁", favorableActivityIds: [], unfavorableActivityIds: ["乗船渡水"] },
+  { sourceType: "kyojin", sourceName: "龍禁", favorableActivityIds: [], unfavorableActivityIds: ["乗船渡水", "造船"], nonReleasableUnfavorableActivityIds: ["乗船渡水", "造船"], weakInfluence: true, notes: "影響の弱い神殺（監修確定 2026-10-06）。忌は乗船渡水・造船だけに限定し、一般用事へは展開しない。p.43「忌：行船」（乗船渡水）に加え、洪氏錦嚢 造船行舟忌例「龍禁日」用いてはいけない（監修確定 2026-10-06：造船・行舟に対する個別禁止で、吉神による解除不可）。" },
 ];
 
 const PROFILE_INDEX: Map<string, ActivityProfile> = new Map(

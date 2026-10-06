@@ -174,6 +174,7 @@ function contributionsForEntry(
     // （notes）にフォールバックする（その日固有の説明の方が一般的な
     // 象意注記より具体的で有用なため）。
     note: entry.reason ?? profile.notes,
+    ...(profile.weakInfluence ? { weak: true } : {}),
   });
 
   const contributions: RawContribution[] = [];
@@ -189,8 +190,22 @@ function contributionsForEntry(
 
   let restriction: UnresolvedActivityRestriction | undefined;
 
+  // 原典が用事単位で解除不可と明記した忌（nonReleasableUnfavorableActivityIds）は、
+  // cancelled／reduced でも残す（元々の忌集合に含まれるものだけ）。
+  const pushNonReleasable = () => {
+    const ids = profile.nonReleasableUnfavorableActivityIds;
+    if (!ids || ids.length === 0) return;
+    const unfavSet = new Set(resolveUnfavorableIds(profile));
+    for (const id of ids) {
+      if (unfavSet.has(id) && !contributions.some((c) => !c.favorable && c.activityId === id)) {
+        contributions.push({ activityId: id, favorable: false, source: baseSource() });
+      }
+    }
+  };
+
   if (applyResolution && status === "cancelled") {
-    // 忌は反映しない。
+    // 忌は反映しない（解除不可の個別禁止だけ残す）。
+    pushNonReleasable();
   } else if (applyResolution && status === "reduced") {
     // 原典が用事単位で残存忌を明記している場合（例：小時＝月建の
     // 「與徳合等併、止忌動土、餘則不忌」）は、その用事だけ忌を反映する
@@ -213,6 +228,7 @@ function contributionsForEntry(
         description: entry.reason,
       };
     }
+    pushNonReleasable();
   } else {
     // active / aggravated / pending / (resolution非適用の吉神・十二建除・二十八宿)
     for (const id of resolveUnfavorableIds(profile)) {
