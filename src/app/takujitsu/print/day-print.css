@@ -292,6 +292,10 @@
   color: #7a5c00;
   font-weight: 700;
 }
+.tdp-caution {
+  color: #1f5f8b;
+  font-weight: 700;
+}
 .tdp-neutral {
   color: #555;
 }

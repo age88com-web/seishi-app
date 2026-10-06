@@ -267,10 +267,14 @@ export interface ActivitySource {
  *   bad     : negativeSourcesのみ非空
  *   mixed   : 両方非空（勝手に相殺しない。多数決もしない）
  *   neutral : どちらも空
+ *   caution : 忌が弱い神殺（ActivityProfile.weakInfluence。埋兒凶宿・龍禁）だけで、宜も無い
+ *             （監修確定 2026-10-06「注意」。弱い神殺単独では bad にしない）
+ * good／mixed／bad の判定では弱い神殺の忌を数えない（強い忌が優先）。弱い忌は
+ * negativeSources（weak: true）に残り、hasCaution で示す。
  * pendingはverdictの値にはせず、hasPendingSourceフラグとして独立に保持する
  * （pendingな凶神のstatusを理由に、確定した宜/忌の事実分類を覆さないため）。
  */
-export type ActivityVerdict = "good" | "bad" | "mixed" | "neutral";
+export type ActivityVerdict = "good" | "bad" | "mixed" | "caution" | "neutral";
 
 /** 1つの用事についての、その日の宜/忌根拠の集約結果。 */
 export interface ActivityEvaluation {
@@ -287,6 +291,8 @@ export interface ActivityEvaluation {
    * （情報を失わないための独立フラグ）。
    */
   hasPendingSource: boolean;
+  /** negativeSources に弱い神殺（weak: true）の忌が含まれる場合 true（注意表示用）。 */
+  hasCaution?: boolean;
 }
 
 /** 用事便覧に対応の無い用事へのunresolvedActivityRestriction（No.10大時・天吏など）。 */

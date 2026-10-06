@@ -53,12 +53,13 @@ function ShinsatsuSection({ title, items, tone }: { title: string; items: PrintS
   );
 }
 
-/** 吉／吉凶混在／凶の用事（名前だけを続けて並べる） */
+/** 吉／吉凶混在／凶／注意の用事（名前だけを続けて並べる） */
 export function ActivityLines({ a }: { a: PrintActivityNames }) {
   const rows: [string, string[], string][] = [
     ["吉の用事", a.good, "tdp-good"],
     ["吉凶混在の用事", a.mixed, "tdp-mixed"],
     ["凶の用事", a.bad, "tdp-bad"],
+    ["注意の用事", a.caution, "tdp-caution"],
   ];
   return (
     <>

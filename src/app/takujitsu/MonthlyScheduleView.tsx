@@ -19,7 +19,7 @@ import {
 import type { MonthlyActivityResult, MonthlyDay, MonthlySchedule } from "@/lib/takujitsu/monthly";
 
 const WEEKDAY = ["日", "月", "火", "水", "木", "金", "土"];
-const VERDICT_JA: Record<string, string> = { good: "吉", mixed: "混在", bad: "凶", neutral: "中立" };
+const VERDICT_JA: Record<string, string> = { good: "吉", mixed: "混在", bad: "凶", caution: "注意", neutral: "中立" };
 
 /** public/fonts の TTF を読み込み、jsPDF に渡す base64 にする。 */
 async function fetchFontBase64(path: string): Promise<string> {

@@ -14,7 +14,7 @@ import { classifyJikaTerm, jikaHourState } from "@/lib/takujitsu/jika/hourClassi
 import { activityNamesByVerdict, type PrintActivityNames } from "./dayPrintData";
 
 const WEEKDAY = ["日", "月", "火", "水", "木", "金", "土"];
-const VERDICT_LABEL: Record<ActivityVerdict, string> = { good: "吉", bad: "凶", mixed: "吉凶混在", neutral: "中立" };
+const VERDICT_LABEL: Record<ActivityVerdict, string> = { good: "吉", bad: "凶", mixed: "吉凶混在", caution: "注意", neutral: "中立" };
 const RES_STATUS_LABEL: Record<string, string> = { active: "", cancelled: "解除", reduced: "軽減", aggravated: "増悪", pending: "保留" };
 const JIKA_BRANCHES = ["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"] as const;
 const pad = (n: number) => String(n).padStart(2, "0");

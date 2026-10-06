@@ -61,7 +61,7 @@ export type PrintHour = {
   other: string[];
 };
 /** 判定別の用事名（正式な用事名だけ。中立は印刷しない） */
-export type PrintActivityNames = { good: string[]; mixed: string[]; bad: string[] };
+export type PrintActivityNames = { good: string[]; mixed: string[]; bad: string[]; caution: string[] };
 export type TakujitsuDayPrintData = {
   date: string;
   weekday: string;
@@ -82,10 +82,10 @@ export type TakujitsuDayPrintData = {
  */
 export function activityNamesByVerdict(data: TakujitsuFullResult): PrintActivityNames {
   const byId = new Map(data.activities.evaluations.map((e) => [e.activityId, e.verdict]));
-  const out: PrintActivityNames = { good: [], mixed: [], bad: [] };
+  const out: PrintActivityNames = { good: [], mixed: [], bad: [], caution: [] };
   for (const def of ACTIVITY_DEFINITIONS) {
     const v = byId.get(def.id);
-    if (v === "good" || v === "mixed" || v === "bad") out[v].push(def.canonicalName);
+    if (v === "good" || v === "mixed" || v === "bad" || v === "caution") out[v].push(def.canonicalName);
   }
   return out;
 }

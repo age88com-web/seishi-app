@@ -9,7 +9,7 @@
 
 import type { TakujitsuCandidatePrintData } from "./candidatePrintData";
 
-const TONE: Record<string, string> = { good: "tdp-good", mixed: "tdp-mixed", bad: "tdp-bad", neutral: "tdp-neutral" };
+const TONE: Record<string, string> = { good: "tdp-good", mixed: "tdp-mixed", bad: "tdp-bad", caution: "tdp-caution", neutral: "tdp-neutral" };
 
 export default function TakujitsuCandidatePrint({ data }: { data: TakujitsuCandidatePrintData }) {
   return (

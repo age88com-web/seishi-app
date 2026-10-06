@@ -239,10 +239,14 @@ function contributionsForEntry(
   return { contributions, restriction };
 }
 
-function computeVerdict(positiveCount: number, negativeCount: number): ActivityVerdict {
+function computeVerdict(positiveCount: number, negativeCount: number, weakNegativeCount = 0): ActivityVerdict {
+  // negativeCount は強い忌（weak でない忌）だけの件数。弱い神殺（埋兒凶宿・龍禁）の忌は
+  // weakNegativeCount に数え、単独では「凶」にしない（監修確定 2026-10-06）。
+  // 強い忌があれば、弱い忌の有無にかかわらず従来どおり mixed／bad。
   if (positiveCount > 0 && negativeCount > 0) return "mixed";
-  if (positiveCount > 0) return "good";
   if (negativeCount > 0) return "bad";
+  if (positiveCount > 0) return "good";
+  if (weakNegativeCount > 0) return "caution";
   return "neutral";
 }
 
@@ -489,6 +493,8 @@ export function evaluateActivities(input: EvaluateActivitiesInput): ActivityEval
           note: c.favorable
             ? `吉神「${c.source.sourceName}」の宜に従う`
             : `凶神「${c.source.sourceName}」の忌に従う`,
+          // 弱い神殺の忌に追従した場合は、追従先でも弱い忌のまま扱う。
+          ...(c.source.weak ? { weak: true } : {}),
         },
       });
     }
@@ -514,8 +520,13 @@ export function evaluateActivities(input: EvaluateActivitiesInput): ActivityEval
       activityId,
       positiveSources: positive,
       negativeSources: negative,
-      verdict: computeVerdict(positive.length, negative.length),
+      verdict: computeVerdict(
+        positive.length,
+        negative.filter((src) => !src.weak).length,
+        negative.filter((src) => src.weak).length,
+      ),
       hasPendingSource,
+      hasCaution: negative.some((src) => src.weak),
     });
   }
 

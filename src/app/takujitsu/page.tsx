@@ -43,11 +43,11 @@ import { classifyJikaTerm, jikaHourState } from "@/lib/takujitsu/jika/hourClassi
 import type { JikaHourState } from "@/lib/takujitsu/jika/hourClassification";
 
 // ---------------------------------------------------------------------------
-const VERDICT_LABEL: Record<ActivityVerdict, string> = { good: "吉", bad: "凶", mixed: "吉凶混在", neutral: "中立" };
-const VERDICT_COLOR: Record<ActivityVerdict, string> = { good: "#1a7f37", bad: "#b02a37", mixed: "#8a6d00", neutral: "#666" };
-const VERDICT_BG: Record<ActivityVerdict, string> = { good: "#e6f4ea", bad: "#fbeaec", mixed: "#fdf4e0", neutral: "#f0f0f0" };
+const VERDICT_LABEL: Record<ActivityVerdict, string> = { good: "吉", bad: "凶", mixed: "吉凶混在", caution: "注意", neutral: "中立" };
+const VERDICT_COLOR: Record<ActivityVerdict, string> = { good: "#1a7f37", bad: "#b02a37", mixed: "#8a6d00", caution: "#1f5f8b", neutral: "#666" };
+const VERDICT_BG: Record<ActivityVerdict, string> = { good: "#e6f4ea", bad: "#fbeaec", mixed: "#fdf4e0", caution: "#e7f1f8", neutral: "#f0f0f0" };
 // UI 上の並び順のみ（判定結果そのものの優先順位は不変）。
-const VERDICT_ORDER: Record<ActivityVerdict, number> = { good: 0, mixed: 1, bad: 2, neutral: 3 };
+const VERDICT_ORDER: Record<ActivityVerdict, number> = { good: 0, mixed: 1, bad: 2, caution: 3, neutral: 4 };
 
 const RES_STATUS_LABEL: Record<string, string> = {
   active: "", cancelled: "解除", reduced: "軽減", aggravated: "増悪", pending: "保留",
@@ -393,7 +393,7 @@ function searchHaystack(id: string): string {
   return `${def.canonicalName} ${def.modernName ?? ""} ${def.description ?? ""}`;
 }
 
-type Filter = "all" | "good" | "bad" | "mixed";
+type Filter = "all" | "good" | "bad" | "mixed" | "caution";
 type CatFilter = ActivityCategory | "すべて";
 type Mode = "date" | "search" | "monthly";
 
@@ -468,6 +468,7 @@ export default function TakujitsuPage() {
     good: activities.filter((e) => e.verdict === "good").length,
     bad: activities.filter((e) => e.verdict === "bad").length,
     mixed: activities.filter((e) => e.verdict === "mixed").length,
+    caution: activities.filter((e) => e.verdict === "caution").length,
     neutral: activities.filter((e) => e.verdict === "neutral").length,
   }), [activities]);
 
@@ -478,6 +479,7 @@ export default function TakujitsuPage() {
       if (filter === "good" && e.verdict !== "good") return false;
       if (filter === "bad" && e.verdict !== "bad") return false;
       if (filter === "mixed" && e.verdict !== "mixed") return false;
+      if (filter === "caution" && e.verdict !== "caution") return false;
       if (catFilter !== "すべて" && categoryOf(e.activityId) !== catFilter) return false;
       if (q && !searchHaystack(e.activityId).includes(q)) return false;
       return true;
@@ -495,6 +497,7 @@ export default function TakujitsuPage() {
     good: filtered.filter((e) => e.verdict === "good"),
     bad: filtered.filter((e) => e.verdict === "bad"),
     mixed: filtered.filter((e) => e.verdict === "mixed"),
+    caution: filtered.filter((e) => e.verdict === "caution"),
     neutral: filtered.filter((e) => e.verdict === "neutral"),
   }), [filtered]);
   // カテゴリ・吉凶・検索いずれかが有効な間は、絞り込み結果を全件表示する。
@@ -582,6 +585,7 @@ export default function TakujitsuPage() {
                 <span className="tj-vpill" style={{ color: VERDICT_COLOR.good, backgroundColor: VERDICT_BG.good }}>吉 {counts.good}</span>
                 <span className="tj-vpill" style={{ color: VERDICT_COLOR.mixed, backgroundColor: VERDICT_BG.mixed }}>吉凶混在 {counts.mixed}</span>
                 <span className="tj-vpill" style={{ color: VERDICT_COLOR.bad, backgroundColor: VERDICT_BG.bad }}>凶 {counts.bad}</span>
+                <span className="tj-vpill" style={{ color: VERDICT_COLOR.caution, backgroundColor: VERDICT_BG.caution }}>注意 {counts.caution}</span>
                 <span className="tj-vpill" style={{ color: VERDICT_COLOR.neutral, backgroundColor: VERDICT_BG.neutral }}>中立 {counts.neutral}</span>
               </div>
             </section>
@@ -658,10 +662,11 @@ export default function TakujitsuPage() {
                 <span className="tj-filter-cap">吉凶</span>
                 {(
                   [
-                    ["all", `すべて（${counts.good + counts.bad + counts.mixed}）`],
+                    ["all", `すべて（${counts.good + counts.bad + counts.mixed + counts.caution}）`],
                     ["good", `吉（${counts.good}）`],
                     ["mixed", `吉凶混在（${counts.mixed}）`],
                     ["bad", `凶（${counts.bad}）`],
+                    ["caution", `注意（${counts.caution}）`],
                   ] as [Filter, string][]
                 ).map(([key, label]) => (
                   <button
@@ -711,6 +716,10 @@ export default function TakujitsuPage() {
                   )}
                   {groups.mixed.length > 0 && (
                     <VerdictBlock verdict="mixed" items={groups.mixed} expanded={expanded}
+                      onToggle={toggle} suppressionsFor={suppressionsFor} forceAll={forceAll} />
+                  )}
+                  {groups.caution.length > 0 && (
+                    <VerdictBlock verdict="caution" items={groups.caution} expanded={expanded}
                       onToggle={toggle} suppressionsFor={suppressionsFor} forceAll={forceAll} />
                   )}
                   {showNeutral && (
@@ -802,7 +811,8 @@ function SearchView({ timezone, onOpenDay }: { timezone: string; onOpenDay: (iso
     const visible = (data?.days ?? []).filter((d) => {
       if (d.verdict === "good" || d.verdict === "mixed") return true;
       if (d.verdict === "bad") return showBad;
-      return showNeutral; // neutral
+      // 注意（弱い神殺だけの忌）は凶ではないが候補（吉・吉凶混在）でもないため、中立と同じく表示切替に従う
+      return showNeutral; // caution / neutral
     });
     const map = new Map<string, TakujitsuSearchDay[]>();
     for (const d of visible) {
@@ -941,6 +951,9 @@ function SearchView({ timezone, onOpenDay }: { timezone: string; onOpenDay: (iso
             <span className="tj-vpill" style={{ color: VERDICT_COLOR.bad, backgroundColor: VERDICT_BG.bad }}>
               凶 {data.days.filter((d) => d.verdict === "bad").length}
             </span>
+            <span className="tj-vpill" style={{ color: VERDICT_COLOR.caution, backgroundColor: VERDICT_BG.caution }}>
+              注意 {data.days.filter((d) => d.verdict === "caution").length}
+            </span>
             <span className="tj-vpill" style={{ color: VERDICT_COLOR.neutral, backgroundColor: VERDICT_BG.neutral }}>
               中立 {data.days.filter((d) => d.verdict === "neutral").length}
             </span>
@@ -948,7 +961,7 @@ function SearchView({ timezone, onOpenDay }: { timezone: string; onOpenDay: (iso
               <input type="checkbox" checked={showBad} onChange={(e) => setShowBad(e.target.checked)} />凶も表示
             </label>
             <label className="tj-neutral-toggle">
-              <input type="checkbox" checked={showNeutral} onChange={(e) => setShowNeutral(e.target.checked)} />中立も表示
+              <input type="checkbox" checked={showNeutral} onChange={(e) => setShowNeutral(e.target.checked)} />注意・中立も表示
             </label>
           </div>
 
@@ -962,7 +975,7 @@ function SearchView({ timezone, onOpenDay }: { timezone: string; onOpenDay: (iso
                   吉 {mdays.filter((d) => d.verdict === "good").length}／
                   吉凶混在 {mdays.filter((d) => d.verdict === "mixed").length}
                   {showBad && <>／凶 {mdays.filter((d) => d.verdict === "bad").length}</>}
-                  {showNeutral && <>／中立 {mdays.filter((d) => d.verdict === "neutral").length}</>}
+                  {showNeutral && <>／注意 {mdays.filter((d) => d.verdict === "caution").length}／中立 {mdays.filter((d) => d.verdict === "neutral").length}</>}
                 </span>
               </div>
               <ul className="tj-list">

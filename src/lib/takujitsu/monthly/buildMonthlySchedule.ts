@@ -202,12 +202,14 @@ export function monthlyDateRange(year: number, month: number): Date[] {
  * 表示用事としての結果。単独 id はその verdict をそのまま使う。
  * OR 条件（§5.5）: どれか1つでも成立すれば表示用事が成立するため、
  * good の id があれば good、無ければ mixed の id があれば mixed（月間表では非表示）、
+ * 無ければ caution（弱い神殺だけの忌＝注意）の id があれば caution、
  * 無ければ bad の id があれば bad、すべて neutral なら neutral とする。
  * 複数 id の結果が異なることを理由に mixed へ変えることはしない。
  */
 export function aggregateOrVerdict(verdicts: readonly ActivityVerdict[]): ActivityVerdict {
   if (verdicts.includes("good")) return "good";
   if (verdicts.includes("mixed")) return "mixed";
+  if (verdicts.includes("caution")) return "caution";
   if (verdicts.includes("bad")) return "bad";
   return "neutral";
 }

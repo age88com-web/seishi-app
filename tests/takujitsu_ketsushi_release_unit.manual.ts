@@ -22,6 +22,7 @@
 import { RESOLUTION_RULES } from "../src/lib/takujitsu";
 import { resolve } from "../src/lib/takujitsu/resolution";
 import { evaluateActivities } from "../src/lib/takujitsu/activity";
+import { computeVerdict } from "../src/lib/takujitsu/activity/evaluateActivities";
 
 let pass = 0;
 let fail = 0;
@@ -107,8 +108,21 @@ check("月殺: 開市・結婚納采・上官赴任・嫁娶 に月殺の忌が�
   check("埋兒凶宿・龍禁の作用元は weak 印付き", hit.every((e) => e.negativeSources.filter((s) => s.sourceName === "埋兒凶宿" || s.sourceName === "龍禁").every((s) => s.weak === true)));
   const plain = evalOf(K, []);
   const changed = [...plain.keys()].filter((a) => !["乗船渡水", "安床", "造船"].includes(a) && plain.get(a)?.verdict !== onlyWeak.get(a)?.verdict);
+  check("埋兒凶宿・龍禁だけでは どの用事も凶にならない", [...onlyWeak.values()].every((e) => e.verdict !== "bad"));
   check("埋兒凶宿・龍禁の成立だけで一般用事の判定は変わらない", changed.length === 0, changed.join("・"));
 }
+
+// 弱い神殺だけの忌は「注意」（監修確定 2026-10-06）。強い凶神が同時に作用すればそちらを優先する。
+for (const a of ["安床", "造船", "乗船渡水"]) {
+  check(`歳徳合あり: ${a} は注意（弱い神殺だけ）`, withSG.get(a)?.verdict === "caution", `実測=${withSG.get(a)?.verdict}`);
+  check(`歳徳合あり: ${a} の詳細に弱い忌が残る`, withSG.get(a)?.hasCaution === true);
+}
+// 歳徳合なし → 血支（安床を忌とする強い凶神）が残るので、安床は強い凶神の判定（凶）
+check("歳徳合なし: 安床 は血支と重なり凶（強い凶神を優先）", withoutSG.get("安床")?.verdict === "bad", `実測=${withoutSG.get("安床")?.verdict}`);
+check("computeVerdict: 弱い忌だけ → caution", computeVerdict(0, 0, 1) === "caution");
+check("computeVerdict: 宜＋弱い忌だけ → good", computeVerdict(1, 0, 1) === "good");
+check("computeVerdict: 強い忌＋弱い忌 → bad", computeVerdict(0, 1, 1) === "bad");
+check("computeVerdict: 宜＋強い忌＋弱い忌 → mixed", computeVerdict(1, 1, 1) === "mixed");
 
 // 解除不可の個別禁止は、仮に凶神全体が cancelled になっても残る
 const HYPO = [
