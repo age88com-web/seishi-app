@@ -33,10 +33,10 @@
 //         天徳/月徳/天徳合/月徳合/天赦は例外＝畋獵・取魚の2件。天願は
 //         原文に例外の明記が無いため例外なし（推測で天徳と同一にしない）。
 //     (b) EXCEPT型（negativeMode: "all_except"）＝「止不忌〇〇、餘事皆忌」＝
-//         11凶神（月破・死神・劫殺・災殺・月殺・月刑・月厭・四廢・上朔・
-//         四離・四絶）だけに適用。exceptionActivityIdsは「不忌」であり
+//         10凶神（月破・死神・劫殺・災殺・月刑・月厭・四廢・上朔・
+//         四離・四絶）だけに適用（月殺は 2026-10-06 監修訂正で LIST 型（賓客・動土・栽種の3用事）に変更し、EXCEPT 型から外した）。exceptionActivityIdsは「不忌」であり
 //         「宜」ではない（他に宜の根拠が無い限りpositiveにはならない）。
-//     いずれも該当する6/11件以外はLIST型（既存どおり明示列挙）のまま。
+//     いずれも該当する6/10件以外はLIST型（既存どおり明示列挙）のまま。
 //   ・COMPOSITE型（composite: true）＝六黄道のうち青龍・明堂・寶光・玉堂の4神に適用
 //     （神殺象意.pdf「爲六黄道日、與吉神併則從所宜、與凶神併則從所忌」）。金匱は原文の
 //     列挙に無いため対象外。司命は原文の列挙にあるが、監修確定（2026-10-06）により
@@ -143,8 +143,8 @@
 //   `docs/source/擇日テキスト.pdf`・`docs/source/12建除.pdf`・
 //   `docs/source/擇日実例.pdf`のいずれからも、既存roster内の神殺・十二建除・
 //   二十八宿による無条件の宜/忌の直接記載を確認できず、未接続のまま。
-//   なお全109件は、negativeMode/positiveMode==="all_except"の11凶神
-//   （月破・死神・劫殺・災殺・月殺・月刑・月厭・四廢・上朔・四離・四絶）・
+//   なお全109件は、negativeMode/positiveMode==="all_except"の10凶神
+//   （月破・死神・劫殺・災殺・月刑・月厭・四廢・上朔・四離・四絶）・
 //   6吉神（天徳・月徳・天徳合・月徳合・天赦・天願）からは、`evaluateActivities.ts`
 //   の`ALL_ACTIVITY_IDS`（ACTIVITY_BY_IDから動的に生成）による既存の仕組みで
 //   自動的に忌/宜を受ける（exceptionActivityIds/positiveExceptionActivityIdsに
@@ -335,7 +335,7 @@ export const ACTIVITY_PROFILES: ActivityProfile[] = [
   { sourceType: "kyojin", sourceName: "血支", favorableActivityIds: [], unfavorableActivityIds: ["上官赴任", "修置産室", "修造動土", "出庫", "出貨財", "堅柱上樑", "嫁娶", "安床", "宴會", "求醫療病", "祭祀", "納采", "結婚姻", "進人口", "鍼灸", "開倉庫", "開市", "開渠穿井"] },
   { sourceType: "kyojin", sourceName: "劫殺", favorableActivityIds: [], negativeMode: "all_except", unfavorableActivityIds: [], exceptionActivityIds: ["伐木", "入学求師", "取魚", "平治道塗", "捕捉", "掃舎宇", "沐浴", "畋獵", "祭祀"], notes: "" },
   { sourceType: "kyojin", sourceName: "災殺", favorableActivityIds: [], negativeMode: "all_except", unfavorableActivityIds: [], exceptionActivityIds: ["伐木", "入学求師", "取魚", "平治道塗", "捕捉", "掃舎宇", "沐浴", "畋獵", "祭祀"], notes: "" },
-  { sourceType: "kyojin", sourceName: "月殺", favorableActivityIds: [], negativeMode: "all_except", unfavorableActivityIds: [], exceptionActivityIds: ["伐木", "入学求師", "取魚", "平治道塗", "捕捉", "掃舎宇", "沐浴", "畋獵", "祭祀", "開市", "結婚納采"], notes: "洪氏錦嚢の用事別記載を優先（監修確定 2026-10-06）：開市＝「問題ない」（開帳店肆忌例 印字p.55）、結婚納采＝「用いて良い」（結婚納采忌例 印字p.62）のため不忌。上官赴任＝「吉神にあうなど条件が合えば用いて良い」（印字p.61）は吉神の範囲が未確定のため忌のまま。安葬日忌例の「月殺凶日」は月殺と同一か未確認のため一般化しない。" },
+  { sourceType: "kyojin", sourceName: "月殺", favorableActivityIds: [], unfavorableActivityIds: ["賓客", "動土", "栽種"], notes: "監修訂正（2026-10-06）：月殺の忌は擇日テキスト.pdf p.22「月殺＝賓客・動土・種蒔き」の3用事だけ（種蒔き＝栽種）。神殺象意.pdf「忌同劫殺」による all_except（餘事皆忌）の適用は誤りとして削除。" },
   { sourceType: "kyojin", sourceName: "月厭", favorableActivityIds: ["祈福"], negativeMode: "all_except", unfavorableActivityIds: [], exceptionActivityIds: ["入学求師", "取魚", "捕捉", "掃舎宇", "沐浴", "畋獵", "祭祀"], notes: "" },
   { sourceType: "kyojin", sourceName: "厭對", favorableActivityIds: [], unfavorableActivityIds: ["乗船渡水", "取魚", "嫁娶"] },
   { sourceType: "kyojin", sourceName: "月刑", favorableActivityIds: [], negativeMode: "all_except", unfavorableActivityIds: [], exceptionActivityIds: ["伐木", "入学求師", "取魚", "平治道塗", "捕捉", "掃舎宇", "沐浴", "畋獵", "祭祀"], notes: "" },

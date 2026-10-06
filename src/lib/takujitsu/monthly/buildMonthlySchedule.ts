@@ -39,13 +39,14 @@ export const MONTHLY_BASE_HOUR = 12;
  * 「何事も宜しからず」の判断材料とする強い凶神（諸事に強く凶作用を及ぼすもの）。
  * docs/monthly-action-schedule-strong-kyojin-2025-04.md §7 の候補のうち、
  * 現行エンジンで成立を検出できるもの。
- *   ・餘事皆忌型（ActivityProfile で negativeMode:"all_except"）の11神
+ *   ・餘事皆忌型（ActivityProfile で negativeMode:"all_except"）の10神
+ *     （月殺は 2026-10-06 監修訂正で忌が賓客・動土・栽種の3用事だけになったため除外）
  *   ・原典で「諸事不宜」の無禄（人間側の採用決定。成立判定は既存）
  * 晦日・日月蝕（「諸事不宜」「諸事皆忌」として採用済み）は、現行エンジンに
  * 成立判定が無いため検出できない（新しい判定は作らない）。
  */
 export const STRONG_KYOJIN_NAMES: readonly string[] = [
-  "月破", "死神", "劫殺", "災殺", "月殺", "月刑", "月厭", "四廢", "上朔", "四離", "四絶",
+  "月破", "死神", "劫殺", "災殺", "月刑", "月厭", "四廢", "上朔", "四離", "四絶",
   "無禄",
 ];
 

@@ -122,8 +122,8 @@ export interface ActivityProfile {
   positiveExceptionActivityIds?: string[];
   /**
    * 忌の記述方式。既定は"list"。"all_except"は神殺象意.pdfが「止不忌〜、
-   * 餘事皆忌」と明記する11凶神（月破・死神・劫殺・災殺・月殺・月刑・
-   * 月厭・四廢・上朔・四離・四絶）だけに使う
+   * 餘事皆忌」と明記する10凶神（月破・死神・劫殺・災殺・月刑・
+   * 月厭・四廢・上朔・四離・四絶）だけに使う（月殺は 2026-10-06 監修訂正で LIST 型（賓客・動土・栽種の3用事）に変更し、EXCEPT 型から外した）
    * （docs/takujitsu_except_resolution_final.md 1〜4章）。
    */
   negativeMode?: ActivityPolarityMode;

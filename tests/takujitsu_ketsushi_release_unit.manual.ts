@@ -13,8 +13,8 @@
 //        → その凶神が仮に cancelled になっても当該用事は忌のまま残る。
 //      ・埋兒凶宿・龍禁は影響の弱い神殺：忌は直接関係する用事（安床／造船・乗船渡水）に限り、
 //        一般用事の判定を変えない（weak 印で区別）。
-//      ・月殺：開市「問題ない」・結婚納采「用いて良い」は不忌。上官赴任
-//        「吉神にあうなど条件が合えば用いて良い」は吉神の範囲が未確定のため忌のまま。
+//      ・月殺：忌は p.22「月殺＝賓客・動土・種蒔き」の3用事（賓客・動土・栽種）だけ
+//        （監修訂正 2026-10-06。餘事皆忌＝all_except の適用は誤りとして削除）。
 //
 // 実行:
 //   npx tsx tests/takujitsu_ketsushi_release_unit.manual.ts
@@ -91,10 +91,12 @@ check("歳徳合あり: 安床 は埋兒凶宿で忌", negFrom(withSG, "安床")
 check("歳徳合あり: 造船 は龍禁で忌", negFrom(withSG, "造船").includes("龍禁"));
 check("歳徳合あり: 乗船渡水 は龍禁で忌", negFrom(withSG, "乗船渡水").includes("龍禁"));
 // 月殺の用事別記載
-check("月殺: 開市（問題ない）は月殺の忌が無い", !negFrom(withoutSG, "開市").includes("月殺"));
-check("月殺: 結婚納采（用いて良い）は月殺の忌が無い", !negFrom(withoutSG, "結婚納采").includes("月殺"));
-check("月殺: 上官赴任（吉神にあえば）は月殺の忌のまま", negFrom(withSG, "上官赴任").includes("月殺"));
-check("月殺: 歳徳合ありでも嫁娶は月殺の忌のまま", negFrom(withSG, "嫁娶").includes("月殺"));
+// 月殺の忌は賓客・動土・栽種の3用事だけ（監修訂正 2026-10-06。all_except は誤りとして削除）
+{
+  const ids = [...withSG.values()].filter((e) => e.negativeSources.some((x) => x.sourceName === "月殺")).map((e) => e.activityId).sort();
+  check("月殺の忌は 賓客・動土・栽種 だけ（歳徳合でも解除しない）", JSON.stringify(ids) === JSON.stringify(["動土", "栽種", "賓客"].sort()), ids.join("・"));
+}
+check("月殺: 開市・結婚納采・上官赴任・嫁娶 に月殺の忌が無い", ["開市", "結婚納采", "上官赴任", "嫁娶"].every((a) => !negFrom(withSG, a).includes("月殺")));
 
 // 埋兒凶宿・龍禁は影響の弱い神殺（監修確定 2026-10-06）: 直接関係する用事だけに限定し、weak 印を持つ
 {
