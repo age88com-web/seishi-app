@@ -7,7 +7,7 @@
 |---|---|---|
 | `qimen_1080.manual.ts` | 奇門遁甲 排盤エンジンの **1080局 完全一致 回帰テスト**（地盤・旬首・天盤・九星・八門・八神）。検証データは `fixtures/qimen1080.json`（`docs/source/1080.pdf` からの機械転記・検証専用）。 | `npx tsx tests/qimen_1080.manual.ts` |
 | `qimen_dingju_context.manual.ts` | 奇門遁甲 **日時→定局 回帰テスト**（超神・接気・置閏）。1974〜1979 の講義例、1976年置閏の受け入れ条件、講義例 2012・2015、23:00 境界、規則から導出した検証例。 | `npx tsx tests/qimen_dingju_context.manual.ts` |
-| `qimen_kyokaku.manual.ts` | 奇門遁甲 **凶格の回帰テスト**。監修確定事項（大格＝庚加癸、時格の別名＝時干格、直符伏吟・直符反吟）と監修原則（中宮の寄宮、遁甲）。1080局を駆動し、1080.pdf の格局名ラベル（`fixtures/qimen1080_labels.json`）と宮単位で照合。既知の差 61件を固定。 | `npx tsx tests/qimen_kyokaku.manual.ts` |
+| `qimen_kyokaku.manual.ts` | 奇門遁甲 **凶格の回帰テスト**。監修確定事項（大格＝庚加癸、時格の別名＝伏吟格・時干格、直符伏吟・直符反吟、歳格・月格・日格・時格の共通構造）と監修原則（中宮の寄宮、遁甲）。1080局を駆動し、1080.pdf の格局名ラベル（`fixtures/qimen1080_labels.json`）と宮単位で照合。既知の差 61件を固定。 | `npx tsx tests/qimen_kyokaku.manual.ts` |
 | `calendarEngine.manual.ts` | CalendarEngine.calculate() の代表ケース確認 | `npx tsx tests/calendarEngine.manual.ts` |
 | `ganzhi_parity.manual.ts` | 旧 eto.ts と CalendarEngine の干支計算の互換性確認 | `TZ=Asia/Tokyo npx tsx tests/ganzhi_parity.manual.ts` |
 | `kakkyoku_cases.ts` | 七政四餘 格局エンジンの動作確認 | `npx tsx tests/kakkyoku_cases.ts` |
@@ -95,7 +95,9 @@ npx tsx tests/qimen_dingju_context.manual.ts
 回帰テストとして固定する。仕様は `docs/qimen-spec/12_格局（凶格）.md`。
 
 - 大格 ＝ 天盤庚が地盤癸に臨む（庚加癸）。太白入熒 ＝ 庚加丙
-- 時格の別名 ＝ 時干格（凶格８の伏吟格とは別物）
+- 時格: 主名称は時格、原文上の別名は伏吟格（凶格８の伏吟格とは別物）、文中では時干格とも呼ぶ
+- 歳格・月格・日格・時格: 天盤六庚が地盤の年干・月干・日干・時干と同宮すれば成立。月格の対象干は通常の月干
+  （原文「月朔干」）。追加資料の例「陽遁八局己月甲己日丁卯時 → 離九宮で月格」を確認
 - 伏吟格・反吟格の三種は 九星／八門／直符。直符伏吟 ＝ 天盤干＝地盤干、直符反吟 ＝ 天盤干＝対宮の地盤干。
   「値符伏吟／値符反吟」は使わない
 - 中宮の寄宮: 地盤原盤は中宮5を保持。格局判定は外周8宮のみで、中宮の地盤干は坤二宮、中宮由来の天盤干は

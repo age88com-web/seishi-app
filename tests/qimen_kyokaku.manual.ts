@@ -8,7 +8,7 @@
 //      地盤原盤は中宮5を保持する。天盤以降・格局判定では中宮5を独立した宮として扱わず、
 //      中宮の地盤干は坤二宮の寄宮干、中宮由来の天盤干は芮禽宮の天盤干として扱う。
 //   B. 遁甲: 時干が甲なら旬首の六儀、日干が甲なら戊として判定する。
-//   C. 大格 ＝ 庚加癸（太白入熒 ＝ 庚加丙）／時格の別名 ＝ 時干格／
+//   C. 大格 ＝ 庚加癸（太白入熒 ＝ 庚加丙）／時格の別名 ＝ 伏吟格（原文）・時干格（文中の呼称）／
 //      伏吟格・反吟格の三種 ＝ 九星・八門・直符（直符伏吟＝天盤干と地盤干が同じ、直符反吟＝対宮）。
 //
 // 検証データ:
@@ -301,7 +301,7 @@ const KNOWN_DIFFS: readonly string[] = [
     check(`${r.chart.title} 大格の宮`, [...palacesOf(r, "大格")].join(), OUTER_PALACES.filter((p) => has(p, "庚", "癸")).join());
     check(`${r.chart.title} 太白入熒の宮`, [...palacesOf(r, "太白入熒")].join(), OUTER_PALACES.filter((p) => has(p, "庚", "丙")).join());
     const tm = find(r, "時格");
-    if (tm) check(`${r.chart.title} 時格 detail`, tm.detail, "別名: 時干格");
+    if (tm) check(`${r.chart.title} 時格 detail`, tm.detail, "別名: 伏吟格（凶格８の伏吟格とは別）・時干格");
     const fuDetail = find(r, "伏吟格")?.detail ?? "";
     const fanDetail = find(r, "反吟格")?.detail ?? "";
     check(`${r.chart.title} 値符表記なし`, /値符伏吟|値符反吟/.test(fuDetail + fanDetail), false);
@@ -319,6 +319,36 @@ const KNOWN_DIFFS: readonly string[] = [
   check("直符伏吟 成立局数", fu, 240);
   check("直符反吟 成立局数", fan, 120);
   check("甲時はすべて直符伏吟", `${jiaFu}/${jia}`, "108/108");
+}
+
+// ---- G. 歳格・月格・日格・時格の共通構造（監修確定 2026-10-06） ----
+// 天盤六庚が、地盤の対象干（歳格＝年干、月格＝月干、日格＝日干、時格＝時干）と同宮したときに成立する。
+{
+  console.log("G. 歳格・月格・日格・時格（天盤六庚＋地盤の年干・月干・日干・時干）");
+  // 追加資料の月格の例: 陽遁八局己月甲己日丁卯時。天盤庚は離九宮、離九宮の地盤は己（己月の月干）→ 月格。
+  const r = rows.find((x) => x.chart.title === "陽遁八局甲己日丁卯時" && x.first)!;
+  check("資料例 離九宮の天盤", r.eff.palaces[9].tianPanStems.join(), "庚");
+  check("資料例 離九宮の地盤", r.eff.palaces[9].diPanStems.join(), "己");
+  const base = {
+    palaces: r.eff.palaces,
+    dun: r.chart.dun,
+    dayStem: "甲",
+    hourStem: "丁",
+    effectiveDayStem: "戊",
+    effectiveHourStem: "丁",
+    hourGanzhi: "丁卯",
+    zhifuPalace: null,
+  };
+  const monthCase = resolveKyokaku({ ...base, yearStem: "", monthStem: "己" });
+  check("資料例 己月 → 月格（離九宮）", monthCase.matches.find((m) => m.name === "月格")?.palaces.join(), "9");
+  // 同じ盤で、対象干を年干・日干・時干に置いても同じ宮で成立する（共通構造）
+  const yearCase = resolveKyokaku({ ...base, yearStem: "己", monthStem: "" });
+  check("己年 → 歳格（離九宮）", yearCase.matches.find((m) => m.name === "歳格")?.palaces.join(), "9");
+  const dayCase = resolveKyokaku({ ...base, yearStem: "", monthStem: "", dayStem: "己", effectiveDayStem: "己" });
+  check("己日 → 日格（離九宮）", dayCase.matches.find((m) => m.name === "日格")?.palaces.join(), "9");
+  const hourCase = resolveKyokaku({ ...base, yearStem: "", monthStem: "", hourStem: "己", effectiveHourStem: "己", hourGanzhi: "己巳" });
+  check("己時 → 時格（離九宮）", hourCase.matches.find((m) => m.name === "時格")?.palaces.join(), "9");
+  check("月干が地盤に無ければ月格なし", resolveKyokaku({ ...base, yearStem: "", monthStem: "甲" }).matches.some((m) => m.name === "月格"), false);
 }
 
 // ---- F. 各凶格の成立件数（回帰固定） ----
