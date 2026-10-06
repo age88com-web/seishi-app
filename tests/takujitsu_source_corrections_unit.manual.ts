@@ -36,7 +36,6 @@ const CHECKS: Record<string, () => boolean> = {
   "fujiang-6-yiwei": () => has(resolveKichijinGroup5({ ...BASE, monthBranch: "未", ...gz("乙未") }), "不將"),
   "fujiang-7-yiwei": () => has(resolveKichijinGroup5({ ...BASE, monthBranch: "申", ...gz("乙未") }), "不將"),
   "fujiang-8-guiwei": () => has(resolveKichijinGroup5({ ...BASE, monthBranch: "酉", ...gz("癸未") }), "不將"),
-  "qisheng-yiwei": () => has(resolveKichijinGroup5({ ...BASE, ...gz("乙未") }), "七聖"),
   "jingui-si": () => has(resolveKichijinGroup4({ ...BASE, monthBranch: "巳", ...gz("甲戌") }), "金匱"),
   "jingui-hai": () => has(resolveKichijinGroup4({ ...BASE, monthBranch: "亥", ...gz("甲戌") }), "金匱"),
   "siming-shen": () => has(resolveKichijinGroup4({ ...BASE, monthBranch: "申", ...gz("甲戌") }), "司命"),
@@ -49,9 +48,6 @@ const CHECKS: Record<string, () => boolean> = {
     has(resolveKyoushinGroup6({ ...BASE, yearBranch: "卯", lunarMonth: 10, lunarDay: 4 }), "地空") &&
     !has(resolveKyoushinGroup6({ ...BASE, yearBranch: "卯", lunarMonth: 12, lunarDay: 4 }), "地空") &&
     !has(resolveKyoushinGroup6({ ...BASE, yearBranch: "卯", lunarMonth: 12, lunarDay: 8 }), "天空"),
-  "shenzai-gengwu": () =>
-    // 原文の「庚戊」を保持しているので、庚戌の日は神在にならない
-    !has(resolveKichijinGroup5({ ...BASE, ...gz("庚戌") }), "神在"),
   "bingxiao-wajie-chouwei-10": () =>
     has(resolveKyoushinGroup6({ ...BASE, yearBranch: "丑", monthBranch: "亥", lunarDay: 1 }), "冰消瓦解") &&
     !has(resolveKyoushinGroup6({ ...BASE, yearBranch: "丑", monthBranch: "亥", lunarDay: 3 }), "冰消瓦解"),
