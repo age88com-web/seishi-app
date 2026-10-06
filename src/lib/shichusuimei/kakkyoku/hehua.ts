@@ -3,7 +3,10 @@
 // 干合と化格（KD23。仕様 §35）。
 //   対象は日干と月干、日干と時干だけ（年干との干合は対象外）。
 //   月支条件が最重要: 化す五行 X ごとの月支（HEHUA_MONTH_BRANCHES）に月支が入らなければ合去（hequ）。
-//     甲己化土 … 辰・戌・丑・未／その他4組 … X の三合局を構成する月支（SANGO）
+//     A. X の三合局を構成する支 ＋ B. 本気の五行が X である支（月支本気そのものが化五行）。
+//     甲己化土 … 辰・戌・丑・未（土を本気に持つ支）
+//     乙庚化金 … 巳・申・酉・丑／丙辛化水 … 申・亥・子・辰／丁壬化木 … 亥・寅・卯・未／戊癸化火 … 寅・巳・午・戌
+//     B の支（申・亥・寅・巳など）は補強ではなく、月支条件の成立そのものとして扱う。
 //   月支条件を満たした場合だけ化格候補（hehuaCandidate）。補強があれば hehuaCandidateSupported。
 //   補強＝X と比和する天干・地支だけ。干合している2干自身と月支（月支条件そのもの）は数えない。
 //   X を生じる五行（印）・X の比劫＋印の党多は参考情報（references）で、補強の判定には使わない。
@@ -11,22 +14,24 @@
 //   化の維持・解消は判定しない（術者判断）。行運補強（luckSupport）は原局と分けて持つ（未実装）。
 // 原命式の天干・五行・通変星は書き換えない。
 
-import { KANGO, SANGO, STEM_ELEMENT } from "../data";
+import { KANGO, STEM_ELEMENT } from "../data";
 import type { Branch, Element, PillarKey } from "../types";
 import type { NatalHehua, Pillars } from "./types";
 import { BRANCH_ELEMENT, inElementOf, slotsOf } from "./common";
 import { assessTouta } from "./strength";
 import { branchRelationsOf } from "./innerScore";
 
-const sangoOf = (x: Element): readonly Branch[] => SANGO.find(([, kyoku]) => kyoku[0] === x)![0];
-
-/** 化す五行ごとの原局化格の月支条件（KD23） */
+/**
+ * 化す五行ごとの原局化格の月支条件（KD23。2026-10-06 術者確定で改訂）。
+ * 「化五行の三合局を構成する支」＋「化五行を本気として持つ支」。
+ * SANGO（三合局）だけから生成すると本気の支（申・亥・寅・巳など）が欠けるため、確定表を明示する。
+ */
 export const HEHUA_MONTH_BRANCHES: Readonly<Record<Element, readonly Branch[]>> = {
   土: ["辰", "戌", "丑", "未"],
-  金: sangoOf("金"),
-  水: sangoOf("水"),
-  木: sangoOf("木"),
-  火: sangoOf("火"),
+  金: ["巳", "申", "酉", "丑"],
+  水: ["申", "亥", "子", "辰"],
+  木: ["亥", "寅", "卯", "未"],
+  火: ["寅", "巳", "午", "戌"],
 };
 
 export function assessHehua(p: Pillars): NatalHehua[] {

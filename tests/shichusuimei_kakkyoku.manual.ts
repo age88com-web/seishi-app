@@ -19,6 +19,7 @@ import {
   resolveEffectiveStrength,
   FINAL_STRENGTH_OPTIONS,
 } from "../src/lib/shichusuimei/kakkyoku";
+import { HEHUA_MONTH_BRANCHES } from "../src/lib/shichusuimei/kakkyoku/hehua";
 import { renderToStaticMarkup } from "react-dom/server";
 import { createElement } from "react";
 import KakkyokuView from "../src/app/shichusuimei/KakkyokuView";
@@ -124,13 +125,14 @@ for (const f of FIXTURES) {
   const yearOnly = assessKakkyoku(toPillars("丙寅 甲子 丙寅 己亥")); // 日干甲と年干己の干合のみ
   check("干合: 年干との干合は対象外", yearOnly.hehua.every((x) => x.stemCombination === "none"), JSON.stringify(yearOnly.hehua));
 
-  // 5組の月支対応（日干−時干の干合で、月支だけを変える）
+  // 5組の月支対応（日干−時干の干合で、月支だけを変える）。KD23 改訂（2026-10-06）:
+  // 化五行の三合局を構成する支 ＋ 化五行を本気として持つ支
   const TABLE: [string, string, string, string][] = [
     ["甲", "己", "土", "辰戌丑未"],
-    ["乙", "庚", "金", "巳酉丑"],
-    ["丙", "辛", "水", "申子辰"],
-    ["丁", "壬", "木", "亥卯未"],
-    ["戊", "癸", "火", "寅午戌"],
+    ["乙", "庚", "金", "巳申酉丑"],
+    ["丙", "辛", "水", "申亥子辰"],
+    ["丁", "壬", "木", "亥寅卯未"],
+    ["戊", "癸", "火", "寅巳午戌"],
   ];
   for (const [d, h, x, ok] of TABLE) {
     for (const m of "子丑寅卯辰巳午未申酉戌亥") {
@@ -141,6 +143,17 @@ for (const f of FIXTURES) {
       check(`月支対応: ${d}${h}化${x}・${m}月 → ${expectOk ? "月支条件成立（化格候補）" : "不成立（合去）"}`, good, JSON.stringify(r));
     }
   }
+
+  // 本気の支（三合局の構成支ではない月支）も月支条件の成立そのものとして候補になる
+  for (const [d, h, x, m] of [["乙", "庚", "金", "申"], ["丙", "辛", "水", "亥"], ["丁", "壬", "木", "寅"], ["戊", "癸", "火", "巳"]] as const) {
+    const r = cls(`${h}子 ${d}子 丙${m} 丙子`, "日干-時干");
+    check(`本気の月支: ${d}${h}化${x}・${m}月 → 化格候補（月支条件成立）`,
+      r.monthCondition === true && (r.stemCombination === "hehuaCandidate" || r.stemCombination === "hehuaCandidateSupported") &&
+        !r.supports.some((x) => x.includes(`月支${m}`)), JSON.stringify(r));
+  }
+  check("HEHUA_MONTH_BRANCHES が確定表どおり",
+    JSON.stringify(HEHUA_MONTH_BRANCHES) === JSON.stringify({ 土: ["辰", "戌", "丑", "未"], 金: ["巳", "申", "酉", "丑"], 水: ["申", "亥", "子", "辰"], 木: ["亥", "寅", "卯", "未"], 火: ["寅", "巳", "午", "戌"] }),
+    JSON.stringify(HEHUA_MONTH_BRANCHES));
 
   // 酉月の甲己: 土の天干・地支があっても月支条件を飛び越えない
   const yu = cls("己未 甲戌 戊酉 己丑", "日干-時干");
