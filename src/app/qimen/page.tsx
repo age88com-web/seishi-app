@@ -369,7 +369,11 @@ export default function QimenPage() {
 
             <Panel title="定局">
               <Row k="遁 / 局 / 元" v={`${result.dingju.dun}　${result.dingju.ju}局　${result.dingju.yuan}`} />
-              <Row k="節気" v={`${result.calendar.solarTerm}`} />
+              <Row k="節気（天文）" v={`${result.dingjuContext.actualSolarTerm}`} />
+              <Row
+                k="定局節気"
+                v={`${result.dingjuContext.effectiveSolarTerm}${result.dingjuContext.isLeapAdjustment ? "（置閏）" : ""}　${result.dingjuContext.relation}`}
+              />
               <Row
                 k="四柱"
                 v={`${result.calendar.yearStem}${result.calendar.yearBranch}　${result.calendar.monthStem}${result.calendar.monthBranch}　${result.calendar.dayStem}${result.calendar.dayBranch}　${result.calendar.hourStem}${result.calendar.hourBranch}`}

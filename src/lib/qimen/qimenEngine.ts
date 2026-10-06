@@ -38,8 +38,10 @@ import { calculate as calculateCalendar } from "../calendar";
 import type { CalendarInput, CalendarResult } from "../calendar";
 import type { Stem, Branch } from "../eto";
 
-import { resolveDingju } from "./dingju";
 import type { DingjuResult } from "./dingju";
+
+import { resolveDingjuContext } from "./dingjuContext";
+import type { QimenDingjuContext } from "./dingjuContext";
 
 import { resolveDiPan } from "./dipan";
 import type { DiPanResult, DiPanStem } from "./dipan";
@@ -75,7 +77,10 @@ export interface PalaceSummary {
 
 export interface QimenResult {
   calendar: CalendarResult;
+  /** 定局（超神・接気・置閏を反映した定局上の陰陽遁・三元・局数）。 */
   dingju: DingjuResult;
+  /** 実際の節気（天文）と定局用節気・正授/超神/接気・置閏の詳細。 */
+  dingjuContext: QimenDingjuContext;
   diPan: DiPanResult;
   xunShou: XunShouResult;
   /** 該当モジュールが例外を投げた場合は null（未算出）。理由は対応する *Error に入る。 */
@@ -113,12 +118,13 @@ export function calculate(input: CalendarInput): QimenResult {
   const hourStem = calendar.hourStem as Stem;
   const hourBranch = calendar.hourBranch as Branch;
 
-  // 2. 定局
-  const dingju = resolveDingju({
-    solarTerm: calendar.solarTerm,
-    dayStem: calendar.dayStem as Stem,
-    dayBranch: calendar.dayBranch as Branch,
-  });
+  // 2. 定局（超神・接気・置閏を反映。実際の節気は calendar.solarTerm のまま保持）
+  const dingjuContext = resolveDingjuContext(calendar, input);
+  const dingju: DingjuResult = {
+    dun: dingjuContext.effectiveDun,
+    yuan: dingjuContext.effectiveYuan,
+    ju: dingjuContext.effectiveJu,
+  };
 
   // 3. 地盤
   const diPan = resolveDiPan({ dun: dingju.dun, ju: dingju.ju });
@@ -165,6 +171,7 @@ export function calculate(input: CalendarInput): QimenResult {
   const base: Omit<QimenResult, "jikaku" | "kyokaku"> = {
     calendar,
     dingju,
+    dingjuContext,
     diPan,
     xunShou,
     tianPan,

@@ -17,6 +17,13 @@ export type {
   PalaceSummary,
 } from "./qimenEngine";
 
+export { resolveDingjuContext } from "./dingjuContext";
+export type {
+  QimenDingjuContext,
+  QimenSeasonRelation,
+  QimenLeapAdjustment,
+} from "./dingjuContext";
+
 export { resolveJikakuFromQimen } from "./jikaku";
 export type {
   JikakuResult,
