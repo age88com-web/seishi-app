@@ -1,0 +1,266 @@
+/* src/components/print/print.css
+ *
+ * 命術の印刷専用レイアウト（PrintRoot.tsx）の共通スタイル。
+ *   - 画面: 印刷用DOMは見せない。盤・命式（chart）は1枚に収める縮小率を測るため、画面外に置いて不可視にする。
+ *   - 印刷: body 直下の .print-root 以外をすべて隠し、<html data-print-mode> と同じ種類の .print-root だけを出す。
+ *   - 余白は @page { margin: 15mm 22mm 18mm 22mm }（PrintRoot が出す）。本文幅 166mm・本文高 264mm。
+ */
+
+/* ---- 画面 ---- */
+@media screen {
+  .print-root-chart {
+    position: absolute;
+    left: -10000px;
+    top: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .print-root-interpretation {
+    display: none;
+  }
+}
+
+/* ---- 共通（画面外の測定と印刷で同じ寸法にする） ---- */
+.print-root {
+  width: 166mm;
+  margin: 0 auto;
+  color: #000;
+  background: #fff;
+  font-family: "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
+  font-size: 9.5pt;
+  line-height: 1.5;
+  box-sizing: border-box;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.print-root *,
+.print-root *::before,
+.print-root *::after {
+  box-sizing: border-box;
+}
+
+/* 盤・命式の1枚（A4縦の本文領域。わずかに余裕を取り2ページ目を作らない） */
+.print-sheet {
+  width: 166mm;
+  height: 262mm;
+  overflow: hidden;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.print-sheet-body {
+  width: 166mm;
+  transform-origin: top center;
+}
+
+/* 見出し */
+.print-header {
+  margin: 0 0 3mm;
+  padding-bottom: 1.5mm;
+  border-bottom: 1.5pt solid #000;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.print-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6mm;
+}
+.print-title {
+  font-size: 16pt;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+.print-name {
+  font-size: 13pt;
+  font-weight: 700;
+}
+.print-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5mm 5mm;
+  font-size: 9pt;
+  margin-top: 1mm;
+}
+.print-info-extra {
+  margin-top: 0.5mm;
+}
+.print-key {
+  font-weight: 700;
+  margin-right: 1.5mm;
+}
+.print-key::after {
+  content: "：";
+}
+
+/* 解釈印刷の見出し */
+.print-h2 {
+  font-size: 12pt;
+  margin: 4mm 0 1.5mm;
+  padding-bottom: 0.5mm;
+  border-bottom: 0.6pt solid #000;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+/* ---- 印刷 ---- */
+@media print {
+  html,
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+  /* 印刷物があるページでは、画面のUIをすべて隠す */
+  body:has(> .print-root) > *:not(.print-root) {
+    display: none !important;
+  }
+  /* 選んだ種類だけ印刷する */
+  html[data-print-mode="chart"] .print-root:not([data-print-kind="chart"]),
+  html[data-print-mode="interpretation"] .print-root:not([data-print-kind="interpretation"]) {
+    display: none !important;
+  }
+}
+
+/* ==== 解釈印刷の鑑定書レイアウト（PalacePrint・各術の解釈印刷で共通。.pp-*） ====
+   用紙は各術の PrintRoot page（解釈は A4縦・上下30mm・左右22mm。全ページ同じ）。
+   カード・角丸・影・背景色は使わず、見出し・細い罫線の表・本文で組む。 */
+.pp-doc {
+  font-size: 10pt;
+  line-height: 1.75;
+}
+.pp-h2 {
+  font-size: 13pt;
+  margin: 6mm 0 2.5mm;
+  padding-bottom: 0.8mm;
+  border-bottom: 1.2pt solid #000;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+.pp-h3 {
+  font-size: 11pt;
+  margin: 5mm 0 1.8mm;
+  padding-bottom: 0.5mm;
+  border-bottom: 0.5pt solid #000;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+.pp-h3::before {
+  content: "■ ";
+}
+.pp-h4 {
+  font-size: 10pt;
+  margin: 3mm 0 0.8mm;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+.pp-h4::before {
+  content: "◆ ";
+}
+.pp-sub {
+  font-size: 8.5pt;
+  font-weight: 400;
+  margin-left: 2.5mm;
+  color: #333;
+}
+.pp-mark {
+  font-size: 8.5pt;
+  font-weight: 400;
+  border: 0.5pt solid #000;
+  padding: 0 1mm;
+  margin-left: 2mm;
+}
+.pp-text {
+  margin: 0 0 1.5mm;
+  text-align: justify;
+  overflow-wrap: anywhere;
+}
+.pp-note {
+  margin: 0 0 1.5mm;
+  font-size: 8.5pt;
+  color: #444;
+}
+.pp-label {
+  font-size: 9pt;
+  font-weight: 700;
+  margin-top: 1.2mm;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+.pp-label::before {
+  content: "・";
+}
+.pp-list {
+  margin: 0 0 1.5mm;
+  padding-left: 5mm;
+}
+.pp-list li {
+  margin-bottom: 0.8mm;
+}
+.pp-block {
+  margin-bottom: 2mm;
+}
+.pp-keep {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* 1宮：必ず新しいページから。宮の見出し → 基本情報一覧表 → 節 */
+.pp-palace {
+  break-before: page;
+  page-break-before: always;
+}
+.pp-title {
+  font-size: 15pt;
+  font-weight: 700;
+  margin: 0 0 3mm;
+  padding-bottom: 1mm;
+  border-bottom: 1.2pt solid #000;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+.pp-title-sub {
+  font-size: 12pt;
+  margin-left: 2mm;
+}
+.pp-shen {
+  font-size: 9pt;
+  font-weight: 400;
+  border: 0.5pt solid #000;
+  padding: 0 1mm;
+  margin-left: 3mm;
+}
+.pp-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 4mm;
+  font-size: 9.5pt;
+  line-height: 1.6;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.pp-table th,
+.pp-table td {
+  border: 0.4pt solid #555;
+  padding: 1.6mm 2.4mm;
+  text-align: left;
+  vertical-align: top;
+}
+.pp-table th {
+  width: 26mm;
+  font-weight: 700;
+}
+.pp-table-inner {
+  margin: 0.5mm 0 1.5mm;
+}
+.pp-table-inner th {
+  width: 40mm;
+}
+
+/* ==== 解釈印刷：各ページの上下の安全余白（@page の余白に加えて、本文ラッパー側でも上下に空白帯を取る） ====
+   box-decoration-break: clone で、ページをまたぐ本文の各ページ片ごとに上下 padding を付ける。 */
+.print-root-interpretation {
+  padding-top: 10mm;
+  padding-bottom: 10mm;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
