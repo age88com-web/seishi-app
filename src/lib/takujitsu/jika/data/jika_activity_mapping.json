@@ -1,0 +1,716 @@
+{
+  "schema_version": 1,
+  "source_policy": "docs/takujitsu_jika_activity_mapping_audit.md（mapping監査：完了）に基づく本番データ。A・Cクラスのみを109用事mappingの対象とする。D・E・Fは保持するが自動mapping対象にはしない。",
+  "verification_doc": "docs/takujitsu_jika_activity_mapping_audit.md",
+  "activity_definitions_doc": "src/lib/takujitsu/activity/activityDefinitions.ts（変更なし・参照のみ）",
+  "class_summary": {
+    "A": 15,
+    "B": 0,
+    "C": 4,
+    "D": 2,
+    "E": 16,
+    "F": 1,
+    "total": 38
+  },
+  "mapping_policy": "mappingClass A/C のみ targetActivityId を持ち、判定エンジンの自動mapping対象となる。B（0件）・D・E・Fは targetActivityId=null とし、unmappedReasonに理由を保持する。E（16語）は時家独自語彙として削除せず保持する。",
+  "record_count": 38,
+  "records": [
+    {
+      "sourceTerm": "求嗣",
+      "sourceDirections": [
+        "yi"
+      ],
+      "sourceShinsatsu": [
+        "長生",
+        "帝旺",
+        "六合",
+        "五合",
+        "喜神",
+        "三合",
+        "羅天大進"
+      ],
+      "mappingClass": "A",
+      "targetActivityId": "求嗣",
+      "evidence": "文字列完全一致"
+    },
+    {
+      "sourceTerm": "嫁娶",
+      "sourceDirections": [
+        "yi"
+      ],
+      "sourceShinsatsu": [
+        "長生",
+        "帝旺",
+        "馬元",
+        "驛馬",
+        "祿元"
+      ],
+      "mappingClass": "A",
+      "targetActivityId": "嫁娶",
+      "evidence": "文字列完全一致"
+    },
+    {
+      "sourceTerm": "入宅",
+      "sourceDirections": [
+        "yi",
+        "ji"
+      ],
+      "sourceShinsatsu": [
+        "長生",
+        "帝旺",
+        "馬元",
+        "驛馬",
+        "祿元",
+        "福星貴人",
+        "太陽",
+        "天赦",
+        "少微黃道",
+        "玉堂黃道",
+        "寶光黃道",
+        "天德黃道",
+        "福德黃道",
+        "金匱黃道",
+        "木星",
+        "金星",
+        "水星",
+        "地兵凶時",
+        "天兵凶時"
+      ],
+      "mappingClass": "A",
+      "targetActivityId": "入宅",
+      "evidence": "文字列完全一致"
+    },
+    {
+      "sourceTerm": "開市",
+      "sourceDirections": [
+        "yi"
+      ],
+      "sourceShinsatsu": [
+        "長生",
+        "帝旺",
+        "馬元",
+        "驛馬",
+        "祿元",
+        "六合",
+        "五合",
+        "喜神",
+        "三合",
+        "羅天大進",
+        "左輔黃道",
+        "明堂黃道"
+      ],
+      "mappingClass": "A",
+      "targetActivityId": "開市",
+      "evidence": "文字列完全一致"
+    },
+    {
+      "sourceTerm": "交易",
+      "sourceDirections": [
+        "yi"
+      ],
+      "sourceShinsatsu": [
+        "長生",
+        "帝旺",
+        "六合",
+        "五合",
+        "喜神",
+        "三合",
+        "羅天大進"
+      ],
+      "mappingClass": "A",
+      "targetActivityId": "交易",
+      "evidence": "文字列完全一致"
+    },
+    {
+      "sourceTerm": "出行",
+      "sourceDirections": [
+        "yi",
+        "ji"
+      ],
+      "sourceShinsatsu": [
+        "馬元",
+        "驛馬",
+        "祿元",
+        "六合",
+        "五合",
+        "喜神",
+        "羅紋",
+        "祿貴",
+        "交馳",
+        "天官貴人",
+        "國印五符",
+        "唐符五符",
+        "路空亡時",
+        "截空亡時",
+        "日相沖破",
+        "時相沖破",
+        "五不遇",
+        "五鬼時",
+        "旬空時"
+      ],
+      "mappingClass": "A",
+      "targetActivityId": "出行",
+      "evidence": "文字列完全一致"
+    },
+    {
+      "sourceTerm": "安床",
+      "sourceDirections": [
+        "yi"
+      ],
+      "sourceShinsatsu": [
+        "六合",
+        "五合",
+        "喜神"
+      ],
+      "mappingClass": "A",
+      "targetActivityId": "安床",
+      "evidence": "文字列完全一致"
+    },
+    {
+      "sourceTerm": "祈福",
+      "sourceDirections": [
+        "yi",
+        "ji"
+      ],
+      "sourceShinsatsu": [
+        "六合",
+        "五合",
+        "喜神",
+        "三合",
+        "羅天大進",
+        "羅紋",
+        "祿貴",
+        "交馳",
+        "福星貴人",
+        "天官貴人",
+        "天寶黃道",
+        "青龍黃道",
+        "寶光黃道",
+        "天德黃道",
+        "福德黃道",
+        "金匱黃道",
+        "左輔黃道",
+        "明堂黃道",
+        "傳送",
+        "功曹",
+        "下食凶時",
+        "天狗凶時",
+        "路空亡時",
+        "截空亡時",
+        "日相沖破",
+        "時相沖破"
+      ],
+      "mappingClass": "A",
+      "targetActivityId": "祈福",
+      "evidence": "文字列完全一致"
+    },
+    {
+      "sourceTerm": "上官赴任",
+      "sourceDirections": [
+        "yi",
+        "ji"
+      ],
+      "sourceShinsatsu": [
+        "天官貴人",
+        "天刑黑道",
+        "天牢黑道",
+        "路空亡時",
+        "截空亡時"
+      ],
+      "mappingClass": "A",
+      "targetActivityId": "上官赴任",
+      "evidence": "文字列完全一致"
+    },
+    {
+      "sourceTerm": "開倉庫",
+      "sourceDirections": [
+        "yi"
+      ],
+      "sourceShinsatsu": [
+        "少微黃道",
+        "玉堂黃道"
+      ],
+      "mappingClass": "A",
+      "targetActivityId": "開倉庫",
+      "evidence": "文字列完全一致"
+    },
+    {
+      "sourceTerm": "上梁",
+      "sourceDirections": [
+        "yi",
+        "ji"
+      ],
+      "sourceShinsatsu": [
+        "木星",
+        "金星",
+        "水星",
+        "地兵凶時",
+        "天兵凶時"
+      ],
+      "mappingClass": "A",
+      "targetActivityId": "上梁",
+      "evidence": "文字列完全一致"
+    },
+    {
+      "sourceTerm": "動土",
+      "sourceDirections": [
+        "ji"
+      ],
+      "sourceShinsatsu": [
+        "地兵凶時",
+        "天兵凶時"
+      ],
+      "mappingClass": "A",
+      "targetActivityId": "動土",
+      "evidence": "文字列完全一致"
+    },
+    {
+      "sourceTerm": "祭祀",
+      "sourceDirections": [
+        "yi",
+        "ji"
+      ],
+      "sourceShinsatsu": [
+        "福星貴人",
+        "天官貴人",
+        "傳送",
+        "功曹",
+        "下食凶時",
+        "天狗凶時"
+      ],
+      "mappingClass": "A",
+      "targetActivityId": "祭祀",
+      "evidence": "文字列完全一致",
+      "notes": "方向完全性監査（2026-09-12）：福星貴人・天官貴人・傳送/功曹の3列に宜方向の「祭祀」が確認されたため、忌方向のみだった従来の分類を宜・忌双方向に修正した。"
+    },
+    {
+      "sourceTerm": "安葬",
+      "sourceDirections": [
+        "yi",
+        "ji"
+      ],
+      "sourceShinsatsu": [
+        "太陰吉時",
+        "太陽",
+        "天赦",
+        "木星",
+        "金星",
+        "水星",
+        "日相沖破",
+        "時相沖破"
+      ],
+      "mappingClass": "A",
+      "targetActivityId": "安葬",
+      "evidence": "文字列完全一致",
+      "notes": "方向完全性監査（2026-09-12）：太陰吉時・太陽/天赦・木星/金星/水星の3列に宜方向の「安葬」が確認されたため、忌方向のみだった従来の分類を宜・忌双方向に修正した。"
+    },
+    {
+      "sourceTerm": "開光",
+      "sourceDirections": [
+        "ji"
+      ],
+      "sourceShinsatsu": [
+        "路空亡時",
+        "截空亡時"
+      ],
+      "mappingClass": "A",
+      "targetActivityId": "開光",
+      "evidence": "文字列完全一致"
+    },
+    {
+      "sourceTerm": "上官",
+      "sourceDirections": [
+        "yi",
+        "ji"
+      ],
+      "sourceShinsatsu": [
+        "馬元",
+        "驛馬",
+        "祿元",
+        "國印五符",
+        "唐符五符",
+        "五不遇",
+        "日害時",
+        "日刑時"
+      ],
+      "mappingClass": "C",
+      "targetActivityId": "上官赴任",
+      "relation": "narrower",
+      "evidence": "「宜上官出行求財見貴嫁娶…」の「上官」は「上官赴任」の一部と読める",
+      "notes": "方向完全性監査（2026-09-12）：國印五符/唐符五符（宜）、五不遇・日害時・日刑時（忌）にも「上官」（「上官赴任」の複合語ではない単独出現）を確認し追加した。宜・忌双方向のC分類となる。"
+    },
+    {
+      "sourceTerm": "焚香",
+      "sourceDirections": [
+        "ji"
+      ],
+      "sourceShinsatsu": [
+        "路空亡時",
+        "截空亡時"
+      ],
+      "mappingClass": "C",
+      "targetActivityId": "安香",
+      "relation": "narrower",
+      "evidence": "activityDefinitions.ts「安香」description「香を焚き、お仏壇、神棚を設置する日」に含まれる"
+    },
+    {
+      "sourceTerm": "結婚",
+      "sourceDirections": [
+        "ji"
+      ],
+      "sourceShinsatsu": [
+        "日相沖破",
+        "時相沖破"
+      ],
+      "mappingClass": "C",
+      "targetActivityId": "結婚姻",
+      "relation": "近接",
+      "evidence": "「結婚」と「結婚姻」は「姻」の有無のみの差"
+    },
+    {
+      "sourceTerm": "行船",
+      "sourceDirections": [
+        "ji"
+      ],
+      "sourceShinsatsu": [
+        "路空亡時",
+        "截空亡時"
+      ],
+      "mappingClass": "C",
+      "targetActivityId": "乗船渡水",
+      "relation": "近接",
+      "evidence": "「行船」（船を進める）と「乗船渡水」（船で水を渡る）は意味は近いが表記が異なる複合語"
+    },
+    {
+      "sourceTerm": "移徙",
+      "sourceDirections": [
+        "yi",
+        "ji"
+      ],
+      "sourceShinsatsu": [
+        "長生",
+        "帝旺",
+        "日相沖破",
+        "時相沖破"
+      ],
+      "mappingClass": "D",
+      "targetActivityId": null,
+      "targetActivityCandidates": [
+        "移徒"
+      ],
+      "unmappedReason": "時家吉凶.pdf・擇日テキスト.pdf・擇日象意はいずれも「移徙」。109側id「移徒」は用事便覧.pdf#42由来で字が異なる（徙／徒）。擇日側既存の表記差問題として保留"
+    },
+    {
+      "sourceTerm": "進表章",
+      "sourceDirections": [
+        "ji"
+      ],
+      "sourceShinsatsu": [
+        "路空亡時",
+        "截空亡時"
+      ],
+      "mappingClass": "D",
+      "targetActivityId": null,
+      "targetActivityCandidates": [
+        "上表彰"
+      ],
+      "unmappedReason": "神殺象意.pdfは「上表章」、擇日テキスト.pdfは「上表彰」で彰／章の差は既存資料で把握済みだが、時家吉凶.pdfは「進表章」で1文字目が「上」ではなく「進」という別種の差異があるため同一語と確定しない"
+    },
+    {
+      "sourceTerm": "造葬",
+      "sourceDirections": [
+        "yi"
+      ],
+      "sourceShinsatsu": [
+        "長生",
+        "帝旺",
+        "馬元",
+        "驛馬",
+        "祿元",
+        "三合",
+        "羅天大進",
+        "陰陽喜人",
+        "天乙喜人",
+        "福星貴人",
+        "天寶黃道",
+        "青龍黃道",
+        "寶光黃道",
+        "天德黃道",
+        "福德黃道",
+        "金匱黃道",
+        "左輔黃道",
+        "明堂黃道",
+        "武曲",
+        "貪狼",
+        "左輔"
+      ],
+      "mappingClass": "E",
+      "targetActivityId": null,
+      "unmappedReason": "109用事に対応項目なし（既存資料で確定済み「造葬はNO_MATCH、安葬とは別語」）",
+      "notes": "方向完全性監査（2026-09-12）：機械的部分一致検索により、長生/帝旺に加え馬元/驛馬/祿元・三合/羅天大進・陰陽喜人/天乙喜人・福星貴人・天寶黃道/青龍黃道・寶光黃道/天德黃道・福德黃道/金匱黃道・左輔黃道/明堂黃道・武曲/貪狼/左輔の全9列で確認し追加した（大退時列の「修造葬」は既存資料の判断どおり別語として不算入のまま）。"
+    },
+    {
+      "sourceTerm": "求財",
+      "sourceDirections": [
+        "yi",
+        "ji"
+      ],
+      "sourceShinsatsu": [
+        "馬元",
+        "驛馬",
+        "祿元",
+        "六合",
+        "五合",
+        "喜神",
+        "羅紋",
+        "祿貴",
+        "交馳",
+        "福星貴人",
+        "天官貴人",
+        "路空亡時",
+        "截空亡時"
+      ],
+      "mappingClass": "E",
+      "targetActivityId": null,
+      "unmappedReason": "109用事に対応項目なし（既存資料で確定済み「求財はCOMPOUND扱い、納財等は別語」）",
+      "notes": "方向完全性監査（2026-09-12）：忌方向の出現神殺が誤り（元武黑道/勾陳黑道の原文に「求財」は無い）だったため路空亡時/截空亡時に修正した。宜方向は馬元/驛馬/祿元に加え六合/五合/喜神・羅紋/祿貴/交馳・福星貴人・天官貴人の4列を追加した。"
+    },
+    {
+      "sourceTerm": "進葬",
+      "sourceDirections": [
+        "yi"
+      ],
+      "sourceShinsatsu": [
+        "羅紋",
+        "祿貴",
+        "交馳"
+      ],
+      "mappingClass": "E",
+      "targetActivityId": null,
+      "unmappedReason": "109用事に対応項目なし（既存資料で確定済み「進葬はNO_MATCH」）"
+    },
+    {
+      "sourceTerm": "見貴",
+      "sourceDirections": [
+        "yi"
+      ],
+      "sourceShinsatsu": [
+        "馬元",
+        "驛馬",
+        "祿元",
+        "天官貴人",
+        "國印五符",
+        "唐符五符"
+      ],
+      "mappingClass": "E",
+      "targetActivityId": null,
+      "unmappedReason": "109用事に対応項目なし（既存資料で確定済み「見貴はNO_MATCH」）",
+      "notes": "方向完全性監査（2026-09-12）：國印五符/唐符五符列にも「見貴」を確認し追加した。"
+    },
+    {
+      "sourceTerm": "受封",
+      "sourceDirections": [
+        "yi"
+      ],
+      "sourceShinsatsu": [
+        "鳳鸞黃道",
+        "司命黃道"
+      ],
+      "mappingClass": "E",
+      "targetActivityId": null,
+      "unmappedReason": "109用事に対応項目なし（既存資料で確定済み「受封はNO_MATCH」）"
+    },
+    {
+      "sourceTerm": "造祀",
+      "sourceDirections": [
+        "yi"
+      ],
+      "sourceShinsatsu": [
+        "鳳鸞黃道",
+        "司命黃道"
+      ],
+      "mappingClass": "E",
+      "targetActivityId": null,
+      "unmappedReason": "109用事に対応項目なし（既存資料で確定済み「造祀はNO_MATCH」）"
+    },
+    {
+      "sourceTerm": "詞訟",
+      "sourceDirections": [
+        "ji"
+      ],
+      "sourceShinsatsu": [
+        "元武黑道",
+        "勾陳黑道",
+        "天刑黑道",
+        "天牢黑道"
+      ],
+      "mappingClass": "E",
+      "targetActivityId": null,
+      "unmappedReason": "109用事に対応項目なし（既存資料で確定済み「詞訟はNO_MATCH（訴訟は109から削除済み）」）"
+    },
+    {
+      "sourceTerm": "設醮",
+      "sourceDirections": [
+        "yi",
+        "ji"
+      ],
+      "sourceShinsatsu": [
+        "傳送",
+        "功曹",
+        "下食凶時",
+        "天狗凶時",
+        "路空亡時",
+        "截空亡時"
+      ],
+      "mappingClass": "E",
+      "targetActivityId": null,
+      "unmappedReason": "「設醮」と109「斎醮」は醮の1字のみ共通で第1字が別。既存資料でNO_MATCH確定済み",
+      "notes": "方向完全性監査（2026-09-12）：傳送/功曹列に宜方向の「設醮」、路空亡時/截空亡時列に忌方向の「設醮」を確認し追加した。従来は下食凶時/天狗凶時の忌方向のみだったが、宜・忌双方向の語に修正した。"
+    },
+    {
+      "sourceTerm": "修船（造船）",
+      "sourceDirections": [
+        "ji"
+      ],
+      "sourceShinsatsu": [
+        "雷兵時",
+        "日建時"
+      ],
+      "mappingClass": "E",
+      "targetActivityId": null,
+      "unmappedReason": "「修船」と109「造船」は動詞が異なる。既存の洪氏錦嚢監査で対応するActivityDefinitionが無いと確認済み",
+      "notes": "方向完全性監査（2026-09-12）：日建時列の「造船」（「忌造船行凶」）を追加した。雷兵時列の「修船」と表記は異なるが同一の複合語として既存資料どおり扱う。"
+    },
+    {
+      "sourceTerm": "賽愿",
+      "sourceDirections": [
+        "ji"
+      ],
+      "sourceShinsatsu": [
+        "路空亡時",
+        "截空亡時"
+      ],
+      "mappingClass": "E",
+      "targetActivityId": null,
+      "unmappedReason": "願掛けの成就に感謝する儀礼に相当する109 idが存在しない"
+    },
+    {
+      "sourceTerm": "修作",
+      "sourceDirections": [
+        "yi"
+      ],
+      "sourceShinsatsu": [
+        "長生",
+        "帝旺",
+        "陰陽喜人",
+        "天乙喜人",
+        "太陰吉時"
+      ],
+      "mappingClass": "E",
+      "targetActivityId": null,
+      "unmappedReason": "109に完全一致なし。既存資料で「修作は修造に近いが表記が異なるため対応させない」と明記済み",
+      "notes": "方向完全性監査（2026-09-12）：三合/羅天大進列は原文が「修造」であり「修作」ではないため削除した（YI_GROUPS[3]のnote参照、原本再確認が必要）。太陰吉時列の「修作」（「…安葬、修作、吉」）を新たに確認し追加した。"
+    },
+    {
+      "sourceTerm": "婚娶",
+      "sourceDirections": [
+        "yi"
+      ],
+      "sourceShinsatsu": [
+        "六合",
+        "五合",
+        "喜神",
+        "三合",
+        "羅天大進",
+        "羅紋",
+        "祿貴",
+        "交馳",
+        "陰陽喜人",
+        "天乙喜人",
+        "福星貴人",
+        "寶光黃道",
+        "天德黃道",
+        "福德黃道",
+        "金匱黃道",
+        "左輔黃道",
+        "明堂黃道"
+      ],
+      "mappingClass": "E",
+      "targetActivityId": null,
+      "unmappedReason": "109に「婚娶」の完全一致なし。「嫁娶」とは字が異なり対応なしとする",
+      "notes": "方向完全性監査（2026-09-12）：機械的部分一致検索により、六合/五合/喜神に加え三合/羅天大進・羅紋/祿貴/交馳・陰陽喜人/天乙喜人・福星貴人・寶光黃道/天德黃道・福德黃道/金匱黃道・左輔黃道/明堂黃道の全7列で確認し追加した。"
+    },
+    {
+      "sourceTerm": "酬神",
+      "sourceDirections": [
+        "yi",
+        "ji"
+      ],
+      "sourceShinsatsu": [
+        "福星貴人",
+        "天官貴人",
+        "傳送",
+        "功曹",
+        "路空亡時",
+        "截空亡時"
+      ],
+      "mappingClass": "E",
+      "targetActivityId": null,
+      "unmappedReason": "「酬神」に完全一致するidなし。祭祀・斎醮いずれも近いが同一と断定する根拠が無い",
+      "notes": "方向完全性監査（2026-09-12）：天官貴人列にも宜方向の「酬神」を確認し追加した。"
+    },
+    {
+      "sourceTerm": "豎造",
+      "sourceDirections": [
+        "yi"
+      ],
+      "sourceShinsatsu": [
+        "太陽",
+        "天赦"
+      ],
+      "mappingClass": "E",
+      "targetActivityId": null,
+      "unmappedReason": "「豎造」に完全一致するidなし。建築関連の複数idと意味が重なるが一意に決められない"
+    },
+    {
+      "sourceTerm": "修灶",
+      "sourceDirections": [
+        "yi"
+      ],
+      "sourceShinsatsu": [
+        "鳳鸞黃道",
+        "司命黃道"
+      ],
+      "mappingClass": "E",
+      "targetActivityId": null,
+      "unmappedReason": "「修灶」と109「作灶」は動詞（修／作）が異なる"
+    },
+    {
+      "sourceTerm": "六禮",
+      "sourceDirections": [
+        "yi"
+      ],
+      "sourceShinsatsu": [
+        "六合",
+        "五合",
+        "喜神"
+      ],
+      "mappingClass": "E",
+      "targetActivityId": null,
+      "unmappedReason": "婚姻に関する一連の儀礼を指す語だが、時家吉凶.pdf自体に内訳の記載が無く109用事のどれに対応するか判断できない"
+    },
+    {
+      "sourceTerm": "貴",
+      "sourceDirections": [
+        "yi"
+      ],
+      "sourceShinsatsu": [
+        "陰陽喜人",
+        "天乙喜人"
+      ],
+      "mappingClass": "F",
+      "targetActivityId": null,
+      "unmappedReason": "時家吉凶.pdf原本に単独1字で実在する語だが、独立した用事語か略記か意味自体が確定できないため推測mappingはしない"
+    }
+  ]
+}

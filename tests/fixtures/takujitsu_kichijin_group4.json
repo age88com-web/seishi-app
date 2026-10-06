@@ -1,0 +1,8480 @@
+{
+  "_meta": {
+    "source": "docs/source/擇日実例.pdf（吉凶神煞一覧表）",
+    "description": "擇日実例.pdf の日家吉凶神煞一覧表から、第4グループのうち実例PDFに出現する神殺（月恩・寶日・義日・専日・要安〜續世・五富・天倉・陽徳・陰徳・六儀・驛馬・天馬・青龍・明堂・金匱・寶光・玉堂・司命・解神・臨日・兵福）を機械的に抽出した検証専用 fixture。仕様ではない。擇日ロジックの逆算・変更には使用しないこと。天瑞・天福・天貴・催官はこの一覧表に一度も出現しないため対象外（ロジック単体テストのみで検証）。",
+    "extraction": "pypdf でページテキストを抽出し、月見出しで12ヶ月に分割、各月60行に分割したうえで【吉神】本文の文字列一致を判定した。寶日・義日・専日は【吉神】欄ではなく、各行冒頭の「干支+五行+分類1文字(義/伐/専/寶/制)+十二建+日」という共通パターンから分類1文字を直接読み取って判定した（制日・伐日は凶のため対象外）。兵福は月建と日辰の地支が一致するかで判定した（表を持たないシンプルな規則のため）。",
+    "notes": [
+      "生成スクリプト: tests/fixtures/gen_takujitsu_kichijin_group4.py"
+    ],
+    "count": 720
+  },
+  "rows": [
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "甲子",
+      "dayStem": "甲",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "益後",
+        "義日",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "乙丑",
+      "dayStem": "乙",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "明堂",
+        "續世"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "丙寅",
+      "dayStem": "丙",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "兵福",
+        "天倉",
+        "月恩",
+        "義日",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "丁卯",
+      "dayStem": "丁",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "玉宇",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "戊辰",
+      "dayStem": "戊",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "六儀",
+        "専日",
+        "金匱",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "己巳",
+      "dayStem": "己",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "寶光",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "庚午",
+      "dayStem": "庚",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "天馬",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "辛未",
+      "dayStem": "辛",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "啓安",
+        "玉堂",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "壬申",
+      "dayStem": "壬",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "普護",
+        "義日",
+        "解神",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "癸酉",
+      "dayStem": "癸",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "福生",
+        "義日",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "甲戌",
+      "dayStem": "甲",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "司命",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "乙亥",
+      "dayStem": "乙",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "五富",
+        "義日",
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "丙子",
+      "dayStem": "丙",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "月恩",
+        "益後",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "丁丑",
+      "dayStem": "丁",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "寶日",
+        "明堂",
+        "續世"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "戊寅",
+      "dayStem": "戊",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "兵福",
+        "天倉",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "己卯",
+      "dayStem": "己",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "玉宇"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "庚辰",
+      "dayStem": "庚",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "六儀",
+        "義日",
+        "金匱",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "辛巳",
+      "dayStem": "辛",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "寶光"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "壬午",
+      "dayStem": "壬",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "天馬",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "癸未",
+      "dayStem": "癸",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "啓安",
+        "玉堂"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "甲申",
+      "dayStem": "甲",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "普護",
+        "解神",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "乙酉",
+      "dayStem": "乙",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "福生",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "丙戌",
+      "dayStem": "丙",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "司命",
+        "寶日",
+        "月恩",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "丁亥",
+      "dayStem": "丁",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "五富",
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "戊子",
+      "dayStem": "戊",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "益後",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "己丑",
+      "dayStem": "己",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "専日",
+        "明堂",
+        "續世"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "庚寅",
+      "dayStem": "庚",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "兵福",
+        "天倉",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "辛卯",
+      "dayStem": "辛",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "玉宇"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "壬辰",
+      "dayStem": "壬",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "六儀",
+        "金匱",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "癸巳",
+      "dayStem": "癸",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "寶光"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "甲午",
+      "dayStem": "甲",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "天馬",
+        "寶日",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "乙未",
+      "dayStem": "乙",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "啓安",
+        "玉堂"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "丙申",
+      "dayStem": "丙",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "普護",
+        "月恩",
+        "解神",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "丁酉",
+      "dayStem": "丁",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "福生",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "戊戌",
+      "dayStem": "戊",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "司命",
+        "専日",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "己亥",
+      "dayStem": "己",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "五富",
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "庚子",
+      "dayStem": "庚",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "寶日",
+        "益後",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "辛丑",
+      "dayStem": "辛",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "明堂",
+        "續世",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "壬寅",
+      "dayStem": "壬",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "兵福",
+        "天倉",
+        "寶日",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "癸卯",
+      "dayStem": "癸",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "寶日",
+        "玉宇"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "甲辰",
+      "dayStem": "甲",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "六儀",
+        "金匱",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "乙巳",
+      "dayStem": "乙",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "寶光",
+        "寶日"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "丙午",
+      "dayStem": "丙",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "天馬",
+        "専日",
+        "月恩",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "丁未",
+      "dayStem": "丁",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "啓安",
+        "寶日",
+        "玉堂"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "戊申",
+      "dayStem": "戊",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "寶日",
+        "普護",
+        "解神",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "己酉",
+      "dayStem": "己",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "寶日",
+        "福生",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "庚戌",
+      "dayStem": "庚",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "司命",
+        "義日",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "辛亥",
+      "dayStem": "辛",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "五富",
+        "寶日",
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "壬子",
+      "dayStem": "壬",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "専日",
+        "益後",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "癸丑",
+      "dayStem": "癸",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "明堂",
+        "續世"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "甲寅",
+      "dayStem": "甲",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "兵福",
+        "天倉",
+        "専日",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "乙卯",
+      "dayStem": "乙",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "専日",
+        "玉宇"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "丙辰",
+      "dayStem": "丙",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "六儀",
+        "寶日",
+        "月恩",
+        "金匱",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "丁巳",
+      "dayStem": "丁",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "寶光",
+        "専日"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "戊午",
+      "dayStem": "戊",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "天馬",
+        "義日",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "己未",
+      "dayStem": "己",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "啓安",
+        "専日",
+        "玉堂"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "庚申",
+      "dayStem": "庚",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "専日",
+        "普護",
+        "解神",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "辛酉",
+      "dayStem": "辛",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "専日",
+        "福生",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "壬戌",
+      "dayStem": "壬",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "司命",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "癸亥",
+      "dayStem": "癸",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "五富",
+        "専日",
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "甲子",
+      "dayStem": "甲",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "司命",
+        "義日",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "乙丑",
+      "dayStem": "乙",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "啓安",
+        "天倉"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "丙寅",
+      "dayStem": "丙",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "五富",
+        "普護",
+        "義日",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "丁卯",
+      "dayStem": "丁",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "六儀",
+        "兵福",
+        "明堂",
+        "月恩",
+        "福生",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "戊辰",
+      "dayStem": "戊",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "専日"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "己巳",
+      "dayStem": "己",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "義日",
+        "聖心",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "庚午",
+      "dayStem": "庚",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "益後",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "辛未",
+      "dayStem": "辛",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "寶光",
+        "續世",
+        "義日",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "壬申",
+      "dayStem": "壬",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "天馬",
+        "義日",
+        "要安",
+        "解神"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "癸酉",
+      "dayStem": "癸",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "玉堂",
+        "玉宇",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "甲戌",
+      "dayStem": "甲",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "乙亥",
+      "dayStem": "乙",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "義日",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "丙子",
+      "dayStem": "丙",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "司命",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "丁丑",
+      "dayStem": "丁",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "啓安",
+        "天倉",
+        "寶日",
+        "月恩"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "戊寅",
+      "dayStem": "戊",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "五富",
+        "普護",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "己卯",
+      "dayStem": "己",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "六儀",
+        "兵福",
+        "明堂",
+        "福生"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "庚辰",
+      "dayStem": "庚",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "辛巳",
+      "dayStem": "辛",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "聖心",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "壬午",
+      "dayStem": "壬",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "益後",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "癸未",
+      "dayStem": "癸",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "寶光",
+        "續世",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "甲申",
+      "dayStem": "甲",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "天馬",
+        "要安",
+        "解神"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "乙酉",
+      "dayStem": "乙",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "玉堂",
+        "玉宇"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "丙戌",
+      "dayStem": "丙",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "寶日",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "丁亥",
+      "dayStem": "丁",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "月恩",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "戊子",
+      "dayStem": "戊",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "司命",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "己丑",
+      "dayStem": "己",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "啓安",
+        "天倉",
+        "専日"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "庚寅",
+      "dayStem": "庚",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "五富",
+        "普護",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "辛卯",
+      "dayStem": "辛",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "六儀",
+        "兵福",
+        "明堂",
+        "福生"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "壬辰",
+      "dayStem": "壬",
+      "dayBranch": "辰",
+      "expectedKichijin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "癸巳",
+      "dayStem": "癸",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "聖心",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "甲午",
+      "dayStem": "甲",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "寶日",
+        "益後",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "乙未",
+      "dayStem": "乙",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "寶光",
+        "續世",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "丙申",
+      "dayStem": "丙",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "天馬",
+        "要安",
+        "解神"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "丁酉",
+      "dayStem": "丁",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "月恩",
+        "玉堂",
+        "玉宇"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "戊戌",
+      "dayStem": "戊",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "専日",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "己亥",
+      "dayStem": "己",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "庚子",
+      "dayStem": "庚",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "司命",
+        "寶日",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "辛丑",
+      "dayStem": "辛",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "啓安",
+        "天倉",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "壬寅",
+      "dayStem": "壬",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "五富",
+        "寶日",
+        "普護",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "癸卯",
+      "dayStem": "癸",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "六儀",
+        "兵福",
+        "寶日",
+        "明堂",
+        "福生"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "甲辰",
+      "dayStem": "甲",
+      "dayBranch": "辰",
+      "expectedKichijin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "乙巳",
+      "dayStem": "乙",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "寶日",
+        "聖心",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "丙午",
+      "dayStem": "丙",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "専日",
+        "益後",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "丁未",
+      "dayStem": "丁",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "寶光",
+        "寶日",
+        "月恩",
+        "續世",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "戊申",
+      "dayStem": "戊",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "天馬",
+        "寶日",
+        "要安",
+        "解神"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "己酉",
+      "dayStem": "己",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "寶日",
+        "玉堂",
+        "玉宇"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "庚戌",
+      "dayStem": "庚",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "義日",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "辛亥",
+      "dayStem": "辛",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "寶日",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "壬子",
+      "dayStem": "壬",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "司命",
+        "専日",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "癸丑",
+      "dayStem": "癸",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "啓安",
+        "天倉"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "甲寅",
+      "dayStem": "甲",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "五富",
+        "専日",
+        "普護",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "乙卯",
+      "dayStem": "乙",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "六儀",
+        "兵福",
+        "専日",
+        "明堂",
+        "福生"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "丙辰",
+      "dayStem": "丙",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "寶日"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "丁巳",
+      "dayStem": "丁",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "専日",
+        "月恩",
+        "聖心",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "戊午",
+      "dayStem": "戊",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "益後",
+        "義日",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "己未",
+      "dayStem": "己",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "寶光",
+        "専日",
+        "續世",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "庚申",
+      "dayStem": "庚",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "天馬",
+        "専日",
+        "要安",
+        "解神"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "辛酉",
+      "dayStem": "辛",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "専日",
+        "玉堂",
+        "玉宇"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "壬戌",
+      "dayStem": "壬",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "癸亥",
+      "dayStem": "癸",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "専日",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "甲子",
+      "dayStem": "甲",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "天倉",
+        "義日",
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "乙丑",
+      "dayStem": "乙",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "益後"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "丙寅",
+      "dayStem": "丙",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "六儀",
+        "司命",
+        "續世",
+        "義日",
+        "陽徳",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "丁卯",
+      "dayStem": "丁",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "義日",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "戊辰",
+      "dayStem": "戊",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "兵福",
+        "専日",
+        "玉宇",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "己巳",
+      "dayStem": "己",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "五富",
+        "明堂",
+        "義日",
+        "金堂",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "庚午",
+      "dayStem": "庚",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "月恩"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "辛未",
+      "dayStem": "辛",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "壬申",
+      "dayStem": "壬",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "啓安",
+        "義日",
+        "臨日",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "癸酉",
+      "dayStem": "癸",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "寶光",
+        "普護",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "甲戌",
+      "dayStem": "甲",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "天馬",
+        "福生",
+        "解神"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "乙亥",
+      "dayStem": "乙",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "玉堂",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "丙子",
+      "dayStem": "丙",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "天倉",
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "丁丑",
+      "dayStem": "丁",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "寶日",
+        "益後"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "戊寅",
+      "dayStem": "戊",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "六儀",
+        "司命",
+        "續世",
+        "陽徳",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "己卯",
+      "dayStem": "己",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "庚辰",
+      "dayStem": "庚",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "兵福",
+        "月恩",
+        "玉宇",
+        "義日",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "辛巳",
+      "dayStem": "辛",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "五富",
+        "明堂",
+        "金堂",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "壬午",
+      "dayStem": "壬",
+      "dayBranch": "午",
+      "expectedKichijin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "癸未",
+      "dayStem": "癸",
+      "dayBranch": "未",
+      "expectedKichijin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "甲申",
+      "dayStem": "甲",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "六儀",
+        "啓安",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "乙酉",
+      "dayStem": "乙",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "寶光",
+        "普護"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "丙戌",
+      "dayStem": "丙",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "天馬",
+        "寶日",
+        "福生",
+        "解神"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "丁亥",
+      "dayStem": "丁",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "玉堂"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "戊子",
+      "dayStem": "戊",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "天倉",
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "己丑",
+      "dayStem": "己",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "専日",
+        "益後"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "庚寅",
+      "dayStem": "庚",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "六儀",
+        "司命",
+        "月恩",
+        "續世",
+        "陽徳",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "辛卯",
+      "dayStem": "辛",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "壬辰",
+      "dayStem": "壬",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "兵福",
+        "玉宇",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "癸巳",
+      "dayStem": "癸",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "五富",
+        "明堂",
+        "金堂",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "甲午",
+      "dayStem": "甲",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "寶日"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "乙未",
+      "dayStem": "乙",
+      "dayBranch": "未",
+      "expectedKichijin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "丙申",
+      "dayStem": "丙",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "啓安",
+        "臨日",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "丁酉",
+      "dayStem": "丁",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "寶光",
+        "普護"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "戊戌",
+      "dayStem": "戊",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "天馬",
+        "専日",
+        "福生",
+        "解神"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "己亥",
+      "dayStem": "己",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "玉堂"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "庚子",
+      "dayStem": "庚",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "天倉",
+        "寶日",
+        "月恩",
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "辛丑",
+      "dayStem": "辛",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "益後",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "壬寅",
+      "dayStem": "壬",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "六儀",
+        "司命",
+        "寶日",
+        "續世",
+        "陽徳",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "癸卯",
+      "dayStem": "癸",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "寶日",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "甲辰",
+      "dayStem": "甲",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "兵福",
+        "玉宇",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "乙巳",
+      "dayStem": "乙",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "五富",
+        "寶日",
+        "明堂",
+        "金堂",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "丙午",
+      "dayStem": "丙",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "専日"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "丁未",
+      "dayStem": "丁",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "寶日"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "戊申",
+      "dayStem": "戊",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "啓安",
+        "寶日",
+        "臨日",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "己酉",
+      "dayStem": "己",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "寶光",
+        "寶日",
+        "普護"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "庚戌",
+      "dayStem": "庚",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "天馬",
+        "月恩",
+        "福生",
+        "義日",
+        "解神"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "辛亥",
+      "dayStem": "辛",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "寶日",
+        "玉堂"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "壬子",
+      "dayStem": "壬",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "天倉",
+        "専日",
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "癸丑",
+      "dayStem": "癸",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "益後"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "甲寅",
+      "dayStem": "甲",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "六儀",
+        "司命",
+        "専日",
+        "續世",
+        "陽徳",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "乙卯",
+      "dayStem": "乙",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "専日",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "丙辰",
+      "dayStem": "丙",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "兵福",
+        "寶日",
+        "玉宇",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "丁巳",
+      "dayStem": "丁",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "五富",
+        "専日",
+        "明堂",
+        "金堂",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "戊午",
+      "dayStem": "戊",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "己未",
+      "dayStem": "己",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "専日"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "庚申",
+      "dayStem": "庚",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "啓安",
+        "専日",
+        "月恩",
+        "臨日",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "辛酉",
+      "dayStem": "辛",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "寶光",
+        "専日",
+        "普護"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "壬戌",
+      "dayStem": "壬",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "天馬",
+        "福生",
+        "解神"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "癸亥",
+      "dayStem": "癸",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "専日",
+        "玉堂"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "甲子",
+      "dayStem": "甲",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "天馬",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "乙丑",
+      "dayStem": "乙",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "六儀",
+        "玉堂",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "丙寅",
+      "dayStem": "丙",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "啓安",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "丁卯",
+      "dayStem": "丁",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "普護",
+        "義日",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "戊辰",
+      "dayStem": "戊",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "司命",
+        "専日",
+        "福生",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "己巳",
+      "dayStem": "己",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "兵福",
+        "月恩",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "庚午",
+      "dayStem": "庚",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "聖心",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "辛未",
+      "dayStem": "辛",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "明堂",
+        "益後",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "壬申",
+      "dayStem": "壬",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "五富",
+        "續世",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "癸酉",
+      "dayStem": "癸",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "義日",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "甲戌",
+      "dayStem": "甲",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "玉宇",
+        "解神",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "乙亥",
+      "dayStem": "乙",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "天倉",
+        "寶光",
+        "義日",
+        "金堂",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "丙子",
+      "dayStem": "丙",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "天馬"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "丁丑",
+      "dayStem": "丁",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "六儀",
+        "寶日",
+        "玉堂",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "戊寅",
+      "dayStem": "戊",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "啓安"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "己卯",
+      "dayStem": "己",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "普護",
+        "月恩",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "庚辰",
+      "dayStem": "庚",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "司命",
+        "福生",
+        "義日",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "辛巳",
+      "dayStem": "辛",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "兵福"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "壬午",
+      "dayStem": "壬",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "聖心",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "癸未",
+      "dayStem": "癸",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "明堂",
+        "益後"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "甲申",
+      "dayStem": "甲",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "五富",
+        "續世"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "乙酉",
+      "dayStem": "乙",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "丙戌",
+      "dayStem": "丙",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "寶日",
+        "玉宇",
+        "解神",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "丁亥",
+      "dayStem": "丁",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "天倉",
+        "寶光",
+        "金堂",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "戊子",
+      "dayStem": "戊",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "天馬"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "己丑",
+      "dayStem": "己",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "六儀",
+        "専日",
+        "月恩",
+        "玉堂",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "庚寅",
+      "dayStem": "庚",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "啓安"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "辛卯",
+      "dayStem": "辛",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "普護",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "壬辰",
+      "dayStem": "壬",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "司命",
+        "福生",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "癸巳",
+      "dayStem": "癸",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "兵福"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "甲午",
+      "dayStem": "甲",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "寶日",
+        "聖心",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "乙未",
+      "dayStem": "乙",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "明堂",
+        "益後"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "丙申",
+      "dayStem": "丙",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "五富",
+        "續世"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "丁酉",
+      "dayStem": "丁",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "戊戌",
+      "dayStem": "戊",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "専日",
+        "玉宇",
+        "解神",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "己亥",
+      "dayStem": "己",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "天倉",
+        "寶光",
+        "月恩",
+        "金堂",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "庚子",
+      "dayStem": "庚",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "天馬",
+        "寶日"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "辛丑",
+      "dayStem": "辛",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "六儀",
+        "玉堂",
+        "義日",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "壬寅",
+      "dayStem": "壬",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "啓安",
+        "寶日"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "癸卯",
+      "dayStem": "癸",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "寶日",
+        "普護",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "甲辰",
+      "dayStem": "甲",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "司命",
+        "福生",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "乙巳",
+      "dayStem": "乙",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "兵福",
+        "寶日"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "丙午",
+      "dayStem": "丙",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "専日",
+        "聖心",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "丁未",
+      "dayStem": "丁",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "寶日",
+        "明堂",
+        "益後"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "戊申",
+      "dayStem": "戊",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "五富",
+        "寶日",
+        "續世"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "己酉",
+      "dayStem": "己",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "寶日",
+        "月恩",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "庚戌",
+      "dayStem": "庚",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "玉宇",
+        "義日",
+        "解神",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "辛亥",
+      "dayStem": "辛",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "天倉",
+        "寶光",
+        "寶日",
+        "金堂",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "壬子",
+      "dayStem": "壬",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "天馬",
+        "専日"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "癸丑",
+      "dayStem": "癸",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "六儀",
+        "玉堂",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "甲寅",
+      "dayStem": "甲",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "啓安",
+        "専日"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "乙卯",
+      "dayStem": "乙",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "専日",
+        "普護",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "丙辰",
+      "dayStem": "丙",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "司命",
+        "寶日",
+        "福生",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "丁巳",
+      "dayStem": "丁",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "兵福",
+        "専日"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "戊午",
+      "dayStem": "戊",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "義日",
+        "聖心",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "己未",
+      "dayStem": "己",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "専日",
+        "明堂",
+        "月恩",
+        "益後"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "庚申",
+      "dayStem": "庚",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "五富",
+        "専日",
+        "續世"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "辛酉",
+      "dayStem": "辛",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "専日",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "壬戌",
+      "dayStem": "壬",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "玉宇",
+        "解神",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "癸亥",
+      "dayStem": "癸",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "天倉",
+        "寶光",
+        "専日",
+        "金堂",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "甲子",
+      "dayStem": "甲",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "六儀",
+        "義日",
+        "解神",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "乙丑",
+      "dayStem": "乙",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "寶光",
+        "聖心",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "丙寅",
+      "dayStem": "丙",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "天馬",
+        "益後",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "丁卯",
+      "dayStem": "丁",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "玉堂",
+        "續世",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "戊辰",
+      "dayStem": "戊",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "専日",
+        "月恩",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "己巳",
+      "dayStem": "己",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "玉宇",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "庚午",
+      "dayStem": "庚",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "兵福",
+        "司命",
+        "金堂",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "辛未",
+      "dayStem": "辛",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "壬申",
+      "dayStem": "壬",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "義日",
+        "青龍",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "癸酉",
+      "dayStem": "癸",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "啓安",
+        "明堂",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "甲戌",
+      "dayStem": "甲",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "天倉",
+        "普護",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "乙亥",
+      "dayStem": "乙",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "五富",
+        "福生",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "丙子",
+      "dayStem": "丙",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "六儀",
+        "解神",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "丁丑",
+      "dayStem": "丁",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "寶光",
+        "寶日",
+        "聖心",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "戊寅",
+      "dayStem": "戊",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "天馬",
+        "月恩",
+        "益後"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "己卯",
+      "dayStem": "己",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "玉堂",
+        "續世"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "庚辰",
+      "dayStem": "庚",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "義日",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "辛巳",
+      "dayStem": "辛",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "玉宇"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "壬午",
+      "dayStem": "壬",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "兵福",
+        "司命",
+        "金堂",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "癸未",
+      "dayStem": "癸",
+      "dayBranch": "未",
+      "expectedKichijin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "甲申",
+      "dayStem": "甲",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "青龍",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "乙酉",
+      "dayStem": "乙",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "啓安",
+        "明堂"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "丙戌",
+      "dayStem": "丙",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "天倉",
+        "寶日",
+        "普護",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "丁亥",
+      "dayStem": "丁",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "五富",
+        "福生"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "戊子",
+      "dayStem": "戊",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "六儀",
+        "月恩",
+        "解神",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "己丑",
+      "dayStem": "己",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "寶光",
+        "専日",
+        "聖心",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "庚寅",
+      "dayStem": "庚",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "天馬",
+        "益後"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "辛卯",
+      "dayStem": "辛",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "玉堂",
+        "續世"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "壬辰",
+      "dayStem": "壬",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "癸巳",
+      "dayStem": "癸",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "玉宇"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "甲午",
+      "dayStem": "甲",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "兵福",
+        "司命",
+        "寶日",
+        "金堂",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "乙未",
+      "dayStem": "乙",
+      "dayBranch": "未",
+      "expectedKichijin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "丙申",
+      "dayStem": "丙",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "青龍",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "丁酉",
+      "dayStem": "丁",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "啓安",
+        "明堂"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "戊戌",
+      "dayStem": "戊",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "天倉",
+        "専日",
+        "普護",
+        "月恩",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "己亥",
+      "dayStem": "己",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "五富",
+        "福生"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "庚子",
+      "dayStem": "庚",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "六儀",
+        "寶日",
+        "解神",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "辛丑",
+      "dayStem": "辛",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "寶光",
+        "義日",
+        "聖心",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "壬寅",
+      "dayStem": "壬",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "天馬",
+        "寶日",
+        "益後"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "癸卯",
+      "dayStem": "癸",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "寶日",
+        "玉堂",
+        "續世"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "甲辰",
+      "dayStem": "甲",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "乙巳",
+      "dayStem": "乙",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "寶日",
+        "玉宇"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "丙午",
+      "dayStem": "丙",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "兵福",
+        "司命",
+        "専日",
+        "金堂",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "丁未",
+      "dayStem": "丁",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "寶日"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "戊申",
+      "dayStem": "戊",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "寶日",
+        "月恩",
+        "青龍",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "己酉",
+      "dayStem": "己",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "啓安",
+        "寶日",
+        "明堂"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "庚戌",
+      "dayStem": "庚",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "天倉",
+        "普護",
+        "義日",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "辛亥",
+      "dayStem": "辛",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "五富",
+        "寶日",
+        "福生"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "壬子",
+      "dayStem": "壬",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "六儀",
+        "専日",
+        "解神",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "癸丑",
+      "dayStem": "癸",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "寶光",
+        "聖心",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "甲寅",
+      "dayStem": "甲",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "天馬",
+        "専日",
+        "益後"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "乙卯",
+      "dayStem": "乙",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "専日",
+        "玉堂",
+        "續世"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "丙辰",
+      "dayStem": "丙",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "寶日",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "丁巳",
+      "dayStem": "丁",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "専日",
+        "玉宇"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "戊午",
+      "dayStem": "戊",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "兵福",
+        "司命",
+        "月恩",
+        "義日",
+        "金堂",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "己未",
+      "dayStem": "己",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "専日"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "庚申",
+      "dayStem": "庚",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "専日",
+        "青龍",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "辛酉",
+      "dayStem": "辛",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "啓安",
+        "専日",
+        "明堂"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "壬戌",
+      "dayStem": "壬",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "天倉",
+        "普護",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "癸亥",
+      "dayStem": "癸",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "五富",
+        "専日",
+        "福生"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "甲子",
+      "dayStem": "甲",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "義日",
+        "解神",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "乙丑",
+      "dayStem": "乙",
+      "dayBranch": "丑",
+      "expectedKichijin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "丙寅",
+      "dayStem": "丙",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "五富",
+        "義日",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "丁卯",
+      "dayStem": "丁",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "啓安",
+        "寶光",
+        "義日",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "戊辰",
+      "dayStem": "戊",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "天馬",
+        "専日",
+        "普護"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "己巳",
+      "dayStem": "己",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "玉堂",
+        "福生",
+        "義日",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "庚午",
+      "dayStem": "庚",
+      "dayBranch": "午",
+      "expectedKichijin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "辛未",
+      "dayStem": "辛",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "兵福",
+        "月恩",
+        "義日",
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "壬申",
+      "dayStem": "壬",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "司命",
+        "益後",
+        "義日",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "癸酉",
+      "dayStem": "癸",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "天倉",
+        "續世",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "甲戌",
+      "dayStem": "甲",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "要安",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "乙亥",
+      "dayStem": "乙",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "六儀",
+        "明堂",
+        "玉宇",
+        "義日",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "丙子",
+      "dayStem": "丙",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "解神",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "丁丑",
+      "dayStem": "丁",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "寶日"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "戊寅",
+      "dayStem": "戊",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "五富",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "己卯",
+      "dayStem": "己",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "啓安",
+        "寶光",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "庚辰",
+      "dayStem": "庚",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "天馬",
+        "普護",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "辛巳",
+      "dayStem": "辛",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "月恩",
+        "玉堂",
+        "福生",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "壬午",
+      "dayStem": "壬",
+      "dayBranch": "午",
+      "expectedKichijin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "癸未",
+      "dayStem": "癸",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "兵福",
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "甲申",
+      "dayStem": "甲",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "司命",
+        "益後",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "乙酉",
+      "dayStem": "乙",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "天倉",
+        "續世"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "丙戌",
+      "dayStem": "丙",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "寶日",
+        "要安",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "丁亥",
+      "dayStem": "丁",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "六儀",
+        "明堂",
+        "玉宇",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "戊子",
+      "dayStem": "戊",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "解神",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "己丑",
+      "dayStem": "己",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "専日"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "庚寅",
+      "dayStem": "庚",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "五富",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "辛卯",
+      "dayStem": "辛",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "啓安",
+        "寶光",
+        "月恩",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "壬辰",
+      "dayStem": "壬",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "天馬",
+        "普護"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "癸巳",
+      "dayStem": "癸",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "玉堂",
+        "福生",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "甲午",
+      "dayStem": "甲",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "寶日"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "乙未",
+      "dayStem": "乙",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "兵福",
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "丙申",
+      "dayStem": "丙",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "司命",
+        "益後",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "丁酉",
+      "dayStem": "丁",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "天倉",
+        "續世"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "戊戌",
+      "dayStem": "戊",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "専日",
+        "要安",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "己亥",
+      "dayStem": "己",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "六儀",
+        "明堂",
+        "玉宇",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "庚子",
+      "dayStem": "庚",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "寶日",
+        "解神",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "辛丑",
+      "dayStem": "辛",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "月恩",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "壬寅",
+      "dayStem": "壬",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "五富",
+        "寶日",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "癸卯",
+      "dayStem": "癸",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "啓安",
+        "寶光",
+        "寶日",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "甲辰",
+      "dayStem": "甲",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "天馬",
+        "普護"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "乙巳",
+      "dayStem": "乙",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "寶日",
+        "玉堂",
+        "福生",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "丙午",
+      "dayStem": "丙",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "専日"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "丁未",
+      "dayStem": "丁",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "兵福",
+        "寶日",
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "戊申",
+      "dayStem": "戊",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "司命",
+        "寶日",
+        "益後",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "己酉",
+      "dayStem": "己",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "天倉",
+        "寶日",
+        "續世"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "庚戌",
+      "dayStem": "庚",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "義日",
+        "要安",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "辛亥",
+      "dayStem": "辛",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "六儀",
+        "寶日",
+        "明堂",
+        "月恩",
+        "玉宇",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "壬子",
+      "dayStem": "壬",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "専日",
+        "解神",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "癸丑",
+      "dayStem": "癸",
+      "dayBranch": "丑",
+      "expectedKichijin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "甲寅",
+      "dayStem": "甲",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "五富",
+        "専日",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "乙卯",
+      "dayStem": "乙",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "啓安",
+        "寶光",
+        "専日",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "丙辰",
+      "dayStem": "丙",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "天馬",
+        "寶日",
+        "普護"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "丁巳",
+      "dayStem": "丁",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "専日",
+        "玉堂",
+        "福生",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "戊午",
+      "dayStem": "戊",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "己未",
+      "dayStem": "己",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "兵福",
+        "専日",
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "庚申",
+      "dayStem": "庚",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "司命",
+        "専日",
+        "益後",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "辛酉",
+      "dayStem": "辛",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "天倉",
+        "専日",
+        "月恩",
+        "續世"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "壬戌",
+      "dayStem": "壬",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "要安",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "癸亥",
+      "dayStem": "癸",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "六儀",
+        "専日",
+        "明堂",
+        "玉宇",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "甲子",
+      "dayStem": "甲",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "福生",
+        "義日",
+        "臨日",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "乙丑",
+      "dayStem": "乙",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "明堂"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "丙寅",
+      "dayStem": "丙",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "義日",
+        "聖心",
+        "解神",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "丁卯",
+      "dayStem": "丁",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "益後",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "戊辰",
+      "dayStem": "戊",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "専日",
+        "續世",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "己巳",
+      "dayStem": "己",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "五富",
+        "寶光",
+        "義日",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "庚午",
+      "dayStem": "庚",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "天馬",
+        "玉宇"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "辛未",
+      "dayStem": "辛",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "玉堂",
+        "義日",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "壬申",
+      "dayStem": "壬",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "兵福",
+        "天倉",
+        "月恩",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "癸酉",
+      "dayStem": "癸",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "義日",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "甲戌",
+      "dayStem": "甲",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "六儀",
+        "司命",
+        "啓安",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "乙亥",
+      "dayStem": "乙",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "普護",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "丙子",
+      "dayStem": "丙",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "福生",
+        "臨日",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "丁丑",
+      "dayStem": "丁",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "寶日",
+        "明堂"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "戊寅",
+      "dayStem": "戊",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "聖心",
+        "解神",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "己卯",
+      "dayStem": "己",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "益後"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "庚辰",
+      "dayStem": "庚",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "續世",
+        "義日",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "辛巳",
+      "dayStem": "辛",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "五富",
+        "寶光",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "壬午",
+      "dayStem": "壬",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "天馬",
+        "月恩",
+        "玉宇"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "癸未",
+      "dayStem": "癸",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "玉堂",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "甲申",
+      "dayStem": "甲",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "兵福",
+        "天倉"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "乙酉",
+      "dayStem": "乙",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "丙戌",
+      "dayStem": "丙",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "六儀",
+        "司命",
+        "啓安",
+        "寶日",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "丁亥",
+      "dayStem": "丁",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "普護"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "戊子",
+      "dayStem": "戊",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "福生",
+        "臨日",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "己丑",
+      "dayStem": "己",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "専日",
+        "明堂"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "庚寅",
+      "dayStem": "庚",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "聖心",
+        "解神",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "辛卯",
+      "dayStem": "辛",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "益後"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "壬辰",
+      "dayStem": "壬",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "月恩",
+        "續世",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "癸巳",
+      "dayStem": "癸",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "五富",
+        "寶光",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "甲午",
+      "dayStem": "甲",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "天馬",
+        "寶日",
+        "玉宇"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "乙未",
+      "dayStem": "乙",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "玉堂",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "丙申",
+      "dayStem": "丙",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "兵福",
+        "天倉"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "丁酉",
+      "dayStem": "丁",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "戊戌",
+      "dayStem": "戊",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "六儀",
+        "司命",
+        "啓安",
+        "専日",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "己亥",
+      "dayStem": "己",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "普護"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "庚子",
+      "dayStem": "庚",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "寶日",
+        "福生",
+        "臨日",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "辛丑",
+      "dayStem": "辛",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "明堂",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "壬寅",
+      "dayStem": "壬",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "寶日",
+        "月恩",
+        "聖心",
+        "解神",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "癸卯",
+      "dayStem": "癸",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "寶日",
+        "益後"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "甲辰",
+      "dayStem": "甲",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "續世",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "乙巳",
+      "dayStem": "乙",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "五富",
+        "寶光",
+        "寶日",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "丙午",
+      "dayStem": "丙",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "天馬",
+        "専日",
+        "玉宇"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "丁未",
+      "dayStem": "丁",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "寶日",
+        "玉堂",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "戊申",
+      "dayStem": "戊",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "兵福",
+        "天倉",
+        "寶日"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "己酉",
+      "dayStem": "己",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "寶日",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "庚戌",
+      "dayStem": "庚",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "六儀",
+        "司命",
+        "啓安",
+        "義日",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "辛亥",
+      "dayStem": "辛",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "寶日",
+        "普護"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "壬子",
+      "dayStem": "壬",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "専日",
+        "月恩",
+        "福生",
+        "臨日",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "癸丑",
+      "dayStem": "癸",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "明堂"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "甲寅",
+      "dayStem": "甲",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "専日",
+        "聖心",
+        "解神",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "乙卯",
+      "dayStem": "乙",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "専日",
+        "益後"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "丙辰",
+      "dayStem": "丙",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "寶日",
+        "續世",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "丁巳",
+      "dayStem": "丁",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "五富",
+        "寶光",
+        "専日",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "戊午",
+      "dayStem": "戊",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "天馬",
+        "玉宇",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "己未",
+      "dayStem": "己",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "専日",
+        "玉堂",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "庚申",
+      "dayStem": "庚",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "兵福",
+        "天倉",
+        "専日"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "辛酉",
+      "dayStem": "辛",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "専日",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "壬戌",
+      "dayStem": "壬",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "六儀",
+        "司命",
+        "啓安",
+        "月恩",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "癸亥",
+      "dayStem": "癸",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "専日",
+        "普護"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "甲子",
+      "dayStem": "甲",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "司命",
+        "玉宇",
+        "義日",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "乙丑",
+      "dayStem": "乙",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "丙寅",
+      "dayStem": "丙",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "義日",
+        "解神",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "丁卯",
+      "dayStem": "丁",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "明堂",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "戊辰",
+      "dayStem": "戊",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "啓安",
+        "専日"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "己巳",
+      "dayStem": "己",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "普護",
+        "義日",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "庚午",
+      "dayStem": "庚",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "福生",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "辛未",
+      "dayStem": "辛",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "天倉",
+        "寶光",
+        "義日",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "壬申",
+      "dayStem": "壬",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "五富",
+        "天馬",
+        "義日",
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "癸酉",
+      "dayStem": "癸",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "六儀",
+        "兵福",
+        "月恩",
+        "玉堂",
+        "益後",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "甲戌",
+      "dayStem": "甲",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "續世"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "乙亥",
+      "dayStem": "乙",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "義日",
+        "要安",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "丙子",
+      "dayStem": "丙",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "司命",
+        "玉宇",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "丁丑",
+      "dayStem": "丁",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "寶日",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "戊寅",
+      "dayStem": "戊",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "解神",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "己卯",
+      "dayStem": "己",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "明堂"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "庚辰",
+      "dayStem": "庚",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "啓安",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "辛巳",
+      "dayStem": "辛",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "普護",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "壬午",
+      "dayStem": "壬",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "福生",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "癸未",
+      "dayStem": "癸",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "天倉",
+        "寶光",
+        "月恩",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "甲申",
+      "dayStem": "甲",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "五富",
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "乙酉",
+      "dayStem": "乙",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "六儀",
+        "兵福",
+        "玉堂",
+        "益後"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "丙戌",
+      "dayStem": "丙",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "寶日",
+        "續世"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "丁亥",
+      "dayStem": "丁",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "要安",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "戊子",
+      "dayStem": "戊",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "司命",
+        "玉宇",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "己丑",
+      "dayStem": "己",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "専日",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "庚寅",
+      "dayStem": "庚",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "解神",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "辛卯",
+      "dayStem": "辛",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "明堂"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "壬辰",
+      "dayStem": "壬",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "啓安"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "癸巳",
+      "dayStem": "癸",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "普護",
+        "月恩",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "甲午",
+      "dayStem": "甲",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "寶日",
+        "福生",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "乙未",
+      "dayStem": "乙",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "天倉",
+        "寶光",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "丙申",
+      "dayStem": "丙",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "五富",
+        "天馬",
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "丁酉",
+      "dayStem": "丁",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "六儀",
+        "兵福",
+        "玉堂",
+        "益後"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "戊戌",
+      "dayStem": "戊",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "専日",
+        "續世"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "己亥",
+      "dayStem": "己",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "要安",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "庚子",
+      "dayStem": "庚",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "司命",
+        "寶日",
+        "玉宇",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "辛丑",
+      "dayStem": "辛",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "義日",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "壬寅",
+      "dayStem": "壬",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "寶日",
+        "解神",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "癸卯",
+      "dayStem": "癸",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "寶日",
+        "明堂",
+        "月恩"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "甲辰",
+      "dayStem": "甲",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "啓安"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "乙巳",
+      "dayStem": "乙",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "寶日",
+        "普護",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "丙午",
+      "dayStem": "丙",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "専日",
+        "福生",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "丁未",
+      "dayStem": "丁",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "天倉",
+        "寶光",
+        "寶日",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "戊申",
+      "dayStem": "戊",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "五富",
+        "天馬",
+        "寶日",
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "己酉",
+      "dayStem": "己",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "六儀",
+        "兵福",
+        "寶日",
+        "玉堂",
+        "益後"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "庚戌",
+      "dayStem": "庚",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "續世",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "辛亥",
+      "dayStem": "辛",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "寶日",
+        "要安",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "壬子",
+      "dayStem": "壬",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "司命",
+        "専日",
+        "玉宇",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "癸丑",
+      "dayStem": "癸",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "月恩",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "甲寅",
+      "dayStem": "甲",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "専日",
+        "解神",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "乙卯",
+      "dayStem": "乙",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "専日",
+        "明堂"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "丙辰",
+      "dayStem": "丙",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "啓安",
+        "寶日"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "丁巳",
+      "dayStem": "丁",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "専日",
+        "普護",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "戊午",
+      "dayStem": "戊",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "福生",
+        "義日",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "己未",
+      "dayStem": "己",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "天倉",
+        "寶光",
+        "専日",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "庚申",
+      "dayStem": "庚",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "五富",
+        "天馬",
+        "専日",
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "辛酉",
+      "dayStem": "辛",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "六儀",
+        "兵福",
+        "専日",
+        "玉堂",
+        "益後"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "壬戌",
+      "dayStem": "壬",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "續世"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "癸亥",
+      "dayStem": "癸",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "専日",
+        "月恩",
+        "要安",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "甲子",
+      "dayStem": "甲",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "普護",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "乙丑",
+      "dayStem": "乙",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "福生"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "丙寅",
+      "dayStem": "丙",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "司命",
+        "義日",
+        "臨日",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "丁卯",
+      "dayStem": "丁",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "義日",
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "戊辰",
+      "dayStem": "戊",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "専日",
+        "益後",
+        "解神",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "己巳",
+      "dayStem": "己",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "明堂",
+        "續世",
+        "義日",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "庚午",
+      "dayStem": "庚",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "天倉",
+        "月恩",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "辛未",
+      "dayStem": "辛",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "玉宇",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "壬申",
+      "dayStem": "壬",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "六儀",
+        "義日",
+        "金匱",
+        "金堂",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "癸酉",
+      "dayStem": "癸",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "寶光",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "甲戌",
+      "dayStem": "甲",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "兵福",
+        "天馬"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "乙亥",
+      "dayStem": "乙",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "五富",
+        "啓安",
+        "玉堂",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "丙子",
+      "dayStem": "丙",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "普護"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "丁丑",
+      "dayStem": "丁",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "寶日",
+        "福生"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "戊寅",
+      "dayStem": "戊",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "司命",
+        "臨日",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "己卯",
+      "dayStem": "己",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "庚辰",
+      "dayStem": "庚",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "月恩",
+        "益後",
+        "義日",
+        "解神",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "辛巳",
+      "dayStem": "辛",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "明堂",
+        "續世",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "壬午",
+      "dayStem": "壬",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "天倉",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "癸未",
+      "dayStem": "癸",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "玉宇"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "甲申",
+      "dayStem": "甲",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "六儀",
+        "金匱",
+        "金堂",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "乙酉",
+      "dayStem": "乙",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "寶光"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "丙戌",
+      "dayStem": "丙",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "兵福",
+        "天馬",
+        "寶日"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "丁亥",
+      "dayStem": "丁",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "五富",
+        "啓安",
+        "玉堂"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "戊子",
+      "dayStem": "戊",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "普護"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "己丑",
+      "dayStem": "己",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "専日",
+        "福生"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "庚寅",
+      "dayStem": "庚",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "司命",
+        "月恩",
+        "臨日",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "辛卯",
+      "dayStem": "辛",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "壬辰",
+      "dayStem": "壬",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "益後",
+        "解神",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "癸巳",
+      "dayStem": "癸",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "明堂",
+        "續世",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "甲午",
+      "dayStem": "甲",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "天倉",
+        "寶日",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "乙未",
+      "dayStem": "乙",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "玉宇"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "丙申",
+      "dayStem": "丙",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "六儀",
+        "金匱",
+        "金堂",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "丁酉",
+      "dayStem": "丁",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "寶光"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "戊戌",
+      "dayStem": "戊",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "兵福",
+        "天馬",
+        "専日"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "己亥",
+      "dayStem": "己",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "五富",
+        "啓安",
+        "玉堂"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "庚子",
+      "dayStem": "庚",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "寶日",
+        "普護",
+        "月恩"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "辛丑",
+      "dayStem": "辛",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "福生",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "壬寅",
+      "dayStem": "壬",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "司命",
+        "寶日",
+        "臨日",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "癸卯",
+      "dayStem": "癸",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "寶日",
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "甲辰",
+      "dayStem": "甲",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "益後",
+        "解神",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "乙巳",
+      "dayStem": "乙",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "寶日",
+        "明堂",
+        "續世",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "丙午",
+      "dayStem": "丙",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "天倉",
+        "専日",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "丁未",
+      "dayStem": "丁",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "寶日",
+        "玉宇"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "戊申",
+      "dayStem": "戊",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "六儀",
+        "寶日",
+        "金匱",
+        "金堂",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "己酉",
+      "dayStem": "己",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "寶光",
+        "寶日"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "庚戌",
+      "dayStem": "庚",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "兵福",
+        "天馬",
+        "月恩",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "辛亥",
+      "dayStem": "辛",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "五富",
+        "啓安",
+        "寶日",
+        "玉堂"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "壬子",
+      "dayStem": "壬",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "専日",
+        "普護"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "癸丑",
+      "dayStem": "癸",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "福生"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "甲寅",
+      "dayStem": "甲",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "司命",
+        "専日",
+        "臨日",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "乙卯",
+      "dayStem": "乙",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "専日",
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "丙辰",
+      "dayStem": "丙",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "寶日",
+        "益後",
+        "解神",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "丁巳",
+      "dayStem": "丁",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "専日",
+        "明堂",
+        "續世",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "戊午",
+      "dayStem": "戊",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "天倉",
+        "義日",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "己未",
+      "dayStem": "己",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "専日",
+        "玉宇"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "庚申",
+      "dayStem": "庚",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "六儀",
+        "専日",
+        "月恩",
+        "金匱",
+        "金堂",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "辛酉",
+      "dayStem": "辛",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "寶光",
+        "専日"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "壬戌",
+      "dayStem": "壬",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "兵福",
+        "天馬"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "癸亥",
+      "dayStem": "癸",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "五富",
+        "啓安",
+        "専日",
+        "玉堂"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "甲子",
+      "dayStem": "甲",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "天馬",
+        "義日",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "乙丑",
+      "dayStem": "乙",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "月恩",
+        "玉堂",
+        "玉宇"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "丙寅",
+      "dayStem": "丙",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "五富",
+        "義日",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "丁卯",
+      "dayStem": "丁",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "義日",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "戊辰",
+      "dayStem": "戊",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "司命",
+        "専日",
+        "解神",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "己巳",
+      "dayStem": "己",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "啓安",
+        "天倉",
+        "義日",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "庚午",
+      "dayStem": "庚",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "普護",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "辛未",
+      "dayStem": "辛",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "六儀",
+        "明堂",
+        "福生",
+        "義日",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "壬申",
+      "dayStem": "壬",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "癸酉",
+      "dayStem": "癸",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "義日",
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "甲戌",
+      "dayStem": "甲",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "益後",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "乙亥",
+      "dayStem": "乙",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "兵福",
+        "寶光",
+        "月恩",
+        "續世",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "丙子",
+      "dayStem": "丙",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "天馬",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "丁丑",
+      "dayStem": "丁",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "寶日",
+        "玉堂",
+        "玉宇"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "戊寅",
+      "dayStem": "戊",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "五富",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "己卯",
+      "dayStem": "己",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "庚辰",
+      "dayStem": "庚",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "司命",
+        "義日",
+        "解神",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "辛巳",
+      "dayStem": "辛",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "啓安",
+        "天倉",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "壬午",
+      "dayStem": "壬",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "普護",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "癸未",
+      "dayStem": "癸",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "六儀",
+        "明堂",
+        "福生",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "甲申",
+      "dayStem": "甲",
+      "dayBranch": "申",
+      "expectedKichijin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "乙酉",
+      "dayStem": "乙",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "月恩",
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "丙戌",
+      "dayStem": "丙",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "寶日",
+        "益後",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "丁亥",
+      "dayStem": "丁",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "兵福",
+        "寶光",
+        "續世"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "戊子",
+      "dayStem": "戊",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "天馬",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "己丑",
+      "dayStem": "己",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "専日",
+        "玉堂",
+        "玉宇"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "庚寅",
+      "dayStem": "庚",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "五富",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "辛卯",
+      "dayStem": "辛",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "壬辰",
+      "dayStem": "壬",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "司命",
+        "解神",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "癸巳",
+      "dayStem": "癸",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "啓安",
+        "天倉",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "甲午",
+      "dayStem": "甲",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "寶日",
+        "普護",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "乙未",
+      "dayStem": "乙",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "六儀",
+        "明堂",
+        "月恩",
+        "福生",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "丙申",
+      "dayStem": "丙",
+      "dayBranch": "申",
+      "expectedKichijin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "丁酉",
+      "dayStem": "丁",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "戊戌",
+      "dayStem": "戊",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "専日",
+        "益後",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "己亥",
+      "dayStem": "己",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "兵福",
+        "寶光",
+        "續世"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "庚子",
+      "dayStem": "庚",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "天馬",
+        "寶日",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "辛丑",
+      "dayStem": "辛",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "玉堂",
+        "玉宇",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "壬寅",
+      "dayStem": "壬",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "五富",
+        "寶日",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "癸卯",
+      "dayStem": "癸",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "寶日",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "甲辰",
+      "dayStem": "甲",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "司命",
+        "解神",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "乙巳",
+      "dayStem": "乙",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "啓安",
+        "天倉",
+        "寶日",
+        "月恩",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "丙午",
+      "dayStem": "丙",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "専日",
+        "普護",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "丁未",
+      "dayStem": "丁",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "六儀",
+        "寶日",
+        "明堂",
+        "福生",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "戊申",
+      "dayStem": "戊",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "寶日"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "己酉",
+      "dayStem": "己",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "寶日",
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "庚戌",
+      "dayStem": "庚",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "益後",
+        "義日",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "辛亥",
+      "dayStem": "辛",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "兵福",
+        "寶光",
+        "寶日",
+        "續世"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "壬子",
+      "dayStem": "壬",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "天馬",
+        "専日",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "癸丑",
+      "dayStem": "癸",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "玉堂",
+        "玉宇"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "甲寅",
+      "dayStem": "甲",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "五富",
+        "専日",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "乙卯",
+      "dayStem": "乙",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "専日",
+        "月恩",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "丙辰",
+      "dayStem": "丙",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "司命",
+        "寶日",
+        "解神",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "丁巳",
+      "dayStem": "丁",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "啓安",
+        "天倉",
+        "専日",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "戊午",
+      "dayStem": "戊",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "普護",
+        "義日",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "己未",
+      "dayStem": "己",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "六儀",
+        "専日",
+        "明堂",
+        "福生",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "庚申",
+      "dayStem": "庚",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "専日"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "辛酉",
+      "dayStem": "辛",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "専日",
+        "聖心"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "壬戌",
+      "dayStem": "壬",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "益後",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "癸亥",
+      "dayStem": "癸",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "兵福",
+        "寶光",
+        "専日",
+        "續世"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "甲子",
+      "dayStem": "甲",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "兵福",
+        "啓安",
+        "月恩",
+        "義日",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "乙丑",
+      "dayStem": "乙",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "寶光",
+        "普護",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "丙寅",
+      "dayStem": "丙",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "天馬",
+        "福生",
+        "義日",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "丁卯",
+      "dayStem": "丁",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "玉堂",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "戊辰",
+      "dayStem": "戊",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "天倉",
+        "専日",
+        "聖心",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "己巳",
+      "dayStem": "己",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "五富",
+        "益後",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "庚午",
+      "dayStem": "庚",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "六儀",
+        "司命",
+        "續世",
+        "解神",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "辛未",
+      "dayStem": "辛",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "義日",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "壬申",
+      "dayStem": "壬",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "玉宇",
+        "義日",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "癸酉",
+      "dayStem": "癸",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "明堂",
+        "義日",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "甲戌",
+      "dayStem": "甲",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "月恩"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "乙亥",
+      "dayStem": "乙",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "丙子",
+      "dayStem": "丙",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "兵福",
+        "啓安",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "丁丑",
+      "dayStem": "丁",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "寶光",
+        "寶日",
+        "普護",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "戊寅",
+      "dayStem": "戊",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "天馬",
+        "福生",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "己卯",
+      "dayStem": "己",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "玉堂"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "庚辰",
+      "dayStem": "庚",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "天倉",
+        "義日",
+        "聖心",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "辛巳",
+      "dayStem": "辛",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "五富",
+        "益後"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "壬午",
+      "dayStem": "壬",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "六儀",
+        "司命",
+        "續世",
+        "解神",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "癸未",
+      "dayStem": "癸",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "甲申",
+      "dayStem": "甲",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "月恩",
+        "玉宇",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "乙酉",
+      "dayStem": "乙",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "明堂",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "丙戌",
+      "dayStem": "丙",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "寶日"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "丁亥",
+      "dayStem": "丁",
+      "dayBranch": "亥",
+      "expectedKichijin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "戊子",
+      "dayStem": "戊",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "兵福",
+        "啓安",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "己丑",
+      "dayStem": "己",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "寶光",
+        "専日",
+        "普護",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "庚寅",
+      "dayStem": "庚",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "天馬",
+        "福生",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "辛卯",
+      "dayStem": "辛",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "玉堂"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "壬辰",
+      "dayStem": "壬",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "天倉",
+        "聖心",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "癸巳",
+      "dayStem": "癸",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "五富",
+        "益後"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "甲午",
+      "dayStem": "甲",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "六儀",
+        "司命",
+        "寶日",
+        "月恩",
+        "續世",
+        "解神",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "乙未",
+      "dayStem": "乙",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "丙申",
+      "dayStem": "丙",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "玉宇",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "丁酉",
+      "dayStem": "丁",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "明堂",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "戊戌",
+      "dayStem": "戊",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "専日"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "己亥",
+      "dayStem": "己",
+      "dayBranch": "亥",
+      "expectedKichijin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "庚子",
+      "dayStem": "庚",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "兵福",
+        "啓安",
+        "寶日",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "辛丑",
+      "dayStem": "辛",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "寶光",
+        "普護",
+        "義日",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "壬寅",
+      "dayStem": "壬",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "天馬",
+        "寶日",
+        "福生",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "癸卯",
+      "dayStem": "癸",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "寶日",
+        "玉堂"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "甲辰",
+      "dayStem": "甲",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "天倉",
+        "月恩",
+        "聖心",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "乙巳",
+      "dayStem": "乙",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "五富",
+        "寶日",
+        "益後"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "丙午",
+      "dayStem": "丙",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "六儀",
+        "司命",
+        "専日",
+        "續世",
+        "解神",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "丁未",
+      "dayStem": "丁",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "寶日",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "戊申",
+      "dayStem": "戊",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "寶日",
+        "玉宇",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "己酉",
+      "dayStem": "己",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "寶日",
+        "明堂",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "庚戌",
+      "dayStem": "庚",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "辛亥",
+      "dayStem": "辛",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "寶日"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "壬子",
+      "dayStem": "壬",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "兵福",
+        "啓安",
+        "専日",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "癸丑",
+      "dayStem": "癸",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "寶光",
+        "普護",
+        "陰徳"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "甲寅",
+      "dayStem": "甲",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "天馬",
+        "専日",
+        "月恩",
+        "福生",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "乙卯",
+      "dayStem": "乙",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "専日",
+        "玉堂"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "丙辰",
+      "dayStem": "丙",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "天倉",
+        "寶日",
+        "聖心",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "丁巳",
+      "dayStem": "丁",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "五富",
+        "専日",
+        "益後"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "戊午",
+      "dayStem": "戊",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "六儀",
+        "司命",
+        "續世",
+        "義日",
+        "解神",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "己未",
+      "dayStem": "己",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "専日",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "庚申",
+      "dayStem": "庚",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "専日",
+        "玉宇",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "辛酉",
+      "dayStem": "辛",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "専日",
+        "明堂",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "壬戌",
+      "dayStem": "壬",
+      "dayBranch": "戌",
+      "expectedKichijin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "癸亥",
+      "dayStem": "癸",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "専日"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "甲子",
+      "dayStem": "甲",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "續世",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "乙丑",
+      "dayStem": "乙",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "兵福",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "丙寅",
+      "dayStem": "丙",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "玉宇",
+        "義日",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "丁卯",
+      "dayStem": "丁",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "天倉",
+        "寶光",
+        "義日",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "戊辰",
+      "dayStem": "戊",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "天馬",
+        "専日"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "己巳",
+      "dayStem": "己",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "六儀",
+        "玉堂",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "庚午",
+      "dayStem": "庚",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "啓安",
+        "解神"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "辛未",
+      "dayStem": "辛",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "普護",
+        "月恩",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "壬申",
+      "dayStem": "壬",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "五富",
+        "司命",
+        "福生",
+        "義日",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "癸酉",
+      "dayStem": "癸",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "義日",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "甲戌",
+      "dayStem": "甲",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "聖心",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "乙亥",
+      "dayStem": "乙",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "明堂",
+        "益後",
+        "義日",
+        "陰徳",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "丙子",
+      "dayStem": "丙",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "續世"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "丁丑",
+      "dayStem": "丁",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "兵福",
+        "寶日",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "戊寅",
+      "dayStem": "戊",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "玉宇",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "己卯",
+      "dayStem": "己",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "天倉",
+        "寶光",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "庚辰",
+      "dayStem": "庚",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "天馬",
+        "義日"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "辛巳",
+      "dayStem": "辛",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "六儀",
+        "月恩",
+        "玉堂"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "壬午",
+      "dayStem": "壬",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "啓安",
+        "解神"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "癸未",
+      "dayStem": "癸",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "普護"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "甲申",
+      "dayStem": "甲",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "五富",
+        "司命",
+        "福生",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "乙酉",
+      "dayStem": "乙",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "丙戌",
+      "dayStem": "丙",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "寶日",
+        "聖心",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "丁亥",
+      "dayStem": "丁",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "明堂",
+        "益後",
+        "陰徳",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "戊子",
+      "dayStem": "戊",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "續世"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "己丑",
+      "dayStem": "己",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "兵福",
+        "専日",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "庚寅",
+      "dayStem": "庚",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "玉宇",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "辛卯",
+      "dayStem": "辛",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "天倉",
+        "寶光",
+        "月恩",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "壬辰",
+      "dayStem": "壬",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "天馬"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "癸巳",
+      "dayStem": "癸",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "六儀",
+        "玉堂"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "甲午",
+      "dayStem": "甲",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "啓安",
+        "寶日",
+        "解神"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "乙未",
+      "dayStem": "乙",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "普護"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "丙申",
+      "dayStem": "丙",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "五富",
+        "司命",
+        "福生",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "丁酉",
+      "dayStem": "丁",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "戊戌",
+      "dayStem": "戊",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "専日",
+        "聖心",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "己亥",
+      "dayStem": "己",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "明堂",
+        "益後",
+        "陰徳",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "庚子",
+      "dayStem": "庚",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "寶日",
+        "續世"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "辛丑",
+      "dayStem": "辛",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "兵福",
+        "月恩",
+        "義日",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "壬寅",
+      "dayStem": "壬",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "寶日",
+        "玉宇",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "癸卯",
+      "dayStem": "癸",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "天倉",
+        "寶光",
+        "寶日",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "甲辰",
+      "dayStem": "甲",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "天馬"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "乙巳",
+      "dayStem": "乙",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "六儀",
+        "寶日",
+        "玉堂"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "丙午",
+      "dayStem": "丙",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "啓安",
+        "専日",
+        "解神"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "丁未",
+      "dayStem": "丁",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "寶日",
+        "普護"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "戊申",
+      "dayStem": "戊",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "五富",
+        "司命",
+        "寶日",
+        "福生",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "己酉",
+      "dayStem": "己",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "寶日",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "庚戌",
+      "dayStem": "庚",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "義日",
+        "聖心",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "辛亥",
+      "dayStem": "辛",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "寶日",
+        "明堂",
+        "月恩",
+        "益後",
+        "陰徳",
+        "驛馬"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "壬子",
+      "dayStem": "壬",
+      "dayBranch": "子",
+      "expectedKichijin": [
+        "専日",
+        "續世"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "癸丑",
+      "dayStem": "癸",
+      "dayBranch": "丑",
+      "expectedKichijin": [
+        "兵福",
+        "要安"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "甲寅",
+      "dayStem": "甲",
+      "dayBranch": "寅",
+      "expectedKichijin": [
+        "専日",
+        "玉宇",
+        "金匱"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "乙卯",
+      "dayStem": "乙",
+      "dayBranch": "卯",
+      "expectedKichijin": [
+        "天倉",
+        "寶光",
+        "専日",
+        "金堂"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "丙辰",
+      "dayStem": "丙",
+      "dayBranch": "辰",
+      "expectedKichijin": [
+        "天馬",
+        "寶日"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "丁巳",
+      "dayStem": "丁",
+      "dayBranch": "巳",
+      "expectedKichijin": [
+        "六儀",
+        "専日",
+        "玉堂"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "戊午",
+      "dayStem": "戊",
+      "dayBranch": "午",
+      "expectedKichijin": [
+        "啓安",
+        "義日",
+        "解神"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "己未",
+      "dayStem": "己",
+      "dayBranch": "未",
+      "expectedKichijin": [
+        "専日",
+        "普護"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "庚申",
+      "dayStem": "庚",
+      "dayBranch": "申",
+      "expectedKichijin": [
+        "五富",
+        "司命",
+        "専日",
+        "福生",
+        "陽徳"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "辛酉",
+      "dayStem": "辛",
+      "dayBranch": "酉",
+      "expectedKichijin": [
+        "専日",
+        "月恩",
+        "臨日"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "壬戌",
+      "dayStem": "壬",
+      "dayBranch": "戌",
+      "expectedKichijin": [
+        "聖心",
+        "青龍"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "癸亥",
+      "dayStem": "癸",
+      "dayBranch": "亥",
+      "expectedKichijin": [
+        "専日",
+        "明堂",
+        "益後",
+        "陰徳",
+        "驛馬"
+      ]
+    }
+  ]
+}

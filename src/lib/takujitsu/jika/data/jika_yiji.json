@@ -1,0 +1,1717 @@
+{
+  "schema_version": 1,
+  "source_policy": "docs/source/時家吉凶.pdf 最終ページ「時家吉神析義」「時家凶神註解」のみを根拠とする。一般的な擇日理論・他流派・ネット情報からの補完は行っていない。",
+  "verification_doc": "docs/takujitsu_jika_yiji_master.md",
+  "design_note": "1行＝1(神殺グループ, 方向, 用事語)。同一グループに複数の用事語がある場合はrawText・shinsatsuを共有する複数行として保持し、原典の「複数神殺共通記述」という関係を分解せずに表現する。",
+  "groups": {
+    "yi": [
+      {
+        "column": "吉神列1",
+        "names": [
+          "長生",
+          "帝旺"
+        ],
+        "rawText": "宜求嗣嫁娶移徙入宅開市交易造葬修作宜事吉",
+        "confidence": "高"
+      },
+      {
+        "column": "吉神列2",
+        "names": [
+          "馬元",
+          "驛馬",
+          "祿元"
+        ],
+        "rawText": "宜上官出行求財見貴嫁娶入宅開市造葬宜事吉",
+        "confidence": "高"
+      },
+      {
+        "column": "吉神列3",
+        "names": [
+          "六合",
+          "五合",
+          "喜神"
+        ],
+        "rawText": "宜祈福求嗣婚娶六禮出行求財開市交易安床…",
+        "confidence": "中"
+      },
+      {
+        "column": "吉神列4",
+        "names": [
+          "三合",
+          "羅天大進"
+        ],
+        "rawText": "宜祈福求嗣婚娶修造宅開市交易造葬宜事…",
+        "confidence": "中"
+      },
+      {
+        "column": "吉神列5",
+        "names": [
+          "羅紋",
+          "祿貴",
+          "交馳"
+        ],
+        "rawText": "及進祿進貴宜祈福…出行求財婚娶進葬俱吉…",
+        "confidence": "高"
+      },
+      {
+        "column": "吉神列6",
+        "names": [
+          "陰陽喜人",
+          "天乙喜人"
+        ],
+        "rawText": "貴婚娶修作造葬宜事吉",
+        "confidence": "中"
+      },
+      {
+        "column": "吉神列7",
+        "names": [
+          "福星貴人"
+        ],
+        "rawText": "宜祭祀祈福酬神婚娶行求財入宅造葬宜事吉",
+        "confidence": "高"
+      },
+      {
+        "column": "吉神列8",
+        "names": [
+          "天官貴人"
+        ],
+        "rawText": "舉出行求財見貴宜事宜祭祀祈福酬神上官赴任",
+        "confidence": "中〜高"
+      },
+      {
+        "column": "吉神列9",
+        "names": [
+          "太陰吉時"
+        ],
+        "rawText": "佐理太陽值太陰日、制九良星、小兒殺、安葬、修作、吉",
+        "confidence": "高"
+      },
+      {
+        "column": "吉神列10",
+        "names": [
+          "太陽",
+          "天赦"
+        ],
+        "rawText": "能解諸凶神官符宜〔事〕…入宅豎造安葬宜事…",
+        "confidence": "中"
+      },
+      {
+        "column": "吉神列11",
+        "names": [
+          "國印五符",
+          "唐符五符"
+        ],
+        "rawText": "求才見貴宜上官出行…",
+        "confidence": "中"
+      },
+      {
+        "column": "吉神列12",
+        "names": [
+          "天寶黃道",
+          "青龍黃道"
+        ],
+        "rawText": "造葬宜祈福婚事…",
+        "confidence": "中"
+      },
+      {
+        "column": "吉神列13",
+        "names": [
+          "鳳鸞黃道",
+          "司命黃道"
+        ],
+        "rawText": "受封修灶造祀宜作灶祀…",
+        "confidence": "中"
+      },
+      {
+        "column": "吉神列14",
+        "names": [
+          "少微黃道",
+          "玉堂黃道"
+        ],
+        "rawText": "灶開倉庫宜入宅安…",
+        "confidence": "低"
+      },
+      {
+        "column": "吉神列15",
+        "names": [
+          "寶光黃道",
+          "天德黃道"
+        ],
+        "rawText": "入宅祈福造葬宜婚娶…",
+        "confidence": "高"
+      },
+      {
+        "column": "吉神列16",
+        "names": [
+          "福德黃道",
+          "金匱黃道"
+        ],
+        "rawText": "入宅祈福造葬宜婚娶…",
+        "confidence": "高"
+      },
+      {
+        "column": "吉神列17",
+        "names": [
+          "左輔黃道",
+          "明堂黃道"
+        ],
+        "rawText": "開市造葬吉，宜祈福婚娶…",
+        "confidence": "高"
+      },
+      {
+        "column": "吉神列18",
+        "names": [
+          "武曲",
+          "貪狼",
+          "左輔"
+        ],
+        "rawText": "作造葬大吉，及右弼宜修〔造〕…",
+        "confidence": "中"
+      },
+      {
+        "column": "吉神列19",
+        "names": [
+          "木星",
+          "金星",
+          "水星"
+        ],
+        "rawText": "宜修造上梁〔陞〕…入宅安葬吉",
+        "confidence": "中"
+      },
+      {
+        "column": "吉神列20",
+        "names": [
+          "傳送",
+          "功曹"
+        ],
+        "rawText": "宜祭祀祈福設醮酬神…",
+        "confidence": "中"
+      }
+    ],
+    "ji": [
+      {
+        "column": "凶神列1",
+        "names": [
+          "朱雀黑道",
+          "白虎黑道"
+        ],
+        "rawText": "朱雀鳳凰制吉、白虎麒麟制吉",
+        "confidence": "中"
+      },
+      {
+        "column": "凶神列2",
+        "names": [
+          "元武黑道",
+          "勾陳黑道"
+        ],
+        "rawText": "若合吉星多眾可用／俗忌詞訟諸事多可用",
+        "confidence": "中"
+      },
+      {
+        "column": "凶神列3",
+        "names": [
+          "天刑黑道",
+          "天牢黑道"
+        ],
+        "rawText": "諸眾務吉多可用／忌上官赴任詞訟多可用",
+        "confidence": "中"
+      },
+      {
+        "column": "凶神列4",
+        "names": [
+          "下食凶時",
+          "天狗凶時"
+        ],
+        "rawText": "修齋明星守護／忌祭祀祈福設醮",
+        "confidence": "中"
+      },
+      {
+        "column": "凶神列5",
+        "names": [
+          "地兵凶時",
+          "天兵凶時"
+        ],
+        "rawText": "地兵忌動土…／天兵忌上梁入宅…",
+        "confidence": "中"
+      },
+      {
+        "column": "凶神列6",
+        "names": [
+          "暗天賊時"
+        ],
+        "rawText": "宜明星或祭祀祈福…",
+        "confidence": "低"
+      },
+      {
+        "column": "凶神列7",
+        "names": [
+          "路空亡時",
+          "截空亡時"
+        ],
+        "rawText": "俗忌、焚香、開光、祈福、酬神、賽愿、進表章、設醮、上官赴任、出行、求財、行船、凶",
+        "confidence": "高"
+      },
+      {
+        "column": "凶神列8",
+        "names": [
+          "日相沖破",
+          "時相沖破"
+        ],
+        "rawText": "入宅安葬出行結婚移徙開市忌祈福求嗣…",
+        "confidence": "中"
+      },
+      {
+        "column": "凶神列9",
+        "names": [
+          "五不遇"
+        ],
+        "rawText": "若合吉多可用、俗忌上官出行",
+        "confidence": "高"
+      },
+      {
+        "column": "凶神列10",
+        "names": [
+          "五鬼時"
+        ],
+        "rawText": "若合吉多可用、俗従忌謫出行",
+        "confidence": "中"
+      },
+      {
+        "column": "凶神列11",
+        "names": [
+          "雷兵時"
+        ],
+        "rawText": "餘不忌他諸事凶、俗忌修船大凶",
+        "confidence": "中"
+      },
+      {
+        "column": "凶神列12",
+        "names": [
+          "日害時"
+        ],
+        "rawText": "合貴吉多可用、忌上官諸眾務",
+        "confidence": "高"
+      },
+      {
+        "column": "凶神列13",
+        "names": [
+          "日刑時"
+        ],
+        "rawText": "合貴吉多可用、忌上官諸眾務",
+        "confidence": "高"
+      },
+      {
+        "column": "凶神列14",
+        "names": [
+          "日殺時"
+        ],
+        "rawText": "合祿貴吉多用、忌眾務宜黃道",
+        "confidence": "中"
+      },
+      {
+        "column": "凶神列15",
+        "names": [
+          "日建時"
+        ],
+        "rawText": "餘合吉多可用、忌造船行凶",
+        "confidence": "中"
+      },
+      {
+        "column": "凶神列16",
+        "names": [
+          "旬空時"
+        ],
+        "rawText": "生墳合壽木吉、俗忌出行宜開…",
+        "confidence": "中"
+      },
+      {
+        "column": "凶神列17",
+        "names": [
+          "六戊時"
+        ],
+        "rawText": "醮起鼓明星制、俗焚香祈設",
+        "confidence": "低"
+      },
+      {
+        "column": "凶神列18",
+        "names": [
+          "大退時"
+        ],
+        "rawText": "忌修造葬、宜合格局、彙氣進補",
+        "confidence": "高"
+      }
+    ]
+  },
+  "independentTerms": {
+    "note": "720マス転記で確定した独立時家用語。legendに専用列が無いため宜忌記載なし（推測補完はしていない）。",
+    "terms": [
+      "交貴",
+      "日祿",
+      "比肩",
+      "六甲",
+      "合格",
+      "天地",
+      "趨乾",
+      "居貴",
+      "日時",
+      "紫微",
+      "日貴",
+      "時貴",
+      "財局",
+      "逢印",
+      "胞胎",
+      "臨官",
+      "居時",
+      "中平",
+      "扶元",
+      "同類"
+    ]
+  },
+  "record_count": 122,
+  "records": [
+    {
+      "shinsatsu": [
+        "長生",
+        "帝旺"
+      ],
+      "direction": "yi",
+      "sourceTerm": "求嗣",
+      "rawText": "宜求嗣嫁娶移徙入宅開市交易造葬修作宜事吉",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "六合",
+        "五合",
+        "喜神"
+      ],
+      "direction": "yi",
+      "sourceTerm": "求嗣",
+      "rawText": "宜祈福求嗣婚娶六禮出行求財開市交易安床…",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "三合",
+        "羅天大進"
+      ],
+      "direction": "yi",
+      "sourceTerm": "求嗣",
+      "rawText": "宜祈福求嗣婚娶修造宅開市交易造葬宜事…",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "長生",
+        "帝旺"
+      ],
+      "direction": "yi",
+      "sourceTerm": "嫁娶",
+      "rawText": "宜求嗣嫁娶移徙入宅開市交易造葬修作宜事吉",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "馬元",
+        "驛馬",
+        "祿元"
+      ],
+      "direction": "yi",
+      "sourceTerm": "嫁娶",
+      "rawText": "宜上官出行求財見貴嫁娶入宅開市造葬宜事吉",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "長生",
+        "帝旺"
+      ],
+      "direction": "yi",
+      "sourceTerm": "入宅",
+      "rawText": "宜求嗣嫁娶移徙入宅開市交易造葬修作宜事吉",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "馬元",
+        "驛馬",
+        "祿元"
+      ],
+      "direction": "yi",
+      "sourceTerm": "入宅",
+      "rawText": "宜上官出行求財見貴嫁娶入宅開市造葬宜事吉",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "福星貴人"
+      ],
+      "direction": "yi",
+      "sourceTerm": "入宅",
+      "rawText": "宜祭祀祈福酬神婚娶行求財入宅造葬宜事吉",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "太陽",
+        "天赦"
+      ],
+      "direction": "yi",
+      "sourceTerm": "入宅",
+      "rawText": "能解諸凶神官符宜〔事〕…入宅豎造安葬宜事…",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "少微黃道",
+        "玉堂黃道"
+      ],
+      "direction": "yi",
+      "sourceTerm": "入宅",
+      "rawText": "灶開倉庫宜入宅安…",
+      "confidence": "低",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "寶光黃道",
+        "天德黃道"
+      ],
+      "direction": "yi",
+      "sourceTerm": "入宅",
+      "rawText": "入宅祈福造葬宜婚娶…",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "福德黃道",
+        "金匱黃道"
+      ],
+      "direction": "yi",
+      "sourceTerm": "入宅",
+      "rawText": "入宅祈福造葬宜婚娶…",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "木星",
+        "金星",
+        "水星"
+      ],
+      "direction": "yi",
+      "sourceTerm": "入宅",
+      "rawText": "宜修造上梁〔陞〕…入宅安葬吉",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "地兵凶時",
+        "天兵凶時"
+      ],
+      "direction": "ji",
+      "sourceTerm": "入宅",
+      "rawText": "地兵忌動土…／天兵忌上梁入宅…",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "長生",
+        "帝旺"
+      ],
+      "direction": "yi",
+      "sourceTerm": "開市",
+      "rawText": "宜求嗣嫁娶移徙入宅開市交易造葬修作宜事吉",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "馬元",
+        "驛馬",
+        "祿元"
+      ],
+      "direction": "yi",
+      "sourceTerm": "開市",
+      "rawText": "宜上官出行求財見貴嫁娶入宅開市造葬宜事吉",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "六合",
+        "五合",
+        "喜神"
+      ],
+      "direction": "yi",
+      "sourceTerm": "開市",
+      "rawText": "宜祈福求嗣婚娶六禮出行求財開市交易安床…",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "三合",
+        "羅天大進"
+      ],
+      "direction": "yi",
+      "sourceTerm": "開市",
+      "rawText": "宜祈福求嗣婚娶修造宅開市交易造葬宜事…",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "左輔黃道",
+        "明堂黃道"
+      ],
+      "direction": "yi",
+      "sourceTerm": "開市",
+      "rawText": "開市造葬吉，宜祈福婚娶…",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "長生",
+        "帝旺"
+      ],
+      "direction": "yi",
+      "sourceTerm": "交易",
+      "rawText": "宜求嗣嫁娶移徙入宅開市交易造葬修作宜事吉",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "六合",
+        "五合",
+        "喜神"
+      ],
+      "direction": "yi",
+      "sourceTerm": "交易",
+      "rawText": "宜祈福求嗣婚娶六禮出行求財開市交易安床…",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "三合",
+        "羅天大進"
+      ],
+      "direction": "yi",
+      "sourceTerm": "交易",
+      "rawText": "宜祈福求嗣婚娶修造宅開市交易造葬宜事…",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "馬元",
+        "驛馬",
+        "祿元"
+      ],
+      "direction": "yi",
+      "sourceTerm": "出行",
+      "rawText": "宜上官出行求財見貴嫁娶入宅開市造葬宜事吉",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "六合",
+        "五合",
+        "喜神"
+      ],
+      "direction": "yi",
+      "sourceTerm": "出行",
+      "rawText": "宜祈福求嗣婚娶六禮出行求財開市交易安床…",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "羅紋",
+        "祿貴",
+        "交馳"
+      ],
+      "direction": "yi",
+      "sourceTerm": "出行",
+      "rawText": "及進祿進貴宜祈福…出行求財婚娶進葬俱吉…",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "天官貴人"
+      ],
+      "direction": "yi",
+      "sourceTerm": "出行",
+      "rawText": "舉出行求財見貴宜事宜祭祀祈福酬神上官赴任",
+      "confidence": "中〜高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "國印五符",
+        "唐符五符"
+      ],
+      "direction": "yi",
+      "sourceTerm": "出行",
+      "rawText": "求才見貴宜上官出行…",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "路空亡時",
+        "截空亡時"
+      ],
+      "direction": "ji",
+      "sourceTerm": "出行",
+      "rawText": "俗忌、焚香、開光、祈福、酬神、賽愿、進表章、設醮、上官赴任、出行、求財、行船、凶",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "日相沖破",
+        "時相沖破"
+      ],
+      "direction": "ji",
+      "sourceTerm": "出行",
+      "rawText": "入宅安葬出行結婚移徙開市忌祈福求嗣…",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "五不遇"
+      ],
+      "direction": "ji",
+      "sourceTerm": "出行",
+      "rawText": "若合吉多可用、俗忌上官出行",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "五鬼時"
+      ],
+      "direction": "ji",
+      "sourceTerm": "出行",
+      "rawText": "若合吉多可用、俗従忌謫出行",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "旬空時"
+      ],
+      "direction": "ji",
+      "sourceTerm": "出行",
+      "rawText": "生墳合壽木吉、俗忌出行宜開…",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "六合",
+        "五合",
+        "喜神"
+      ],
+      "direction": "yi",
+      "sourceTerm": "安床",
+      "rawText": "宜祈福求嗣婚娶六禮出行求財開市交易安床…",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "六合",
+        "五合",
+        "喜神"
+      ],
+      "direction": "yi",
+      "sourceTerm": "祈福",
+      "rawText": "宜祈福求嗣婚娶六禮出行求財開市交易安床…",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "三合",
+        "羅天大進"
+      ],
+      "direction": "yi",
+      "sourceTerm": "祈福",
+      "rawText": "宜祈福求嗣婚娶修造宅開市交易造葬宜事…",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "羅紋",
+        "祿貴",
+        "交馳"
+      ],
+      "direction": "yi",
+      "sourceTerm": "祈福",
+      "rawText": "及進祿進貴宜祈福…出行求財婚娶進葬俱吉…",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "福星貴人"
+      ],
+      "direction": "yi",
+      "sourceTerm": "祈福",
+      "rawText": "宜祭祀祈福酬神婚娶行求財入宅造葬宜事吉",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "天官貴人"
+      ],
+      "direction": "yi",
+      "sourceTerm": "祈福",
+      "rawText": "舉出行求財見貴宜事宜祭祀祈福酬神上官赴任",
+      "confidence": "中〜高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "天寶黃道",
+        "青龍黃道"
+      ],
+      "direction": "yi",
+      "sourceTerm": "祈福",
+      "rawText": "造葬宜祈福婚事…",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "寶光黃道",
+        "天德黃道"
+      ],
+      "direction": "yi",
+      "sourceTerm": "祈福",
+      "rawText": "入宅祈福造葬宜婚娶…",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "福德黃道",
+        "金匱黃道"
+      ],
+      "direction": "yi",
+      "sourceTerm": "祈福",
+      "rawText": "入宅祈福造葬宜婚娶…",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "左輔黃道",
+        "明堂黃道"
+      ],
+      "direction": "yi",
+      "sourceTerm": "祈福",
+      "rawText": "開市造葬吉，宜祈福婚娶…",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "傳送",
+        "功曹"
+      ],
+      "direction": "yi",
+      "sourceTerm": "祈福",
+      "rawText": "宜祭祀祈福設醮酬神…",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "下食凶時",
+        "天狗凶時"
+      ],
+      "direction": "ji",
+      "sourceTerm": "祈福",
+      "rawText": "修齋明星守護／忌祭祀祈福設醮",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "路空亡時",
+        "截空亡時"
+      ],
+      "direction": "ji",
+      "sourceTerm": "祈福",
+      "rawText": "俗忌、焚香、開光、祈福、酬神、賽愿、進表章、設醮、上官赴任、出行、求財、行船、凶",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "日相沖破",
+        "時相沖破"
+      ],
+      "direction": "ji",
+      "sourceTerm": "祈福",
+      "rawText": "入宅安葬出行結婚移徙開市忌祈福求嗣…",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "天官貴人"
+      ],
+      "direction": "yi",
+      "sourceTerm": "上官赴任",
+      "rawText": "舉出行求財見貴宜事宜祭祀祈福酬神上官赴任",
+      "confidence": "中〜高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "天刑黑道",
+        "天牢黑道"
+      ],
+      "direction": "ji",
+      "sourceTerm": "上官赴任",
+      "rawText": "諸眾務吉多可用／忌上官赴任詞訟多可用",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "路空亡時",
+        "截空亡時"
+      ],
+      "direction": "ji",
+      "sourceTerm": "上官赴任",
+      "rawText": "俗忌、焚香、開光、祈福、酬神、賽愿、進表章、設醮、上官赴任、出行、求財、行船、凶",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "少微黃道",
+        "玉堂黃道"
+      ],
+      "direction": "yi",
+      "sourceTerm": "開倉庫",
+      "rawText": "灶開倉庫宜入宅安…",
+      "confidence": "低",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "木星",
+        "金星",
+        "水星"
+      ],
+      "direction": "yi",
+      "sourceTerm": "上梁",
+      "rawText": "宜修造上梁〔陞〕…入宅安葬吉",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "地兵凶時",
+        "天兵凶時"
+      ],
+      "direction": "ji",
+      "sourceTerm": "上梁",
+      "rawText": "地兵忌動土…／天兵忌上梁入宅…",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "地兵凶時",
+        "天兵凶時"
+      ],
+      "direction": "ji",
+      "sourceTerm": "動土",
+      "rawText": "地兵忌動土…／天兵忌上梁入宅…",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "福星貴人"
+      ],
+      "direction": "yi",
+      "sourceTerm": "祭祀",
+      "rawText": "宜祭祀祈福酬神婚娶行求財入宅造葬宜事吉",
+      "confidence": "高",
+      "notes": "方向完全性監査（2026-09-12）：福星貴人・天官貴人・傳送/功曹の3列に宜方向の「祭祀」が確認されたため、忌方向のみだった従来の分類を宜・忌双方向に修正した。"
+    },
+    {
+      "shinsatsu": [
+        "天官貴人"
+      ],
+      "direction": "yi",
+      "sourceTerm": "祭祀",
+      "rawText": "舉出行求財見貴宜事宜祭祀祈福酬神上官赴任",
+      "confidence": "中〜高",
+      "notes": "方向完全性監査（2026-09-12）：福星貴人・天官貴人・傳送/功曹の3列に宜方向の「祭祀」が確認されたため、忌方向のみだった従来の分類を宜・忌双方向に修正した。"
+    },
+    {
+      "shinsatsu": [
+        "傳送",
+        "功曹"
+      ],
+      "direction": "yi",
+      "sourceTerm": "祭祀",
+      "rawText": "宜祭祀祈福設醮酬神…",
+      "confidence": "中",
+      "notes": "方向完全性監査（2026-09-12）：福星貴人・天官貴人・傳送/功曹の3列に宜方向の「祭祀」が確認されたため、忌方向のみだった従来の分類を宜・忌双方向に修正した。"
+    },
+    {
+      "shinsatsu": [
+        "下食凶時",
+        "天狗凶時"
+      ],
+      "direction": "ji",
+      "sourceTerm": "祭祀",
+      "rawText": "修齋明星守護／忌祭祀祈福設醮",
+      "confidence": "中",
+      "notes": "方向完全性監査（2026-09-12）：福星貴人・天官貴人・傳送/功曹の3列に宜方向の「祭祀」が確認されたため、忌方向のみだった従来の分類を宜・忌双方向に修正した。"
+    },
+    {
+      "shinsatsu": [
+        "太陰吉時"
+      ],
+      "direction": "yi",
+      "sourceTerm": "安葬",
+      "rawText": "佐理太陽值太陰日、制九良星、小兒殺、安葬、修作、吉",
+      "confidence": "高",
+      "notes": "方向完全性監査（2026-09-12）：太陰吉時・太陽/天赦・木星/金星/水星の3列に宜方向の「安葬」が確認されたため、忌方向のみだった従来の分類を宜・忌双方向に修正した。"
+    },
+    {
+      "shinsatsu": [
+        "太陽",
+        "天赦"
+      ],
+      "direction": "yi",
+      "sourceTerm": "安葬",
+      "rawText": "能解諸凶神官符宜〔事〕…入宅豎造安葬宜事…",
+      "confidence": "中",
+      "notes": "方向完全性監査（2026-09-12）：太陰吉時・太陽/天赦・木星/金星/水星の3列に宜方向の「安葬」が確認されたため、忌方向のみだった従来の分類を宜・忌双方向に修正した。"
+    },
+    {
+      "shinsatsu": [
+        "木星",
+        "金星",
+        "水星"
+      ],
+      "direction": "yi",
+      "sourceTerm": "安葬",
+      "rawText": "宜修造上梁〔陞〕…入宅安葬吉",
+      "confidence": "中",
+      "notes": "方向完全性監査（2026-09-12）：太陰吉時・太陽/天赦・木星/金星/水星の3列に宜方向の「安葬」が確認されたため、忌方向のみだった従来の分類を宜・忌双方向に修正した。"
+    },
+    {
+      "shinsatsu": [
+        "日相沖破",
+        "時相沖破"
+      ],
+      "direction": "ji",
+      "sourceTerm": "安葬",
+      "rawText": "入宅安葬出行結婚移徙開市忌祈福求嗣…",
+      "confidence": "中",
+      "notes": "方向完全性監査（2026-09-12）：太陰吉時・太陽/天赦・木星/金星/水星の3列に宜方向の「安葬」が確認されたため、忌方向のみだった従来の分類を宜・忌双方向に修正した。"
+    },
+    {
+      "shinsatsu": [
+        "路空亡時",
+        "截空亡時"
+      ],
+      "direction": "ji",
+      "sourceTerm": "開光",
+      "rawText": "俗忌、焚香、開光、祈福、酬神、賽愿、進表章、設醮、上官赴任、出行、求財、行船、凶",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "馬元",
+        "驛馬",
+        "祿元"
+      ],
+      "direction": "yi",
+      "sourceTerm": "上官",
+      "rawText": "宜上官出行求財見貴嫁娶入宅開市造葬宜事吉",
+      "confidence": "高",
+      "notes": "方向完全性監査（2026-09-12）：國印五符/唐符五符（宜）、五不遇・日害時・日刑時（忌）にも「上官」（「上官赴任」の複合語ではない単独出現）を確認し追加した。宜・忌双方向のC分類となる。"
+    },
+    {
+      "shinsatsu": [
+        "國印五符",
+        "唐符五符"
+      ],
+      "direction": "yi",
+      "sourceTerm": "上官",
+      "rawText": "求才見貴宜上官出行…",
+      "confidence": "中",
+      "notes": "方向完全性監査（2026-09-12）：國印五符/唐符五符（宜）、五不遇・日害時・日刑時（忌）にも「上官」（「上官赴任」の複合語ではない単独出現）を確認し追加した。宜・忌双方向のC分類となる。"
+    },
+    {
+      "shinsatsu": [
+        "五不遇"
+      ],
+      "direction": "ji",
+      "sourceTerm": "上官",
+      "rawText": "若合吉多可用、俗忌上官出行",
+      "confidence": "高",
+      "notes": "方向完全性監査（2026-09-12）：國印五符/唐符五符（宜）、五不遇・日害時・日刑時（忌）にも「上官」（「上官赴任」の複合語ではない単独出現）を確認し追加した。宜・忌双方向のC分類となる。"
+    },
+    {
+      "shinsatsu": [
+        "日害時"
+      ],
+      "direction": "ji",
+      "sourceTerm": "上官",
+      "rawText": "合貴吉多可用、忌上官諸眾務",
+      "confidence": "高",
+      "notes": "方向完全性監査（2026-09-12）：國印五符/唐符五符（宜）、五不遇・日害時・日刑時（忌）にも「上官」（「上官赴任」の複合語ではない単独出現）を確認し追加した。宜・忌双方向のC分類となる。"
+    },
+    {
+      "shinsatsu": [
+        "日刑時"
+      ],
+      "direction": "ji",
+      "sourceTerm": "上官",
+      "rawText": "合貴吉多可用、忌上官諸眾務",
+      "confidence": "高",
+      "notes": "方向完全性監査（2026-09-12）：國印五符/唐符五符（宜）、五不遇・日害時・日刑時（忌）にも「上官」（「上官赴任」の複合語ではない単独出現）を確認し追加した。宜・忌双方向のC分類となる。"
+    },
+    {
+      "shinsatsu": [
+        "路空亡時",
+        "截空亡時"
+      ],
+      "direction": "ji",
+      "sourceTerm": "焚香",
+      "rawText": "俗忌、焚香、開光、祈福、酬神、賽愿、進表章、設醮、上官赴任、出行、求財、行船、凶",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "日相沖破",
+        "時相沖破"
+      ],
+      "direction": "ji",
+      "sourceTerm": "結婚",
+      "rawText": "入宅安葬出行結婚移徙開市忌祈福求嗣…",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "路空亡時",
+        "截空亡時"
+      ],
+      "direction": "ji",
+      "sourceTerm": "行船",
+      "rawText": "俗忌、焚香、開光、祈福、酬神、賽愿、進表章、設醮、上官赴任、出行、求財、行船、凶",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "長生",
+        "帝旺"
+      ],
+      "direction": "yi",
+      "sourceTerm": "移徙",
+      "rawText": "宜求嗣嫁娶移徙入宅開市交易造葬修作宜事吉",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "日相沖破",
+        "時相沖破"
+      ],
+      "direction": "ji",
+      "sourceTerm": "移徙",
+      "rawText": "入宅安葬出行結婚移徙開市忌祈福求嗣…",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "路空亡時",
+        "截空亡時"
+      ],
+      "direction": "ji",
+      "sourceTerm": "進表章",
+      "rawText": "俗忌、焚香、開光、祈福、酬神、賽愿、進表章、設醮、上官赴任、出行、求財、行船、凶",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "長生",
+        "帝旺"
+      ],
+      "direction": "yi",
+      "sourceTerm": "造葬",
+      "rawText": "宜求嗣嫁娶移徙入宅開市交易造葬修作宜事吉",
+      "confidence": "高",
+      "notes": "方向完全性監査（2026-09-12）：機械的部分一致検索により、長生/帝旺に加え馬元/驛馬/祿元・三合/羅天大進・陰陽喜人/天乙喜人・福星貴人・天寶黃道/青龍黃道・寶光黃道/天德黃道・福德黃道/金匱黃道・左輔黃道/明堂黃道・武曲/貪狼/左輔の全9列で確認し追加した（大退時列の「修造葬」は既存資料の判断どおり別語として不算入のまま）。"
+    },
+    {
+      "shinsatsu": [
+        "馬元",
+        "驛馬",
+        "祿元"
+      ],
+      "direction": "yi",
+      "sourceTerm": "造葬",
+      "rawText": "宜上官出行求財見貴嫁娶入宅開市造葬宜事吉",
+      "confidence": "高",
+      "notes": "方向完全性監査（2026-09-12）：機械的部分一致検索により、長生/帝旺に加え馬元/驛馬/祿元・三合/羅天大進・陰陽喜人/天乙喜人・福星貴人・天寶黃道/青龍黃道・寶光黃道/天德黃道・福德黃道/金匱黃道・左輔黃道/明堂黃道・武曲/貪狼/左輔の全9列で確認し追加した（大退時列の「修造葬」は既存資料の判断どおり別語として不算入のまま）。"
+    },
+    {
+      "shinsatsu": [
+        "三合",
+        "羅天大進"
+      ],
+      "direction": "yi",
+      "sourceTerm": "造葬",
+      "rawText": "宜祈福求嗣婚娶修造宅開市交易造葬宜事…",
+      "confidence": "中",
+      "notes": "方向完全性監査（2026-09-12）：機械的部分一致検索により、長生/帝旺に加え馬元/驛馬/祿元・三合/羅天大進・陰陽喜人/天乙喜人・福星貴人・天寶黃道/青龍黃道・寶光黃道/天德黃道・福德黃道/金匱黃道・左輔黃道/明堂黃道・武曲/貪狼/左輔の全9列で確認し追加した（大退時列の「修造葬」は既存資料の判断どおり別語として不算入のまま）。"
+    },
+    {
+      "shinsatsu": [
+        "陰陽喜人",
+        "天乙喜人"
+      ],
+      "direction": "yi",
+      "sourceTerm": "造葬",
+      "rawText": "貴婚娶修作造葬宜事吉",
+      "confidence": "中",
+      "notes": "方向完全性監査（2026-09-12）：機械的部分一致検索により、長生/帝旺に加え馬元/驛馬/祿元・三合/羅天大進・陰陽喜人/天乙喜人・福星貴人・天寶黃道/青龍黃道・寶光黃道/天德黃道・福德黃道/金匱黃道・左輔黃道/明堂黃道・武曲/貪狼/左輔の全9列で確認し追加した（大退時列の「修造葬」は既存資料の判断どおり別語として不算入のまま）。"
+    },
+    {
+      "shinsatsu": [
+        "福星貴人"
+      ],
+      "direction": "yi",
+      "sourceTerm": "造葬",
+      "rawText": "宜祭祀祈福酬神婚娶行求財入宅造葬宜事吉",
+      "confidence": "高",
+      "notes": "方向完全性監査（2026-09-12）：機械的部分一致検索により、長生/帝旺に加え馬元/驛馬/祿元・三合/羅天大進・陰陽喜人/天乙喜人・福星貴人・天寶黃道/青龍黃道・寶光黃道/天德黃道・福德黃道/金匱黃道・左輔黃道/明堂黃道・武曲/貪狼/左輔の全9列で確認し追加した（大退時列の「修造葬」は既存資料の判断どおり別語として不算入のまま）。"
+    },
+    {
+      "shinsatsu": [
+        "天寶黃道",
+        "青龍黃道"
+      ],
+      "direction": "yi",
+      "sourceTerm": "造葬",
+      "rawText": "造葬宜祈福婚事…",
+      "confidence": "中",
+      "notes": "方向完全性監査（2026-09-12）：機械的部分一致検索により、長生/帝旺に加え馬元/驛馬/祿元・三合/羅天大進・陰陽喜人/天乙喜人・福星貴人・天寶黃道/青龍黃道・寶光黃道/天德黃道・福德黃道/金匱黃道・左輔黃道/明堂黃道・武曲/貪狼/左輔の全9列で確認し追加した（大退時列の「修造葬」は既存資料の判断どおり別語として不算入のまま）。"
+    },
+    {
+      "shinsatsu": [
+        "寶光黃道",
+        "天德黃道"
+      ],
+      "direction": "yi",
+      "sourceTerm": "造葬",
+      "rawText": "入宅祈福造葬宜婚娶…",
+      "confidence": "高",
+      "notes": "方向完全性監査（2026-09-12）：機械的部分一致検索により、長生/帝旺に加え馬元/驛馬/祿元・三合/羅天大進・陰陽喜人/天乙喜人・福星貴人・天寶黃道/青龍黃道・寶光黃道/天德黃道・福德黃道/金匱黃道・左輔黃道/明堂黃道・武曲/貪狼/左輔の全9列で確認し追加した（大退時列の「修造葬」は既存資料の判断どおり別語として不算入のまま）。"
+    },
+    {
+      "shinsatsu": [
+        "福德黃道",
+        "金匱黃道"
+      ],
+      "direction": "yi",
+      "sourceTerm": "造葬",
+      "rawText": "入宅祈福造葬宜婚娶…",
+      "confidence": "高",
+      "notes": "方向完全性監査（2026-09-12）：機械的部分一致検索により、長生/帝旺に加え馬元/驛馬/祿元・三合/羅天大進・陰陽喜人/天乙喜人・福星貴人・天寶黃道/青龍黃道・寶光黃道/天德黃道・福德黃道/金匱黃道・左輔黃道/明堂黃道・武曲/貪狼/左輔の全9列で確認し追加した（大退時列の「修造葬」は既存資料の判断どおり別語として不算入のまま）。"
+    },
+    {
+      "shinsatsu": [
+        "左輔黃道",
+        "明堂黃道"
+      ],
+      "direction": "yi",
+      "sourceTerm": "造葬",
+      "rawText": "開市造葬吉，宜祈福婚娶…",
+      "confidence": "高",
+      "notes": "方向完全性監査（2026-09-12）：機械的部分一致検索により、長生/帝旺に加え馬元/驛馬/祿元・三合/羅天大進・陰陽喜人/天乙喜人・福星貴人・天寶黃道/青龍黃道・寶光黃道/天德黃道・福德黃道/金匱黃道・左輔黃道/明堂黃道・武曲/貪狼/左輔の全9列で確認し追加した（大退時列の「修造葬」は既存資料の判断どおり別語として不算入のまま）。"
+    },
+    {
+      "shinsatsu": [
+        "武曲",
+        "貪狼",
+        "左輔"
+      ],
+      "direction": "yi",
+      "sourceTerm": "造葬",
+      "rawText": "作造葬大吉，及右弼宜修〔造〕…",
+      "confidence": "中",
+      "notes": "方向完全性監査（2026-09-12）：機械的部分一致検索により、長生/帝旺に加え馬元/驛馬/祿元・三合/羅天大進・陰陽喜人/天乙喜人・福星貴人・天寶黃道/青龍黃道・寶光黃道/天德黃道・福德黃道/金匱黃道・左輔黃道/明堂黃道・武曲/貪狼/左輔の全9列で確認し追加した（大退時列の「修造葬」は既存資料の判断どおり別語として不算入のまま）。"
+    },
+    {
+      "shinsatsu": [
+        "馬元",
+        "驛馬",
+        "祿元"
+      ],
+      "direction": "yi",
+      "sourceTerm": "求財",
+      "rawText": "宜上官出行求財見貴嫁娶入宅開市造葬宜事吉",
+      "confidence": "高",
+      "notes": "方向完全性監査（2026-09-12）：忌方向の出現神殺が誤り（元武黑道/勾陳黑道の原文に「求財」は無い）だったため路空亡時/截空亡時に修正した。宜方向は馬元/驛馬/祿元に加え六合/五合/喜神・羅紋/祿貴/交馳・福星貴人・天官貴人の4列を追加した。"
+    },
+    {
+      "shinsatsu": [
+        "六合",
+        "五合",
+        "喜神"
+      ],
+      "direction": "yi",
+      "sourceTerm": "求財",
+      "rawText": "宜祈福求嗣婚娶六禮出行求財開市交易安床…",
+      "confidence": "中",
+      "notes": "方向完全性監査（2026-09-12）：忌方向の出現神殺が誤り（元武黑道/勾陳黑道の原文に「求財」は無い）だったため路空亡時/截空亡時に修正した。宜方向は馬元/驛馬/祿元に加え六合/五合/喜神・羅紋/祿貴/交馳・福星貴人・天官貴人の4列を追加した。"
+    },
+    {
+      "shinsatsu": [
+        "羅紋",
+        "祿貴",
+        "交馳"
+      ],
+      "direction": "yi",
+      "sourceTerm": "求財",
+      "rawText": "及進祿進貴宜祈福…出行求財婚娶進葬俱吉…",
+      "confidence": "高",
+      "notes": "方向完全性監査（2026-09-12）：忌方向の出現神殺が誤り（元武黑道/勾陳黑道の原文に「求財」は無い）だったため路空亡時/截空亡時に修正した。宜方向は馬元/驛馬/祿元に加え六合/五合/喜神・羅紋/祿貴/交馳・福星貴人・天官貴人の4列を追加した。"
+    },
+    {
+      "shinsatsu": [
+        "福星貴人"
+      ],
+      "direction": "yi",
+      "sourceTerm": "求財",
+      "rawText": "宜祭祀祈福酬神婚娶行求財入宅造葬宜事吉",
+      "confidence": "高",
+      "notes": "方向完全性監査（2026-09-12）：忌方向の出現神殺が誤り（元武黑道/勾陳黑道の原文に「求財」は無い）だったため路空亡時/截空亡時に修正した。宜方向は馬元/驛馬/祿元に加え六合/五合/喜神・羅紋/祿貴/交馳・福星貴人・天官貴人の4列を追加した。"
+    },
+    {
+      "shinsatsu": [
+        "天官貴人"
+      ],
+      "direction": "yi",
+      "sourceTerm": "求財",
+      "rawText": "舉出行求財見貴宜事宜祭祀祈福酬神上官赴任",
+      "confidence": "中〜高",
+      "notes": "方向完全性監査（2026-09-12）：忌方向の出現神殺が誤り（元武黑道/勾陳黑道の原文に「求財」は無い）だったため路空亡時/截空亡時に修正した。宜方向は馬元/驛馬/祿元に加え六合/五合/喜神・羅紋/祿貴/交馳・福星貴人・天官貴人の4列を追加した。"
+    },
+    {
+      "shinsatsu": [
+        "路空亡時",
+        "截空亡時"
+      ],
+      "direction": "ji",
+      "sourceTerm": "求財",
+      "rawText": "俗忌、焚香、開光、祈福、酬神、賽愿、進表章、設醮、上官赴任、出行、求財、行船、凶",
+      "confidence": "高",
+      "notes": "方向完全性監査（2026-09-12）：忌方向の出現神殺が誤り（元武黑道/勾陳黑道の原文に「求財」は無い）だったため路空亡時/截空亡時に修正した。宜方向は馬元/驛馬/祿元に加え六合/五合/喜神・羅紋/祿貴/交馳・福星貴人・天官貴人の4列を追加した。"
+    },
+    {
+      "shinsatsu": [
+        "羅紋",
+        "祿貴",
+        "交馳"
+      ],
+      "direction": "yi",
+      "sourceTerm": "進葬",
+      "rawText": "及進祿進貴宜祈福…出行求財婚娶進葬俱吉…",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "馬元",
+        "驛馬",
+        "祿元"
+      ],
+      "direction": "yi",
+      "sourceTerm": "見貴",
+      "rawText": "宜上官出行求財見貴嫁娶入宅開市造葬宜事吉",
+      "confidence": "高",
+      "notes": "方向完全性監査（2026-09-12）：國印五符/唐符五符列にも「見貴」を確認し追加した。"
+    },
+    {
+      "shinsatsu": [
+        "天官貴人"
+      ],
+      "direction": "yi",
+      "sourceTerm": "見貴",
+      "rawText": "舉出行求財見貴宜事宜祭祀祈福酬神上官赴任",
+      "confidence": "中〜高",
+      "notes": "方向完全性監査（2026-09-12）：國印五符/唐符五符列にも「見貴」を確認し追加した。"
+    },
+    {
+      "shinsatsu": [
+        "國印五符",
+        "唐符五符"
+      ],
+      "direction": "yi",
+      "sourceTerm": "見貴",
+      "rawText": "求才見貴宜上官出行…",
+      "confidence": "中",
+      "notes": "方向完全性監査（2026-09-12）：國印五符/唐符五符列にも「見貴」を確認し追加した。"
+    },
+    {
+      "shinsatsu": [
+        "鳳鸞黃道",
+        "司命黃道"
+      ],
+      "direction": "yi",
+      "sourceTerm": "受封",
+      "rawText": "受封修灶造祀宜作灶祀…",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "鳳鸞黃道",
+        "司命黃道"
+      ],
+      "direction": "yi",
+      "sourceTerm": "造祀",
+      "rawText": "受封修灶造祀宜作灶祀…",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "元武黑道",
+        "勾陳黑道"
+      ],
+      "direction": "ji",
+      "sourceTerm": "詞訟",
+      "rawText": "若合吉星多眾可用／俗忌詞訟諸事多可用",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "天刑黑道",
+        "天牢黑道"
+      ],
+      "direction": "ji",
+      "sourceTerm": "詞訟",
+      "rawText": "諸眾務吉多可用／忌上官赴任詞訟多可用",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "傳送",
+        "功曹"
+      ],
+      "direction": "yi",
+      "sourceTerm": "設醮",
+      "rawText": "宜祭祀祈福設醮酬神…",
+      "confidence": "中",
+      "notes": "方向完全性監査（2026-09-12）：傳送/功曹列に宜方向の「設醮」、路空亡時/截空亡時列に忌方向の「設醮」を確認し追加した。従来は下食凶時/天狗凶時の忌方向のみだったが、宜・忌双方向の語に修正した。"
+    },
+    {
+      "shinsatsu": [
+        "下食凶時",
+        "天狗凶時"
+      ],
+      "direction": "ji",
+      "sourceTerm": "設醮",
+      "rawText": "修齋明星守護／忌祭祀祈福設醮",
+      "confidence": "中",
+      "notes": "方向完全性監査（2026-09-12）：傳送/功曹列に宜方向の「設醮」、路空亡時/截空亡時列に忌方向の「設醮」を確認し追加した。従来は下食凶時/天狗凶時の忌方向のみだったが、宜・忌双方向の語に修正した。"
+    },
+    {
+      "shinsatsu": [
+        "路空亡時",
+        "截空亡時"
+      ],
+      "direction": "ji",
+      "sourceTerm": "設醮",
+      "rawText": "俗忌、焚香、開光、祈福、酬神、賽愿、進表章、設醮、上官赴任、出行、求財、行船、凶",
+      "confidence": "高",
+      "notes": "方向完全性監査（2026-09-12）：傳送/功曹列に宜方向の「設醮」、路空亡時/截空亡時列に忌方向の「設醮」を確認し追加した。従来は下食凶時/天狗凶時の忌方向のみだったが、宜・忌双方向の語に修正した。"
+    },
+    {
+      "shinsatsu": [
+        "雷兵時"
+      ],
+      "direction": "ji",
+      "sourceTerm": "修船（造船）",
+      "rawText": "餘不忌他諸事凶、俗忌修船大凶",
+      "confidence": "中",
+      "notes": "方向完全性監査（2026-09-12）：日建時列の「造船」（「忌造船行凶」）を追加した。雷兵時列の「修船」と表記は異なるが同一の複合語として既存資料どおり扱う。"
+    },
+    {
+      "shinsatsu": [
+        "日建時"
+      ],
+      "direction": "ji",
+      "sourceTerm": "修船（造船）",
+      "rawText": "餘合吉多可用、忌造船行凶",
+      "confidence": "中",
+      "notes": "方向完全性監査（2026-09-12）：日建時列の「造船」（「忌造船行凶」）を追加した。雷兵時列の「修船」と表記は異なるが同一の複合語として既存資料どおり扱う。"
+    },
+    {
+      "shinsatsu": [
+        "路空亡時",
+        "截空亡時"
+      ],
+      "direction": "ji",
+      "sourceTerm": "賽愿",
+      "rawText": "俗忌、焚香、開光、祈福、酬神、賽愿、進表章、設醮、上官赴任、出行、求財、行船、凶",
+      "confidence": "高",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "長生",
+        "帝旺"
+      ],
+      "direction": "yi",
+      "sourceTerm": "修作",
+      "rawText": "宜求嗣嫁娶移徙入宅開市交易造葬修作宜事吉",
+      "confidence": "高",
+      "notes": "方向完全性監査（2026-09-12）：三合/羅天大進列は原文が「修造」であり「修作」ではないため削除した（YI_GROUPS[3]のnote参照、原本再確認が必要）。太陰吉時列の「修作」（「…安葬、修作、吉」）を新たに確認し追加した。"
+    },
+    {
+      "shinsatsu": [
+        "陰陽喜人",
+        "天乙喜人"
+      ],
+      "direction": "yi",
+      "sourceTerm": "修作",
+      "rawText": "貴婚娶修作造葬宜事吉",
+      "confidence": "中",
+      "notes": "方向完全性監査（2026-09-12）：三合/羅天大進列は原文が「修造」であり「修作」ではないため削除した（YI_GROUPS[3]のnote参照、原本再確認が必要）。太陰吉時列の「修作」（「…安葬、修作、吉」）を新たに確認し追加した。"
+    },
+    {
+      "shinsatsu": [
+        "太陰吉時"
+      ],
+      "direction": "yi",
+      "sourceTerm": "修作",
+      "rawText": "佐理太陽值太陰日、制九良星、小兒殺、安葬、修作、吉",
+      "confidence": "高",
+      "notes": "方向完全性監査（2026-09-12）：三合/羅天大進列は原文が「修造」であり「修作」ではないため削除した（YI_GROUPS[3]のnote参照、原本再確認が必要）。太陰吉時列の「修作」（「…安葬、修作、吉」）を新たに確認し追加した。"
+    },
+    {
+      "shinsatsu": [
+        "六合",
+        "五合",
+        "喜神"
+      ],
+      "direction": "yi",
+      "sourceTerm": "婚娶",
+      "rawText": "宜祈福求嗣婚娶六禮出行求財開市交易安床…",
+      "confidence": "中",
+      "notes": "方向完全性監査（2026-09-12）：機械的部分一致検索により、六合/五合/喜神に加え三合/羅天大進・羅紋/祿貴/交馳・陰陽喜人/天乙喜人・福星貴人・寶光黃道/天德黃道・福德黃道/金匱黃道・左輔黃道/明堂黃道の全7列で確認し追加した。"
+    },
+    {
+      "shinsatsu": [
+        "三合",
+        "羅天大進"
+      ],
+      "direction": "yi",
+      "sourceTerm": "婚娶",
+      "rawText": "宜祈福求嗣婚娶修造宅開市交易造葬宜事…",
+      "confidence": "中",
+      "notes": "方向完全性監査（2026-09-12）：機械的部分一致検索により、六合/五合/喜神に加え三合/羅天大進・羅紋/祿貴/交馳・陰陽喜人/天乙喜人・福星貴人・寶光黃道/天德黃道・福德黃道/金匱黃道・左輔黃道/明堂黃道の全7列で確認し追加した。"
+    },
+    {
+      "shinsatsu": [
+        "羅紋",
+        "祿貴",
+        "交馳"
+      ],
+      "direction": "yi",
+      "sourceTerm": "婚娶",
+      "rawText": "及進祿進貴宜祈福…出行求財婚娶進葬俱吉…",
+      "confidence": "高",
+      "notes": "方向完全性監査（2026-09-12）：機械的部分一致検索により、六合/五合/喜神に加え三合/羅天大進・羅紋/祿貴/交馳・陰陽喜人/天乙喜人・福星貴人・寶光黃道/天德黃道・福德黃道/金匱黃道・左輔黃道/明堂黃道の全7列で確認し追加した。"
+    },
+    {
+      "shinsatsu": [
+        "陰陽喜人",
+        "天乙喜人"
+      ],
+      "direction": "yi",
+      "sourceTerm": "婚娶",
+      "rawText": "貴婚娶修作造葬宜事吉",
+      "confidence": "中",
+      "notes": "方向完全性監査（2026-09-12）：機械的部分一致検索により、六合/五合/喜神に加え三合/羅天大進・羅紋/祿貴/交馳・陰陽喜人/天乙喜人・福星貴人・寶光黃道/天德黃道・福德黃道/金匱黃道・左輔黃道/明堂黃道の全7列で確認し追加した。"
+    },
+    {
+      "shinsatsu": [
+        "福星貴人"
+      ],
+      "direction": "yi",
+      "sourceTerm": "婚娶",
+      "rawText": "宜祭祀祈福酬神婚娶行求財入宅造葬宜事吉",
+      "confidence": "高",
+      "notes": "方向完全性監査（2026-09-12）：機械的部分一致検索により、六合/五合/喜神に加え三合/羅天大進・羅紋/祿貴/交馳・陰陽喜人/天乙喜人・福星貴人・寶光黃道/天德黃道・福德黃道/金匱黃道・左輔黃道/明堂黃道の全7列で確認し追加した。"
+    },
+    {
+      "shinsatsu": [
+        "寶光黃道",
+        "天德黃道"
+      ],
+      "direction": "yi",
+      "sourceTerm": "婚娶",
+      "rawText": "入宅祈福造葬宜婚娶…",
+      "confidence": "高",
+      "notes": "方向完全性監査（2026-09-12）：機械的部分一致検索により、六合/五合/喜神に加え三合/羅天大進・羅紋/祿貴/交馳・陰陽喜人/天乙喜人・福星貴人・寶光黃道/天德黃道・福德黃道/金匱黃道・左輔黃道/明堂黃道の全7列で確認し追加した。"
+    },
+    {
+      "shinsatsu": [
+        "福德黃道",
+        "金匱黃道"
+      ],
+      "direction": "yi",
+      "sourceTerm": "婚娶",
+      "rawText": "入宅祈福造葬宜婚娶…",
+      "confidence": "高",
+      "notes": "方向完全性監査（2026-09-12）：機械的部分一致検索により、六合/五合/喜神に加え三合/羅天大進・羅紋/祿貴/交馳・陰陽喜人/天乙喜人・福星貴人・寶光黃道/天德黃道・福德黃道/金匱黃道・左輔黃道/明堂黃道の全7列で確認し追加した。"
+    },
+    {
+      "shinsatsu": [
+        "左輔黃道",
+        "明堂黃道"
+      ],
+      "direction": "yi",
+      "sourceTerm": "婚娶",
+      "rawText": "開市造葬吉，宜祈福婚娶…",
+      "confidence": "高",
+      "notes": "方向完全性監査（2026-09-12）：機械的部分一致検索により、六合/五合/喜神に加え三合/羅天大進・羅紋/祿貴/交馳・陰陽喜人/天乙喜人・福星貴人・寶光黃道/天德黃道・福德黃道/金匱黃道・左輔黃道/明堂黃道の全7列で確認し追加した。"
+    },
+    {
+      "shinsatsu": [
+        "福星貴人"
+      ],
+      "direction": "yi",
+      "sourceTerm": "酬神",
+      "rawText": "宜祭祀祈福酬神婚娶行求財入宅造葬宜事吉",
+      "confidence": "高",
+      "notes": "方向完全性監査（2026-09-12）：天官貴人列にも宜方向の「酬神」を確認し追加した。"
+    },
+    {
+      "shinsatsu": [
+        "天官貴人"
+      ],
+      "direction": "yi",
+      "sourceTerm": "酬神",
+      "rawText": "舉出行求財見貴宜事宜祭祀祈福酬神上官赴任",
+      "confidence": "中〜高",
+      "notes": "方向完全性監査（2026-09-12）：天官貴人列にも宜方向の「酬神」を確認し追加した。"
+    },
+    {
+      "shinsatsu": [
+        "傳送",
+        "功曹"
+      ],
+      "direction": "yi",
+      "sourceTerm": "酬神",
+      "rawText": "宜祭祀祈福設醮酬神…",
+      "confidence": "中",
+      "notes": "方向完全性監査（2026-09-12）：天官貴人列にも宜方向の「酬神」を確認し追加した。"
+    },
+    {
+      "shinsatsu": [
+        "路空亡時",
+        "截空亡時"
+      ],
+      "direction": "ji",
+      "sourceTerm": "酬神",
+      "rawText": "俗忌、焚香、開光、祈福、酬神、賽愿、進表章、設醮、上官赴任、出行、求財、行船、凶",
+      "confidence": "高",
+      "notes": "方向完全性監査（2026-09-12）：天官貴人列にも宜方向の「酬神」を確認し追加した。"
+    },
+    {
+      "shinsatsu": [
+        "太陽",
+        "天赦"
+      ],
+      "direction": "yi",
+      "sourceTerm": "豎造",
+      "rawText": "能解諸凶神官符宜〔事〕…入宅豎造安葬宜事…",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "鳳鸞黃道",
+        "司命黃道"
+      ],
+      "direction": "yi",
+      "sourceTerm": "修灶",
+      "rawText": "受封修灶造祀宜作灶祀…",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "六合",
+        "五合",
+        "喜神"
+      ],
+      "direction": "yi",
+      "sourceTerm": "六禮",
+      "rawText": "宜祈福求嗣婚娶六禮出行求財開市交易安床…",
+      "confidence": "中",
+      "notes": null
+    },
+    {
+      "shinsatsu": [
+        "陰陽喜人",
+        "天乙喜人"
+      ],
+      "direction": "yi",
+      "sourceTerm": "貴",
+      "rawText": "貴婚娶修作造葬宜事吉",
+      "confidence": "中",
+      "notes": null
+    }
+  ]
+}
