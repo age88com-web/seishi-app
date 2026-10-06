@@ -43,19 +43,21 @@ const CHECKS: Record<string, () => boolean> = {
   "fudanri-you": () => has(resolveKyoushinGroup6({ ...BASE, ...gz("乙酉"), lodge28: "觜" }), "伏斷日"),
   "tianfu-jisi-dup": () => has(resolveKichijinGroup4({ ...BASE, ...gz("己巳") }), "天福"),
   "tiankong-mao-row6": () =>
-    // 卯年: 十二月は地空「4,12,20,28」／天空「8,16,24」の行、十月は地空「6,14,22,30」の行
-    has(resolveKyoushinGroup6({ ...BASE, yearBranch: "卯", lunarMonth: 12, lunarDay: 4 }), "地空") &&
-    has(resolveKyoushinGroup6({ ...BASE, yearBranch: "卯", lunarMonth: 12, lunarDay: 8 }), "天空") &&
-    has(resolveKyoushinGroup6({ ...BASE, yearBranch: "卯", lunarMonth: 10, lunarDay: 6 }), "地空"),
+    // 原文の印字どおり（採用値＝原文値「四月・十月・二月」）：十月は 6,14,22,30 と 4,12,20,28 の両方の行、
+    // 十二月はどの行にも無い（監修候補値「四月・十二月」はコードに使わない）
+    has(resolveKyoushinGroup6({ ...BASE, yearBranch: "卯", lunarMonth: 10, lunarDay: 6 }), "地空") &&
+    has(resolveKyoushinGroup6({ ...BASE, yearBranch: "卯", lunarMonth: 10, lunarDay: 4 }), "地空") &&
+    !has(resolveKyoushinGroup6({ ...BASE, yearBranch: "卯", lunarMonth: 12, lunarDay: 4 }), "地空") &&
+    !has(resolveKyoushinGroup6({ ...BASE, yearBranch: "卯", lunarMonth: 12, lunarDay: 8 }), "天空"),
   "shenzai-gengwu": () =>
     // 原文の「庚戊」を保持しているので、庚戌の日は神在にならない
     !has(resolveKichijinGroup5({ ...BASE, ...gz("庚戌") }), "神在"),
   "bingxiao-wajie-chouwei-10": () =>
-    has(resolveKyoushinGroup6({ ...BASE, yearBranch: "丑", lunarMonth: 10, lunarDay: 1 }), "冰消瓦解") &&
-    !has(resolveKyoushinGroup6({ ...BASE, yearBranch: "丑", lunarMonth: 10, lunarDay: 3 }), "冰消瓦解"),
+    has(resolveKyoushinGroup6({ ...BASE, yearBranch: "丑", monthBranch: "亥", lunarDay: 1 }), "冰消瓦解") &&
+    !has(resolveKyoushinGroup6({ ...BASE, yearBranch: "丑", monthBranch: "亥", lunarDay: 3 }), "冰消瓦解"),
   "bingxiao-wajie-maoyou-2": () =>
-    has(resolveKyoushinGroup6({ ...BASE, yearBranch: "卯", lunarMonth: 2, lunarDay: 1 }), "冰消瓦解") &&
-    !has(resolveKyoushinGroup6({ ...BASE, yearBranch: "卯", lunarMonth: 2, lunarDay: 3 }), "冰消瓦解"),
+    has(resolveKyoushinGroup6({ ...BASE, yearBranch: "卯", monthBranch: "卯", lunarDay: 1 }), "冰消瓦解") &&
+    !has(resolveKyoushinGroup6({ ...BASE, yearBranch: "卯", monthBranch: "卯", lunarDay: 3 }), "冰消瓦解"),
   "xiawu-yang-39": () =>
     has(resolveKyoushinGroup6({ ...BASE, yearBranch: "子", lunarMonth: 3, lunarDay: 23 }), "下兀") &&
     !has(resolveKyoushinGroup6({ ...BASE, yearBranch: "子", lunarMonth: 3, lunarDay: 28 }), "下兀"),
@@ -63,11 +65,11 @@ const CHECKS: Record<string, () => boolean> = {
     has(resolveKyoushinGroup6({ ...BASE, yearBranch: "丑", lunarMonth: 6, lunarDay: 29 }), "下兀") &&
     !has(resolveKyoushinGroup6({ ...BASE, yearBranch: "丑", lunarMonth: 6, lunarDay: 28 }), "下兀"),
   "wenru-wenchu-3": () =>
-    has(resolveKyoushinGroup6({ ...BASE, lunarMonth: 3, lunarDay: 3 }), "瘟入") &&
-    has(resolveKyoushinGroup6({ ...BASE, lunarMonth: 3, lunarDay: 4 }), "瘟出"),
+    has(resolveKyoushinGroup6({ ...BASE, monthBranch: "辰", lunarDay: 3 }), "瘟入") &&
+    has(resolveKyoushinGroup6({ ...BASE, monthBranch: "辰", lunarDay: 4 }), "瘟出"),
   "changxing-9": () =>
-    has(resolveKyoushinGroup6({ ...BASE, lunarMonth: 9, lunarDay: 4 }), "長星") &&
-    !has(resolveKyoushinGroup6({ ...BASE, lunarMonth: 9, lunarDay: 3 }), "長星"),
+    has(resolveKyoushinGroup6({ ...BASE, monthBranch: "戌", lunarDay: 4 }), "長星") &&
+    !has(resolveKyoushinGroup6({ ...BASE, monthBranch: "戌", lunarDay: 3 }), "長星"),
 };
 
 console.log("[台帳] 原文値と採用値（src/lib/takujitsu/shinsatsu/sourceCorrections.ts）\n");
@@ -98,7 +100,10 @@ if (new Set(ids).size !== ids.length) {
   failures.push("  台帳に重複したIDがある");
 }
 
-console.log(`一致: ${pass} / ${SOURCE_CORRECTIONS.length}`);
+for (const c of SOURCE_CORRECTIONS.filter((x) => x.candidateValue !== undefined)) {
+  console.log(`  ${c.shinsatsu} ${c.location}: 原文値「${c.sourceValue}」 採用値「${c.adoptedValue}」 監修候補値「${c.candidateValue}」`);
+}
+console.log(`\n一致: ${pass} / ${SOURCE_CORRECTIONS.length}`);
 if (fail > 0) {
   console.log("\n--- 不一致 ---");
   for (const f of failures) console.log(f);

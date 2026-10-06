@@ -11,8 +11,9 @@
 //   本ファイル末尾の「境界テスト」で、monthBranchとlunarMonthをわざと
 //   食い違う値に設定し、monthBranch依存項目（受死日・刀砧日・四方耗）が
 //   lunarMonthを無視してmonthBranchだけで判定していること、逆に
-//   lunarMonth依存項目（長星・短星・天乙絶気など）がmonthBranchを無視して
-//   lunarMonthだけで判定していることを明示的に確認する。
+//   見出し「月令」の暦日表（長星・短星・天乙絶気など）が節月（monthBranch）で判定し、
+//   月の明記が無い表（天空・地空・上兀・下兀）だけが lunarMonth で判定していることを
+//   明示的に確認する（2026-10-06 監修確定）。
 //
 // 実行:
 //   npx tsx tests/takujitsu_kyoushin_group6_unit.manual.ts
@@ -82,62 +83,62 @@ check("周堂殺：lunarDay=24（非該当）", { ...BASE, lunarDay: 24 }, [], [
 check("龍禁：lunarDay=26（該当）", { ...BASE, lunarDay: 26 }, ["龍禁"]);
 check("龍禁：lunarDay=27（非該当）", { ...BASE, lunarDay: 27 }, [], ["龍禁"]);
 
-// ---- 29）長星・短星（lunarMonthごと。八月は長星2値・短星2値） ----
-check("長星：正月lunarDay=7（該当）", { ...BASE, lunarMonth: 1, lunarDay: 7 }, ["長星"]);
-check("長星：正月lunarDay=8（非該当）", { ...BASE, lunarMonth: 1, lunarDay: 8 }, [], ["長星"]);
-check("長星：八月lunarDay=2（該当・複数値の1つ目）", { ...BASE, lunarMonth: 8, lunarDay: 2 }, ["長星"]);
-check("長星：八月lunarDay=5（該当・複数値の2つ目）", { ...BASE, lunarMonth: 8, lunarDay: 5 }, ["長星"]);
-check("短星：九月lunarDay=16（該当・複数値の1つ目）", { ...BASE, lunarMonth: 9, lunarDay: 16 }, ["短星"]);
-check("短星：九月lunarDay=17（該当・複数値の2つ目）", { ...BASE, lunarMonth: 9, lunarDay: 17 }, ["短星"]);
-check("短星：九月lunarDay=15（非該当）", { ...BASE, lunarMonth: 9, lunarDay: 15 }, [], ["短星"]);
+// ---- 29）長星・短星（節月ごと。八月は長星2値・短星2値。監修確定 2026-10-06） ----
+check("長星：正月lunarDay=7（該当）", { ...BASE, monthBranch: "寅", lunarDay: 7 }, ["長星"]);
+check("長星：正月lunarDay=8（非該当）", { ...BASE, monthBranch: "寅", lunarDay: 8 }, [], ["長星"]);
+check("長星：八月lunarDay=2（該当・複数値の1つ目）", { ...BASE, monthBranch: "酉", lunarDay: 2 }, ["長星"]);
+check("長星：八月lunarDay=5（該当・複数値の2つ目）", { ...BASE, monthBranch: "酉", lunarDay: 5 }, ["長星"]);
+check("短星：九月lunarDay=16（該当・複数値の1つ目）", { ...BASE, monthBranch: "戌", lunarDay: 16 }, ["短星"]);
+check("短星：九月lunarDay=17（該当・複数値の2つ目）", { ...BASE, monthBranch: "戌", lunarDay: 17 }, ["短星"]);
+check("短星：九月lunarDay=15（非該当）", { ...BASE, monthBranch: "戌", lunarDay: 15 }, [], ["短星"]);
 
-// ---- 35）揚公忌（lunarMonthごと。七月は2値） ----
-check("揚公忌：正月lunarDay=13（該当）", { ...BASE, lunarMonth: 1, lunarDay: 13 }, ["揚公忌"]);
-check("揚公忌：七月lunarDay=1（該当・複数値の1つ目）", { ...BASE, lunarMonth: 7, lunarDay: 1 }, ["揚公忌"]);
-check("揚公忌：七月lunarDay=29（該当・複数値の2つ目）", { ...BASE, lunarMonth: 7, lunarDay: 29 }, ["揚公忌"]);
-check("揚公忌：七月lunarDay=15（非該当）", { ...BASE, lunarMonth: 7, lunarDay: 15 }, [], ["揚公忌"]);
+// ---- 35）揚公忌（節月ごと。七月は2値） ----
+check("揚公忌：正月lunarDay=13（該当）", { ...BASE, monthBranch: "寅", lunarDay: 13 }, ["揚公忌"]);
+check("揚公忌：七月lunarDay=1（該当・複数値の1つ目）", { ...BASE, monthBranch: "申", lunarDay: 1 }, ["揚公忌"]);
+check("揚公忌：七月lunarDay=29（該当・複数値の2つ目）", { ...BASE, monthBranch: "申", lunarDay: 29 }, ["揚公忌"]);
+check("揚公忌：七月lunarDay=15（非該当）", { ...BASE, monthBranch: "申", lunarDay: 15 }, [], ["揚公忌"]);
 
 // ---- 50）四方耗（monthBranch三合トリオ＋lunarDay） ----
 check("四方耗：寅午戌月lunarDay=2（該当）", { ...BASE, monthBranch: "午", lunarDay: 2 }, ["四方耗"]);
 check("四方耗：寅午戌月lunarDay=3（非該当）", { ...BASE, monthBranch: "午", lunarDay: 3 }, [], ["四方耗"]);
 check("四方耗：巳酉丑月lunarDay=5（該当）", { ...BASE, monthBranch: "酉", lunarDay: 5 }, ["四方耗"]);
 
-// ---- 42）冰消瓦解（yearBranch六冲グループ＋lunarMonth＋lunarDay） ----
-check("冰消瓦解：子午年正月lunarDay=1（該当）", { ...BASE, yearBranch: "子", lunarMonth: 1, lunarDay: 1 }, ["冰消瓦解"]);
-check("冰消瓦解：子午年正月lunarDay=2（非該当）", { ...BASE, yearBranch: "午", lunarMonth: 1, lunarDay: 2 }, [], ["冰消瓦解"]);
+// ---- 42）冰消瓦解（yearBranch六冲グループ＋節月＋lunarDay） ----
+check("冰消瓦解：子午年正月lunarDay=1（該当）", { ...BASE, yearBranch: "子", monthBranch: "寅", lunarDay: 1 }, ["冰消瓦解"]);
+check("冰消瓦解：子午年正月lunarDay=2（非該当）", { ...BASE, yearBranch: "午", monthBranch: "寅", lunarDay: 2 }, [], ["冰消瓦解"]);
 check(
   "冰消瓦解：丑未年十月lunarDay=1（原本の不規則値・該当）",
-  { ...BASE, yearBranch: "未", lunarMonth: 10, lunarDay: 1 },
+  { ...BASE, yearBranch: "未", monthBranch: "亥", lunarDay: 1 },
   ["冰消瓦解"],
 );
 check(
   "冰消瓦解：丑未年十月lunarDay=3（規則性から推測される値だが原本にはない・非該当）",
-  { ...BASE, yearBranch: "丑", lunarMonth: 10, lunarDay: 3 },
+  { ...BASE, yearBranch: "丑", monthBranch: "亥", lunarDay: 3 },
   [],
   ["冰消瓦解"],
 );
 
-// ---- 42）冰消瓦碎（lunarMonthのみ） ----
-check("冰消瓦碎：正月lunarDay=7（該当）", { ...BASE, lunarMonth: 1, lunarDay: 7 }, ["冰消瓦碎"]);
-check("冰消瓦碎：正月lunarDay=8（非該当）", { ...BASE, lunarMonth: 1, lunarDay: 8 }, [], ["冰消瓦碎"]);
+// ---- 42）冰消瓦碎（節月＋lunarDay） ----
+check("冰消瓦碎：正月lunarDay=7（該当）", { ...BASE, monthBranch: "寅", lunarDay: 7 }, ["冰消瓦碎"]);
+check("冰消瓦碎：正月lunarDay=8（非該当）", { ...BASE, monthBranch: "寅", lunarDay: 8 }, [], ["冰消瓦碎"]);
 
-// ---- 48）大空亡・小空亡（lunarMonthのみ） ----
-check("大空亡：正月lunarDay=30（該当）", { ...BASE, lunarMonth: 1, lunarDay: 30 }, ["大空亡"]);
-check("大空亡：正月lunarDay=26（該当は小空亡のみ）", { ...BASE, lunarMonth: 1, lunarDay: 26 }, ["小空亡"], ["大空亡"]);
-check("小空亡：正月lunarDay=2（該当）", { ...BASE, lunarMonth: 1, lunarDay: 2 }, ["小空亡"]);
-check("大空亡・小空亡：正月lunarDay=11（いずれも非該当）", { ...BASE, lunarMonth: 1, lunarDay: 11 }, [], ["大空亡", "小空亡"]);
+// ---- 48）大空亡・小空亡（節月＋lunarDay） ----
+check("大空亡：正月lunarDay=30（該当）", { ...BASE, monthBranch: "寅", lunarDay: 30 }, ["大空亡"]);
+check("大空亡：正月lunarDay=26（該当は小空亡のみ）", { ...BASE, monthBranch: "寅", lunarDay: 26 }, ["小空亡"], ["大空亡"]);
+check("小空亡：正月lunarDay=2（該当）", { ...BASE, monthBranch: "寅", lunarDay: 2 }, ["小空亡"]);
+check("大空亡・小空亡：正月lunarDay=11（いずれも非該当）", { ...BASE, monthBranch: "寅", lunarDay: 11 }, [], ["大空亡", "小空亡"]);
 
-// ---- 49）天乙絶気（lunarMonthごとに固定lunarDay） ----
-// 本文の実例「卯月で…旧暦の2月7日は…天乙絶気となる」＝lunarMonth=2→lunarDay=7 を再現。
-check("天乙絶気：本文実例どおりlunarMonth=2,lunarDay=7（該当）", { ...BASE, lunarMonth: 2, lunarDay: 7 }, ["天乙絶気"]);
-check("天乙絶気：lunarMonth=2,lunarDay=6（非該当）", { ...BASE, lunarMonth: 2, lunarDay: 6 }, [], ["天乙絶気"]);
-check("天乙絶気：lunarMonth=12,lunarDay=17（該当）", { ...BASE, lunarMonth: 12, lunarDay: 17 }, ["天乙絶気"]);
+// ---- 49）天乙絶気（節月ごとに固定lunarDay。監修確定で節月） ----
+// 本文の実例「卯月で…七日目」＝節月 卯（二月）→ lunarDay=7。
+check("天乙絶気：本文実例どおり卯月,lunarDay=7（該当）", { ...BASE, monthBranch: "卯", lunarDay: 7 }, ["天乙絶気"]);
+check("天乙絶気：卯月,lunarDay=6（非該当）", { ...BASE, monthBranch: "卯", lunarDay: 6 }, [], ["天乙絶気"]);
+check("天乙絶気：丑月(十二月),lunarDay=17（該当）", { ...BASE, monthBranch: "丑", lunarDay: 17 }, ["天乙絶気"]);
 
-// ---- 41）瘟星入出日（瘟入・瘟出、lunarMonthごと） ----
-check("瘟入：正月lunarDay=6（該当）", { ...BASE, lunarMonth: 1, lunarDay: 6 }, ["瘟入"]);
-check("瘟出：正月lunarDay=9（該当）", { ...BASE, lunarMonth: 1, lunarDay: 9 }, ["瘟出"]);
-check("瘟入：正月lunarDay=9（非該当・瘟出の値と混同していない）", { ...BASE, lunarMonth: 1, lunarDay: 9 }, [], ["瘟入"]);
-check("瘟入：四月lunarDay=25（該当）", { ...BASE, lunarMonth: 4, lunarDay: 25 }, ["瘟入"]);
+// ---- 41）瘟星入出日（瘟入・瘟出、節月ごと） ----
+check("瘟入：正月lunarDay=6（該当）", { ...BASE, monthBranch: "寅", lunarDay: 6 }, ["瘟入"]);
+check("瘟出：正月lunarDay=9（該当）", { ...BASE, monthBranch: "寅", lunarDay: 9 }, ["瘟出"]);
+check("瘟入：正月lunarDay=9（非該当・瘟出の値と混同していない）", { ...BASE, monthBranch: "寅", lunarDay: 9 }, [], ["瘟入"]);
+check("瘟入：四月lunarDay=25（該当）", { ...BASE, monthBranch: "巳", lunarDay: 25 }, ["瘟入"]);
 
 // ---- 47）天空・地空（yearBranch8グループ＋lunarMonthバンド＋lunarDay） ----
 check("地空：子年正月lunarDay=1（該当）", { ...BASE, yearBranch: "子", lunarMonth: 1, lunarDay: 1 }, ["地空"]);
@@ -145,6 +146,12 @@ check("天空：子年正月lunarDay=5（該当）", { ...BASE, yearBranch: "子
 check("地空：子年正月lunarDay=5（非該当・天空の値なので混同していない）", { ...BASE, yearBranch: "子", lunarMonth: 1, lunarDay: 5 }, [], ["地空"]);
 check("地空：戌亥年正月lunarDay=1（開始月がずれるため非該当）", { ...BASE, yearBranch: "戌", lunarMonth: 1, lunarDay: 1 }, [], ["地空"]);
 check("地空：戌亥年二月lunarDay=1（戌亥年はband0が二月のため該当）", { ...BASE, yearBranch: "亥", lunarMonth: 2, lunarDay: 1 }, ["地空"]);
+// 卯年は原文 p.42 の印字どおり（「四月・十月・二月」の行。監修確定まで補正しない）
+check("地空：卯年十月lunarDay=6（6,14,22,30 の行・該当）", { ...BASE, yearBranch: "卯", lunarMonth: 10, lunarDay: 6 }, ["地空"]);
+check("地空：卯年十月lunarDay=4（印字どおり 4,12,20,28 の行にも該当）", { ...BASE, yearBranch: "卯", lunarMonth: 10, lunarDay: 4 }, ["地空"]);
+check("天空：卯年二月lunarDay=8（印字どおり 8,16,24 の行にも該当）", { ...BASE, yearBranch: "卯", lunarMonth: 2, lunarDay: 8 }, ["天空"]);
+check("地空：卯年十二月lunarDay=4（印字では十二月がどの行にも無いため非該当）", { ...BASE, yearBranch: "卯", lunarMonth: 12, lunarDay: 4 }, [], ["地空"]);
+check("天空：卯年十二月lunarDay=8（同上・非該当）", { ...BASE, yearBranch: "卯", lunarMonth: 12, lunarDay: 8 }, [], ["天空"]);
 
 // ---- 39）上兀（留紳）・下兀（赤口）（yearBranch陰陽＋月ペアグループ＋lunarDay） ----
 check("上兀：陽年(子)正月lunarDay=4（該当）", { ...BASE, yearBranch: "子", lunarMonth: 1, lunarDay: 4 }, ["上兀"]);
@@ -174,19 +181,23 @@ check("小耗：寅月子日（十二直「開」＝非該当）", { ...BASE, mo
 check("小耗：卯月申日（十二直「執」＝該当）", { ...BASE, monthBranch: "卯", dayBranch: "申" }, ["小耗"]);
 check("小耗：卯月未日（十二直「定」＝非該当）", { ...BASE, monthBranch: "卯", dayBranch: "未" }, [], ["小耗"]);
 
-// ---- 境界テスト：monthBranch と lunarMonth の取り違え防止 ----
-// monthBranch=子（本来は受死日=卯・刀砧日=非該当季節）、lunarMonth=6
-// （本来は長星=10・短星=20）というように、わざと「月令」と「農暦月」を
-// 食い違わせた入力で、各項目が期待どおりの軸だけを見ていることを確認する。
-const MIXED: ShinsatsuInput = { yearStem: "甲", monthBranch: "子", dayStem: "甲", dayBranch: "卯", lunarMonth: 6, lunarDay: 10 };
+// ---- 境界テスト：monthBranch（節月）と lunarMonth（農暦月）の取り違え防止 ----
+// monthBranch=子（十一月）と lunarMonth=6 をわざと食い違わせ、各項目が期待どおりの軸だけを
+// 見ていることを確認する（2026-10-06 監修確定：見出し「月令」の表と天乙絶気は節月、
+// 月の明記が無い天空・地空・上兀・下兀は農暦月のまま）。
+const MIXED: ShinsatsuInput = { yearStem: "甲", yearBranch: "子", monthBranch: "子", dayStem: "甲", dayBranch: "卯", lunarMonth: 6, lunarDay: 10 };
 // 受死日はmonthBranch=子→卯。dayBranch=卯なので該当するはず（lunarMonth=6は無視）。
 check("境界：受死日はmonthBranchだけを見る（lunarMonthを無視）", MIXED, ["受死日"]);
-// 長星はlunarMonth=6→10。lunarDay=10で該当するはず（monthBranch=子は無視）。
-check("境界：長星はlunarMonthだけを見る（monthBranchを無視）", MIXED, ["長星"]);
+// 長星は節月 子（十一月）→12。lunarDay=10 は農暦月6（→10）の値なので非該当になるはず。
+check("境界：長星は節月だけを見る（lunarMonth=6 の値 10 では成立しない）", MIXED, [], ["長星"]);
+check("境界：長星は節月 子（十一月）→ lunarDay=12 で成立", { ...MIXED, lunarDay: 12 }, ["長星"]);
 // 四方耗はmonthBranch=子（辰申子トリオ、lunarDay=4が正）。lunarDay=10では非該当。
 check("境界：四方耗はmonthBranchのトリオで判定し、lunarMonthの値では判定しない", MIXED, [], ["四方耗"]);
-// 天乙絶気はlunarMonth=6→lunarDay=11のはず。lunarDay=10では非該当（monthBranch=子は無関係）。
-check("境界：天乙絶気はlunarMonthだけを見る（monthBranch=子の影響を受けない）", MIXED, [], ["天乙絶気"]);
+// 天乙絶気は節月 子（十一月）→16。lunarMonth=6 の値（11）では成立しない。
+check("境界：天乙絶気は節月だけを見る（lunarMonth=6 の値 11 では成立しない）", { ...MIXED, lunarDay: 11 }, [], ["天乙絶気"]);
+check("境界：天乙絶気は節月 子（十一月）→ lunarDay=16 で成立", { ...MIXED, lunarDay: 16 }, ["天乙絶気"]);
+// 上兀は農暦月のまま（監修保留）。子年（陽年）六月＝第6組の上兀は 5,11,17,23,29。
+check("境界：上兀は農暦月（6）で判定（節月 子＝十一月の値 6,12… では成立しない）", { ...MIXED, lunarDay: 11 }, ["上兀"]);
 
 console.log(`完全一致: ${pass} / ${pass + fail}`);
 console.log(`不一致:   ${fail} / ${pass + fail}`);

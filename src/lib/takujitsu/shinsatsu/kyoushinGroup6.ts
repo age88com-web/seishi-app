@@ -40,13 +40,13 @@
 //   ・dayStem＋dayBranch（日干支）固定列挙: なし（本グループでは無し）
 //   ・yearStem固定表＋lunarDay＝1: 上朔（2026-10-06 本文「陰暦の1日で新月をいう」を条件に追加）
 //   ・yearBranch陰陽（子寅辰午申戌＝陽／丑卯巳未酉亥＝陰）＋lunarMonth
-//     ペア月グループ: 上兀（留紳）・下兀（赤口）
-//   ・yearBranch六冲グループ（子午/丑未/寅申/卯酉/辰戌/巳亥）＋lunarMonth
-//     ＋lunarDay: 冰消瓦解
+//     ペア月グループ: 上兀（留紳）・下兀（赤口）［月の基準は監修保留］
+//   ・yearBranch六冲グループ（子午/丑未/寅申/卯酉/辰戌/巳亥）＋節月（monthBranch）
+//     ＋lunarDay: 冰消瓦解［2026-10-06 監修確定で節月］
 //   ・yearBranch8グループ（戌亥/酉/未申/午/辰巳/卯/丑寅/子）＋lunarMonth
-//     ＋lunarDay: 天空・地空
-//   ・lunarMonthのみ＋lunarDay: 長星・短星・揚公忌・冰消瓦碎・大空亡・
-//     小空亡・天乙絶気
+//     ＋lunarDay: 天空・地空［月の基準は監修保留］
+//   ・節月（monthBranch）＋lunarDay: 長星・短星・揚公忌・冰消瓦碎・大空亡・
+//     小空亡・天乙絶気・瘟入・瘟出［2026-10-06 監修確定で節月］
 //   ・lunarDayのみ（月に無関係）: 月忌日・横天朱雀・四不詳・周堂殺・龍禁
 //   ・dayBranch＋二十八宿(lodge28): 伏斷日
 //   ・lodge28固定列挙: 埋兒凶宿
@@ -65,14 +65,18 @@
 //       「卯月＝旧暦2月」と明示しており、暦日番号を出力する表が真の
 //       農暦（lunarMonth基準）であることを裏付けている。
 //   この基準に基づき、本ファイルでは地支出力の表は monthBranch、
-//   暦日番号出力の表は lunarMonth＋lunarDay で実装している。
+//   暦日番号出力の表は lunarMonth＋lunarDay で実装していた。
 //
-// 天乙絶気の再検討について（凶神第5グループの記載を訂正）:
-//   凶神第5グループのコメントでは「天乙絶気はmonthBranchだけで確定できる
-//   固定表」としていたが、本グループでの再確認（上記のワークサンプル）に
-//   より、実際は農暦月（lunarMonth）＋農暦日（lunarDay）を基準とする表
-//   であると判断を改めた。凶神第5グループのファイル自体は変更していない
-//   （コメントの記載のみが対象で、ロジックは元々実装されていなかった）。
+// 監修確定（2026-10-06）による月基準の変更:
+//   規則「原文に月建・月令 → 節月（monthBranch）／農暦・陰暦 → 旧暦月／明記なし → 保留」。
+//   ・見出しが「月令」の表（長星・短星、揚公忌、冰消瓦解、冰消瓦碎、大空亡・小空亡、
+//     瘟入・瘟出）は節月（monthBranch）で月を引き、日は農暦日（lunarDay）とする。
+//   ・天乙絶気も節月（本文の「月建」と表見出しの「月令」を優先。旧暦二月七日の例は
+//     日付の表現が旧暦であるだけで、月の判定基準の根拠にはしない）。
+//   ・月の明記が無い季分・上兀/下兀・天空/地空は監修保留で、従来どおり lunarMonth のまま。
+//   擇日実例.pdf は長星・短星を節月の月見出し（正月＝立春〜）の下に記載しており、節月で読む
+//   ことと整合する。
+//   正月＝寅、二月＝卯 … 十二月＝丑（setsuMonthIndex）。
 //
 // 満日（天狗、5番）について:
 //   凶神第1グループで既に調査済みで、本文の説明（「戊の日の満日のみ」）と
@@ -232,7 +236,7 @@ const SHUUDOUSATSU_DAYS: readonly number[] = [1, 7, 9, 15, 17, 23, 25];
 const RYUUKIN_DAYS: readonly number[] = [2, 8, 14, 20, 26];
 
 /**
- * ［区分B］29）長星・短星（p.34）。lunarMonth（1〜12）ごとに固定の
+ * ［区分B］29）長星・短星（p.34）。節月（monthBranch、正月＝寅）ごとに固定の
  * 暦日番号（複数の場合あり。八月の長星は2・5の2値、八月・九月の短星は
  * 18・19、16・17の2値。原本のまま、推測で1値に絞らない）。
  */
@@ -244,7 +248,7 @@ const TANSEI_BY_MONTH: readonly (readonly number[])[] = [
 ];
 
 /**
- * ［区分B］35）揚公忌（p.36）。lunarMonthごとに固定の暦日番号
+ * ［区分B］35）揚公忌（p.36）。節月ごとに固定の暦日番号
  * （七月のみ1・29の2値）。
  */
 const YOUKOUKI_BY_MONTH: readonly (readonly number[])[] = [
@@ -253,7 +257,7 @@ const YOUKOUKI_BY_MONTH: readonly (readonly number[])[] = [
 
 /**
  * ［区分B］42）冰消瓦解（p.39）。yearBranchの六冲グループ（子午/丑未/
- * 寅申/卯酉/辰戌/巳亥）×lunarMonthごとに固定5暦日番号。
+ * 寅申/卯酉/辰戌/巳亥）×節月ごとに固定5暦日番号。
  * 丑未年の十月「1,9,15,21,27」・卯酉年の二月「1,9,15,21,27」は、
  * 他の月から推測される規則的な数列（丑未年十月なら本来3,9,15,21,27、
  * 卯酉年二月なら本来2,8,14,20,26）から外れた原本のままの値
@@ -297,11 +301,11 @@ const YEARBRANCH_TO_HYOUSHOUGAKAI_GROUP: Record<string, string> = {
   卯: "卯酉", 酉: "卯酉", 辰: "辰戌", 戌: "辰戌", 巳: "巳亥", 亥: "巳亥",
 };
 
-/** ［区分B］42）冰消瓦碎（p.39）。lunarMonthごとに固定1暦日番号。 */
+/** ［区分B］42）冰消瓦碎（p.39）。節月ごとに固定1暦日番号。 */
 const HYOUSHOUGASAI_BY_MONTH: readonly number[] = [7, 8, 6, 7, 5, 6, 4, 5, 3, 4, 2, 3];
 
 /**
- * ［区分B］48）大空亡・小空亡（p.43）。lunarMonthごとに固定4暦日番号
+ * ［区分B］48）大空亡・小空亡（p.43）。節月ごとに固定4暦日番号
  * （8ヶ月周期。正月〜八月の8パターンを九月〜十二月が繰り返す）。
  */
 const DAIKUUBOU_BY_MONTH: readonly (readonly number[])[] = [
@@ -315,10 +319,10 @@ const SHOUKUUBOU_BY_MONTH: readonly (readonly number[])[] = [
   [2, 10, 18, 26], [1, 9, 17, 25], [8, 16, 24], [7, 15, 23],
 ];
 
-/** ［区分B］49）天乙絶気（p.43）。lunarMonthごとに固定1暦日番号（lunarDay）。 */
+/** ［区分B］49）天乙絶気（p.43）。節月ごとに固定1暦日番号（lunarDay）。 */
 const TENOTSUZEKKI_BY_MONTH: readonly number[] = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
 
-/** ［区分B］41）瘟星入出日（瘟入・瘟出、p.38）。lunarMonthごとに固定1暦日番号。 */
+/** ［区分B］41）瘟星入出日（瘟入・瘟出、p.38）。節月ごとに固定1暦日番号。 */
 const ONNYUU_BY_MONTH: readonly number[] = [6, 5, 3, 25, 24, 23, 20, 27, 17, 13, 12, 11];
 const ONSHUTSU_BY_MONTH: readonly number[] = [9, 8, 4, 28, 27, 26, 23, 30, 20, 16, 15, 14];
 
@@ -346,6 +350,30 @@ const TENKUU_START_MONTH_BY_BRANCH: Record<string, number> = {
 function tenkuuBandIndex(lunarMonth: number, yearBranch: string): number {
   const start = TENKUU_START_MONTH_BY_BRANCH[yearBranch];
   return ((lunarMonth - start) % 8 + 8) % 8;
+}
+
+/**
+ * 天空・地空の卯年は、原文（p.42）の印字どおりに扱う（監修確定まで補正しない）。
+ * 原文の卯年の列は、地空「4,12,20,28」／天空「8,16,24」の行（バンド5）に「四月・十月・二月」と
+ * 印字され、十二月がどの行にも無い。そのため、印字どおりに
+ *   ・二月・十月 → 「6,14,22,30／2,10,18,26」の行（バンド3）と、バンド5の両方
+ *   ・十二月     → どの行にも該当しない
+ * とする。監修候補値（十月・二月を十二月の誤植とみる読み）は sourceCorrections.ts の
+ * tiankong-mao-row6 に記録している。2026-10-06 以前は黙って十二月と読み替えていた。
+ */
+const TENKUU_MAO_SOURCE_BANDS: Record<number, readonly number[]> = { 2: [3, 5], 10: [3, 5], 12: [] };
+
+function tenkuuBands(lunarMonth: number, yearBranch: string): readonly number[] {
+  if (yearBranch === "卯" && TENKUU_MAO_SOURCE_BANDS[lunarMonth] !== undefined) {
+    return TENKUU_MAO_SOURCE_BANDS[lunarMonth];
+  }
+  return [tenkuuBandIndex(lunarMonth, yearBranch)];
+}
+
+/** 節月（monthBranch）→ 表の月の位置（正月＝寅＝0 … 十二月＝丑＝11）。該当なしは -1。 */
+const SETSU_MONTH_ORDER = ["寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥", "子", "丑"];
+function setsuMonthIndex(monthBranch: string): number {
+  return SETSU_MONTH_ORDER.indexOf(monthBranch);
 }
 
 /**
@@ -458,10 +486,10 @@ export function resolveKyoushinGroup6(input: ShinsatsuInput): ShinsatsuResult {
     if (RYUUKIN_DAYS.includes(lunarDay)) kyojin.push("龍禁");
   }
 
-  // lunarMonth＋lunarDayで決まる項目
-  if (lunarMonth !== undefined && lunarDay !== undefined) {
-    const mi = lunarMonth - 1;
-    if (mi >= 0 && mi < 12) {
+  // 節月（monthBranch）＋農暦日（lunarDay）で決まる項目（見出し「月令」。監修確定 2026-10-06）
+  if (lunarDay !== undefined) {
+    const mi = setsuMonthIndex(monthBranch);
+    if (mi !== -1) {
       if (CHOUSEI_BY_MONTH[mi].includes(lunarDay)) kyojin.push("長星");
       if (TANSEI_BY_MONTH[mi].includes(lunarDay)) kyojin.push("短星");
       if (YOUKOUKI_BY_MONTH[mi].includes(lunarDay)) kyojin.push("揚公忌");
@@ -471,20 +499,24 @@ export function resolveKyoushinGroup6(input: ShinsatsuInput): ShinsatsuResult {
       if (TENOTSUZEKKI_BY_MONTH[mi] === lunarDay) kyojin.push("天乙絶気");
       if (ONNYUU_BY_MONTH[mi] === lunarDay) kyojin.push("瘟入");
       if (ONSHUTSU_BY_MONTH[mi] === lunarDay) kyojin.push("瘟出");
-    }
 
-    // 42）冰消瓦解（yearBranch六冲グループ＋lunarMonth＋lunarDay）
-    if (yearBranch !== undefined) {
-      const group = YEARBRANCH_TO_HYOUSHOUGAKAI_GROUP[yearBranch];
-      const list = group !== undefined && mi >= 0 && mi < 12 ? HYOUSHOUGAKAI_GROUPS[group][mi] : undefined;
-      if (list !== undefined && list.includes(lunarDay)) kyojin.push("冰消瓦解");
+      // 42）冰消瓦解（yearBranch六冲グループ＋節月＋lunarDay）
+      if (yearBranch !== undefined) {
+        const group = YEARBRANCH_TO_HYOUSHOUGAKAI_GROUP[yearBranch];
+        const list = group !== undefined ? HYOUSHOUGAKAI_GROUPS[group][mi] : undefined;
+        if (list !== undefined && list.includes(lunarDay)) kyojin.push("冰消瓦解");
+      }
     }
+  }
 
+  // 農暦月（lunarMonth）＋lunarDay で決まる項目（月の明記なし。監修保留のため従来どおり）
+  if (lunarMonth !== undefined && lunarDay !== undefined) {
     // 47）天空・地空（yearBranch8グループ＋lunarMonthバンド＋lunarDay）
     if (yearBranch !== undefined && TENKUU_START_MONTH_BY_BRANCH[yearBranch] !== undefined) {
-      const band = tenkuuBandIndex(lunarMonth, yearBranch);
-      if (CHIKUU_BANDS[band].includes(lunarDay)) kyojin.push("地空");
-      if (TENKUU_BANDS[band].includes(lunarDay)) kyojin.push("天空");
+      for (const band of tenkuuBands(lunarMonth, yearBranch)) {
+        if (CHIKUU_BANDS[band].includes(lunarDay) && !kyojin.includes("地空")) kyojin.push("地空");
+        if (TENKUU_BANDS[band].includes(lunarDay) && !kyojin.includes("天空")) kyojin.push("天空");
+      }
     }
 
     // 39）上兀（留紳）・下兀（赤口）（yearBranch陰陽＋月ペアグループ＋lunarDay）
