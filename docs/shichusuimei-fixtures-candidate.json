@@ -1,0 +1,4918 @@
+{
+  "meta": {
+    "title": "四柱推命 Phase 1 fixture 候補",
+    "source": "docs/source/伝統命理基礎編テキスト用.pdf",
+    "spec": "docs/shichusuimei-basic-spec.md",
+    "created": "2026-09-27",
+    "status": "候補（自動テスト未使用）",
+    "pillarOrder": [
+      "時",
+      "日",
+      "月",
+      "年"
+    ],
+    "policy": [
+      "needs_review:false のものだけが自動テストの正解候補",
+      "needs_review:true は自動テストに使わない",
+      "review_code SOURCE_CONFLICT = 資料内不整合、SPEC_DEPENDENT = 未確定仕様に依存して期待値が決まらない、INPUT_INSUFFICIENT = 講座に出生地などの記載がなく D7・D8 の補正後時刻が決まらない、ENGINE_DIFF = 講座の値と共通暦エンジンの値に差がある、SOURCE_ERROR = 講座テキストの誤りとユーザーが判断したもの（期待値は講座の表記のまま記録し、自動テストには使わない）",
+      "reference は照合用の参考値で、正解ではない（正解は expected の講座表記）"
+    ]
+  },
+  "meishiki": [
+    {
+      "id": "MS-F01",
+      "name": "松下幸之助",
+      "source_pages": [
+        3,
+        118
+      ],
+      "input": {
+        "birth": "1894-11-27T08:00",
+        "place": null
+      },
+      "expected": {
+        "pillars": {
+          "時": "丙辰",
+          "日": "癸酉",
+          "月": "乙亥",
+          "年": "甲午"
+        }
+      },
+      "needs_review": false,
+      "d7": {
+        "placeDiffMin": [
+          -29,
+          43
+        ],
+        "eotMin": 13,
+        "correctedTime": "07:44〜08:56",
+        "hourBranch": [
+          "辰"
+        ]
+      },
+      "reference": {
+        "calendarEngineClockTime": {
+          "時": "丙辰",
+          "日": "癸酉",
+          "月": "乙亥",
+          "年": "甲午"
+        },
+        "hourBySlideTableClockTime": "丙辰"
+      }
+    },
+    {
+      "id": "MS-F02",
+      "name": "表記例（p20）",
+      "source_pages": [
+        20
+      ],
+      "input": {
+        "birth": "2010-07-20T13:00",
+        "place": null
+      },
+      "expected": {
+        "pillars": {
+          "時": "乙未",
+          "日": "辛未",
+          "月": "癸未",
+          "年": "庚寅"
+        }
+      },
+      "needs_review": true,
+      "review_code": "INPUT_INSUFFICIENT",
+      "review_reason": "出生地の記載がなく、D7 補正後の時支が出生地によって午／未に変わる",
+      "d7": {
+        "placeDiffMin": [
+          -29,
+          43
+        ],
+        "eotMin": -6,
+        "correctedTime": "12:25〜13:37",
+        "hourBranch": [
+          "午",
+          "未"
+        ]
+      },
+      "reference": {
+        "calendarEngineClockTime": {
+          "時": "乙未",
+          "日": "辛未",
+          "月": "癸未",
+          "年": "庚寅"
+        },
+        "hourBySlideTableClockTime": "乙未"
+      }
+    },
+    {
+      "id": "MS-F04",
+      "name": "イチロー",
+      "source_pages": [
+        29,
+        63,
+        96
+      ],
+      "input": {
+        "birth": "1973-10-22T08:43",
+        "place": "愛知県"
+      },
+      "expected": {
+        "pillars": {
+          "時": "癸巳",
+          "日": "辛卯",
+          "月": "壬戌",
+          "年": "癸丑"
+        }
+      },
+      "needs_review": true,
+      "review_code": "SOURCE_CONFLICT",
+      "review_reason": "イチロー: 時柱が p29・p63 は癸巳、p96 は壬辰（資料内不整合）",
+      "d7": {
+        "placeDiffMin": [
+          7,
+          7
+        ],
+        "eotMin": 15,
+        "correctedTime": "09:05",
+        "hourBranch": [
+          "巳"
+        ]
+      },
+      "reference": {
+        "calendarEngineClockTime": {
+          "時": "壬辰",
+          "日": "辛卯",
+          "月": "壬戌",
+          "年": "癸丑"
+        },
+        "hourBySlideTableClockTime": "壬辰"
+      }
+    },
+    {
+      "id": "MS-F05",
+      "name": "貴乃花光司",
+      "source_pages": [
+        51
+      ],
+      "input": {
+        "birth": "1972-08-12T09:44",
+        "place": "東京都"
+      },
+      "expected": {
+        "pillars": {
+          "時": "辛巳",
+          "日": "乙亥",
+          "月": "戊申",
+          "年": "壬子"
+        }
+      },
+      "needs_review": false,
+      "d7": {
+        "placeDiffMin": [
+          19,
+          19
+        ],
+        "eotMin": -5,
+        "correctedTime": "09:58",
+        "hourBranch": [
+          "巳"
+        ]
+      },
+      "reference": {
+        "calendarEngineClockTime": {
+          "時": "辛巳",
+          "日": "乙亥",
+          "月": "戊申",
+          "年": "壬子"
+        },
+        "hourBySlideTableClockTime": "辛巳"
+      }
+    },
+    {
+      "id": "MS-F06",
+      "name": "長嶋一茂",
+      "source_pages": [
+        64
+      ],
+      "input": {
+        "birth": "1966-01-26T13:12",
+        "place": "東京都"
+      },
+      "expected": {
+        "pillars": {
+          "時": "癸未",
+          "日": "乙酉",
+          "月": "己丑",
+          "年": "乙巳"
+        }
+      },
+      "needs_review": false,
+      "d7": {
+        "placeDiffMin": [
+          19,
+          19
+        ],
+        "eotMin": -13,
+        "correctedTime": "13:18",
+        "hourBranch": [
+          "未"
+        ]
+      },
+      "reference": {
+        "calendarEngineClockTime": {
+          "時": "癸未",
+          "日": "乙酉",
+          "月": "己丑",
+          "年": "乙巳"
+        },
+        "hourBySlideTableClockTime": "癸未"
+      }
+    },
+    {
+      "id": "MS-F07",
+      "name": "藤原紀香",
+      "source_pages": [
+        65,
+        110
+      ],
+      "input": {
+        "birth": "1971-06-28T12:40",
+        "place": "兵庫県西宮市"
+      },
+      "expected": {
+        "pillars": {
+          "時": "庚午",
+          "日": "甲申",
+          "月": "甲午",
+          "年": "辛亥"
+        }
+      },
+      "needs_review": false,
+      "d7": {
+        "placeDiffMin": [
+          1,
+          1
+        ],
+        "eotMin": -3,
+        "correctedTime": "12:38",
+        "hourBranch": [
+          "午"
+        ]
+      },
+      "reference": {
+        "calendarEngineClockTime": {
+          "時": "庚午",
+          "日": "甲申",
+          "月": "甲午",
+          "年": "辛亥"
+        },
+        "hourBySlideTableClockTime": "庚午"
+      }
+    },
+    {
+      "id": "MS-F08",
+      "name": "羽生善治",
+      "source_pages": [
+        66,
+        98
+      ],
+      "input": {
+        "birth": "1970-09-27T07:34",
+        "place": "埼玉県"
+      },
+      "expected": {
+        "pillars": {
+          "時": "庚辰",
+          "日": "庚戌",
+          "月": "乙酉",
+          "年": "庚戌"
+        }
+      },
+      "needs_review": false,
+      "d7": {
+        "placeDiffMin": [
+          15,
+          20
+        ],
+        "eotMin": 9,
+        "correctedTime": "07:58〜08:03",
+        "hourBranch": [
+          "辰"
+        ]
+      },
+      "reference": {
+        "calendarEngineClockTime": {
+          "時": "庚辰",
+          "日": "庚戌",
+          "月": "乙酉",
+          "年": "庚戌"
+        },
+        "hourBySlideTableClockTime": "庚辰"
+      }
+    },
+    {
+      "id": "MS-F09",
+      "name": "アーノルド・シュワルツェネッガー",
+      "source_pages": [
+        37,
+        77
+      ],
+      "input": {
+        "birth": "1947-07-30T04:10",
+        "place": "オーストラリア（p37原文のまま）"
+      },
+      "expected": {
+        "pillars": {
+          "時": "戊寅",
+          "日": "庚戌",
+          "月": "丁未",
+          "年": "丁亥"
+        }
+      },
+      "needs_review": false,
+      "d8": {
+        "place": "オーストラリア（p37原文）",
+        "standardTimes": "オーストラリアの標準時（東経120°/142.5°/150°）",
+        "dst": "7月（南半球の冬）でサマータイムなし",
+        "eotMin": -6,
+        "correctedTimeRange": "03:10〜04:18",
+        "hourBranch": [
+          "寅"
+        ],
+        "note": "オーストラリア国内のどこでも D8 補正後は寅刻で、講座の戊寅と一致（出生地を特定しなくても時支が決まる）"
+      },
+      "reference": {
+        "calendarEngineClockTime": {
+          "時": "戊寅",
+          "日": "庚戌",
+          "月": "丁未",
+          "年": "丁亥"
+        },
+        "hourBySlideTableClockTime": "戊寅"
+      }
+    },
+    {
+      "id": "MS-F10",
+      "name": "佐野量子",
+      "source_pages": [
+        38,
+        72
+      ],
+      "input": {
+        "birth": "1968-08-22T20:17",
+        "place": "静岡"
+      },
+      "expected": {
+        "pillars": {
+          "時": "甲戌",
+          "日": "甲子",
+          "月": "庚申",
+          "年": "戊申"
+        }
+      },
+      "needs_review": false,
+      "d7": {
+        "placeDiffMin": [
+          13,
+          13
+        ],
+        "eotMin": -3,
+        "correctedTime": "20:27",
+        "hourBranch": [
+          "戌"
+        ]
+      },
+      "reference": {
+        "calendarEngineClockTime": {
+          "時": "甲戌",
+          "日": "甲子",
+          "月": "庚申",
+          "年": "戊申"
+        },
+        "hourBySlideTableClockTime": "甲戌"
+      }
+    },
+    {
+      "id": "MS-F12",
+      "name": "マイケル・ジャクソン",
+      "source_pages": [
+        40
+      ],
+      "input": {
+        "birth": "1958-08-29T12:00",
+        "place": null
+      },
+      "expected": {
+        "pillars": {
+          "時": "癸亥",
+          "日": "戊寅",
+          "月": "庚申",
+          "年": "戊戌"
+        }
+      },
+      "needs_review": true,
+      "review_code": "SOURCE_CONFLICT",
+      "review_reason": "マイケル・ジャクソン: PM12:00 に対し時柱が癸亥（資料内不整合）",
+      "reference": {
+        "calendarEngineClockTime": {
+          "時": "戊午",
+          "日": "戊寅",
+          "月": "庚申",
+          "年": "戊戌"
+        },
+        "hourBySlideTableClockTime": "戊午"
+      }
+    },
+    {
+      "id": "MS-F13",
+      "name": "デビッド・ベッカム",
+      "source_pages": [
+        43
+      ],
+      "input": {
+        "birth": "1975-05-02T06:17",
+        "place": "イギリス"
+      },
+      "expected": {
+        "pillars": {
+          "時": "乙卯",
+          "日": "戊申",
+          "月": "庚辰",
+          "年": "乙卯"
+        }
+      },
+      "needs_review": true,
+      "review_code": "INPUT_INSUFFICIENT",
+      "review_reason": "海外出生。出生地が国名のみ（イギリス）で経度が決まらず、D8 補正後の時支が寅／卯のどちらにもなりうる（西経5°付近より東なら講座の卯、西なら寅）",
+      "reference": {
+        "calendarEngineClockTime": {
+          "時": "乙卯",
+          "日": "戊申",
+          "月": "庚辰",
+          "年": "乙卯"
+        },
+        "hourBySlideTableClockTime": "乙卯"
+      }
+    },
+    {
+      "id": "MS-F14",
+      "name": "雛形あきこ",
+      "source_pages": [
+        44
+      ],
+      "input": {
+        "birth": "1978-01-27T09:24",
+        "place": "東京都江戸川区"
+      },
+      "expected": {
+        "pillars": {
+          "時": "己巳",
+          "日": "己丑",
+          "月": "癸丑",
+          "年": "丁巳"
+        }
+      },
+      "needs_review": false,
+      "d7": {
+        "placeDiffMin": [
+          19,
+          19
+        ],
+        "eotMin": -13,
+        "correctedTime": "09:30",
+        "hourBranch": [
+          "巳"
+        ]
+      },
+      "reference": {
+        "calendarEngineClockTime": {
+          "時": "己巳",
+          "日": "己丑",
+          "月": "癸丑",
+          "年": "丁巳"
+        },
+        "hourBySlideTableClockTime": "己巳"
+      }
+    },
+    {
+      "id": "MS-F15",
+      "name": "スティーブ・ジョブズ",
+      "source_pages": [
+        45,
+        121
+      ],
+      "input": {
+        "birth": "1955-02-24T05:13",
+        "place": null
+      },
+      "expected": {
+        "pillars": {
+          "時": "辛卯",
+          "日": "丙辰",
+          "月": "戊寅",
+          "年": "乙未"
+        }
+      },
+      "needs_review": true,
+      "review_code": "INPUT_INSUFFICIENT",
+      "review_reason": "海外出生。出生地の記載がなく、D8 の補正ができない。講座の卯刻になるのは補正後5:00以降＝標準子午線より東の出生地の場合のみ",
+      "reference": {
+        "calendarEngineClockTime": {
+          "時": "辛卯",
+          "日": "丙辰",
+          "月": "戊寅",
+          "年": "乙未"
+        },
+        "hourBySlideTableClockTime": "辛卯"
+      }
+    },
+    {
+      "id": "MS-F16",
+      "name": "松坂大輔",
+      "source_pages": [
+        46
+      ],
+      "input": {
+        "birth": "1980-09-13T09:36",
+        "place": "青森県外ヶ浜町"
+      },
+      "expected": {
+        "pillars": {
+          "時": "己巳",
+          "日": "己丑",
+          "月": "乙酉",
+          "年": "庚申"
+        }
+      },
+      "needs_review": false,
+      "d7": {
+        "placeDiffMin": [
+          22,
+          23
+        ],
+        "eotMin": 4,
+        "correctedTime": "10:02〜10:03",
+        "hourBranch": [
+          "巳"
+        ]
+      },
+      "reference": {
+        "calendarEngineClockTime": {
+          "時": "己巳",
+          "日": "己丑",
+          "月": "乙酉",
+          "年": "庚申"
+        },
+        "hourBySlideTableClockTime": "己巳"
+      }
+    },
+    {
+      "id": "MS-F17",
+      "name": "宇多田ヒカル",
+      "source_pages": [
+        47
+      ],
+      "input": {
+        "birth": "1983-01-19T01:17",
+        "place": "北海道"
+      },
+      "expected": {
+        "pillars": {
+          "時": "辛丑",
+          "日": "丁未",
+          "月": "癸丑",
+          "年": "壬戌"
+        }
+      },
+      "needs_review": false,
+      "d7": {
+        "placeDiffMin": [
+          17,
+          43
+        ],
+        "eotMin": -11,
+        "correctedTime": "01:23〜01:49",
+        "hourBranch": [
+          "丑"
+        ]
+      },
+      "reference": {
+        "calendarEngineClockTime": {
+          "時": "辛丑",
+          "日": "丁未",
+          "月": "癸丑",
+          "年": "壬戌"
+        },
+        "hourBySlideTableClockTime": "辛丑"
+      }
+    },
+    {
+      "id": "MS-F18",
+      "name": "山口もえ",
+      "source_pages": [
+        69
+      ],
+      "input": {
+        "birth": "1977-06-11T02:00",
+        "place": null
+      },
+      "expected": {
+        "pillars": {
+          "時": "甲子",
+          "日": "己亥",
+          "月": "丙午",
+          "年": "丁巳"
+        }
+      },
+      "needs_review": true,
+      "review_code": "SOURCE_CONFLICT",
+      "review_reason": "山口もえ: AM2:00 に対し時柱が甲子（p24 の表では乙丑）（資料内不整合）",
+      "d7": {
+        "placeDiffMin": [
+          -29,
+          43
+        ],
+        "eotMin": 1,
+        "correctedTime": "01:32〜02:44",
+        "hourBranch": [
+          "丑"
+        ]
+      },
+      "reference": {
+        "calendarEngineClockTime": {
+          "時": "乙丑",
+          "日": "己亥",
+          "月": "丙午",
+          "年": "丁巳"
+        },
+        "hourBySlideTableClockTime": "乙丑"
+      }
+    },
+    {
+      "id": "MS-F19",
+      "name": "木村カエラ",
+      "source_pages": [
+        73
+      ],
+      "input": {
+        "birth": "1984-10-24T12:00",
+        "place": null
+      },
+      "expected": {
+        "pillars": {
+          "時": "甲午",
+          "日": "辛卯",
+          "月": "甲戌",
+          "年": "甲子"
+        }
+      },
+      "note": "原文「AM12:00」。講座は正午（午刻）として表記",
+      "needs_review": false,
+      "d7": {
+        "placeDiffMin": [
+          -29,
+          43
+        ],
+        "eotMin": 16,
+        "correctedTime": "11:47〜12:59",
+        "hourBranch": [
+          "午"
+        ]
+      },
+      "reference": {
+        "calendarEngineClockTime": {
+          "時": "甲午",
+          "日": "辛卯",
+          "月": "甲戌",
+          "年": "甲子"
+        },
+        "hourBySlideTableClockTime": "甲午"
+      }
+    },
+    {
+      "id": "MS-F20",
+      "name": "明石家さんま",
+      "source_pages": [
+        75
+      ],
+      "input": {
+        "birth": "1955-07-01T06:06",
+        "place": "奈良県"
+      },
+      "expected": {
+        "pillars": {
+          "時": "乙卯",
+          "日": "癸亥",
+          "月": "壬午",
+          "年": "乙未"
+        }
+      },
+      "needs_review": false,
+      "d7": {
+        "placeDiffMin": [
+          3,
+          3
+        ],
+        "eotMin": -4,
+        "correctedTime": "06:05",
+        "hourBranch": [
+          "卯"
+        ]
+      },
+      "reference": {
+        "calendarEngineClockTime": {
+          "時": "乙卯",
+          "日": "癸亥",
+          "月": "壬午",
+          "年": "乙未"
+        },
+        "hourBySlideTableClockTime": "乙卯"
+      }
+    },
+    {
+      "id": "MS-F21",
+      "name": "千代の富士",
+      "source_pages": [
+        80
+      ],
+      "input": {
+        "birth": "1955-06-01T07:10",
+        "place": null
+      },
+      "expected": {
+        "pillars": {
+          "時": "丙辰",
+          "日": "癸巳",
+          "月": "辛巳",
+          "年": "乙未"
+        }
+      },
+      "needs_review": true,
+      "review_code": "INPUT_INSUFFICIENT",
+      "review_reason": "出生地の記載がなく、D7 補正後の時支が出生地によって卯／辰に変わる",
+      "d7": {
+        "placeDiffMin": [
+          -29,
+          43
+        ],
+        "eotMin": 2,
+        "correctedTime": "06:43〜07:55",
+        "hourBranch": [
+          "卯",
+          "辰"
+        ]
+      },
+      "reference": {
+        "calendarEngineClockTime": {
+          "時": "丙辰",
+          "日": "癸巳",
+          "月": "辛巳",
+          "年": "乙未"
+        },
+        "hourBySlideTableClockTime": "丙辰"
+      }
+    },
+    {
+      "id": "MS-F22",
+      "name": "荒川静香",
+      "source_pages": [
+        83
+      ],
+      "input": {
+        "birth": "1981-12-29T08:20",
+        "place": null
+      },
+      "expected": {
+        "pillars": {
+          "時": "壬辰",
+          "日": "辛巳",
+          "月": "庚子",
+          "年": "辛酉"
+        }
+      },
+      "needs_review": true,
+      "review_code": "SOURCE_CONFLICT",
+      "review_reason": "荒川静香: 大運年齢の表記に43がある（資料内不整合）",
+      "d7": {
+        "placeDiffMin": [
+          -29,
+          43
+        ],
+        "eotMin": -2,
+        "correctedTime": "07:49〜09:01",
+        "hourBranch": [
+          "辰",
+          "巳"
+        ]
+      },
+      "reference": {
+        "calendarEngineClockTime": {
+          "時": "壬辰",
+          "日": "辛巳",
+          "月": "庚子",
+          "年": "辛酉"
+        },
+        "hourBySlideTableClockTime": "壬辰"
+      }
+    },
+    {
+      "id": "MS-F23",
+      "name": "千昌夫",
+      "source_pages": [
+        85
+      ],
+      "input": {
+        "birth": "1947-04-08",
+        "place": null
+      },
+      "expected": {
+        "pillars": {
+          "時": null,
+          "日": "丁巳",
+          "月": "甲辰",
+          "年": "丁亥"
+        }
+      },
+      "note": "時刻不明（時柱空欄）",
+      "needs_review": false,
+      "reference": {
+        "calendarEngineClockTime": {
+          "時": "丙午",
+          "日": "丁巳",
+          "月": "甲辰",
+          "年": "丁亥"
+        },
+        "hourBySlideTableClockTime": null
+      }
+    },
+    {
+      "id": "MS-F24",
+      "name": "釈由美子",
+      "source_pages": [
+        87
+      ],
+      "input": {
+        "birth": "1978-06-12T19:43",
+        "place": null
+      },
+      "expected": {
+        "pillars": {
+          "時": "丙戌",
+          "日": "乙巳",
+          "月": "戊午",
+          "年": "戊午"
+        }
+      },
+      "needs_review": false,
+      "d7": {
+        "placeDiffMin": [
+          -29,
+          43
+        ],
+        "eotMin": 0,
+        "correctedTime": "19:14〜20:26",
+        "hourBranch": [
+          "戌"
+        ]
+      },
+      "reference": {
+        "calendarEngineClockTime": {
+          "時": "丙戌",
+          "日": "乙巳",
+          "月": "戊午",
+          "年": "戊午"
+        },
+        "hourBySlideTableClockTime": "丙戌"
+      }
+    },
+    {
+      "id": "MS-F25",
+      "name": "大野智",
+      "source_pages": [
+        89
+      ],
+      "input": {
+        "birth": "1980-11-26T09:07",
+        "place": null
+      },
+      "expected": {
+        "pillars": {
+          "時": "丁巳",
+          "日": "癸卯",
+          "月": "丁亥",
+          "年": "庚申"
+        }
+      },
+      "needs_review": true,
+      "review_code": "INPUT_INSUFFICIENT",
+      "review_reason": "出生地の記載がなく、D7 補正後の時支が出生地によって辰／巳に変わる",
+      "d7": {
+        "placeDiffMin": [
+          -29,
+          43
+        ],
+        "eotMin": 13,
+        "correctedTime": "08:51〜10:03",
+        "hourBranch": [
+          "辰",
+          "巳"
+        ]
+      },
+      "reference": {
+        "calendarEngineClockTime": {
+          "時": "丁巳",
+          "日": "癸卯",
+          "月": "丁亥",
+          "年": "庚申"
+        },
+        "hourBySlideTableClockTime": "丁巳"
+      }
+    },
+    {
+      "id": "MS-F26",
+      "name": "堂本剛",
+      "source_pages": [
+        92
+      ],
+      "input": {
+        "birth": "1979-04-10T14:00",
+        "place": null
+      },
+      "expected": {
+        "pillars": {
+          "時": "丁未",
+          "日": "丁未",
+          "月": "戊辰",
+          "年": "己未"
+        }
+      },
+      "needs_review": false,
+      "d7": {
+        "placeDiffMin": [
+          -29,
+          43
+        ],
+        "eotMin": -1,
+        "correctedTime": "13:30〜14:42",
+        "hourBranch": [
+          "未"
+        ]
+      },
+      "reference": {
+        "calendarEngineClockTime": {
+          "時": "丁未",
+          "日": "丁未",
+          "月": "戊辰",
+          "年": "己未"
+        },
+        "hourBySlideTableClockTime": "丁未"
+      }
+    },
+    {
+      "id": "MS-F27",
+      "name": "陣内智則",
+      "source_pages": [
+        110
+      ],
+      "input": {
+        "birth": "1974-02-22",
+        "place": null
+      },
+      "expected": {
+        "pillars": {
+          "時": null,
+          "日": "甲午",
+          "月": "丙寅",
+          "年": "甲寅"
+        }
+      },
+      "note": "時刻不明（時柱空欄）",
+      "needs_review": false,
+      "reference": {
+        "calendarEngineClockTime": {
+          "時": "庚午",
+          "日": "甲午",
+          "月": "丙寅",
+          "年": "甲寅"
+        },
+        "hourBySlideTableClockTime": null
+      }
+    },
+    {
+      "id": "MS-F28",
+      "name": "小倉優子",
+      "source_pages": [
+        115
+      ],
+      "input": {
+        "birth": "1983-11-01T16:10",
+        "place": "千葉県"
+      },
+      "expected": {
+        "pillars": {
+          "時": "戊申",
+          "日": "壬戌",
+          "月": "癸亥",
+          "年": "癸亥"
+        }
+      },
+      "needs_review": true,
+      "review_code": "SOURCE_CONFLICT",
+      "review_reason": "小倉優子: 胎・命欄が胎元規則と合わず、申の蔵干の並びも p114 と異なる（資料内不整合）",
+      "d7": {
+        "placeDiffMin": [
+          20,
+          20
+        ],
+        "eotMin": 16,
+        "correctedTime": "16:46",
+        "hourBranch": [
+          "申"
+        ]
+      },
+      "reference": {
+        "calendarEngineClockTime": {
+          "時": "庚申",
+          "日": "癸巳",
+          "月": "壬戌",
+          "年": "癸亥"
+        },
+        "hourBySlideTableClockTime": "戊申"
+      }
+    },
+    {
+      "id": "MS-F29",
+      "name": "青木さやか",
+      "source_pages": [
+        116
+      ],
+      "input": {
+        "birth": "1973-03-27T02:30",
+        "place": null
+      },
+      "expected": {
+        "pillars": {
+          "時": "辛丑",
+          "日": "壬戌",
+          "月": "乙卯",
+          "年": "癸丑"
+        }
+      },
+      "needs_review": true,
+      "review_code": "INPUT_INSUFFICIENT",
+      "review_reason": "出生地の記載がなく、D7 補正後の時支が出生地によって丑／寅に変わる",
+      "d7": {
+        "placeDiffMin": [
+          -29,
+          43
+        ],
+        "eotMin": -6,
+        "correctedTime": "01:55〜03:07",
+        "hourBranch": [
+          "丑",
+          "寅"
+        ]
+      },
+      "reference": {
+        "calendarEngineClockTime": {
+          "時": "辛丑",
+          "日": "壬戌",
+          "月": "乙卯",
+          "年": "癸丑"
+        },
+        "hourBySlideTableClockTime": "辛丑"
+      }
+    },
+    {
+      "id": "MS-E01",
+      "name": "同時多発テロ",
+      "source_pages": [
+        16
+      ],
+      "input": {
+        "birth": "2001-09-11T08:45",
+        "place": null
+      },
+      "expected": {
+        "pillars": {
+          "時": "甲辰",
+          "日": "丁丑",
+          "月": "丁酉",
+          "年": "辛巳"
+        }
+      },
+      "needs_review": true,
+      "review_code": "INPUT_INSUFFICIENT",
+      "review_reason": "出来事の命式。講座に発生地の記載がなく、D8 の補正ができない"
+    },
+    {
+      "id": "MS-E02",
+      "name": "タイタニック号",
+      "source_pages": [
+        17
+      ],
+      "input": {
+        "birth": "1912-04-14T23:40",
+        "place": null
+      },
+      "expected": {
+        "pillars": {
+          "時": "戊子",
+          "日": "庚申",
+          "月": "甲辰",
+          "年": "壬子"
+        }
+      },
+      "needs_review": true,
+      "review_code": "SOURCE_CONFLICT",
+      "review_reason": "23時台で日柱は当日のまま・時干のみ翌日日干。確定仕様（23:00換日）と一致しない"
+    },
+    {
+      "id": "MS-E03",
+      "name": "タイタニック号 完全に沈んだ時",
+      "source_pages": [
+        17
+      ],
+      "input": {
+        "birth": null,
+        "place": null
+      },
+      "expected": {
+        "pillars": {
+          "時": "己丑",
+          "日": "辛酉",
+          "月": "甲辰",
+          "年": "壬子"
+        }
+      },
+      "needs_review": true,
+      "review_code": "SOURCE_CONFLICT",
+      "review_reason": "時刻の記載なし（入力を定義できない）"
+    },
+    {
+      "id": "MS-E04",
+      "name": "ジョブズ永眠",
+      "source_pages": [
+        121
+      ],
+      "input": {
+        "birth": "2011-10-05T15:00",
+        "place": null
+      },
+      "expected": {
+        "pillars": {
+          "時": "庚申",
+          "日": "癸巳",
+          "月": "丁酉",
+          "年": "辛卯"
+        }
+      },
+      "needs_review": true,
+      "review_code": "INPUT_INSUFFICIENT",
+      "review_reason": "出来事の命式。講座に発生地の記載がなく、D8 の補正ができない"
+    }
+  ],
+  "daiun": {
+    "sequence": [
+      {
+        "id": "DS-F01",
+        "name": "松下幸之助",
+        "source_pages": [
+          3,
+          118
+        ],
+        "input": {
+          "monthPillar": "乙亥",
+          "yearStem": "甲",
+          "sex": "M",
+          "sexSource": "講座に明記なし（実在人物の性別。講座の大運の順逆とも一致）"
+        },
+        "expected": {
+          "direction": "forward",
+          "luck": [
+            "丙子",
+            "丁丑",
+            "戊寅",
+            "己卯",
+            "庚辰",
+            "辛巳",
+            "壬午",
+            "癸未",
+            "甲申",
+            "乙酉"
+          ]
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DS-F04",
+        "name": "イチロー",
+        "source_pages": [
+          29,
+          63,
+          96
+        ],
+        "input": {
+          "monthPillar": "壬戌",
+          "yearStem": "癸",
+          "sex": "M",
+          "sexSource": "講座に明記なし（実在人物の性別。講座の大運の順逆とも一致）"
+        },
+        "expected": {
+          "direction": "backward",
+          "luck": [
+            "辛酉",
+            "庚申",
+            "己未",
+            "戊午",
+            "丁巳",
+            "丙辰",
+            "乙卯",
+            "甲寅"
+          ]
+        },
+        "needs_review": true,
+        "review_code": "SOURCE_CONFLICT",
+        "review_reason": "イチロー: 時柱が p29・p63 は癸巳、p96 は壬辰（資料内不整合）"
+      },
+      {
+        "id": "DS-F05",
+        "name": "貴乃花光司",
+        "source_pages": [
+          51
+        ],
+        "input": {
+          "monthPillar": "戊申",
+          "yearStem": "壬",
+          "sex": "M",
+          "sexSource": "講座に明記なし（実在人物の性別。講座の大運の順逆とも一致）"
+        },
+        "expected": {
+          "direction": "forward",
+          "luck": [
+            "己酉",
+            "庚戌",
+            "辛亥",
+            "壬子",
+            "癸丑",
+            "甲寅",
+            "乙卯",
+            "丙辰"
+          ]
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DS-F06",
+        "name": "長嶋一茂",
+        "source_pages": [
+          64
+        ],
+        "input": {
+          "monthPillar": "己丑",
+          "yearStem": "乙",
+          "sex": "M",
+          "sexSource": "講座に明記なし（実在人物の性別。講座の大運の順逆とも一致）"
+        },
+        "expected": {
+          "direction": "backward",
+          "luck": [
+            "戊子",
+            "丁亥",
+            "丙戌",
+            "乙酉",
+            "甲申",
+            "癸未",
+            "壬午",
+            "辛巳"
+          ]
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DS-F07",
+        "name": "藤原紀香",
+        "source_pages": [
+          65,
+          110
+        ],
+        "input": {
+          "monthPillar": "甲午",
+          "yearStem": "辛",
+          "sex": "F",
+          "sexSource": "講座に明記なし（実在人物の性別。講座の大運の順逆とも一致）"
+        },
+        "expected": {
+          "direction": "forward",
+          "luck": [
+            "乙未",
+            "丙申",
+            "丁酉",
+            "戊戌",
+            "己亥",
+            "庚子",
+            "辛丑",
+            "壬寅"
+          ]
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DS-F08",
+        "name": "羽生善治",
+        "source_pages": [
+          66,
+          98
+        ],
+        "input": {
+          "monthPillar": "乙酉",
+          "yearStem": "庚",
+          "sex": "M",
+          "sexSource": "講座に明記なし（実在人物の性別。講座の大運の順逆とも一致）"
+        },
+        "expected": {
+          "direction": "forward",
+          "luck": [
+            "丙戌",
+            "丁亥",
+            "戊子",
+            "己丑",
+            "庚寅",
+            "辛卯",
+            "壬辰",
+            "癸巳"
+          ]
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DS-F09",
+        "name": "アーノルド・シュワルツェネッガー",
+        "source_pages": [
+          37,
+          77
+        ],
+        "input": {
+          "monthPillar": "丁未",
+          "yearStem": "丁",
+          "sex": "M",
+          "sexSource": "講座に明記なし（実在人物の性別。講座の大運の順逆とも一致）"
+        },
+        "expected": {
+          "direction": "backward",
+          "luck": [
+            "丙午",
+            "乙巳",
+            "甲辰",
+            "癸卯",
+            "壬寅",
+            "辛丑",
+            "庚子",
+            "己亥"
+          ]
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DS-F10",
+        "name": "佐野量子",
+        "source_pages": [
+          38,
+          72
+        ],
+        "input": {
+          "monthPillar": "庚申",
+          "yearStem": "戊",
+          "sex": "F",
+          "sexSource": "講座に明記なし（実在人物の性別。講座の大運の順逆とも一致）"
+        },
+        "expected": {
+          "direction": "backward",
+          "luck": [
+            "己未",
+            "戊午",
+            "丁巳",
+            "丙辰",
+            "乙卯",
+            "甲寅",
+            "癸丑",
+            "壬子"
+          ]
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DS-F11",
+        "name": "張飛",
+        "source_pages": [
+          39
+        ],
+        "input": {
+          "monthPillar": "癸亥",
+          "yearStem": "癸",
+          "sex": "M",
+          "sexSource": "講座に明記なし（実在人物の性別。講座の大運の順逆とも一致）"
+        },
+        "expected": {
+          "direction": "backward",
+          "luck": [
+            "壬戌",
+            "辛酉",
+            "庚申",
+            "己未",
+            "戊午",
+            "丁巳"
+          ]
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DS-F12",
+        "name": "マイケル・ジャクソン",
+        "source_pages": [
+          40
+        ],
+        "input": {
+          "monthPillar": "庚申",
+          "yearStem": "戊",
+          "sex": "M",
+          "sexSource": "講座に明記なし（実在人物の性別。講座の大運の順逆とも一致）"
+        },
+        "expected": {
+          "direction": "forward",
+          "luck": [
+            "辛酉",
+            "壬戌",
+            "癸亥",
+            "甲子",
+            "乙丑",
+            "丙寅"
+          ]
+        },
+        "needs_review": true,
+        "review_code": "SOURCE_CONFLICT",
+        "review_reason": "マイケル・ジャクソン: PM12:00 に対し時柱が癸亥（資料内不整合）"
+      },
+      {
+        "id": "DS-F13",
+        "name": "デビッド・ベッカム",
+        "source_pages": [
+          43
+        ],
+        "input": {
+          "monthPillar": "庚辰",
+          "yearStem": "乙",
+          "sex": "M",
+          "sexSource": "講座に明記なし（実在人物の性別。講座の大運の順逆とも一致）"
+        },
+        "expected": {
+          "direction": "backward",
+          "luck": [
+            "己卯",
+            "戊寅",
+            "丁丑",
+            "丙子",
+            "乙亥",
+            "甲戌",
+            "癸酉",
+            "壬申"
+          ]
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DS-F14",
+        "name": "雛形あきこ",
+        "source_pages": [
+          44
+        ],
+        "input": {
+          "monthPillar": "癸丑",
+          "yearStem": "丁",
+          "sex": "F",
+          "sexSource": "講座に明記なし（実在人物の性別。講座の大運の順逆とも一致）"
+        },
+        "expected": {
+          "direction": "forward",
+          "luck": [
+            "甲寅",
+            "乙卯",
+            "丙辰",
+            "丁巳",
+            "戊午",
+            "己未",
+            "庚申",
+            "辛酉"
+          ]
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DS-F15",
+        "name": "スティーブ・ジョブズ",
+        "source_pages": [
+          45,
+          121
+        ],
+        "input": {
+          "monthPillar": "戊寅",
+          "yearStem": "乙",
+          "sex": "M",
+          "sexSource": "講座に明記なし（実在人物の性別。講座の大運の順逆とも一致）"
+        },
+        "expected": {
+          "direction": "backward",
+          "luck": [
+            "丁丑",
+            "丙子",
+            "乙亥",
+            "甲戌",
+            "癸酉",
+            "壬申",
+            "辛未",
+            "庚午"
+          ]
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DS-F16",
+        "name": "松坂大輔",
+        "source_pages": [
+          46
+        ],
+        "input": {
+          "monthPillar": "乙酉",
+          "yearStem": "庚",
+          "sex": "M",
+          "sexSource": "講座に明記なし（実在人物の性別。講座の大運の順逆とも一致）"
+        },
+        "expected": {
+          "direction": "forward",
+          "luck": [
+            "丙戌",
+            "丁亥",
+            "戊子",
+            "己丑",
+            "庚寅",
+            "辛卯",
+            "壬辰",
+            "癸巳"
+          ]
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DS-F17",
+        "name": "宇多田ヒカル",
+        "source_pages": [
+          47
+        ],
+        "input": {
+          "monthPillar": "癸丑",
+          "yearStem": "壬",
+          "sex": "F",
+          "sexSource": "講座に明記なし（実在人物の性別。講座の大運の順逆とも一致）"
+        },
+        "expected": {
+          "direction": "backward",
+          "luck": [
+            "壬子",
+            "辛亥",
+            "庚戌",
+            "己酉",
+            "戊申",
+            "丁未",
+            "丙午",
+            "乙巳"
+          ]
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DS-F18",
+        "name": "山口もえ",
+        "source_pages": [
+          69
+        ],
+        "input": {
+          "monthPillar": "丙午",
+          "yearStem": "丁",
+          "sex": "F",
+          "sexSource": "講座に明記なし（実在人物の性別。講座の大運の順逆とも一致）"
+        },
+        "expected": {
+          "direction": "forward",
+          "luck": [
+            "丁未",
+            "戊申",
+            "己酉",
+            "庚戌",
+            "辛亥",
+            "壬子",
+            "癸丑",
+            "甲寅"
+          ]
+        },
+        "needs_review": true,
+        "review_code": "SOURCE_CONFLICT",
+        "review_reason": "山口もえ: AM2:00 に対し時柱が甲子（p24 の表では乙丑）（資料内不整合）"
+      },
+      {
+        "id": "DS-F19",
+        "name": "木村カエラ",
+        "source_pages": [
+          73
+        ],
+        "input": {
+          "monthPillar": "甲戌",
+          "yearStem": "甲",
+          "sex": "F",
+          "sexSource": "講座に明記なし（実在人物の性別。講座の大運の順逆とも一致）"
+        },
+        "expected": {
+          "direction": "backward",
+          "luck": [
+            "癸酉",
+            "壬申",
+            "辛未",
+            "庚午",
+            "己巳",
+            "戊辰",
+            "丁卯",
+            "丙寅"
+          ]
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DS-F20",
+        "name": "明石家さんま",
+        "source_pages": [
+          75
+        ],
+        "input": {
+          "monthPillar": "壬午",
+          "yearStem": "乙",
+          "sex": "M",
+          "sexSource": "講座に明記なし（実在人物の性別。講座の大運の順逆とも一致）"
+        },
+        "expected": {
+          "direction": "backward",
+          "luck": [
+            "辛巳",
+            "庚辰",
+            "己卯",
+            "戊寅",
+            "丁丑",
+            "丙子",
+            "乙亥",
+            "甲戌"
+          ]
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DS-F21",
+        "name": "千代の富士",
+        "source_pages": [
+          80
+        ],
+        "input": {
+          "monthPillar": "辛巳",
+          "yearStem": "乙",
+          "sex": "M",
+          "sexSource": "講座に明記なし（実在人物の性別。講座の大運の順逆とも一致）"
+        },
+        "expected": {
+          "direction": "backward",
+          "luck": [
+            "庚辰",
+            "己卯",
+            "戊寅",
+            "丁丑",
+            "丙子",
+            "乙亥",
+            "甲戌",
+            "癸酉"
+          ]
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DS-F22",
+        "name": "荒川静香",
+        "source_pages": [
+          83
+        ],
+        "input": {
+          "monthPillar": "庚子",
+          "yearStem": "辛",
+          "sex": "F",
+          "sexSource": "講座に明記なし（実在人物の性別。講座の大運の順逆とも一致）"
+        },
+        "expected": {
+          "direction": "forward",
+          "luck": [
+            "辛丑",
+            "壬寅",
+            "癸卯",
+            "甲辰",
+            "乙巳",
+            "丙午",
+            "丁未",
+            "戊申"
+          ]
+        },
+        "needs_review": true,
+        "review_code": "SOURCE_CONFLICT",
+        "review_reason": "荒川静香: 大運年齢の表記に43がある（資料内不整合）"
+      },
+      {
+        "id": "DS-F23",
+        "name": "千昌夫",
+        "source_pages": [
+          85
+        ],
+        "input": {
+          "monthPillar": "甲辰",
+          "yearStem": "丁",
+          "sex": "M",
+          "sexSource": "講座に明記なし（実在人物の性別。講座の大運の順逆とも一致）"
+        },
+        "expected": {
+          "direction": "backward",
+          "luck": [
+            "癸卯",
+            "壬寅",
+            "辛丑",
+            "庚子",
+            "己亥",
+            "戊戌",
+            "丁酉",
+            "丙申"
+          ]
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DS-F24",
+        "name": "釈由美子",
+        "source_pages": [
+          87
+        ],
+        "input": {
+          "monthPillar": "戊午",
+          "yearStem": "戊",
+          "sex": "F",
+          "sexSource": "講座に明記なし（実在人物の性別。講座の大運の順逆とも一致）"
+        },
+        "expected": {
+          "direction": "backward",
+          "luck": [
+            "丁巳",
+            "丙辰",
+            "乙卯",
+            "甲寅",
+            "癸丑",
+            "壬子",
+            "辛亥",
+            "庚戌"
+          ]
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DS-F25",
+        "name": "大野智",
+        "source_pages": [
+          89
+        ],
+        "input": {
+          "monthPillar": "丁亥",
+          "yearStem": "庚",
+          "sex": "M",
+          "sexSource": "講座に明記なし（実在人物の性別。講座の大運の順逆とも一致）"
+        },
+        "expected": {
+          "direction": "forward",
+          "luck": [
+            "戊子",
+            "己丑",
+            "庚寅",
+            "辛卯",
+            "壬辰",
+            "癸巳",
+            "甲午",
+            "乙未"
+          ]
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DS-F26",
+        "name": "堂本剛",
+        "source_pages": [
+          92
+        ],
+        "input": {
+          "monthPillar": "戊辰",
+          "yearStem": "己",
+          "sex": "M",
+          "sexSource": "講座に明記なし（実在人物の性別。講座の大運の順逆とも一致）"
+        },
+        "expected": {
+          "direction": "backward",
+          "luck": [
+            "丁卯",
+            "丙寅",
+            "乙丑",
+            "甲子",
+            "癸亥",
+            "壬戌",
+            "辛酉",
+            "庚申"
+          ]
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DS-F28",
+        "name": "小倉優子",
+        "source_pages": [
+          115
+        ],
+        "input": {
+          "monthPillar": "癸亥",
+          "yearStem": "癸",
+          "sex": "F",
+          "sexSource": "講座に明記なし（実在人物の性別。講座の大運の順逆とも一致）"
+        },
+        "expected": {
+          "direction": "forward",
+          "luck": [
+            "甲子",
+            "乙丑",
+            "丙寅",
+            "丁卯",
+            "戊辰",
+            "己巳",
+            "庚午",
+            "辛未"
+          ]
+        },
+        "needs_review": true,
+        "review_code": "SOURCE_CONFLICT",
+        "review_reason": "小倉優子: 胎・命欄が胎元規則と合わず、申の蔵干の並びも p114 と異なる（資料内不整合）"
+      },
+      {
+        "id": "DS-F29",
+        "name": "青木さやか",
+        "source_pages": [
+          116
+        ],
+        "input": {
+          "monthPillar": "乙卯",
+          "yearStem": "癸",
+          "sex": "F",
+          "sexSource": "講座に明記なし（実在人物の性別。講座の大運の順逆とも一致）"
+        },
+        "expected": {
+          "direction": "forward",
+          "luck": [
+            "丙辰",
+            "丁巳",
+            "戊午",
+            "己未",
+            "庚申",
+            "辛酉",
+            "壬戌",
+            "癸亥"
+          ]
+        },
+        "needs_review": false
+      }
+    ],
+    "startAge": [
+      {
+        "id": "DA-F01",
+        "name": "松下幸之助",
+        "source_pages": [
+          3,
+          118
+        ],
+        "input": {
+          "birth": "1894-11-27T08:00",
+          "place": null,
+          "sex": "M",
+          "yearStem": "甲"
+        },
+        "expected": {
+          "startAge": 3
+        },
+        "reference": {
+          "jieUsed": "大雪",
+          "jieDateTime": "1894-12-07, 10:56",
+          "daysByDateDiff": 10,
+          "p28RuleResult": 3,
+          "note": "節入り日時は CalendarEngine による参考値（講座は万年暦参照）"
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DA-F04",
+        "name": "イチロー",
+        "source_pages": [
+          29,
+          63,
+          96
+        ],
+        "input": {
+          "birth": "1973-10-22T08:43",
+          "place": "愛知県",
+          "sex": "M",
+          "yearStem": "癸"
+        },
+        "expected": {
+          "startAge": 5
+        },
+        "reference": {
+          "jieUsed": "寒露",
+          "jieDateTime": "1973-10-08, 19:18",
+          "daysByDateDiff": 14,
+          "p28RuleResult": 5,
+          "note": "節入り日時は CalendarEngine による参考値（講座は万年暦参照）"
+        },
+        "needs_review": true,
+        "review_code": "SOURCE_CONFLICT",
+        "review_reason": "イチロー: 時柱が p29・p63 は癸巳、p96 は壬辰（資料内不整合）"
+      },
+      {
+        "id": "DA-F05",
+        "name": "貴乃花光司",
+        "source_pages": [
+          51
+        ],
+        "input": {
+          "birth": "1972-08-12T09:44",
+          "place": "東京都",
+          "sex": "M",
+          "yearStem": "壬"
+        },
+        "expected": {
+          "startAge": 9
+        },
+        "reference": {
+          "jieUsed": "白露",
+          "jieDateTime": "1972-09-07, 22:06",
+          "daysByDateDiff": 26,
+          "p28RuleResult": 9,
+          "note": "節入り日時は CalendarEngine による参考値（講座は万年暦参照）"
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DA-F06",
+        "name": "長嶋一茂",
+        "source_pages": [
+          64
+        ],
+        "input": {
+          "birth": "1966-01-26T13:12",
+          "place": "東京都",
+          "sex": "M",
+          "yearStem": "乙"
+        },
+        "expected": {
+          "startAge": 7
+        },
+        "reference": {
+          "jieUsed": "小寒",
+          "jieDateTime": "1966-01-06, 03:46",
+          "daysByDateDiff": 20,
+          "p28RuleResult": 7,
+          "note": "節入り日時は CalendarEngine による参考値（講座は万年暦参照）"
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DA-F07",
+        "name": "藤原紀香",
+        "source_pages": [
+          65,
+          110
+        ],
+        "input": {
+          "birth": "1971-06-28T12:40",
+          "place": "兵庫県西宮市",
+          "sex": "F",
+          "yearStem": "辛"
+        },
+        "expected": {
+          "startAge": 3
+        },
+        "reference": {
+          "jieUsed": "小暑",
+          "jieDateTime": "1971-07-08, 03:42",
+          "daysByDateDiff": 10,
+          "p28RuleResult": 3,
+          "note": "節入り日時は CalendarEngine による参考値（講座は万年暦参照）"
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DA-F08",
+        "name": "羽生善治",
+        "source_pages": [
+          66,
+          98
+        ],
+        "input": {
+          "birth": "1970-09-27T07:34",
+          "place": "埼玉県",
+          "sex": "M",
+          "yearStem": "庚"
+        },
+        "expected": {
+          "startAge": 4
+        },
+        "reference": {
+          "jieUsed": "寒露",
+          "jieDateTime": "1970-10-09, 01:53",
+          "daysByDateDiff": 12,
+          "p28RuleResult": 4,
+          "note": "節入り日時は CalendarEngine による参考値（講座は万年暦参照）"
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DA-F09",
+        "name": "アーノルド・シュワルツェネッガー",
+        "source_pages": [
+          37,
+          77
+        ],
+        "input": {
+          "birth": "1947-07-30T04:10",
+          "place": "オーストラリア（p37原文のまま）",
+          "sex": "M",
+          "yearStem": "丁"
+        },
+        "expected": {
+          "startAge": 7
+        },
+        "reference": {
+          "rule": "D17: 出生地の現地標準時で出生日と節入り日を比べる",
+          "jieUsed": "小暑",
+          "jieLocalStandardTime": {
+            "AWST(+8)": "1947-07-08 07:47",
+            "ACST(+9.5)": "1947-07-08 09:17",
+            "AEST(+10)": "1947-07-08 09:47"
+          },
+          "days": 22,
+          "p28RuleResult": 7,
+          "note": "出生地は p37 原文の「オーストラリア」。国内のどの標準時でも22日→7で講座と一致"
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DA-F10",
+        "name": "佐野量子",
+        "source_pages": [
+          38,
+          72
+        ],
+        "input": {
+          "birth": "1968-08-22T20:17",
+          "place": "静岡",
+          "sex": "F",
+          "yearStem": "戊"
+        },
+        "expected": {
+          "startAge": 5
+        },
+        "reference": {
+          "jieUsed": "立秋",
+          "jieDateTime": "1968-08-07, 20:18",
+          "daysByDateDiff": 15,
+          "p28RuleResult": 5,
+          "note": "節入り日時は CalendarEngine による参考値（講座は万年暦参照）"
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DA-F12",
+        "name": "マイケル・ジャクソン",
+        "source_pages": [
+          40
+        ],
+        "input": {
+          "birth": "1958-08-29T12:00",
+          "place": null,
+          "sex": "M",
+          "yearStem": "戊"
+        },
+        "expected": {
+          "startAge": 3
+        },
+        "reference": {
+          "jieUsed": "白露",
+          "jieDateTime": "1958-09-07, 22:50",
+          "daysByDateDiff": 9,
+          "p28RuleResult": 3,
+          "note": "節入り日時は CalendarEngine による参考値（講座は万年暦参照）"
+        },
+        "needs_review": true,
+        "review_code": "SOURCE_CONFLICT",
+        "review_reason": "マイケル・ジャクソン: PM12:00 に対し時柱が癸亥（資料内不整合）"
+      },
+      {
+        "id": "DA-F13",
+        "name": "デビッド・ベッカム",
+        "source_pages": [
+          43
+        ],
+        "input": {
+          "birth": "1975-05-02T06:17",
+          "place": "イギリス",
+          "sex": "M",
+          "yearStem": "乙"
+        },
+        "expected": {
+          "startAge": 9
+        },
+        "reference": {
+          "rule": "D17: 出生地の現地標準時（GMT）で出生日と節入り日を比べる",
+          "jieUsed": "清明",
+          "jieLocalStandardTime": {
+            "GMT(+0)": "1975-04-05 09:53"
+          },
+          "days": 27,
+          "p28RuleResult": 9,
+          "note": "出生地は p43 の「イギリス」（標準時は1つ）。講座と一致"
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DA-F14",
+        "name": "雛形あきこ",
+        "source_pages": [
+          44
+        ],
+        "input": {
+          "birth": "1978-01-27T09:24",
+          "place": "東京都江戸川区",
+          "sex": "F",
+          "yearStem": "丁"
+        },
+        "expected": {
+          "startAge": 3
+        },
+        "reference": {
+          "jieUsed": "立春",
+          "jieDateTime": "1978-02-04, 13:18",
+          "daysByDateDiff": 8,
+          "p28RuleResult": 3,
+          "note": "節入り日時は CalendarEngine による参考値（講座は万年暦参照）"
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DA-F15",
+        "name": "スティーブ・ジョブズ",
+        "source_pages": [
+          45,
+          121
+        ],
+        "input": {
+          "birth": "1955-02-24T05:13",
+          "place": null,
+          "sex": "M",
+          "yearStem": "乙"
+        },
+        "expected": {
+          "startAge": 7
+        },
+        "reference": {
+          "jieUsed": "立春",
+          "jieDateTime": "1955-02-04, 06:09",
+          "daysByDateDiff": 20,
+          "p28RuleResult": 7,
+          "note": "参考: 米国のどの標準時（EST〜PST）でも立春 2/4 → 20日 → 7 で講座と一致する"
+        },
+        "needs_review": true,
+        "review_code": "INPUT_INSUFFICIENT",
+        "review_reason": "講座に出生地の記載がなく、D17 の現地標準時が決まらない（D21 により外部資料で補完しない）"
+      },
+      {
+        "id": "DA-F16",
+        "name": "松坂大輔",
+        "source_pages": [
+          46
+        ],
+        "input": {
+          "birth": "1980-09-13T09:36",
+          "place": "青森県外ヶ浜町",
+          "sex": "M",
+          "yearStem": "庚"
+        },
+        "expected": {
+          "startAge": 8
+        },
+        "reference": {
+          "jieUsed": "寒露",
+          "jieDateTime": "1980-10-08, 12:10",
+          "daysByDateDiff": 25,
+          "p28RuleResult": 8,
+          "note": "節入り日時は CalendarEngine による参考値（講座は万年暦参照）"
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DA-F17",
+        "name": "宇多田ヒカル",
+        "source_pages": [
+          47
+        ],
+        "input": {
+          "birth": "1983-01-19T01:17",
+          "place": "北海道",
+          "sex": "F",
+          "yearStem": "壬"
+        },
+        "expected": {
+          "startAge": 4
+        },
+        "reference": {
+          "jieUsed": "小寒",
+          "jieDateTime": "1983-01-06, 06:50",
+          "daysByDateDiff": 13,
+          "p28RuleResult": 4,
+          "note": "節入り日時は CalendarEngine による参考値（講座は万年暦参照）"
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DA-F18",
+        "name": "山口もえ",
+        "source_pages": [
+          69
+        ],
+        "input": {
+          "birth": "1977-06-11T02:00",
+          "place": null,
+          "sex": "F",
+          "yearStem": "丁"
+        },
+        "expected": {
+          "startAge": 8
+        },
+        "reference": {
+          "jieUsed": "小暑",
+          "jieDateTime": "1977-07-07, 14:39",
+          "daysByDateDiff": 26,
+          "p28RuleResult": 9,
+          "note": "節入り日時は CalendarEngine による参考値（講座は万年暦参照）"
+        },
+        "needs_review": true,
+        "review_code": "SOURCE_CONFLICT",
+        "review_reason": "山口もえ: AM2:00 に対し時柱が甲子（p24 の表では乙丑）（資料内不整合）"
+      },
+      {
+        "id": "DA-F19",
+        "name": "木村カエラ",
+        "source_pages": [
+          73
+        ],
+        "input": {
+          "birth": "1984-10-24T12:00",
+          "place": null,
+          "sex": "F",
+          "yearStem": "甲"
+        },
+        "expected": {
+          "startAge": 5
+        },
+        "reference": {
+          "jieUsed": "寒露",
+          "jieDateTime": "1984-10-08, 11:34",
+          "daysByDateDiff": 16,
+          "p28RuleResult": 5,
+          "note": "節入り日時は CalendarEngine による参考値（講座は万年暦参照）"
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DA-F20",
+        "name": "明石家さんま",
+        "source_pages": [
+          75
+        ],
+        "input": {
+          "birth": "1955-07-01T06:06",
+          "place": "奈良県",
+          "sex": "M",
+          "yearStem": "乙"
+        },
+        "expected": {
+          "startAge": 7
+        },
+        "reference": {
+          "jieUsed": "芒種",
+          "jieDateTime": "1955-06-06, 20:35",
+          "daysByDateDiff": 25,
+          "p28RuleResult": 8,
+          "note": "節入り日時は CalendarEngine による参考値（講座は万年暦参照）",
+          "computedByRule": 8
+        },
+        "needs_review": true,
+        "review_code": "SOURCE_ERROR",
+        "review_reason": "講座テキストの誤りと判断（D26）。p28 の規則（日数÷3・四捨五入）では 25日→8、講座の表記は 7"
+      },
+      {
+        "id": "DA-F21",
+        "name": "千代の富士",
+        "source_pages": [
+          80
+        ],
+        "input": {
+          "birth": "1955-06-01T07:10",
+          "place": null,
+          "sex": "M",
+          "yearStem": "乙"
+        },
+        "expected": {
+          "startAge": 7
+        },
+        "reference": {
+          "jieUsed": "立夏",
+          "jieDateTime": "1955-05-06, 16:09",
+          "daysByDateDiff": 26,
+          "p28RuleResult": 9,
+          "note": "節入り日時は CalendarEngine による参考値（講座は万年暦参照）",
+          "computedByRule": 9
+        },
+        "needs_review": true,
+        "review_code": "SOURCE_ERROR",
+        "review_reason": "講座テキストの誤りと判断（D26）。p28 の規則（日数÷3・四捨五入）では 26日→9、講座の表記は 7"
+      },
+      {
+        "id": "DA-F22",
+        "name": "荒川静香",
+        "source_pages": [
+          83
+        ],
+        "input": {
+          "birth": "1981-12-29T08:20",
+          "place": null,
+          "sex": "F",
+          "yearStem": "辛"
+        },
+        "expected": {
+          "startAge": 2
+        },
+        "reference": {
+          "jieUsed": "小寒",
+          "jieDateTime": "1982-01-06, 00:54",
+          "daysByDateDiff": 8,
+          "p28RuleResult": 3,
+          "note": "節入り日時は CalendarEngine による参考値（講座は万年暦参照）"
+        },
+        "needs_review": true,
+        "review_code": "SOURCE_CONFLICT",
+        "review_reason": "荒川静香: 大運年齢の表記に43がある（資料内不整合）"
+      },
+      {
+        "id": "DA-F23",
+        "name": "千昌夫",
+        "source_pages": [
+          85
+        ],
+        "input": {
+          "birth": "1947-04-08",
+          "place": null,
+          "sex": "M",
+          "yearStem": "丁"
+        },
+        "expected": {
+          "startAge": 1
+        },
+        "reference": {
+          "jieUsed": "清明",
+          "jieDateTime": "1947-04-06, 00:12",
+          "daysByDateDiff": 2,
+          "p28RuleResult": 1,
+          "note": "節入り日時は CalendarEngine による参考値（講座は万年暦参照）"
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DA-F24",
+        "name": "釈由美子",
+        "source_pages": [
+          87
+        ],
+        "input": {
+          "birth": "1978-06-12T19:43",
+          "place": null,
+          "sex": "F",
+          "yearStem": "戊"
+        },
+        "expected": {
+          "startAge": 2
+        },
+        "reference": {
+          "jieUsed": "芒種",
+          "jieDateTime": "1978-06-06, 10:15",
+          "daysByDateDiff": 6,
+          "p28RuleResult": 2,
+          "note": "節入り日時は CalendarEngine による参考値（講座は万年暦参照）"
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DA-F25",
+        "name": "大野智",
+        "source_pages": [
+          89
+        ],
+        "input": {
+          "birth": "1980-11-26T09:07",
+          "place": null,
+          "sex": "M",
+          "yearStem": "庚"
+        },
+        "expected": {
+          "startAge": 3
+        },
+        "reference": {
+          "jieUsed": "大雪",
+          "jieDateTime": "1980-12-07, 07:53",
+          "daysByDateDiff": 11,
+          "p28RuleResult": 4,
+          "note": "節入り日時は CalendarEngine による参考値（講座は万年暦参照）"
+        },
+        "needs_review": true,
+        "review_code": "SOURCE_CONFLICT",
+        "review_reason": "p28 の規則（日数÷3・四捨五入）では 11日→4 だが講座の表記は 3"
+      },
+      {
+        "id": "DA-F26",
+        "name": "堂本剛",
+        "source_pages": [
+          92
+        ],
+        "input": {
+          "birth": "1979-04-10T14:00",
+          "place": null,
+          "sex": "M",
+          "yearStem": "己"
+        },
+        "expected": {
+          "startAge": 2
+        },
+        "reference": {
+          "jieUsed": "清明",
+          "jieDateTime": "1979-04-05, 18:09",
+          "daysByDateDiff": 5,
+          "p28RuleResult": 2,
+          "note": "節入り日時は CalendarEngine による参考値（講座は万年暦参照）"
+        },
+        "needs_review": false
+      },
+      {
+        "id": "DA-F28",
+        "name": "小倉優子",
+        "source_pages": [
+          115
+        ],
+        "input": {
+          "birth": "1983-11-01T16:10",
+          "place": "千葉県",
+          "sex": "F",
+          "yearStem": "癸"
+        },
+        "expected": {
+          "startAge": 2
+        },
+        "reference": {
+          "jieUsed": "立冬",
+          "jieDateTime": "1983-11-08, 08:44",
+          "daysByDateDiff": 7,
+          "p28RuleResult": 2,
+          "note": "節入り日時は CalendarEngine による参考値（講座は万年暦参照）"
+        },
+        "needs_review": true,
+        "review_code": "SOURCE_CONFLICT",
+        "review_reason": "小倉優子: 胎・命欄が胎元規則と合わず、申の蔵干の並びも p114 と異なる（資料内不整合）"
+      },
+      {
+        "id": "DA-F29",
+        "name": "青木さやか",
+        "source_pages": [
+          116
+        ],
+        "input": {
+          "birth": "1973-03-27T02:30",
+          "place": null,
+          "sex": "F",
+          "yearStem": "癸"
+        },
+        "expected": {
+          "startAge": 3
+        },
+        "reference": {
+          "jieUsed": "清明",
+          "jieDateTime": "1973-04-05, 07:05",
+          "daysByDateDiff": 9,
+          "p28RuleResult": 3,
+          "note": "節入り日時は CalendarEngine による参考値（講座は万年暦参照）"
+        },
+        "needs_review": false
+      }
+    ]
+  },
+  "zokan": [
+    {
+      "id": "ZK-子",
+      "kind": "table",
+      "source_pages": [
+        114
+      ],
+      "input": {
+        "branch": "子"
+      },
+      "expected": {
+        "zokan": [
+          "癸"
+        ],
+        "roles": null
+      },
+      "note": "D18: 本気・中気・余気の区別は講座 p114 に明記がないため roles は null（区別を示す資料が見つかれば追加）",
+      "needs_review": false
+    },
+    {
+      "id": "ZK-丑",
+      "kind": "table",
+      "source_pages": [
+        114
+      ],
+      "input": {
+        "branch": "丑"
+      },
+      "expected": {
+        "zokan": [
+          "己",
+          "癸",
+          "辛"
+        ],
+        "roles": null
+      },
+      "note": "D18: 本気・中気・余気の区別は講座 p114 に明記がないため roles は null（区別を示す資料が見つかれば追加）",
+      "needs_review": false
+    },
+    {
+      "id": "ZK-寅",
+      "kind": "table",
+      "source_pages": [
+        114
+      ],
+      "input": {
+        "branch": "寅"
+      },
+      "expected": {
+        "zokan": [
+          "甲",
+          "丙",
+          "戊"
+        ],
+        "roles": null
+      },
+      "note": "D18: 本気・中気・余気の区別は講座 p114 に明記がないため roles は null（区別を示す資料が見つかれば追加）",
+      "needs_review": false
+    },
+    {
+      "id": "ZK-卯",
+      "kind": "table",
+      "source_pages": [
+        114
+      ],
+      "input": {
+        "branch": "卯"
+      },
+      "expected": {
+        "zokan": [
+          "乙"
+        ],
+        "roles": null
+      },
+      "note": "D18: 本気・中気・余気の区別は講座 p114 に明記がないため roles は null（区別を示す資料が見つかれば追加）",
+      "needs_review": false
+    },
+    {
+      "id": "ZK-辰",
+      "kind": "table",
+      "source_pages": [
+        114
+      ],
+      "input": {
+        "branch": "辰"
+      },
+      "expected": {
+        "zokan": [
+          "戊",
+          "乙",
+          "癸"
+        ],
+        "roles": null
+      },
+      "note": "D18: 本気・中気・余気の区別は講座 p114 に明記がないため roles は null（区別を示す資料が見つかれば追加）",
+      "needs_review": false
+    },
+    {
+      "id": "ZK-巳",
+      "kind": "table",
+      "source_pages": [
+        114
+      ],
+      "input": {
+        "branch": "巳"
+      },
+      "expected": {
+        "zokan": [
+          "丙",
+          "庚",
+          "戊"
+        ],
+        "roles": null
+      },
+      "note": "D18: 本気・中気・余気の区別は講座 p114 に明記がないため roles は null（区別を示す資料が見つかれば追加）",
+      "needs_review": false
+    },
+    {
+      "id": "ZK-午",
+      "kind": "table",
+      "source_pages": [
+        114
+      ],
+      "input": {
+        "branch": "午"
+      },
+      "expected": {
+        "zokan": [
+          "丁",
+          "己"
+        ],
+        "roles": null
+      },
+      "note": "D18: 本気・中気・余気の区別は講座 p114 に明記がないため roles は null（区別を示す資料が見つかれば追加）",
+      "needs_review": false
+    },
+    {
+      "id": "ZK-未",
+      "kind": "table",
+      "source_pages": [
+        114
+      ],
+      "input": {
+        "branch": "未"
+      },
+      "expected": {
+        "zokan": [
+          "己",
+          "丁",
+          "乙"
+        ],
+        "roles": null
+      },
+      "note": "D18: 本気・中気・余気の区別は講座 p114 に明記がないため roles は null（区別を示す資料が見つかれば追加）",
+      "needs_review": false
+    },
+    {
+      "id": "ZK-申",
+      "kind": "table",
+      "source_pages": [
+        114
+      ],
+      "input": {
+        "branch": "申"
+      },
+      "expected": {
+        "zokan": [
+          "庚",
+          "戊",
+          "壬"
+        ],
+        "roles": null
+      },
+      "note": "D18: 本気・中気・余気の区別は講座 p114 に明記がないため roles は null（区別を示す資料が見つかれば追加）",
+      "needs_review": false
+    },
+    {
+      "id": "ZK-酉",
+      "kind": "table",
+      "source_pages": [
+        114
+      ],
+      "input": {
+        "branch": "酉"
+      },
+      "expected": {
+        "zokan": [
+          "辛"
+        ],
+        "roles": null
+      },
+      "note": "D18: 本気・中気・余気の区別は講座 p114 に明記がないため roles は null（区別を示す資料が見つかれば追加）",
+      "needs_review": false
+    },
+    {
+      "id": "ZK-戌",
+      "kind": "table",
+      "source_pages": [
+        114
+      ],
+      "input": {
+        "branch": "戌"
+      },
+      "expected": {
+        "zokan": [
+          "戊",
+          "辛",
+          "丁"
+        ],
+        "roles": null
+      },
+      "note": "D18: 本気・中気・余気の区別は講座 p114 に明記がないため roles は null（区別を示す資料が見つかれば追加）",
+      "needs_review": false
+    },
+    {
+      "id": "ZK-亥",
+      "kind": "table",
+      "source_pages": [
+        114
+      ],
+      "input": {
+        "branch": "亥"
+      },
+      "expected": {
+        "zokan": [
+          "壬",
+          "甲"
+        ],
+        "roles": null
+      },
+      "note": "D18: 本気・中気・余気の区別は講座 p114 に明記がないため roles は null（区別を示す資料が見つかれば追加）",
+      "needs_review": false
+    },
+    {
+      "id": "ZK-F29",
+      "kind": "example",
+      "name": "青木さやか",
+      "source_pages": [
+        116
+      ],
+      "input": {
+        "branches": {
+          "時": "丑",
+          "日": "戌",
+          "月": "卯",
+          "年": "丑"
+        }
+      },
+      "expected": {
+        "zokan": {
+          "時": [
+            "己",
+            "癸",
+            "辛"
+          ],
+          "日": [
+            "戊",
+            "辛",
+            "丁"
+          ],
+          "月": [
+            "乙"
+          ],
+          "年": [
+            "己",
+            "癸",
+            "辛"
+          ]
+        }
+      },
+      "needs_review": false
+    },
+    {
+      "id": "ZK-F28",
+      "kind": "example",
+      "name": "小倉優子",
+      "source_pages": [
+        115
+      ],
+      "input": {
+        "branches": {
+          "時": "申",
+          "日": "戌",
+          "月": "亥",
+          "年": "亥"
+        }
+      },
+      "expected": {
+        "zokanAsPrinted": {
+          "時": "庚／壬戊",
+          "日": "戊辛／丁",
+          "月": "壬／甲",
+          "年": "壬／甲"
+        }
+      },
+      "needs_review": true,
+      "review_code": "SOURCE_CONFLICT",
+      "review_reason": "小倉優子: 胎・命欄が胎元規則と合わず、申の蔵干の並びも p114 と異なる（資料内不整合）"
+    }
+  ],
+  "tsuhen": [
+    {
+      "id": "TS-甲甲",
+      "kind": "tsuhen",
+      "source_pages": [
+        105
+      ],
+      "input": {
+        "dayStem": "甲",
+        "target": "甲"
+      },
+      "expected": {
+        "tsuhen": "比肩"
+      },
+      "needs_review": false
+    },
+    {
+      "id": "TS-甲乙",
+      "kind": "tsuhen",
+      "source_pages": [
+        105
+      ],
+      "input": {
+        "dayStem": "甲",
+        "target": "乙"
+      },
+      "expected": {
+        "tsuhen": "劫財"
+      },
+      "needs_review": false
+    },
+    {
+      "id": "TS-甲丙",
+      "kind": "tsuhen",
+      "source_pages": [
+        105
+      ],
+      "input": {
+        "dayStem": "甲",
+        "target": "丙"
+      },
+      "expected": {
+        "tsuhen": "食神"
+      },
+      "needs_review": false
+    },
+    {
+      "id": "TS-甲丁",
+      "kind": "tsuhen",
+      "source_pages": [
+        105
+      ],
+      "input": {
+        "dayStem": "甲",
+        "target": "丁"
+      },
+      "expected": {
+        "tsuhen": "傷官"
+      },
+      "needs_review": false
+    },
+    {
+      "id": "TS-甲戊",
+      "kind": "tsuhen",
+      "source_pages": [
+        105
+      ],
+      "input": {
+        "dayStem": "甲",
+        "target": "戊"
+      },
+      "expected": {
+        "tsuhen": "偏財"
+      },
+      "needs_review": false
+    },
+    {
+      "id": "TS-甲己",
+      "kind": "tsuhen",
+      "source_pages": [
+        105
+      ],
+      "input": {
+        "dayStem": "甲",
+        "target": "己"
+      },
+      "expected": {
+        "tsuhen": "正財"
+      },
+      "needs_review": false
+    },
+    {
+      "id": "TS-甲庚",
+      "kind": "tsuhen",
+      "source_pages": [
+        105
+      ],
+      "input": {
+        "dayStem": "甲",
+        "target": "庚"
+      },
+      "expected": {
+        "tsuhen": "偏官"
+      },
+      "needs_review": false
+    },
+    {
+      "id": "TS-甲辛",
+      "kind": "tsuhen",
+      "source_pages": [
+        105
+      ],
+      "input": {
+        "dayStem": "甲",
+        "target": "辛"
+      },
+      "expected": {
+        "tsuhen": "正官"
+      },
+      "needs_review": false
+    },
+    {
+      "id": "TS-甲壬",
+      "kind": "tsuhen",
+      "source_pages": [
+        105
+      ],
+      "input": {
+        "dayStem": "甲",
+        "target": "壬"
+      },
+      "expected": {
+        "tsuhen": "偏印"
+      },
+      "needs_review": false
+    },
+    {
+      "id": "TS-甲癸",
+      "kind": "tsuhen",
+      "source_pages": [
+        105
+      ],
+      "input": {
+        "dayStem": "甲",
+        "target": "癸"
+      },
+      "expected": {
+        "tsuhen": "印綬"
+      },
+      "needs_review": false
+    },
+    {
+      "id": "GS-F10",
+      "kind": "gosin_element",
+      "name": "佐野量子",
+      "source_pages": [
+        72
+      ],
+      "input": {
+        "dayStem": "甲"
+      },
+      "expected": {
+        "elementLabelsAsPrinted": {
+          "木": "比肩",
+          "水": "印綬",
+          "火": "食神",
+          "土": "財",
+          "金": "官"
+        }
+      },
+      "note": "命式図の五行ラベル（比肩・印綬・食神・財・官）をそのまま記録。講座図の表記を目視確認済み",
+      "needs_review": false
+    },
+    {
+      "id": "GS-F19",
+      "kind": "gosin_element",
+      "name": "木村カエラ",
+      "source_pages": [
+        73
+      ],
+      "input": {
+        "dayStem": "辛"
+      },
+      "expected": {
+        "elementLabelsAsPrinted": {
+          "金": "比肩",
+          "土": "印綬",
+          "水": "食神",
+          "木": "財",
+          "火": "官"
+        }
+      },
+      "note": "命式図の五行ラベル（比肩・印綬・食神・財・官）をそのまま記録。講座図の表記を目視確認済み",
+      "needs_review": false
+    },
+    {
+      "id": "GS-F18",
+      "kind": "gosin_element",
+      "name": "山口もえ",
+      "source_pages": [
+        69
+      ],
+      "input": {
+        "dayStem": "己"
+      },
+      "expected": {
+        "elementLabelsAsPrinted": {
+          "土": "比肩",
+          "火": "印綬",
+          "金": "食神",
+          "水": "財",
+          "木": "官"
+        }
+      },
+      "note": "命式図の五行ラベル（比肩・印綬・食神・財・官）をそのまま記録。講座図の表記を目視確認済み",
+      "needs_review": true,
+      "review_code": "SOURCE_CONFLICT",
+      "review_reason": "山口もえ: AM2:00 に対し時柱が甲子（p24 の表では乙丑）（資料内不整合）"
+    },
+    {
+      "id": "GS-F09",
+      "kind": "gosin_element",
+      "name": "アーノルド・シュワルツェネッガー",
+      "source_pages": [
+        77
+      ],
+      "input": {
+        "dayStem": "庚"
+      },
+      "expected": {
+        "elementLabelsAsPrinted": {
+          "金": "比肩",
+          "土": "印綬",
+          "水": "食神",
+          "木": "財",
+          "火": "官"
+        }
+      },
+      "note": "命式図の五行ラベル（比肩・印綬・食神・財・官）をそのまま記録。講座図の表記を目視確認済み",
+      "needs_review": false
+    },
+    {
+      "id": "GS-F21",
+      "kind": "gosin_element",
+      "name": "千代の富士",
+      "source_pages": [
+        80
+      ],
+      "input": {
+        "dayStem": "癸"
+      },
+      "expected": {
+        "elementLabelsAsPrinted": {
+          "水": "比肩",
+          "金": "印綬",
+          "木": "食神",
+          "火": "財",
+          "土": "官"
+        }
+      },
+      "note": "命式図の五行ラベル（比肩・印綬・食神・財・官）をそのまま記録。講座図の表記を目視確認済み",
+      "needs_review": false
+    },
+    {
+      "id": "GS-F22",
+      "kind": "gosin_element",
+      "name": "荒川静香",
+      "source_pages": [
+        83
+      ],
+      "input": {
+        "dayStem": "庚"
+      },
+      "expected": {
+        "elementLabelsAsPrinted": {
+          "金": "比肩",
+          "土": "印綬",
+          "水": "食神",
+          "木": "財",
+          "火": "官"
+        }
+      },
+      "note": "命式図の五行ラベル（比肩・印綬・食神・財・官）をそのまま記録。講座図の表記を目視確認済み",
+      "needs_review": true,
+      "review_code": "SOURCE_CONFLICT",
+      "review_reason": "荒川静香: 大運年齢の表記に43がある（資料内不整合）"
+    },
+    {
+      "id": "GS-F23",
+      "kind": "gosin_element",
+      "name": "千昌夫",
+      "source_pages": [
+        85
+      ],
+      "input": {
+        "dayStem": "丁"
+      },
+      "expected": {
+        "elementLabelsAsPrinted": {
+          "火": "比肩",
+          "木": "印綬",
+          "土": "食神",
+          "金": "財",
+          "水": "官"
+        }
+      },
+      "note": "命式図の五行ラベル（比肩・印綬・食神・財・官）をそのまま記録。講座図の表記を目視確認済み",
+      "needs_review": false
+    },
+    {
+      "id": "GS-F24",
+      "kind": "gosin_element",
+      "name": "釈由美子",
+      "source_pages": [
+        87
+      ],
+      "input": {
+        "dayStem": "乙"
+      },
+      "expected": {
+        "elementLabelsAsPrinted": {
+          "木": "比肩",
+          "水": "印綬",
+          "火": "食神",
+          "土": "財",
+          "金": "官"
+        }
+      },
+      "note": "命式図の五行ラベル（比肩・印綬・食神・財・官）をそのまま記録。講座図の表記を目視確認済み",
+      "needs_review": false
+    },
+    {
+      "id": "GS-F25",
+      "kind": "gosin_element",
+      "name": "大野智",
+      "source_pages": [
+        89
+      ],
+      "input": {
+        "dayStem": "癸"
+      },
+      "expected": {
+        "elementLabelsAsPrinted": {
+          "水": "比肩",
+          "金": "印綬",
+          "木": "食神",
+          "火": "財",
+          "土": "官"
+        }
+      },
+      "note": "命式図の五行ラベル（比肩・印綬・食神・財・官）をそのまま記録。講座図の表記を目視確認済み",
+      "needs_review": false
+    },
+    {
+      "id": "GS-F26",
+      "kind": "gosin_element",
+      "name": "堂本剛",
+      "source_pages": [
+        92
+      ],
+      "input": {
+        "dayStem": "丁"
+      },
+      "expected": {
+        "elementLabelsAsPrinted": {
+          "火": "比肩",
+          "木": "印綬",
+          "土": "食神",
+          "金": "財",
+          "水": "官"
+        }
+      },
+      "note": "命式図の五行ラベル（比肩・印綬・食神・財・官）をそのまま記録。講座図の表記を目視確認済み",
+      "needs_review": false
+    },
+    {
+      "id": "GS-F04",
+      "kind": "gosin_element",
+      "name": "イチロー",
+      "source_pages": [
+        96
+      ],
+      "input": {
+        "dayStem": "辛"
+      },
+      "expected": {
+        "elementLabelsAsPrinted": {
+          "金": "比肩",
+          "土": "印綬",
+          "水": "食神",
+          "木": "財",
+          "火": "官"
+        }
+      },
+      "note": "命式図の五行ラベル（比肩・印綬・食神・財・官）をそのまま記録。講座図の表記を目視確認済み",
+      "needs_review": true,
+      "review_code": "SOURCE_CONFLICT",
+      "review_reason": "イチロー: 時柱が p29・p63 は癸巳、p96 は壬辰（資料内不整合）"
+    },
+    {
+      "id": "GS-F08",
+      "kind": "gosin_element",
+      "name": "羽生善治",
+      "source_pages": [
+        98
+      ],
+      "input": {
+        "dayStem": "庚"
+      },
+      "expected": {
+        "elementLabelsAsPrinted": {
+          "金": "比肩",
+          "土": "印綬",
+          "水": "食神",
+          "木": "財",
+          "火": "官"
+        }
+      },
+      "note": "命式図の五行ラベル（比肩・印綬・食神・財・官）をそのまま記録。講座図の表記を目視確認済み",
+      "needs_review": false
+    },
+    {
+      "id": "GS-F01",
+      "kind": "gosin_element",
+      "name": "松下幸之助",
+      "source_pages": [
+        118
+      ],
+      "input": {
+        "dayStem": "癸"
+      },
+      "expected": {
+        "elementLabelsAsPrinted": {
+          "水": "比肩",
+          "金": "印綬",
+          "木": "食神",
+          "火": "財",
+          "土": "官"
+        }
+      },
+      "note": "命式図の五行ラベル（比肩・印綬・食神・財・官）をそのまま記録。講座図の表記を目視確認済み",
+      "needs_review": false
+    }
+  ],
+  "shinsatsu": [
+    {
+      "id": "SS-F01-天徳",
+      "shinsatsu": "天徳",
+      "subType": null,
+      "person": "松下幸之助",
+      "source_pages": [
+        118
+      ],
+      "input": {
+        "pillars": {
+          "時": "丙辰",
+          "日": "癸酉",
+          "月": "乙亥",
+          "年": "甲午"
+        },
+        "luck": null,
+        "sex": "M"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "月干",
+            "matchedBy": [
+              "monthBranch"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": false
+    },
+    {
+      "id": "SS-F01-月徳",
+      "shinsatsu": "月徳",
+      "subType": null,
+      "person": "松下幸之助",
+      "source_pages": [
+        118
+      ],
+      "input": {
+        "pillars": {
+          "時": "丙辰",
+          "日": "癸酉",
+          "月": "乙亥",
+          "年": "甲午"
+        },
+        "luck": null,
+        "sex": "M"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "年干",
+            "matchedBy": [
+              "monthBranch"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": false
+    },
+    {
+      "id": "SS-F08-月徳",
+      "shinsatsu": "月徳",
+      "subType": null,
+      "person": "羽生善治",
+      "source_pages": [
+        98
+      ],
+      "input": {
+        "pillars": {
+          "時": "庚辰",
+          "日": "庚戌",
+          "月": "乙酉",
+          "年": "庚戌"
+        },
+        "luck": null,
+        "sex": "M"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "時干",
+            "matchedBy": [
+              "monthBranch"
+            ]
+          },
+          {
+            "position": "日干",
+            "matchedBy": [
+              "monthBranch"
+            ]
+          },
+          {
+            "position": "年干",
+            "matchedBy": [
+              "monthBranch"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": false
+    },
+    {
+      "id": "SS-F08-魁罡",
+      "shinsatsu": "魁罡",
+      "subType": null,
+      "person": "羽生善治",
+      "source_pages": [
+        98
+      ],
+      "input": {
+        "pillars": {
+          "時": "庚辰",
+          "日": "庚戌",
+          "月": "乙酉",
+          "年": "庚戌"
+        },
+        "luck": null,
+        "sex": "M"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "日柱",
+            "matchedBy": [
+              "dayPillar"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": false
+    },
+    {
+      "id": "SS-F08-華蓋",
+      "shinsatsu": "華蓋",
+      "subType": null,
+      "person": "羽生善治",
+      "source_pages": [
+        98
+      ],
+      "input": {
+        "pillars": {
+          "時": "庚辰",
+          "日": "庚戌",
+          "月": "乙酉",
+          "年": "庚戌"
+        },
+        "luck": null,
+        "sex": "M"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "日支",
+            "matchedBy": [
+              "yearBranch",
+              "dayBranch"
+            ]
+          },
+          {
+            "position": "年支",
+            "matchedBy": [
+              "yearBranch",
+              "dayBranch"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": false
+    },
+    {
+      "id": "SS-F08-羊刃",
+      "shinsatsu": "羊刃",
+      "subType": null,
+      "person": "羽生善治",
+      "source_pages": [
+        98
+      ],
+      "input": {
+        "pillars": {
+          "時": "庚辰",
+          "日": "庚戌",
+          "月": "乙酉",
+          "年": "庚戌"
+        },
+        "luck": null,
+        "sex": "M"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "月支",
+            "matchedBy": [
+              "dayStem"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": false
+    },
+    {
+      "id": "SS-F15-月徳",
+      "shinsatsu": "月徳",
+      "subType": null,
+      "person": "スティーブ・ジョブズ",
+      "source_pages": [
+        121
+      ],
+      "input": {
+        "pillars": {
+          "時": "辛卯",
+          "日": "丙辰",
+          "月": "戊寅",
+          "年": "乙未"
+        },
+        "luck": null,
+        "sex": "M"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "日干",
+            "matchedBy": [
+              "monthBranch"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": false
+    },
+    {
+      "id": "SS-F15-華蓋",
+      "shinsatsu": "華蓋",
+      "subType": null,
+      "person": "スティーブ・ジョブズ",
+      "source_pages": [
+        121
+      ],
+      "input": {
+        "pillars": {
+          "時": "辛卯",
+          "日": "丙辰",
+          "月": "戊寅",
+          "年": "乙未"
+        },
+        "luck": null,
+        "sex": "M"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "日支",
+            "matchedBy": [
+              "dayBranch"
+            ]
+          },
+          {
+            "position": "年支",
+            "matchedBy": [
+              "yearBranch"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": false
+    },
+    {
+      "id": "SS-F15-禄",
+      "shinsatsu": "禄",
+      "subType": null,
+      "person": "スティーブ・ジョブズ",
+      "source_pages": [
+        121
+      ],
+      "input": {
+        "pillars": {
+          "時": "辛卯",
+          "日": "丙辰",
+          "月": "戊寅",
+          "年": "乙未"
+        },
+        "luck": null,
+        "sex": "M"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "時支",
+            "matchedBy": [
+              "yearStem"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": false
+    },
+    {
+      "id": "SS-F15-天羅",
+      "shinsatsu": "天羅地網",
+      "subType": "天羅",
+      "person": "スティーブ・ジョブズ",
+      "source_pages": [
+        121
+      ],
+      "input": {
+        "pillars": {
+          "時": "辛卯",
+          "日": "丙辰",
+          "月": "戊寅",
+          "年": "乙未"
+        },
+        "luck": null,
+        "sex": "M"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "日支",
+            "matchedBy": [
+              "anyBranch"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": false
+    },
+    {
+      "id": "SS-F15-驛馬",
+      "shinsatsu": "驛馬",
+      "subType": null,
+      "person": "スティーブ・ジョブズ",
+      "source_pages": [
+        121
+      ],
+      "input": {
+        "pillars": {
+          "時": "辛卯",
+          "日": "丙辰",
+          "月": "戊寅",
+          "年": "乙未"
+        },
+        "luck": null,
+        "sex": "M"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "月支",
+            "matchedBy": [
+              "dayBranch"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": false
+    },
+    {
+      "id": "SS-F15-貴人",
+      "shinsatsu": "貴人",
+      "subType": null,
+      "person": "スティーブ・ジョブズ",
+      "source_pages": [
+        121
+      ],
+      "input": {
+        "pillars": {
+          "時": "辛卯",
+          "日": "丙辰",
+          "月": "戊寅",
+          "年": "乙未"
+        },
+        "luck": [
+          "丁丑",
+          "丙子",
+          "乙亥",
+          "甲戌",
+          "癸酉",
+          "壬申",
+          "辛未",
+          "庚午"
+        ],
+        "sex": "M"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "大運申",
+            "matchedBy": [
+              "yearStem"
+            ]
+          },
+          {
+            "position": "大運酉",
+            "matchedBy": [
+              "dayStem"
+            ]
+          },
+          {
+            "position": "大運亥",
+            "matchedBy": [
+              "dayStem"
+            ]
+          },
+          {
+            "position": "大運子",
+            "matchedBy": [
+              "yearStem"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": false
+    },
+    {
+      "id": "SS-F15-桃花",
+      "shinsatsu": "桃花",
+      "subType": null,
+      "person": "スティーブ・ジョブズ",
+      "source_pages": [
+        121
+      ],
+      "input": {
+        "pillars": {
+          "時": "辛卯",
+          "日": "丙辰",
+          "月": "戊寅",
+          "年": "乙未"
+        },
+        "luck": [
+          "丁丑",
+          "丙子",
+          "乙亥",
+          "甲戌",
+          "癸酉",
+          "壬申",
+          "辛未",
+          "庚午"
+        ],
+        "sex": "M"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "大運酉",
+            "matchedBy": [
+              "dayBranch"
+            ]
+          },
+          {
+            "position": "大運子",
+            "matchedBy": [
+              "yearBranch"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": false
+    },
+    {
+      "id": "SS-F21-貴人",
+      "shinsatsu": "貴人",
+      "subType": null,
+      "person": "千代の富士",
+      "source_pages": [
+        80
+      ],
+      "input": {
+        "pillars": {
+          "時": "丙辰",
+          "日": "癸巳",
+          "月": "辛巳",
+          "年": "乙未"
+        },
+        "luck": [
+          "庚辰",
+          "己卯",
+          "戊寅",
+          "丁丑",
+          "丙子",
+          "乙亥",
+          "甲戌",
+          "癸酉"
+        ],
+        "sex": "M"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "日支",
+            "matchedBy": [
+              "dayStem"
+            ]
+          },
+          {
+            "position": "月支",
+            "matchedBy": [
+              "dayStem"
+            ]
+          },
+          {
+            "position": "大運卯",
+            "matchedBy": [
+              "dayStem"
+            ]
+          },
+          {
+            "position": "大運子",
+            "matchedBy": [
+              "yearStem"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": false
+    },
+    {
+      "id": "SS-F23-驛馬",
+      "shinsatsu": "驛馬",
+      "subType": null,
+      "person": "千昌夫",
+      "source_pages": [
+        85
+      ],
+      "input": {
+        "pillars": {
+          "時": null,
+          "日": "丁巳",
+          "月": "甲辰",
+          "年": "丁亥"
+        },
+        "luck": [
+          "癸卯",
+          "壬寅",
+          "辛丑",
+          "庚子",
+          "己亥",
+          "戊戌",
+          "丁酉",
+          "丙申"
+        ],
+        "sex": "M"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "日支",
+            "matchedBy": [
+              "yearBranch"
+            ]
+          },
+          {
+            "position": "年支",
+            "matchedBy": [
+              "dayBranch"
+            ]
+          },
+          {
+            "position": "大運亥",
+            "matchedBy": [
+              "dayBranch"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": false
+    },
+    {
+      "id": "SS-F23-貴人",
+      "shinsatsu": "貴人",
+      "subType": null,
+      "person": "千昌夫",
+      "source_pages": [
+        85
+      ],
+      "input": {
+        "pillars": {
+          "時": null,
+          "日": "丁巳",
+          "月": "甲辰",
+          "年": "丁亥"
+        },
+        "luck": null,
+        "sex": "M"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "年支",
+            "matchedBy": [
+              "yearStem",
+              "dayStem"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": false
+    },
+    {
+      "id": "SS-F24-月徳",
+      "shinsatsu": "月徳",
+      "subType": null,
+      "person": "釈由美子",
+      "source_pages": [
+        87
+      ],
+      "input": {
+        "pillars": {
+          "時": "丙戌",
+          "日": "乙巳",
+          "月": "戊午",
+          "年": "戊午"
+        },
+        "luck": null,
+        "sex": "F"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "時干",
+            "matchedBy": [
+              "monthBranch"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": false
+    },
+    {
+      "id": "SS-F24-桃花",
+      "shinsatsu": "桃花",
+      "subType": null,
+      "person": "釈由美子",
+      "source_pages": [
+        87
+      ],
+      "input": {
+        "pillars": {
+          "時": "丙戌",
+          "日": "乙巳",
+          "月": "戊午",
+          "年": "戊午"
+        },
+        "luck": [
+          "丁巳",
+          "丙辰",
+          "乙卯",
+          "甲寅",
+          "癸丑",
+          "壬子",
+          "辛亥",
+          "庚戌"
+        ],
+        "sex": "F"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "月支",
+            "matchedBy": [
+              "dayBranch"
+            ]
+          },
+          {
+            "position": "年支",
+            "matchedBy": [
+              "dayBranch"
+            ]
+          },
+          {
+            "position": "大運卯",
+            "matchedBy": [
+              "yearBranch"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": false
+    },
+    {
+      "id": "SS-F25-驛馬",
+      "shinsatsu": "驛馬",
+      "subType": null,
+      "person": "大野智",
+      "source_pages": [
+        89
+      ],
+      "input": {
+        "pillars": {
+          "時": "丁巳",
+          "日": "癸卯",
+          "月": "丁亥",
+          "年": "庚申"
+        },
+        "luck": null,
+        "sex": "M"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "時支",
+            "matchedBy": [
+              "dayBranch"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": false
+    },
+    {
+      "id": "SS-F25-貴人",
+      "shinsatsu": "貴人",
+      "subType": null,
+      "person": "大野智",
+      "source_pages": [
+        89
+      ],
+      "input": {
+        "pillars": {
+          "時": "丁巳",
+          "日": "癸卯",
+          "月": "丁亥",
+          "年": "庚申"
+        },
+        "luck": null,
+        "sex": "M"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "時支",
+            "matchedBy": [
+              "dayStem"
+            ]
+          },
+          {
+            "position": "日支",
+            "matchedBy": [
+              "dayStem"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": false
+    },
+    {
+      "id": "SS-F25-文昌",
+      "shinsatsu": "文昌",
+      "subType": null,
+      "person": "大野智",
+      "source_pages": [
+        89
+      ],
+      "input": {
+        "pillars": {
+          "時": "丁巳",
+          "日": "癸卯",
+          "月": "丁亥",
+          "年": "庚申"
+        },
+        "luck": null,
+        "sex": "M"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "日支",
+            "matchedBy": [
+              "dayStem"
+            ]
+          },
+          {
+            "position": "月支",
+            "matchedBy": [
+              "yearStem"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": false
+    },
+    {
+      "id": "SS-F26-華蓋",
+      "shinsatsu": "華蓋",
+      "subType": null,
+      "person": "堂本剛",
+      "source_pages": [
+        92
+      ],
+      "input": {
+        "pillars": {
+          "時": "丁未",
+          "日": "丁未",
+          "月": "戊辰",
+          "年": "己未"
+        },
+        "luck": null,
+        "sex": "M"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "時支",
+            "matchedBy": [
+              "yearBranch",
+              "dayBranch"
+            ]
+          },
+          {
+            "position": "日支",
+            "matchedBy": [
+              "yearBranch",
+              "dayBranch"
+            ]
+          },
+          {
+            "position": "年支",
+            "matchedBy": [
+              "yearBranch",
+              "dayBranch"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": false
+    },
+    {
+      "id": "SS-F26-弧辰寡宿",
+      "shinsatsu": "弧辰寡宿",
+      "subType": null,
+      "person": "堂本剛",
+      "source_pages": [
+        92
+      ],
+      "input": {
+        "pillars": {
+          "時": "丁未",
+          "日": "丁未",
+          "月": "戊辰",
+          "年": "己未"
+        },
+        "luck": null,
+        "sex": "M"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "月支",
+            "matchedBy": [
+              "yearBranch",
+              "dayBranch"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": false
+    },
+    {
+      "id": "SS-F22-月徳",
+      "shinsatsu": "月徳",
+      "subType": null,
+      "person": "荒川静香",
+      "source_pages": [
+        83
+      ],
+      "input": {
+        "pillars": {
+          "時": "壬辰",
+          "日": "辛巳",
+          "月": "庚子",
+          "年": "辛酉"
+        },
+        "luck": null,
+        "sex": "F"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "時干",
+            "matchedBy": [
+              "monthBranch"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": true,
+      "review_code": "SOURCE_CONFLICT",
+      "review_reason": "荒川静香: 大運年齢の表記に43がある（資料内不整合）"
+    },
+    {
+      "id": "SS-F22-天徳",
+      "shinsatsu": "天徳",
+      "subType": null,
+      "person": "荒川静香",
+      "source_pages": [
+        83
+      ],
+      "input": {
+        "pillars": {
+          "時": "壬辰",
+          "日": "辛巳",
+          "月": "庚子",
+          "年": "辛酉"
+        },
+        "luck": null,
+        "sex": "F"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "日支",
+            "matchedBy": [
+              "monthBranch"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": true,
+      "review_code": "SOURCE_CONFLICT",
+      "review_reason": "荒川静香: 大運年齢の表記に43がある（資料内不整合）"
+    },
+    {
+      "id": "SS-F04-天羅",
+      "shinsatsu": "天羅地網",
+      "subType": "天羅",
+      "person": "イチロー",
+      "source_pages": [
+        96
+      ],
+      "input": {
+        "pillars": {
+          "時": "壬辰",
+          "日": "辛卯",
+          "月": "壬戌",
+          "年": "癸丑"
+        },
+        "luck": null,
+        "sex": "M"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "時支",
+            "matchedBy": [
+              "anyBranch"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": true,
+      "review_code": "SOURCE_CONFLICT",
+      "review_reason": "イチロー: 時柱が p29・p63 は癸巳、p96 は壬辰（資料内不整合）"
+    },
+    {
+      "id": "SS-F04-地網",
+      "shinsatsu": "天羅地網",
+      "subType": "地網",
+      "person": "イチロー",
+      "source_pages": [
+        96
+      ],
+      "input": {
+        "pillars": {
+          "時": "壬辰",
+          "日": "辛卯",
+          "月": "壬戌",
+          "年": "癸丑"
+        },
+        "luck": null,
+        "sex": "M"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "月支",
+            "matchedBy": [
+              "anyBranch"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": true,
+      "review_code": "SOURCE_CONFLICT",
+      "review_reason": "イチロー: 時柱が p29・p63 は癸巳、p96 は壬辰（資料内不整合）"
+    },
+    {
+      "id": "SS-F04-文昌",
+      "shinsatsu": "文昌",
+      "subType": null,
+      "person": "イチロー",
+      "source_pages": [
+        96
+      ],
+      "input": {
+        "pillars": {
+          "時": "壬辰",
+          "日": "辛卯",
+          "月": "壬戌",
+          "年": "癸丑"
+        },
+        "luck": null,
+        "sex": "M"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "日支",
+            "matchedBy": [
+              "yearStem"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": true,
+      "review_code": "SOURCE_CONFLICT",
+      "review_reason": "イチロー: 時柱が p29・p63 は癸巳、p96 は壬辰（資料内不整合）"
+    },
+    {
+      "id": "SS-F04-弧辰寡宿",
+      "shinsatsu": "弧辰寡宿",
+      "subType": null,
+      "person": "イチロー",
+      "source_pages": [
+        96
+      ],
+      "input": {
+        "pillars": {
+          "時": "壬辰",
+          "日": "辛卯",
+          "月": "壬戌",
+          "年": "癸丑"
+        },
+        "luck": null,
+        "sex": "M"
+      },
+      "expected": {
+        "mustInclude": [
+          {
+            "position": "月支",
+            "matchedBy": [
+              "yearBranch"
+            ]
+          }
+        ]
+      },
+      "assertion": "contains（講座の印は網羅的でないため、印以外の該当は検証しない）",
+      "needs_review": true,
+      "review_code": "SOURCE_CONFLICT",
+      "review_reason": "イチロー: 時柱が p29・p63 は癸巳、p96 は壬辰（資料内不整合）"
+    }
+  ],
+  "setsuiriBoundary": [
+    {
+      "id": "SB-F05",
+      "name": "貴乃花光司",
+      "source_pages": [
+        51
+      ],
+      "input": {
+        "birth": "1972-08-12T09:44",
+        "place": "東京都"
+      },
+      "expected": {
+        "yearPillar": "壬子",
+        "monthPillar": "戊申"
+      },
+      "boundary": "節入りまで5日",
+      "reference": {
+        "prevJie": "立秋 1972-08-07, 19:20",
+        "nextJie": "白露 1972-09-07, 22:06",
+        "calendarEngine": {
+          "year": "壬子",
+          "month": "戊申"
+        }
+      },
+      "needs_review": false
+    },
+    {
+      "id": "SB-F06",
+      "name": "長嶋一茂",
+      "source_pages": [
+        64
+      ],
+      "input": {
+        "birth": "1966-01-26T13:12",
+        "place": "東京都"
+      },
+      "expected": {
+        "yearPillar": "乙巳",
+        "monthPillar": "己丑"
+      },
+      "boundary": "立春前（年柱は前年）",
+      "reference": {
+        "prevJie": "小寒 1966-01-06, 03:46",
+        "nextJie": "立春 1966-02-04, 15:29",
+        "calendarEngine": {
+          "year": "乙巳",
+          "month": "己丑"
+        }
+      },
+      "needs_review": false
+    },
+    {
+      "id": "SB-F13",
+      "name": "デビッド・ベッカム",
+      "source_pages": [
+        43
+      ],
+      "input": {
+        "birth": "1975-05-02T06:17",
+        "place": "イギリス"
+      },
+      "expected": {
+        "yearPillar": "乙卯",
+        "monthPillar": "庚辰"
+      },
+      "boundary": "節入りまで4日",
+      "reference": {
+        "prevJie": "清明 1975-04-05, 10:53",
+        "nextJie": "立夏 1975-05-06, 04:18",
+        "calendarEngine": {
+          "year": "乙卯",
+          "month": "庚辰"
+        }
+      },
+      "needs_review": false
+    },
+    {
+      "id": "SB-F14",
+      "name": "雛形あきこ",
+      "source_pages": [
+        44
+      ],
+      "input": {
+        "birth": "1978-01-27T09:24",
+        "place": "東京都江戸川区"
+      },
+      "expected": {
+        "yearPillar": "丁巳",
+        "monthPillar": "癸丑"
+      },
+      "boundary": "立春前（年柱は前年）",
+      "reference": {
+        "prevJie": "小寒 1978-01-06, 01:34",
+        "nextJie": "立春 1978-02-04, 13:18",
+        "calendarEngine": {
+          "year": "丁巳",
+          "month": "癸丑"
+        }
+      },
+      "needs_review": false
+    },
+    {
+      "id": "SB-F16",
+      "name": "松坂大輔",
+      "source_pages": [
+        46
+      ],
+      "input": {
+        "birth": "1980-09-13T09:36",
+        "place": "青森県外ヶ浜町"
+      },
+      "expected": {
+        "yearPillar": "庚申",
+        "monthPillar": "乙酉"
+      },
+      "boundary": "節入りまで6日",
+      "reference": {
+        "prevJie": "白露 1980-09-07, 20:45",
+        "nextJie": "寒露 1980-10-08, 12:10",
+        "calendarEngine": {
+          "year": "庚申",
+          "month": "乙酉"
+        }
+      },
+      "needs_review": false
+    },
+    {
+      "id": "SB-F17",
+      "name": "宇多田ヒカル",
+      "source_pages": [
+        47
+      ],
+      "input": {
+        "birth": "1983-01-19T01:17",
+        "place": "北海道"
+      },
+      "expected": {
+        "yearPillar": "壬戌",
+        "monthPillar": "癸丑"
+      },
+      "boundary": "立春前（年柱は前年）",
+      "reference": {
+        "prevJie": "小寒 1983-01-06, 06:50",
+        "nextJie": "立春 1983-02-04, 18:31",
+        "calendarEngine": {
+          "year": "壬戌",
+          "month": "癸丑"
+        }
+      },
+      "needs_review": false
+    },
+    {
+      "id": "SB-F18",
+      "name": "山口もえ",
+      "source_pages": [
+        69
+      ],
+      "input": {
+        "birth": "1977-06-11T02:00",
+        "place": null
+      },
+      "expected": {
+        "yearPillar": "丁巳",
+        "monthPillar": "丙午"
+      },
+      "boundary": "節入りまで5日",
+      "reference": {
+        "prevJie": "芒種 1977-06-06, 04:23",
+        "nextJie": "小暑 1977-07-07, 14:39",
+        "calendarEngine": {
+          "year": "丁巳",
+          "month": "丙午"
+        }
+      },
+      "needs_review": true,
+      "review_code": "SOURCE_CONFLICT",
+      "review_reason": "山口もえ: AM2:00 に対し時柱が甲子（p24 の表では乙丑）（資料内不整合）"
+    },
+    {
+      "id": "SB-F20",
+      "name": "明石家さんま",
+      "source_pages": [
+        75
+      ],
+      "input": {
+        "birth": "1955-07-01T06:06",
+        "place": "奈良県"
+      },
+      "expected": {
+        "yearPillar": "乙未",
+        "monthPillar": "壬午"
+      },
+      "boundary": "節入りまで7日",
+      "reference": {
+        "prevJie": "芒種 1955-06-06, 20:35",
+        "nextJie": "小暑 1955-07-08, 06:57",
+        "calendarEngine": {
+          "year": "乙未",
+          "month": "壬午"
+        }
+      },
+      "needs_review": false
+    },
+    {
+      "id": "SB-F21",
+      "name": "千代の富士",
+      "source_pages": [
+        80
+      ],
+      "input": {
+        "birth": "1955-06-01T07:10",
+        "place": null
+      },
+      "expected": {
+        "yearPillar": "乙未",
+        "monthPillar": "辛巳"
+      },
+      "boundary": "節入りまで5日",
+      "reference": {
+        "prevJie": "立夏 1955-05-06, 16:09",
+        "nextJie": "芒種 1955-06-06, 20:35",
+        "calendarEngine": {
+          "year": "乙未",
+          "month": "辛巳"
+        }
+      },
+      "needs_review": false
+    },
+    {
+      "id": "SB-F23",
+      "name": "千昌夫",
+      "source_pages": [
+        85
+      ],
+      "input": {
+        "birth": "1947-04-08",
+        "place": null
+      },
+      "expected": {
+        "yearPillar": "丁亥",
+        "monthPillar": "甲辰"
+      },
+      "boundary": "節入りまで2日",
+      "reference": {
+        "prevJie": "清明 1947-04-06, 00:12",
+        "nextJie": "立夏 1947-05-06, 17:54",
+        "calendarEngine": {
+          "year": "丁亥",
+          "month": "甲辰"
+        }
+      },
+      "needs_review": false
+    },
+    {
+      "id": "SB-F24",
+      "name": "釈由美子",
+      "source_pages": [
+        87
+      ],
+      "input": {
+        "birth": "1978-06-12T19:43",
+        "place": null
+      },
+      "expected": {
+        "yearPillar": "戊午",
+        "monthPillar": "戊午"
+      },
+      "boundary": "節入りまで6日",
+      "reference": {
+        "prevJie": "芒種 1978-06-06, 10:15",
+        "nextJie": "小暑 1978-07-07, 20:28",
+        "calendarEngine": {
+          "year": "戊午",
+          "month": "戊午"
+        }
+      },
+      "needs_review": false
+    },
+    {
+      "id": "SB-F26",
+      "name": "堂本剛",
+      "source_pages": [
+        92
+      ],
+      "input": {
+        "birth": "1979-04-10T14:00",
+        "place": null
+      },
+      "expected": {
+        "yearPillar": "己未",
+        "monthPillar": "戊辰"
+      },
+      "boundary": "節入りまで5日",
+      "reference": {
+        "prevJie": "清明 1979-04-05, 18:09",
+        "nextJie": "立夏 1979-05-06, 11:38",
+        "calendarEngine": {
+          "year": "己未",
+          "month": "戊辰"
+        }
+      },
+      "needs_review": false
+    },
+    {
+      "id": "SB-F28",
+      "name": "小倉優子",
+      "source_pages": [
+        115
+      ],
+      "input": {
+        "birth": "1983-11-01T16:10",
+        "place": "千葉県"
+      },
+      "expected": {
+        "yearPillar": "癸亥",
+        "monthPillar": "癸亥"
+      },
+      "boundary": "節入りまで7日",
+      "reference": {
+        "prevJie": "寒露 1983-10-09, 05:43",
+        "nextJie": "立冬 1983-11-08, 08:44",
+        "calendarEngine": {
+          "year": "癸亥",
+          "month": "壬戌"
+        }
+      },
+      "needs_review": true,
+      "review_code": "SOURCE_CONFLICT",
+      "review_reason": "小倉優子: 胎・命欄が胎元規則と合わず、申の蔵干の並びも p114 と異なる（資料内不整合）。共通エンジンでは月柱が壬戌（講座は癸亥。11/1 は立冬 11/8 より前）"
+    }
+  ],
+  "setsuiriTime": [
+    {
+      "id": "ST-2020-立春",
+      "source_pages": [
+        25
+      ],
+      "input": {
+        "term": "立春",
+        "year": 2020
+      },
+      "expected": {
+        "jstAsPrinted": "2020-02-04T18:03"
+      },
+      "reference": {
+        "calendarEngineDiffSeconds": -461
+      },
+      "needs_review": true,
+      "review_code": "ENGINE_DIFF",
+      "review_reason": "共通エンジン（擇日と共通）の節入り時刻が講座の万年暦より約8分早い。どちらに合わせるか未決定"
+    },
+    {
+      "id": "ST-2020-雨水",
+      "source_pages": [
+        25
+      ],
+      "input": {
+        "term": "雨水",
+        "year": 2020
+      },
+      "expected": {
+        "jstAsPrinted": "2020-02-19T13:57"
+      },
+      "reference": {
+        "calendarEngineDiffSeconds": -481
+      },
+      "needs_review": true,
+      "review_code": "ENGINE_DIFF",
+      "review_reason": "共通エンジン（擇日と共通）の節入り時刻が講座の万年暦より約8分早い。どちらに合わせるか未決定"
+    },
+    {
+      "id": "ST-2020-啓蟄",
+      "source_pages": [
+        25
+      ],
+      "input": {
+        "term": "啓蟄",
+        "year": 2020
+      },
+      "expected": {
+        "jstAsPrinted": "2020-03-05T11:57"
+      },
+      "reference": {
+        "calendarEngineDiffSeconds": -485
+      },
+      "needs_review": true,
+      "review_code": "ENGINE_DIFF",
+      "review_reason": "共通エンジン（擇日と共通）の節入り時刻が講座の万年暦より約8分早い。どちらに合わせるか未決定"
+    },
+    {
+      "id": "ST-2020-春分",
+      "source_pages": [
+        25
+      ],
+      "input": {
+        "term": "春分",
+        "year": 2020
+      },
+      "expected": {
+        "jstAsPrinted": "2020-03-20T12:49"
+      },
+      "reference": {
+        "calendarEngineDiffSeconds": -443
+      },
+      "needs_review": true,
+      "review_code": "ENGINE_DIFF",
+      "review_reason": "共通エンジン（擇日と共通）の節入り時刻が講座の万年暦より約7分早い。どちらに合わせるか未決定"
+    },
+    {
+      "id": "ST-2020-清明",
+      "source_pages": [
+        25
+      ],
+      "input": {
+        "term": "清明",
+        "year": 2020
+      },
+      "expected": {
+        "jstAsPrinted": "2020-04-04T16:38"
+      },
+      "reference": {
+        "calendarEngineDiffSeconds": -461
+      },
+      "needs_review": true,
+      "review_code": "ENGINE_DIFF",
+      "review_reason": "共通エンジン（擇日と共通）の節入り時刻が講座の万年暦より約8分早い。どちらに合わせるか未決定"
+    },
+    {
+      "id": "ST-2020-穀雨",
+      "source_pages": [
+        25
+      ],
+      "input": {
+        "term": "穀雨",
+        "year": 2020
+      },
+      "expected": {
+        "jstAsPrinted": "2020-04-19T23:45"
+      },
+      "reference": {
+        "calendarEngineDiffSeconds": -449
+      },
+      "needs_review": true,
+      "review_code": "ENGINE_DIFF",
+      "review_reason": "共通エンジン（擇日と共通）の節入り時刻が講座の万年暦より約7分早い。どちらに合わせるか未決定"
+    },
+    {
+      "id": "ST-2020-立夏",
+      "source_pages": [
+        25
+      ],
+      "input": {
+        "term": "立夏",
+        "year": 2020
+      },
+      "expected": {
+        "jstAsPrinted": "2020-05-05T09:51"
+      },
+      "reference": {
+        "calendarEngineDiffSeconds": -451
+      },
+      "needs_review": true,
+      "review_code": "ENGINE_DIFF",
+      "review_reason": "共通エンジン（擇日と共通）の節入り時刻が講座の万年暦より約8分早い。どちらに合わせるか未決定"
+    },
+    {
+      "id": "ST-2020-小満",
+      "source_pages": [
+        25
+      ],
+      "input": {
+        "term": "小満",
+        "year": 2020
+      },
+      "expected": {
+        "jstAsPrinted": "2020-05-20T22:49"
+      },
+      "reference": {
+        "calendarEngineDiffSeconds": -472
+      },
+      "needs_review": true,
+      "review_code": "ENGINE_DIFF",
+      "review_reason": "共通エンジン（擇日と共通）の節入り時刻が講座の万年暦より約8分早い。どちらに合わせるか未決定"
+    },
+    {
+      "id": "ST-2020-芒種",
+      "source_pages": [
+        25
+      ],
+      "input": {
+        "term": "芒種",
+        "year": 2020
+      },
+      "expected": {
+        "jstAsPrinted": "2020-06-05T13:58"
+      },
+      "reference": {
+        "calendarEngineDiffSeconds": -469
+      },
+      "needs_review": true,
+      "review_code": "ENGINE_DIFF",
+      "review_reason": "共通エンジン（擇日と共通）の節入り時刻が講座の万年暦より約8分早い。どちらに合わせるか未決定"
+    },
+    {
+      "id": "ST-2020-夏至",
+      "source_pages": [
+        25
+      ],
+      "input": {
+        "term": "夏至",
+        "year": 2020
+      },
+      "expected": {
+        "jstAsPrinted": "2020-06-21T06:43"
+      },
+      "reference": {
+        "calendarEngineDiffSeconds": -468
+      },
+      "needs_review": true,
+      "review_code": "ENGINE_DIFF",
+      "review_reason": "共通エンジン（擇日と共通）の節入り時刻が講座の万年暦より約8分早い。どちらに合わせるか未決定"
+    },
+    {
+      "id": "ST-2020-小暑",
+      "source_pages": [
+        25
+      ],
+      "input": {
+        "term": "小暑",
+        "year": 2020
+      },
+      "expected": {
+        "jstAsPrinted": "2020-07-07T00:14"
+      },
+      "reference": {
+        "calendarEngineDiffSeconds": -473
+      },
+      "needs_review": true,
+      "review_code": "ENGINE_DIFF",
+      "review_reason": "共通エンジン（擇日と共通）の節入り時刻が講座の万年暦より約8分早い。どちらに合わせるか未決定"
+    },
+    {
+      "id": "ST-2020-大暑",
+      "source_pages": [
+        25
+      ],
+      "input": {
+        "term": "大暑",
+        "year": 2020
+      },
+      "expected": {
+        "jstAsPrinted": "2020-07-22T17:37"
+      },
+      "reference": {
+        "calendarEngineDiffSeconds": -501
+      },
+      "needs_review": true,
+      "review_code": "ENGINE_DIFF",
+      "review_reason": "共通エンジン（擇日と共通）の節入り時刻が講座の万年暦より約8分早い。どちらに合わせるか未決定"
+    }
+  ]
+}

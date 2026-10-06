@@ -1,0 +1,97 @@
+/* src/app/shichusuimei/print.css
+ * 四柱推命の「命式を印刷」＝鑑定表（A4縦1枚。ShichusuimeiChartPrint）。通常画面のレイアウトは shichusuimei.css のまま変えない。
+ *   - 画面: 印刷ボタンのバーを出す。印刷専用の部品（.sc-print-only）は画面では隠す。
+ *   - 印刷物: 画面表示・印刷対象の切替・余白は src/components/print（PrintRoot・print.css）が受け持つ。
+ *     ここは印刷専用の鑑定表（.kt-sheet）の中だけ。画面の部品とは別のDOMで、罫線・太字・文字サイズで区切る（白黒印刷前提）。
+ *     文字の大きさは 命式の干支 ＞ 大運の干支 ＞ 通変星 ＞ 命式との関係 ＞ 神煞 ＞ 補足 の順。 */
+
+/* ---- 画面 ---- */
+.sc-print-only { display: none; }
+.sc-print-bar { display: flex; align-items: center; gap: 10px; margin: 14px 0 0; }
+.sc-print-button {
+  font-size: 14px; padding: 5px 18px; border: 1px solid #111; border-radius: 4px;
+  background: #fff; color: #111; cursor: pointer;
+}
+.sc-print-button:hover { background: #111; color: #fff; }
+
+/* ---- 用紙と上下の安全余白 ----
+ * 用紙は page.tsx の PrintRoot page（A4縦・上下30mm・左右22mm）。本文高 297−60＝237mm。
+ * 1枚のシートは本文高より1mm低くして2ページ目を作らない。中身が高いときは PrintSheet が全体を縮小する。
+ * 用紙の余白に加えて、シート側（自動縮小の対象外）の上下に 10mm の固定の空白帯を取る。
+ * 縮小されるのは内側の .print-sheet-body だけ（PrintSheet は padding を除いた高さで縮小率を求める）。 */
+.print-sheet.kt-print-sheet { height: 236mm; padding-top: 10mm; padding-bottom: 10mm; box-sizing: border-box; }
+
+/* ---- 鑑定表（.kt-sheet の中だけ） ---- */
+.kt-sheet {
+  font-family: "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
+  color: #000;
+  font-size: 8.5pt;
+  line-height: 1.3;
+}
+.kt-sheet .print-header { margin-bottom: 2.5mm; }
+
+.kt-table { border-collapse: collapse; table-layout: fixed; }
+.kt-table th,
+.kt-table td { border: 0.5pt solid #000; text-align: center; vertical-align: top; padding: 0.6mm 0.4mm; }
+.kt-none { color: #777; }
+.kt-sub { font-size: 7.5pt; color: #333; }
+
+/* 干支（五行を右下に小さく） */
+.kt-char { font-weight: 700; line-height: 1.12; }
+.kt-el { font-size: 6.5pt; font-weight: 400; margin-left: 0.3mm; vertical-align: -0.2em; }
+
+/* 蔵干＋通変 */
+.kt-zokan-row { white-space: nowrap; line-height: 1.3; }
+.kt-zokan-stem { font-weight: 700; font-size: 9pt; }
+.kt-zokan-tsuhen { font-size: 8pt; margin-left: 0.6mm; }
+
+/* 神煞 */
+.kt-tag { display: inline-block; font-size: 7pt; border: 0.4pt solid #000; border-radius: 0.6mm; padding: 0 0.4mm; margin: 0.2mm 0.2mm; line-height: 1.25; white-space: nowrap; }
+
+/* ---- 上段: 命式＋鑑定情報 ---- */
+.kt-top { display: flex; gap: 3mm; align-items: flex-start; }
+.kt-natal { width: 98mm; border: 1.2pt solid #000; }
+.kt-natal thead th { font-size: 9pt; font-weight: 700; border-bottom: 1pt solid #000; padding: 0.5mm; }
+.kt-natal td { border-top-width: 0.3pt; border-bottom-width: 0.3pt; }
+.kt-natal .kt-row-tsuhen td { font-size: 10pt; font-weight: 700; }
+.kt-natal .kt-row-kanshi td { padding: 1mm 0 0.6mm; }
+.kt-natal .kt-char { font-size: 26pt; }
+.kt-natal .kt-el { font-size: 7.5pt; }
+.kt-natal .kt-zokan-stem { font-size: 10pt; }
+.kt-natal .kt-zokan-tsuhen { font-size: 9pt; }
+.kt-natal .kt-tag { font-size: 8pt; }
+
+.kt-info { flex: 1 1 0; min-width: 0; }
+.kt-kv { width: 100%; font-size: 8.5pt; border: 1pt solid #000; }
+.kt-kv th { width: 16mm; white-space: nowrap; font-weight: 700; text-align: left; padding: 0.8mm 1mm; background: none; }
+.kt-kv td { text-align: left; padding: 0.8mm 1mm; word-break: break-all; }
+/* 内格補助の点数表（既存 innerScore の値。左＝比劫・印、右＝食傷・財・官、合計、判定） */
+.kt-inner { width: 100%; margin-top: 2mm; font-size: 8.5pt; border: 1pt solid #000; }
+.kt-inner thead th { text-align: left; font-size: 9pt; font-weight: 700; padding: 0.8mm 1mm; border-bottom: 0.8pt solid #000; }
+.kt-inner tbody th { text-align: left; font-weight: 700; white-space: nowrap; padding: 0.7mm 1mm; }
+.kt-inner tbody td { text-align: right; padding: 0.7mm 1.5mm; }
+.kt-inner .kt-inner-sum th,
+.kt-inner .kt-inner-sum td { border-top: 0.8pt solid #000; }
+.kt-inner .kt-inner-judge td { text-align: left; }
+.kt-inner .kt-inner-judge b { font-size: 10pt; }
+
+/* ---- 中段: 大運（1本＝1列。列の左右を太線、行の区切りは細線） ---- */
+.kt-daiun-head { margin-top: 3mm; font-size: 10pt; border-bottom: 0; }
+.kt-daiun { width: 100%; margin-top: 0.8mm; border: 1.2pt solid #000; }
+.kt-daiun td { border-left: 1pt solid #000; border-right: 1pt solid #000; border-top: 0.3pt solid #666; border-bottom: 0.3pt solid #666; }
+.kt-daiun .kt-row-age td { font-size: 8.5pt; font-weight: 700; border-bottom: 0.6pt solid #000; white-space: nowrap; padding: 0.5mm 0; }
+.kt-daiun .kt-row-kanshi td { padding: 0.8mm 0 0.4mm; }
+.kt-daiun .kt-char { font-size: 19pt; }
+.kt-daiun .kt-row-tsuhen td { font-size: 9.5pt; font-weight: 700; }
+.kt-daiun .kt-row-zokan td { height: 13mm; }
+.kt-daiun .kt-row-tags td { height: 9.5mm; }
+.kt-daiun .kt-row-rel td { text-align: left; font-size: 8.5pt; line-height: 1.3; padding: 0.5mm 0.6mm; white-space: nowrap; overflow: hidden; }
+.kt-daiun .kt-row-rel-stem td { height: 13.5mm; }
+.kt-daiun .kt-row-rel-branch td { height: 20mm; border-bottom: none; }
+.kt-rel-head { font-size: 7pt; color: #333; border-bottom: 0.3pt dotted #666; margin-bottom: 0.3mm; }
+
+.kt-sheet * { box-shadow: none !important; }
+
+/* ---- 下段: 書き込み欄（罫線） ---- */
+.kt-memo { margin-top: 3mm; }
+.kt-memo-line { height: 7.5mm; border-bottom: 0.4pt solid #888; }
