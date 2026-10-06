@@ -93,7 +93,7 @@ check("短星：九月lunarDay=17（該当・複数値の2つ目）", { ...BASE,
 check("短星：九月lunarDay=15（非該当）", { ...BASE, monthBranch: "戌", lunarDay: 15 }, [], ["短星"]);
 
 // ---- 29）長星・短星：監修確定の全12か月の値を固定（2026-10-06） ----
-// 正式採用値は擇日テキスト p.34 の表。九月の長星は4日のみ（擇日実例.pdf の「三日四日長星」は採用しない）。
+// 正式採用値は監修資料の専用表（擇日テキスト p.34）。九月の長星は4日のみ。
 // 月基準は表見出し「月令」により節月（正月＝寅 … 十二月＝丑）。各月 lunarDay 1〜30 の全日で、
 // 表の日だけ成立し、それ以外の日は成立しないことを確認する。
 {
@@ -110,7 +110,7 @@ check("短星：九月lunarDay=15（非該当）", { ...BASE, monthBranch: "戌"
       else if (out.includes("短星")) check(`短星：${label}（非該当）`, { ...BASE, monthBranch: SETSU[mi], lunarDay }, [], ["短星"]);
     }
   }
-  check("長星：九月（戌）lunarDay=3 は非該当（実例PDFの「三日」は不採用）", { ...BASE, monthBranch: "戌", lunarDay: 3 }, [], ["長星"]);
+  check("長星：九月（戌）lunarDay=3 は非該当（専用表は4日のみ）", { ...BASE, monthBranch: "戌", lunarDay: 3 }, [], ["長星"]);
   check("長星：九月（戌）lunarDay=4 は該当", { ...BASE, monthBranch: "戌", lunarDay: 4 }, ["長星"]);
 }
 
