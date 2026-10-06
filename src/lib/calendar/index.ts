@@ -14,6 +14,11 @@
 // --- 関数 ---
 /** 入力日時から共通暦情報を計算して返す CalendarEngine の基本関数 */
 export { calculate } from "./calendarEngine";
+/**
+ * before 以前で最も近い「太陽視黄経が targetLongitude に達した瞬間」（UTC）。
+ * 四柱推命の立運（前後の節）用に再 export する（shichusuimei 仕様 D12。計算ロジックは solarTerm.ts のまま）。
+ */
+export { findSolarTermCrossing } from "./solarTerm";
 
 // --- 入出力型 ---
 export type { CalendarInput, CalendarResult, SolarTermDef } from "./types";
