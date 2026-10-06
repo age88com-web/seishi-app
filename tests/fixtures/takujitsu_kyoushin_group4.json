@@ -1,0 +1,6584 @@
+{
+  "_meta": {
+    "source": "docs/source/擇日実例.pdf（吉凶神煞一覧表・【凶神】欄）",
+    "description": "擇日実例.pdf の日家吉凶神煞一覧表の【凶神】欄から、凶神第4グループ（地嚢・四撃・四耗・四廢・四忌・四窮・五虚・五墓・八風・觸水龍・八専）を機械的に抽出した検証専用 fixture。仕様ではない。擇日ロジックの逆算・変更には使用しないこと。無禄は実例PDFに一度も出現しないため対象外（ロジック単体テストのみで検証）。",
+    "extraction": "pypdf でページテキストを抽出し、月見出しで12ヶ月に分割、各行冒頭の「五行+分類+十二建+日|目」という見出しパターンで60行の区切り位置を検出したうえで、各行の【凶神】欄の文字列一致を判定した。",
+    "notes": [
+      "生成スクリプト: tests/fixtures/gen_takujitsu_kyoushin_group4.py",
+      "觸水龍は実例PDFでは「蝕水龍」（触／蝕の字形類似の文字化け）でも出現する。",
+      "四廢・四窮は五月(午)・六月(未)の丁亥にそれぞれ1件ずつ、原本PDFの表記が入れ替わったように見える孤立した不一致がある。",
+      "五墓は六月(未)に1件、原本画像未確認の孤立した不一致がある。",
+      "地嚢は擇日テキストp.24の表（原本画像で確認済み）と実例PDFの掲載内容が多くの月で食い違う（仕様差異として報告）。",
+      "八風は擇日テキストp.27の表（原本画像で確認済み）のうち、春・秋の2番目の干支が実例PDFの掲載と食い違う（仕様差異として報告）。"
+    ],
+    "count": 720
+  },
+  "rows": [
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "甲子",
+      "dayStem": "甲",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "四忌"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "乙丑",
+      "dayStem": "乙",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "丙寅",
+      "dayStem": "丙",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "丁卯",
+      "dayStem": "丁",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "戊辰",
+      "dayStem": "戊",
+      "dayBranch": "辰",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "己巳",
+      "dayStem": "己",
+      "dayBranch": "巳",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "庚午",
+      "dayStem": "庚",
+      "dayBranch": "午",
+      "expectedKyojin": [
+        "地嚢"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "辛未",
+      "dayStem": "辛",
+      "dayBranch": "未",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "壬申",
+      "dayStem": "壬",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "癸酉",
+      "dayStem": "癸",
+      "dayBranch": "酉",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "甲戌",
+      "dayStem": "甲",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "乙亥",
+      "dayStem": "乙",
+      "dayBranch": "亥",
+      "expectedKyojin": [
+        "四窮"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "丙子",
+      "dayStem": "丙",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "丁丑",
+      "dayStem": "丁",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "五虚",
+        "八風"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "戊寅",
+      "dayStem": "戊",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "己卯",
+      "dayStem": "己",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "庚辰",
+      "dayStem": "庚",
+      "dayBranch": "辰",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "辛巳",
+      "dayStem": "辛",
+      "dayBranch": "巳",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "壬午",
+      "dayStem": "壬",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "癸未",
+      "dayStem": "癸",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "甲申",
+      "dayStem": "甲",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "乙酉",
+      "dayStem": "乙",
+      "dayBranch": "酉",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "丙戌",
+      "dayStem": "丙",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "丁亥",
+      "dayStem": "丁",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "戊子",
+      "dayStem": "戊",
+      "dayBranch": "子",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "己丑",
+      "dayStem": "己",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "庚寅",
+      "dayStem": "庚",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "辛卯",
+      "dayStem": "辛",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "壬辰",
+      "dayStem": "壬",
+      "dayBranch": "辰",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "癸巳",
+      "dayStem": "癸",
+      "dayBranch": "巳",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "甲午",
+      "dayStem": "甲",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "乙未",
+      "dayStem": "乙",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "五墓"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "丙申",
+      "dayStem": "丙",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "丁酉",
+      "dayStem": "丁",
+      "dayBranch": "酉",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "戊戌",
+      "dayStem": "戊",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "己亥",
+      "dayStem": "己",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "庚子",
+      "dayStem": "庚",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "地嚢"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "辛丑",
+      "dayStem": "辛",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "壬寅",
+      "dayStem": "壬",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "癸卯",
+      "dayStem": "癸",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "甲辰",
+      "dayStem": "甲",
+      "dayBranch": "辰",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "乙巳",
+      "dayStem": "乙",
+      "dayBranch": "巳",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "丙午",
+      "dayStem": "丙",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "丁未",
+      "dayStem": "丁",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "戊申",
+      "dayStem": "戊",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "己酉",
+      "dayStem": "己",
+      "dayBranch": "酉",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "庚戌",
+      "dayStem": "庚",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "辛亥",
+      "dayStem": "辛",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "壬子",
+      "dayStem": "壬",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "四耗"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "癸丑",
+      "dayStem": "癸",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "五虚",
+        "八専",
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "甲寅",
+      "dayStem": "甲",
+      "dayBranch": "寅",
+      "expectedKyojin": [
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "乙卯",
+      "dayStem": "乙",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "丙辰",
+      "dayStem": "丙",
+      "dayBranch": "辰",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "丁巳",
+      "dayStem": "丁",
+      "dayBranch": "巳",
+      "expectedKyojin": [
+        "五虚",
+        "八風"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "戊午",
+      "dayStem": "戊",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "己未",
+      "dayStem": "己",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "庚申",
+      "dayStem": "庚",
+      "dayBranch": "申",
+      "expectedKyojin": [
+        "八専",
+        "四廢"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "辛酉",
+      "dayStem": "辛",
+      "dayBranch": "酉",
+      "expectedKyojin": [
+        "五虚",
+        "四廢"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "壬戌",
+      "dayStem": "壬",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "正月",
+      "monthBranch": "寅",
+      "ganzhi": "癸亥",
+      "dayStem": "癸",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "甲子",
+      "dayStem": "甲",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "四忌"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "乙丑",
+      "dayStem": "乙",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "丙寅",
+      "dayStem": "丙",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "丁卯",
+      "dayStem": "丁",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "戊辰",
+      "dayStem": "戊",
+      "dayBranch": "辰",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "己巳",
+      "dayStem": "己",
+      "dayBranch": "巳",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "庚午",
+      "dayStem": "庚",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "辛未",
+      "dayStem": "辛",
+      "dayBranch": "未",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "壬申",
+      "dayStem": "壬",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "癸酉",
+      "dayStem": "癸",
+      "dayBranch": "酉",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "甲戌",
+      "dayStem": "甲",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "乙亥",
+      "dayStem": "乙",
+      "dayBranch": "亥",
+      "expectedKyojin": [
+        "四窮"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "丙子",
+      "dayStem": "丙",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "丁丑",
+      "dayStem": "丁",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "五虚",
+        "八風"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "戊寅",
+      "dayStem": "戊",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "己卯",
+      "dayStem": "己",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "庚辰",
+      "dayStem": "庚",
+      "dayBranch": "辰",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "辛巳",
+      "dayStem": "辛",
+      "dayBranch": "巳",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "壬午",
+      "dayStem": "壬",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "癸未",
+      "dayStem": "癸",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "甲申",
+      "dayStem": "甲",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "乙酉",
+      "dayStem": "乙",
+      "dayBranch": "酉",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "丙戌",
+      "dayStem": "丙",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "丁亥",
+      "dayStem": "丁",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "戊子",
+      "dayStem": "戊",
+      "dayBranch": "子",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "己丑",
+      "dayStem": "己",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "庚寅",
+      "dayStem": "庚",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "辛卯",
+      "dayStem": "辛",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "壬辰",
+      "dayStem": "壬",
+      "dayBranch": "辰",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "癸巳",
+      "dayStem": "癸",
+      "dayBranch": "巳",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "甲午",
+      "dayStem": "甲",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "乙未",
+      "dayStem": "乙",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "五墓",
+        "地嚢"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "丙申",
+      "dayStem": "丙",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "丁酉",
+      "dayStem": "丁",
+      "dayBranch": "酉",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "戊戌",
+      "dayStem": "戊",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "己亥",
+      "dayStem": "己",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "庚子",
+      "dayStem": "庚",
+      "dayBranch": "子",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "辛丑",
+      "dayStem": "辛",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "壬寅",
+      "dayStem": "壬",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "癸卯",
+      "dayStem": "癸",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "甲辰",
+      "dayStem": "甲",
+      "dayBranch": "辰",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "乙巳",
+      "dayStem": "乙",
+      "dayBranch": "巳",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "丙午",
+      "dayStem": "丙",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "丁未",
+      "dayStem": "丁",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "戊申",
+      "dayStem": "戊",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "己酉",
+      "dayStem": "己",
+      "dayBranch": "酉",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "庚戌",
+      "dayStem": "庚",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "辛亥",
+      "dayStem": "辛",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "壬子",
+      "dayStem": "壬",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "四耗"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "癸丑",
+      "dayStem": "癸",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "五虚",
+        "八専",
+        "地嚢",
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "甲寅",
+      "dayStem": "甲",
+      "dayBranch": "寅",
+      "expectedKyojin": [
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "乙卯",
+      "dayStem": "乙",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "丙辰",
+      "dayStem": "丙",
+      "dayBranch": "辰",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "丁巳",
+      "dayStem": "丁",
+      "dayBranch": "巳",
+      "expectedKyojin": [
+        "五虚",
+        "八風"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "戊午",
+      "dayStem": "戊",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "己未",
+      "dayStem": "己",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "庚申",
+      "dayStem": "庚",
+      "dayBranch": "申",
+      "expectedKyojin": [
+        "八専",
+        "四廢"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "辛酉",
+      "dayStem": "辛",
+      "dayBranch": "酉",
+      "expectedKyojin": [
+        "五虚",
+        "四廢"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "壬戌",
+      "dayStem": "壬",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "二月",
+      "monthBranch": "卯",
+      "ganzhi": "癸亥",
+      "dayStem": "癸",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "甲子",
+      "dayStem": "甲",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "四忌",
+        "地嚢"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "乙丑",
+      "dayStem": "乙",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "丙寅",
+      "dayStem": "丙",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "丁卯",
+      "dayStem": "丁",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "戊辰",
+      "dayStem": "戊",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "五墓"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "己巳",
+      "dayStem": "己",
+      "dayBranch": "巳",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "庚午",
+      "dayStem": "庚",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "辛未",
+      "dayStem": "辛",
+      "dayBranch": "未",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "壬申",
+      "dayStem": "壬",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "癸酉",
+      "dayStem": "癸",
+      "dayBranch": "酉",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "甲戌",
+      "dayStem": "甲",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "乙亥",
+      "dayStem": "乙",
+      "dayBranch": "亥",
+      "expectedKyojin": [
+        "四窮"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "丙子",
+      "dayStem": "丙",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "丁丑",
+      "dayStem": "丁",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "五虚",
+        "八風"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "戊寅",
+      "dayStem": "戊",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "己卯",
+      "dayStem": "己",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "庚辰",
+      "dayStem": "庚",
+      "dayBranch": "辰",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "辛巳",
+      "dayStem": "辛",
+      "dayBranch": "巳",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "壬午",
+      "dayStem": "壬",
+      "dayBranch": "午",
+      "expectedKyojin": [
+        "地嚢"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "癸未",
+      "dayStem": "癸",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "甲申",
+      "dayStem": "甲",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "乙酉",
+      "dayStem": "乙",
+      "dayBranch": "酉",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "丙戌",
+      "dayStem": "丙",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "丁亥",
+      "dayStem": "丁",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "戊子",
+      "dayStem": "戊",
+      "dayBranch": "子",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "己丑",
+      "dayStem": "己",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "庚寅",
+      "dayStem": "庚",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "辛卯",
+      "dayStem": "辛",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "壬辰",
+      "dayStem": "壬",
+      "dayBranch": "辰",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "癸巳",
+      "dayStem": "癸",
+      "dayBranch": "巳",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "甲午",
+      "dayStem": "甲",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "乙未",
+      "dayStem": "乙",
+      "dayBranch": "未",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "丙申",
+      "dayStem": "丙",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "丁酉",
+      "dayStem": "丁",
+      "dayBranch": "酉",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "戊戌",
+      "dayStem": "戊",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "己亥",
+      "dayStem": "己",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "庚子",
+      "dayStem": "庚",
+      "dayBranch": "子",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "辛丑",
+      "dayStem": "辛",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "壬寅",
+      "dayStem": "壬",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "癸卯",
+      "dayStem": "癸",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "甲辰",
+      "dayStem": "甲",
+      "dayBranch": "辰",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "乙巳",
+      "dayStem": "乙",
+      "dayBranch": "巳",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "丙午",
+      "dayStem": "丙",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "丁未",
+      "dayStem": "丁",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "戊申",
+      "dayStem": "戊",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "己酉",
+      "dayStem": "己",
+      "dayBranch": "酉",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "庚戌",
+      "dayStem": "庚",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "辛亥",
+      "dayStem": "辛",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "壬子",
+      "dayStem": "壬",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "四耗"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "癸丑",
+      "dayStem": "癸",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "五虚",
+        "八専",
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "甲寅",
+      "dayStem": "甲",
+      "dayBranch": "寅",
+      "expectedKyojin": [
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "乙卯",
+      "dayStem": "乙",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "丙辰",
+      "dayStem": "丙",
+      "dayBranch": "辰",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "丁巳",
+      "dayStem": "丁",
+      "dayBranch": "巳",
+      "expectedKyojin": [
+        "五虚",
+        "八風"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "戊午",
+      "dayStem": "戊",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "己未",
+      "dayStem": "己",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "庚申",
+      "dayStem": "庚",
+      "dayBranch": "申",
+      "expectedKyojin": [
+        "八専",
+        "四廢"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "辛酉",
+      "dayStem": "辛",
+      "dayBranch": "酉",
+      "expectedKyojin": [
+        "五虚",
+        "四廢"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "壬戌",
+      "dayStem": "壬",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "三月",
+      "monthBranch": "辰",
+      "ganzhi": "癸亥",
+      "dayStem": "癸",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "甲子",
+      "dayStem": "甲",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "乙丑",
+      "dayStem": "乙",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "丙寅",
+      "dayStem": "丙",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "丁卯",
+      "dayStem": "丁",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "戊辰",
+      "dayStem": "戊",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "己巳",
+      "dayStem": "己",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "庚午",
+      "dayStem": "庚",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "辛未",
+      "dayStem": "辛",
+      "dayBranch": "未",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "壬申",
+      "dayStem": "壬",
+      "dayBranch": "申",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "癸酉",
+      "dayStem": "癸",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "甲戌",
+      "dayStem": "甲",
+      "dayBranch": "戌",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "乙亥",
+      "dayStem": "乙",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "丙子",
+      "dayStem": "丙",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "五虚",
+        "四忌",
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "丁丑",
+      "dayStem": "丁",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "戊寅",
+      "dayStem": "戊",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "己卯",
+      "dayStem": "己",
+      "dayBranch": "卯",
+      "expectedKyojin": [
+        "地嚢"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "庚辰",
+      "dayStem": "庚",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "辛巳",
+      "dayStem": "辛",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "壬午",
+      "dayStem": "壬",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "癸未",
+      "dayStem": "癸",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "甲申",
+      "dayStem": "甲",
+      "dayBranch": "申",
+      "expectedKyojin": [
+        "五虚",
+        "八風"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "乙酉",
+      "dayStem": "乙",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "丙戌",
+      "dayStem": "丙",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "五墓"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "丁亥",
+      "dayStem": "丁",
+      "dayBranch": "亥",
+      "expectedKyojin": [
+        "四窮"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "戊子",
+      "dayStem": "戊",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "己丑",
+      "dayStem": "己",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "庚寅",
+      "dayStem": "庚",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "辛卯",
+      "dayStem": "辛",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "壬辰",
+      "dayStem": "壬",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "癸巳",
+      "dayStem": "癸",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "甲午",
+      "dayStem": "甲",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "乙未",
+      "dayStem": "乙",
+      "dayBranch": "未",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "丙申",
+      "dayStem": "丙",
+      "dayBranch": "申",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "丁酉",
+      "dayStem": "丁",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "戊戌",
+      "dayStem": "戊",
+      "dayBranch": "戌",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "己亥",
+      "dayStem": "己",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "庚子",
+      "dayStem": "庚",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "辛丑",
+      "dayStem": "辛",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "壬寅",
+      "dayStem": "壬",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "癸卯",
+      "dayStem": "癸",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "甲辰",
+      "dayStem": "甲",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "五虚",
+        "八風"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "乙巳",
+      "dayStem": "乙",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "丙午",
+      "dayStem": "丙",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "丁未",
+      "dayStem": "丁",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "戊申",
+      "dayStem": "戊",
+      "dayBranch": "申",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "己酉",
+      "dayStem": "己",
+      "dayBranch": "酉",
+      "expectedKyojin": [
+        "地嚢"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "庚戌",
+      "dayStem": "庚",
+      "dayBranch": "戌",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "辛亥",
+      "dayStem": "辛",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "壬子",
+      "dayStem": "壬",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "五虚",
+        "四廢"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "癸丑",
+      "dayStem": "癸",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "八専",
+        "四撃",
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "甲寅",
+      "dayStem": "甲",
+      "dayBranch": "寅",
+      "expectedKyojin": [
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "乙卯",
+      "dayStem": "乙",
+      "dayBranch": "卯",
+      "expectedKyojin": [
+        "四耗"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "丙辰",
+      "dayStem": "丙",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "丁巳",
+      "dayStem": "丁",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "戊午",
+      "dayStem": "戊",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "己未",
+      "dayStem": "己",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "庚申",
+      "dayStem": "庚",
+      "dayBranch": "申",
+      "expectedKyojin": [
+        "五虚",
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "辛酉",
+      "dayStem": "辛",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "壬戌",
+      "dayStem": "壬",
+      "dayBranch": "戌",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "四月",
+      "monthBranch": "巳",
+      "ganzhi": "癸亥",
+      "dayStem": "癸",
+      "dayBranch": "亥",
+      "expectedKyojin": [
+        "四廢"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "甲子",
+      "dayStem": "甲",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "乙丑",
+      "dayStem": "乙",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "丙寅",
+      "dayStem": "丙",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "丁卯",
+      "dayStem": "丁",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "戊辰",
+      "dayStem": "戊",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "己巳",
+      "dayStem": "己",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "庚午",
+      "dayStem": "庚",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "辛未",
+      "dayStem": "辛",
+      "dayBranch": "未",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "壬申",
+      "dayStem": "壬",
+      "dayBranch": "申",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "癸酉",
+      "dayStem": "癸",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "甲戌",
+      "dayStem": "甲",
+      "dayBranch": "戌",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "乙亥",
+      "dayStem": "乙",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "丙子",
+      "dayStem": "丙",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "五虚",
+        "四忌",
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "丁丑",
+      "dayStem": "丁",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "戊寅",
+      "dayStem": "戊",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "己卯",
+      "dayStem": "己",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "庚辰",
+      "dayStem": "庚",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "辛巳",
+      "dayStem": "辛",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "壬午",
+      "dayStem": "壬",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "癸未",
+      "dayStem": "癸",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "甲申",
+      "dayStem": "甲",
+      "dayBranch": "申",
+      "expectedKyojin": [
+        "五虚",
+        "八風"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "乙酉",
+      "dayStem": "乙",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "丙戌",
+      "dayStem": "丙",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "五墓"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "丁亥",
+      "dayStem": "丁",
+      "dayBranch": "亥",
+      "expectedKyojin": [
+        "四廢"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "戊子",
+      "dayStem": "戊",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "己丑",
+      "dayStem": "己",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "庚寅",
+      "dayStem": "庚",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "辛卯",
+      "dayStem": "辛",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "壬辰",
+      "dayStem": "壬",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "癸巳",
+      "dayStem": "癸",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "甲午",
+      "dayStem": "甲",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "乙未",
+      "dayStem": "乙",
+      "dayBranch": "未",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "丙申",
+      "dayStem": "丙",
+      "dayBranch": "申",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "丁酉",
+      "dayStem": "丁",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "戊戌",
+      "dayStem": "戊",
+      "dayBranch": "戌",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "己亥",
+      "dayStem": "己",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "庚子",
+      "dayStem": "庚",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "辛丑",
+      "dayStem": "辛",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "壬寅",
+      "dayStem": "壬",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "癸卯",
+      "dayStem": "癸",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "甲辰",
+      "dayStem": "甲",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "五虚",
+        "八風",
+        "地嚢"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "乙巳",
+      "dayStem": "乙",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "丙午",
+      "dayStem": "丙",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "丁未",
+      "dayStem": "丁",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "戊申",
+      "dayStem": "戊",
+      "dayBranch": "申",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "己酉",
+      "dayStem": "己",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "庚戌",
+      "dayStem": "庚",
+      "dayBranch": "戌",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "辛亥",
+      "dayStem": "辛",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "壬子",
+      "dayStem": "壬",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "五虚",
+        "四廢"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "癸丑",
+      "dayStem": "癸",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "八専",
+        "四撃",
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "甲寅",
+      "dayStem": "甲",
+      "dayBranch": "寅",
+      "expectedKyojin": [
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "乙卯",
+      "dayStem": "乙",
+      "dayBranch": "卯",
+      "expectedKyojin": [
+        "四耗"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "丙辰",
+      "dayStem": "丙",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "丁巳",
+      "dayStem": "丁",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "戊午",
+      "dayStem": "戊",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "己未",
+      "dayStem": "己",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "庚申",
+      "dayStem": "庚",
+      "dayBranch": "申",
+      "expectedKyojin": [
+        "五虚",
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "辛酉",
+      "dayStem": "辛",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "壬戌",
+      "dayStem": "壬",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "地嚢"
+      ]
+    },
+    {
+      "monthLabel": "五月",
+      "monthBranch": "午",
+      "ganzhi": "癸亥",
+      "dayStem": "癸",
+      "dayBranch": "亥",
+      "expectedKyojin": [
+        "四廢"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "甲子",
+      "dayStem": "甲",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "乙丑",
+      "dayStem": "乙",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "丙寅",
+      "dayStem": "丙",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "丁卯",
+      "dayStem": "丁",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "戊辰",
+      "dayStem": "戊",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "五墓",
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "己巳",
+      "dayStem": "己",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "庚午",
+      "dayStem": "庚",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "辛未",
+      "dayStem": "辛",
+      "dayBranch": "未",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "壬申",
+      "dayStem": "壬",
+      "dayBranch": "申",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "癸酉",
+      "dayStem": "癸",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "甲戌",
+      "dayStem": "甲",
+      "dayBranch": "戌",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "乙亥",
+      "dayStem": "乙",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "丙子",
+      "dayStem": "丙",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "五虚",
+        "四忌",
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "丁丑",
+      "dayStem": "丁",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "戊寅",
+      "dayStem": "戊",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "己卯",
+      "dayStem": "己",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "庚辰",
+      "dayStem": "庚",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "辛巳",
+      "dayStem": "辛",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "壬午",
+      "dayStem": "壬",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "癸未",
+      "dayStem": "癸",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "甲申",
+      "dayStem": "甲",
+      "dayBranch": "申",
+      "expectedKyojin": [
+        "五虚",
+        "八風"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "乙酉",
+      "dayStem": "乙",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "丙戌",
+      "dayStem": "丙",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "地嚢"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "丁亥",
+      "dayStem": "丁",
+      "dayBranch": "亥",
+      "expectedKyojin": [
+        "四廢"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "戊子",
+      "dayStem": "戊",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "己丑",
+      "dayStem": "己",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "庚寅",
+      "dayStem": "庚",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "辛卯",
+      "dayStem": "辛",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "壬辰",
+      "dayStem": "壬",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "癸巳",
+      "dayStem": "癸",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "甲午",
+      "dayStem": "甲",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "乙未",
+      "dayStem": "乙",
+      "dayBranch": "未",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "丙申",
+      "dayStem": "丙",
+      "dayBranch": "申",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "丁酉",
+      "dayStem": "丁",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "戊戌",
+      "dayStem": "戊",
+      "dayBranch": "戌",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "己亥",
+      "dayStem": "己",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "庚子",
+      "dayStem": "庚",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "辛丑",
+      "dayStem": "辛",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "壬寅",
+      "dayStem": "壬",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "癸卯",
+      "dayStem": "癸",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "甲辰",
+      "dayStem": "甲",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "五虚",
+        "八風"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "乙巳",
+      "dayStem": "乙",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "丙午",
+      "dayStem": "丙",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "丁未",
+      "dayStem": "丁",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "戊申",
+      "dayStem": "戊",
+      "dayBranch": "申",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "己酉",
+      "dayStem": "己",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "庚戌",
+      "dayStem": "庚",
+      "dayBranch": "戌",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "辛亥",
+      "dayStem": "辛",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "壬子",
+      "dayStem": "壬",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "五虚",
+        "四廢"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "癸丑",
+      "dayStem": "癸",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "八専",
+        "四撃",
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "甲寅",
+      "dayStem": "甲",
+      "dayBranch": "寅",
+      "expectedKyojin": [
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "乙卯",
+      "dayStem": "乙",
+      "dayBranch": "卯",
+      "expectedKyojin": [
+        "四耗"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "丙辰",
+      "dayStem": "丙",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "五虚",
+        "地嚢"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "丁巳",
+      "dayStem": "丁",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "戊午",
+      "dayStem": "戊",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "己未",
+      "dayStem": "己",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "庚申",
+      "dayStem": "庚",
+      "dayBranch": "申",
+      "expectedKyojin": [
+        "五虚",
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "辛酉",
+      "dayStem": "辛",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "壬戌",
+      "dayStem": "壬",
+      "dayBranch": "戌",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "六月",
+      "monthBranch": "未",
+      "ganzhi": "癸亥",
+      "dayStem": "癸",
+      "dayBranch": "亥",
+      "expectedKyojin": [
+        "四廢"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "甲子",
+      "dayStem": "甲",
+      "dayBranch": "子",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "乙丑",
+      "dayStem": "乙",
+      "dayBranch": "丑",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "丙寅",
+      "dayStem": "丙",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "丁卯",
+      "dayStem": "丁",
+      "dayBranch": "卯",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "戊辰",
+      "dayStem": "戊",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "己巳",
+      "dayStem": "己",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "庚午",
+      "dayStem": "庚",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "辛未",
+      "dayStem": "辛",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "壬申",
+      "dayStem": "壬",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "癸酉",
+      "dayStem": "癸",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "甲戌",
+      "dayStem": "甲",
+      "dayBranch": "戌",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "乙亥",
+      "dayStem": "乙",
+      "dayBranch": "亥",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "丙子",
+      "dayStem": "丙",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "丁丑",
+      "dayStem": "丁",
+      "dayBranch": "丑",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "戊寅",
+      "dayStem": "戊",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "己卯",
+      "dayStem": "己",
+      "dayBranch": "卯",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "庚辰",
+      "dayStem": "庚",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "辛巳",
+      "dayStem": "辛",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "壬午",
+      "dayStem": "壬",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "癸未",
+      "dayStem": "癸",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "五虚",
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "甲申",
+      "dayStem": "甲",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "乙酉",
+      "dayStem": "乙",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "丙戌",
+      "dayStem": "丙",
+      "dayBranch": "戌",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "丁亥",
+      "dayStem": "丁",
+      "dayBranch": "亥",
+      "expectedKyojin": [
+        "五虚",
+        "八風",
+        "地嚢"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "戊子",
+      "dayStem": "戊",
+      "dayBranch": "子",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "己丑",
+      "dayStem": "己",
+      "dayBranch": "丑",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "庚寅",
+      "dayStem": "庚",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "辛卯",
+      "dayStem": "辛",
+      "dayBranch": "卯",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "壬辰",
+      "dayStem": "壬",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "癸巳",
+      "dayStem": "癸",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "甲午",
+      "dayStem": "甲",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "乙未",
+      "dayStem": "乙",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "丙申",
+      "dayStem": "丙",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "丁酉",
+      "dayStem": "丁",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "戊戌",
+      "dayStem": "戊",
+      "dayBranch": "戌",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "己亥",
+      "dayStem": "己",
+      "dayBranch": "亥",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "庚子",
+      "dayStem": "庚",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "四忌"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "辛丑",
+      "dayStem": "辛",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "五墓"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "壬寅",
+      "dayStem": "壬",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "癸卯",
+      "dayStem": "癸",
+      "dayBranch": "卯",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "甲辰",
+      "dayStem": "甲",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "乙巳",
+      "dayStem": "乙",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "丙午",
+      "dayStem": "丙",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "丁未",
+      "dayStem": "丁",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "五虚",
+        "八専",
+        "八風"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "戊申",
+      "dayStem": "戊",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "己酉",
+      "dayStem": "己",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "庚戌",
+      "dayStem": "庚",
+      "dayBranch": "戌",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "辛亥",
+      "dayStem": "辛",
+      "dayBranch": "亥",
+      "expectedKyojin": [
+        "五虚",
+        "四窮"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "壬子",
+      "dayStem": "壬",
+      "dayBranch": "子",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "癸丑",
+      "dayStem": "癸",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "八専",
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "甲寅",
+      "dayStem": "甲",
+      "dayBranch": "寅",
+      "expectedKyojin": [
+        "八専",
+        "四廢"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "乙卯",
+      "dayStem": "乙",
+      "dayBranch": "卯",
+      "expectedKyojin": [
+        "五虚",
+        "四廢"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "丙辰",
+      "dayStem": "丙",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "丁巳",
+      "dayStem": "丁",
+      "dayBranch": "巳",
+      "expectedKyojin": [
+        "地嚢"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "戊午",
+      "dayStem": "戊",
+      "dayBranch": "午",
+      "expectedKyojin": [
+        "四耗"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "己未",
+      "dayStem": "己",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "五虚",
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "庚申",
+      "dayStem": "庚",
+      "dayBranch": "申",
+      "expectedKyojin": [
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "辛酉",
+      "dayStem": "辛",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "壬戌",
+      "dayStem": "壬",
+      "dayBranch": "戌",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "七月",
+      "monthBranch": "申",
+      "ganzhi": "癸亥",
+      "dayStem": "癸",
+      "dayBranch": "亥",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "甲子",
+      "dayStem": "甲",
+      "dayBranch": "子",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "乙丑",
+      "dayStem": "乙",
+      "dayBranch": "丑",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "丙寅",
+      "dayStem": "丙",
+      "dayBranch": "寅",
+      "expectedKyojin": [
+        "地嚢"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "丁卯",
+      "dayStem": "丁",
+      "dayBranch": "卯",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "戊辰",
+      "dayStem": "戊",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "己巳",
+      "dayStem": "己",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "庚午",
+      "dayStem": "庚",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "辛未",
+      "dayStem": "辛",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "壬申",
+      "dayStem": "壬",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "癸酉",
+      "dayStem": "癸",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "甲戌",
+      "dayStem": "甲",
+      "dayBranch": "戌",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "乙亥",
+      "dayStem": "乙",
+      "dayBranch": "亥",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "丙子",
+      "dayStem": "丙",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "丁丑",
+      "dayStem": "丁",
+      "dayBranch": "丑",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "戊寅",
+      "dayStem": "戊",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "己卯",
+      "dayStem": "己",
+      "dayBranch": "卯",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "庚辰",
+      "dayStem": "庚",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "辛巳",
+      "dayStem": "辛",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "壬午",
+      "dayStem": "壬",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "癸未",
+      "dayStem": "癸",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "五虚",
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "甲申",
+      "dayStem": "甲",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "乙酉",
+      "dayStem": "乙",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "丙戌",
+      "dayStem": "丙",
+      "dayBranch": "戌",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "丁亥",
+      "dayStem": "丁",
+      "dayBranch": "亥",
+      "expectedKyojin": [
+        "五虚",
+        "八風"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "戊子",
+      "dayStem": "戊",
+      "dayBranch": "子",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "己丑",
+      "dayStem": "己",
+      "dayBranch": "丑",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "庚寅",
+      "dayStem": "庚",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "辛卯",
+      "dayStem": "辛",
+      "dayBranch": "卯",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "壬辰",
+      "dayStem": "壬",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "癸巳",
+      "dayStem": "癸",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "甲午",
+      "dayStem": "甲",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "乙未",
+      "dayStem": "乙",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "丙申",
+      "dayStem": "丙",
+      "dayBranch": "申",
+      "expectedKyojin": [
+        "地嚢"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "丁酉",
+      "dayStem": "丁",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "戊戌",
+      "dayStem": "戊",
+      "dayBranch": "戌",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "己亥",
+      "dayStem": "己",
+      "dayBranch": "亥",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "庚子",
+      "dayStem": "庚",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "四忌"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "辛丑",
+      "dayStem": "辛",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "五墓"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "壬寅",
+      "dayStem": "壬",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "癸卯",
+      "dayStem": "癸",
+      "dayBranch": "卯",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "甲辰",
+      "dayStem": "甲",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "乙巳",
+      "dayStem": "乙",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "丙午",
+      "dayStem": "丙",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "丁未",
+      "dayStem": "丁",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "五虚",
+        "八専",
+        "八風"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "戊申",
+      "dayStem": "戊",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "己酉",
+      "dayStem": "己",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "庚戌",
+      "dayStem": "庚",
+      "dayBranch": "戌",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "辛亥",
+      "dayStem": "辛",
+      "dayBranch": "亥",
+      "expectedKyojin": [
+        "五虚",
+        "四窮"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "壬子",
+      "dayStem": "壬",
+      "dayBranch": "子",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "癸丑",
+      "dayStem": "癸",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "八専",
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "甲寅",
+      "dayStem": "甲",
+      "dayBranch": "寅",
+      "expectedKyojin": [
+        "八専",
+        "四廢"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "乙卯",
+      "dayStem": "乙",
+      "dayBranch": "卯",
+      "expectedKyojin": [
+        "五虚",
+        "四廢"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "丙辰",
+      "dayStem": "丙",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "丁巳",
+      "dayStem": "丁",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "戊午",
+      "dayStem": "戊",
+      "dayBranch": "午",
+      "expectedKyojin": [
+        "四耗"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "己未",
+      "dayStem": "己",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "五虚",
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "庚申",
+      "dayStem": "庚",
+      "dayBranch": "申",
+      "expectedKyojin": [
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "辛酉",
+      "dayStem": "辛",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "壬戌",
+      "dayStem": "壬",
+      "dayBranch": "戌",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "八月",
+      "monthBranch": "酉",
+      "ganzhi": "癸亥",
+      "dayStem": "癸",
+      "dayBranch": "亥",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "甲子",
+      "dayStem": "甲",
+      "dayBranch": "子",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "乙丑",
+      "dayStem": "乙",
+      "dayBranch": "丑",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "丙寅",
+      "dayStem": "丙",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "丁卯",
+      "dayStem": "丁",
+      "dayBranch": "卯",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "戊辰",
+      "dayStem": "戊",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "五墓",
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "己巳",
+      "dayStem": "己",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "庚午",
+      "dayStem": "庚",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "辛未",
+      "dayStem": "辛",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "五虚",
+        "地嚢"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "壬申",
+      "dayStem": "壬",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "癸酉",
+      "dayStem": "癸",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "甲戌",
+      "dayStem": "甲",
+      "dayBranch": "戌",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "乙亥",
+      "dayStem": "乙",
+      "dayBranch": "亥",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "丙子",
+      "dayStem": "丙",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "丁丑",
+      "dayStem": "丁",
+      "dayBranch": "丑",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "戊寅",
+      "dayStem": "戊",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "己卯",
+      "dayStem": "己",
+      "dayBranch": "卯",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "庚辰",
+      "dayStem": "庚",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "辛巳",
+      "dayStem": "辛",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "壬午",
+      "dayStem": "壬",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "癸未",
+      "dayStem": "癸",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "五虚",
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "甲申",
+      "dayStem": "甲",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "乙酉",
+      "dayStem": "乙",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "丙戌",
+      "dayStem": "丙",
+      "dayBranch": "戌",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "丁亥",
+      "dayStem": "丁",
+      "dayBranch": "亥",
+      "expectedKyojin": [
+        "五虚",
+        "八風"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "戊子",
+      "dayStem": "戊",
+      "dayBranch": "子",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "己丑",
+      "dayStem": "己",
+      "dayBranch": "丑",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "庚寅",
+      "dayStem": "庚",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "辛卯",
+      "dayStem": "辛",
+      "dayBranch": "卯",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "壬辰",
+      "dayStem": "壬",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "癸巳",
+      "dayStem": "癸",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "甲午",
+      "dayStem": "甲",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "乙未",
+      "dayStem": "乙",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "丙申",
+      "dayStem": "丙",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "丁酉",
+      "dayStem": "丁",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "戊戌",
+      "dayStem": "戊",
+      "dayBranch": "戌",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "己亥",
+      "dayStem": "己",
+      "dayBranch": "亥",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "庚子",
+      "dayStem": "庚",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "四忌"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "辛丑",
+      "dayStem": "辛",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "地嚢"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "壬寅",
+      "dayStem": "壬",
+      "dayBranch": "寅",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "癸卯",
+      "dayStem": "癸",
+      "dayBranch": "卯",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "甲辰",
+      "dayStem": "甲",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "乙巳",
+      "dayStem": "乙",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "丙午",
+      "dayStem": "丙",
+      "dayBranch": "午",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "丁未",
+      "dayStem": "丁",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "五虚",
+        "八専",
+        "八風"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "戊申",
+      "dayStem": "戊",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "己酉",
+      "dayStem": "己",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "庚戌",
+      "dayStem": "庚",
+      "dayBranch": "戌",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "辛亥",
+      "dayStem": "辛",
+      "dayBranch": "亥",
+      "expectedKyojin": [
+        "五虚",
+        "四窮"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "壬子",
+      "dayStem": "壬",
+      "dayBranch": "子",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "癸丑",
+      "dayStem": "癸",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "八専",
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "甲寅",
+      "dayStem": "甲",
+      "dayBranch": "寅",
+      "expectedKyojin": [
+        "八専",
+        "四廢"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "乙卯",
+      "dayStem": "乙",
+      "dayBranch": "卯",
+      "expectedKyojin": [
+        "五虚",
+        "四廢"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "丙辰",
+      "dayStem": "丙",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "丁巳",
+      "dayStem": "丁",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "戊午",
+      "dayStem": "戊",
+      "dayBranch": "午",
+      "expectedKyojin": [
+        "四耗"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "己未",
+      "dayStem": "己",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "五虚",
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "庚申",
+      "dayStem": "庚",
+      "dayBranch": "申",
+      "expectedKyojin": [
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "辛酉",
+      "dayStem": "辛",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "壬戌",
+      "dayStem": "壬",
+      "dayBranch": "戌",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "九月",
+      "monthBranch": "戌",
+      "ganzhi": "癸亥",
+      "dayStem": "癸",
+      "dayBranch": "亥",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "甲子",
+      "dayStem": "甲",
+      "dayBranch": "子",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "乙丑",
+      "dayStem": "乙",
+      "dayBranch": "丑",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "丙寅",
+      "dayStem": "丙",
+      "dayBranch": "寅",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "丁卯",
+      "dayStem": "丁",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "戊辰",
+      "dayStem": "戊",
+      "dayBranch": "辰",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "己巳",
+      "dayStem": "己",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "庚午",
+      "dayStem": "庚",
+      "dayBranch": "午",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "辛未",
+      "dayStem": "辛",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "壬申",
+      "dayStem": "壬",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "癸酉",
+      "dayStem": "癸",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "甲戌",
+      "dayStem": "甲",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "五虚",
+        "八風"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "乙亥",
+      "dayStem": "乙",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "丙子",
+      "dayStem": "丙",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "丁丑",
+      "dayStem": "丁",
+      "dayBranch": "丑",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "戊寅",
+      "dayStem": "戊",
+      "dayBranch": "寅",
+      "expectedKyojin": [
+        "五虚",
+        "地嚢"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "己卯",
+      "dayStem": "己",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "庚辰",
+      "dayStem": "庚",
+      "dayBranch": "辰",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "辛巳",
+      "dayStem": "辛",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "壬午",
+      "dayStem": "壬",
+      "dayBranch": "午",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "癸未",
+      "dayStem": "癸",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "四撃",
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "甲申",
+      "dayStem": "甲",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "乙酉",
+      "dayStem": "乙",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "丙戌",
+      "dayStem": "丙",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "丁亥",
+      "dayStem": "丁",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "戊子",
+      "dayStem": "戊",
+      "dayBranch": "子",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "己丑",
+      "dayStem": "己",
+      "dayBranch": "丑",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "庚寅",
+      "dayStem": "庚",
+      "dayBranch": "寅",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "辛卯",
+      "dayStem": "辛",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "壬辰",
+      "dayStem": "壬",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "五墓"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "癸巳",
+      "dayStem": "癸",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "甲午",
+      "dayStem": "甲",
+      "dayBranch": "午",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "乙未",
+      "dayStem": "乙",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "丙申",
+      "dayStem": "丙",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "丁酉",
+      "dayStem": "丁",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "戊戌",
+      "dayStem": "戊",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "己亥",
+      "dayStem": "己",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "庚子",
+      "dayStem": "庚",
+      "dayBranch": "子",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "辛丑",
+      "dayStem": "辛",
+      "dayBranch": "丑",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "壬寅",
+      "dayStem": "壬",
+      "dayBranch": "寅",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "癸卯",
+      "dayStem": "癸",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "甲辰",
+      "dayStem": "甲",
+      "dayBranch": "辰",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "乙巳",
+      "dayStem": "乙",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "丙午",
+      "dayStem": "丙",
+      "dayBranch": "午",
+      "expectedKyojin": [
+        "五虚",
+        "四廢"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "丁未",
+      "dayStem": "丁",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "八専",
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "戊申",
+      "dayStem": "戊",
+      "dayBranch": "申",
+      "expectedKyojin": [
+        "地嚢"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "己酉",
+      "dayStem": "己",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "庚戌",
+      "dayStem": "庚",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "辛亥",
+      "dayStem": "辛",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "壬子",
+      "dayStem": "壬",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "四忌"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "癸丑",
+      "dayStem": "癸",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "八専",
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "甲寅",
+      "dayStem": "甲",
+      "dayBranch": "寅",
+      "expectedKyojin": [
+        "五虚",
+        "八専",
+        "八風"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "乙卯",
+      "dayStem": "乙",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "丙辰",
+      "dayStem": "丙",
+      "dayBranch": "辰",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "丁巳",
+      "dayStem": "丁",
+      "dayBranch": "巳",
+      "expectedKyojin": [
+        "四廢"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "戊午",
+      "dayStem": "戊",
+      "dayBranch": "午",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "己未",
+      "dayStem": "己",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "八専",
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "庚申",
+      "dayStem": "庚",
+      "dayBranch": "申",
+      "expectedKyojin": [
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "辛酉",
+      "dayStem": "辛",
+      "dayBranch": "酉",
+      "expectedKyojin": [
+        "四耗"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "壬戌",
+      "dayStem": "壬",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十月",
+      "monthBranch": "亥",
+      "ganzhi": "癸亥",
+      "dayStem": "癸",
+      "dayBranch": "亥",
+      "expectedKyojin": [
+        "四窮"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "甲子",
+      "dayStem": "甲",
+      "dayBranch": "子",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "乙丑",
+      "dayStem": "乙",
+      "dayBranch": "丑",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "丙寅",
+      "dayStem": "丙",
+      "dayBranch": "寅",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "丁卯",
+      "dayStem": "丁",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "戊辰",
+      "dayStem": "戊",
+      "dayBranch": "辰",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "己巳",
+      "dayStem": "己",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "庚午",
+      "dayStem": "庚",
+      "dayBranch": "午",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "辛未",
+      "dayStem": "辛",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "壬申",
+      "dayStem": "壬",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "癸酉",
+      "dayStem": "癸",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "甲戌",
+      "dayStem": "甲",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "五虚",
+        "八風"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "乙亥",
+      "dayStem": "乙",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "丙子",
+      "dayStem": "丙",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "丁丑",
+      "dayStem": "丁",
+      "dayBranch": "丑",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "戊寅",
+      "dayStem": "戊",
+      "dayBranch": "寅",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "己卯",
+      "dayStem": "己",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "庚辰",
+      "dayStem": "庚",
+      "dayBranch": "辰",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "辛巳",
+      "dayStem": "辛",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "壬午",
+      "dayStem": "壬",
+      "dayBranch": "午",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "癸未",
+      "dayStem": "癸",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "四撃",
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "甲申",
+      "dayStem": "甲",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "乙酉",
+      "dayStem": "乙",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "丙戌",
+      "dayStem": "丙",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "丁亥",
+      "dayStem": "丁",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "戊子",
+      "dayStem": "戊",
+      "dayBranch": "子",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "己丑",
+      "dayStem": "己",
+      "dayBranch": "丑",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "庚寅",
+      "dayStem": "庚",
+      "dayBranch": "寅",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "辛卯",
+      "dayStem": "辛",
+      "dayBranch": "卯",
+      "expectedKyojin": [
+        "地嚢"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "壬辰",
+      "dayStem": "壬",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "五墓"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "癸巳",
+      "dayStem": "癸",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "甲午",
+      "dayStem": "甲",
+      "dayBranch": "午",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "乙未",
+      "dayStem": "乙",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "丙申",
+      "dayStem": "丙",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "丁酉",
+      "dayStem": "丁",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "戊戌",
+      "dayStem": "戊",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "己亥",
+      "dayStem": "己",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "庚子",
+      "dayStem": "庚",
+      "dayBranch": "子",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "辛丑",
+      "dayStem": "辛",
+      "dayBranch": "丑",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "壬寅",
+      "dayStem": "壬",
+      "dayBranch": "寅",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "癸卯",
+      "dayStem": "癸",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "甲辰",
+      "dayStem": "甲",
+      "dayBranch": "辰",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "乙巳",
+      "dayStem": "乙",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "丙午",
+      "dayStem": "丙",
+      "dayBranch": "午",
+      "expectedKyojin": [
+        "五虚",
+        "四廢"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "丁未",
+      "dayStem": "丁",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "八専",
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "戊申",
+      "dayStem": "戊",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "己酉",
+      "dayStem": "己",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "庚戌",
+      "dayStem": "庚",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "辛亥",
+      "dayStem": "辛",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "壬子",
+      "dayStem": "壬",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "四忌"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "癸丑",
+      "dayStem": "癸",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "八専",
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "甲寅",
+      "dayStem": "甲",
+      "dayBranch": "寅",
+      "expectedKyojin": [
+        "五虚",
+        "八専",
+        "八風"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "乙卯",
+      "dayStem": "乙",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "丙辰",
+      "dayStem": "丙",
+      "dayBranch": "辰",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "丁巳",
+      "dayStem": "丁",
+      "dayBranch": "巳",
+      "expectedKyojin": [
+        "四廢"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "戊午",
+      "dayStem": "戊",
+      "dayBranch": "午",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "己未",
+      "dayStem": "己",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "八専",
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "庚申",
+      "dayStem": "庚",
+      "dayBranch": "申",
+      "expectedKyojin": [
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "辛酉",
+      "dayStem": "辛",
+      "dayBranch": "酉",
+      "expectedKyojin": [
+        "四耗",
+        "地嚢"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "壬戌",
+      "dayStem": "壬",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十一月",
+      "monthBranch": "子",
+      "ganzhi": "癸亥",
+      "dayStem": "癸",
+      "dayBranch": "亥",
+      "expectedKyojin": [
+        "四窮"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "甲子",
+      "dayStem": "甲",
+      "dayBranch": "子",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "乙丑",
+      "dayStem": "乙",
+      "dayBranch": "丑",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "丙寅",
+      "dayStem": "丙",
+      "dayBranch": "寅",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "丁卯",
+      "dayStem": "丁",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "戊辰",
+      "dayStem": "戊",
+      "dayBranch": "辰",
+      "expectedKyojin": [
+        "五墓"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "己巳",
+      "dayStem": "己",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "庚午",
+      "dayStem": "庚",
+      "dayBranch": "午",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "辛未",
+      "dayStem": "辛",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "壬申",
+      "dayStem": "壬",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "癸酉",
+      "dayStem": "癸",
+      "dayBranch": "酉",
+      "expectedKyojin": [
+        "地嚢"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "甲戌",
+      "dayStem": "甲",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "五虚",
+        "八風"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "乙亥",
+      "dayStem": "乙",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "丙子",
+      "dayStem": "丙",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "丁丑",
+      "dayStem": "丁",
+      "dayBranch": "丑",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "戊寅",
+      "dayStem": "戊",
+      "dayBranch": "寅",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "己卯",
+      "dayStem": "己",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "庚辰",
+      "dayStem": "庚",
+      "dayBranch": "辰",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "辛巳",
+      "dayStem": "辛",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "壬午",
+      "dayStem": "壬",
+      "dayBranch": "午",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "癸未",
+      "dayStem": "癸",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "四撃",
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "甲申",
+      "dayStem": "甲",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "乙酉",
+      "dayStem": "乙",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "丙戌",
+      "dayStem": "丙",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "丁亥",
+      "dayStem": "丁",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "戊子",
+      "dayStem": "戊",
+      "dayBranch": "子",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "己丑",
+      "dayStem": "己",
+      "dayBranch": "丑",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "庚寅",
+      "dayStem": "庚",
+      "dayBranch": "寅",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "辛卯",
+      "dayStem": "辛",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "壬辰",
+      "dayStem": "壬",
+      "dayBranch": "辰",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "癸巳",
+      "dayStem": "癸",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "甲午",
+      "dayStem": "甲",
+      "dayBranch": "午",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "乙未",
+      "dayStem": "乙",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "丙申",
+      "dayStem": "丙",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "丁酉",
+      "dayStem": "丁",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "戊戌",
+      "dayStem": "戊",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "己亥",
+      "dayStem": "己",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "庚子",
+      "dayStem": "庚",
+      "dayBranch": "子",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "辛丑",
+      "dayStem": "辛",
+      "dayBranch": "丑",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "壬寅",
+      "dayStem": "壬",
+      "dayBranch": "寅",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "癸卯",
+      "dayStem": "癸",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "甲辰",
+      "dayStem": "甲",
+      "dayBranch": "辰",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "乙巳",
+      "dayStem": "乙",
+      "dayBranch": "巳",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "丙午",
+      "dayStem": "丙",
+      "dayBranch": "午",
+      "expectedKyojin": [
+        "五虚",
+        "四廢"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "丁未",
+      "dayStem": "丁",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "八専",
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "戊申",
+      "dayStem": "戊",
+      "dayBranch": "申",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "己酉",
+      "dayStem": "己",
+      "dayBranch": "酉",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "庚戌",
+      "dayStem": "庚",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "辛亥",
+      "dayStem": "辛",
+      "dayBranch": "亥",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "壬子",
+      "dayStem": "壬",
+      "dayBranch": "子",
+      "expectedKyojin": [
+        "四忌"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "癸丑",
+      "dayStem": "癸",
+      "dayBranch": "丑",
+      "expectedKyojin": [
+        "八専",
+        "觸水龍"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "甲寅",
+      "dayStem": "甲",
+      "dayBranch": "寅",
+      "expectedKyojin": [
+        "五虚",
+        "八専",
+        "八風"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "乙卯",
+      "dayStem": "乙",
+      "dayBranch": "卯",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "丙辰",
+      "dayStem": "丙",
+      "dayBranch": "辰",
+      "expectedKyojin": []
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "丁巳",
+      "dayStem": "丁",
+      "dayBranch": "巳",
+      "expectedKyojin": [
+        "四廢"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "戊午",
+      "dayStem": "戊",
+      "dayBranch": "午",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "己未",
+      "dayStem": "己",
+      "dayBranch": "未",
+      "expectedKyojin": [
+        "八専",
+        "四撃"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "庚申",
+      "dayStem": "庚",
+      "dayBranch": "申",
+      "expectedKyojin": [
+        "八専"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "辛酉",
+      "dayStem": "辛",
+      "dayBranch": "酉",
+      "expectedKyojin": [
+        "四耗"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "壬戌",
+      "dayStem": "壬",
+      "dayBranch": "戌",
+      "expectedKyojin": [
+        "五虚"
+      ]
+    },
+    {
+      "monthLabel": "十二月",
+      "monthBranch": "丑",
+      "ganzhi": "癸亥",
+      "dayStem": "癸",
+      "dayBranch": "亥",
+      "expectedKyojin": [
+        "四窮"
+      ]
+    }
+  ]
+}

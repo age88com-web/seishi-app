@@ -1,0 +1,404 @@
+/* src/app/takujitsu/print.css
+ *
+ * /takujitsu 「日付を見る」結果の印刷レイアウト（A4縦）専用スタイル。
+ *   - 画面表示は一切変更しない（@media print の中だけで完結）。
+ *   - 印刷時のみ操作系UI（AppSwitcher・タブ・入力欄・フィルタ・検索・
+ *     「他N件を表示」等）を隠し、結果だけを出す。
+ *   - 1ページ目 = タイトル「擇日」／概要／暦情報／神殺。
+ *   - 用途判定（吉・凶・吉凶混在・中立の4ブロック）は 2ページ目の先頭から。
+ *   - 用途カードは画面で折りたたまれていても印刷では全件出す
+ *     （page.tsx が全件を DOM に描画し、画面では .tj-vcard-of を display:none。
+ *      ここで再表示する）。
+ *   - 詳細展開（宜/忌/根拠/抑制）は印刷しない（一覧中心・出力を長大にしない）。
+ *   - 判定ロジック・ActivityProfile・occurrence・resolution・十二建除・
+ *     二十八宿・CalendarEngine には一切関係しない（表示のみ）。
+ *   - page.tsx の <style>{CSS}</style>（画面用インライン）に勝つ必要がある箇所は
+ *     !important を使う。
+ *
+ * 「良い日を探す」（期間検索）の印刷：
+ *   - 画面の検索結果とは別に、印刷専用ドキュメント .tsp を出す
+ *     （page.tsx SearchPrintDoc）。画面では .tsp を display:none。
+ *   - 印刷対象は good / mixed のみ（画面の「凶も表示」「中立も表示」に関係なく固定）。
+ *   - 各日の宜／忌は既存 sourceName を並べるだけ（新しい判定はしない）。
+ *   - 候補日カードは A4 幅で 2 列。カード分断なし・月見出しの孤立なし。
+ */
+
+/* 画面では印刷専用要素を出さない */
+.tj-print-foot,
+.tsp {
+  display: none;
+}
+
+@media print {
+  /* ---- 用紙 ---- */
+@page {
+    size: A4 portrait;
+    /* 全ページ共通の鑑定書余白（上下左右22mm・本文幅166mm）。
+       Next.js はページ遷移後も各ページのCSSを共有するため、どのページも同じ値にそろえる */
+    margin: 22mm;
+  }
+
+  /* ---- 操作専用UIを全部隠す ---- */
+  .tj-noprint,
+  .app-switcher {
+    display: none !important;
+  }
+
+  /* ---- ルート／全体（黒文字・白地・色は保持） ---- */
+  html,
+  body {
+    background: #fff !important;
+  }
+  .tj-root {
+    color: #000 !important;
+    background: #fff !important;
+    font-size: 10pt;
+  }
+  .tj-root * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  .tj-wrap {
+    max-width: 166mm !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* ---- パネル：外枠を外して詰める ---- */
+  .tj-panel {
+    border: none !important;
+    border-top: 1px solid #999 !important;
+    border-radius: 0 !important;
+    padding: 2.5mm 0 !important;
+    margin: 0 !important;
+    background: #fff !important;
+    break-inside: avoid;
+  }
+  .tj-panel.tj-summary {
+    border-top: none !important;
+    padding-top: 0 !important;
+  }
+
+  /* ---- 見出し ---- */
+  .tj-h1 {
+    font-size: 17pt !important;
+    margin: 0 0 2mm !important;
+    padding-bottom: 1mm !important;
+    border-bottom: 2px solid #000 !important;
+  }
+  .tj-h2 {
+    font-size: 12pt !important;
+    margin: 0 0 1.5mm !important;
+    padding-bottom: 0.5mm !important;
+    border-bottom: 1px solid #000 !important;
+    break-after: avoid;
+  }
+  .tj-h3 {
+    font-size: 10pt !important;
+    color: #000 !important;
+    margin: 0 0 1mm !important;
+    break-after: avoid;
+  }
+
+  /* ---- 概要 ---- */
+  .tj-summary-grid {
+    gap: 1mm 6mm !important;
+    margin-bottom: 1.5mm !important;
+  }
+  .tj-summary-grid > div {
+    font-size: 9.5pt !important;
+  }
+  .tj-sm-k {
+    color: #000 !important;
+  }
+  .tj-summary-verdicts {
+    gap: 3mm !important;
+  }
+  .tj-vpill {
+    font-size: 9.5pt !important;
+    font-weight: 700 !important;
+    border: 1px solid #000 !important;
+    border-radius: 10px !important;
+    padding: 0.3mm 3mm !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* ---- 暦情報 ---- */
+  .tj-kv-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 1mm 6mm !important;
+  }
+  .tj-kv {
+    font-size: 9pt !important;
+    break-inside: avoid;
+  }
+  .tj-kv-k {
+    color: #000 !important;
+  }
+
+  /* ---- 神殺 ---- */
+  .tj-shinsatsu-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 6mm !important;
+  }
+  .tj-shinsatsu-grid > div {
+    break-inside: avoid;
+  }
+  .tj-tags {
+    gap: 1mm 2mm !important;
+  }
+  .tj-tag {
+    font-size: 8.5pt !important;
+    padding: 0.3mm 2mm !important;
+    border: 1px solid #666 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .tj-tag.is-cancelled {
+    text-decoration: line-through !important;
+  }
+  .tj-tag-status {
+    color: #000 !important;
+  }
+  .tj-dash {
+    color: #000 !important;
+  }
+
+  /* ================================================================
+   * 用途判定：2ページ目の先頭から
+   * ============================================================== */
+  .tj-activities {
+    break-before: page;
+    border-top: none !important;
+  }
+  .tj-activities > .tj-h2 {
+    margin-top: 0 !important;
+  }
+
+  .tj-vblocks {
+    display: block !important;
+  }
+  .tj-vblock {
+    border: 1px solid #999 !important;
+    border-radius: 0 !important;
+    padding: 2mm 3mm !important;
+    margin: 0 0 2.5mm !important;
+    break-inside: auto; /* ブロック途中の改ページは許容 */
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  /* 判定別の薄い地色（白黒印刷でも見出し文字で判別可能） */
+  .tj-vblock-good    { background: #eaf5ee !important; }
+  .tj-vblock-bad     { background: #fbecee !important; }
+  .tj-vblock-mixed   { background: #fdf4e4 !important; }
+  .tj-vblock-neutral { background: #f0f0f0 !important; }
+  .tj-vblock-h {
+    font-size: 11pt !important;
+    margin: 0 0 1.5mm !important;
+    break-after: avoid; /* 見出しだけページ末尾に残さない */
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .tj-vblock-empty {
+    color: #000 !important;
+  }
+
+  /* カード：全件・3列・小さく */
+  .tj-vgrid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.5mm !important;
+  }
+  .tj-vcard-of {
+    display: flex !important; /* 画面で隠れていた分も印刷では出す */
+  }
+  .tj-vcard {
+    border: 1px solid #bbb !important;
+    border-radius: 0 !important;
+    padding: 1mm 1.5mm !important;
+    background: #fff !important;
+    break-inside: avoid;
+  }
+  .tj-vcard.is-open {
+    box-shadow: none !important;
+  }
+  .tj-vcard-name {
+    font-size: 9pt !important;
+    color: #000 !important;
+  }
+  .tj-vcard-caret {
+    display: none !important;
+  }
+  .tj-vcard-pending {
+    color: #000 !important;
+  }
+  .tj-vcard-sub {
+    font-size: 7.5pt !important;
+    color: #000 !important;
+  }
+  .tj-vcard-cat {
+    font-size: 7pt !important;
+    color: #000 !important;
+  }
+  .tj-vcard-yg {
+    color: #000 !important;
+  }
+
+  /* 詳細は印刷しない（一覧中心） */
+  .tj-vdetail {
+    display: none !important;
+  }
+
+  /* ---- 用途限定の残存忌 ---- */
+  .tj-restrict {
+    font-size: 9pt !important;
+  }
+  .tj-restrict li {
+    break-inside: avoid;
+  }
+
+  /* ---- 印刷フッター（末尾に1回。固定配置は本文と重なるため使わない。
+   *      ページ番号はブラウザの印刷ヘッダ／フッタに委ねる） ---- */
+  .tj-print-foot {
+    display: block !important;
+    margin-top: 4mm;
+    padding-top: 1.5mm;
+    border-top: 1px solid #999;
+    text-align: center;
+    font-size: 8pt !important;
+    color: #000 !important;
+    break-inside: avoid;
+  }
+
+  /* ================================================================
+   * 「良い日を探す」＝期間検索の候補日一覧（印刷専用ドキュメント .tsp）
+   * ============================================================== */
+  /* 検索モードでは画面用パネルは全て .tj-noprint 済み。ページ上部の
+     「擇日」大見出しは .tsp-title と重複するので隠す。 */
+  .tj-mode-search .tj-h1 {
+    display: none !important;
+  }
+
+  .tsp {
+    display: block !important;
+    color: #000 !important;
+    font-size: 10pt;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .tsp * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* ---- ヘッダー ---- */
+  .tsp-title {
+    font-size: 17pt !important;
+    margin: 0 0 2mm !important;
+    padding-bottom: 1mm !important;
+    border-bottom: 2px solid #000 !important;
+  }
+  .tsp-head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8mm 6mm;
+    font-size: 9.5pt;
+    margin-bottom: 3mm;
+    padding-bottom: 2mm;
+    border-bottom: 1px solid #999;
+    break-inside: avoid;
+    break-after: avoid;
+  }
+  .tsp-head > div { min-width: 40%; }
+  .tsp-k {
+    color: #000;
+    font-weight: 700;
+    margin-right: 3mm;
+  }
+  .tsp-k::after { content: "："; }
+  .tsp-runat {
+    width: 100%;
+    font-size: 8pt;
+    color: #333;
+  }
+  .tsp-empty { font-size: 10pt; }
+
+  /* ---- 月グループ ---- */
+  .tsp-month {
+    margin-bottom: 3mm;
+  }
+  .tsp-month-h {
+    font-size: 12pt !important;
+    font-weight: 700;
+    padding: 1mm 0 0.6mm;
+    border-bottom: 1.5px solid #000;
+    margin-bottom: 1.5mm;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1mm 4mm;
+    align-items: baseline;
+    break-after: avoid; /* 月見出しだけページ末尾に残さない */
+  }
+  .tsp-month-c {
+    font-size: 9pt;
+    font-weight: 400;
+    color: #000;
+  }
+
+  /* ---- 候補日カード：A4幅で2列 ---- */
+  .tsp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2mm;
+  }
+  .tsp-day {
+    border: 1px solid #999;
+    padding: 1.5mm 2mm;
+    break-inside: avoid; /* カードを途中で分断しない */
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .tsp-day-good  { background: #eaf5ee !important; border-color: #9fc9ac !important; }
+  .tsp-day-mixed { background: #fdf4e4 !important; border-color: #ddc596 !important; }
+  .tsp-day-h {
+    font-size: 10pt;
+    font-weight: 700;
+  }
+  .tsp-tag {
+    font-weight: 700;
+    margin-right: 1mm;
+  }
+  .tsp-day-good  .tsp-tag { color: #1a5e2e; }
+  .tsp-day-mixed .tsp-tag { color: #7a5b00; }
+  .tsp-day-meta {
+    font-size: 8pt;
+    color: #000;
+    margin: 0.4mm 0;
+  }
+  .tsp-src {
+    font-size: 8.5pt;
+    line-height: 1.35;
+    margin-top: 0.3mm;
+  }
+  .tsp-src-k {
+    display: inline-block;
+    min-width: 3.5mm;
+    font-weight: 700;
+    color: #1a5e2e;
+    margin-right: 1mm;
+  }
+  .tsp-src-k-bad { color: #a3271f; }
+
+  /* ---- フッター ---- */
+  .tsp-foot {
+    margin-top: 3mm;
+    padding-top: 1.5mm;
+    border-top: 1px solid #999;
+    text-align: center;
+    font-size: 8pt;
+    color: #000;
+    break-inside: avoid;
+  }
+}

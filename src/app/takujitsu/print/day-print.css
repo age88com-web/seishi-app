@@ -1,0 +1,356 @@
+/* src/app/takujitsu/print/day-print.css
+ *
+ * 擇日「日付を見る」の印刷専用レイアウト（TakujitsuDayPrint・.tdp-*）。
+ * 画面表示・印刷対象の切替・用紙（A4縦・上下30mm／左右22mm）は共通の src/components/print（PrintRoot）が受け持つ。
+ * 鑑定書の体裁：カード・角丸・影は使わず、背景色は最小限、細い罫線の表と見出しで組む。
+ * 吉凶は文字色に加えて［吉］［凶］の文字で示す（白黒印刷でも判別できる）。
+ */
+
+.tdp {
+  font-size: 9.5pt;
+  line-height: 1.7;
+  color: #000;
+}
+/* 各日は必ず新しいページから（1日目はそのまま） */
+.tdp-day + .tdp-day {
+  break-before: page;
+  page-break-before: always;
+}
+.tdp-head {
+  display: flex;
+  align-items: baseline;
+  gap: 6mm;
+  border-bottom: 1.5pt solid #000;
+  padding-bottom: 1.5mm;
+  margin-bottom: 3mm;
+}
+.tdp-title {
+  font-size: 15pt;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+.tdp-date {
+  font-size: 13pt;
+  font-weight: 700;
+}
+.tdp-sec {
+  margin: 0 0 4mm;
+}
+.tdp-keep {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.tdp-h3 {
+  font-size: 11pt;
+  margin: 0 0 1.8mm;
+  padding-bottom: 0.5mm;
+  border-bottom: 0.6pt solid #000;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+.tdp-h3::before {
+  content: "■ ";
+}
+.tdp-h4 {
+  font-size: 10pt;
+  margin: 3mm 0 1mm;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+.tdp-h4::before {
+  content: "◆ ";
+}
+.tdp-count {
+  font-size: 8.5pt;
+  font-weight: 400;
+  margin-left: 2.5mm;
+}
+.tdp-text {
+  margin: 0 0 1mm;
+}
+.tdp-note {
+  margin: 1mm 0 0;
+  font-size: 8.5pt;
+  color: #333;
+}
+.tdp-sub {
+  font-size: 8pt;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* 表（細い罫線・セルの内側余白を十分に） */
+.tdp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9pt;
+  line-height: 1.5;
+}
+.tdp-table th,
+.tdp-table td {
+  border: 0.4pt solid #555;
+  padding: 1.2mm 1.8mm;
+  text-align: left;
+  vertical-align: top;
+}
+.tdp-table thead th {
+  font-weight: 700;
+  white-space: nowrap;
+}
+.tdp-table tr {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.tdp-kv th {
+  width: 34mm;
+  font-weight: 700;
+}
+.tdp-c {
+  text-align: center !important;
+}
+.tdp-nowrap {
+  white-space: nowrap;
+}
+.tdp-hours td {
+  font-size: 8.5pt;
+}
+.tdp-flow {
+  margin: 0;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+/* 1ページ目：本文領域（A4縦 297mm − 用紙の上下余白 60mm − 共通の上下安全余白 20mm）に収める。
+   内容が多い日だけ PrintSheet が縮小する（測定のため、擇日の印刷要素は画面では画面外に置いて不可視にする） */
+.print-sheet.tdp-sheet1 {
+  height: 215mm;
+}
+@media screen {
+  .print-root-interpretation.tdp-measurable {
+    display: block;
+    position: absolute;
+    left: -10000px;
+    top: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+/* 2ページ目（方位・時間）：方位の直前で必ず改ページ */
+.tdp-page2 {
+  break-before: page;
+  page-break-before: always;
+}
+.tdp-head2-sub {
+  font-size: 11pt;
+  font-weight: 700;
+  margin-left: auto;
+}
+
+/* 方位：九宮の右に注記（太歳遊方の休止日など） */
+.tdp-palace-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 4mm;
+}
+.tdp-palace-row .tdp-note {
+  margin: 0;
+}
+/* 方位：正方形の九宮 3×3（南が上。1マス 26mm 角） */
+.tdp-palace {
+  display: grid;
+  grid-template-columns: repeat(3, 26mm);
+  grid-template-rows: repeat(3, 26mm);
+  width: max-content;
+  border-top: 0.6pt solid #000;
+  border-left: 0.6pt solid #000;
+}
+.tdp-pcell {
+  border-right: 0.6pt solid #000;
+  border-bottom: 0.6pt solid #000;
+  padding: 1mm 1.4mm;
+  font-size: 8.5pt;
+  line-height: 1.4;
+  overflow: hidden;
+}
+.tdp-pcenter {
+  color: #555;
+}
+.tdp-ptri {
+  font-weight: 700;
+  font-size: 10pt;
+  margin-bottom: 0.5mm;
+}
+.tdp-pdir {
+  font-weight: 400;
+  font-size: 8.5pt;
+  margin-left: 1.5mm;
+}
+.tdp-ptone {
+  font-size: 7.5pt;
+  margin-left: 0.5mm;
+}
+
+/* 時間：12時辰を 6列×2段 */
+.tdp-hgrid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  border-top: 0.6pt solid #000;
+  border-left: 0.6pt solid #000;
+}
+.tdp-hcell {
+  border-right: 0.6pt solid #000;
+  border-bottom: 0.6pt solid #000;
+  padding: 1.2mm 1.4mm 1.4mm;
+  text-align: center;
+}
+.tdp-hbranch {
+  font-size: 13pt;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.tdp-htime {
+  font-size: 8.5pt;
+  line-height: 1.3;
+}
+.tdp-hganzhi {
+  font-size: 7.5pt;
+  color: #444;
+  line-height: 1.3;
+}
+.tdp-hstate {
+  font-size: 10pt;
+  margin: 0.6mm 0 0.8mm;
+  border-top: 0.4pt dotted #888;
+  padding-top: 0.6mm;
+}
+.tdp-hnames {
+  text-align: left;
+  font-size: 7.5pt;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+  margin-top: 0.4mm;
+}
+.tdp-hk {
+  display: inline-block;
+  font-size: 7pt;
+  font-weight: 700;
+  border: 0.4pt solid currentColor;
+  padding: 0 0.5mm;
+  margin-right: 0.8mm;
+  line-height: 1.2;
+}
+
+/* 吉神・凶神の名前の一覧（4列） */
+.tdp-names {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8mm 3mm;
+}
+.tdp-names li {
+  line-height: 1.5;
+}
+/* 神殺名：本文より大きく太字。吉神＝濃い青・凶神＝濃い赤（説明文・状態は通常色） */
+.tdp-sname {
+  font-size: 11.5pt;
+  font-weight: 700;
+}
+.tdp-names-good .tdp-sname {
+  color: #0b3a8c;
+}
+.tdp-names-bad .tdp-sname {
+  color: #a3101e;
+}
+.tdp-names li.is-cancelled {
+  text-decoration: line-through;
+}
+.tdp-status {
+  font-size: 8pt;
+}
+.tdp-reasons {
+  margin: 1.5mm 0 0;
+  padding-left: 4mm;
+  font-size: 8.5pt;
+  color: #000;
+}
+.tdp-reasons .tdp-sname {
+  font-size: 10pt;
+}
+
+/* 吉凶の文字色（文字の［吉］［凶］と併用） */
+.tdp-good {
+  color: #1a6b33;
+  font-weight: 700;
+}
+.tdp-bad {
+  color: #a32432;
+  font-weight: 700;
+}
+.tdp-mixed {
+  color: #7a5c00;
+  font-weight: 700;
+}
+.tdp-neutral {
+  color: #555;
+}
+.tdp {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.tdp * {
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/* ==== 候補日一覧（TakujitsuCandidatePrint・.tcp-*） ==== */
+.tcp-meta {
+  margin-bottom: 4mm;
+}
+.tcp-meta th {
+  width: 24mm;
+}
+.tcp-list {
+  table-layout: fixed;
+  font-size: 8.5pt;
+}
+.tcp-list th,
+.tcp-list td {
+  padding: 1mm 1.2mm;
+}
+.tcp-list thead th {
+  font-size: 7.5pt;
+  padding: 0.8mm 0.6mm;
+  text-align: center;
+}
+/* 1候補日（3行）は途中で分けない。候補日の境目は太めの線 */
+.tcp-day {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.tcp-day .tcp-r1 td {
+  border-top: 1pt solid #000;
+}
+.tcp-r2 td,
+.tcp-r3 td {
+  font-size: 8pt;
+  line-height: 1.5;
+  padding-top: 0.7mm;
+  padding-bottom: 0.7mm;
+}
+.tcp-r3 td {
+  color: #222;
+}
+.tcp-k {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 8pt;
+  border: 0.5pt solid currentColor;
+  padding: 0 1mm;
+  margin: 0 1.2mm 0 2.5mm;
+  line-height: 1.3;
+}
+.tcp-k:first-child {
+  margin-left: 0;
+}
