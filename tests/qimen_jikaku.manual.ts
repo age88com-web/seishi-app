@@ -222,9 +222,19 @@ function compare(
   check("鬼遁", compare("鬼遁", "鬼遁"), "19/27/0");
   check("風遁", compare("風遁", "風遁"), "36/0/41");
   check("雲遁", compare("雲遁", "雲遁"), "45/11/42");
+  // 三奇得使: 講義の片方向定義を正式仕様として維持（監修確定 2026-10-06）。1080.pdf は双方向の別系統。
   check("乙奇得使", compare("乙奇得使", "乙奇得使"), "238/0/241");
   check("丙奇得使", compare("丙奇得使", "丙奇得使"), "239/0/243");
   check("丁奇得使", compare("丁奇得使", "丁奇得使"), "232/0/243");
+  // 参考（異説・実装しない）: 1080.pdf で三奇得使と呼ばれている別系統の規則（奇と対応儀が天盤・地盤どちら向きでも同宮）。
+  // 『寶鑑御定』の三奇得使・三奇游六儀のいずれとも一致しない（docs/qimen-spec/11_格局（吉格）.md 参考資料・異説の記録）。
+  const PAIR: Record<string, string[]> = { 乙: ["己", "辛"], 丙: ["戊", "庚"], 丁: ["壬", "癸"] };
+  const want: Record<string, string> = { 乙: "479/0/0", 丙: "482/0/0", 丁: "475/0/0" };
+  for (const [q, ys] of Object.entries(PAIR)) {
+    check(`参考: 1080.pdf 系統の${q}奇得使（双方向）`, compare(`${q}奇得使`, `${q}奇得使`, (p) =>
+      (p.tianPanStems.includes(q as DiPanStem) && ys.some((y) => p.diPanStems.includes(y as DiPanStem))) ||
+      (p.diPanStems.includes(q as DiPanStem) && ys.some((y) => p.tianPanStems.includes(y as DiPanStem)))), want[q]);
+  }
 }
 
 // ---- F. 各吉格の成立局数（回帰固定） ----
