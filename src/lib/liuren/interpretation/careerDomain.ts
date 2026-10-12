@@ -9,24 +9,16 @@
 //   行年は規則が未確定なので使わない（行年が要る読みは不足として出す）。起課・ROLE は変えない。
 
 import type { Branch } from "../types";
-import { anchorResolutionContextOf } from "./anchorResolver";
-import type { AnchorResolutionContext } from "./anchorResolver";
 import { isFlankedBy } from "./branchAdjacency";
-import { resolveContextBranch } from "./contextBranch";
-import { resolveDerivedContextBranch } from "./contextBranchDerivation";
-import { dayNightNobleBranchPairStateOf } from "./dayNightNobleBranchPair";
 import { derivedBranchDayStemStateOf } from "./derivedBranchDayStem";
 import { evaluateDomainRules, summarizeDomainReadings } from "./domainResult";
-import type { DomainCitation, DomainEvidenceItem, DomainMissingFact, DomainResult, DomainRule } from "./domainResult";
+import type { DomainCitation, DomainEvidenceItem, DomainResult, DomainRule } from "./domainResult";
 import { heavenlyGeneralPlacementRelationsOf } from "./heavenlyGeneralPlacement";
-import { collectIdentityLinks } from "./identityLink";
 import type { IdentityLink } from "./identityLink";
-import type { ContextBranchSource, InterpretationContext, InterpretationGoal } from "./roles";
-import { transmissionPassageOf } from "./transmissionPassage";
-import type { TransmissionPassage } from "./transmissionPassage";
-import type {
-  DayNightNobleBranchPairState, DayStemStandingState, InterpretationFacts, StandingPathComparison, TransmissionDayStemState, TransmissionPosition,
-} from "./types";
+import type { InterpretationContext, InterpretationGoal } from "./roles";
+import { buildDomainBoardInput } from "./domainBoardInput";
+import type { DomainBoardInput } from "./domainBoardInput";
+import type { DayStemStandingState, InterpretationFacts, TransmissionDayStemState, TransmissionPosition } from "./types";
 
 // ---- 入力 ----
 
@@ -34,22 +26,8 @@ type PathPosition = "standing" | TransmissionPosition;
 const POSITION_LABEL: Record<PathPosition, string> = { standing: "干上", initial: "初伝", middle: "中伝", final: "末伝" };
 const TRANSMISSIONS: readonly TransmissionPosition[] = ["initial", "middle", "final"];
 
-export interface CareerDomainInput {
-  facts: InterpretationFacts;
-  ctx: AnchorResolutionContext;
-  comparison: StandingPathComparison;
-  /** 三伝が通り過ぎる支（一直線に動かなければ null） */
-  passage: TransmissionPassage | null;
-  noblePair: DayNightNobleBranchPairState;
-  /** 日干の寄宮支（一課の地盤支） */
-  lodgingBranch: Branch;
-  /** subject の人物の本命の支（なければ null）と、その盤とのつながり */
-  subjectNatalBranch: Branch | null;
-  subjectLinks: readonly IdentityLink[];
-  /** 太歳の盤とのつながりと、太歳の上（heavenOn）の支（なければ null） */
-  taiSuiLinks: readonly IdentityLink[];
-  taiSuiHeavenOn: Branch | null;
-}
+/** 仕事・試験の入力は DOMAIN 共通の盤の入力そのもの（Phase 5B で domainBoardInput.ts に切り出した） */
+export type CareerDomainInput = DomainBoardInput;
 
 const stateAt = (i: CareerDomainInput, p: PathPosition): DayStemStandingState | TransmissionDayStemState =>
   p === "standing" ? i.comparison.standing : i.comparison.path[p];
@@ -442,41 +420,10 @@ const CAREER_RULES: readonly Rule[] = [
 export function evaluateCareerDomain(facts: InterpretationFacts, context: InterpretationContext, monthBranch?: Branch | null): DomainResult {
   if (context.domain !== "work" && context.domain !== "exam") throw new Error(`仕事・試験以外の DOMAIN です: ${context.domain}`);
   const subject = context.domain === "exam" ? "試験" : context.subtype === "promotion" ? "昇進" : "仕事";
-  const missing: DomainMissingFact[] = [];
-  const ctx = anchorResolutionContextOf(facts, monthBranch);
-  const comparison = ctx.comparison;
-  if (!comparison) {
-    return summarizeDomainReadings(context.domain, context.subtype, context.goal, [], [{ key: "transmissions", detail: "三伝が未確定なので判断できない" }], subject);
-  }
-  // 本人の本命（subjectPersonId の natalYear）
-  let subjectNatalBranch: Branch | null = null;
-  let subjectLinks: readonly IdentityLink[] = [];
-  if (context.subjectPersonId !== undefined) {
-    const src: ContextBranchSource = { kind: "personNatalYear", personId: context.subjectPersonId };
-    const r = resolveContextBranch(context, src);
-    if (r.status === "resolved") {
-      subjectNatalBranch = r.branch;
-      subjectLinks = collectIdentityLinks(ctx, context, [src]).links;
-    } else missing.push({ key: "natalYear", detail: `本人の本命・年命がない（${r.reason}）ので年命の読みは省略` });
-  } else missing.push({ key: "natalYear", detail: "本人（subjectPersonId）の本命・年命がないので年命の読みは省略" });
-  // 太歳
-  let taiSuiLinks: readonly IdentityLink[] = [];
-  let taiSuiHeavenOn: Branch | null = null;
-  if (context.taiSui) {
-    const src: ContextBranchSource = { kind: "taiSui" };
-    taiSuiLinks = collectIdentityLinks(ctx, context, [src]).links;
-    const on = resolveDerivedContextBranch(facts, context, { source: src, derivation: "heavenOn" });
-    taiSuiHeavenOn = on.status === "resolved" ? on.branch : null;
-  } else missing.push({ key: "taiSui", detail: "太歳がないので太歳の読みは省略" });
+  const { input, missing } = buildDomainBoardInput(facts, context, monthBranch);
+  if (!input) return summarizeDomainReadings(context.domain, context.subtype, context.goal, [], missing, subject);
   missing.push({ key: "xingNian", detail: "行年は規則が未確定なので、行年を使う読み（例43「行年ともに白虎」・例51「行年午上に申」など）は未対応" });
   missing.push({ key: "timing", detail: "時期（応期）の読みは未対応" });
-  const input: CareerDomainInput = {
-    facts, ctx, comparison,
-    passage: transmissionPassageOf({ initial: comparison.path.initial.branch, middle: comparison.path.middle.branch, final: comparison.path.final.branch }, comparison.movementPattern),
-    noblePair: dayNightNobleBranchPairStateOf(facts),
-    lodgingBranch: facts.lessons[0].lowerBranch,
-    subjectNatalBranch, subjectLinks, taiSuiLinks, taiSuiHeavenOn,
-  };
   const readings = evaluateDomainRules(CAREER_RULES, input, context.domain, context.subtype, context.goal);
   return summarizeDomainReadings(context.domain, context.subtype, context.goal, readings, missing, subject);
 }

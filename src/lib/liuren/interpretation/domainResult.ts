@@ -11,14 +11,14 @@
 import type { DomainSubtype, InterpretationDomain, InterpretationGoal } from "./roles";
 
 /** 判断の軸 */
-export type DomainAxis = "opportunity" | "support" | "obstruction" | "actualization" | "trajectory" | "timing";
+export type DomainAxis = "relation" | "opportunity" | "support" | "obstruction" | "actualization" | "trajectory" | "timing";
 /** 今回の問い（subtype・goal）にとっての向き */
 export type DomainDirection = "favoring" | "hindering" | "neutral";
 /** 資料の支持の強さ: 原文の判断そのもの／訳注や複数の FACT の組合せ／資料から一般化したもの */
 export type DomainInferenceLevel = "direct" | "combined" | "inferred";
 
 export interface DomainCitation {
-  source: "『六壬断案２』" | "『六壬神課講座』";
+  source: "『六壬断案』" | "『六壬断案２』" | "『六壬神課講座』";
   locator: string;
   layer: "原文" | "訳注" | "講座";
   quote: string;
@@ -37,6 +37,8 @@ export interface DomainReading {
   key: string;
   /** 読みの短い名前（例: "官星が三伝に出る"） */
   label: string;
+  /** 何についての読みか（Phase 5B。例: 家宅の "relation"〔人と宅〕・"house"・"person"・"wealth"・"family"）。省略可 */
+  topic?: string;
   /** この盤で検出したこと（盤の値を含む文） */
   detected: string;
   evidence: readonly DomainEvidenceItem[];
@@ -76,14 +78,15 @@ export interface DomainResult {
 export interface DomainRule<I> {
   id: string;
   when: { domain: InterpretationDomain; subtypes?: readonly string[] };
-  reading: { axis: DomainAxis; key: string; label: string; level: DomainInferenceLevel; citations: readonly DomainCitation[] };
+  reading: { axis: DomainAxis; key: string; label: string; level: DomainInferenceLevel; citations: readonly DomainCitation[]; topic?: string };
   /** 検出したこと（なければ null） */
   conditions: (input: I) => { detected: string; evidence: readonly DomainEvidenceItem[] } | null;
   /** 今回の問いにとっての向き */
   assess: (input: I, subtype: string | undefined, goal: InterpretationGoal | undefined) => { direction: DomainDirection; note?: string };
 }
 
-const AXES: readonly DomainAxis[] = ["opportunity", "support", "obstruction", "actualization", "trajectory", "timing"];
+/** relation（Phase 5B）: 家宅の人と宅の関係のように、主体どうしの構造の関係 */
+const AXES: readonly DomainAxis[] = ["relation", "opportunity", "support", "obstruction", "actualization", "trajectory", "timing"];
 
 /** ルールを評価して読みを並べる（when に合うルールだけ。ルールの順のまま） */
 export function evaluateDomainRules<I>(
@@ -97,7 +100,7 @@ export function evaluateDomainRules<I>(
     if (!hit) continue;
     const a = rule.assess(input, subtype, goal);
     out.push({
-      ruleId: rule.id, axis: rule.reading.axis, key: rule.reading.key, label: rule.reading.label,
+      ruleId: rule.id, axis: rule.reading.axis, key: rule.reading.key, label: rule.reading.label, ...(rule.reading.topic ? { topic: rule.reading.topic } : {}),
       detected: hit.detected, evidence: hit.evidence, direction: a.direction, ...(a.note ? { directionNote: a.note } : {}),
       level: rule.reading.level, citations: rule.reading.citations,
     });
@@ -106,13 +109,17 @@ export function evaluateDomainRules<I>(
 }
 
 const AXIS_LABEL: Record<DomainAxis, string> = {
-  opportunity: "機会", support: "後押し", obstruction: "妨げ", actualization: "実現性", trajectory: "流れ", timing: "時期",
+  relation: "関係", opportunity: "機会", support: "後押し", obstruction: "妨げ", actualization: "実現性", trajectory: "流れ", timing: "時期",
 };
 
-/** 読みを軸ごとにまとめ、要約文を作る（盤の値を含む detected をそのまま使う） */
+/**
+ * 読みを軸ごとにまとめ、要約文を作る（盤の値を含む detected をそのまま使う）。
+ * leadTopics を渡すと、その topic の読みを先に「label: …」として書き、軸ごとの行からは外す（家宅の「人と宅の関係」など）。
+ */
 export function summarizeDomainReadings(
   domain: InterpretationDomain, subtype: DomainSubtype | undefined, goal: InterpretationGoal | undefined,
   readings: readonly DomainReading[], missing: readonly DomainMissingFact[], subject: string,
+  leadTopics: readonly { topic: string; label: string }[] = [],
 ): DomainResult {
   const byAxis = Object.fromEntries(AXES.map((a) => [a, readings.filter((r) => r.axis === a)])) as Record<DomainAxis, DomainReading[]>;
   const favoring = readings.filter((r) => r.direction === "favoring");
@@ -121,9 +128,14 @@ export function summarizeDomainReadings(
   const lines: string[] = [];
   const join = (rs: readonly DomainReading[]) => rs.map((r) => r.detected).join("。");
   if (!readings.length) lines.push(`${subject}について、資料に根拠のある判断材料はこの盤では見つかりませんでした。`);
+  const lead = new Set(leadTopics.map((t) => t.topic));
+  for (const t of leadTopics) {
+    const rs = readings.filter((r) => r.topic === t.topic);
+    if (rs.length) lines.push(`${t.label}: ${join(rs)}。`);
+  }
   for (const axis of AXES) {
-    const fav = byAxis[axis].filter((r) => r.direction === "favoring");
-    const hin = byAxis[axis].filter((r) => r.direction === "hindering");
+    const fav = byAxis[axis].filter((r) => r.direction === "favoring" && !(r.topic && lead.has(r.topic)));
+    const hin = byAxis[axis].filter((r) => r.direction === "hindering" && !(r.topic && lead.has(r.topic)));
     if (fav.length) lines.push(`${AXIS_LABEL[axis]}（追い風）: ${join(fav)}。`);
     if (hin.length) lines.push(`${axis === "obstruction" ? AXIS_LABEL[axis] : `${AXIS_LABEL[axis]}（妨げ）`}: ${join(hin)}。`);
   }
