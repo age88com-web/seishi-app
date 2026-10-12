@@ -1,0 +1,2524 @@
+{
+ "_meta": {
+  "source": "docs/source/奇門遁甲万年暦.xlsx（2018〜2020年、3シート）",
+  "description": "奇門遁甲万年暦.xlsx から機械的に転記した検証専用 fixture。仕様ではない。production コード（dingju.ts）は Excel を実行時に一切参照しない（Excel非依存）。このfixtureは resolveDingju() が返す dun/ju が、実際の万年暦の運用結果と日単位で一致することを固定する回帰テストの検証データ。",
+  "excludedBadGanzhi": [
+   {
+    "year": 2018,
+    "month": 11,
+    "day": 8,
+    "raw": "甲展",
+    "reason": "invalid stem/branch character"
+   },
+   {
+    "year": 2018,
+    "month": 11,
+    "day": 28,
+    "raw": "庚子",
+    "reason": "chain-consistency break: 前後の日から機械的に逆算した正しい干支と一致しない（単純な転記ミスと判定）"
+   },
+   {
+    "year": 2018,
+    "month": 6,
+    "day": 20,
+    "raw": "壬未",
+    "reason": "invalid stem/branch parity"
+   },
+   {
+    "year": 2019,
+    "month": 12,
+    "day": 27,
+    "raw": "戊戊",
+    "reason": "invalid stem/branch character"
+   },
+   {
+    "year": 2019,
+    "month": 10,
+    "day": 3,
+    "raw": "癸西",
+    "reason": "invalid stem/branch character"
+   },
+   {
+    "year": 2019,
+    "month": 10,
+    "day": 15,
+    "raw": "乙西",
+    "reason": "invalid stem/branch character"
+   },
+   {
+    "year": 2019,
+    "month": 10,
+    "day": 27,
+    "raw": "丁西",
+    "reason": "invalid stem/branch character"
+   },
+   {
+    "year": 2020,
+    "month": 10,
+    "day": 9,
+    "raw": "乙西",
+    "reason": "invalid stem/branch character"
+   },
+   {
+    "year": 2020,
+    "month": 6,
+    "day": 14,
+    "raw": "成子",
+    "reason": "invalid stem/branch character"
+   }
+  ],
+  "overrides": [
+   {
+    "date": "2018-11-23",
+    "expectedDun": "陰遁",
+    "expectedJu": 2,
+    "note": "Excel原本は「陰3」と記載されているが、局数.pdfの独立引用2箇所（統宗の訂正記事・個別列挙リストの両方）が一致して「小雪下元=2」を示しており、Excel側の転記ミスと判定した。この1件だけはPDF確定値（陰2）を正としてテストする（Excelの陰3には合わせない）。"
+   }
+  ],
+  "generationScript": "tests/fixtures/gen_qimen_dingju.py",
+  "count": 244
+ },
+ "rows": [
+  {
+   "year": 2019,
+   "month": 1,
+   "day": 1,
+   "dayStem": "戊",
+   "dayBranch": "戌",
+   "expectedDun": "陽遁",
+   "expectedJu": 1,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 1,
+   "day": 2,
+   "dayStem": "己",
+   "dayBranch": "亥",
+   "expectedDun": "陽遁",
+   "expectedJu": 7,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 1,
+   "day": 7,
+   "dayStem": "甲",
+   "dayBranch": "辰",
+   "expectedDun": "陽遁",
+   "expectedJu": 4,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 1,
+   "day": 12,
+   "dayStem": "己",
+   "dayBranch": "酉",
+   "expectedDun": "陽遁",
+   "expectedJu": 2,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 1,
+   "day": 17,
+   "dayStem": "甲",
+   "dayBranch": "寅",
+   "expectedDun": "陽遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 1,
+   "day": 22,
+   "dayStem": "己",
+   "dayBranch": "未",
+   "expectedDun": "陽遁",
+   "expectedJu": 5,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 1,
+   "day": 27,
+   "dayStem": "甲",
+   "dayBranch": "子",
+   "expectedDun": "陽遁",
+   "expectedJu": 3,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 12,
+   "day": 1,
+   "dayStem": "丁",
+   "dayBranch": "卯",
+   "expectedDun": "陰遁",
+   "expectedJu": 4,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 12,
+   "day": 3,
+   "dayStem": "己",
+   "dayBranch": "巳",
+   "expectedDun": "陰遁",
+   "expectedJu": 7,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 12,
+   "day": 8,
+   "dayStem": "甲",
+   "dayBranch": "戌",
+   "expectedDun": "陰遁",
+   "expectedJu": 1,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 12,
+   "day": 13,
+   "dayStem": "己",
+   "dayBranch": "卯",
+   "expectedDun": "陰遁",
+   "expectedJu": 4,
+   "leap": true
+  },
+  {
+   "year": 2018,
+   "month": 12,
+   "day": 18,
+   "dayStem": "甲",
+   "dayBranch": "申",
+   "expectedDun": "陰遁",
+   "expectedJu": 7,
+   "leap": true
+  },
+  {
+   "year": 2018,
+   "month": 12,
+   "day": 23,
+   "dayStem": "己",
+   "dayBranch": "丑",
+   "expectedDun": "陰遁",
+   "expectedJu": 1,
+   "leap": true
+  },
+  {
+   "year": 2018,
+   "month": 12,
+   "day": 28,
+   "dayStem": "甲",
+   "dayBranch": "午",
+   "expectedDun": "陽遁",
+   "expectedJu": 1,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 11,
+   "day": 1,
+   "dayStem": "丁",
+   "dayBranch": "酉",
+   "expectedDun": "陰遁",
+   "expectedJu": 6,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 11,
+   "day": 3,
+   "dayStem": "己",
+   "dayBranch": "亥",
+   "expectedDun": "陰遁",
+   "expectedJu": 9,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 11,
+   "day": 13,
+   "dayStem": "己",
+   "dayBranch": "酉",
+   "expectedDun": "陰遁",
+   "expectedJu": 5,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 11,
+   "day": 18,
+   "dayStem": "甲",
+   "dayBranch": "寅",
+   "expectedDun": "陰遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 11,
+   "day": 23,
+   "dayStem": "己",
+   "dayBranch": "未",
+   "expectedDun": "陰遁",
+   "expectedJu": 2,
+   "leap": false,
+   "note": "Excel原本は「陰3」と記載されているが、局数.pdfの独立引用2箇所（統宗の訂正記事・個別列挙リストの両方）が一致して「小雪下元=2」を示しており、Excel側の転記ミスと判定した。この1件だけはPDF確定値（陰2）を正としてテストする（Excelの陰3には合わせない）。"
+  },
+  {
+   "year": 2018,
+   "month": 10,
+   "day": 1,
+   "dayStem": "丙",
+   "dayBranch": "寅",
+   "expectedDun": "陰遁",
+   "expectedJu": 6,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 10,
+   "day": 4,
+   "dayStem": "己",
+   "dayBranch": "巳",
+   "expectedDun": "陰遁",
+   "expectedJu": 9,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 10,
+   "day": 9,
+   "dayStem": "甲",
+   "dayBranch": "戌",
+   "expectedDun": "陰遁",
+   "expectedJu": 3,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 10,
+   "day": 14,
+   "dayStem": "己",
+   "dayBranch": "卯",
+   "expectedDun": "陰遁",
+   "expectedJu": 5,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 10,
+   "day": 19,
+   "dayStem": "甲",
+   "dayBranch": "申",
+   "expectedDun": "陰遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 10,
+   "day": 24,
+   "dayStem": "己",
+   "dayBranch": "丑",
+   "expectedDun": "陰遁",
+   "expectedJu": 2,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 10,
+   "day": 29,
+   "dayStem": "甲",
+   "dayBranch": "午",
+   "expectedDun": "陰遁",
+   "expectedJu": 6,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 9,
+   "day": 1,
+   "dayStem": "丙",
+   "dayBranch": "申",
+   "expectedDun": "陰遁",
+   "expectedJu": 9,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 9,
+   "day": 4,
+   "dayStem": "己",
+   "dayBranch": "亥",
+   "expectedDun": "陰遁",
+   "expectedJu": 3,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 9,
+   "day": 9,
+   "dayStem": "甲",
+   "dayBranch": "辰",
+   "expectedDun": "陰遁",
+   "expectedJu": 6,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 9,
+   "day": 14,
+   "dayStem": "己",
+   "dayBranch": "酉",
+   "expectedDun": "陰遁",
+   "expectedJu": 7,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 9,
+   "day": 19,
+   "dayStem": "甲",
+   "dayBranch": "寅",
+   "expectedDun": "陰遁",
+   "expectedJu": 1,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 9,
+   "day": 24,
+   "dayStem": "己",
+   "dayBranch": "未",
+   "expectedDun": "陰遁",
+   "expectedJu": 4,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 9,
+   "day": 29,
+   "dayStem": "甲",
+   "dayBranch": "子",
+   "expectedDun": "陰遁",
+   "expectedJu": 6,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 8,
+   "day": 1,
+   "dayStem": "乙",
+   "dayBranch": "丑",
+   "expectedDun": "陰遁",
+   "expectedJu": 2,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 8,
+   "day": 5,
+   "dayStem": "己",
+   "dayBranch": "巳",
+   "expectedDun": "陰遁",
+   "expectedJu": 5,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 8,
+   "day": 10,
+   "dayStem": "甲",
+   "dayBranch": "戌",
+   "expectedDun": "陰遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 8,
+   "day": 15,
+   "dayStem": "己",
+   "dayBranch": "卯",
+   "expectedDun": "陰遁",
+   "expectedJu": 1,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 8,
+   "day": 20,
+   "dayStem": "甲",
+   "dayBranch": "申",
+   "expectedDun": "陰遁",
+   "expectedJu": 4,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 8,
+   "day": 25,
+   "dayStem": "己",
+   "dayBranch": "丑",
+   "expectedDun": "陰遁",
+   "expectedJu": 7,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 8,
+   "day": 30,
+   "dayStem": "甲",
+   "dayBranch": "午",
+   "expectedDun": "陰遁",
+   "expectedJu": 9,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 7,
+   "day": 1,
+   "dayStem": "甲",
+   "dayBranch": "午",
+   "expectedDun": "陰遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 7,
+   "day": 6,
+   "dayStem": "己",
+   "dayBranch": "亥",
+   "expectedDun": "陰遁",
+   "expectedJu": 2,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 7,
+   "day": 11,
+   "dayStem": "甲",
+   "dayBranch": "辰",
+   "expectedDun": "陰遁",
+   "expectedJu": 5,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 7,
+   "day": 16,
+   "dayStem": "己",
+   "dayBranch": "酉",
+   "expectedDun": "陰遁",
+   "expectedJu": 7,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 7,
+   "day": 21,
+   "dayStem": "甲",
+   "dayBranch": "寅",
+   "expectedDun": "陰遁",
+   "expectedJu": 1,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 7,
+   "day": 26,
+   "dayStem": "己",
+   "dayBranch": "未",
+   "expectedDun": "陰遁",
+   "expectedJu": 4,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 7,
+   "day": 31,
+   "dayStem": "甲",
+   "dayBranch": "子",
+   "expectedDun": "陰遁",
+   "expectedJu": 2,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 6,
+   "day": 1,
+   "dayStem": "甲",
+   "dayBranch": "子",
+   "expectedDun": "陽遁",
+   "expectedJu": 6,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 6,
+   "day": 6,
+   "dayStem": "己",
+   "dayBranch": "巳",
+   "expectedDun": "陽遁",
+   "expectedJu": 3,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 6,
+   "day": 11,
+   "dayStem": "甲",
+   "dayBranch": "戌",
+   "expectedDun": "陽遁",
+   "expectedJu": 9,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 6,
+   "day": 16,
+   "dayStem": "己",
+   "dayBranch": "卯",
+   "expectedDun": "陰遁",
+   "expectedJu": 9,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 6,
+   "day": 21,
+   "dayStem": "甲",
+   "dayBranch": "申",
+   "expectedDun": "陰遁",
+   "expectedJu": 3,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 6,
+   "day": 26,
+   "dayStem": "己",
+   "dayBranch": "丑",
+   "expectedDun": "陰遁",
+   "expectedJu": 6,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 5,
+   "day": 1,
+   "dayStem": "癸",
+   "dayBranch": "巳",
+   "expectedDun": "陽遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 5,
+   "day": 2,
+   "dayStem": "甲",
+   "dayBranch": "午",
+   "expectedDun": "陽遁",
+   "expectedJu": 4,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 5,
+   "day": 7,
+   "dayStem": "己",
+   "dayBranch": "亥",
+   "expectedDun": "陽遁",
+   "expectedJu": 1,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 5,
+   "day": 12,
+   "dayStem": "甲",
+   "dayBranch": "辰",
+   "expectedDun": "陽遁",
+   "expectedJu": 7,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 5,
+   "day": 17,
+   "dayStem": "己",
+   "dayBranch": "酉",
+   "expectedDun": "陽遁",
+   "expectedJu": 5,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 5,
+   "day": 22,
+   "dayStem": "甲",
+   "dayBranch": "寅",
+   "expectedDun": "陽遁",
+   "expectedJu": 2,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 5,
+   "day": 27,
+   "dayStem": "己",
+   "dayBranch": "未",
+   "expectedDun": "陽遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 4,
+   "day": 1,
+   "dayStem": "癸",
+   "dayBranch": "亥",
+   "expectedDun": "陽遁",
+   "expectedJu": 6,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 4,
+   "day": 2,
+   "dayStem": "甲",
+   "dayBranch": "子",
+   "expectedDun": "陽遁",
+   "expectedJu": 4,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 4,
+   "day": 7,
+   "dayStem": "己",
+   "dayBranch": "巳",
+   "expectedDun": "陽遁",
+   "expectedJu": 1,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 4,
+   "day": 12,
+   "dayStem": "甲",
+   "dayBranch": "戌",
+   "expectedDun": "陽遁",
+   "expectedJu": 7,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 4,
+   "day": 17,
+   "dayStem": "己",
+   "dayBranch": "卯",
+   "expectedDun": "陽遁",
+   "expectedJu": 5,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 4,
+   "day": 22,
+   "dayStem": "甲",
+   "dayBranch": "申",
+   "expectedDun": "陽遁",
+   "expectedJu": 2,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 4,
+   "day": 27,
+   "dayStem": "己",
+   "dayBranch": "丑",
+   "expectedDun": "陽遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 3,
+   "day": 1,
+   "dayStem": "壬",
+   "dayBranch": "辰",
+   "expectedDun": "陽遁",
+   "expectedJu": 3,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 3,
+   "day": 3,
+   "dayStem": "甲",
+   "dayBranch": "午",
+   "expectedDun": "陽遁",
+   "expectedJu": 1,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 3,
+   "day": 8,
+   "dayStem": "己",
+   "dayBranch": "亥",
+   "expectedDun": "陽遁",
+   "expectedJu": 7,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 3,
+   "day": 13,
+   "dayStem": "甲",
+   "dayBranch": "辰",
+   "expectedDun": "陽遁",
+   "expectedJu": 4,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 3,
+   "day": 18,
+   "dayStem": "己",
+   "dayBranch": "酉",
+   "expectedDun": "陽遁",
+   "expectedJu": 3,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 3,
+   "day": 23,
+   "dayStem": "甲",
+   "dayBranch": "寅",
+   "expectedDun": "陽遁",
+   "expectedJu": 9,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 3,
+   "day": 28,
+   "dayStem": "己",
+   "dayBranch": "未",
+   "expectedDun": "陽遁",
+   "expectedJu": 6,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 2,
+   "day": 1,
+   "dayStem": "甲",
+   "dayBranch": "子",
+   "expectedDun": "陽遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 2,
+   "day": 6,
+   "dayStem": "己",
+   "dayBranch": "巳",
+   "expectedDun": "陽遁",
+   "expectedJu": 5,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 2,
+   "day": 11,
+   "dayStem": "甲",
+   "dayBranch": "戌",
+   "expectedDun": "陽遁",
+   "expectedJu": 2,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 2,
+   "day": 16,
+   "dayStem": "己",
+   "dayBranch": "卯",
+   "expectedDun": "陽遁",
+   "expectedJu": 9,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 2,
+   "day": 21,
+   "dayStem": "甲",
+   "dayBranch": "申",
+   "expectedDun": "陽遁",
+   "expectedJu": 6,
+   "leap": false
+  },
+  {
+   "year": 2018,
+   "month": 2,
+   "day": 26,
+   "dayStem": "己",
+   "dayBranch": "丑",
+   "expectedDun": "陽遁",
+   "expectedJu": 3,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 1,
+   "day": 1,
+   "dayStem": "癸",
+   "dayBranch": "卯",
+   "expectedDun": "陽遁",
+   "expectedJu": 7,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 1,
+   "day": 2,
+   "dayStem": "甲",
+   "dayBranch": "辰",
+   "expectedDun": "陽遁",
+   "expectedJu": 4,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 1,
+   "day": 7,
+   "dayStem": "己",
+   "dayBranch": "酉",
+   "expectedDun": "陽遁",
+   "expectedJu": 2,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 1,
+   "day": 12,
+   "dayStem": "甲",
+   "dayBranch": "寅",
+   "expectedDun": "陽遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 1,
+   "day": 17,
+   "dayStem": "己",
+   "dayBranch": "未",
+   "expectedDun": "陽遁",
+   "expectedJu": 5,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 1,
+   "day": 22,
+   "dayStem": "甲",
+   "dayBranch": "子",
+   "expectedDun": "陽遁",
+   "expectedJu": 3,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 1,
+   "day": 27,
+   "dayStem": "己",
+   "dayBranch": "巳",
+   "expectedDun": "陽遁",
+   "expectedJu": 9,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 12,
+   "day": 1,
+   "dayStem": "壬",
+   "dayBranch": "申",
+   "expectedDun": "陰遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 12,
+   "day": 3,
+   "dayStem": "甲",
+   "dayBranch": "戌",
+   "expectedDun": "陰遁",
+   "expectedJu": 2,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 12,
+   "day": 8,
+   "dayStem": "己",
+   "dayBranch": "卯",
+   "expectedDun": "陰遁",
+   "expectedJu": 4,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 12,
+   "day": 13,
+   "dayStem": "甲",
+   "dayBranch": "申",
+   "expectedDun": "陰遁",
+   "expectedJu": 7,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 12,
+   "day": 18,
+   "dayStem": "己",
+   "dayBranch": "丑",
+   "expectedDun": "陰遁",
+   "expectedJu": 1,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 12,
+   "day": 23,
+   "dayStem": "甲",
+   "dayBranch": "午",
+   "expectedDun": "陽遁",
+   "expectedJu": 1,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 12,
+   "day": 28,
+   "dayStem": "己",
+   "dayBranch": "亥",
+   "expectedDun": "陽遁",
+   "expectedJu": 7,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 11,
+   "day": 1,
+   "dayStem": "壬",
+   "dayBranch": "寅",
+   "expectedDun": "陰遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 11,
+   "day": 3,
+   "dayStem": "甲",
+   "dayBranch": "辰",
+   "expectedDun": "陰遁",
+   "expectedJu": 2,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 11,
+   "day": 8,
+   "dayStem": "己",
+   "dayBranch": "酉",
+   "expectedDun": "陰遁",
+   "expectedJu": 6,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 11,
+   "day": 13,
+   "dayStem": "甲",
+   "dayBranch": "寅",
+   "expectedDun": "陰遁",
+   "expectedJu": 9,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 11,
+   "day": 18,
+   "dayStem": "己",
+   "dayBranch": "未",
+   "expectedDun": "陰遁",
+   "expectedJu": 3,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 11,
+   "day": 23,
+   "dayStem": "甲",
+   "dayBranch": "子",
+   "expectedDun": "陰遁",
+   "expectedJu": 5,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 11,
+   "day": 28,
+   "dayStem": "己",
+   "dayBranch": "巳",
+   "expectedDun": "陰遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 10,
+   "day": 1,
+   "dayStem": "辛",
+   "dayBranch": "未",
+   "expectedDun": "陰遁",
+   "expectedJu": 1,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 10,
+   "day": 4,
+   "dayStem": "甲",
+   "dayBranch": "戌",
+   "expectedDun": "陰遁",
+   "expectedJu": 4,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 10,
+   "day": 9,
+   "dayStem": "己",
+   "dayBranch": "卯",
+   "expectedDun": "陰遁",
+   "expectedJu": 6,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 10,
+   "day": 14,
+   "dayStem": "甲",
+   "dayBranch": "申",
+   "expectedDun": "陰遁",
+   "expectedJu": 9,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 10,
+   "day": 19,
+   "dayStem": "己",
+   "dayBranch": "丑",
+   "expectedDun": "陰遁",
+   "expectedJu": 3,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 10,
+   "day": 24,
+   "dayStem": "甲",
+   "dayBranch": "午",
+   "expectedDun": "陰遁",
+   "expectedJu": 5,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 10,
+   "day": 29,
+   "dayStem": "己",
+   "dayBranch": "亥",
+   "expectedDun": "陰遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 9,
+   "day": 1,
+   "dayStem": "辛",
+   "dayBranch": "丑",
+   "expectedDun": "陰遁",
+   "expectedJu": 4,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 9,
+   "day": 4,
+   "dayStem": "甲",
+   "dayBranch": "辰",
+   "expectedDun": "陰遁",
+   "expectedJu": 7,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 9,
+   "day": 9,
+   "dayStem": "己",
+   "dayBranch": "酉",
+   "expectedDun": "陰遁",
+   "expectedJu": 9,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 9,
+   "day": 14,
+   "dayStem": "甲",
+   "dayBranch": "寅",
+   "expectedDun": "陰遁",
+   "expectedJu": 3,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 9,
+   "day": 19,
+   "dayStem": "己",
+   "dayBranch": "未",
+   "expectedDun": "陰遁",
+   "expectedJu": 6,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 9,
+   "day": 24,
+   "dayStem": "甲",
+   "dayBranch": "子",
+   "expectedDun": "陰遁",
+   "expectedJu": 7,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 9,
+   "day": 29,
+   "dayStem": "己",
+   "dayBranch": "巳",
+   "expectedDun": "陰遁",
+   "expectedJu": 1,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 8,
+   "day": 1,
+   "dayStem": "庚",
+   "dayBranch": "午",
+   "expectedDun": "陰遁",
+   "expectedJu": 1,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 8,
+   "day": 5,
+   "dayStem": "甲",
+   "dayBranch": "戌",
+   "expectedDun": "陰遁",
+   "expectedJu": 4,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 8,
+   "day": 10,
+   "dayStem": "己",
+   "dayBranch": "卯",
+   "expectedDun": "陰遁",
+   "expectedJu": 2,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 8,
+   "day": 15,
+   "dayStem": "甲",
+   "dayBranch": "申",
+   "expectedDun": "陰遁",
+   "expectedJu": 5,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 8,
+   "day": 20,
+   "dayStem": "己",
+   "dayBranch": "丑",
+   "expectedDun": "陰遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 8,
+   "day": 25,
+   "dayStem": "甲",
+   "dayBranch": "午",
+   "expectedDun": "陰遁",
+   "expectedJu": 1,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 8,
+   "day": 30,
+   "dayStem": "己",
+   "dayBranch": "亥",
+   "expectedDun": "陰遁",
+   "expectedJu": 4,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 7,
+   "day": 1,
+   "dayStem": "己",
+   "dayBranch": "亥",
+   "expectedDun": "陰遁",
+   "expectedJu": 3,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 7,
+   "day": 6,
+   "dayStem": "甲",
+   "dayBranch": "辰",
+   "expectedDun": "陰遁",
+   "expectedJu": 6,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 7,
+   "day": 11,
+   "dayStem": "己",
+   "dayBranch": "酉",
+   "expectedDun": "陰遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 7,
+   "day": 16,
+   "dayStem": "甲",
+   "dayBranch": "寅",
+   "expectedDun": "陰遁",
+   "expectedJu": 2,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 7,
+   "day": 21,
+   "dayStem": "己",
+   "dayBranch": "未",
+   "expectedDun": "陰遁",
+   "expectedJu": 5,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 7,
+   "day": 26,
+   "dayStem": "甲",
+   "dayBranch": "子",
+   "expectedDun": "陰遁",
+   "expectedJu": 7,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 7,
+   "day": 31,
+   "dayStem": "己",
+   "dayBranch": "巳",
+   "expectedDun": "陰遁",
+   "expectedJu": 1,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 6,
+   "day": 1,
+   "dayStem": "己",
+   "dayBranch": "巳",
+   "expectedDun": "陽遁",
+   "expectedJu": 2,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 6,
+   "day": 6,
+   "dayStem": "甲",
+   "dayBranch": "戌",
+   "expectedDun": "陽遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 6,
+   "day": 11,
+   "dayStem": "己",
+   "dayBranch": "卯",
+   "expectedDun": "陽遁",
+   "expectedJu": 6,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 6,
+   "day": 16,
+   "dayStem": "甲",
+   "dayBranch": "申",
+   "expectedDun": "陽遁",
+   "expectedJu": 3,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 6,
+   "day": 21,
+   "dayStem": "己",
+   "dayBranch": "丑",
+   "expectedDun": "陽遁",
+   "expectedJu": 9,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 6,
+   "day": 26,
+   "dayStem": "甲",
+   "dayBranch": "午",
+   "expectedDun": "陰遁",
+   "expectedJu": 9,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 5,
+   "day": 1,
+   "dayStem": "戊",
+   "dayBranch": "戌",
+   "expectedDun": "陽遁",
+   "expectedJu": 5,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 5,
+   "day": 2,
+   "dayStem": "己",
+   "dayBranch": "亥",
+   "expectedDun": "陽遁",
+   "expectedJu": 2,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 5,
+   "day": 7,
+   "dayStem": "甲",
+   "dayBranch": "辰",
+   "expectedDun": "陽遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 5,
+   "day": 12,
+   "dayStem": "己",
+   "dayBranch": "酉",
+   "expectedDun": "陽遁",
+   "expectedJu": 4,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 5,
+   "day": 17,
+   "dayStem": "甲",
+   "dayBranch": "寅",
+   "expectedDun": "陽遁",
+   "expectedJu": 1,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 5,
+   "day": 22,
+   "dayStem": "己",
+   "dayBranch": "未",
+   "expectedDun": "陽遁",
+   "expectedJu": 7,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 5,
+   "day": 27,
+   "dayStem": "甲",
+   "dayBranch": "子",
+   "expectedDun": "陽遁",
+   "expectedJu": 5,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 4,
+   "day": 1,
+   "dayStem": "戊",
+   "dayBranch": "辰",
+   "expectedDun": "陽遁",
+   "expectedJu": 3,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 4,
+   "day": 2,
+   "dayStem": "己",
+   "dayBranch": "巳",
+   "expectedDun": "陽遁",
+   "expectedJu": 9,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 4,
+   "day": 7,
+   "dayStem": "甲",
+   "dayBranch": "戌",
+   "expectedDun": "陽遁",
+   "expectedJu": 6,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 4,
+   "day": 12,
+   "dayStem": "己",
+   "dayBranch": "卯",
+   "expectedDun": "陽遁",
+   "expectedJu": 4,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 4,
+   "day": 17,
+   "dayStem": "甲",
+   "dayBranch": "申",
+   "expectedDun": "陽遁",
+   "expectedJu": 1,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 4,
+   "day": 22,
+   "dayStem": "己",
+   "dayBranch": "丑",
+   "expectedDun": "陽遁",
+   "expectedJu": 7,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 4,
+   "day": 27,
+   "dayStem": "甲",
+   "dayBranch": "午",
+   "expectedDun": "陽遁",
+   "expectedJu": 5,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 3,
+   "day": 1,
+   "dayStem": "丁",
+   "dayBranch": "酉",
+   "expectedDun": "陽遁",
+   "expectedJu": 9,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 3,
+   "day": 3,
+   "dayStem": "己",
+   "dayBranch": "亥",
+   "expectedDun": "陽遁",
+   "expectedJu": 6,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 3,
+   "day": 8,
+   "dayStem": "甲",
+   "dayBranch": "辰",
+   "expectedDun": "陽遁",
+   "expectedJu": 3,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 3,
+   "day": 13,
+   "dayStem": "己",
+   "dayBranch": "酉",
+   "expectedDun": "陽遁",
+   "expectedJu": 1,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 3,
+   "day": 18,
+   "dayStem": "甲",
+   "dayBranch": "寅",
+   "expectedDun": "陽遁",
+   "expectedJu": 7,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 3,
+   "day": 23,
+   "dayStem": "己",
+   "dayBranch": "未",
+   "expectedDun": "陽遁",
+   "expectedJu": 4,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 3,
+   "day": 28,
+   "dayStem": "甲",
+   "dayBranch": "子",
+   "expectedDun": "陽遁",
+   "expectedJu": 3,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 2,
+   "day": 1,
+   "dayStem": "己",
+   "dayBranch": "巳",
+   "expectedDun": "陽遁",
+   "expectedJu": 9,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 2,
+   "day": 6,
+   "dayStem": "甲",
+   "dayBranch": "戌",
+   "expectedDun": "陽遁",
+   "expectedJu": 6,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 2,
+   "day": 11,
+   "dayStem": "己",
+   "dayBranch": "卯",
+   "expectedDun": "陽遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 2,
+   "day": 16,
+   "dayStem": "甲",
+   "dayBranch": "申",
+   "expectedDun": "陽遁",
+   "expectedJu": 5,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 2,
+   "day": 21,
+   "dayStem": "己",
+   "dayBranch": "丑",
+   "expectedDun": "陽遁",
+   "expectedJu": 2,
+   "leap": false
+  },
+  {
+   "year": 2019,
+   "month": 2,
+   "day": 26,
+   "dayStem": "甲",
+   "dayBranch": "午",
+   "expectedDun": "陽遁",
+   "expectedJu": 9,
+   "leap": false
+  },
+  {
+   "year": 2021,
+   "month": 1,
+   "day": 1,
+   "dayStem": "己",
+   "dayBranch": "酉",
+   "expectedDun": "陽遁",
+   "expectedJu": 2,
+   "leap": false
+  },
+  {
+   "year": 2021,
+   "month": 1,
+   "day": 6,
+   "dayStem": "甲",
+   "dayBranch": "寅",
+   "expectedDun": "陽遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2021,
+   "month": 1,
+   "day": 11,
+   "dayStem": "己",
+   "dayBranch": "未",
+   "expectedDun": "陽遁",
+   "expectedJu": 5,
+   "leap": false
+  },
+  {
+   "year": 2021,
+   "month": 1,
+   "day": 16,
+   "dayStem": "甲",
+   "dayBranch": "子",
+   "expectedDun": "陽遁",
+   "expectedJu": 3,
+   "leap": false
+  },
+  {
+   "year": 2021,
+   "month": 1,
+   "day": 21,
+   "dayStem": "己",
+   "dayBranch": "巳",
+   "expectedDun": "陽遁",
+   "expectedJu": 9,
+   "leap": false
+  },
+  {
+   "year": 2021,
+   "month": 1,
+   "day": 26,
+   "dayStem": "甲",
+   "dayBranch": "戌",
+   "expectedDun": "陽遁",
+   "expectedJu": 6,
+   "leap": false
+  },
+  {
+   "year": 2021,
+   "month": 1,
+   "day": 31,
+   "dayStem": "己",
+   "dayBranch": "卯",
+   "expectedDun": "陽遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 12,
+   "day": 1,
+   "dayStem": "戊",
+   "dayBranch": "寅",
+   "expectedDun": "陰遁",
+   "expectedJu": 2,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 12,
+   "day": 2,
+   "dayStem": "己",
+   "dayBranch": "卯",
+   "expectedDun": "陰遁",
+   "expectedJu": 4,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 12,
+   "day": 7,
+   "dayStem": "甲",
+   "dayBranch": "申",
+   "expectedDun": "陰遁",
+   "expectedJu": 7,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 12,
+   "day": 12,
+   "dayStem": "己",
+   "dayBranch": "丑",
+   "expectedDun": "陰遁",
+   "expectedJu": 1,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 12,
+   "day": 17,
+   "dayStem": "甲",
+   "dayBranch": "午",
+   "expectedDun": "陽遁",
+   "expectedJu": 1,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 12,
+   "day": 22,
+   "dayStem": "己",
+   "dayBranch": "亥",
+   "expectedDun": "陽遁",
+   "expectedJu": 7,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 12,
+   "day": 27,
+   "dayStem": "甲",
+   "dayBranch": "辰",
+   "expectedDun": "陽遁",
+   "expectedJu": 4,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 11,
+   "day": 1,
+   "dayStem": "戊",
+   "dayBranch": "申",
+   "expectedDun": "陰遁",
+   "expectedJu": 2,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 11,
+   "day": 2,
+   "dayStem": "己",
+   "dayBranch": "酉",
+   "expectedDun": "陰遁",
+   "expectedJu": 6,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 11,
+   "day": 7,
+   "dayStem": "甲",
+   "dayBranch": "寅",
+   "expectedDun": "陰遁",
+   "expectedJu": 9,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 11,
+   "day": 12,
+   "dayStem": "己",
+   "dayBranch": "未",
+   "expectedDun": "陰遁",
+   "expectedJu": 3,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 11,
+   "day": 17,
+   "dayStem": "甲",
+   "dayBranch": "子",
+   "expectedDun": "陰遁",
+   "expectedJu": 5,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 11,
+   "day": 22,
+   "dayStem": "己",
+   "dayBranch": "巳",
+   "expectedDun": "陰遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 11,
+   "day": 27,
+   "dayStem": "甲",
+   "dayBranch": "戌",
+   "expectedDun": "陰遁",
+   "expectedJu": 2,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 10,
+   "day": 1,
+   "dayStem": "丁",
+   "dayBranch": "丑",
+   "expectedDun": "陰遁",
+   "expectedJu": 4,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 10,
+   "day": 3,
+   "dayStem": "己",
+   "dayBranch": "卯",
+   "expectedDun": "陰遁",
+   "expectedJu": 6,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 10,
+   "day": 8,
+   "dayStem": "甲",
+   "dayBranch": "申",
+   "expectedDun": "陰遁",
+   "expectedJu": 9,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 10,
+   "day": 13,
+   "dayStem": "己",
+   "dayBranch": "丑",
+   "expectedDun": "陰遁",
+   "expectedJu": 3,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 10,
+   "day": 18,
+   "dayStem": "甲",
+   "dayBranch": "午",
+   "expectedDun": "陰遁",
+   "expectedJu": 5,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 10,
+   "day": 23,
+   "dayStem": "己",
+   "dayBranch": "亥",
+   "expectedDun": "陰遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 10,
+   "day": 28,
+   "dayStem": "甲",
+   "dayBranch": "辰",
+   "expectedDun": "陰遁",
+   "expectedJu": 2,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 9,
+   "day": 1,
+   "dayStem": "丁",
+   "dayBranch": "未",
+   "expectedDun": "陰遁",
+   "expectedJu": 7,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 9,
+   "day": 3,
+   "dayStem": "己",
+   "dayBranch": "酉",
+   "expectedDun": "陰遁",
+   "expectedJu": 9,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 9,
+   "day": 8,
+   "dayStem": "甲",
+   "dayBranch": "寅",
+   "expectedDun": "陰遁",
+   "expectedJu": 3,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 9,
+   "day": 13,
+   "dayStem": "己",
+   "dayBranch": "未",
+   "expectedDun": "陰遁",
+   "expectedJu": 6,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 9,
+   "day": 18,
+   "dayStem": "甲",
+   "dayBranch": "子",
+   "expectedDun": "陰遁",
+   "expectedJu": 7,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 9,
+   "day": 23,
+   "dayStem": "己",
+   "dayBranch": "巳",
+   "expectedDun": "陰遁",
+   "expectedJu": 1,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 9,
+   "day": 28,
+   "dayStem": "甲",
+   "dayBranch": "戌",
+   "expectedDun": "陰遁",
+   "expectedJu": 4,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 8,
+   "day": 1,
+   "dayStem": "丙",
+   "dayBranch": "子",
+   "expectedDun": "陰遁",
+   "expectedJu": 4,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 8,
+   "day": 4,
+   "dayStem": "己",
+   "dayBranch": "卯",
+   "expectedDun": "陰遁",
+   "expectedJu": 2,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 8,
+   "day": 9,
+   "dayStem": "甲",
+   "dayBranch": "申",
+   "expectedDun": "陰遁",
+   "expectedJu": 5,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 8,
+   "day": 14,
+   "dayStem": "己",
+   "dayBranch": "丑",
+   "expectedDun": "陰遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 8,
+   "day": 19,
+   "dayStem": "甲",
+   "dayBranch": "午",
+   "expectedDun": "陰遁",
+   "expectedJu": 1,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 8,
+   "day": 24,
+   "dayStem": "己",
+   "dayBranch": "亥",
+   "expectedDun": "陰遁",
+   "expectedJu": 4,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 8,
+   "day": 29,
+   "dayStem": "甲",
+   "dayBranch": "辰",
+   "expectedDun": "陰遁",
+   "expectedJu": 7,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 7,
+   "day": 1,
+   "dayStem": "乙",
+   "dayBranch": "巳",
+   "expectedDun": "陰遁",
+   "expectedJu": 6,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 7,
+   "day": 5,
+   "dayStem": "己",
+   "dayBranch": "酉",
+   "expectedDun": "陰遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 7,
+   "day": 10,
+   "dayStem": "甲",
+   "dayBranch": "寅",
+   "expectedDun": "陰遁",
+   "expectedJu": 2,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 7,
+   "day": 15,
+   "dayStem": "己",
+   "dayBranch": "未",
+   "expectedDun": "陰遁",
+   "expectedJu": 5,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 7,
+   "day": 20,
+   "dayStem": "甲",
+   "dayBranch": "子",
+   "expectedDun": "陰遁",
+   "expectedJu": 7,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 7,
+   "day": 25,
+   "dayStem": "己",
+   "dayBranch": "巳",
+   "expectedDun": "陰遁",
+   "expectedJu": 1,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 7,
+   "day": 30,
+   "dayStem": "甲",
+   "dayBranch": "戌",
+   "expectedDun": "陰遁",
+   "expectedJu": 4,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 6,
+   "day": 1,
+   "dayStem": "乙",
+   "dayBranch": "亥",
+   "expectedDun": "陽遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 6,
+   "day": 5,
+   "dayStem": "己",
+   "dayBranch": "卯",
+   "expectedDun": "陽遁",
+   "expectedJu": 6,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 6,
+   "day": 10,
+   "dayStem": "甲",
+   "dayBranch": "申",
+   "expectedDun": "陽遁",
+   "expectedJu": 3,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 6,
+   "day": 15,
+   "dayStem": "己",
+   "dayBranch": "丑",
+   "expectedDun": "陽遁",
+   "expectedJu": 9,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 6,
+   "day": 20,
+   "dayStem": "甲",
+   "dayBranch": "午",
+   "expectedDun": "陰遁",
+   "expectedJu": 9,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 6,
+   "day": 25,
+   "dayStem": "己",
+   "dayBranch": "亥",
+   "expectedDun": "陰遁",
+   "expectedJu": 3,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 6,
+   "day": 30,
+   "dayStem": "甲",
+   "dayBranch": "辰",
+   "expectedDun": "陰遁",
+   "expectedJu": 6,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 5,
+   "day": 1,
+   "dayStem": "甲",
+   "dayBranch": "辰",
+   "expectedDun": "陽遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 5,
+   "day": 6,
+   "dayStem": "己",
+   "dayBranch": "酉",
+   "expectedDun": "陽遁",
+   "expectedJu": 4,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 5,
+   "day": 11,
+   "dayStem": "甲",
+   "dayBranch": "寅",
+   "expectedDun": "陽遁",
+   "expectedJu": 1,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 5,
+   "day": 16,
+   "dayStem": "己",
+   "dayBranch": "未",
+   "expectedDun": "陽遁",
+   "expectedJu": 7,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 5,
+   "day": 21,
+   "dayStem": "甲",
+   "dayBranch": "子",
+   "expectedDun": "陽遁",
+   "expectedJu": 5,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 5,
+   "day": 26,
+   "dayStem": "己",
+   "dayBranch": "巳",
+   "expectedDun": "陽遁",
+   "expectedJu": 2,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 5,
+   "day": 31,
+   "dayStem": "甲",
+   "dayBranch": "戌",
+   "expectedDun": "陽遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 4,
+   "day": 1,
+   "dayStem": "甲",
+   "dayBranch": "戌",
+   "expectedDun": "陽遁",
+   "expectedJu": 6,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 4,
+   "day": 6,
+   "dayStem": "己",
+   "dayBranch": "卯",
+   "expectedDun": "陽遁",
+   "expectedJu": 4,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 4,
+   "day": 11,
+   "dayStem": "甲",
+   "dayBranch": "申",
+   "expectedDun": "陽遁",
+   "expectedJu": 1,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 4,
+   "day": 16,
+   "dayStem": "己",
+   "dayBranch": "丑",
+   "expectedDun": "陽遁",
+   "expectedJu": 7,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 4,
+   "day": 21,
+   "dayStem": "甲",
+   "dayBranch": "午",
+   "expectedDun": "陽遁",
+   "expectedJu": 5,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 4,
+   "day": 26,
+   "dayStem": "己",
+   "dayBranch": "亥",
+   "expectedDun": "陽遁",
+   "expectedJu": 2,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 3,
+   "day": 1,
+   "dayStem": "癸",
+   "dayBranch": "卯",
+   "expectedDun": "陽遁",
+   "expectedJu": 6,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 3,
+   "day": 2,
+   "dayStem": "甲",
+   "dayBranch": "辰",
+   "expectedDun": "陽遁",
+   "expectedJu": 3,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 3,
+   "day": 7,
+   "dayStem": "己",
+   "dayBranch": "酉",
+   "expectedDun": "陽遁",
+   "expectedJu": 1,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 3,
+   "day": 12,
+   "dayStem": "甲",
+   "dayBranch": "寅",
+   "expectedDun": "陽遁",
+   "expectedJu": 7,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 3,
+   "day": 17,
+   "dayStem": "己",
+   "dayBranch": "未",
+   "expectedDun": "陽遁",
+   "expectedJu": 4,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 3,
+   "day": 22,
+   "dayStem": "甲",
+   "dayBranch": "子",
+   "expectedDun": "陽遁",
+   "expectedJu": 3,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 3,
+   "day": 27,
+   "dayStem": "己",
+   "dayBranch": "巳",
+   "expectedDun": "陽遁",
+   "expectedJu": 9,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 2,
+   "day": 1,
+   "dayStem": "甲",
+   "dayBranch": "戌",
+   "expectedDun": "陽遁",
+   "expectedJu": 6,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 2,
+   "day": 6,
+   "dayStem": "己",
+   "dayBranch": "卯",
+   "expectedDun": "陽遁",
+   "expectedJu": 8,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 2,
+   "day": 11,
+   "dayStem": "甲",
+   "dayBranch": "申",
+   "expectedDun": "陽遁",
+   "expectedJu": 5,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 2,
+   "day": 16,
+   "dayStem": "己",
+   "dayBranch": "丑",
+   "expectedDun": "陽遁",
+   "expectedJu": 2,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 2,
+   "day": 21,
+   "dayStem": "甲",
+   "dayBranch": "午",
+   "expectedDun": "陽遁",
+   "expectedJu": 9,
+   "leap": false
+  },
+  {
+   "year": 2020,
+   "month": 2,
+   "day": 26,
+   "dayStem": "己",
+   "dayBranch": "亥",
+   "expectedDun": "陽遁",
+   "expectedJu": 6,
+   "leap": false
+  }
+ ]
+}

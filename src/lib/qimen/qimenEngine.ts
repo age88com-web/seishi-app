@@ -113,9 +113,14 @@ export function calculate(input: CalendarInput): QimenResult {
   const hourStem = calendar.hourStem as Stem;
   const hourBranch = calendar.hourBranch as Branch;
 
-  // 2. 定局
+  // 2. 定局（天文学的な節入り瞬間ではなく、符頭の15日連続系列＋二至の置閏判定で
+  //    「今有効な節気パターン」を決める。詳細は dingju.ts 冒頭コメント参照）
   const dingju = resolveDingju({
-    solarTerm: calendar.solarTerm,
+    localYear: input.year,
+    localMonth: input.month,
+    localDay: input.day,
+    localHour: input.hour,
+    timezone: input.timezone,
     dayStem: calendar.dayStem as Stem,
     dayBranch: calendar.dayBranch as Branch,
   });
