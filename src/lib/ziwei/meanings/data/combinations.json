@@ -1,0 +1,4516 @@
+[
+ {
+  "id": "N-CB-0037",
+  "text": "命宮の力量が弱く、なかでも陀羅星・擎羊星・天空星・地劫星が同宮・加会している場合は、宗教や占術の道に進むのがよいと読みます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 38,
+   "docPage": 39,
+   "section": "4.諸星曜の意味と命宮における判断／紫微星／能力、職業特性"
+  },
+  "subjectStars": [
+   "紫微星"
+  ],
+  "withStars": [
+   "天空星",
+   "地劫星",
+   "陀羅星",
+   "擎羊星"
+  ],
+  "stars": [
+   "紫微星",
+   "天空星",
+   "地劫星",
+   "陀羅星",
+   "擎羊星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0037",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天空星",
+   "地劫星",
+   "擎羊星",
+   "陀羅星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 57
+ },
+ {
+  "id": "N-CB-0038",
+  "text": "紫微星と天府星が同宮すると、最高位の星が二つ重なるため、誇りがとても高く、細部にこだわらない大まかな気質になります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 38,
+   "docPage": 39,
+   "section": "4.諸星曜の意味と命宮における判断／紫微星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "紫微星"
+  ],
+  "withStars": [
+   "天府星"
+  ],
+  "stars": [
+   "紫微星",
+   "天府星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0038",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "紫微星",
+   "天府星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 70
+ },
+ {
+  "id": "N-CB-0040",
+  "text": "紫微星と破軍星が同宮すると、見た目は穏やかでも、一度こうと決めたら譲らない頑固さを内に持ちます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 38,
+   "docPage": 39,
+   "section": "4.諸星曜の意味と命宮における判断／紫微星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "紫微星"
+  ],
+  "withStars": [
+   "破軍星"
+  ],
+  "stars": [
+   "紫微星",
+   "破軍星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0040",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "紫微星",
+   "破軍星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 60
+ },
+ {
+  "id": "N-CB-0042",
+  "text": "紫微星と貪狼星が同宮すると、飲食の席や異性と知り合う機会が増えます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 38,
+   "docPage": 39,
+   "section": "4.諸星曜の意味と命宮における判断／紫微星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "紫微星"
+  ],
+  "withStars": [
+   "貪狼星"
+  ],
+  "stars": [
+   "紫微星",
+   "貪狼星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0042",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "紫微星",
+   "貪狼星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 33
+ },
+ {
+  "id": "N-CB-0044",
+  "text": "紫微星と天相星が同宮すると、世話好きで面倒見がよく、人を率いる力にもあふれます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 38,
+   "docPage": 39,
+   "section": "4.諸星曜の意味と命宮における判断／紫微星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "紫微星"
+  ],
+  "withStars": [
+   "天相星"
+  ],
+  "stars": [
+   "紫微星",
+   "天相星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0044",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "紫微星",
+   "天相星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 44
+ },
+ {
+  "id": "N-CB-0045",
+  "text": "紫微星と七殺星が同宮すると、我が強く、人とは違う持ち味がはっきり出ます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 38,
+   "docPage": 39,
+   "section": "4.諸星曜の意味と命宮における判断／紫微星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "紫微星"
+  ],
+  "withStars": [
+   "七殺星"
+  ],
+  "stars": [
+   "紫微星",
+   "七殺星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0045",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "紫微星",
+   "七殺星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 32
+ },
+ {
+  "id": "N-CB-0047",
+  "text": "紫微星と禄存星が同宮すると、金運に恵まれると読みます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 38,
+   "docPage": 39,
+   "section": "4.諸星曜の意味と命宮における判断／紫微星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "紫微星"
+  ],
+  "withStars": [
+   "禄存星"
+  ],
+  "stars": [
+   "紫微星",
+   "禄存星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0047",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "紫微星",
+   "禄存星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 23
+ },
+ {
+  "id": "N-CB-0048",
+  "text": "紫微星に文昌星または文曲星が同宮すると、文学や音楽といった芸術の感性に恵まれます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 38,
+   "docPage": 39,
+   "section": "4.諸星曜の意味と命宮における判断／紫微星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "紫微星"
+  ],
+  "withStars": [
+   "文昌星",
+   "文曲星"
+  ],
+  "stars": [
+   "紫微星",
+   "文昌星",
+   "文曲星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0048",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "紫微星",
+   "文昌星",
+   "文曲星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 39
+ },
+ {
+  "id": "N-CB-0085",
+  "text": "天機星と太陰星が同宮すると、感受性が鋭く、芸術的な感覚に恵まれます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 40,
+   "docPage": 41,
+   "section": "4.諸星曜の意味と命宮における判断／天機星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天機星"
+  ],
+  "withStars": [
+   "太陰星"
+  ],
+  "stars": [
+   "天機星",
+   "太陰星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0085",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天機星",
+   "太陰星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 36
+ },
+ {
+  "id": "N-CB-0088",
+  "text": "天機星と天梁星が同宮すると、戦略や駆け引きを論じることに長けた人になります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 40,
+   "docPage": 41,
+   "section": "4.諸星曜の意味と命宮における判断／天機星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天機星"
+  ],
+  "withStars": [
+   "天梁星"
+  ],
+  "stars": [
+   "天機星",
+   "天梁星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0088",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天機星",
+   "天梁星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 46
+ },
+ {
+  "id": "N-CB-0092",
+  "text": "天機星と巨門星が同宮すると、分析力に優れ、学術や研究の分野に適性があります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 40,
+   "docPage": 41,
+   "section": "4.諸星曜の意味と命宮における判断／天機星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天機星"
+  ],
+  "withStars": [
+   "巨門星"
+  ],
+  "stars": [
+   "天機星",
+   "巨門星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0092",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天機星",
+   "巨門星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 48
+ },
+ {
+  "id": "N-CB-0095",
+  "text": "天機星に文昌星・文曲星が同宮すると、文章力に優れ、筆で身を立てるか、組織の中でも有能な実務者となります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 40,
+   "docPage": 41,
+   "section": "4.諸星曜の意味と命宮における判断／天機星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天機星"
+  ],
+  "withStars": [
+   "文昌星",
+   "文曲星"
+  ],
+  "stars": [
+   "天機星",
+   "文昌星",
+   "文曲星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0095",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天機星",
+   "文昌星",
+   "文曲星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 65
+ },
+ {
+  "id": "N-CB-0096",
+  "text": "天機星に左輔星・右弼星が同宮・加会すると、優れた補佐役となり、組織の知恵袋として活躍します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 40,
+   "docPage": 41,
+   "section": "4.諸星曜の意味と命宮における判断／天機星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天機星"
+  ],
+  "withStars": [
+   "左輔星",
+   "右弼星"
+  ],
+  "stars": [
+   "天機星",
+   "左輔星",
+   "右弼星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0096",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天機星",
+   "左輔星",
+   "右弼星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 53
+ },
+ {
+  "id": "N-CB-0097",
+  "text": "天機星に天魁星・天鉞星が同宮・加会すると、交友が広く、困ったときには友人や先輩の助けを得られます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 40,
+   "docPage": 41,
+   "section": "4.諸星曜の意味と命宮における判断／天機星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天機星"
+  ],
+  "withStars": [
+   "天魁星",
+   "天鉞星"
+  ],
+  "stars": [
+   "天機星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0097",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天機星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 61
+ },
+ {
+  "id": "N-CB-0098",
+  "text": "天機星に化禄星・化科星・化権星などが同宮・加会すると、思いがけないところで運が開けます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 40,
+   "docPage": 41,
+   "section": "4.諸星曜の意味と命宮における判断／天機星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天機星"
+  ],
+  "withStars": [
+   "化禄星",
+   "化科星"
+  ],
+  "stars": [
+   "天機星",
+   "化禄星",
+   "化科星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0098",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天機星",
+   "化禄星",
+   "化科星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 50
+ },
+ {
+  "id": "N-CB-0099",
+  "text": "天機星に火星・鈴星・擎羊星・陀羅星が同宮・加会すると、気苦労が増え、心の悩みを抱えやすくなります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 40,
+   "docPage": 41,
+   "section": "4.諸星曜の意味と命宮における判断／天機星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天機星"
+  ],
+  "withStars": [
+   "擎羊星",
+   "陀羅星",
+   "火星",
+   "鈴星"
+  ],
+  "stars": [
+   "天機星",
+   "擎羊星",
+   "陀羅星",
+   "火星",
+   "鈴星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0099",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天機星",
+   "火星",
+   "鈴星",
+   "擎羊星",
+   "陀羅星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 58
+ },
+ {
+  "id": "N-CB-0101",
+  "text": "天機星と天空星・地劫星が同宮すると、神秘的なものに強く惹かれ、現実から目を背けがちになる暗示があります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 40,
+   "docPage": 41,
+   "section": "4.諸星曜の意味と命宮における判断／天機星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天機星"
+  ],
+  "withStars": [
+   "天空星",
+   "地劫星"
+  ],
+  "stars": [
+   "天機星",
+   "天空星",
+   "地劫星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0101",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天機星",
+   "天空星",
+   "地劫星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 57
+ },
+ {
+  "id": "N-CB-0128",
+  "text": "化忌星が同宮している場合は、目の病気の暗示があります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 41,
+   "docPage": 42,
+   "section": "4.諸星曜の意味と命宮における判断／太陽星／基本的特質"
+  },
+  "subjectStars": [
+   "太陽星"
+  ],
+  "withStars": [
+   "化忌星"
+  ],
+  "stars": [
+   "太陽星",
+   "化忌星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0128",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "化忌星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 25
+ },
+ {
+  "id": "N-CB-0141",
+  "text": "太陽星と天梁星が同宮すると、人を率いる力がとても強く表れます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 42,
+   "docPage": 43,
+   "section": "4.諸星曜の意味と命宮における判断／太陽星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "太陽星"
+  ],
+  "withStars": [
+   "天梁星"
+  ],
+  "stars": [
+   "太陽星",
+   "天梁星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0141",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "太陽星",
+   "天梁星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 31
+ },
+ {
+  "id": "N-CB-0144",
+  "text": "太陽星と巨門星が同宮すると、物事を分析する力に優れ、こつこつと努力を重ねます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 42,
+   "docPage": 43,
+   "section": "4.諸星曜の意味と命宮における判断／太陽星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "太陽星"
+  ],
+  "withStars": [
+   "巨門星"
+  ],
+  "stars": [
+   "太陽星",
+   "巨門星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0144",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "太陽星",
+   "巨門星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 34
+ },
+ {
+  "id": "N-CB-0146",
+  "text": "太陽星と太陰星が同宮する場合、命宮の宮威が強ければ、大きく栄えて伸びていきます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 42,
+   "docPage": 43,
+   "section": "4.諸星曜の意味と命宮における判断／太陽星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "太陽星"
+  ],
+  "withStars": [
+   "太陰星"
+  ],
+  "stars": [
+   "太陽星",
+   "太陰星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0146",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "太陽星",
+   "太陰星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 36
+ },
+ {
+  "id": "N-CB-0148",
+  "text": "女性は遅めの結婚が合っています。太陽星に文昌星・文曲星が同宮・加会すると、才能が世に認められ、評価を受けます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 42,
+   "docPage": 43,
+   "section": "4.諸星曜の意味と命宮における判断／太陽星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "太陽星"
+  ],
+  "withStars": [
+   "文昌星",
+   "文曲星"
+  ],
+  "stars": [
+   "太陽星",
+   "文昌星",
+   "文曲星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0148",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "太陽星",
+   "文昌星",
+   "文曲星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 63
+ },
+ {
+  "id": "N-CB-0149",
+  "text": "太陽星に右弼星・左輔星・天魁星・天鉞星が同宮・加会すると、さまざまな人から助けを得られます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 42,
+   "docPage": 43,
+   "section": "4.諸星曜の意味と命宮における判断／太陽星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "太陽星"
+  ],
+  "withStars": [
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "stars": [
+   "太陽星",
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0149",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "太陽星",
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 49
+ },
+ {
+  "id": "N-CB-0150",
+  "text": "太陽星に擎羊星・陀羅星・火星・鈴星が同宮・加会し、宮威も弱い場合は、変化が多く困難の続く人生になります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 42,
+   "docPage": 43,
+   "section": "4.諸星曜の意味と命宮における判断／太陽星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "太陽星"
+  ],
+  "withStars": [
+   "擎羊星",
+   "陀羅星",
+   "火星",
+   "鈴星"
+  ],
+  "stars": [
+   "太陽星",
+   "擎羊星",
+   "陀羅星",
+   "火星",
+   "鈴星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0150",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "太陽星",
+   "火星",
+   "鈴星",
+   "擎羊星",
+   "陀羅星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 55
+ },
+ {
+  "id": "N-CB-0178",
+  "text": "女性のなかには、男性顔負けの気丈さを持つ人もおり、天府星と同宮しているとその傾向が強まります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 43,
+   "docPage": 44,
+   "section": "4.諸星曜の意味と命宮における判断／武曲星／基本的特質"
+  },
+  "subjectStars": [
+   "武曲星"
+  ],
+  "withStars": [
+   "天府星"
+  ],
+  "stars": [
+   "武曲星",
+   "天府星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0178",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天府星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 43
+ },
+ {
+  "id": "N-CB-0192",
+  "text": "武曲星と天相星が同宮すると、面倒見のよい、頼られる人柄になります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 44,
+   "docPage": 45,
+   "section": "4.諸星曜の意味と命宮における判断／武曲星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "武曲星"
+  ],
+  "withStars": [
+   "天相星"
+  ],
+  "stars": [
+   "武曲星",
+   "天相星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0192",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "武曲星",
+   "天相星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 31
+ },
+ {
+  "id": "N-CB-0194",
+  "text": "武曲星と天府星が同宮すると、両方の星の力量が強まり、度胸と実行力にあふれた人になります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 44,
+   "docPage": 45,
+   "section": "4.諸星曜の意味と命宮における判断／武曲星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "武曲星"
+  ],
+  "withStars": [
+   "天府星"
+  ],
+  "stars": [
+   "武曲星",
+   "天府星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0194",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "武曲星",
+   "天府星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 49
+ },
+ {
+  "id": "N-CB-0196",
+  "text": "武曲星と貪狼星が同宮すると、両方の星の力量が強まり、個性が際立ち、仕事や付き合いで外出が増えます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 44,
+   "docPage": 45,
+   "section": "4.諸星曜の意味と命宮における判断／武曲星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "武曲星"
+  ],
+  "withStars": [
+   "貪狼星"
+  ],
+  "stars": [
+   "武曲星",
+   "貪狼星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0196",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "武曲星",
+   "貪狼星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 61
+ },
+ {
+  "id": "N-CB-0199",
+  "text": "武曲星と破軍星が同宮すると、自分の考えを押し通し、自分の都合を優先する頑なさが目立ちます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 44,
+   "docPage": 45,
+   "section": "4.諸星曜の意味と命宮における判断／武曲星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "武曲星"
+  ],
+  "withStars": [
+   "破軍星"
+  ],
+  "stars": [
+   "武曲星",
+   "破軍星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0199",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "武曲星",
+   "破軍星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 41
+ },
+ {
+  "id": "N-CB-0201",
+  "text": "武曲星と七殺星が同宮すると、独立心が強く、人の下につくことを嫌います。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 44,
+   "docPage": 45,
+   "section": "4.諸星曜の意味と命宮における判断／武曲星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "武曲星"
+  ],
+  "withStars": [
+   "七殺星"
+  ],
+  "stars": [
+   "武曲星",
+   "七殺星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0201",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "武曲星",
+   "七殺星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 41
+ },
+ {
+  "id": "N-CB-0202",
+  "text": "武曲星に文昌星・文曲星が同宮・加会すると、好奇心が強まり、熱心に知識を得ていきます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 44,
+   "docPage": 45,
+   "section": "4.諸星曜の意味と命宮における判断／武曲星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "武曲星"
+  ],
+  "withStars": [
+   "文昌星",
+   "文曲星"
+  ],
+  "stars": [
+   "武曲星",
+   "文昌星",
+   "文曲星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0202",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "武曲星",
+   "文昌星",
+   "文曲星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 45
+ },
+ {
+  "id": "N-CB-0203",
+  "text": "武曲星に天魁星・天鉞星・左輔星・右弼星・化禄星・化科星・化権星が同宮・加会すると、人を率いる力を発揮し、交友も広く、人脈の助けを得て成功します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 44,
+   "docPage": 45,
+   "section": "4.諸星曜の意味と命宮における判断／武曲星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "武曲星"
+  ],
+  "withStars": [
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星",
+   "化禄星",
+   "化科星"
+  ],
+  "stars": [
+   "武曲星",
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星",
+   "化禄星",
+   "化科星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0203",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "武曲星",
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星",
+   "化禄星",
+   "化科星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 81
+ },
+ {
+  "id": "N-CB-0204",
+  "text": "武曲星に火星・鈴星・擎羊星・陀羅星・天空星・地劫星が同宮・加会すると、独りよがりで自分だけを正しいとする傾向が強く出ます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 44,
+   "docPage": 45,
+   "section": "4.諸星曜の意味と命宮における判断／武曲星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "武曲星"
+  ],
+  "withStars": [
+   "天空星",
+   "地劫星",
+   "擎羊星",
+   "陀羅星",
+   "火星",
+   "鈴星"
+  ],
+  "stars": [
+   "武曲星",
+   "天空星",
+   "地劫星",
+   "擎羊星",
+   "陀羅星",
+   "火星",
+   "鈴星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0204",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "武曲星",
+   "天空星",
+   "地劫星",
+   "火星",
+   "鈴星",
+   "擎羊星",
+   "陀羅星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 56
+ },
+ {
+  "id": "N-CB-0240",
+  "text": "天同星と巨門星が同宮すると、両方の星の力量が弱まるため、何かと慌ただしく、集中しきれない面が出ます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 46,
+   "docPage": 47,
+   "section": "4.諸星曜の意味と命宮における判断／天同星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天同星"
+  ],
+  "withStars": [
+   "巨門星"
+  ],
+  "stars": [
+   "天同星",
+   "巨門星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0240",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天同星",
+   "巨門星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 55
+ },
+ {
+  "id": "N-CB-0243",
+  "text": "天同星と天梁星が同宮すると、面倒見がよく、人を率いる力も発揮します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 46,
+   "docPage": 47,
+   "section": "4.諸星曜の意味と命宮における判断／天同星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天同星"
+  ],
+  "withStars": [
+   "天梁星"
+  ],
+  "stars": [
+   "天同星",
+   "天梁星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0243",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天同星",
+   "天梁星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 45
+ },
+ {
+  "id": "N-CB-0245",
+  "text": "天同星と太陰星が同宮すると、男女とも容姿の美しい人が多く、命宮が子の位置にあると両方の星の力量が強まって、その傾向がいっそう際立ちます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 46,
+   "docPage": 47,
+   "section": "4.諸星曜の意味と命宮における判断／天同星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天同星"
+  ],
+  "withStars": [
+   "太陰星"
+  ],
+  "stars": [
+   "天同星",
+   "太陰星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0245",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天同星",
+   "太陰星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 67
+ },
+ {
+  "id": "N-CB-0248",
+  "text": "天同星と太陰星が同宮すると、感受性が鋭くなり、文学・音楽などの芸術で才能が開きます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 46,
+   "docPage": 47,
+   "section": "4.諸星曜の意味と命宮における判断／天同星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天同星"
+  ],
+  "withStars": [
+   "太陰星"
+  ],
+  "stars": [
+   "天同星",
+   "太陰星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0248",
+  "opener": "また",
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天同星",
+   "太陰星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 52
+ },
+ {
+  "id": "N-CB-0249",
+  "text": "天同星に文昌星・文曲星が同宮・加会すると、幼いころから賢く、学業に秀でます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 46,
+   "docPage": 47,
+   "section": "4.諸星曜の意味と命宮における判断／天同星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天同星"
+  ],
+  "withStars": [
+   "文昌星",
+   "文曲星"
+  ],
+  "stars": [
+   "天同星",
+   "文昌星",
+   "文曲星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0249",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天同星",
+   "文昌星",
+   "文曲星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 36
+ },
+ {
+  "id": "N-CB-0251",
+  "text": "天同星と禄存星が同宮すると、大勢の人に慕われます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 46,
+   "docPage": 47,
+   "section": "4.諸星曜の意味と命宮における判断／天同星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天同星"
+  ],
+  "withStars": [
+   "禄存星"
+  ],
+  "stars": [
+   "天同星",
+   "禄存星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0251",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天同星",
+   "禄存星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 32
+ },
+ {
+  "id": "N-CB-0253",
+  "text": "天同星に天魁星・天鉞星・左輔星・右弼星・化禄星・化科星・化権星が同宮・加会すると、生涯を通じて運に恵まれ、交友も広く、友人や目上の助けを得て成功します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 46,
+   "docPage": 47,
+   "section": "4.諸星曜の意味と命宮における判断／天同星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天同星"
+  ],
+  "withStars": [
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星",
+   "化禄星",
+   "化科星"
+  ],
+  "stars": [
+   "天同星",
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星",
+   "化禄星",
+   "化科星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0253",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天同星",
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星",
+   "化禄星",
+   "化科星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 87
+ },
+ {
+  "id": "N-CB-0254",
+  "text": "天同星に火星・鈴星・擎羊星・陀羅星・天空星・地劫星が同宮・加会すると、決断が鈍り、何事も長続きしにくくなります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 46,
+   "docPage": 47,
+   "section": "4.諸星曜の意味と命宮における判断／天同星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天同星"
+  ],
+  "withStars": [
+   "天空星",
+   "地劫星",
+   "擎羊星",
+   "陀羅星",
+   "火星",
+   "鈴星"
+  ],
+  "stars": [
+   "天同星",
+   "天空星",
+   "地劫星",
+   "擎羊星",
+   "陀羅星",
+   "火星",
+   "鈴星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0254",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天同星",
+   "天空星",
+   "地劫星",
+   "火星",
+   "鈴星",
+   "擎羊星",
+   "陀羅星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 59
+ },
+ {
+  "id": "N-CB-0286",
+  "text": "廉貞星と天府星が同宮すると、天府星の力量が強まるため、努力を重ねて大きな権力を手にします。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 48,
+   "docPage": 49,
+   "section": "4.諸星曜の意味と命宮における判断／廉貞星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "廉貞星"
+  ],
+  "withStars": [
+   "天府星"
+  ],
+  "stars": [
+   "廉貞星",
+   "天府星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0286",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "廉貞星",
+   "天府星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 56
+ },
+ {
+  "id": "N-CB-0288",
+  "text": "廉貞星と貪狼星が同宮すると、両方の星の力量が弱まります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 48,
+   "docPage": 49,
+   "section": "4.諸星曜の意味と命宮における判断／廉貞星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "廉貞星"
+  ],
+  "withStars": [
+   "貪狼星"
+  ],
+  "stars": [
+   "廉貞星",
+   "貪狼星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0288",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "廉貞星",
+   "貪狼星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 29
+ },
+ {
+  "id": "N-CB-0293",
+  "text": "廉貞星と天相星が同宮すると、天相星の力量が強まります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 48,
+   "docPage": 49,
+   "section": "4.諸星曜の意味と命宮における判断／廉貞星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "廉貞星"
+  ],
+  "withStars": [
+   "天相星"
+  ],
+  "stars": [
+   "廉貞星",
+   "天相星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0293",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "廉貞星",
+   "天相星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 28
+ },
+ {
+  "id": "N-CB-0296",
+  "text": "廉貞星と七殺星が同宮すると、七殺星の力量が強まり、実行力と決断力がきわめて高くなって、どんな障害も越えていきます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 48,
+   "docPage": 49,
+   "section": "4.諸星曜の意味と命宮における判断／廉貞星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "廉貞星"
+  ],
+  "withStars": [
+   "七殺星"
+  ],
+  "stars": [
+   "廉貞星",
+   "七殺星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0296",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "廉貞星",
+   "七殺星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 63
+ },
+ {
+  "id": "N-CB-0298",
+  "text": "廉貞星と破軍星が同宮すると、破軍星の力量が弱まり、何かしらの困難に向き合うことになります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 48,
+   "docPage": 49,
+   "section": "4.諸星曜の意味と命宮における判断／廉貞星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "廉貞星"
+  ],
+  "withStars": [
+   "破軍星"
+  ],
+  "stars": [
+   "廉貞星",
+   "破軍星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0298",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "廉貞星",
+   "破軍星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 54
+ },
+ {
+  "id": "N-CB-0301",
+  "text": "廉貞星に文昌星・文曲星が同宮・加会すると、芸術や芸能の才能に恵まれます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 48,
+   "docPage": 49,
+   "section": "4.諸星曜の意味と命宮における判断／廉貞星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "廉貞星"
+  ],
+  "withStars": [
+   "文昌星",
+   "文曲星"
+  ],
+  "stars": [
+   "廉貞星",
+   "文昌星",
+   "文曲星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0301",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "廉貞星",
+   "文昌星",
+   "文曲星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 35
+ },
+ {
+  "id": "N-CB-0302",
+  "text": "廉貞星と禄存星が同宮すると、金運がたいへん豊かになります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 48,
+   "docPage": 49,
+   "section": "4.諸星曜の意味と命宮における判断／廉貞星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "廉貞星"
+  ],
+  "withStars": [
+   "禄存星"
+  ],
+  "stars": [
+   "廉貞星",
+   "禄存星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0302",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "廉貞星",
+   "禄存星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 25
+ },
+ {
+  "id": "N-CB-0303",
+  "text": "廉貞星に天魁星・天鉞星・左輔星・右弼星・化禄星・化科星・化権星が同宮・加会すると、周りの支えや運に恵まれて成功するでしょう。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 48,
+   "docPage": 49,
+   "section": "4.諸星曜の意味と命宮における判断／廉貞星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "廉貞星"
+  ],
+  "withStars": [
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星",
+   "化禄星",
+   "化科星"
+  ],
+  "stars": [
+   "廉貞星",
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星",
+   "化禄星",
+   "化科星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0303",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "廉貞星",
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星",
+   "化禄星",
+   "化科星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 67
+ },
+ {
+  "id": "N-CB-0304",
+  "text": "廉貞星に火星・鈴星・擎羊星・陀羅星・天空星・地劫星が同宮・加会すると、男女関係のもめごとや、泌尿器・生殖器などの病気に注意が要ります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 48,
+   "docPage": 49,
+   "section": "4.諸星曜の意味と命宮における判断／廉貞星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "廉貞星"
+  ],
+  "withStars": [
+   "天空星",
+   "地劫星",
+   "擎羊星",
+   "陀羅星",
+   "火星",
+   "鈴星"
+  ],
+  "stars": [
+   "廉貞星",
+   "天空星",
+   "地劫星",
+   "擎羊星",
+   "陀羅星",
+   "火星",
+   "鈴星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0304",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "廉貞星",
+   "天空星",
+   "地劫星",
+   "火星",
+   "鈴星",
+   "擎羊星",
+   "陀羅星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 71
+ },
+ {
+  "id": "N-CB-0325",
+  "text": "命宮の力量が強く、文昌星か文曲星が同宮している場合は、難しい試験でも突破できる頭脳を持ちます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 49,
+   "docPage": 50,
+   "section": "4.諸星曜の意味と命宮における判断／天府星／基本的特質"
+  },
+  "subjectStars": [
+   "天府星"
+  ],
+  "withStars": [
+   "文昌星",
+   "文曲星"
+  ],
+  "stars": [
+   "天府星",
+   "文昌星",
+   "文曲星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0325",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "文昌星",
+   "文曲星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 54
+ },
+ {
+  "id": "N-CB-0339",
+  "text": "天府星に文昌星・文曲星が同宮・加会すると、芸術・芸能の才能、とくに文学や音楽の才に恵まれます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 50,
+   "docPage": 51,
+   "section": "4.諸星曜の意味と命宮における判断／天府星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天府星"
+  ],
+  "withStars": [
+   "文昌星",
+   "文曲星"
+  ],
+  "stars": [
+   "天府星",
+   "文昌星",
+   "文曲星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0339",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天府星",
+   "文昌星",
+   "文曲星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 42
+ },
+ {
+  "id": "N-CB-0340",
+  "text": "なかでも文昌星・文曲星と同宮し、命宮の力量が強い場合は、難しい試験も突破できる知力を持ちます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 50,
+   "docPage": 51,
+   "section": "4.諸星曜の意味と命宮における判断／天府星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天府星"
+  ],
+  "withStars": [
+   "文昌星",
+   "文曲星"
+  ],
+  "stars": [
+   "天府星",
+   "文昌星",
+   "文曲星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0340",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "文昌星",
+   "文曲星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 50
+ },
+ {
+  "id": "N-CB-0341",
+  "text": "天府星と禄存星が同宮すると、金運がたいへん豊かになります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 50,
+   "docPage": 51,
+   "section": "4.諸星曜の意味と命宮における判断／天府星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天府星"
+  ],
+  "withStars": [
+   "禄存星"
+  ],
+  "stars": [
+   "天府星",
+   "禄存星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0341",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天府星",
+   "禄存星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 28
+ },
+ {
+  "id": "N-CB-0342",
+  "text": "天府星に天魁星・天鉞星・左輔星・右弼星が同宮・加会すると、人付き合いがとてもよく、多くの知人に恵まれ、その知人に支えられます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 50,
+   "docPage": 51,
+   "section": "4.諸星曜の意味と命宮における判断／天府星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天府星"
+  ],
+  "withStars": [
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "stars": [
+   "天府星",
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0342",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天府星",
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 73
+ },
+ {
+  "id": "N-CB-0345",
+  "text": "天府星に化禄星・化科星・化権星が同宮・加会すると、人を率いる力を大いに発揮します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 50,
+   "docPage": 51,
+   "section": "4.諸星曜の意味と命宮における判断／天府星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天府星"
+  ],
+  "withStars": [
+   "化禄星",
+   "化科星"
+  ],
+  "stars": [
+   "天府星",
+   "化禄星",
+   "化科星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0345",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天府星",
+   "化禄星",
+   "化科星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 42
+ },
+ {
+  "id": "N-CB-0347",
+  "text": "天府星に火星・鈴星・擎羊星・陀羅星が同宮・加会すると、悩みごとが増える暗示があります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 50,
+   "docPage": 51,
+   "section": "4.諸星曜の意味と命宮における判断／天府星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天府星"
+  ],
+  "withStars": [
+   "擎羊星",
+   "陀羅星",
+   "火星",
+   "鈴星"
+  ],
+  "stars": [
+   "天府星",
+   "擎羊星",
+   "陀羅星",
+   "火星",
+   "鈴星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0347",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天府星",
+   "火星",
+   "鈴星",
+   "擎羊星",
+   "陀羅星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 44
+ },
+ {
+  "id": "N-CB-0349",
+  "text": "天府星に天空星・地劫星が同宮・加会すると、途中で挫折する暗示がありますが、命宮の力量が弱くなければその限りではありません。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 50,
+   "docPage": 51,
+   "section": "4.諸星曜の意味と命宮における判断／天府星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天府星"
+  ],
+  "withStars": [
+   "天空星",
+   "地劫星"
+  ],
+  "stars": [
+   "天府星",
+   "天空星",
+   "地劫星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0349",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天府星",
+   "天空星",
+   "地劫星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 59
+ },
+ {
+  "id": "N-CB-0391",
+  "text": "太陰星に文昌星・文曲星が同宮・加会すると、とても賢く、芸術の才に恵まれます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 52,
+   "docPage": 53,
+   "section": "4.諸星曜の意味と命宮における判断／太陰星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "太陰星"
+  ],
+  "withStars": [
+   "文昌星",
+   "文曲星"
+  ],
+  "stars": [
+   "太陰星",
+   "文昌星",
+   "文曲星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0391",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "太陰星",
+   "文昌星",
+   "文曲星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 39
+ },
+ {
+  "id": "N-CB-0394",
+  "text": "太陰星と禄存星が同宮すると、芸術の素質だけでなく商売の才覚も備わり、お金に困りません。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 52,
+   "docPage": 53,
+   "section": "4.諸星曜の意味と命宮における判断／太陰星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "太陰星"
+  ],
+  "withStars": [
+   "禄存星"
+  ],
+  "stars": [
+   "太陰星",
+   "禄存星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0394",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "太陰星",
+   "禄存星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 41
+ },
+ {
+  "id": "N-CB-0395",
+  "text": "太陰星に天魁星・天鉞星・左輔星・右弼星が同宮・加会すると、友人や目上の人、とくに異性の助けを得て成功します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 52,
+   "docPage": 53,
+   "section": "4.諸星曜の意味と命宮における判断／太陰星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "太陰星"
+  ],
+  "withStars": [
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "stars": [
+   "太陰星",
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0395",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "太陰星",
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 56
+ },
+ {
+  "id": "N-CB-0396",
+  "text": "太陰星に化禄星・化科星・化権星が同宮・加会すると、たいへん賢い人になります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 52,
+   "docPage": 53,
+   "section": "4.諸星曜の意味と命宮における判断／太陰星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "太陰星"
+  ],
+  "withStars": [
+   "化禄星",
+   "化科星"
+  ],
+  "stars": [
+   "太陰星",
+   "化禄星",
+   "化科星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0396",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "太陰星",
+   "化禄星",
+   "化科星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 38
+ },
+ {
+  "id": "N-CB-0397",
+  "text": "太陰星に火星・鈴星・擎羊星・陀羅星・天空星・地劫星が同宮・加会すると、現実から離れて空想にふける傾向があります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 52,
+   "docPage": 53,
+   "section": "4.諸星曜の意味と命宮における判断／太陰星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "太陰星"
+  ],
+  "withStars": [
+   "天空星",
+   "地劫星",
+   "擎羊星",
+   "陀羅星",
+   "火星",
+   "鈴星"
+  ],
+  "stars": [
+   "太陰星",
+   "天空星",
+   "地劫星",
+   "擎羊星",
+   "陀羅星",
+   "火星",
+   "鈴星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0397",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "太陰星",
+   "天空星",
+   "地劫星",
+   "火星",
+   "鈴星",
+   "擎羊星",
+   "陀羅星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 59
+ },
+ {
+  "id": "N-CB-0441",
+  "text": "貪狼星に文昌星・文曲星が同宮・加会すると、賢く、さまざまな分野で才能を見せます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 54,
+   "docPage": 55,
+   "section": "4.諸星曜の意味と命宮における判断／貪狼星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "貪狼星"
+  ],
+  "withStars": [
+   "文昌星",
+   "文曲星"
+  ],
+  "stars": [
+   "貪狼星",
+   "文昌星",
+   "文曲星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0441",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "貪狼星",
+   "文昌星",
+   "文曲星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 34
+ },
+ {
+  "id": "N-CB-0444",
+  "text": "貪狼星と禄存星が同宮すると、宗教の道に向く素質を持ちます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 54,
+   "docPage": 55,
+   "section": "4.諸星曜の意味と命宮における判断／貪狼星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "貪狼星"
+  ],
+  "withStars": [
+   "禄存星"
+  ],
+  "stars": [
+   "貪狼星",
+   "禄存星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0444",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "貪狼星",
+   "禄存星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 31
+ },
+ {
+  "id": "N-CB-0445",
+  "text": "貪狼星に天魁星・天鉞星・左輔星・右弼星が同宮・加会すると、友人や目上の人、とくに異性の助けを得て成功します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 54,
+   "docPage": 55,
+   "section": "4.諸星曜の意味と命宮における判断／貪狼星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "貪狼星"
+  ],
+  "withStars": [
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "stars": [
+   "貪狼星",
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0445",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "貪狼星",
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 56
+ },
+ {
+  "id": "N-CB-0446",
+  "text": "貪狼星に化禄星・化科星・化権星が同宮・加会すると、運に恵まれます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 54,
+   "docPage": 55,
+   "section": "4.諸星曜の意味と命宮における判断／貪狼星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "貪狼星"
+  ],
+  "withStars": [
+   "化禄星",
+   "化科星"
+  ],
+  "stars": [
+   "貪狼星",
+   "化禄星",
+   "化科星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0446",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "貪狼星",
+   "化禄星",
+   "化科星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 34
+ },
+ {
+  "id": "N-CB-0447",
+  "text": "貪狼星に火星・鈴星が同宮すると、決断力と実行力で成功し、権力を握ります。一方、擎羊星・陀羅星・天空星・地劫星が同宮・加会すると、痔や膀胱の炎症のような下半身の病に注意が必要です。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 54,
+   "docPage": 55,
+   "section": "4.諸星曜の意味と命宮における判断／貪狼星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "貪狼星"
+  ],
+  "withStars": [
+   "天空星",
+   "地劫星",
+   "擎羊星",
+   "陀羅星",
+   "火星",
+   "鈴星"
+  ],
+  "stars": [
+   "貪狼星",
+   "天空星",
+   "地劫星",
+   "擎羊星",
+   "陀羅星",
+   "火星",
+   "鈴星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0447",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "貪狼星",
+   "天空星",
+   "地劫星",
+   "火星",
+   "鈴星",
+   "擎羊星",
+   "陀羅星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 99
+ },
+ {
+  "id": "N-CB-0489",
+  "text": "巨門星に文昌星・文曲星が同宮・加会すると、とても頭がよい一方で、落ち着いた優しい性格になります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 56,
+   "docPage": 57,
+   "section": "4.諸星曜の意味と命宮における判断／巨門星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "巨門星"
+  ],
+  "withStars": [
+   "文昌星",
+   "文曲星"
+  ],
+  "stars": [
+   "巨門星",
+   "文昌星",
+   "文曲星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0489",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "巨門星",
+   "文昌星",
+   "文曲星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 51
+ },
+ {
+  "id": "N-CB-0491",
+  "text": "巨門星と禄存星が同宮すると、中年以降に相当な財を蓄えます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 56,
+   "docPage": 57,
+   "section": "4.諸星曜の意味と命宮における判断／巨門星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "巨門星"
+  ],
+  "withStars": [
+   "禄存星"
+  ],
+  "stars": [
+   "巨門星",
+   "禄存星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0491",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "巨門星",
+   "禄存星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 35
+ },
+ {
+  "id": "N-CB-0492",
+  "text": "巨門星に天魁星・天鉞星・左輔星・右弼星が同宮・加会すると、思ったことをそのまま言っても不思議と敵をつくらず、知人が多くなります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 56,
+   "docPage": 57,
+   "section": "4.諸星曜の意味と命宮における判断／巨門星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "巨門星"
+  ],
+  "withStars": [
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "stars": [
+   "巨門星",
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0492",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "巨門星",
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 76
+ },
+ {
+  "id": "N-CB-0494",
+  "text": "巨門星に化禄星・化科星・化権星が同宮・加会し、巨門星の力量が強い場合は、勤め人なら昇進し、勤め人でなくても一定の地位と権力を得ます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 56,
+   "docPage": 57,
+   "section": "4.諸星曜の意味と命宮における判断／巨門星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "巨門星"
+  ],
+  "withStars": [
+   "化禄星",
+   "化科星"
+  ],
+  "stars": [
+   "巨門星",
+   "化禄星",
+   "化科星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0494",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "巨門星",
+   "化禄星",
+   "化科星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 79
+ },
+ {
+  "id": "N-CB-0495",
+  "text": "巨門星に火星・鈴星が同宮し、巨門星の力量が弱い場合は、荒々しく傲慢な傾向が出ます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 56,
+   "docPage": 57,
+   "section": "4.諸星曜の意味と命宮における判断／巨門星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "巨門星"
+  ],
+  "withStars": [
+   "火星",
+   "鈴星"
+  ],
+  "stars": [
+   "巨門星",
+   "火星",
+   "鈴星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0495",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "巨門星",
+   "火星",
+   "鈴星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 39
+ },
+ {
+  "id": "N-CB-0497",
+  "text": "巨門星に擎羊星・陀羅星が同宮・加会すると、気が急いて落ち着きを欠くようになります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 56,
+   "docPage": 57,
+   "section": "4.諸星曜の意味と命宮における判断／巨門星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "巨門星"
+  ],
+  "withStars": [
+   "擎羊星",
+   "陀羅星"
+  ],
+  "stars": [
+   "巨門星",
+   "擎羊星",
+   "陀羅星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0497",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "巨門星",
+   "擎羊星",
+   "陀羅星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 43
+ },
+ {
+  "id": "N-CB-0500",
+  "text": "巨門星に天空星・地劫星が同宮・加会すると、宗教や哲学、心理学などに強い関心を示します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 56,
+   "docPage": 57,
+   "section": "4.諸星曜の意味と命宮における判断／巨門星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "巨門星"
+  ],
+  "withStars": [
+   "天空星",
+   "地劫星"
+  ],
+  "stars": [
+   "巨門星",
+   "天空星",
+   "地劫星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0500",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "巨門星",
+   "天空星",
+   "地劫星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 53
+ },
+ {
+  "id": "N-CB-0537",
+  "text": "天相星に紫微星・文昌星・文曲星が同宮・加会すると、とても頭がよく、落ち着いた優しい性格になります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 58,
+   "docPage": 59,
+   "section": "4.諸星曜の意味と命宮における判断／天相星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天相星"
+  ],
+  "withStars": [
+   "紫微星",
+   "文昌星",
+   "文曲星"
+  ],
+  "stars": [
+   "天相星",
+   "紫微星",
+   "文昌星",
+   "文曲星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0537",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "紫微星",
+   "天相星",
+   "文昌星",
+   "文曲星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 52
+ },
+ {
+  "id": "N-CB-0538",
+  "text": "実業や政治の分野で頭角を現します。天相星と禄存星が同宮すると、相当な財を蓄えます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 58,
+   "docPage": 59,
+   "section": "4.諸星曜の意味と命宮における判断／天相星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天相星"
+  ],
+  "withStars": [
+   "禄存星"
+  ],
+  "stars": [
+   "天相星",
+   "禄存星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0538",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天相星",
+   "禄存星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 61
+ },
+ {
+  "id": "N-CB-0539",
+  "text": "天相星に天魁星・天鉞星・左輔星・右弼星が同宮・加会すると、社交的で知人がとても多くなります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 58,
+   "docPage": 59,
+   "section": "4.諸星曜の意味と命宮における判断／天相星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天相星"
+  ],
+  "withStars": [
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "stars": [
+   "天相星",
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0539",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天相星",
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 51
+ },
+ {
+  "id": "N-CB-0541",
+  "text": "天相星に化禄星・化科星・化権星が同宮・加会し、天相星の力量が強い場合は、勤め人なら昇進し、勤め人でなくても一定の地位と権力を得ます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 58,
+   "docPage": 59,
+   "section": "4.諸星曜の意味と命宮における判断／天相星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天相星"
+  ],
+  "withStars": [
+   "化禄星",
+   "化科星"
+  ],
+  "stars": [
+   "天相星",
+   "化禄星",
+   "化科星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0541",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天相星",
+   "化禄星",
+   "化科星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 79
+ },
+ {
+  "id": "N-CB-0542",
+  "text": "天相星に火星・鈴星・擎羊星・陀羅星・天空星・地劫星・化忌星が同宮・加会すると、何らかの専門技術を身につけます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 58,
+   "docPage": 59,
+   "section": "4.諸星曜の意味と命宮における判断／天相星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天相星"
+  ],
+  "withStars": [
+   "天空星",
+   "地劫星",
+   "擎羊星",
+   "陀羅星",
+   "化忌星",
+   "火星",
+   "鈴星"
+  ],
+  "stars": [
+   "天相星",
+   "天空星",
+   "地劫星",
+   "擎羊星",
+   "陀羅星",
+   "化忌星",
+   "火星",
+   "鈴星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0542",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天相星",
+   "天空星",
+   "地劫星",
+   "火星",
+   "鈴星",
+   "擎羊星",
+   "陀羅星",
+   "化忌星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 62
+ },
+ {
+  "id": "N-CB-0579",
+  "text": "天梁星に文昌星・文曲星が同宮・加会すると、頭がよく文章も巧みで、多方面に才能を示します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 60,
+   "docPage": 61,
+   "section": "4.諸星曜の意味と命宮における判断／天梁星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天梁星"
+  ],
+  "withStars": [
+   "文昌星",
+   "文曲星"
+  ],
+  "stars": [
+   "天梁星",
+   "文昌星",
+   "文曲星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0579",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天梁星",
+   "文昌星",
+   "文曲星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 51
+ },
+ {
+  "id": "N-CB-0580",
+  "text": "天梁星と禄存星が同宮すると金運が豊かで、命宮の力量が強い場合はかなりの財を築きます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 60,
+   "docPage": 61,
+   "section": "4.諸星曜の意味と命宮における判断／天梁星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天梁星"
+  ],
+  "withStars": [
+   "禄存星"
+  ],
+  "stars": [
+   "天梁星",
+   "禄存星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0580",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天梁星",
+   "禄存星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 48
+ },
+ {
+  "id": "N-CB-0583",
+  "text": "天梁星に天魁星・天鉞星・左輔星・右弼星が同宮・加会すると、人を率いる力がいっそう強まります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 60,
+   "docPage": 61,
+   "section": "4.諸星曜の意味と命宮における判断／天梁星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天梁星"
+  ],
+  "withStars": [
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "stars": [
+   "天梁星",
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0583",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天梁星",
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 51
+ },
+ {
+  "id": "N-CB-0585",
+  "text": "天梁星に化禄星・化科星・化権星が同宮・加会すると、生涯を通じて運に恵まれます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 60,
+   "docPage": 61,
+   "section": "4.諸星曜の意味と命宮における判断／天梁星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天梁星"
+  ],
+  "withStars": [
+   "化禄星",
+   "化科星"
+  ],
+  "stars": [
+   "天梁星",
+   "化禄星",
+   "化科星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0585",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天梁星",
+   "化禄星",
+   "化科星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 52
+ },
+ {
+  "id": "N-CB-0586",
+  "text": "天梁星に火星・鈴星・擎羊星・陀羅星が同宮・加会すると、物事を進めるうえで困難が多くなります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 60,
+   "docPage": 61,
+   "section": "4.諸星曜の意味と命宮における判断／天梁星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天梁星"
+  ],
+  "withStars": [
+   "擎羊星",
+   "陀羅星",
+   "火星",
+   "鈴星"
+  ],
+  "stars": [
+   "天梁星",
+   "擎羊星",
+   "陀羅星",
+   "火星",
+   "鈴星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0586",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天梁星",
+   "火星",
+   "鈴星",
+   "擎羊星",
+   "陀羅星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 55
+ },
+ {
+  "id": "N-CB-0588",
+  "text": "天梁星に天空星・地劫星が同宮・加会すると、宗教や神秘的な学問、哲学、心理学に深く関心を寄せます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 60,
+   "docPage": 61,
+   "section": "4.諸星曜の意味と命宮における判断／天梁星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天梁星"
+  ],
+  "withStars": [
+   "天空星",
+   "地劫星"
+  ],
+  "stars": [
+   "天梁星",
+   "天空星",
+   "地劫星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0588",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天梁星",
+   "天空星",
+   "地劫星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 53
+ },
+ {
+  "id": "N-CB-0631",
+  "text": "七殺星に文昌星・文曲星が同宮・加会すると、とても頑固になりますが、頭がよく、企画や研究で力を発揮します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 62,
+   "docPage": 63,
+   "section": "4.諸星曜の意味と命宮における判断／七殺星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "七殺星"
+  ],
+  "withStars": [
+   "文昌星",
+   "文曲星"
+  ],
+  "stars": [
+   "七殺星",
+   "文昌星",
+   "文曲星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0631",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "七殺星",
+   "文昌星",
+   "文曲星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 58
+ },
+ {
+  "id": "N-CB-0633",
+  "text": "七殺星と禄存星が同宮すると、商売の才覚があり、お金にも恵まれます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 62,
+   "docPage": 63,
+   "section": "4.諸星曜の意味と命宮における判断／七殺星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "七殺星"
+  ],
+  "withStars": [
+   "禄存星"
+  ],
+  "stars": [
+   "七殺星",
+   "禄存星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0633",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "七殺星",
+   "禄存星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 30
+ },
+ {
+  "id": "N-CB-0635",
+  "text": "七殺星に天魁星・天鉞星・左輔星・右弼星が同宮・加会すると、よき友に恵まれ、その縁から成功します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 62,
+   "docPage": 63,
+   "section": "4.諸星曜の意味と命宮における判断／七殺星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "七殺星"
+  ],
+  "withStars": [
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "stars": [
+   "七殺星",
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0635",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "七殺星",
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 59
+ },
+ {
+  "id": "N-CB-0636",
+  "text": "七殺星に化禄星・化科星・化権星が同宮・加会すると、幸運の暗示があります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 62,
+   "docPage": 63,
+   "section": "4.諸星曜の意味と命宮における判断／七殺星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "七殺星"
+  ],
+  "withStars": [
+   "化禄星",
+   "化科星"
+  ],
+  "stars": [
+   "七殺星",
+   "化禄星",
+   "化科星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0636",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "七殺星",
+   "化禄星",
+   "化科星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 36
+ },
+ {
+  "id": "N-CB-0637",
+  "text": "七殺星に火星・鈴星・擎羊星・陀羅星・天空星・地劫星が同宮・加会すると、短気で気分の波が大きくなり、自分だけが正しいと考える傾向が強まります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 62,
+   "docPage": 63,
+   "section": "4.諸星曜の意味と命宮における判断／七殺星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "七殺星"
+  ],
+  "withStars": [
+   "天空星",
+   "地劫星",
+   "擎羊星",
+   "陀羅星",
+   "火星",
+   "鈴星"
+  ],
+  "stars": [
+   "七殺星",
+   "天空星",
+   "地劫星",
+   "擎羊星",
+   "陀羅星",
+   "火星",
+   "鈴星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0637",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "七殺星",
+   "天空星",
+   "地劫星",
+   "火星",
+   "鈴星",
+   "擎羊星",
+   "陀羅星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 60
+ },
+ {
+  "id": "N-CB-0676",
+  "text": "破軍星に文昌星・文曲星が同宮・加会すると、芸術、とくに文学や音楽に関心を向けます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 64,
+   "docPage": 65,
+   "section": "4.諸星曜の意味と命宮における判断／破軍星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "破軍星"
+  ],
+  "withStars": [
+   "文昌星",
+   "文曲星"
+  ],
+  "stars": [
+   "破軍星",
+   "文昌星",
+   "文曲星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0676",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "破軍星",
+   "文昌星",
+   "文曲星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 41
+ },
+ {
+  "id": "N-CB-0678",
+  "text": "破軍星と禄存星が同宮すると、破軍星の激しさがかなりやわらぎます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 64,
+   "docPage": 65,
+   "section": "4.諸星曜の意味と命宮における判断／破軍星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "破軍星"
+  ],
+  "withStars": [
+   "禄存星"
+  ],
+  "stars": [
+   "破軍星",
+   "禄存星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0678",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "破軍星",
+   "禄存星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 37
+ },
+ {
+  "id": "N-CB-0680",
+  "text": "破軍星に天魁星・天鉞星・左輔星・右弼星が同宮・加会すると、交友が広く、その友人たちを通じて成功の機会をつかみます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 64,
+   "docPage": 65,
+   "section": "4.諸星曜の意味と命宮における判断／破軍星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "破軍星"
+  ],
+  "withStars": [
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "stars": [
+   "破軍星",
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0680",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "破軍星",
+   "左輔星",
+   "右弼星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 69
+ },
+ {
+  "id": "N-CB-0681",
+  "text": "破軍星に化禄星・化科星・化権星が同宮・加会すると、人を率いる力を発揮します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 64,
+   "docPage": 65,
+   "section": "4.諸星曜の意味と命宮における判断／破軍星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "破軍星"
+  ],
+  "withStars": [
+   "化禄星",
+   "化科星"
+  ],
+  "stars": [
+   "破軍星",
+   "化禄星",
+   "化科星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0681",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "破軍星",
+   "化禄星",
+   "化科星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 44
+ },
+ {
+  "id": "N-CB-0683",
+  "text": "破軍星に火星・鈴星・擎羊星・陀羅星が同宮・加会すると、悩みごとが増える暗示があります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 64,
+   "docPage": 65,
+   "section": "4.諸星曜の意味と命宮における判断／破軍星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "破軍星"
+  ],
+  "withStars": [
+   "擎羊星",
+   "陀羅星",
+   "火星",
+   "鈴星"
+  ],
+  "stars": [
+   "破軍星",
+   "擎羊星",
+   "陀羅星",
+   "火星",
+   "鈴星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0683",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "破軍星",
+   "火星",
+   "鈴星",
+   "擎羊星",
+   "陀羅星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 44
+ },
+ {
+  "id": "N-CB-0686",
+  "text": "破軍星に天空星・地劫星が同宮・加会すると、途中で挫折する暗示がありますが、命宮の力量が弱くなければその限りではありません。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 64,
+   "docPage": 65,
+   "section": "4.諸星曜の意味と命宮における判断／破軍星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "破軍星"
+  ],
+  "withStars": [
+   "天空星",
+   "地劫星"
+  ],
+  "stars": [
+   "破軍星",
+   "天空星",
+   "地劫星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0686",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "破軍星",
+   "天空星",
+   "地劫星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 59
+ },
+ {
+  "id": "N-CB-0710",
+  "text": "文曲星と太陰星が同宮すると、占術や神秘的な学問に深く関心を寄せます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 65,
+   "docPage": 66,
+   "section": "4.諸星曜の意味と命宮における判断／文昌星・文曲星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "文昌星",
+   "文曲星"
+  ],
+  "withStars": [
+   "太陰星"
+  ],
+  "stars": [
+   "文昌星",
+   "文曲星",
+   "太陰星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0710",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "太陰星",
+   "文曲星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 31
+ },
+ {
+  "id": "N-CB-0711",
+  "text": "文昌星・文曲星と破軍星が同宮すると、水に関わる災難の暗示があるので注意が必要です。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 65,
+   "docPage": 66,
+   "section": "4.諸星曜の意味と命宮における判断／文昌星・文曲星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "文昌星",
+   "文曲星"
+  ],
+  "withStars": [
+   "破軍星"
+  ],
+  "stars": [
+   "文昌星",
+   "文曲星",
+   "破軍星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0711",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "破軍星",
+   "文昌星",
+   "文曲星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 36
+ },
+ {
+  "id": "N-CB-0712",
+  "text": "文昌星・文曲星に擎羊星・陀羅星・火星・鈴星などが同宮・加会し、命宮の力量が弱い場合は、口先で物事をごまかそうとする傾向が出ます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 65,
+   "docPage": 66,
+   "section": "4.諸星曜の意味と命宮における判断／文昌星・文曲星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "文昌星",
+   "文曲星"
+  ],
+  "withStars": [
+   "陀羅星",
+   "火星",
+   "鈴星",
+   "擎羊星"
+  ],
+  "stars": [
+   "文昌星",
+   "文曲星",
+   "陀羅星",
+   "火星",
+   "鈴星",
+   "擎羊星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0712",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "文昌星",
+   "文曲星",
+   "火星",
+   "鈴星",
+   "擎羊星",
+   "陀羅星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 64
+ },
+ {
+  "id": "N-CB-0731",
+  "text": "左輔星・右弼星に紫微星・天府星・天相星・天機星・武曲星・太陽星・太陰星・貪狼星・文昌星・文曲星が同宮・加会すると、研究や教育の場でもビジネスの場でも、物事が順調に運んで成功します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 66,
+   "docPage": 67,
+   "section": "4.諸星曜の意味と命宮における判断／左輔星・右弼星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "左輔星",
+   "右弼星"
+  ],
+  "withStars": [
+   "紫微星",
+   "天機星",
+   "太陽星",
+   "武曲星",
+   "天府星",
+   "太陰星",
+   "貪狼星",
+   "天相星",
+   "文昌星",
+   "文曲星"
+  ],
+  "stars": [
+   "左輔星",
+   "右弼星",
+   "紫微星",
+   "天機星",
+   "太陽星",
+   "武曲星",
+   "天府星",
+   "太陰星",
+   "貪狼星",
+   "天相星",
+   "文昌星",
+   "文曲星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0731",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "紫微星",
+   "天機星",
+   "太陽星",
+   "武曲星",
+   "天府星",
+   "太陰星",
+   "貪狼星",
+   "天相星",
+   "文昌星",
+   "文曲星",
+   "左輔星",
+   "右弼星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 101
+ },
+ {
+  "id": "N-CB-0732",
+  "text": "この組み合わせで命宮の力量が強い場合は、大きな成功を収めます。反対に、左輔星・右弼星に破軍星・廉貞星・七殺星・擎羊星・陀羅星・火星・鈴星などが同宮・加会し、命宮の力量が弱い場合は、悩みと苦労の多い人生になる暗示があります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 66,
+   "docPage": 67,
+   "section": "4.諸星曜の意味と命宮における判断／左輔星・右弼星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "左輔星",
+   "右弼星"
+  ],
+  "withStars": [
+   "廉貞星",
+   "七殺星",
+   "破軍星",
+   "擎羊星",
+   "陀羅星",
+   "火星",
+   "鈴星"
+  ],
+  "stars": [
+   "左輔星",
+   "右弼星",
+   "廉貞星",
+   "七殺星",
+   "破軍星",
+   "擎羊星",
+   "陀羅星",
+   "火星",
+   "鈴星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0732",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "廉貞星",
+   "七殺星",
+   "破軍星",
+   "火星",
+   "鈴星",
+   "左輔星",
+   "右弼星",
+   "擎羊星",
+   "陀羅星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 108
+ },
+ {
+  "id": "N-CB-0750",
+  "text": "天魁星・天鉞星に文昌星・文曲星が同宮・加会すると、幸運に恵まれて大きく成功します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 67,
+   "docPage": 68,
+   "section": "4.諸星曜の意味と命宮における判断／天魁星・天鉞星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天魁星",
+   "天鉞星"
+  ],
+  "withStars": [
+   "文昌星",
+   "文曲星"
+  ],
+  "stars": [
+   "天魁星",
+   "天鉞星",
+   "文昌星",
+   "文曲星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0750",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "文昌星",
+   "文曲星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 49
+ },
+ {
+  "id": "N-CB-0751",
+  "text": "天魁星・天鉞星に紫微星・天府星・太陽星・太陰星・化権星などの吉星が同宮・加会すると、若いうちに素晴らしい伴侶と出会う暗示があります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 67,
+   "docPage": 68,
+   "section": "4.諸星曜の意味と命宮における判断／天魁星・天鉞星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天魁星",
+   "天鉞星"
+  ],
+  "withStars": [
+   "紫微星",
+   "太陽星",
+   "天府星",
+   "太陰星",
+   "化権星"
+  ],
+  "stars": [
+   "天魁星",
+   "天鉞星",
+   "紫微星",
+   "太陽星",
+   "天府星",
+   "太陰星",
+   "化権星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0751",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "紫微星",
+   "太陽星",
+   "天府星",
+   "太陰星",
+   "天魁星",
+   "天鉞星",
+   "化権星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 67
+ },
+ {
+  "id": "N-CB-0772",
+  "text": "禄存星に化禄星が同宮・加会すると、金運にたいへん恵まれます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 68,
+   "docPage": 69,
+   "section": "4.諸星曜の意味と命宮における判断／禄存星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "禄存星"
+  ],
+  "withStars": [
+   "化禄星"
+  ],
+  "stars": [
+   "禄存星",
+   "化禄星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "textKey": "N-ST-0772",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "禄存星",
+   "化禄星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 29
+ },
+ {
+  "id": "N-CB-0773",
+  "text": "禄存星に文昌星・文曲星が同宮・加会すると、芸術の才能を生かして財を築きます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 68,
+   "docPage": 69,
+   "section": "4.諸星曜の意味と命宮における判断／禄存星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "禄存星"
+  ],
+  "withStars": [
+   "文昌星",
+   "文曲星"
+  ],
+  "stars": [
+   "禄存星",
+   "文昌星",
+   "文曲星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0773",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "文昌星",
+   "文曲星",
+   "禄存星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 44
+ },
+ {
+  "id": "N-CB-0774",
+  "text": "禄存星に天空星・地劫星・火星・鈴星などが同宮・加会し、命宮の力量が弱い場合は、金運はそれほど大きくありません。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 68,
+   "docPage": 69,
+   "section": "4.諸星曜の意味と命宮における判断／禄存星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "禄存星"
+  ],
+  "withStars": [
+   "天空星",
+   "地劫星",
+   "火星",
+   "鈴星"
+  ],
+  "stars": [
+   "禄存星",
+   "天空星",
+   "地劫星",
+   "火星",
+   "鈴星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0774",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天空星",
+   "地劫星",
+   "火星",
+   "鈴星",
+   "禄存星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 57
+ },
+ {
+  "id": "N-CB-0792",
+  "text": "擎羊星・陀羅星と貪狼星が同宮し、命宮の力量が弱い場合は、享楽にふける暮らしがもとで体を壊す暗示があります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 69,
+   "docPage": 70,
+   "section": "4.諸星曜の意味と命宮における判断／敬羊星・陀羅星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "擎羊星",
+   "陀羅星"
+  ],
+  "withStars": [
+   "貪狼星"
+  ],
+  "stars": [
+   "擎羊星",
+   "陀羅星",
+   "貪狼星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0792",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "貪狼星",
+   "擎羊星",
+   "陀羅星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 53
+ },
+ {
+  "id": "N-CB-0793",
+  "text": "擎羊星・陀羅星と火星・鈴星・廉貞星・巨門星などが同宮すると、慢性の病気の暗示があります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 69,
+   "docPage": 70,
+   "section": "4.諸星曜の意味と命宮における判断／敬羊星・陀羅星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "擎羊星",
+   "陀羅星"
+  ],
+  "withStars": [
+   "廉貞星",
+   "火星",
+   "鈴星"
+  ],
+  "stars": [
+   "擎羊星",
+   "陀羅星",
+   "廉貞星",
+   "火星",
+   "鈴星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0793",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "廉貞星",
+   "火星",
+   "鈴星",
+   "擎羊星",
+   "陀羅星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 44
+ },
+ {
+  "id": "N-CB-0794",
+  "text": "擎羊星・陀羅星と太陽星・太陰星が同宮すると、夫婦の関係がぎくしゃくしやすくなります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 69,
+   "docPage": 70,
+   "section": "4.諸星曜の意味と命宮における判断／敬羊星・陀羅星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "擎羊星",
+   "陀羅星"
+  ],
+  "withStars": [
+   "太陽星",
+   "太陰星"
+  ],
+  "stars": [
+   "擎羊星",
+   "陀羅星",
+   "太陽星",
+   "太陰星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0794",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "太陽星",
+   "太陰星",
+   "擎羊星",
+   "陀羅星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 39
+ },
+ {
+  "id": "N-CB-0795",
+  "text": "擎羊星・陀羅星と文昌星・文曲星・左輔星・右弼星が同宮すると、顔や体にあざや傷跡が残る暗示があります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 69,
+   "docPage": 70,
+   "section": "4.諸星曜の意味と命宮における判断／敬羊星・陀羅星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "擎羊星",
+   "陀羅星"
+  ],
+  "withStars": [
+   "文昌星",
+   "文曲星",
+   "左輔星",
+   "右弼星"
+  ],
+  "stars": [
+   "擎羊星",
+   "陀羅星",
+   "文昌星",
+   "文曲星",
+   "左輔星",
+   "右弼星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0795",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "文昌星",
+   "文曲星",
+   "左輔星",
+   "右弼星",
+   "擎羊星",
+   "陀羅星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 55
+ },
+ {
+  "id": "N-CB-0803",
+  "text": "女性で命宮に火星・鈴星と左輔星・右弼星がともにあり、命宮の力量が強い場合は、魅力にあふれ、男性の関心を広く集めます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 70,
+   "docPage": 71,
+   "section": "4.諸星曜の意味と命宮における判断／火星・鈴星／基本的特質"
+  },
+  "subjectStars": [
+   "火星",
+   "鈴星"
+  ],
+  "withStars": [
+   "左輔星",
+   "右弼星"
+  ],
+  "stars": [
+   "火星",
+   "鈴星",
+   "左輔星",
+   "右弼星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0803",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "火星",
+   "鈴星",
+   "左輔星",
+   "右弼星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 71
+ },
+ {
+  "id": "N-CB-0810",
+  "text": "火星・鈴星に擎羊星・陀羅星・廉貞星・破軍星・七殺星などが同宮・加会し、命宮の力量が弱い場合は、小さいころから病気やけがが多く、体に傷跡が残ります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 70,
+   "docPage": 71,
+   "section": "4.諸星曜の意味と命宮における判断／火星・鈴星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "火星",
+   "鈴星"
+  ],
+  "withStars": [
+   "廉貞星",
+   "七殺星",
+   "破軍星",
+   "擎羊星",
+   "陀羅星"
+  ],
+  "stars": [
+   "火星",
+   "鈴星",
+   "廉貞星",
+   "七殺星",
+   "破軍星",
+   "擎羊星",
+   "陀羅星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0810",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "廉貞星",
+   "七殺星",
+   "破軍星",
+   "火星",
+   "鈴星",
+   "擎羊星",
+   "陀羅星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 84
+ },
+ {
+  "id": "N-CB-0812",
+  "text": "火星・鈴星と貪狼星が同宮すると、女性はむしろ異性に好かれ、異性からの助けを得られます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 70,
+   "docPage": 71,
+   "section": "4.諸星曜の意味と命宮における判断／火星・鈴星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "火星",
+   "鈴星"
+  ],
+  "withStars": [
+   "貪狼星"
+  ],
+  "stars": [
+   "火星",
+   "鈴星",
+   "貪狼星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0812",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "貪狼星",
+   "火星",
+   "鈴星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 63
+ },
+ {
+  "id": "N-CB-0826",
+  "text": "天空星・地劫星に火星・鈴星・擎羊星・陀羅星などが同宮・加会し、命宮の力量が弱い場合は、小さいころから病気やけがが多く、生涯のうちに挫折を経験する暗示があります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 71,
+   "docPage": 72,
+   "section": "4.諸星曜の意味と命宮における判断／天空星・地劫星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天空星",
+   "地劫星"
+  ],
+  "withStars": [
+   "擎羊星",
+   "陀羅星",
+   "火星",
+   "鈴星"
+  ],
+  "stars": [
+   "天空星",
+   "地劫星",
+   "擎羊星",
+   "陀羅星",
+   "火星",
+   "鈴星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0826",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天空星",
+   "地劫星",
+   "火星",
+   "鈴星",
+   "擎羊星",
+   "陀羅星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 85
+ },
+ {
+  "id": "N-CB-0827",
+  "text": "天空星・地劫星に紫微星・天府星・天相星・文昌星などの吉星が同宮すると、天空星・地劫星の凶の働きがやわらぎ、成功や財を得られます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 71,
+   "docPage": 72,
+   "section": "4.諸星曜の意味と命宮における判断／天空星・地劫星／その他の星曜との配合"
+  },
+  "subjectStars": [
+   "天空星",
+   "地劫星"
+  ],
+  "withStars": [
+   "紫微星",
+   "天府星",
+   "天相星",
+   "文昌星"
+  ],
+  "stars": [
+   "天空星",
+   "地劫星",
+   "紫微星",
+   "天府星",
+   "天相星",
+   "文昌星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0827",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "紫微星",
+   "天府星",
+   "天相星",
+   "文昌星",
+   "天空星",
+   "地劫星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 70
+ },
+ {
+  "id": "N-CB-0835",
+  "text": "化禄星が化権星・化科星と同宮すると成功を収め、世の中での地位と名声を得ます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 72,
+   "docPage": 73,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化禄星"
+  },
+  "subjectStars": [
+   "化禄星"
+  ],
+  "withStars": [
+   "化権星",
+   "化科星"
+  ],
+  "stars": [
+   "化禄星",
+   "化権星",
+   "化科星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0835",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "化権星",
+   "化科星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 37
+ },
+ {
+  "id": "N-CB-0838",
+  "text": "命宮で化禄星と天同星または太陽星が同宮すると、多くの財を蓄えます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 72,
+   "docPage": 73,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化禄星"
+  },
+  "subjectStars": [
+   "化禄星"
+  ],
+  "withStars": [
+   "太陽星",
+   "天同星"
+  ],
+  "stars": [
+   "化禄星",
+   "太陽星",
+   "天同星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0838",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "太陽星",
+   "天同星",
+   "化禄星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 38
+ },
+ {
+  "id": "N-CB-0839",
+  "text": "命宮で化禄星と禄存星が同宮・加会すると、金運がたいへん豊かになります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 72,
+   "docPage": 73,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化禄星"
+  },
+  "subjectStars": [
+   "化禄星"
+  ],
+  "withStars": [
+   "禄存星"
+  ],
+  "stars": [
+   "化禄星",
+   "禄存星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "textKey": "N-ST-0839",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "禄存星",
+   "化禄星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 35
+ },
+ {
+  "id": "N-CB-0844",
+  "text": "命宮の化権星に化禄星・化科星が同宮すると、高い地位に就き、大きな権力を持ちます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 72,
+   "docPage": 73,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化権星"
+  },
+  "subjectStars": [
+   "化権星"
+  ],
+  "withStars": [
+   "化禄星",
+   "化科星"
+  ],
+  "stars": [
+   "化権星",
+   "化禄星",
+   "化科星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0844",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "化禄星",
+   "化権星",
+   "化科星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 49
+ },
+ {
+  "id": "N-CB-0845",
+  "text": "命宮で化権星と化科星が同宮すると、文章や芸術の才に恵まれ、学問を好む賢い人になります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 72,
+   "docPage": 73,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化権星"
+  },
+  "subjectStars": [
+   "化権星"
+  ],
+  "withStars": [
+   "化科星"
+  ],
+  "stars": [
+   "化権星",
+   "化科星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0845",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "化権星",
+   "化科星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 46
+ },
+ {
+  "id": "N-CB-0850",
+  "text": "命宮の化科星に文昌星・文曲星・天魁星・天鉞星が同宮すると、芸術や学問で大きな才能を持ち、機会さえ得れば名声と成功を手にします。一方、命宮の化科星に凶星が同宮・加会すると、才能を十分に発揮しにくくなりますが、人に教える仕事への適性があります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 72,
+   "docPage": 73,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化科星"
+  },
+  "subjectStars": [
+   "化科星"
+  ],
+  "withStars": [
+   "文昌星",
+   "文曲星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "stars": [
+   "化科星",
+   "文昌星",
+   "文曲星",
+   "天魁星",
+   "天鉞星"
+  ],
+  "relation": "同宮・加会",
+  "palace": "命宮",
+  "note": "相手の星が複数列挙されている（同時にそろう意味か、いずれかの意味かは原文による）",
+  "textKey": "N-ST-0850",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "文昌星",
+   "文曲星",
+   "天魁星",
+   "天鉞星",
+   "化科星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 141
+ },
+ {
+  "id": "N-CB-0865",
+  "text": "天馬星と禄存星が同宮すると、多くの財を得ます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 73,
+   "docPage": 74,
+   "section": "4.諸星曜の意味と命宮における判断／天馬星／命宮に入った天馬星"
+  },
+  "subjectStars": [
+   "天馬星"
+  ],
+  "withStars": [
+   "禄存星"
+  ],
+  "stars": [
+   "天馬星",
+   "禄存星"
+  ],
+  "relation": "同宮",
+  "palace": "命宮",
+  "textKey": "N-ST-0865",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "天馬星",
+   "禄存星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 31
+ }
+]

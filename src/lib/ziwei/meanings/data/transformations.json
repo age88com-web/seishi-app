@@ -1,0 +1,749 @@
+[
+ {
+  "id": "N-ST-0829",
+  "text": "化禄・化権・化科・化忌の四つをまとめて、化曜星と呼びます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 72,
+   "docPage": 73,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星"
+  },
+  "stars": [
+   "化禄星",
+   "化権星",
+   "化科星",
+   "化忌星"
+  ],
+  "category": "basic",
+  "tags": [
+   "personality"
+  ],
+  "textKey": "N-ST-0829",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 28
+ },
+ {
+  "id": "N-ST-0830",
+  "text": "化曜星は、命宮に入ったときにそれぞれ固有の意味を持ちます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 72,
+   "docPage": 73,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星"
+  },
+  "stars": [
+   "化禄星",
+   "化権星",
+   "化科星",
+   "化忌星"
+  ],
+  "category": "basic",
+  "tags": [
+   "personality"
+  ],
+  "textKey": "N-ST-0830",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 28
+ },
+ {
+  "id": "N-ST-0831",
+  "text": "化禄星は、財とのかかわりを示す星です。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 72,
+   "docPage": 73,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化禄星"
+  },
+  "stars": [
+   "化禄星"
+  ],
+  "palace": "命宮",
+  "category": "basic",
+  "tags": [
+   "personality"
+  ],
+  "textKey": "N-ST-0831",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "化禄星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 9
+ },
+ {
+  "id": "N-ST-0832",
+  "text": "化禄星が命宮にある人は、落ち着いていて、大らかな性格です。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 72,
+   "docPage": 73,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化禄星"
+  },
+  "stars": [
+   "化禄星"
+  ],
+  "palace": "命宮",
+  "category": "basic",
+  "tags": [
+   "personality"
+  ],
+  "textKey": "N-ST-0832",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 34
+ },
+ {
+  "id": "N-ST-0833",
+  "text": "福に恵まれ、衣食住に困ることはありません。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 72,
+   "docPage": 73,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化禄星"
+  },
+  "stars": [
+   "化禄星"
+  ],
+  "palace": "命宮",
+  "category": "basic",
+  "tags": [
+   "personality"
+  ],
+  "textKey": "N-ST-0833",
+  "opener": "また",
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 25
+ },
+ {
+  "id": "N-ST-0834",
+  "text": "気前がよく、人をもてなすことを好むので、大勢の友人に慕われます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 72,
+   "docPage": 73,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化禄星"
+  },
+  "stars": [
+   "化禄星"
+  ],
+  "palace": "命宮",
+  "category": "basic",
+  "tags": [
+   "personality"
+  ],
+  "textKey": "N-ST-0834",
+  "opener": "また",
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 48
+ },
+ {
+  "id": "N-ST-0835",
+  "text": "化禄星が化権星・化科星と同宮すると成功を収め、世の中での地位と名声を得ます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 72,
+   "docPage": 73,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化禄星"
+  },
+  "stars": [
+   "化禄星"
+  ],
+  "palace": "命宮",
+  "category": "basic",
+  "tags": [
+   "personality"
+  ],
+  "textKey": "N-ST-0835",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "化権星",
+   "化科星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 37
+ },
+ {
+  "id": "N-ST-0836",
+  "text": "この組み合わせでは、会社勤めなら地方での勤務を経てから出世します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 72,
+   "docPage": 73,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化禄星"
+  },
+  "stars": [
+   "化禄星"
+  ],
+  "palace": "命宮",
+  "category": "basic",
+  "tags": [
+   "personality"
+  ],
+  "textKey": "N-ST-0836",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 26
+ },
+ {
+  "id": "N-ST-0837",
+  "text": "この組み合わせでは、公的機関に勤めるなら中枢で活躍します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 72,
+   "docPage": 73,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化禄星"
+  },
+  "stars": [
+   "化禄星"
+  ],
+  "palace": "命宮",
+  "category": "basic",
+  "tags": [
+   "personality"
+  ],
+  "textKey": "N-ST-0837",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 25
+ },
+ {
+  "id": "N-ST-0838",
+  "text": "命宮で化禄星と天同星または太陽星が同宮すると、多くの財を蓄えます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 72,
+   "docPage": 73,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化禄星"
+  },
+  "stars": [
+   "化禄星"
+  ],
+  "palace": "命宮",
+  "category": "basic",
+  "tags": [
+   "personality"
+  ],
+  "textKey": "N-ST-0838",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "太陽星",
+   "天同星",
+   "化禄星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 38
+ },
+ {
+  "id": "N-ST-0839",
+  "text": "命宮で化禄星と禄存星が同宮・加会すると、金運がたいへん豊かになります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 72,
+   "docPage": 73,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化禄星"
+  },
+  "stars": [
+   "化禄星"
+  ],
+  "palace": "命宮",
+  "category": "basic",
+  "tags": [
+   "personality"
+  ],
+  "textKey": "N-ST-0839",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "禄存星",
+   "化禄星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 35
+ },
+ {
+  "id": "N-ST-0840",
+  "text": "反対に、化禄星に凶星が同宮・加会し、命宮の力量が弱い場合は、お金に困り、出費に悩まされます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 72,
+   "docPage": 73,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化禄星"
+  },
+  "stars": [
+   "化禄星"
+  ],
+  "palace": "命宮",
+  "category": "basic",
+  "tags": [
+   "personality"
+  ],
+  "condition": "命宮の力量",
+  "textKey": "N-ST-0840",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "化禄星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 50
+ },
+ {
+  "id": "N-ST-0841",
+  "text": "化権星が受け持つのは、権力と、物事を決める力です。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 72,
+   "docPage": 73,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化権星"
+  },
+  "stars": [
+   "化権星"
+  ],
+  "palace": "命宮",
+  "category": "basic",
+  "tags": [
+   "personality"
+  ],
+  "textKey": "N-ST-0841",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "化権星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 14
+ },
+ {
+  "id": "N-ST-0842",
+  "text": "化権星が命宮にある人は、分別のある常識人で、何をするにも慎重です。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 72,
+   "docPage": 73,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化権星"
+  },
+  "stars": [
+   "化権星"
+  ],
+  "palace": "命宮",
+  "category": "basic",
+  "tags": [
+   "personality"
+  ],
+  "textKey": "N-ST-0842",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "化権星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 35
+ },
+ {
+  "id": "N-ST-0843",
+  "text": "ただ、やや気難しい面があります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 72,
+   "docPage": 73,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化権星"
+  },
+  "stars": [
+   "化権星"
+  ],
+  "palace": "命宮",
+  "category": "basic",
+  "tags": [
+   "personality"
+  ],
+  "textKey": "N-ST-0843",
+  "opener": "しかし",
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 18
+ },
+ {
+  "id": "N-ST-0844",
+  "text": "命宮の化権星に化禄星・化科星が同宮すると、高い地位に就き、大きな権力を持ちます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 72,
+   "docPage": 73,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化権星"
+  },
+  "stars": [
+   "化権星"
+  ],
+  "palace": "命宮",
+  "category": "basic",
+  "tags": [
+   "personality"
+  ],
+  "textKey": "N-ST-0844",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "化禄星",
+   "化権星",
+   "化科星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 49
+ },
+ {
+  "id": "N-ST-0845",
+  "text": "命宮で化権星と化科星が同宮すると、文章や芸術の才に恵まれ、学問を好む賢い人になります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 72,
+   "docPage": 73,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化権星"
+  },
+  "stars": [
+   "化権星"
+  ],
+  "palace": "命宮",
+  "category": "basic",
+  "tags": [
+   "personality"
+  ],
+  "textKey": "N-ST-0845",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "化権星",
+   "化科星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 46
+ },
+ {
+  "id": "N-ST-0846",
+  "text": "試験や文章、学問の事柄を受け持つのが、化科星です。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 72,
+   "docPage": 73,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化科星"
+  },
+  "stars": [
+   "化科星"
+  ],
+  "palace": "命宮",
+  "category": "basic",
+  "tags": [
+   "personality"
+  ],
+  "textKey": "N-ST-0846",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "化科星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 18
+ },
+ {
+  "id": "N-ST-0847",
+  "text": "化科星が命宮にある人は、とても知的で賢い人です。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 72,
+   "docPage": 73,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化科星"
+  },
+  "stars": [
+   "化科星"
+  ],
+  "palace": "命宮",
+  "category": "basic",
+  "tags": [
+   "personality"
+  ],
+  "textKey": "N-ST-0847",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "化科星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 25
+ },
+ {
+  "id": "N-ST-0848",
+  "text": "若いころから優秀さを示し、芸術や学問の分野で優れた才能を見せます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 72,
+   "docPage": 73,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化科星"
+  },
+  "stars": [
+   "化科星"
+  ],
+  "palace": "命宮",
+  "category": "basic",
+  "tags": [
+   "personality"
+  ],
+  "textKey": "N-ST-0848",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 34
+ },
+ {
+  "id": "N-ST-0849",
+  "text": "ビジネスや公的機関の道に進んでも活躍できます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 72,
+   "docPage": 73,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化科星"
+  },
+  "stars": [
+   "化科星"
+  ],
+  "palace": "命宮",
+  "category": "basic",
+  "tags": [
+   "personality"
+  ],
+  "textKey": "N-ST-0849",
+  "opener": "また",
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 30
+ },
+ {
+  "id": "N-ST-0850",
+  "text": "命宮の化科星に文昌星・文曲星・天魁星・天鉞星が同宮すると、芸術や学問で大きな才能を持ち、機会さえ得れば名声と成功を手にします。一方、命宮の化科星に凶星が同宮・加会すると、才能を十分に発揮しにくくなりますが、人に教える仕事への適性があります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 72,
+   "docPage": 73,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化科星"
+  },
+  "stars": [
+   "化科星"
+  ],
+  "palace": "命宮",
+  "category": "basic",
+  "tags": [
+   "personality"
+  ],
+  "textKey": "N-ST-0850",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "文昌星",
+   "文曲星",
+   "天魁星",
+   "天鉞星",
+   "化科星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 141
+ },
+ {
+  "id": "N-ST-0851",
+  "text": "化忌星があらわすのは、是非をめぐる問題、困難、そして挫折です。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 73,
+   "docPage": 74,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化忌星"
+  },
+  "stars": [
+   "化忌星"
+  ],
+  "palace": "命宮",
+  "category": "basic",
+  "tags": [
+   "personality"
+  ],
+  "textKey": "N-ST-0851",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "化忌星"
+  ],
+  "mentionsPalaces": [],
+  "sourceLength": 19
+ },
+ {
+  "id": "N-ST-0852",
+  "text": "化忌星が命宮にある人は、恋や仕事を失うなど困難や災難に何かと見舞われ、悩みの多い日々になりがちです。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 73,
+   "docPage": 74,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化忌星"
+  },
+  "stars": [
+   "化忌星"
+  ],
+  "palace": "命宮",
+  "category": "basic",
+  "tags": [
+   "personality"
+  ],
+  "textKey": "N-ST-0852",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "化忌星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 53
+ },
+ {
+  "id": "N-ST-0853",
+  "text": "人のことに口を出したがり、余計な世話を焼きすぎる面もあります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 73,
+   "docPage": 74,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化忌星"
+  },
+  "stars": [
+   "化忌星"
+  ],
+  "palace": "命宮",
+  "category": "basic",
+  "tags": [
+   "personality"
+  ],
+  "textKey": "N-ST-0853",
+  "opener": "また",
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 40
+ },
+ {
+  "id": "N-ST-0854",
+  "text": "化忌星のつく星の力量が強く、命宮の力量も強い場合は、突然の災難に遭っても助けが入り、大事に至りません。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 73,
+   "docPage": 74,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化忌星"
+  },
+  "stars": [
+   "化忌星"
+  ],
+  "palace": "命宮",
+  "category": "basic",
+  "tags": [
+   "personality"
+  ],
+  "condition": "命宮の力量",
+  "textKey": "N-ST-0854",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "化忌星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 53
+ },
+ {
+  "id": "N-ST-0855",
+  "text": "この場合は、かえって急に成功することもあります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 73,
+   "docPage": 74,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化忌星"
+  },
+  "stars": [
+   "化忌星"
+  ],
+  "palace": "命宮",
+  "category": "basic",
+  "tags": [
+   "personality"
+  ],
+  "textKey": "N-ST-0855",
+  "opener": "また",
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 19
+ },
+ {
+  "id": "N-ST-0856",
+  "text": "化忌星が命宮にある人は、公的機関より民間に、一般的な勤め人より特殊な技能を生かす専門職や研究、創作に向いています。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 73,
+   "docPage": 74,
+   "section": "4.諸星曜の意味と命宮における判断／化曜星／化忌星"
+  },
+  "stars": [
+   "化忌星"
+  ],
+  "palace": "命宮",
+  "category": "basic",
+  "tags": [
+   "personality"
+  ],
+  "textKey": "N-ST-0856",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "化忌星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 67
+ }
+]

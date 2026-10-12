@@ -1,0 +1,287 @@
+/* src/app/ziwei/ziwei.css
+ * 紫微斗数 Phase 1 検証ページ。他ページと同じモノクロ基調・装飾は最小限。
+ * 盤面は最小幅を持ち、狭い画面では枠内で横スクロールする（盤面を潰さない）。 */
+
+.zw-page {
+  font-family: system-ui, "Hiragino Sans", sans-serif;
+  padding: 10px 16px 6px;
+  color: #222;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+.zw-h1 { font-size: 18px; margin: 0 0 4px; }
+.zw-h2 { font-size: 14px; margin: 0 0 6px; padding-bottom: 3px; border-bottom: 1px solid #ccc; }
+.zw-section { margin: 18px 0; }
+.zw-note { font-size: 11px; color: #666; margin: 4px 0 8px; line-height: 1.55; }
+.zw-muted { color: #777; font-size: 11px; }
+.zw-error { background: #fdecec; border: 1px solid #e0b4b4; color: #a33; padding: 6px 10px; border-radius: 4px; font-size: 13px; margin-top: 12px; }
+
+.zw-top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 24px; margin-top: 6px; }
+.zw-form { display: flex; gap: 10px 14px; flex-wrap: wrap; align-items: flex-end; }
+
+/* 入力欄の右の基本情報: 項目名＋値を3列に並べ、入力欄と同じくらいの高さに収める */
+.zw-info {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(3, auto);
+  gap: 1px 18px;
+  margin: 0;
+  font-size: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 4px 10px;
+  background: #fafafa;
+}
+.zw-info > div { display: flex; gap: 6px; white-space: nowrap; }
+.zw-info dt { color: #666; min-width: 3.5em; }
+.zw-info dd { margin: 0; font-weight: 600; }
+.zw-field { display: flex; flex-direction: column; font-size: 11px; color: #555; gap: 3px; }
+.zw-input { font-size: 14px; padding: 4px 6px; border: 1px solid #bbb; border-radius: 4px; background: #fff; min-width: 0; }
+.zw-button { font-size: 14px; padding: 5px 16px; border: 1px solid #111; border-radius: 4px; background: #111; color: #fff; cursor: pointer; }
+
+.zw-kv { border-collapse: collapse; font-size: 13px; }
+.zw-kv th, .zw-kv td { border: 1px solid #ddd; padding: 3px 8px; text-align: left; vertical-align: top; }
+.zw-kv th { background: #f5f5f5; font-weight: 600; white-space: nowrap; }
+
+/* ---- 盤面（4×4。中央2×2は基本情報） ---- */
+.zw-fit {
+  display: flex;
+  flex-direction: column;
+  /* 画面の高さ − 占術切替ナビ（--zw-nav-height）− .zw-page の上下余白 */
+  min-height: calc(100vh - var(--zw-nav-height, 46px) - 16px);
+}
+.zw-board-scroll { overflow-x: auto; margin-top: 8px; flex: 1 0 auto; display: flex; }
+.zw-board {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(190px, 1fr));
+  grid-template-rows: repeat(4, minmax(118px, 1fr));
+  /* 幅は枠いっぱい（最小760px、狭い画面は横スクロール）。高さは .zw-board-scroll に合わせて伸びる（align-items: stretch）。
+     低い画面では最小高さを保つ */
+  flex: 1 1 0;
+  min-height: 480px;
+  border: 1px solid #333;
+  min-width: 760px;
+  position: relative; /* 三方四正の線（.zw-lines）の基準 */
+}
+.zw-cell {
+  border: 1px solid #999;
+  padding: 3px 5px;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  box-sizing: border-box;
+  min-width: 0;
+}
+.zw-ming { background: #fbfaf2; }
+.zw-cell { cursor: pointer; }
+.zw-cell:focus-visible { outline: 2px solid #555; outline-offset: -2px; }
+/* 三方四正: 選択宮＝薄いピンク、対冲宮＝薄い青、三合宮2つ＝薄い黄色（命宮の背景より優先） */
+.zw-cell.zw-sel { background: #fde4ec; }
+.zw-cell.zw-opp { background: #dcebfb; }
+.zw-cell.zw-trine { background: #fff5c2; }
+.zw-lines { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+/* 対冲線（選択宮→対冲宮）＝赤、三合線（三合3宮の三角形）＝青。個別に調整できるよう class を分ける */
+.zw-line-opposite { stroke: #d32f2f; stroke-width: 1.6; stroke-opacity: 0.85; }
+.zw-line-trine { stroke: #1e5fbf; stroke-width: 1.4; stroke-opacity: 0.8; }
+.zw-center { border: 1px solid #999; }
+
+.zw-stars { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 1px 6px; }
+.zw-subs { margin-top: 2px; }
+.zw-star { white-space: nowrap; font-size: 13px; line-height: 1.45; }
+.zw-main { font-weight: 700; }
+/* 旺衰（§20）: 星名より小さく、太字にせず、四化より控えめに */
+.zw-strength { font-size: 11px; font-weight: 400; color: #555; margin-left: 2px; }
+/* 力量（§22）: 旺衰の後ろに数値だけ。旺衰と同じく控えめに（盤面の大きさを変えない） */
+.zw-power { font-size: 10px; font-weight: 400; color: #8a5a00; margin-left: 2px; }
+.zw-hua { font-size: 12px; font-weight: 600; border: 1px solid #333; border-radius: 3px; padding: 0 3px; margin-left: 3px; background: #fff; }
+
+.zw-foot { margin-top: auto; padding-top: 2px; border-top: 1px dashed #ccc; }
+.zw-name { font-size: 13px; font-weight: 700; display: flex; align-items: baseline; gap: 6px; }
+.zw-branch { margin-left: auto; font-size: 15px; }
+.zw-pidx { font-size: 11px; font-weight: 400; color: #8a5a00; white-space: nowrap; }
+.zw-shen { font-size: 11px; font-weight: 600; color: #fff; background: #333; border-radius: 3px; padding: 0 4px; }
+.zw-age { font-size: 11px; color: #444; line-height: 1.35; }
+.zw-xiao { color: #777; word-break: normal; line-break: strict; }
+
+/* ---- 象意確認（開発用）: 宮クリック時の検索結果を短く表示 ---- */
+.zw-mp { font-size: 12px; max-width: 1168px; }
+.zw-mp-shen { margin-left: 8px; vertical-align: middle; }
+.zw-mp-h3 { font-size: 13px; margin: 10px 0 3px; }
+.zw-mp-list { list-style: none; margin: 0; padding: 0 0 0 10px; }
+.zw-mp-item { line-height: 1.55; }
+.zw-mp-src { color: #888; font-size: 11px; margin-left: 2px; }
+.zw-mp-tag { font-size: 10px; border: 1px solid #bbb; border-radius: 3px; padding: 0 3px; margin-left: 4px; color: #666; }
+.zw-mp-empty { color: #999; padding-left: 10px; }
+.zw-mp-more { padding-left: 10px; }
+.zw-mp-more > summary { cursor: pointer; color: #666; font-size: 11px; }
+.zw-mp-star { margin: 4px 0 8px; padding-left: 4px; border-left: 2px solid #eee; }
+.zw-mp-starname { font-size: 13px; }
+.zw-mp-sub { color: #555; margin-top: 2px; }
+.zw-mp-combo { margin-bottom: 4px; }
+.zw-mp-pair { font-weight: 600; }
+.zw-mp-sanfang td, .zw-mp-sanfang th { font-size: 12px; }
+.zw-mp-review { margin-top: 8px; color: #a33; }
+.zw-mp-foot { margin-top: 6px; color: #888; font-size: 11px; }
+
+/* ---- 資料ベース解釈（AI を使わない宮別解釈） ---- */
+.zw-interp { font-size: 13px; max-width: 1168px; }
+.zw-levels { display: flex; gap: 4px; margin: 6px 0; }
+.zw-level { font-size: 12px; padding: 2px 10px; border: 1px solid #999; border-radius: 4px; background: #fff; cursor: pointer; }
+.zw-level.is-active { background: #111; color: #fff; border-color: #111; }
+.zw-interp-sec { margin: 6px 0 10px; }
+.zw-interp-theme { font-size: 13px; margin: 8px 0 2px; color: #333; }
+.zw-interp-text { font-size: 14px; line-height: 1.85; margin: 0; }
+.zw-interp-note { margin-top: 6px; }
+
+/* ---- 星の力量・運命指数（§22） ---- */
+.zw-power-panel { font-size: 12px; max-width: 1168px; }
+.zw-power-table td, .zw-power-table th { font-size: 12px; padding: 2px 8px; }
+.zw-power-table td:nth-child(n + 2) { text-align: right; }
+.zw-power-sum { margin: 4px 0; }
+
+/* ---- 格局（§23.4） ---- */
+.zw-pattern { font-size: 13px; max-width: 1168px; }
+.zw-pattern-item { margin: 6px 0 10px; padding-left: 6px; border-left: 3px solid #ddd; }
+.zw-pattern-name { font-size: 14px; font-weight: 700; display: flex; align-items: baseline; gap: 8px; }
+.zw-pattern-status { font-size: 11px; font-weight: 600; border: 1px solid #b08a00; color: #8a5a00; border-radius: 3px; padding: 0 4px; }
+.zw-pattern-status.is-ok { border-color: #333; color: #fff; background: #333; }
+.zw-pattern-warn { color: #a33; font-size: 12px; margin: 2px 0 2px 10px; }
+.zw-pattern-issue { color: #8a5a00; }
+.zw-pattern-review { margin-top: 8px; }
+.zw-pattern-table td, .zw-pattern-table th { font-size: 11px; padding: 2px 6px; }
+.zw-pattern-table tr.is-ok { background: #f3f7f0; }
+.zw-pattern-checks { min-width: 420px; line-height: 1.5; }
+
+/* ---- 応用編解釈（§24） ---- */
+.zw-advanced-head { display: flex; gap: 4px 18px; flex-wrap: wrap; margin: 4px 0 8px; font-size: 13px; }
+.zw-advanced-head > div { display: flex; gap: 6px; }
+.zw-advanced-head dt { color: #666; }
+.zw-advanced-head dd { margin: 0; font-weight: 600; }
+.zw-advanced-p { margin: 0 0 8px; }
+.zw-pattern-affected { margin: 2px 0 2px 10px; }
+.zw-pattern-at { font-size: 12px; color: #555; margin: 2px 0 4px; }
+.zw-pattern-meaning { margin: 4px 0 4px 2px; }
+.zw-pattern-k { font-size: 11px; font-weight: 700; color: #666; margin-bottom: 1px; }
+.zw-pattern-text { margin: 0 0 3px; line-height: 1.65; }
+.zw-pattern-meaning .zw-pattern-warn { margin-left: 0; }
+.zw-print-button { background: #fff; color: #111; margin-left: 6px; }
+
+/* ---- 行運（§27） ---- */
+.zw-fortune { font-size: 13px; max-width: 1168px; }
+.zw-fortune-date { flex-direction: row; align-items: center; gap: 8px; margin: 4px 0 8px; font-size: 13px; color: #333; }
+.zw-fortune-list { margin: 0; display: grid; gap: 4px; }
+.zw-fortune-list > div { display: flex; gap: 10px; }
+.zw-fortune-list dt { min-width: 5em; color: #555; }
+.zw-fortune-list dd { margin: 0; font-weight: 600; }
+.zw-fortune-hua { display: flex; flex-wrap: wrap; gap: 2px 14px; }
+.zw-fortune-at { font-weight: 400; color: #666; font-size: 12px; }
+.zw-fortune-patterns { margin-top: 8px; }
+
+/* ---- 選択中の大限・小限（§28）。色は変数で一元管理。色だけに頼らず「大」「小」の字を付ける ---- */
+.zw-page {
+  --zw-major: #1d5fc4;
+  --zw-major-bg: #eaf1fc;
+  --zw-minor: #c75b00;
+  --zw-minor-bg: #fdf0e3;
+}
+.zw-fhua { font-size: 10px; font-weight: 700; border: 1px solid currentColor; border-radius: 3px; padding: 0 2px; margin-left: 2px; line-height: 1.2; white-space: nowrap; }
+.zw-fhua-major { color: var(--zw-major); background: var(--zw-major-bg); }
+.zw-fhua-minor { color: var(--zw-minor); background: var(--zw-minor-bg); }
+/* 選択中の大限の宮は内側の太い青枠、小限の宮は内側の橙の破線（三方四正の背景色とは別） */
+.zw-cell.zw-major-sel { box-shadow: inset 0 0 0 2px var(--zw-major); }
+.zw-cell.zw-minor-sel { outline: 2px dashed var(--zw-minor); outline-offset: -5px; }
+.zw-limit-btn { font: inherit; color: inherit; background: none; border: none; padding: 0; cursor: pointer; text-decoration: underline dotted; text-underline-offset: 2px; }
+.zw-limit-btn:hover { color: #000; }
+.zw-limit-major.is-active { color: var(--zw-major); font-weight: 700; text-decoration: none; }
+.zw-limit-minor.is-active { color: var(--zw-minor); font-weight: 700; text-decoration: none; }
+.zw-limit-tag { font-size: 10px; font-weight: 700; margin-left: 4px; }
+.zw-limit-tag-major { color: var(--zw-major); }
+.zw-limit-tag-minor { color: var(--zw-minor); }
+.zw-fortune-controls { display: flex; align-items: center; gap: 10px; }
+.zw-fortune-minor { font-size: 13px; padding: 1px 4px; }
+.zw-fortune-legend { font-weight: 400; }
+
+/* ---- 盤面の読みやすさ調整（§28.5）: 縦幅を約27%増やし、主情報の文字を一段大きく ---- */
+.zw-board {
+  grid-template-rows: repeat(4, minmax(150px, 1fr));
+  min-height: 680px;
+}
+.zw-cell { padding: 4px 6px; }
+.zw-star { font-size: 14.5px; line-height: 1.5; }
+.zw-strength { font-size: 12px; color: #444; }
+.zw-power { font-size: 11.5px; font-weight: 500; }
+.zw-fhua { font-size: 10.5px; }
+.zw-name { font-size: 14.5px; }
+.zw-branch { font-size: 16px; }
+.zw-pidx { font-size: 12.5px; }
+.zw-shen { font-size: 11.5px; }
+/* 大限の年齢（押せるボタン）。選択中は青系の背景と「選択中」 */
+.zw-limit-row { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 8px; margin-top: 3px; }
+.zw-limit-btn.zw-limit-major {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  padding: 2px 6px;
+  margin-left: -6px;
+  border-radius: 4px;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+.zw-limit-btn.zw-limit-major:hover { background: #f0f4fb; border-color: #c9d6ee; }
+.zw-limit-btn.zw-limit-major.is-active { color: var(--zw-major); background: var(--zw-major-bg); border-color: var(--zw-major); }
+.zw-limit-btn.zw-limit-major:focus-visible { outline: 2px solid var(--zw-major); outline-offset: 1px; }
+/* 選択中の小限の年齢（四化の「小禄」などの枠つきバッジとは別の、枠なしのラベル） */
+.zw-minor-label { font-size: 12px; font-weight: 600; color: var(--zw-minor); background: var(--zw-minor-bg); border-radius: 10px; padding: 1px 8px; white-space: nowrap; }
+
+/* ---- 行運の星曜象意（§29）。大限・小限の色は §28 の変数 ---- */
+.zw-fstar-block { margin: 6px 0 12px; padding-left: 10px; border-left: 3px solid var(--zw-major); }
+.zw-fstar-block.is-minor { border-left-color: var(--zw-minor); }
+.zw-fstar-title { margin: 0 0 4px; font-size: 14px; }
+.zw-fstar-block.is-major .zw-fstar-title { color: var(--zw-major); }
+.zw-fstar-block.is-minor .zw-fstar-title { color: var(--zw-minor); }
+.zw-fstar-palace { margin-left: 10px; color: #222; }
+.zw-fstar-meta { font-size: 12px; color: #555; margin-bottom: 6px; }
+.zw-fstar-star { margin: 4px 0 6px; }
+.zw-fstar-name { font-weight: 600; font-size: 13px; }
+.zw-fstar-cond { display: inline-block; margin-right: 6px; padding: 0 5px; border: 1px solid #bbb; border-radius: 3px; font-size: 11px; color: #555; }
+.zw-fstar-sub { margin: 8px 0 2px; font-size: 12.5px; color: #444; font-weight: 600; }
+.zw-fstar-hua { margin-top: 6px; }
+/* 太歳との関係（§31） */
+.zw-fstar-block.is-taisei { border-left-color: #6b5b95; }
+.zw-fstar-block.is-taisei .zw-fstar-title { color: #6b5b95; }
+.zw-taisei-sf { font-weight: 400; margin-top: 2px; }
+
+/* 流年指数（§34）。吉凶の色分けはしない */
+.zw-fortune-idx { margin-left: 10px; font-weight: 600; color: #333; }
+.zw-yearindex { margin-top: 10px; }
+.zw-yearindex-svg { width: 100%; max-width: 760px; height: auto; display: block; }
+.zw-yi-axis { stroke: #999; stroke-width: 1; }
+.zw-yi-label { font-size: 10px; fill: #666; }
+.zw-yi-line { fill: none; stroke: #444; stroke-width: 1.5; }
+.zw-yi-sel { stroke: var(--zw-minor); stroke-width: 1.5; stroke-dasharray: 3 2; }
+.zw-yi-dot { fill: var(--zw-minor); }
+.zw-yi-hit { fill: transparent; cursor: pointer; }
+.zw-yi-hit:hover { fill: rgba(0, 0, 0, 0.04); }
+.zw-yi-note { font-size: 12px; color: #555; margin-top: 2px; }
+
+/* ---- 新規諸星（§37）: 既存の主星・副星の表示は変えず、その下に一段ずつ小さく ---- */
+/* 雑曜（乙級）: 副星より小さく、色を一段落とす */
+.zw-minors { margin-top: 1px; gap: 0 5px; }
+.zw-mstar { white-space: nowrap; font-size: 11.5px; line-height: 1.35; color: #4a4a4a; }
+/* 十二神等（丙級）: 最下段にさらに小さく。博士十二神・長生十二星は右寄せで位置を固定 */
+.zw-cycles { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 5px; margin-top: 2px; }
+.zw-cstar { white-space: nowrap; font-size: 10.5px; line-height: 1.3; color: #777; }
+.zw-cycle-right { margin-left: auto; display: inline-flex; gap: 0 5px; }
+/* 中央欄: 命主・身主 */
+.zw-center { display: flex; align-items: flex-start; justify-content: flex-start; padding: 6px 8px; box-sizing: border-box; }
+.zw-masters { margin: 0; display: flex; gap: 14px; font-size: 13px; color: #333; }
+.zw-masters > div { display: flex; gap: 4px; }
+.zw-masters dt { font-weight: 700; }
+.zw-masters dd { margin: 0; }
+/* 諸星の基本象意（宮クリック） */
+.zw-minor-panel { max-width: 1168px; }
+.zw-minor-list { list-style: none; margin: 4px 0; padding: 0; }
+.zw-minor-item { display: grid; grid-template-columns: 4.5em 9em 1fr; gap: 8px; font-size: 13px; padding: 3px 0; border-bottom: 1px dotted #ddd; }
+.zw-minor-name { font-weight: 700; }
+.zw-minor-fam { color: #666; font-size: 12px; }
+.zw-minor-note { font-size: 11.5px; color: #777; margin: 4px 0 0; }

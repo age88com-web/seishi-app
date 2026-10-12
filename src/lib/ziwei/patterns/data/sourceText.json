@@ -1,0 +1,1313 @@
+{
+ "_note": "docs/ziwei-patterns-candidate.json から生成（資料の文のまま）。格局の条件判定は data.ts。全書52格は referenceOnly（判定しない） ／ 2026-10-02: 条件・象意の原文（conditionText・meaningText・meaningConditions.text）はアプリ用データから除いた。表示する象意は data/meanings.json の独自文章（§35）。出典は sourceRef。",
+ "patterns": [
+  {
+   "id": "K2-01",
+   "number": 1,
+   "canonicalName": "紫府同宮格",
+   "sourceName": "紫府同宮格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 2,
+    "heading": "格局１      紫府同宮格"
+   },
+   "meaningConditions": [
+    {
+     "note": "「会する」が同宮か加会か、4星すべてかいずれかかは未記載（needs_review）。大吉格は格局名でなく評価の語"
+    },
+    {
+     "note": "「吉星」の範囲が基礎２に定義されていない（入門 p.15 の吉星・凶星区分を使うかは未確定）"
+    }
+   ],
+   "classicalCounterpart": null
+  },
+  {
+   "id": "K2-02",
+   "number": 2,
+   "canonicalName": "府相朝垣格",
+   "sourceName": "府相朝垣格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 3,
+    "heading": "格局２      府相朝垣格"
+   },
+   "meaningConditions": [],
+   "classicalCounterpart": "全書 定貴局「府相朝垣」"
+  },
+  {
+   "id": "K2-03",
+   "number": 3,
+   "canonicalName": "紫府朝垣格",
+   "sourceName": "紫府朝垣格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 4,
+    "heading": "格局３     紫府朝垣格"
+   },
+   "meaningConditions": [],
+   "classicalCounterpart": "全書 定貴局「紫府朝垣」"
+  },
+  {
+   "id": "K2-04",
+   "number": 4,
+   "canonicalName": "明珠出海格",
+   "sourceName": "明珠出海格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 5,
+    "heading": "格局４      明珠出海格"
+   },
+   "meaningConditions": [
+    {
+     "note": "「煞星」の範囲が基礎２に定義されていない（S27「擎羊、陀羅、などの煞星」、S22 火星・鈴星・地空星・地劫星、全書「四煞」の記述だけ）"
+    }
+   ],
+   "classicalCounterpart": "全書 定貴局「明珠出海」"
+  },
+  {
+   "id": "K2-05",
+   "number": 5,
+   "canonicalName": "日月並明格",
+   "sourceName": "日月並明格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 6,
+    "heading": "格局５       日月並明格"
+   },
+   "meaningConditions": [],
+   "classicalCounterpart": "全書 定貴局「日月並明」"
+  },
+  {
+   "id": "K2-06",
+   "number": 6,
+   "canonicalName": "日照雷門格",
+   "sourceName": "日照雷門格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 7,
+    "heading": "格局６     日照雷門格"
+   },
+   "meaningConditions": [
+    {
+     "note": "象意の条件（性別・生年干）"
+    }
+   ],
+   "classicalCounterpart": null
+  },
+  {
+   "id": "K2-07",
+   "number": 7,
+   "canonicalName": "月朗天門格",
+   "sourceName": "月朗天門格",
+   "aliases": [
+    {
+     "name": "月落亥宮",
+     "source": "全書 定貴局（基礎２ S34）「月在亥守命是也、又名月朗天門。」"
+    }
+   ],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 8,
+    "heading": "格局７     月朗天門格"
+   },
+   "meaningConditions": [
+    {
+     "note": "「吉星」の範囲が基礎２に定義されていない（入門 p.15 の吉星・凶星区分を使うかは未確定）"
+    }
+   ],
+   "classicalCounterpart": "全書 定貴局「月落亥宮」（又名月朗天門）"
+  },
+  {
+   "id": "K2-08",
+   "number": 8,
+   "canonicalName": "巨機同臨格",
+   "sourceName": "巨機同臨格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 9,
+    "heading": "格局８      巨機同臨格"
+   },
+   "meaningConditions": [
+    {
+     "note": "「吉星」の範囲が基礎２に定義されていない（入門 p.15 の吉星・凶星区分を使うかは未確定）"
+    }
+   ],
+   "classicalCounterpart": "全書 定貴局「巨機居卯」は条件が違う別名称（辛乙生人・卯宮・昌曲左右）。同一とは書かれていない"
+  },
+  {
+   "id": "K2-09",
+   "number": 9,
+   "canonicalName": "機月同梁格",
+   "sourceName": "機月同梁格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 10,
+    "heading": "格局９      機月同梁格"
+   },
+   "meaningConditions": [
+    {
+     "note": "「吉星」の範囲が基礎２に定義されていない（入門 p.15 の吉星・凶星区分を使うかは未確定）"
+    }
+   ],
+   "classicalCounterpart": null
+  },
+  {
+   "id": "K2-10",
+   "number": 10,
+   "canonicalName": "石中隠玉格",
+   "sourceName": "石中隠玉格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 11,
+    "heading": "格局１０       石中隠玉格"
+   },
+   "meaningConditions": [],
+   "classicalCounterpart": null
+  },
+  {
+   "id": "K2-11",
+   "number": 11,
+   "canonicalName": "巨日同宮格",
+   "sourceName": "巨日同宮格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 12,
+    "heading": "格局１１      巨日同宮格"
+   },
+   "meaningConditions": [
+    {
+     "note": "「…三台八座が加会するを喜ぶ」は象意。三台・八座は34星外"
+    }
+   ],
+   "classicalCounterpart": null
+  },
+  {
+   "id": "K2-12",
+   "number": 12,
+   "canonicalName": "月生滄海格",
+   "sourceName": "月生滄海格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 13,
+    "heading": "格局１２       月生滄海格"
+   },
+   "meaningConditions": [],
+   "classicalCounterpart": "全書 定貴局「月生滄海」"
+  },
+  {
+   "id": "K2-13",
+   "number": 13,
+   "canonicalName": "日月照壁格",
+   "sourceName": "日月照壁格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 14,
+    "heading": "格局１３       日月照壁格"
+   },
+   "meaningConditions": [],
+   "classicalCounterpart": "全書 定富局「日月照壁」"
+  },
+  {
+   "id": "K2-14",
+   "number": 14,
+   "canonicalName": "貪武同行格",
+   "sourceName": "貧武同行格",
+   "aliases": [
+    {
+     "name": "貪武同行",
+     "source": "S15 図十五・S38 命盤の印字"
+    }
+   ],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 15,
+    "heading": "格局１４       貧武同行格"
+   },
+   "meaningConditions": [],
+   "classicalCounterpart": null
+  },
+  {
+   "id": "K2-15",
+   "number": 15,
+   "canonicalName": "日月夾命格",
+   "sourceName": "日月夾命格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 16,
+    "heading": "格局１５       日月夾命格"
+   },
+   "meaningConditions": [
+    {
+     "note": "「吉星」の範囲が基礎２に定義されていない（入門 p.15 の吉星・凶星区分を使うかは未確定）"
+    },
+    {
+     "note": "「…と加会すれば財官双美」は象意の条件"
+    }
+   ],
+   "classicalCounterpart": "全書 定貴局「日月夾命」"
+  },
+  {
+   "id": "K2-16",
+   "number": 16,
+   "canonicalName": "英星入廟格",
+   "sourceName": "英星入廟格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 17,
+    "heading": "格局１６       英星入廟格"
+   },
+   "meaningConditions": [
+    {
+     "note": "「吉星」の範囲が基礎２に定義されていない（入門 p.15 の吉星・凶星区分を使うかは未確定）／「煞星」の範囲が基礎２に定義されていない（S27「擎羊、陀羅、などの煞星」、S22 火星・鈴星・地空星・地劫星、全書「四煞」の記述だけ）"
+    }
+   ],
+   "classicalCounterpart": null
+  },
+  {
+   "id": "K2-17",
+   "number": 17,
+   "canonicalName": "七殺朝斗格",
+   "sourceName": "七殺朝斗格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 18,
+    "heading": "格局１７       七殺朝斗格"
+   },
+   "meaningConditions": [],
+   "classicalCounterpart": "全書 定貴局「七殺朝斗」"
+  },
+  {
+   "id": "K2-18",
+   "number": 18,
+   "canonicalName": "馬頭帯箭格",
+   "sourceName": "馬頭帯箭格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 19,
+    "heading": "格局１８       馬頭帯箭格"
+   },
+   "meaningConditions": [],
+   "classicalCounterpart": "全書 定貴局「馬頭帯剣」"
+  },
+  {
+   "id": "K2-19",
+   "number": 19,
+   "canonicalName": "三奇嘉會格",
+   "sourceName": "三奇嘉會格",
+   "aliases": [
+    {
+     "name": "三奇加会",
+     "source": "S38 命盤の印字"
+    },
+    {
+     "name": "三奇嘉会",
+     "source": "S38 本文"
+    }
+   ],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 20,
+    "heading": "格局１９       三奇嘉會格"
+   },
+   "meaningConditions": [
+    {
+     "note": "「…会わなければ財官双美」。象意の条件"
+    }
+   ],
+   "classicalCounterpart": "全書 定貴局「科権禄拱（命身宮三合科權祿來會。）」は内容が近いが、同一とは書かれていない"
+  },
+  {
+   "id": "K2-20",
+   "number": 20,
+   "canonicalName": "雄宿朝垣格",
+   "sourceName": "雄宿朝垣格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 21,
+    "heading": "格局２０       雄宿朝垣格"
+   },
+   "meaningConditions": [
+    {
+     "note": "象意の条件"
+    }
+   ],
+   "classicalCounterpart": null
+  },
+  {
+   "id": "K2-21",
+   "number": 21,
+   "canonicalName": "禄合鴛鴦格",
+   "sourceName": "禄合鴛鴦格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 22,
+    "heading": "格局２１       禄合鴛鴦格"
+   },
+   "meaningConditions": [
+    {
+     "note": "「…意外な事で損失」。象意（破格とは書いていない）"
+    }
+   ],
+   "classicalCounterpart": "全書 定貴局「鴛鴦禄會（天祿化祿臨身命是也。）」は内容が近いが名称が違い、同一とは書かれていない"
+  },
+  {
+   "id": "K2-22",
+   "number": 22,
+   "canonicalName": "双禄朝垣格",
+   "sourceName": "双禄朝垣格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 23,
+    "heading": "格局２２          双禄朝垣格"
+   },
+   "meaningConditions": [
+    {
+     "note": "象意の条件"
+    },
+    {
+     "note": "桃花の星は未定義"
+    }
+   ],
+   "classicalCounterpart": null
+  },
+  {
+   "id": "K2-23",
+   "number": 23,
+   "canonicalName": "禄馬交馳格",
+   "sourceName": "禄馬交馳格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 24,
+    "heading": "格局２３          禄馬交馳格"
+   },
+   "meaningConditions": [
+    {
+     "note": "「…同宮すると大きな損失や破産の恐れ」。象意（破格とは書いていない）"
+    },
+    {
+     "note": "象意"
+    }
+   ],
+   "classicalCounterpart": "全書 定貴局「禄馬交馳」"
+  },
+  {
+   "id": "K2-24",
+   "number": 24,
+   "canonicalName": "坐貴向貴格",
+   "sourceName": "坐貴向貴格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 25,
+    "heading": "格局２４      坐貴向貴格"
+   },
+   "meaningConditions": [
+    {
+     "note": "象意の条件（性別）"
+    }
+   ],
+   "classicalCounterpart": "全書 定貴局「坐貴向貴」"
+  },
+  {
+   "id": "K2-25",
+   "number": 25,
+   "canonicalName": "君臣慶會格",
+   "sourceName": "君臣慶會格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 26,
+    "heading": "格局２５       君臣慶會格"
+   },
+   "meaningConditions": [],
+   "classicalCounterpart": "全書 定貴局「君臣慶會」"
+  },
+  {
+   "id": "K2-26",
+   "number": 26,
+   "canonicalName": "日月同臨格",
+   "sourceName": "日月同臨格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 27,
+    "heading": "格局２６      日月同臨格"
+   },
+   "meaningConditions": [
+    {
+     "note": "象意"
+    }
+   ],
+   "classicalCounterpart": "全書 定貴局「日月同臨」"
+  },
+  {
+   "id": "K2-27",
+   "number": 27,
+   "canonicalName": "日月蔵輝格",
+   "sourceName": "日月蔵輝格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 28,
+    "heading": "格局２７         日月蔵輝格"
+   },
+   "meaningConditions": [
+    {
+     "note": "象意"
+    }
+   ],
+   "classicalCounterpart": "全書 定貧賤局「日月藏輝」"
+  },
+  {
+   "id": "K2-28",
+   "number": 28,
+   "canonicalName": "極響離命格",
+   "sourceName": "極響離命格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 29,
+    "heading": "格局２８       極響離命格"
+   },
+   "meaningConditions": [
+    {
+     "note": "「煞星」の範囲が基礎２に定義されていない（S27「擎羊、陀羅、などの煞星」、S22 火星・鈴星・地空星・地劫星、全書「四煞」の記述だけ）"
+    }
+   ],
+   "classicalCounterpart": null
+  },
+  {
+   "id": "K2-29",
+   "number": 29,
+   "canonicalName": "化煞為権格",
+   "sourceName": "化煞為権格",
+   "aliases": [
+    {
+     "name": "化殺為権",
+     "source": "S30 本文"
+    }
+   ],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 30,
+    "heading": "格局２９       化煞為権格"
+   },
+   "meaningConditions": [],
+   "classicalCounterpart": null
+  },
+  {
+   "id": "K2-30",
+   "number": 30,
+   "canonicalName": "壽星入廟格",
+   "sourceName": "壽星入廟格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 31,
+    "heading": "格局３０       壽星入廟格"
+   },
+   "meaningConditions": [
+    {
+     "note": "「吉星」の範囲が基礎２に定義されていない（入門 p.15 の吉星・凶星区分を使うかは未確定）"
+    }
+   ],
+   "classicalCounterpart": null
+  },
+  {
+   "id": "K2-31",
+   "number": 31,
+   "canonicalName": "桃花犯主格",
+   "sourceName": "桃花犯主格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 32,
+    "heading": "格局３１        桃花犯主格"
+   },
+   "meaningConditions": [],
+   "classicalCounterpart": null
+  },
+  {
+   "id": "K2-32",
+   "number": 32,
+   "canonicalName": "羊陀夾忌格",
+   "sourceName": "羊陀夾忌格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 33,
+    "heading": "格局３２、３３ 羊陀夾忌格"
+   },
+   "meaningConditions": [
+    {
+     "note": "流年の記述（対象外）"
+    }
+   ],
+   "classicalCounterpart": null
+  },
+  {
+   "id": "K2-33",
+   "number": 33,
+   "canonicalName": "刑忌夾印格",
+   "sourceName": "刑忌夾印格",
+   "aliases": [],
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 33,
+    "heading": "格局３２、３３ 刑忌夾印格"
+   },
+   "meaningConditions": [],
+   "classicalCounterpart": null
+  }
+ ],
+ "classicalPatterns": [
+  {
+   "id": "ZS-01",
+   "category": "定富局",
+   "sourceName": "財蔭夾印",
+   "text": "相守命、武梁來夾是也。田宅宮亦然。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定富局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-02",
+   "category": "定富局",
+   "sourceName": "日月夾財",
+   "text": "武守命、日月來夾是也。財帛宮亦然。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定富局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-03",
+   "category": "定富局",
+   "sourceName": "財禄夾馬",
+   "text": "馬守命、武禄來夾是也。逢生旺尤妙。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定富局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-04",
+   "category": "定富局",
+   "sourceName": "蔭印拱身",
+   "text": "身臨田宅、梁相拱沖是也。勿坐空亡。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定富局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-05",
+   "category": "定富局",
+   "sourceName": "日月照壁",
+   "text": "日月臨田宅宮是也。喜居墓庫。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定富局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": "K2-13",
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-06",
+   "category": "定富局",
+   "sourceName": "金燦光輝",
+   "text": "太陽單守命在午宮是也。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定富局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-07",
+   "category": "定貴局",
+   "sourceName": "日月夾命",
+   "text": "不坐空亡、遇逢本宮有吉星是也。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": "K2-15",
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-08",
+   "category": "定貴局",
+   "sourceName": "日出扶桑",
+   "text": "日在卯守命是也、守官禄宮亦然。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-09",
+   "category": "定貴局",
+   "sourceName": "月落亥宮",
+   "text": "月在亥守命是也、又名月朗天門。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": "K2-07",
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-10",
+   "category": "定貴局",
+   "sourceName": "月生滄海",
+   "text": "月在子、守田宅是也。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": "K2-12",
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-11",
+   "category": "定貴局",
+   "sourceName": "輔弼拱主",
+   "text": "紫微守命、二星來拱是也。夾之亦然。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-12",
+   "category": "定貴局",
+   "sourceName": "君臣慶會",
+   "text": "紫微左右同守命是也。更會相武陰、妙上。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": "K2-25",
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-13",
+   "category": "定貴局",
+   "sourceName": "財印夾禄",
+   "text": "禄守命、梁相來夾是也。入財宮亦然。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-14",
+   "category": "定貴局",
+   "sourceName": "鴛鴦禄會",
+   "text": "天禄化禄臨身命是也。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-15",
+   "category": "定貴局",
+   "sourceName": "禄馬交馳",
+   "text": "二星臨身命、更得吉化同垣。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": "K2-23",
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-16",
+   "category": "定貴局",
+   "sourceName": "禄馬佩印",
+   "text": "馬前有禄、印星同宮是也。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-17",
+   "category": "定貴局",
+   "sourceName": "坐貴向貴",
+   "text": "謂魁鉞在命、身迭相坐拱是也。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": "K2-24",
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-18",
+   "category": "定貴局",
+   "sourceName": "馬頭帯剣",
+   "text": "謂馬有刃是也、不是居午格。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": "K2-18",
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-19",
+   "category": "定貴局",
+   "sourceName": "七殺朝斗",
+   "text": "寅申子午安命值七殺。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": "K2-17",
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-20",
+   "category": "定貴局",
+   "sourceName": "日月並明",
+   "text": "陰陽日月同宮是也。日命日巳月酉來朝。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": "K2-05",
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-21",
+   "category": "定貴局",
+   "sourceName": "明珠出海",
+   "text": "日月同居廟旺會命垣。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": "K2-04",
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-22",
+   "category": "定貴局",
+   "sourceName": "日月同臨",
+   "text": "日月在丑未守命。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": "K2-26",
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-23",
+   "category": "定貴局",
+   "sourceName": "刑囚夾印",
+   "text": "天刑廉貞同臨身命、主武勇職。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-24",
+   "category": "定貴局",
+   "sourceName": "科権禄拱",
+   "text": "命身宮三合科権禄來會。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-25",
+   "category": "定貴局",
+   "sourceName": "貪火相逢",
+   "text": "謂二星守命同居廟旺是也。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-26",
+   "category": "定貴局",
+   "sourceName": "武曲守垣",
+   "text": "武守命卯宮是也。餘不是。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-27",
+   "category": "定貴局",
+   "sourceName": "府相朝垣",
+   "text": "命宮無主星府相三合會照。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": "K2-02",
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-28",
+   "category": "定貴局",
+   "sourceName": "紫府朝垣",
+   "text": "寅安命午戌紫府來朝。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": "K2-03",
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-29",
+   "category": "定貴局",
+   "sourceName": "文星暗拱",
+   "text": "命宮有吉、遷移官禄財帛二方科星。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-30",
+   "category": "定貴局",
+   "sourceName": "権禄生逢",
+   "text": "二星守命廟旺、陥不是。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-31",
+   "category": "定貴局",
+   "sourceName": "擎羊入廟",
+   "text": "辰戌丑未守命遇吉是也。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-32",
+   "category": "定貴局",
+   "sourceName": "巨機居卯",
+   "text": "辛乙生人、卯宮二星守命遇昌曲左右。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-33",
+   "category": "定貴局",
+   "sourceName": "明禄暗禄",
+   "text": "甲生人安命亥宮、科星守命禄居寅。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-34",
+   "category": "定貴局",
+   "sourceName": "科明禄暗",
+   "text": "因命寅與亥暗合同明禄暗禄。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-35",
+   "category": "定貴局",
+   "sourceName": "金輿扶駕",
+   "text": "紫微守命、前後有日月來夾是也。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-36",
+   "category": "定貴局",
+   "sourceName": "火星暗宮",
+   "text": "未詳。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 34,
+    "heading": "紫微斗数全書格局1（定貴局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-37",
+   "category": "定貧賤局",
+   "sourceName": "生不逢時",
+   "text": "命坐空亡、逢廉貞是也。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 35,
+    "heading": "紫微斗数全書格局2（定貧賤局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-38",
+   "category": "定貧賤局",
+   "sourceName": "禄逢兩煞",
+   "text": "禄坐空亡、又逢空劫煞星是也。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 35,
+    "heading": "紫微斗数全書格局2（定貧賤局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-39",
+   "category": "定貧賤局",
+   "sourceName": "馬落空亡",
+   "text": "馬既落亡、雖禄沖會無用、主奔波。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 35,
+    "heading": "紫微斗数全書格局2（定貧賤局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-40",
+   "category": "定貧賤局",
+   "sourceName": "日月藏輝",
+   "text": "日月反背、又逢巨暗是也。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 35,
+    "heading": "紫微斗数全書格局2（定貧賤局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": "K2-27",
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-41",
+   "category": "定貧賤局",
+   "sourceName": "財與囚仇",
+   "text": "武廉同守身命是也。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 35,
+    "heading": "紫微斗数全書格局2（定貧賤局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-42",
+   "category": "定貧賤局",
+   "sourceName": "一生孤貧",
+   "text": "謂破守命、星陥地是也。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 35,
+    "heading": "紫微斗数全書格局2（定貧賤局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-43",
+   "category": "定貧賤局",
+   "sourceName": "君子在野",
+   "text": "謂四煞守身命、而言臨陥地是也。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 35,
+    "heading": "紫微斗数全書格局2（定貧賤局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-44",
+   "category": "定貧賤局",
+   "sourceName": "兩重華蓋",
+   "text": "謂禄存化禄坐命、遇空劫是也。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 35,
+    "heading": "紫微斗数全書格局2（定貧賤局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-45",
+   "category": "定雑局",
+   "sourceName": "風雲際會",
+   "text": "身命雖弱、二限逢禄馬是也。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 35,
+    "heading": "紫微斗数全書格局2（定雑局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-46",
+   "category": "定雑局",
+   "sourceName": "錦上添花",
+   "text": "謂限破惡星、而行吉地是也。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 35,
+    "heading": "紫微斗数全書格局2（定雑局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-47",
+   "category": "定雑局",
+   "sourceName": "禄衰馬困",
+   "text": "限逢七殺、禄馬空亡是也。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 35,
+    "heading": "紫微斗数全書格局2（定雑局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-48",
+   "category": "定雑局",
+   "sourceName": "衣錦還郷",
+   "text": "少年不遂、四十後行墓運是也。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 35,
+    "heading": "紫微斗数全書格局2（定雑局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-49",
+   "category": "定雑局",
+   "sourceName": "歩数無依",
+   "text": "前限接後限、連綿不分是也。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 35,
+    "heading": "紫微斗数全書格局2（定雑局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-50",
+   "category": "定雑局",
+   "sourceName": "水上駕星",
+   "text": "一年好、一年不好是也。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 35,
+    "heading": "紫微斗数全書格局2（定雑局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-51",
+   "category": "定雑局",
+   "sourceName": "吉凶相伴",
+   "text": "命有主星、限吉則發、限衰不發是也。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 35,
+    "heading": "紫微斗数全書格局2（定雑局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  },
+  {
+   "id": "ZS-52",
+   "category": "定雑局",
+   "sourceName": "枯木逢春",
+   "text": "謂命衰限好是也。",
+   "sourceRef": {
+    "source": "紫微斗数基礎２",
+    "slide": 35,
+    "heading": "紫微斗数全書格局2（定雑局）",
+    "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+   },
+   "relatedMainPattern": null,
+   "referenceOnly": true
+  }
+ ]
+}

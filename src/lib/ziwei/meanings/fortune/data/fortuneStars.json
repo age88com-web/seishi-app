@@ -1,0 +1,628 @@
+{
+  "meta": {
+    "title": "大限、小限における星曜の象意",
+    "source": "紫微斗数基礎編",
+    "parallelSource": "紫微斗数入門（流年における各星曜の意味）",
+    "appliesTo": [
+      "major",
+      "minor"
+    ],
+    "starNameAliases": {
+      "貧狼星": "貪狼星",
+      "貧狼": "貪狼星",
+      "右輔星": "右弼星",
+      "敬羊星": "擎羊星",
+      "敬羊": "擎羊星",
+      "擎羊": "擎羊星",
+      "陀羅": "陀羅星",
+      "鈴星": "鈴星",
+      "火星": "火星"
+    }
+  },
+  "items": [
+    {
+      "id": "FS-紫微",
+      "heading": "紫微星",
+      "stars": [
+        "紫微星"
+      ],
+      "isGroup": false,
+      "sourceOrder": 1,
+      "lines": [
+        {
+          "id": "FS-紫微-1",
+          "text": "紫微星が巡る期間は、物事が順調に運びます。",
+          "condition": null,
+          "sourceId": "K-ST-DX-001",
+          "parallelId": "N-ST-RN-022"
+        },
+        {
+          "id": "FS-紫微-2",
+          "text": "勤め人は昇進の機会に恵まれ、収入も増えます。",
+          "condition": null,
+          "sourceId": "K-ST-DX-002",
+          "parallelId": "N-ST-RN-023"
+        },
+        {
+          "id": "FS-紫微-3",
+          "text": "事業や商売を営む人にとっては、事業を広げる好機で、勢いに乗って栄えます。",
+          "condition": null,
+          "sourceId": "K-ST-DX-003",
+          "parallelId": "N-ST-RN-024"
+        }
+      ]
+    },
+    {
+      "id": "FS-天機",
+      "heading": "天機星",
+      "stars": [
+        "天機星"
+      ],
+      "isGroup": false,
+      "sourceOrder": 2,
+      "lines": [
+        {
+          "id": "FS-天機-1",
+          "text": "天機星が巡る期間は、暮らしの環境に変動や変化が生じる時期です。",
+          "condition": null,
+          "sourceId": "K-ST-DX-004",
+          "parallelId": "N-ST-RN-025"
+        },
+        {
+          "id": "FS-天機-2",
+          "text": "巡る宮の力量が強ければ、事業の拡大や試験の合格など伸びていく時期です。頭の働きもよくなって学問や研究で成果を上げ、創作意欲も高まって評価を受けます。",
+          "condition": {
+            "kind": "palacePowerStrong",
+            "phrase": "宮の力量強ければ"
+          },
+          "sourceId": "K-ST-DX-005",
+          "parallelId": "N-ST-RN-026"
+        },
+        {
+          "id": "FS-天機-3",
+          "text": "巡る宮の力量が弱ければ、物事が思うように進まず、困難を経験します。",
+          "condition": {
+            "kind": "palacePowerWeak",
+            "phrase": "宮の力量弱ければ"
+          },
+          "sourceId": "K-ST-DX-006",
+          "parallelId": "N-ST-RN-027"
+        }
+      ]
+    },
+    {
+      "id": "FS-太陽",
+      "heading": "太陽星",
+      "stars": [
+        "太陽星"
+      ],
+      "isGroup": false,
+      "sourceOrder": 3,
+      "lines": [
+        {
+          "id": "FS-太陽-1",
+          "text": "太陽星が巡る期間は、物事が進み広がり、新しい恋も生まれます。行動力が高まり、交友の輪も広がります。",
+          "condition": null,
+          "sourceId": "K-ST-DX-007",
+          "parallelId": "N-ST-RN-028"
+        },
+        {
+          "id": "FS-太陽-2",
+          "text": "巡る宮の力量が強ければ、仕事も学業も順調で事業は伸び、名声を得ます。",
+          "condition": {
+            "kind": "palacePowerStrong",
+            "phrase": "巡る宮の力量が強ければ"
+          },
+          "sourceId": "K-ST-DX-008",
+          "parallelId": "N-ST-RN-029"
+        },
+        {
+          "id": "FS-太陽-3",
+          "text": "巡る宮の力量が弱ければ、予想外のつまずきや出費があります。",
+          "condition": {
+            "kind": "palacePowerWeak",
+            "phrase": "巡る宮の力量が弱ければ"
+          },
+          "sourceId": "K-ST-DX-009",
+          "parallelId": "N-ST-RN-030"
+        }
+      ]
+    },
+    {
+      "id": "FS-武曲",
+      "heading": "武曲星",
+      "stars": [
+        "武曲星"
+      ],
+      "isGroup": false,
+      "sourceOrder": 4,
+      "lines": [
+        {
+          "id": "FS-武曲-1",
+          "text": "武曲星が巡る期間は、昇進や財を得る一方、勢いがつきすぎての失敗もあります。",
+          "condition": null,
+          "sourceId": "K-ST-DX-010",
+          "parallelId": "N-ST-RN-031"
+        },
+        {
+          "id": "FS-武曲-2",
+          "text": "巡る宮の力量が強ければ、とくに商売をする人に吉で、大きな利益を得ます。昇進もありえます。",
+          "condition": {
+            "kind": "palacePowerStrong",
+            "phrase": "巡る宮の力量強ければ"
+          },
+          "sourceId": "K-ST-DX-011",
+          "parallelId": "N-ST-RN-032"
+        },
+        {
+          "id": "FS-武曲-3",
+          "text": "巡る宮の力量が弱ければ、事故やけが、病気に注意が必要です。",
+          "condition": {
+            "kind": "palacePowerWeak",
+            "phrase": "巡る宮の力量弱ければ"
+          },
+          "sourceId": "K-ST-DX-012",
+          "parallelId": "N-ST-RN-033"
+        }
+      ]
+    },
+    {
+      "id": "FS-天同",
+      "heading": "天同星",
+      "stars": [
+        "天同星"
+      ],
+      "isGroup": false,
+      "sourceOrder": 5,
+      "lines": [
+        {
+          "id": "FS-天同-1",
+          "text": "天同星が巡る期間は、とくに人間関係での喜びごとがあり、社交や交友が広がって、平和で安定した日々になります。",
+          "condition": null,
+          "sourceId": "K-ST-DX-013",
+          "parallelId": "N-ST-RN-066"
+        },
+        {
+          "id": "FS-天同-2",
+          "text": "巡る宮の力量が強ければ、上司や友人知人、親戚などとの縁に恵まれ、いろいろな助けや恩恵を受けます。",
+          "condition": {
+            "kind": "palacePowerStrong",
+            "phrase": "巡る宮の力量強ければ"
+          },
+          "sourceId": "K-ST-DX-014",
+          "parallelId": "N-ST-RN-067"
+        },
+        {
+          "id": "FS-天同-3",
+          "text": "巡る宮の力量が弱ければ、困難や弔いごとのある時期です。",
+          "condition": {
+            "kind": "palacePowerWeak",
+            "phrase": "巡る宮の力量弱ければ"
+          },
+          "sourceId": "K-ST-DX-015",
+          "parallelId": "N-ST-RN-068"
+        }
+      ]
+    },
+    {
+      "id": "FS-廉貞",
+      "heading": "廉貞星",
+      "stars": [
+        "廉貞星"
+      ],
+      "isGroup": false,
+      "sourceOrder": 6,
+      "lines": [
+        {
+          "id": "FS-廉貞-1",
+          "text": "廉貞星が巡る期間は、突然の変化があり、恋愛や新しい異性との縁が訪れます。",
+          "condition": null,
+          "sourceId": "K-ST-DX-016",
+          "parallelId": "N-ST-RN-039"
+        },
+        {
+          "id": "FS-廉貞-2",
+          "text": "巡る宮の力量が強ければ、急な昇進や思いがけない恋人の出現など、にわかに事態が好転します。",
+          "condition": {
+            "kind": "palacePowerStrong",
+            "phrase": "宮の力量強ければ"
+          },
+          "sourceId": "K-ST-DX-017",
+          "parallelId": "N-ST-RN-040"
+        },
+        {
+          "id": "FS-廉貞-3",
+          "text": "巡る宮の力量が弱ければ、仕事でも私生活でも思わぬ出来事に見舞われます。事故やけが、病気に注意し、動かずに過ごすのがよい時期です。",
+          "condition": {
+            "kind": "palacePowerWeak",
+            "phrase": "巡る宮の力量弱ければ"
+          },
+          "sourceId": "K-ST-DX-018",
+          "parallelId": "N-ST-RN-041"
+        }
+      ]
+    },
+    {
+      "id": "FS-天府",
+      "heading": "天府星",
+      "stars": [
+        "天府星"
+      ],
+      "isGroup": false,
+      "sourceOrder": 7,
+      "lines": [
+        {
+          "id": "FS-天府-1",
+          "text": "天府星が巡る期間は運勢が安定し、心を乱されることなく穏やかに過ごせます。労せずして得る幸運もあります。",
+          "condition": null,
+          "sourceId": "K-ST-DX-019",
+          "parallelId": "N-ST-RN-042"
+        },
+        {
+          "id": "FS-天府-2",
+          "text": "物事が滞りなく運び、昇進や事業拡大の機会があります。",
+          "condition": null,
+          "sourceId": "K-ST-DX-020",
+          "parallelId": "N-ST-RN-043"
+        },
+        {
+          "id": "FS-天府-3",
+          "text": "巡る宮の力量が弱くても、吉の度合いが下がるだけで、大きな凶には遭わずにすみます。",
+          "condition": {
+            "kind": "palacePowerWeak",
+            "phrase": "巡る宮の力量弱くても"
+          },
+          "sourceId": "K-ST-DX-021",
+          "parallelId": "N-ST-RN-044"
+        }
+      ]
+    },
+    {
+      "id": "FS-太陰",
+      "heading": "太陰星",
+      "stars": [
+        "太陰星"
+      ],
+      "isGroup": false,
+      "sourceOrder": 8,
+      "lines": [
+        {
+          "id": "FS-太陰-1",
+          "text": "太陰星が巡る期間は、恋愛やロマンスに縁があり、精神的な世界の探求が深まります。直感が冴え、創作活動も充実します。",
+          "condition": null,
+          "sourceId": "K-ST-DX-022",
+          "parallelId": "N-ST-RN-045"
+        },
+        {
+          "id": "FS-太陰-2",
+          "text": "気持ちが安定し、穏やかな日々を送れます。不動産の取得にも吉です。",
+          "condition": null,
+          "sourceId": "K-ST-DX-023",
+          "parallelId": "N-ST-RN-046"
+        },
+        {
+          "id": "FS-太陰-3",
+          "text": "太陰星の力量が弱いか、巡る宮の力量が弱ければ、心の不安や失恋、実らない恋のある時期です。",
+          "condition": {
+            "kind": "starOrPalaceWeak",
+            "star": "太陰星",
+            "phrase": "太陰星の力量弱いか巡る宮の力量弱ければ"
+          },
+          "sourceId": "K-ST-DX-024",
+          "parallelId": "N-ST-RN-047"
+        }
+      ]
+    },
+    {
+      "id": "FS-貪狼",
+      "heading": "貪狼星",
+      "stars": [
+        "貪狼星"
+      ],
+      "isGroup": false,
+      "sourceOrder": 9,
+      "lines": [
+        {
+          "id": "FS-貪狼-1",
+          "text": "貪狼星が巡る期間は、恋愛や情熱、性愛、休暇、酒や遊び、交友に縁があり、行動力も旺盛になります。",
+          "condition": null,
+          "sourceId": "K-ST-DX-025",
+          "parallelId": "N-ST-RN-048"
+        },
+        {
+          "id": "FS-貪狼-2",
+          "text": "巡る宮の力量が強ければ、思い切って動くことで機会をつかめます。ためらわずに進んでよい時期です。",
+          "condition": {
+            "kind": "palacePowerStrong",
+            "phrase": "巡る宮の力量強ければ"
+          },
+          "sourceId": "K-ST-DX-026",
+          "parallelId": "N-ST-RN-049"
+        },
+        {
+          "id": "FS-貪狼-3",
+          "text": "巡る宮の力量が弱ければ、恋愛のトラブルや酒席での失敗が起こりやすい時期です。守りに徹するのがよいでしょう。",
+          "condition": {
+            "kind": "palacePowerWeak",
+            "phrase": "巡る宮の力量弱ければ"
+          },
+          "sourceId": "K-ST-DX-027",
+          "parallelId": "N-ST-RN-050"
+        }
+      ]
+    },
+    {
+      "id": "FS-巨門",
+      "heading": "巨門星",
+      "stars": [
+        "巨門星"
+      ],
+      "isGroup": false,
+      "sourceOrder": 10,
+      "lines": [
+        {
+          "id": "FS-巨門-1",
+          "text": "巨門星が巡る期間は、思い上がりや尊大さが出やすい一方、意思の疎通や研究に関わる事柄が動きます。",
+          "condition": null,
+          "sourceId": "K-ST-DX-028",
+          "parallelId": "N-ST-RN-051"
+        },
+        {
+          "id": "FS-巨門-2",
+          "text": "巡る宮の力量が強ければ、研究がはかどり、表現力も上がって評価を受けます。",
+          "condition": {
+            "kind": "palacePowerStrong",
+            "phrase": "巡る宮の力量強ければ"
+          },
+          "sourceId": "K-ST-DX-029",
+          "parallelId": "N-ST-RN-052"
+        },
+        {
+          "id": "FS-巨門-3",
+          "text": "巡る宮の力量が弱ければ、言葉が原因のもめごとや迷いが生じます。意固地になって運気が下がることもあります。",
+          "condition": {
+            "kind": "palacePowerWeak",
+            "phrase": "巡る宮の力量弱ければ"
+          },
+          "sourceId": "K-ST-DX-030",
+          "parallelId": "N-ST-RN-053"
+        }
+      ]
+    },
+    {
+      "id": "FS-天相",
+      "heading": "天相星",
+      "stars": [
+        "天相星"
+      ],
+      "isGroup": false,
+      "sourceOrder": 11,
+      "lines": [
+        {
+          "id": "FS-天相-1",
+          "text": "天相星が巡る期間は、交友や社交が広がり、人間関係で喜びごとがあります。",
+          "condition": null,
+          "sourceId": "K-ST-DX-031",
+          "parallelId": "N-ST-RN-054"
+        },
+        {
+          "id": "FS-天相-2",
+          "text": "巡る宮の力量が強ければ、栄転や昇進があり、なかでも学びや芸の道で多くの成果を上げます。",
+          "condition": {
+            "kind": "palacePowerStrong",
+            "phrase": "巡る宮の力量強ければ"
+          },
+          "sourceId": "K-ST-DX-032",
+          "parallelId": "N-ST-RN-055"
+        },
+        {
+          "id": "FS-天相-3",
+          "text": "巡る宮の力量が弱ければ、困難に出会っても助けが入る時期です。",
+          "condition": {
+            "kind": "palacePowerWeak",
+            "phrase": "巡る宮の力量弱ければ"
+          },
+          "sourceId": "K-ST-DX-033",
+          "parallelId": "N-ST-RN-056"
+        }
+      ]
+    },
+    {
+      "id": "FS-天梁",
+      "heading": "天梁星",
+      "stars": [
+        "天梁星"
+      ],
+      "isGroup": false,
+      "sourceOrder": 12,
+      "lines": [
+        {
+          "id": "FS-天梁-1",
+          "text": "天梁星が巡る期間は仕事運が好調で、昇進や栄転があり、物事を思いどおりに動かせます。",
+          "condition": null,
+          "sourceId": "K-ST-DX-034",
+          "parallelId": "N-ST-RN-057"
+        },
+        {
+          "id": "FS-天梁-2",
+          "text": "巡る宮の力量が強ければ、新しい計画を進めるのに適しており、思うとおりに進めて成功します。",
+          "condition": {
+            "kind": "palacePowerStrong",
+            "phrase": "巡る宮の力量強ければ"
+          },
+          "sourceId": "K-ST-DX-035",
+          "parallelId": "N-ST-RN-058"
+        },
+        {
+          "id": "FS-天梁-3",
+          "text": "巡る宮の力量が弱ければ、行動に中身が伴いにくく、困難も自分の力で解決する必要があります。",
+          "condition": {
+            "kind": "palacePowerWeak",
+            "phrase": "巡る宮の力量弱ければ"
+          },
+          "sourceId": "K-ST-DX-036",
+          "parallelId": "N-ST-RN-059"
+        }
+      ]
+    },
+    {
+      "id": "FS-七殺",
+      "heading": "七殺星",
+      "stars": [
+        "七殺星"
+      ],
+      "isGroup": false,
+      "sourceOrder": 13,
+      "lines": [
+        {
+          "id": "FS-七殺-1",
+          "text": "七殺星が巡る期間は変化や変動が多く、思わぬ出来事や突発的な事態が起こりやすく、忙しくなります。",
+          "condition": null,
+          "sourceId": "K-ST-DX-037",
+          "parallelId": "N-ST-RN-060"
+        },
+        {
+          "id": "FS-七殺-2",
+          "text": "巡る宮の力量が強ければ、むしろ運が味方し、予想を超えて伸びていきます。",
+          "condition": {
+            "kind": "palacePowerStrong",
+            "phrase": "巡る宮の力量強ければ"
+          },
+          "sourceId": "K-ST-DX-038",
+          "parallelId": "N-ST-RN-061"
+        },
+        {
+          "id": "FS-七殺-3",
+          "text": "巡る宮の力量が弱ければ、事故やけが、病気のほか、家庭内の不和や職場の人間関係のこじれが生じます。",
+          "condition": {
+            "kind": "palacePowerWeak",
+            "phrase": "巡る宮の力量弱ければ"
+          },
+          "sourceId": "K-ST-DX-039",
+          "parallelId": "N-ST-RN-062"
+        }
+      ]
+    },
+    {
+      "id": "FS-破軍",
+      "heading": "破軍星",
+      "stars": [
+        "破軍星"
+      ],
+      "isGroup": false,
+      "sourceOrder": 14,
+      "lines": [
+        {
+          "id": "FS-破軍-1",
+          "text": "破軍星が巡る期間は変化や変動が多く、気分は高まっても空回りしやすくなります。",
+          "condition": null,
+          "sourceId": "K-ST-DX-040",
+          "parallelId": "N-ST-RN-063"
+        },
+        {
+          "id": "FS-破軍-2",
+          "text": "巡る宮の力量が強ければ、活力が高まり、思いがけない成功があります。",
+          "condition": {
+            "kind": "palacePowerStrong",
+            "phrase": "巡る宮の力量強ければ"
+          },
+          "sourceId": "K-ST-DX-041",
+          "parallelId": "N-ST-RN-064"
+        },
+        {
+          "id": "FS-破軍-3",
+          "text": "巡る宮の力量が弱ければ、事故やけが、病気、争いごと、不和のある時期です。",
+          "condition": {
+            "kind": "palacePowerWeak",
+            "phrase": "巡る宮の力量弱ければ"
+          },
+          "sourceId": "K-ST-DX-042",
+          "parallelId": "N-ST-RN-065"
+        }
+      ]
+    },
+    {
+      "id": "FS-文昌文曲",
+      "heading": "文昌、文曲星",
+      "stars": [
+        "文昌星",
+        "文曲星"
+      ],
+      "isGroup": true,
+      "sourceOrder": 15,
+      "lines": [
+        {
+          "id": "FS-文昌文曲-1",
+          "text": "文昌星が巡る期間は、学問や芸術、試験に吉で、創作活動が充実して評価を受けます。",
+          "condition": null,
+          "sourceId": "K-ST-DX-043",
+          "parallelId": "N-ST-RN-069"
+        },
+        {
+          "id": "FS-文昌文曲-2",
+          "text": "巡る宮の力量が弱ければ、書類や文書、法律に関わるトラブルに注意が必要です。",
+          "condition": {
+            "kind": "palacePowerWeak",
+            "phrase": "巡る宮の力量弱ければ"
+          },
+          "sourceId": "K-ST-DX-044",
+          "parallelId": "N-ST-RN-070"
+        }
+      ]
+    },
+    {
+      "id": "FS-左輔右弼",
+      "heading": "右弼、左輔星",
+      "stars": [
+        "右弼星",
+        "左輔星"
+      ],
+      "isGroup": true,
+      "sourceOrder": 16,
+      "lines": [
+        {
+          "id": "FS-左輔右弼-1",
+          "text": "右弼星が巡る期間は人間関係が良好になり、多方面から助けを受けます。",
+          "condition": null,
+          "sourceId": "K-ST-DX-045",
+          "parallelId": "N-ST-RN-071"
+        },
+        {
+          "id": "FS-左輔右弼-2",
+          "text": "本業以外の仕事でも成功します。",
+          "condition": null,
+          "sourceId": "K-ST-DX-046",
+          "parallelId": "N-ST-RN-072"
+        }
+      ]
+    },
+    {
+      "id": "FS-火鈴羊陀",
+      "heading": "火星、鈴星、敬羊、陀羅星",
+      "stars": [
+        "火星",
+        "鈴星",
+        "擎羊星",
+        "陀羅星"
+      ],
+      "isGroup": true,
+      "sourceOrder": 17,
+      "lines": [
+        {
+          "id": "FS-火鈴羊陀-1",
+          "text": "火星が巡る期間は、事故やけが、病気、突発的な災難に注意が必要です。",
+          "condition": null,
+          "sourceId": "K-ST-DX-047",
+          "parallelId": "N-ST-RN-073"
+        },
+        {
+          "id": "FS-火鈴羊陀-2",
+          "text": "家庭内の不和や孤立、人間関係のこじれ、争いや口論が起こりやすく、周りに味方がいない状況になる暗示があります。",
+          "condition": null,
+          "sourceId": "K-ST-DX-048",
+          "parallelId": "N-ST-RN-074"
+        }
+      ]
+    }
+  ]
+}

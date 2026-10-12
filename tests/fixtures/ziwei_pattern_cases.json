@@ -1,0 +1,302 @@
+{
+ "_note": "格局テスト用の命盤入力（実際の命盤を走査して見つけたもの。docs/ziwei-basic-spec.md §23.5）。テスト側で各入力が該当の配置であることを確かめてから判定を確認する。英星入廟の「煞星なし」「破だけ」、紫府朝垣の「条件2のみ」は実際の命盤では起こらない（テストで人工例・構造確認）",
+ "cases": {
+  "羊陀夾忌": {
+   "birth": {
+    "year": 1920,
+    "month": 1,
+    "day": 2,
+    "hour": 3,
+    "minute": 10
+   },
+   "place": "東京",
+   "sex": "male"
+  },
+  "紫府朝垣:両方": {
+   "birth": {
+    "year": 1920,
+    "month": 1,
+    "day": 2,
+    "hour": 7,
+    "minute": 10
+   },
+   "place": "東京",
+   "sex": "male"
+  },
+  "紫府朝垣:条件1のみ": {
+   "birth": {
+    "year": 1920,
+    "month": 1,
+    "day": 16,
+    "hour": 3,
+    "minute": 10
+   },
+   "place": "東京",
+   "sex": "male"
+  },
+  "英星入廟:子": {
+   "birth": {
+    "year": 1920,
+    "month": 1,
+    "day": 16,
+    "hour": 23,
+    "minute": 10
+   },
+   "place": "東京",
+   "sex": "male"
+  },
+  "英星入廟:煞冲": {
+   "birth": {
+    "year": 1920,
+    "month": 1,
+    "day": 16,
+    "hour": 23,
+    "minute": 10
+   },
+   "place": "東京",
+   "sex": "male"
+  },
+  "英星入廟:煞同宮": {
+   "birth": {
+    "year": 1920,
+    "month": 1,
+    "day": 23,
+    "hour": 1,
+    "minute": 10
+   },
+   "place": "東京",
+   "sex": "male"
+  },
+  "英星入廟:午": {
+   "birth": {
+    "year": 1920,
+    "month": 4,
+    "day": 9,
+    "hour": 17,
+    "minute": 10
+   },
+   "place": "東京",
+   "sex": "male"
+  },
+  "三奇:命宮基準": {
+   "birth": {
+    "year": 1921,
+    "month": 2,
+    "day": 9,
+    "hour": 3,
+    "minute": 10
+   },
+   "place": "東京",
+   "sex": "male"
+  },
+  "三奇:弱": {
+   "birth": {
+    "year": 1921,
+    "month": 2,
+    "day": 9,
+    "hour": 3,
+    "minute": 10
+   },
+   "place": "東京",
+   "sex": "male"
+  },
+  "三奇:命宮基準・本宮に三奇の1つ": {
+   "birth": {
+    "year": 1921,
+    "month": 2,
+    "day": 9,
+    "hour": 9,
+    "minute": 10
+   },
+   "place": "東京",
+   "sex": "male"
+  },
+  "石中隠玉:核心+4星": {
+   "birth": {
+    "year": 1921,
+    "month": 2,
+    "day": 16,
+    "hour": 15,
+    "minute": 10
+   },
+   "place": "東京",
+   "sex": "male"
+  },
+  "石中隠玉:核心+3星": {
+   "birth": {
+    "year": 1921,
+    "month": 3,
+    "day": 9,
+    "hour": 3,
+    "minute": 10
+   },
+   "place": "東京",
+   "sex": "male"
+  },
+  "三奇:身宮基準のみ": {
+   "birth": {
+    "year": 1921,
+    "month": 4,
+    "day": 16,
+    "hour": 9,
+    "minute": 10
+   },
+   "place": "東京",
+   "sex": "male"
+  },
+  "石中隠玉:核心+2星": {
+   "birth": {
+    "year": 1921,
+    "month": 5,
+    "day": 16,
+    "hour": 21,
+    "minute": 10
+   },
+   "place": "東京",
+   "sex": "male"
+  },
+  "石中隠玉:核心+5星": {
+   "birth": {
+    "year": 1921,
+    "month": 10,
+    "day": 9,
+    "hour": 7,
+    "minute": 10
+   },
+   "place": "東京",
+   "sex": "male"
+  },
+  "石中隠玉:核心+0星": {
+   "birth": {
+    "year": 1923,
+    "month": 4,
+    "day": 9,
+    "hour": 5,
+    "minute": 10
+   },
+   "place": "東京",
+   "sex": "male"
+  },
+  "石中隠玉:核心+1星": {
+   "birth": {
+    "year": 1923,
+    "month": 8,
+    "day": 16,
+    "hour": 3,
+    "minute": 10
+   },
+   "place": "東京",
+   "sex": "male"
+  },
+  "馬頭帯箭:天同+なし": {
+   "birth": {
+    "year": 1920,
+    "month": 1,
+    "day": 16,
+    "hour": 11,
+    "minute": 10
+   },
+   "place": "東京",
+   "sex": "male"
+  },
+  "馬頭帯箭:貪狼+なし": {
+   "birth": {
+    "year": 1920,
+    "month": 7,
+    "day": 9,
+    "hour": 23,
+    "minute": 10
+   },
+   "place": "東京",
+   "sex": "male"
+  },
+  "馬頭帯箭:天同+擎羊加会": {
+   "birth": {
+    "year": 1921,
+    "month": 3,
+    "day": 9,
+    "hour": 15,
+    "minute": 10
+   },
+   "place": "東京",
+   "sex": "male"
+  },
+  "馬頭帯箭:貪狼+擎羊加会": {
+   "birth": {
+    "year": 1921,
+    "month": 6,
+    "day": 9,
+    "hour": 23,
+    "minute": 10
+   },
+   "place": "東京",
+   "sex": "male"
+  },
+  "馬頭帯箭:天同+化禄加会": {
+   "birth": {
+    "year": 1922,
+    "month": 2,
+    "day": 16,
+    "hour": 15,
+    "minute": 10
+   },
+   "place": "東京",
+   "sex": "male"
+  },
+  "馬頭帯箭:貪狼+化禄加会": {
+   "birth": {
+    "year": 1923,
+    "month": 11,
+    "day": 16,
+    "hour": 9,
+    "minute": 10
+   },
+   "place": "東京",
+   "sex": "male"
+  },
+  "馬頭帯箭:貪狼+擎羊同宮": {
+   "birth": {
+    "year": 1926,
+    "month": 4,
+    "day": 16,
+    "hour": 19,
+    "minute": 10
+   },
+   "place": "東京",
+   "sex": "male"
+  },
+  "馬頭帯箭:天同+化禄同宮": {
+   "birth": {
+    "year": 1926,
+    "month": 6,
+    "day": 9,
+    "hour": 23,
+    "minute": 10
+   },
+   "place": "東京",
+   "sex": "male"
+  },
+  "馬頭帯箭:天同+擎羊同宮": {
+   "birth": {
+    "year": 1926,
+    "month": 6,
+    "day": 9,
+    "hour": 23,
+    "minute": 10
+   },
+   "place": "東京",
+   "sex": "male"
+  },
+  "馬頭帯箭:貪狼+化禄同宮": {
+   "birth": {
+    "year": 1928,
+    "month": 4,
+    "day": 9,
+    "hour": 19,
+    "minute": 10
+   },
+   "place": "東京",
+   "sex": "male"
+  }
+ }
+}

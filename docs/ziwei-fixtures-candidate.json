@@ -1,0 +1,6238 @@
+{
+  "_meta": {
+    "description": "紫微斗数 Phase 1 fixture 候補。正本 docs/ziwei-basic-spec.md §16。needs_review: true の項目は正解として使わない。",
+    "sources": {
+      "入門": "docs/source/紫微斗数入門.pdf（ページは印刷ノンブル）",
+      "基礎編": "docs/source/紫微斗数基礎編.pdf（S＝スライド番号）"
+    },
+    "lunarExamplesNote": "陰暦変換例は時刻の記載がないため、テストでは作盤日（西暦日付）をそのまま固定UTC+8基準の陰暦に変換して照合する（§2.8 手順6）。",
+    "hayami": "tests/fixtures/ziwei_hayami_1926_2000.json"
+  },
+  "charts": [
+    {
+      "id": "A",
+      "source": "入門 p.16 図2 ＝ 基礎編 S3 命盤例（同一人物）",
+      "birth": {
+        "year": 1955,
+        "month": 10,
+        "day": 16,
+        "hour": 15,
+        "minute": 55
+      },
+      "sex": "female",
+      "place": {
+        "note": "小田原（表2に掲載なし）。地点を推測しないため、表2の全地点で同じ結果になることを照合する",
+        "mode": "all"
+      },
+      "expected": {
+        "lunar": {
+          "yearStem": "乙",
+          "yearBranch": "未",
+          "month": 9,
+          "day": 1,
+          "isLeapMonth": false
+        },
+        "hourBranch": "申",
+        "bureau": "土五局",
+        "mingPalace": "寅",
+        "shenPalace": "午",
+        "palaces": [
+          {
+            "branch": "寅",
+            "name": "命宮",
+            "stars": [
+              "武曲星",
+              "天相星",
+              "文昌星",
+              "右弼星",
+              "陀羅星"
+            ],
+            "dayun": {
+              "value": "5-14",
+              "needs_review": false
+            }
+          },
+          {
+            "branch": "丑",
+            "name": "兄弟宮",
+            "stars": [
+              "天同星",
+              "巨門星"
+            ],
+            "dayun": {
+              "value": "115-124",
+              "needs_review": false
+            }
+          },
+          {
+            "branch": "子",
+            "name": "夫妻宮",
+            "stars": [
+              "貪狼星",
+              "文曲星",
+              "左輔星",
+              "天魁星"
+            ],
+            "dayun": {
+              "value": "105-114",
+              "needs_review": false
+            }
+          },
+          {
+            "branch": "亥",
+            "name": "子女宮",
+            "stars": [
+              "太陰星"
+            ],
+            "dayun": {
+              "value": "95-104",
+              "needs_review": false
+            }
+          },
+          {
+            "branch": "戌",
+            "name": "財帛宮",
+            "stars": [
+              "天府星",
+              "廉貞星"
+            ],
+            "dayun": {
+              "value": "95-94",
+              "needs_review": true
+            }
+          },
+          {
+            "branch": "酉",
+            "name": "疾厄宮",
+            "stars": [
+              "天姚星"
+            ],
+            "dayun": {
+              "value": "75-84",
+              "needs_review": false
+            }
+          },
+          {
+            "branch": "申",
+            "name": "遷移宮",
+            "stars": [
+              "破軍星",
+              "天鉞星",
+              "天馬星",
+              "紅鸞星"
+            ],
+            "dayun": {
+              "value": "65-74",
+              "needs_review": false
+            }
+          },
+          {
+            "branch": "未",
+            "name": "奴僕宮",
+            "stars": [
+              "地劫星"
+            ],
+            "dayun": {
+              "value": "55-64",
+              "needs_review": false
+            }
+          },
+          {
+            "branch": "午",
+            "name": "官禄宮",
+            "stars": [
+              "紫微星",
+              "鈴星"
+            ],
+            "dayun": {
+              "value": "45-54",
+              "needs_review": false
+            }
+          },
+          {
+            "branch": "巳",
+            "name": "田宅宮",
+            "stars": [
+              "天機星",
+              "火星"
+            ],
+            "dayun": {
+              "value": "35-44",
+              "needs_review": false
+            }
+          },
+          {
+            "branch": "辰",
+            "name": "福徳宮",
+            "stars": [
+              "七殺星",
+              "擎羊星"
+            ],
+            "dayun": {
+              "value": "25-34",
+              "needs_review": false
+            }
+          },
+          {
+            "branch": "卯",
+            "name": "父母宮",
+            "stars": [
+              "太陽星",
+              "天梁星",
+              "天空星"
+            ],
+            "dayun": {
+              "value": "15-24",
+              "needs_review": false
+            }
+          }
+        ],
+        "transformations": {
+          "化禄星": "天機星",
+          "化権星": "天梁星",
+          "化科星": "紫微星",
+          "化忌星": "太陰星"
+        }
+      },
+      "needs_review": [
+        {
+          "item": "禄存星",
+          "needs_review": true,
+          "ref": "§18 U9",
+          "note": "表10（乙→卯）では父母宮（卯）だが命盤に記載なし。照合から除外"
+        },
+        {
+          "item": "財帛宮の大限 95-94",
+          "needs_review": true,
+          "ref": "§17 D12",
+          "note": "表14（土五局・陰女）では 85-94。印刷誤記の可能性。照合から除外"
+        }
+      ],
+      "excludeStars": [
+        "禄存星"
+      ]
+    },
+    {
+      "id": "B",
+      "source": "基礎編 S19 作盤完成（ソフトウェア出力と見られる命盤）",
+      "birth": {
+        "year": 1964,
+        "month": 12,
+        "day": 21,
+        "hour": 6,
+        "minute": 0
+      },
+      "sex": "male",
+      "place": {
+        "note": "出生地の記載なし。表2の全地点で同じ結果になることを照合する",
+        "mode": "all"
+      },
+      "expected": {
+        "lunar": {
+          "yearStem": "甲",
+          "yearBranch": "辰",
+          "month": 11,
+          "day": 18,
+          "isLeapMonth": false
+        },
+        "hourBranch": "卯",
+        "bureau": "金四局",
+        "mingPalace": "酉",
+        "shenPalace": "卯",
+        "palaces": [
+          {
+            "branch": "酉",
+            "name": "命宮",
+            "stars": [
+              "太陰星"
+            ],
+            "dayun": {
+              "value": "4",
+              "needs_review": false
+            }
+          },
+          {
+            "branch": "申",
+            "name": "兄弟宮",
+            "stars": [
+              "紫微星",
+              "天府星",
+              "天馬星",
+              "天空星"
+            ],
+            "dayun": {
+              "value": "114",
+              "needs_review": false
+            }
+          },
+          {
+            "branch": "未",
+            "name": "夫妻宮",
+            "stars": [
+              "天機星",
+              "文昌星",
+              "文曲星",
+              "天鉞星"
+            ],
+            "dayun": {
+              "value": "104",
+              "needs_review": false
+            }
+          },
+          {
+            "branch": "午",
+            "name": "子女宮",
+            "stars": [
+              "破軍星"
+            ],
+            "dayun": {
+              "value": "94",
+              "needs_review": false
+            }
+          },
+          {
+            "branch": "巳",
+            "name": "財帛宮",
+            "stars": [
+              "太陽星",
+              "火星"
+            ],
+            "dayun": {
+              "value": "84",
+              "needs_review": false
+            }
+          },
+          {
+            "branch": "辰",
+            "name": "疾厄宮",
+            "stars": [
+              "武曲星"
+            ],
+            "dayun": {
+              "value": "74",
+              "needs_review": false
+            }
+          },
+          {
+            "branch": "卯",
+            "name": "遷移宮",
+            "stars": [
+              "天同星",
+              "擎羊星"
+            ],
+            "dayun": {
+              "value": "64",
+              "needs_review": false
+            }
+          },
+          {
+            "branch": "寅",
+            "name": "奴僕宮",
+            "stars": [
+              "七殺星",
+              "左輔星",
+              "禄存星",
+              "地劫星"
+            ],
+            "dayun": {
+              "value": "54",
+              "needs_review": false
+            }
+          },
+          {
+            "branch": "丑",
+            "name": "官禄宮",
+            "stars": [
+              "天梁星",
+              "天魁星",
+              "陀羅星",
+              "鈴星"
+            ],
+            "dayun": {
+              "value": "44",
+              "needs_review": false
+            }
+          },
+          {
+            "branch": "子",
+            "name": "田宅宮",
+            "stars": [
+              "廉貞星",
+              "天相星",
+              "右弼星"
+            ],
+            "dayun": {
+              "value": "34",
+              "needs_review": false
+            }
+          },
+          {
+            "branch": "亥",
+            "name": "福徳宮",
+            "stars": [
+              "巨門星",
+              "天姚星",
+              "紅鸞星"
+            ],
+            "dayun": {
+              "value": "24",
+              "needs_review": false
+            }
+          },
+          {
+            "branch": "戌",
+            "name": "父母宮",
+            "stars": [
+              "貪狼星"
+            ],
+            "dayun": {
+              "value": "14",
+              "needs_review": false
+            }
+          }
+        ],
+        "transformations": {
+          "化禄星": "廉貞星",
+          "化権星": "破軍星",
+          "化科星": "武曲星",
+          "化忌星": "太陽星"
+        },
+        "kazoeAge": {
+          "target": {
+            "year": 2024,
+            "month": 4,
+            "day": 15
+          },
+          "age": 61
+        }
+      },
+      "needs_review": [
+        {
+          "item": "天馬星",
+          "needs_review": true,
+          "ref": "§18 U10",
+          "note": "表9（11月→寅）では奴僕宮（寅）だが命盤では兄弟宮（申）。照合から除外"
+        },
+        {
+          "item": "小限の S 表示",
+          "needs_review": true,
+          "ref": "§16.2",
+          "note": "各宮の S の数値の定義が資料にないため照合に使わない"
+        },
+        {
+          "item": "34星以外の表示・宮干・命主・身主・斗君・力量など",
+          "needs_review": true,
+          "ref": "§15.3・§18 U11〜U13",
+          "note": "Phase 1 対象外"
+        }
+      ],
+      "notes": [
+        "大限は開始年齢のみ表示（D）。敬羊・擎羊は擎羊星として照合（§17 D4・U13 確定）"
+      ],
+      "excludeStars": [
+        "天馬星"
+      ]
+    }
+  ],
+  "lunarExamples": [
+    {
+      "id": "L1",
+      "date": {
+        "year": 1995,
+        "month": 1,
+        "day": 31
+      },
+      "expected": {
+        "lunarMonth": 1,
+        "lunarDay": 1,
+        "isLeapMonth": false,
+        "yearStem": "乙",
+        "yearBranch": "亥"
+      },
+      "source": "入門 p.11（1995年は新暦1/31が旧元旦。1/15は乙亥ではなく前年の甲戌）",
+      "needs_review": false
+    },
+    {
+      "id": "L2",
+      "date": {
+        "year": 1995,
+        "month": 1,
+        "day": 15
+      },
+      "expected": {
+        "yearStem": "甲",
+        "yearBranch": "戌"
+      },
+      "source": "入門 p.11",
+      "needs_review": false
+    },
+    {
+      "id": "L3",
+      "date": {
+        "year": 1995,
+        "month": 9,
+        "day": 28
+      },
+      "expected": {
+        "lunarMonth": 8,
+        "lunarDay": 4,
+        "isLeapMonth": true,
+        "leapHalf": "前半",
+        "birthMonth": 8,
+        "birthDay": 4
+      },
+      "source": "入門 p.12",
+      "needs_review": false
+    },
+    {
+      "id": "L4",
+      "date": {
+        "year": 1995,
+        "month": 10,
+        "day": 10
+      },
+      "expected": {
+        "lunarMonth": 8,
+        "lunarDay": 16,
+        "isLeapMonth": true,
+        "leapHalf": "後半",
+        "birthMonth": 9,
+        "birthDay": 16
+      },
+      "source": "入門 p.12",
+      "needs_review": false
+    },
+    {
+      "id": "L5",
+      "birthDate": {
+        "year": 1970,
+        "month": 12,
+        "day": 7
+      },
+      "kazoe": [
+        {
+          "target": {
+            "year": 1971,
+            "month": 1,
+            "day": 26
+          },
+          "age": 1
+        },
+        {
+          "target": {
+            "year": 1971,
+            "month": 1,
+            "day": 27
+          },
+          "age": 2
+        }
+      ],
+      "source": "入門 p.27",
+      "needs_review": false
+    },
+    {
+      "id": "L6",
+      "date": {
+        "year": 1957,
+        "month": 6,
+        "day": 5
+      },
+      "expected": {
+        "lunarMonth": 5,
+        "lunarDay": 8
+      },
+      "source": "入門 p.106 例1",
+      "needs_review": false
+    },
+    {
+      "id": "L7",
+      "date": {
+        "year": 1956,
+        "month": 2,
+        "day": 25
+      },
+      "expected": {
+        "lunarMonth": 1,
+        "lunarDay": 14
+      },
+      "source": "入門 p.106 例2",
+      "needs_review": false
+    }
+  ],
+  "mainStarPatterns": [
+    {
+      "id": "P01",
+      "ziwei": "子",
+      "mainStars": {
+        "紫微星": "子",
+        "天機星": "亥",
+        "太陽星": "酉",
+        "武曲星": "申",
+        "天同星": "未",
+        "廉貞星": "辰",
+        "天府星": "辰",
+        "太陰星": "巳",
+        "貪狼星": "午",
+        "巨門星": "未",
+        "天相星": "申",
+        "天梁星": "酉",
+        "七殺星": "戌",
+        "破軍星": "寅"
+      },
+      "needs_review": false,
+      "source": "入門 p.108 基本パターン図1（紫微星が子宮）。表7（入門 p.21／基礎編 S9）の列と目視一致確認済み"
+    },
+    {
+      "id": "P02",
+      "ziwei": "丑",
+      "mainStars": {
+        "紫微星": "丑",
+        "天機星": "子",
+        "太陽星": "戌",
+        "武曲星": "酉",
+        "天同星": "申",
+        "廉貞星": "巳",
+        "天府星": "卯",
+        "太陰星": "辰",
+        "貪狼星": "巳",
+        "巨門星": "午",
+        "天相星": "未",
+        "天梁星": "申",
+        "七殺星": "酉",
+        "破軍星": "丑"
+      },
+      "needs_review": false,
+      "source": "入門 p.109 基本パターン図2（紫微星が丑宮）。表7（入門 p.21／基礎編 S9）の列と目視一致確認済み"
+    },
+    {
+      "id": "P03",
+      "ziwei": "寅",
+      "mainStars": {
+        "紫微星": "寅",
+        "天機星": "丑",
+        "太陽星": "亥",
+        "武曲星": "戌",
+        "天同星": "酉",
+        "廉貞星": "午",
+        "天府星": "寅",
+        "太陰星": "卯",
+        "貪狼星": "辰",
+        "巨門星": "巳",
+        "天相星": "午",
+        "天梁星": "未",
+        "七殺星": "申",
+        "破軍星": "子"
+      },
+      "needs_review": false,
+      "source": "入門 p.110 基本パターン図3（紫微星が寅宮）。表7（入門 p.21／基礎編 S9）の列と目視一致確認済み"
+    },
+    {
+      "id": "P04",
+      "ziwei": "卯",
+      "mainStars": {
+        "紫微星": "卯",
+        "天機星": "寅",
+        "太陽星": "子",
+        "武曲星": "亥",
+        "天同星": "戌",
+        "廉貞星": "未",
+        "天府星": "丑",
+        "太陰星": "寅",
+        "貪狼星": "卯",
+        "巨門星": "辰",
+        "天相星": "巳",
+        "天梁星": "午",
+        "七殺星": "未",
+        "破軍星": "亥"
+      },
+      "needs_review": false,
+      "source": "入門 p.111 基本パターン図4（紫微星が卯宮）。表7（入門 p.21／基礎編 S9）の列と目視一致確認済み"
+    },
+    {
+      "id": "P05",
+      "ziwei": "辰",
+      "mainStars": {
+        "紫微星": "辰",
+        "天機星": "卯",
+        "太陽星": "丑",
+        "武曲星": "子",
+        "天同星": "亥",
+        "廉貞星": "申",
+        "天府星": "子",
+        "太陰星": "丑",
+        "貪狼星": "寅",
+        "巨門星": "卯",
+        "天相星": "辰",
+        "天梁星": "巳",
+        "七殺星": "午",
+        "破軍星": "戌"
+      },
+      "needs_review": false,
+      "source": "入門 p.112 基本パターン図5（紫微星が辰宮）。表7（入門 p.21／基礎編 S9）の列と目視一致確認済み"
+    },
+    {
+      "id": "P06",
+      "ziwei": "巳",
+      "mainStars": {
+        "紫微星": "巳",
+        "天機星": "辰",
+        "太陽星": "寅",
+        "武曲星": "丑",
+        "天同星": "子",
+        "廉貞星": "酉",
+        "天府星": "亥",
+        "太陰星": "子",
+        "貪狼星": "丑",
+        "巨門星": "寅",
+        "天相星": "卯",
+        "天梁星": "辰",
+        "七殺星": "巳",
+        "破軍星": "酉"
+      },
+      "needs_review": false,
+      "source": "入門 p.113 基本パターン図6（紫微星が巳宮）。表7（入門 p.21／基礎編 S9）の列と目視一致確認済み"
+    },
+    {
+      "id": "P07",
+      "ziwei": "午",
+      "mainStars": {
+        "紫微星": "午",
+        "天機星": "巳",
+        "太陽星": "卯",
+        "武曲星": "寅",
+        "天同星": "丑",
+        "廉貞星": "戌",
+        "天府星": "戌",
+        "太陰星": "亥",
+        "貪狼星": "子",
+        "巨門星": "丑",
+        "天相星": "寅",
+        "天梁星": "卯",
+        "七殺星": "辰",
+        "破軍星": "申"
+      },
+      "needs_review": false,
+      "source": "入門 p.114 基本パターン図7（紫微星が午宮）。表7（入門 p.21／基礎編 S9）の列と目視一致確認済み"
+    },
+    {
+      "id": "P08",
+      "ziwei": "未",
+      "mainStars": {
+        "紫微星": "未",
+        "天機星": "午",
+        "太陽星": "辰",
+        "武曲星": "卯",
+        "天同星": "寅",
+        "廉貞星": "亥",
+        "天府星": "酉",
+        "太陰星": "戌",
+        "貪狼星": "亥",
+        "巨門星": "子",
+        "天相星": "丑",
+        "天梁星": "寅",
+        "七殺星": "卯",
+        "破軍星": "未"
+      },
+      "needs_review": false,
+      "source": "入門 p.115 基本パターン図8（紫微星が未宮）。表7（入門 p.21／基礎編 S9）の列と目視一致確認済み"
+    },
+    {
+      "id": "P09",
+      "ziwei": "申",
+      "mainStars": {
+        "紫微星": "申",
+        "天機星": "未",
+        "太陽星": "巳",
+        "武曲星": "辰",
+        "天同星": "卯",
+        "廉貞星": "子",
+        "天府星": "申",
+        "太陰星": "酉",
+        "貪狼星": "戌",
+        "巨門星": "亥",
+        "天相星": "子",
+        "天梁星": "丑",
+        "七殺星": "寅",
+        "破軍星": "午"
+      },
+      "needs_review": false,
+      "source": "入門 p.116 基本パターン図9（紫微星が申宮）。表7（入門 p.21／基礎編 S9）の列と目視一致確認済み"
+    },
+    {
+      "id": "P10",
+      "ziwei": "酉",
+      "mainStars": {
+        "紫微星": "酉",
+        "天機星": "申",
+        "太陽星": "午",
+        "武曲星": "巳",
+        "天同星": "辰",
+        "廉貞星": "丑",
+        "天府星": "未",
+        "太陰星": "申",
+        "貪狼星": "酉",
+        "巨門星": "戌",
+        "天相星": "亥",
+        "天梁星": "子",
+        "七殺星": "丑",
+        "破軍星": "巳"
+      },
+      "needs_review": false,
+      "source": "入門 p.117 基本パターン図10（紫微星が酉宮）。表7（入門 p.21／基礎編 S9）の列と目視一致確認済み"
+    },
+    {
+      "id": "P11",
+      "ziwei": "戌",
+      "mainStars": {
+        "紫微星": "戌",
+        "天機星": "酉",
+        "太陽星": "未",
+        "武曲星": "午",
+        "天同星": "巳",
+        "廉貞星": "寅",
+        "天府星": "午",
+        "太陰星": "未",
+        "貪狼星": "申",
+        "巨門星": "酉",
+        "天相星": "戌",
+        "天梁星": "亥",
+        "七殺星": "子",
+        "破軍星": "辰"
+      },
+      "needs_review": false,
+      "source": "入門 p.118 基本パターン図11（紫微星が戌宮）。表7（入門 p.21／基礎編 S9）の列と目視一致確認済み"
+    },
+    {
+      "id": "P12",
+      "ziwei": "亥",
+      "mainStars": {
+        "紫微星": "亥",
+        "天機星": "戌",
+        "太陽星": "申",
+        "武曲星": "未",
+        "天同星": "午",
+        "廉貞星": "卯",
+        "天府星": "巳",
+        "太陰星": "午",
+        "貪狼星": "未",
+        "巨門星": "申",
+        "天相星": "酉",
+        "天梁星": "戌",
+        "七殺星": "亥",
+        "破軍星": "卯"
+      },
+      "needs_review": false,
+      "source": "入門 p.119 基本パターン図12（紫微星が亥宮）。表7（入門 p.21／基礎編 S9）の列と目視一致確認済み"
+    }
+  ],
+  "strengthFixtures": {
+    "_note": "星の旺衰（廟旺利陥）の fixture。docs/ziwei-basic-spec.md §20。strength は資料の1字略記（地＝得地、利＝利益、平＝平和、不＝不得地）。needs_review: true の資料値は正解として使わず、adopted（旺衰表の値）を正解とする。命盤B（基礎編 S19）は記号表示のため含めない。",
+    "chartA": {
+      "source": "入門 p.16 図2 ＝ 基礎編 S3（両方の表示が同一であることを原画像で確認）",
+      "notes": [
+        "旺衰の文字があるのは表に行がある星だけ（天空・地劫・天姚・天馬・紅鸞・左輔・右弼・天魁・天鉞には表示なし）",
+        "禄存星は命盤に記載なし（§18 U9）"
+      ],
+      "items": [
+        {
+          "star": "文曲星",
+          "branch": "子",
+          "strength": "地",
+          "needs_review": false
+        },
+        {
+          "star": "貪狼星",
+          "branch": "子",
+          "strength": "旺",
+          "needs_review": false
+        },
+        {
+          "star": "巨門星",
+          "branch": "丑",
+          "strength": "不",
+          "needs_review": false
+        },
+        {
+          "star": "天同星",
+          "branch": "丑",
+          "strength": "不",
+          "needs_review": false
+        },
+        {
+          "star": "文昌星",
+          "branch": "寅",
+          "strength": "陥",
+          "needs_review": false
+        },
+        {
+          "star": "天相星",
+          "branch": "寅",
+          "strength": "廟",
+          "needs_review": false
+        },
+        {
+          "star": "武曲星",
+          "branch": "寅",
+          "strength": "地",
+          "needs_review": false
+        },
+        {
+          "star": "陀羅星",
+          "branch": "寅",
+          "strength": "陥",
+          "needs_review": false
+        },
+        {
+          "star": "天梁星",
+          "branch": "卯",
+          "strength": "廟",
+          "needs_review": false
+        },
+        {
+          "star": "太陽星",
+          "branch": "卯",
+          "strength": "廟",
+          "needs_review": false
+        },
+        {
+          "star": "擎羊星",
+          "branch": "辰",
+          "strength": "廟",
+          "needs_review": false
+        },
+        {
+          "star": "七殺星",
+          "branch": "辰",
+          "strength": "廟",
+          "needs_review": false
+        },
+        {
+          "star": "火星",
+          "branch": "巳",
+          "strength": "廟",
+          "needs_review": true,
+          "note": "命盤A（入門 p.16・基礎編 S3 とも）は「廟」だが、旺衰表（入門 p.36・基礎編 S14）では火星・巳＝得地。旺衰表を正本として得地を採用（2026-09-28 ユーザー確認）。命盤側の「廟」は資料不整合として needs_review のまま残す。§20.5",
+          "adopted": "得地"
+        },
+        {
+          "star": "天機星",
+          "branch": "巳",
+          "strength": "平",
+          "needs_review": false
+        },
+        {
+          "star": "鈴星",
+          "branch": "午",
+          "strength": "廟",
+          "needs_review": false
+        },
+        {
+          "star": "紫微星",
+          "branch": "午",
+          "strength": "廟",
+          "needs_review": false
+        },
+        {
+          "star": "破軍星",
+          "branch": "申",
+          "strength": "地",
+          "needs_review": false
+        },
+        {
+          "star": "廉貞星",
+          "branch": "戌",
+          "strength": "利",
+          "needs_review": false
+        },
+        {
+          "star": "天府星",
+          "branch": "戌",
+          "strength": "廟",
+          "needs_review": false
+        },
+        {
+          "star": "太陰星",
+          "branch": "亥",
+          "strength": "廟",
+          "needs_review": false
+        }
+      ]
+    },
+    "mainStarPatterns": [
+      {
+        "id": "S-P01",
+        "ziwei": "子",
+        "source": "入門 p.108 基本パターン図1",
+        "needs_review": false,
+        "items": [
+          {
+            "star": "紫微星",
+            "branch": "子",
+            "strength": "平"
+          },
+          {
+            "star": "天機星",
+            "branch": "亥",
+            "strength": "平"
+          },
+          {
+            "star": "太陽星",
+            "branch": "酉",
+            "strength": "平"
+          },
+          {
+            "star": "武曲星",
+            "branch": "申",
+            "strength": "地"
+          },
+          {
+            "star": "天同星",
+            "branch": "未",
+            "strength": "不"
+          },
+          {
+            "star": "廉貞星",
+            "branch": "辰",
+            "strength": "利"
+          },
+          {
+            "star": "天府星",
+            "branch": "辰",
+            "strength": "廟"
+          },
+          {
+            "star": "太陰星",
+            "branch": "巳",
+            "strength": "陥"
+          },
+          {
+            "star": "貪狼星",
+            "branch": "午",
+            "strength": "旺"
+          },
+          {
+            "star": "巨門星",
+            "branch": "未",
+            "strength": "不"
+          },
+          {
+            "star": "天相星",
+            "branch": "申",
+            "strength": "廟"
+          },
+          {
+            "star": "天梁星",
+            "branch": "酉",
+            "strength": "地"
+          },
+          {
+            "star": "七殺星",
+            "branch": "戌",
+            "strength": "廟"
+          },
+          {
+            "star": "破軍星",
+            "branch": "寅",
+            "strength": "地"
+          }
+        ]
+      },
+      {
+        "id": "S-P02",
+        "ziwei": "丑",
+        "source": "入門 p.109 基本パターン図2",
+        "needs_review": false,
+        "items": [
+          {
+            "star": "紫微星",
+            "branch": "丑",
+            "strength": "廟"
+          },
+          {
+            "star": "天機星",
+            "branch": "子",
+            "strength": "廟"
+          },
+          {
+            "star": "太陽星",
+            "branch": "戌",
+            "strength": "不"
+          },
+          {
+            "star": "武曲星",
+            "branch": "酉",
+            "strength": "利"
+          },
+          {
+            "star": "天同星",
+            "branch": "申",
+            "strength": "旺"
+          },
+          {
+            "star": "廉貞星",
+            "branch": "巳",
+            "strength": "陥"
+          },
+          {
+            "star": "天府星",
+            "branch": "卯",
+            "strength": "地"
+          },
+          {
+            "star": "太陰星",
+            "branch": "辰",
+            "strength": "陥"
+          },
+          {
+            "star": "貪狼星",
+            "branch": "巳",
+            "strength": "陥"
+          },
+          {
+            "star": "巨門星",
+            "branch": "午",
+            "strength": "旺"
+          },
+          {
+            "star": "天相星",
+            "branch": "未",
+            "strength": "地"
+          },
+          {
+            "star": "天梁星",
+            "branch": "申",
+            "strength": "陥"
+          },
+          {
+            "star": "七殺星",
+            "branch": "酉",
+            "strength": "旺"
+          },
+          {
+            "star": "破軍星",
+            "branch": "丑",
+            "strength": "旺"
+          }
+        ]
+      },
+      {
+        "id": "S-P03",
+        "ziwei": "寅",
+        "source": "入門 p.110 基本パターン図3",
+        "needs_review": false,
+        "items": [
+          {
+            "star": "紫微星",
+            "branch": "寅",
+            "strength": "旺"
+          },
+          {
+            "star": "天機星",
+            "branch": "丑",
+            "strength": "陥"
+          },
+          {
+            "star": "太陽星",
+            "branch": "亥",
+            "strength": "陥"
+          },
+          {
+            "star": "武曲星",
+            "branch": "戌",
+            "strength": "廟"
+          },
+          {
+            "star": "天同星",
+            "branch": "酉",
+            "strength": "平"
+          },
+          {
+            "star": "廉貞星",
+            "branch": "午",
+            "strength": "平"
+          },
+          {
+            "star": "天府星",
+            "branch": "寅",
+            "strength": "廟"
+          },
+          {
+            "star": "太陰星",
+            "branch": "卯",
+            "strength": "陥"
+          },
+          {
+            "star": "貪狼星",
+            "branch": "辰",
+            "strength": "廟"
+          },
+          {
+            "star": "巨門星",
+            "branch": "巳",
+            "strength": "旺"
+          },
+          {
+            "star": "天相星",
+            "branch": "午",
+            "strength": "廟"
+          },
+          {
+            "star": "天梁星",
+            "branch": "未",
+            "strength": "旺"
+          },
+          {
+            "star": "七殺星",
+            "branch": "申",
+            "strength": "廟"
+          },
+          {
+            "star": "破軍星",
+            "branch": "子",
+            "strength": "廟"
+          }
+        ]
+      },
+      {
+        "id": "S-P04",
+        "ziwei": "卯",
+        "source": "入門 p.111 基本パターン図4",
+        "needs_review": false,
+        "items": [
+          {
+            "star": "紫微星",
+            "branch": "卯",
+            "strength": "旺"
+          },
+          {
+            "star": "天機星",
+            "branch": "寅",
+            "strength": "地"
+          },
+          {
+            "star": "太陽星",
+            "branch": "子",
+            "strength": "陥"
+          },
+          {
+            "star": "武曲星",
+            "branch": "亥",
+            "strength": "平"
+          },
+          {
+            "star": "天同星",
+            "branch": "戌",
+            "strength": "平"
+          },
+          {
+            "star": "廉貞星",
+            "branch": "未",
+            "strength": "利"
+          },
+          {
+            "star": "天府星",
+            "branch": "丑",
+            "strength": "廟"
+          },
+          {
+            "star": "太陰星",
+            "branch": "寅",
+            "strength": "旺"
+          },
+          {
+            "star": "貪狼星",
+            "branch": "卯",
+            "strength": "利"
+          },
+          {
+            "star": "巨門星",
+            "branch": "辰",
+            "strength": "陥"
+          },
+          {
+            "star": "天相星",
+            "branch": "巳",
+            "strength": "地"
+          },
+          {
+            "star": "天梁星",
+            "branch": "午",
+            "strength": "廟"
+          },
+          {
+            "star": "七殺星",
+            "branch": "未",
+            "strength": "廟"
+          },
+          {
+            "star": "破軍星",
+            "branch": "亥",
+            "strength": "平"
+          }
+        ]
+      },
+      {
+        "id": "S-P05",
+        "ziwei": "辰",
+        "source": "入門 p.112 基本パターン図5",
+        "needs_review": false,
+        "items": [
+          {
+            "star": "紫微星",
+            "branch": "辰",
+            "strength": "地"
+          },
+          {
+            "star": "天機星",
+            "branch": "卯",
+            "strength": "旺"
+          },
+          {
+            "star": "太陽星",
+            "branch": "丑",
+            "strength": "不"
+          },
+          {
+            "star": "武曲星",
+            "branch": "子",
+            "strength": "旺"
+          },
+          {
+            "star": "天同星",
+            "branch": "亥",
+            "strength": "廟"
+          },
+          {
+            "star": "廉貞星",
+            "branch": "申",
+            "strength": "廟"
+          },
+          {
+            "star": "天府星",
+            "branch": "子",
+            "strength": "廟"
+          },
+          {
+            "star": "太陰星",
+            "branch": "丑",
+            "strength": "廟"
+          },
+          {
+            "star": "貪狼星",
+            "branch": "寅",
+            "strength": "平"
+          },
+          {
+            "star": "巨門星",
+            "branch": "卯",
+            "strength": "廟"
+          },
+          {
+            "star": "天相星",
+            "branch": "辰",
+            "strength": "地"
+          },
+          {
+            "star": "天梁星",
+            "branch": "巳",
+            "strength": "陥"
+          },
+          {
+            "star": "七殺星",
+            "branch": "午",
+            "strength": "旺"
+          },
+          {
+            "star": "破軍星",
+            "branch": "戌",
+            "strength": "旺"
+          }
+        ]
+      },
+      {
+        "id": "S-P06",
+        "ziwei": "巳",
+        "source": "入門 p.113 基本パターン図6",
+        "needs_review": false,
+        "items": [
+          {
+            "star": "紫微星",
+            "branch": "巳",
+            "strength": "旺"
+          },
+          {
+            "star": "天機星",
+            "branch": "辰",
+            "strength": "利"
+          },
+          {
+            "star": "太陽星",
+            "branch": "寅",
+            "strength": "旺"
+          },
+          {
+            "star": "武曲星",
+            "branch": "丑",
+            "strength": "廟"
+          },
+          {
+            "star": "天同星",
+            "branch": "子",
+            "strength": "旺"
+          },
+          {
+            "star": "廉貞星",
+            "branch": "酉",
+            "strength": "平"
+          },
+          {
+            "star": "天府星",
+            "branch": "亥",
+            "strength": "地"
+          },
+          {
+            "star": "太陰星",
+            "branch": "子",
+            "strength": "廟"
+          },
+          {
+            "star": "貪狼星",
+            "branch": "丑",
+            "strength": "廟"
+          },
+          {
+            "star": "巨門星",
+            "branch": "寅",
+            "strength": "廟"
+          },
+          {
+            "star": "天相星",
+            "branch": "卯",
+            "strength": "陥"
+          },
+          {
+            "star": "天梁星",
+            "branch": "辰",
+            "strength": "廟"
+          },
+          {
+            "star": "七殺星",
+            "branch": "巳",
+            "strength": "平"
+          },
+          {
+            "star": "破軍星",
+            "branch": "酉",
+            "strength": "陥"
+          }
+        ]
+      },
+      {
+        "id": "S-P07",
+        "ziwei": "午",
+        "source": "入門 p.114 基本パターン図7",
+        "needs_review": false,
+        "items": [
+          {
+            "star": "紫微星",
+            "branch": "午",
+            "strength": "廟"
+          },
+          {
+            "star": "天機星",
+            "branch": "巳",
+            "strength": "平"
+          },
+          {
+            "star": "太陽星",
+            "branch": "卯",
+            "strength": "廟"
+          },
+          {
+            "star": "武曲星",
+            "branch": "寅",
+            "strength": "地"
+          },
+          {
+            "star": "天同星",
+            "branch": "丑",
+            "strength": "不"
+          },
+          {
+            "star": "廉貞星",
+            "branch": "戌",
+            "strength": "利"
+          },
+          {
+            "star": "天府星",
+            "branch": "戌",
+            "strength": "廟"
+          },
+          {
+            "star": "太陰星",
+            "branch": "亥",
+            "strength": "廟"
+          },
+          {
+            "star": "貪狼星",
+            "branch": "子",
+            "strength": "旺"
+          },
+          {
+            "star": "巨門星",
+            "branch": "丑",
+            "strength": "不"
+          },
+          {
+            "star": "天相星",
+            "branch": "寅",
+            "strength": "廟"
+          },
+          {
+            "star": "天梁星",
+            "branch": "卯",
+            "strength": "廟"
+          },
+          {
+            "star": "七殺星",
+            "branch": "辰",
+            "strength": "廟"
+          },
+          {
+            "star": "破軍星",
+            "branch": "申",
+            "strength": "地"
+          }
+        ]
+      },
+      {
+        "id": "S-P08",
+        "ziwei": "未",
+        "source": "入門 p.115 基本パターン図8",
+        "needs_review": false,
+        "items": [
+          {
+            "star": "紫微星",
+            "branch": "未",
+            "strength": "廟"
+          },
+          {
+            "star": "天機星",
+            "branch": "午",
+            "strength": "廟"
+          },
+          {
+            "star": "太陽星",
+            "branch": "辰",
+            "strength": "旺"
+          },
+          {
+            "star": "武曲星",
+            "branch": "卯",
+            "strength": "利"
+          },
+          {
+            "star": "天同星",
+            "branch": "寅",
+            "strength": "利"
+          },
+          {
+            "star": "廉貞星",
+            "branch": "亥",
+            "strength": "陥"
+          },
+          {
+            "star": "天府星",
+            "branch": "酉",
+            "strength": "旺"
+          },
+          {
+            "star": "太陰星",
+            "branch": "戌",
+            "strength": "旺"
+          },
+          {
+            "star": "貪狼星",
+            "branch": "亥",
+            "strength": "陥"
+          },
+          {
+            "star": "巨門星",
+            "branch": "子",
+            "strength": "旺"
+          },
+          {
+            "star": "天相星",
+            "branch": "丑",
+            "strength": "廟"
+          },
+          {
+            "star": "天梁星",
+            "branch": "寅",
+            "strength": "廟"
+          },
+          {
+            "star": "七殺星",
+            "branch": "卯",
+            "strength": "旺"
+          },
+          {
+            "star": "破軍星",
+            "branch": "未",
+            "strength": "旺"
+          }
+        ]
+      },
+      {
+        "id": "S-P09",
+        "ziwei": "申",
+        "source": "入門 p.116 基本パターン図9",
+        "needs_review": false,
+        "items": [
+          {
+            "star": "紫微星",
+            "branch": "申",
+            "strength": "旺"
+          },
+          {
+            "star": "天機星",
+            "branch": "未",
+            "strength": "陥"
+          },
+          {
+            "star": "太陽星",
+            "branch": "巳",
+            "strength": "旺"
+          },
+          {
+            "star": "武曲星",
+            "branch": "辰",
+            "strength": "廟"
+          },
+          {
+            "star": "天同星",
+            "branch": "卯",
+            "strength": "平"
+          },
+          {
+            "star": "廉貞星",
+            "branch": "子",
+            "strength": "平"
+          },
+          {
+            "star": "天府星",
+            "branch": "申",
+            "strength": "地"
+          },
+          {
+            "star": "太陰星",
+            "branch": "酉",
+            "strength": "旺"
+          },
+          {
+            "star": "貪狼星",
+            "branch": "戌",
+            "strength": "廟"
+          },
+          {
+            "star": "巨門星",
+            "branch": "亥",
+            "strength": "旺"
+          },
+          {
+            "star": "天相星",
+            "branch": "子",
+            "strength": "廟"
+          },
+          {
+            "star": "天梁星",
+            "branch": "丑",
+            "strength": "旺"
+          },
+          {
+            "star": "七殺星",
+            "branch": "寅",
+            "strength": "廟"
+          },
+          {
+            "star": "破軍星",
+            "branch": "午",
+            "strength": "廟"
+          }
+        ]
+      },
+      {
+        "id": "S-P10",
+        "ziwei": "酉",
+        "source": "入門 p.117 基本パターン図10",
+        "needs_review": false,
+        "items": [
+          {
+            "star": "紫微星",
+            "branch": "酉",
+            "strength": "旺"
+          },
+          {
+            "star": "天機星",
+            "branch": "申",
+            "strength": "地"
+          },
+          {
+            "star": "太陽星",
+            "branch": "午",
+            "strength": "旺"
+          },
+          {
+            "star": "武曲星",
+            "branch": "巳",
+            "strength": "平"
+          },
+          {
+            "star": "天同星",
+            "branch": "辰",
+            "strength": "平"
+          },
+          {
+            "star": "廉貞星",
+            "branch": "丑",
+            "strength": "利"
+          },
+          {
+            "star": "天府星",
+            "branch": "未",
+            "strength": "廟"
+          },
+          {
+            "star": "太陰星",
+            "branch": "申",
+            "strength": "利"
+          },
+          {
+            "star": "貪狼星",
+            "branch": "酉",
+            "strength": "利"
+          },
+          {
+            "star": "巨門星",
+            "branch": "戌",
+            "strength": "陥"
+          },
+          {
+            "star": "天相星",
+            "branch": "亥",
+            "strength": "地"
+          },
+          {
+            "star": "天梁星",
+            "branch": "子",
+            "strength": "廟"
+          },
+          {
+            "star": "七殺星",
+            "branch": "丑",
+            "strength": "廟"
+          },
+          {
+            "star": "破軍星",
+            "branch": "巳",
+            "strength": "平"
+          }
+        ]
+      },
+      {
+        "id": "S-P11",
+        "ziwei": "戌",
+        "source": "入門 p.118 基本パターン図11",
+        "needs_review": false,
+        "items": [
+          {
+            "star": "紫微星",
+            "branch": "戌",
+            "strength": "地"
+          },
+          {
+            "star": "天機星",
+            "branch": "酉",
+            "strength": "旺"
+          },
+          {
+            "star": "太陽星",
+            "branch": "未",
+            "strength": "地"
+          },
+          {
+            "star": "武曲星",
+            "branch": "午",
+            "strength": "旺"
+          },
+          {
+            "star": "天同星",
+            "branch": "巳",
+            "strength": "廟"
+          },
+          {
+            "star": "廉貞星",
+            "branch": "寅",
+            "strength": "廟"
+          },
+          {
+            "star": "天府星",
+            "branch": "午",
+            "strength": "旺"
+          },
+          {
+            "star": "太陰星",
+            "branch": "未",
+            "strength": "不"
+          },
+          {
+            "star": "貪狼星",
+            "branch": "申",
+            "strength": "平"
+          },
+          {
+            "star": "巨門星",
+            "branch": "酉",
+            "strength": "廟"
+          },
+          {
+            "star": "天相星",
+            "branch": "戌",
+            "strength": "地"
+          },
+          {
+            "star": "天梁星",
+            "branch": "亥",
+            "strength": "陥"
+          },
+          {
+            "star": "七殺星",
+            "branch": "子",
+            "strength": "旺"
+          },
+          {
+            "star": "破軍星",
+            "branch": "辰",
+            "strength": "旺"
+          }
+        ]
+      },
+      {
+        "id": "S-P12",
+        "ziwei": "亥",
+        "source": "入門 p.119 基本パターン図12",
+        "needs_review": false,
+        "items": [
+          {
+            "star": "紫微星",
+            "branch": "亥",
+            "strength": "旺"
+          },
+          {
+            "star": "天機星",
+            "branch": "戌",
+            "strength": "利"
+          },
+          {
+            "star": "太陽星",
+            "branch": "申",
+            "strength": "地"
+          },
+          {
+            "star": "武曲星",
+            "branch": "未",
+            "strength": "廟"
+          },
+          {
+            "star": "天同星",
+            "branch": "午",
+            "strength": "陥"
+          },
+          {
+            "star": "廉貞星",
+            "branch": "卯",
+            "strength": "平"
+          },
+          {
+            "star": "天府星",
+            "branch": "巳",
+            "strength": "地"
+          },
+          {
+            "star": "太陰星",
+            "branch": "午",
+            "strength": "不"
+          },
+          {
+            "star": "貪狼星",
+            "branch": "未",
+            "strength": "廟"
+          },
+          {
+            "star": "巨門星",
+            "branch": "申",
+            "strength": "廟"
+          },
+          {
+            "star": "天相星",
+            "branch": "酉",
+            "strength": "陥"
+          },
+          {
+            "star": "天梁星",
+            "branch": "戌",
+            "strength": "廟"
+          },
+          {
+            "star": "七殺星",
+            "branch": "亥",
+            "strength": "平"
+          },
+          {
+            "star": "破軍星",
+            "branch": "卯",
+            "strength": "陥"
+          }
+        ]
+      }
+    ],
+    "noStrengthStars": {
+      "source": "入門 p.36（8星は廟旺利陥なしと明記）／表に行がない5星",
+      "stars": [
+        "左輔星",
+        "右弼星",
+        "天魁星",
+        "天鉞星",
+        "天空星",
+        "地劫星",
+        "天姚星",
+        "天馬星",
+        "紅鸞星"
+      ],
+      "transformations": [
+        "化禄星",
+        "化権星",
+        "化科星",
+        "化忌星"
+      ],
+      "note": "命盤上に旺衰を表示しない。四化は宮に配置する星ではないため旺衰の参照対象外"
+    }
+  },
+  "powerFixtures": {
+    "_note": "星の力量・宮の運命指数の fixture。docs/ziwei-basic-spec.md §22。表は入門（PDF テキスト層）と基礎編（S15 の画像）を別々に転記した。値 null は資料の空欄。命盤の印刷値は資料に印刷された数値そのもの（needs_review の値も正解にしない）。",
+    "tableNyumon": {
+      "source": "入門 p.25 表13.諸星力量一覧表",
+      "branches": [
+        "子",
+        "丑",
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥"
+      ],
+      "cells": [
+        [
+          "紫微星",
+          "子",
+          0
+        ],
+        [
+          "紫微星",
+          "丑",
+          6
+        ],
+        [
+          "紫微星",
+          "寅",
+          4
+        ],
+        [
+          "紫微星",
+          "卯",
+          4
+        ],
+        [
+          "紫微星",
+          "辰",
+          2
+        ],
+        [
+          "紫微星",
+          "巳",
+          4
+        ],
+        [
+          "紫微星",
+          "午",
+          6
+        ],
+        [
+          "紫微星",
+          "未",
+          6
+        ],
+        [
+          "紫微星",
+          "申",
+          4
+        ],
+        [
+          "紫微星",
+          "酉",
+          4
+        ],
+        [
+          "紫微星",
+          "戌",
+          2
+        ],
+        [
+          "紫微星",
+          "亥",
+          4
+        ],
+        [
+          "天機星",
+          "子",
+          6
+        ],
+        [
+          "天機星",
+          "丑",
+          0
+        ],
+        [
+          "天機星",
+          "寅",
+          2
+        ],
+        [
+          "天機星",
+          "卯",
+          4
+        ],
+        [
+          "天機星",
+          "辰",
+          0
+        ],
+        [
+          "天機星",
+          "巳",
+          0
+        ],
+        [
+          "天機星",
+          "午",
+          6
+        ],
+        [
+          "天機星",
+          "未",
+          0
+        ],
+        [
+          "天機星",
+          "申",
+          2
+        ],
+        [
+          "天機星",
+          "酉",
+          4
+        ],
+        [
+          "天機星",
+          "戌",
+          0
+        ],
+        [
+          "天機星",
+          "亥",
+          0
+        ],
+        [
+          "太陽星",
+          "子",
+          0
+        ],
+        [
+          "太陽星",
+          "丑",
+          0
+        ],
+        [
+          "太陽星",
+          "寅",
+          4
+        ],
+        [
+          "太陽星",
+          "卯",
+          6
+        ],
+        [
+          "太陽星",
+          "辰",
+          4
+        ],
+        [
+          "太陽星",
+          "巳",
+          4
+        ],
+        [
+          "太陽星",
+          "午",
+          4
+        ],
+        [
+          "太陽星",
+          "未",
+          2
+        ],
+        [
+          "太陽星",
+          "申",
+          2
+        ],
+        [
+          "太陽星",
+          "酉",
+          0
+        ],
+        [
+          "太陽星",
+          "戌",
+          0
+        ],
+        [
+          "太陽星",
+          "亥",
+          0
+        ],
+        [
+          "武曲星",
+          "子",
+          4
+        ],
+        [
+          "武曲星",
+          "丑",
+          6
+        ],
+        [
+          "武曲星",
+          "寅",
+          2
+        ],
+        [
+          "武曲星",
+          "卯",
+          0
+        ],
+        [
+          "武曲星",
+          "辰",
+          6
+        ],
+        [
+          "武曲星",
+          "巳",
+          0
+        ],
+        [
+          "武曲星",
+          "午",
+          4
+        ],
+        [
+          "武曲星",
+          "未",
+          6
+        ],
+        [
+          "武曲星",
+          "申",
+          2
+        ],
+        [
+          "武曲星",
+          "酉",
+          0
+        ],
+        [
+          "武曲星",
+          "戌",
+          6
+        ],
+        [
+          "武曲星",
+          "亥",
+          0
+        ],
+        [
+          "天同星",
+          "子",
+          4
+        ],
+        [
+          "天同星",
+          "丑",
+          0
+        ],
+        [
+          "天同星",
+          "寅",
+          0
+        ],
+        [
+          "天同星",
+          "卯",
+          0
+        ],
+        [
+          "天同星",
+          "辰",
+          0
+        ],
+        [
+          "天同星",
+          "巳",
+          6
+        ],
+        [
+          "天同星",
+          "午",
+          0
+        ],
+        [
+          "天同星",
+          "未",
+          0
+        ],
+        [
+          "天同星",
+          "申",
+          4
+        ],
+        [
+          "天同星",
+          "酉",
+          0
+        ],
+        [
+          "天同星",
+          "戌",
+          0
+        ],
+        [
+          "天同星",
+          "亥",
+          6
+        ],
+        [
+          "廉貞星",
+          "子",
+          -2
+        ],
+        [
+          "廉貞星",
+          "丑",
+          0
+        ],
+        [
+          "廉貞星",
+          "寅",
+          4
+        ],
+        [
+          "廉貞星",
+          "卯",
+          -2
+        ],
+        [
+          "廉貞星",
+          "辰",
+          0
+        ],
+        [
+          "廉貞星",
+          "巳",
+          -6
+        ],
+        [
+          "廉貞星",
+          "午",
+          -2
+        ],
+        [
+          "廉貞星",
+          "未",
+          0
+        ],
+        [
+          "廉貞星",
+          "申",
+          4
+        ],
+        [
+          "廉貞星",
+          "酉",
+          -2
+        ],
+        [
+          "廉貞星",
+          "戌",
+          0
+        ],
+        [
+          "廉貞星",
+          "亥",
+          -6
+        ],
+        [
+          "天府星",
+          "子",
+          6
+        ],
+        [
+          "天府星",
+          "丑",
+          6
+        ],
+        [
+          "天府星",
+          "寅",
+          6
+        ],
+        [
+          "天府星",
+          "卯",
+          2
+        ],
+        [
+          "天府星",
+          "辰",
+          6
+        ],
+        [
+          "天府星",
+          "巳",
+          2
+        ],
+        [
+          "天府星",
+          "午",
+          4
+        ],
+        [
+          "天府星",
+          "未",
+          6
+        ],
+        [
+          "天府星",
+          "申",
+          2
+        ],
+        [
+          "天府星",
+          "酉",
+          4
+        ],
+        [
+          "天府星",
+          "戌",
+          6
+        ],
+        [
+          "天府星",
+          "亥",
+          2
+        ],
+        [
+          "太陰星",
+          "子",
+          6
+        ],
+        [
+          "太陰星",
+          "丑",
+          6
+        ],
+        [
+          "太陰星",
+          "寅",
+          4
+        ],
+        [
+          "太陰星",
+          "卯",
+          0
+        ],
+        [
+          "太陰星",
+          "辰",
+          0
+        ],
+        [
+          "太陰星",
+          "巳",
+          0
+        ],
+        [
+          "太陰星",
+          "午",
+          0
+        ],
+        [
+          "太陰星",
+          "未",
+          0
+        ],
+        [
+          "太陰星",
+          "申",
+          0
+        ],
+        [
+          "太陰星",
+          "酉",
+          4
+        ],
+        [
+          "太陰星",
+          "戌",
+          4
+        ],
+        [
+          "太陰星",
+          "亥",
+          6
+        ],
+        [
+          "貪狼星",
+          "子",
+          2
+        ],
+        [
+          "貪狼星",
+          "丑",
+          4
+        ],
+        [
+          "貪狼星",
+          "寅",
+          -2
+        ],
+        [
+          "貪狼星",
+          "卯",
+          0
+        ],
+        [
+          "貪狼星",
+          "辰",
+          4
+        ],
+        [
+          "貪狼星",
+          "巳",
+          -6
+        ],
+        [
+          "貪狼星",
+          "午",
+          2
+        ],
+        [
+          "貪狼星",
+          "未",
+          4
+        ],
+        [
+          "貪狼星",
+          "申",
+          -2
+        ],
+        [
+          "貪狼星",
+          "酉",
+          0
+        ],
+        [
+          "貪狼星",
+          "戌",
+          4
+        ],
+        [
+          "貪狼星",
+          "亥",
+          -6
+        ],
+        [
+          "巨門星",
+          "子",
+          2
+        ],
+        [
+          "巨門星",
+          "丑",
+          -4
+        ],
+        [
+          "巨門星",
+          "寅",
+          4
+        ],
+        [
+          "巨門星",
+          "卯",
+          4
+        ],
+        [
+          "巨門星",
+          "辰",
+          -6
+        ],
+        [
+          "巨門星",
+          "巳",
+          2
+        ],
+        [
+          "巨門星",
+          "午",
+          2
+        ],
+        [
+          "巨門星",
+          "未",
+          -4
+        ],
+        [
+          "巨門星",
+          "申",
+          4
+        ],
+        [
+          "巨門星",
+          "酉",
+          4
+        ],
+        [
+          "巨門星",
+          "戌",
+          -6
+        ],
+        [
+          "巨門星",
+          "亥",
+          2
+        ],
+        [
+          "天相星",
+          "子",
+          6
+        ],
+        [
+          "天相星",
+          "丑",
+          6
+        ],
+        [
+          "天相星",
+          "寅",
+          6
+        ],
+        [
+          "天相星",
+          "卯",
+          0
+        ],
+        [
+          "天相星",
+          "辰",
+          2
+        ],
+        [
+          "天相星",
+          "巳",
+          2
+        ],
+        [
+          "天相星",
+          "午",
+          6
+        ],
+        [
+          "天相星",
+          "未",
+          2
+        ],
+        [
+          "天相星",
+          "申",
+          6
+        ],
+        [
+          "天相星",
+          "酉",
+          0
+        ],
+        [
+          "天相星",
+          "戌",
+          2
+        ],
+        [
+          "天相星",
+          "亥",
+          2
+        ],
+        [
+          "天梁星",
+          "子",
+          6
+        ],
+        [
+          "天梁星",
+          "丑",
+          4
+        ],
+        [
+          "天梁星",
+          "寅",
+          6
+        ],
+        [
+          "天梁星",
+          "卯",
+          6
+        ],
+        [
+          "天梁星",
+          "辰",
+          6
+        ],
+        [
+          "天梁星",
+          "巳",
+          0
+        ],
+        [
+          "天梁星",
+          "午",
+          6
+        ],
+        [
+          "天梁星",
+          "未",
+          4
+        ],
+        [
+          "天梁星",
+          "申",
+          0
+        ],
+        [
+          "天梁星",
+          "酉",
+          2
+        ],
+        [
+          "天梁星",
+          "戌",
+          6
+        ],
+        [
+          "天梁星",
+          "亥",
+          0
+        ],
+        [
+          "七殺星",
+          "子",
+          2
+        ],
+        [
+          "七殺星",
+          "丑",
+          4
+        ],
+        [
+          "七殺星",
+          "寅",
+          4
+        ],
+        [
+          "七殺星",
+          "卯",
+          2
+        ],
+        [
+          "七殺星",
+          "辰",
+          4
+        ],
+        [
+          "七殺星",
+          "巳",
+          -2
+        ],
+        [
+          "七殺星",
+          "午",
+          2
+        ],
+        [
+          "七殺星",
+          "未",
+          4
+        ],
+        [
+          "七殺星",
+          "申",
+          4
+        ],
+        [
+          "七殺星",
+          "酉",
+          2
+        ],
+        [
+          "七殺星",
+          "戌",
+          4
+        ],
+        [
+          "七殺星",
+          "亥",
+          -2
+        ],
+        [
+          "破軍星",
+          "子",
+          4
+        ],
+        [
+          "破軍星",
+          "丑",
+          2
+        ],
+        [
+          "破軍星",
+          "寅",
+          0
+        ],
+        [
+          "破軍星",
+          "卯",
+          -6
+        ],
+        [
+          "破軍星",
+          "辰",
+          2
+        ],
+        [
+          "破軍星",
+          "巳",
+          -2
+        ],
+        [
+          "破軍星",
+          "午",
+          4
+        ],
+        [
+          "破軍星",
+          "未",
+          2
+        ],
+        [
+          "破軍星",
+          "申",
+          0
+        ],
+        [
+          "破軍星",
+          "酉",
+          -6
+        ],
+        [
+          "破軍星",
+          "戌",
+          2
+        ],
+        [
+          "破軍星",
+          "亥",
+          -2
+        ],
+        [
+          "文昌星",
+          "子",
+          1
+        ],
+        [
+          "文昌星",
+          "丑",
+          3
+        ],
+        [
+          "文昌星",
+          "寅",
+          0
+        ],
+        [
+          "文昌星",
+          "卯",
+          0
+        ],
+        [
+          "文昌星",
+          "辰",
+          1
+        ],
+        [
+          "文昌星",
+          "巳",
+          3
+        ],
+        [
+          "文昌星",
+          "午",
+          0
+        ],
+        [
+          "文昌星",
+          "未",
+          0
+        ],
+        [
+          "文昌星",
+          "申",
+          1
+        ],
+        [
+          "文昌星",
+          "酉",
+          3
+        ],
+        [
+          "文昌星",
+          "戌",
+          0
+        ],
+        [
+          "文昌星",
+          "亥",
+          0
+        ],
+        [
+          "文曲星",
+          "子",
+          1
+        ],
+        [
+          "文曲星",
+          "丑",
+          3
+        ],
+        [
+          "文曲星",
+          "寅",
+          0
+        ],
+        [
+          "文曲星",
+          "卯",
+          2
+        ],
+        [
+          "文曲星",
+          "辰",
+          1
+        ],
+        [
+          "文曲星",
+          "巳",
+          3
+        ],
+        [
+          "文曲星",
+          "午",
+          0
+        ],
+        [
+          "文曲星",
+          "未",
+          2
+        ],
+        [
+          "文曲星",
+          "申",
+          1
+        ],
+        [
+          "文曲星",
+          "酉",
+          3
+        ],
+        [
+          "文曲星",
+          "戌",
+          0
+        ],
+        [
+          "文曲星",
+          "亥",
+          2
+        ],
+        [
+          "禄存星",
+          "子",
+          3
+        ],
+        [
+          "禄存星",
+          "丑",
+          null
+        ],
+        [
+          "禄存星",
+          "寅",
+          3
+        ],
+        [
+          "禄存星",
+          "卯",
+          3
+        ],
+        [
+          "禄存星",
+          "辰",
+          null
+        ],
+        [
+          "禄存星",
+          "巳",
+          3
+        ],
+        [
+          "禄存星",
+          "午",
+          3
+        ],
+        [
+          "禄存星",
+          "未",
+          null
+        ],
+        [
+          "禄存星",
+          "申",
+          3
+        ],
+        [
+          "禄存星",
+          "酉",
+          3
+        ],
+        [
+          "禄存星",
+          "戌",
+          null
+        ],
+        [
+          "禄存星",
+          "亥",
+          3
+        ],
+        [
+          "擎羊星",
+          "子",
+          -3
+        ],
+        [
+          "擎羊星",
+          "丑",
+          2
+        ],
+        [
+          "擎羊星",
+          "寅",
+          null
+        ],
+        [
+          "擎羊星",
+          "卯",
+          -3
+        ],
+        [
+          "擎羊星",
+          "辰",
+          2
+        ],
+        [
+          "擎羊星",
+          "巳",
+          null
+        ],
+        [
+          "擎羊星",
+          "午",
+          -3
+        ],
+        [
+          "擎羊星",
+          "未",
+          2
+        ],
+        [
+          "擎羊星",
+          "申",
+          null
+        ],
+        [
+          "擎羊星",
+          "酉",
+          -3
+        ],
+        [
+          "擎羊星",
+          "戌",
+          2
+        ],
+        [
+          "擎羊星",
+          "亥",
+          null
+        ],
+        [
+          "陀羅星",
+          "子",
+          null
+        ],
+        [
+          "陀羅星",
+          "丑",
+          2
+        ],
+        [
+          "陀羅星",
+          "寅",
+          -3
+        ],
+        [
+          "陀羅星",
+          "卯",
+          null
+        ],
+        [
+          "陀羅星",
+          "辰",
+          2
+        ],
+        [
+          "陀羅星",
+          "巳",
+          -3
+        ],
+        [
+          "陀羅星",
+          "午",
+          null
+        ],
+        [
+          "陀羅星",
+          "未",
+          2
+        ],
+        [
+          "陀羅星",
+          "申",
+          -3
+        ],
+        [
+          "陀羅星",
+          "酉",
+          null
+        ],
+        [
+          "陀羅星",
+          "戌",
+          2
+        ],
+        [
+          "陀羅星",
+          "亥",
+          -3
+        ],
+        [
+          "火星",
+          "子",
+          -3
+        ],
+        [
+          "火星",
+          "丑",
+          0
+        ],
+        [
+          "火星",
+          "寅",
+          2
+        ],
+        [
+          "火星",
+          "卯",
+          0
+        ],
+        [
+          "火星",
+          "辰",
+          -3
+        ],
+        [
+          "火星",
+          "巳",
+          0
+        ],
+        [
+          "火星",
+          "午",
+          2
+        ],
+        [
+          "火星",
+          "未",
+          0
+        ],
+        [
+          "火星",
+          "申",
+          -3
+        ],
+        [
+          "火星",
+          "酉",
+          0
+        ],
+        [
+          "火星",
+          "戌",
+          2
+        ],
+        [
+          "火星",
+          "亥",
+          0
+        ],
+        [
+          "鈴星",
+          "子",
+          -3
+        ],
+        [
+          "鈴星",
+          "丑",
+          0
+        ],
+        [
+          "鈴星",
+          "寅",
+          2
+        ],
+        [
+          "鈴星",
+          "卯",
+          0
+        ],
+        [
+          "鈴星",
+          "辰",
+          -3
+        ],
+        [
+          "鈴星",
+          "巳",
+          0
+        ],
+        [
+          "鈴星",
+          "午",
+          2
+        ],
+        [
+          "鈴星",
+          "未",
+          0
+        ],
+        [
+          "鈴星",
+          "申",
+          -3
+        ],
+        [
+          "鈴星",
+          "酉",
+          0
+        ],
+        [
+          "鈴星",
+          "戌",
+          2
+        ],
+        [
+          "鈴星",
+          "亥",
+          0
+        ],
+        [
+          "左輔星",
+          "子",
+          3
+        ],
+        [
+          "左輔星",
+          "丑",
+          3
+        ],
+        [
+          "左輔星",
+          "寅",
+          3
+        ],
+        [
+          "左輔星",
+          "卯",
+          3
+        ],
+        [
+          "左輔星",
+          "辰",
+          3
+        ],
+        [
+          "左輔星",
+          "巳",
+          3
+        ],
+        [
+          "左輔星",
+          "午",
+          3
+        ],
+        [
+          "左輔星",
+          "未",
+          3
+        ],
+        [
+          "左輔星",
+          "申",
+          3
+        ],
+        [
+          "左輔星",
+          "酉",
+          3
+        ],
+        [
+          "左輔星",
+          "戌",
+          3
+        ],
+        [
+          "左輔星",
+          "亥",
+          3
+        ],
+        [
+          "右弼星",
+          "子",
+          3
+        ],
+        [
+          "右弼星",
+          "丑",
+          3
+        ],
+        [
+          "右弼星",
+          "寅",
+          3
+        ],
+        [
+          "右弼星",
+          "卯",
+          3
+        ],
+        [
+          "右弼星",
+          "辰",
+          3
+        ],
+        [
+          "右弼星",
+          "巳",
+          3
+        ],
+        [
+          "右弼星",
+          "午",
+          3
+        ],
+        [
+          "右弼星",
+          "未",
+          3
+        ],
+        [
+          "右弼星",
+          "申",
+          3
+        ],
+        [
+          "右弼星",
+          "酉",
+          3
+        ],
+        [
+          "右弼星",
+          "戌",
+          3
+        ],
+        [
+          "右弼星",
+          "亥",
+          3
+        ],
+        [
+          "天魁星",
+          "子",
+          3
+        ],
+        [
+          "天魁星",
+          "丑",
+          3
+        ],
+        [
+          "天魁星",
+          "寅",
+          3
+        ],
+        [
+          "天魁星",
+          "卯",
+          3
+        ],
+        [
+          "天魁星",
+          "辰",
+          3
+        ],
+        [
+          "天魁星",
+          "巳",
+          3
+        ],
+        [
+          "天魁星",
+          "午",
+          3
+        ],
+        [
+          "天魁星",
+          "未",
+          3
+        ],
+        [
+          "天魁星",
+          "申",
+          3
+        ],
+        [
+          "天魁星",
+          "酉",
+          3
+        ],
+        [
+          "天魁星",
+          "戌",
+          3
+        ],
+        [
+          "天魁星",
+          "亥",
+          3
+        ],
+        [
+          "天鉞星",
+          "子",
+          3
+        ],
+        [
+          "天鉞星",
+          "丑",
+          3
+        ],
+        [
+          "天鉞星",
+          "寅",
+          3
+        ],
+        [
+          "天鉞星",
+          "卯",
+          3
+        ],
+        [
+          "天鉞星",
+          "辰",
+          3
+        ],
+        [
+          "天鉞星",
+          "巳",
+          3
+        ],
+        [
+          "天鉞星",
+          "午",
+          3
+        ],
+        [
+          "天鉞星",
+          "未",
+          3
+        ],
+        [
+          "天鉞星",
+          "申",
+          3
+        ],
+        [
+          "天鉞星",
+          "酉",
+          3
+        ],
+        [
+          "天鉞星",
+          "戌",
+          3
+        ],
+        [
+          "天鉞星",
+          "亥",
+          3
+        ],
+        [
+          "化禄星",
+          "子",
+          3
+        ],
+        [
+          "化禄星",
+          "丑",
+          3
+        ],
+        [
+          "化禄星",
+          "寅",
+          3
+        ],
+        [
+          "化禄星",
+          "卯",
+          3
+        ],
+        [
+          "化禄星",
+          "辰",
+          3
+        ],
+        [
+          "化禄星",
+          "巳",
+          3
+        ],
+        [
+          "化禄星",
+          "午",
+          3
+        ],
+        [
+          "化禄星",
+          "未",
+          3
+        ],
+        [
+          "化禄星",
+          "申",
+          3
+        ],
+        [
+          "化禄星",
+          "酉",
+          3
+        ],
+        [
+          "化禄星",
+          "戌",
+          3
+        ],
+        [
+          "化禄星",
+          "亥",
+          3
+        ],
+        [
+          "化科星",
+          "子",
+          3
+        ],
+        [
+          "化科星",
+          "丑",
+          3
+        ],
+        [
+          "化科星",
+          "寅",
+          3
+        ],
+        [
+          "化科星",
+          "卯",
+          3
+        ],
+        [
+          "化科星",
+          "辰",
+          3
+        ],
+        [
+          "化科星",
+          "巳",
+          3
+        ],
+        [
+          "化科星",
+          "午",
+          3
+        ],
+        [
+          "化科星",
+          "未",
+          3
+        ],
+        [
+          "化科星",
+          "申",
+          3
+        ],
+        [
+          "化科星",
+          "酉",
+          3
+        ],
+        [
+          "化科星",
+          "戌",
+          3
+        ],
+        [
+          "化科星",
+          "亥",
+          3
+        ],
+        [
+          "化権星",
+          "子",
+          3
+        ],
+        [
+          "化権星",
+          "丑",
+          3
+        ],
+        [
+          "化権星",
+          "寅",
+          3
+        ],
+        [
+          "化権星",
+          "卯",
+          3
+        ],
+        [
+          "化権星",
+          "辰",
+          3
+        ],
+        [
+          "化権星",
+          "巳",
+          3
+        ],
+        [
+          "化権星",
+          "午",
+          3
+        ],
+        [
+          "化権星",
+          "未",
+          3
+        ],
+        [
+          "化権星",
+          "申",
+          3
+        ],
+        [
+          "化権星",
+          "酉",
+          3
+        ],
+        [
+          "化権星",
+          "戌",
+          3
+        ],
+        [
+          "化権星",
+          "亥",
+          3
+        ],
+        [
+          "化忌星",
+          "子",
+          -3
+        ],
+        [
+          "化忌星",
+          "丑",
+          -3
+        ],
+        [
+          "化忌星",
+          "寅",
+          -3
+        ],
+        [
+          "化忌星",
+          "卯",
+          -3
+        ],
+        [
+          "化忌星",
+          "辰",
+          -3
+        ],
+        [
+          "化忌星",
+          "巳",
+          -3
+        ],
+        [
+          "化忌星",
+          "午",
+          -3
+        ],
+        [
+          "化忌星",
+          "未",
+          -3
+        ],
+        [
+          "化忌星",
+          "申",
+          -3
+        ],
+        [
+          "化忌星",
+          "酉",
+          -3
+        ],
+        [
+          "化忌星",
+          "戌",
+          -3
+        ],
+        [
+          "化忌星",
+          "亥",
+          -3
+        ],
+        [
+          "天空星",
+          "子",
+          -3
+        ],
+        [
+          "天空星",
+          "丑",
+          -3
+        ],
+        [
+          "天空星",
+          "寅",
+          -3
+        ],
+        [
+          "天空星",
+          "卯",
+          -3
+        ],
+        [
+          "天空星",
+          "辰",
+          -3
+        ],
+        [
+          "天空星",
+          "巳",
+          -3
+        ],
+        [
+          "天空星",
+          "午",
+          -3
+        ],
+        [
+          "天空星",
+          "未",
+          -3
+        ],
+        [
+          "天空星",
+          "申",
+          -3
+        ],
+        [
+          "天空星",
+          "酉",
+          -3
+        ],
+        [
+          "天空星",
+          "戌",
+          -3
+        ],
+        [
+          "天空星",
+          "亥",
+          -3
+        ],
+        [
+          "地劫星",
+          "子",
+          -3
+        ],
+        [
+          "地劫星",
+          "丑",
+          -3
+        ],
+        [
+          "地劫星",
+          "寅",
+          -3
+        ],
+        [
+          "地劫星",
+          "卯",
+          -3
+        ],
+        [
+          "地劫星",
+          "辰",
+          -3
+        ],
+        [
+          "地劫星",
+          "巳",
+          -3
+        ],
+        [
+          "地劫星",
+          "午",
+          -3
+        ],
+        [
+          "地劫星",
+          "未",
+          -3
+        ],
+        [
+          "地劫星",
+          "申",
+          -3
+        ],
+        [
+          "地劫星",
+          "酉",
+          -3
+        ],
+        [
+          "地劫星",
+          "戌",
+          -3
+        ],
+        [
+          "地劫星",
+          "亥",
+          -3
+        ]
+      ]
+    },
+    "tableKiso": {
+      "source": "基礎編 S15（作盤11）の表",
+      "branches": [
+        "子",
+        "丑",
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥"
+      ],
+      "cells": [
+        [
+          "紫微星",
+          "子",
+          0
+        ],
+        [
+          "紫微星",
+          "丑",
+          6
+        ],
+        [
+          "紫微星",
+          "寅",
+          4
+        ],
+        [
+          "紫微星",
+          "卯",
+          4
+        ],
+        [
+          "紫微星",
+          "辰",
+          2
+        ],
+        [
+          "紫微星",
+          "巳",
+          4
+        ],
+        [
+          "紫微星",
+          "午",
+          6
+        ],
+        [
+          "紫微星",
+          "未",
+          6
+        ],
+        [
+          "紫微星",
+          "申",
+          4
+        ],
+        [
+          "紫微星",
+          "酉",
+          4
+        ],
+        [
+          "紫微星",
+          "戌",
+          2
+        ],
+        [
+          "紫微星",
+          "亥",
+          4
+        ],
+        [
+          "天機星",
+          "子",
+          6
+        ],
+        [
+          "天機星",
+          "丑",
+          0
+        ],
+        [
+          "天機星",
+          "寅",
+          2
+        ],
+        [
+          "天機星",
+          "卯",
+          4
+        ],
+        [
+          "天機星",
+          "辰",
+          0
+        ],
+        [
+          "天機星",
+          "巳",
+          0
+        ],
+        [
+          "天機星",
+          "午",
+          6
+        ],
+        [
+          "天機星",
+          "未",
+          0
+        ],
+        [
+          "天機星",
+          "申",
+          2
+        ],
+        [
+          "天機星",
+          "酉",
+          4
+        ],
+        [
+          "天機星",
+          "戌",
+          0
+        ],
+        [
+          "天機星",
+          "亥",
+          0
+        ],
+        [
+          "太陽星",
+          "子",
+          0
+        ],
+        [
+          "太陽星",
+          "丑",
+          0
+        ],
+        [
+          "太陽星",
+          "寅",
+          4
+        ],
+        [
+          "太陽星",
+          "卯",
+          6
+        ],
+        [
+          "太陽星",
+          "辰",
+          4
+        ],
+        [
+          "太陽星",
+          "巳",
+          4
+        ],
+        [
+          "太陽星",
+          "午",
+          4
+        ],
+        [
+          "太陽星",
+          "未",
+          2
+        ],
+        [
+          "太陽星",
+          "申",
+          2
+        ],
+        [
+          "太陽星",
+          "酉",
+          0
+        ],
+        [
+          "太陽星",
+          "戌",
+          0
+        ],
+        [
+          "太陽星",
+          "亥",
+          0
+        ],
+        [
+          "武曲星",
+          "子",
+          4
+        ],
+        [
+          "武曲星",
+          "丑",
+          6
+        ],
+        [
+          "武曲星",
+          "寅",
+          2
+        ],
+        [
+          "武曲星",
+          "卯",
+          0
+        ],
+        [
+          "武曲星",
+          "辰",
+          6
+        ],
+        [
+          "武曲星",
+          "巳",
+          0
+        ],
+        [
+          "武曲星",
+          "午",
+          4
+        ],
+        [
+          "武曲星",
+          "未",
+          6
+        ],
+        [
+          "武曲星",
+          "申",
+          2
+        ],
+        [
+          "武曲星",
+          "酉",
+          0
+        ],
+        [
+          "武曲星",
+          "戌",
+          6
+        ],
+        [
+          "武曲星",
+          "亥",
+          0
+        ],
+        [
+          "天同星",
+          "子",
+          4
+        ],
+        [
+          "天同星",
+          "丑",
+          0
+        ],
+        [
+          "天同星",
+          "寅",
+          0
+        ],
+        [
+          "天同星",
+          "卯",
+          0
+        ],
+        [
+          "天同星",
+          "辰",
+          0
+        ],
+        [
+          "天同星",
+          "巳",
+          6
+        ],
+        [
+          "天同星",
+          "午",
+          0
+        ],
+        [
+          "天同星",
+          "未",
+          0
+        ],
+        [
+          "天同星",
+          "申",
+          4
+        ],
+        [
+          "天同星",
+          "酉",
+          0
+        ],
+        [
+          "天同星",
+          "戌",
+          0
+        ],
+        [
+          "天同星",
+          "亥",
+          6
+        ],
+        [
+          "廉貞星",
+          "子",
+          -2
+        ],
+        [
+          "廉貞星",
+          "丑",
+          0
+        ],
+        [
+          "廉貞星",
+          "寅",
+          4
+        ],
+        [
+          "廉貞星",
+          "卯",
+          -2
+        ],
+        [
+          "廉貞星",
+          "辰",
+          0
+        ],
+        [
+          "廉貞星",
+          "巳",
+          -6
+        ],
+        [
+          "廉貞星",
+          "午",
+          -2
+        ],
+        [
+          "廉貞星",
+          "未",
+          0
+        ],
+        [
+          "廉貞星",
+          "申",
+          4
+        ],
+        [
+          "廉貞星",
+          "酉",
+          -2
+        ],
+        [
+          "廉貞星",
+          "戌",
+          0
+        ],
+        [
+          "廉貞星",
+          "亥",
+          -6
+        ],
+        [
+          "天府星",
+          "子",
+          6
+        ],
+        [
+          "天府星",
+          "丑",
+          6
+        ],
+        [
+          "天府星",
+          "寅",
+          6
+        ],
+        [
+          "天府星",
+          "卯",
+          2
+        ],
+        [
+          "天府星",
+          "辰",
+          6
+        ],
+        [
+          "天府星",
+          "巳",
+          2
+        ],
+        [
+          "天府星",
+          "午",
+          4
+        ],
+        [
+          "天府星",
+          "未",
+          6
+        ],
+        [
+          "天府星",
+          "申",
+          2
+        ],
+        [
+          "天府星",
+          "酉",
+          4
+        ],
+        [
+          "天府星",
+          "戌",
+          6
+        ],
+        [
+          "天府星",
+          "亥",
+          2
+        ],
+        [
+          "太陰星",
+          "子",
+          6
+        ],
+        [
+          "太陰星",
+          "丑",
+          6
+        ],
+        [
+          "太陰星",
+          "寅",
+          4
+        ],
+        [
+          "太陰星",
+          "卯",
+          0
+        ],
+        [
+          "太陰星",
+          "辰",
+          0
+        ],
+        [
+          "太陰星",
+          "巳",
+          0
+        ],
+        [
+          "太陰星",
+          "午",
+          0
+        ],
+        [
+          "太陰星",
+          "未",
+          0
+        ],
+        [
+          "太陰星",
+          "申",
+          0
+        ],
+        [
+          "太陰星",
+          "酉",
+          4
+        ],
+        [
+          "太陰星",
+          "戌",
+          4
+        ],
+        [
+          "太陰星",
+          "亥",
+          6
+        ],
+        [
+          "貪狼星",
+          "子",
+          2
+        ],
+        [
+          "貪狼星",
+          "丑",
+          4
+        ],
+        [
+          "貪狼星",
+          "寅",
+          -2
+        ],
+        [
+          "貪狼星",
+          "卯",
+          0
+        ],
+        [
+          "貪狼星",
+          "辰",
+          4
+        ],
+        [
+          "貪狼星",
+          "巳",
+          -6
+        ],
+        [
+          "貪狼星",
+          "午",
+          2
+        ],
+        [
+          "貪狼星",
+          "未",
+          4
+        ],
+        [
+          "貪狼星",
+          "申",
+          -2
+        ],
+        [
+          "貪狼星",
+          "酉",
+          0
+        ],
+        [
+          "貪狼星",
+          "戌",
+          4
+        ],
+        [
+          "貪狼星",
+          "亥",
+          -6
+        ],
+        [
+          "巨門星",
+          "子",
+          2
+        ],
+        [
+          "巨門星",
+          "丑",
+          -4
+        ],
+        [
+          "巨門星",
+          "寅",
+          4
+        ],
+        [
+          "巨門星",
+          "卯",
+          4
+        ],
+        [
+          "巨門星",
+          "辰",
+          -6
+        ],
+        [
+          "巨門星",
+          "巳",
+          2
+        ],
+        [
+          "巨門星",
+          "午",
+          2
+        ],
+        [
+          "巨門星",
+          "未",
+          -4
+        ],
+        [
+          "巨門星",
+          "申",
+          4
+        ],
+        [
+          "巨門星",
+          "酉",
+          4
+        ],
+        [
+          "巨門星",
+          "戌",
+          -6
+        ],
+        [
+          "巨門星",
+          "亥",
+          2
+        ],
+        [
+          "天相星",
+          "子",
+          6
+        ],
+        [
+          "天相星",
+          "丑",
+          6
+        ],
+        [
+          "天相星",
+          "寅",
+          6
+        ],
+        [
+          "天相星",
+          "卯",
+          0
+        ],
+        [
+          "天相星",
+          "辰",
+          2
+        ],
+        [
+          "天相星",
+          "巳",
+          2
+        ],
+        [
+          "天相星",
+          "午",
+          6
+        ],
+        [
+          "天相星",
+          "未",
+          2
+        ],
+        [
+          "天相星",
+          "申",
+          6
+        ],
+        [
+          "天相星",
+          "酉",
+          0
+        ],
+        [
+          "天相星",
+          "戌",
+          2
+        ],
+        [
+          "天相星",
+          "亥",
+          2
+        ],
+        [
+          "天梁星",
+          "子",
+          6
+        ],
+        [
+          "天梁星",
+          "丑",
+          4
+        ],
+        [
+          "天梁星",
+          "寅",
+          6
+        ],
+        [
+          "天梁星",
+          "卯",
+          6
+        ],
+        [
+          "天梁星",
+          "辰",
+          6
+        ],
+        [
+          "天梁星",
+          "巳",
+          0
+        ],
+        [
+          "天梁星",
+          "午",
+          6
+        ],
+        [
+          "天梁星",
+          "未",
+          4
+        ],
+        [
+          "天梁星",
+          "申",
+          0
+        ],
+        [
+          "天梁星",
+          "酉",
+          2
+        ],
+        [
+          "天梁星",
+          "戌",
+          6
+        ],
+        [
+          "天梁星",
+          "亥",
+          0
+        ],
+        [
+          "七殺星",
+          "子",
+          2
+        ],
+        [
+          "七殺星",
+          "丑",
+          4
+        ],
+        [
+          "七殺星",
+          "寅",
+          4
+        ],
+        [
+          "七殺星",
+          "卯",
+          2
+        ],
+        [
+          "七殺星",
+          "辰",
+          4
+        ],
+        [
+          "七殺星",
+          "巳",
+          -2
+        ],
+        [
+          "七殺星",
+          "午",
+          2
+        ],
+        [
+          "七殺星",
+          "未",
+          4
+        ],
+        [
+          "七殺星",
+          "申",
+          4
+        ],
+        [
+          "七殺星",
+          "酉",
+          2
+        ],
+        [
+          "七殺星",
+          "戌",
+          4
+        ],
+        [
+          "七殺星",
+          "亥",
+          -2
+        ],
+        [
+          "破軍星",
+          "子",
+          4
+        ],
+        [
+          "破軍星",
+          "丑",
+          2
+        ],
+        [
+          "破軍星",
+          "寅",
+          0
+        ],
+        [
+          "破軍星",
+          "卯",
+          -6
+        ],
+        [
+          "破軍星",
+          "辰",
+          2
+        ],
+        [
+          "破軍星",
+          "巳",
+          -2
+        ],
+        [
+          "破軍星",
+          "午",
+          4
+        ],
+        [
+          "破軍星",
+          "未",
+          2
+        ],
+        [
+          "破軍星",
+          "申",
+          0
+        ],
+        [
+          "破軍星",
+          "酉",
+          -6
+        ],
+        [
+          "破軍星",
+          "戌",
+          2
+        ],
+        [
+          "破軍星",
+          "亥",
+          -2
+        ],
+        [
+          "文昌星",
+          "子",
+          1
+        ],
+        [
+          "文昌星",
+          "丑",
+          3
+        ],
+        [
+          "文昌星",
+          "寅",
+          0
+        ],
+        [
+          "文昌星",
+          "卯",
+          0
+        ],
+        [
+          "文昌星",
+          "辰",
+          1
+        ],
+        [
+          "文昌星",
+          "巳",
+          3
+        ],
+        [
+          "文昌星",
+          "午",
+          0
+        ],
+        [
+          "文昌星",
+          "未",
+          0
+        ],
+        [
+          "文昌星",
+          "申",
+          1
+        ],
+        [
+          "文昌星",
+          "酉",
+          3
+        ],
+        [
+          "文昌星",
+          "戌",
+          0
+        ],
+        [
+          "文昌星",
+          "亥",
+          0
+        ],
+        [
+          "文曲星",
+          "子",
+          1
+        ],
+        [
+          "文曲星",
+          "丑",
+          3
+        ],
+        [
+          "文曲星",
+          "寅",
+          0
+        ],
+        [
+          "文曲星",
+          "卯",
+          2
+        ],
+        [
+          "文曲星",
+          "辰",
+          1
+        ],
+        [
+          "文曲星",
+          "巳",
+          3
+        ],
+        [
+          "文曲星",
+          "午",
+          0
+        ],
+        [
+          "文曲星",
+          "未",
+          2
+        ],
+        [
+          "文曲星",
+          "申",
+          1
+        ],
+        [
+          "文曲星",
+          "酉",
+          3
+        ],
+        [
+          "文曲星",
+          "戌",
+          0
+        ],
+        [
+          "文曲星",
+          "亥",
+          2
+        ],
+        [
+          "禄存星",
+          "子",
+          3
+        ],
+        [
+          "禄存星",
+          "丑",
+          null
+        ],
+        [
+          "禄存星",
+          "寅",
+          3
+        ],
+        [
+          "禄存星",
+          "卯",
+          3
+        ],
+        [
+          "禄存星",
+          "辰",
+          null
+        ],
+        [
+          "禄存星",
+          "巳",
+          3
+        ],
+        [
+          "禄存星",
+          "午",
+          3
+        ],
+        [
+          "禄存星",
+          "未",
+          null
+        ],
+        [
+          "禄存星",
+          "申",
+          3
+        ],
+        [
+          "禄存星",
+          "酉",
+          3
+        ],
+        [
+          "禄存星",
+          "戌",
+          null
+        ],
+        [
+          "禄存星",
+          "亥",
+          3
+        ],
+        [
+          "擎羊星",
+          "子",
+          -3
+        ],
+        [
+          "擎羊星",
+          "丑",
+          2
+        ],
+        [
+          "擎羊星",
+          "寅",
+          null
+        ],
+        [
+          "擎羊星",
+          "卯",
+          -3
+        ],
+        [
+          "擎羊星",
+          "辰",
+          2
+        ],
+        [
+          "擎羊星",
+          "巳",
+          null
+        ],
+        [
+          "擎羊星",
+          "午",
+          -3
+        ],
+        [
+          "擎羊星",
+          "未",
+          2
+        ],
+        [
+          "擎羊星",
+          "申",
+          null
+        ],
+        [
+          "擎羊星",
+          "酉",
+          -3
+        ],
+        [
+          "擎羊星",
+          "戌",
+          2
+        ],
+        [
+          "擎羊星",
+          "亥",
+          null
+        ],
+        [
+          "陀羅星",
+          "子",
+          null
+        ],
+        [
+          "陀羅星",
+          "丑",
+          2
+        ],
+        [
+          "陀羅星",
+          "寅",
+          -3
+        ],
+        [
+          "陀羅星",
+          "卯",
+          null
+        ],
+        [
+          "陀羅星",
+          "辰",
+          2
+        ],
+        [
+          "陀羅星",
+          "巳",
+          -3
+        ],
+        [
+          "陀羅星",
+          "午",
+          null
+        ],
+        [
+          "陀羅星",
+          "未",
+          2
+        ],
+        [
+          "陀羅星",
+          "申",
+          -3
+        ],
+        [
+          "陀羅星",
+          "酉",
+          null
+        ],
+        [
+          "陀羅星",
+          "戌",
+          2
+        ],
+        [
+          "陀羅星",
+          "亥",
+          -3
+        ],
+        [
+          "火星",
+          "子",
+          -3
+        ],
+        [
+          "火星",
+          "丑",
+          0
+        ],
+        [
+          "火星",
+          "寅",
+          2
+        ],
+        [
+          "火星",
+          "卯",
+          0
+        ],
+        [
+          "火星",
+          "辰",
+          -3
+        ],
+        [
+          "火星",
+          "巳",
+          0
+        ],
+        [
+          "火星",
+          "午",
+          2
+        ],
+        [
+          "火星",
+          "未",
+          0
+        ],
+        [
+          "火星",
+          "申",
+          -3
+        ],
+        [
+          "火星",
+          "酉",
+          0
+        ],
+        [
+          "火星",
+          "戌",
+          2
+        ],
+        [
+          "火星",
+          "亥",
+          0
+        ],
+        [
+          "鈴星",
+          "子",
+          -3
+        ],
+        [
+          "鈴星",
+          "丑",
+          0
+        ],
+        [
+          "鈴星",
+          "寅",
+          2
+        ],
+        [
+          "鈴星",
+          "卯",
+          0
+        ],
+        [
+          "鈴星",
+          "辰",
+          -3
+        ],
+        [
+          "鈴星",
+          "巳",
+          0
+        ],
+        [
+          "鈴星",
+          "午",
+          2
+        ],
+        [
+          "鈴星",
+          "未",
+          0
+        ],
+        [
+          "鈴星",
+          "申",
+          -3
+        ],
+        [
+          "鈴星",
+          "酉",
+          0
+        ],
+        [
+          "鈴星",
+          "戌",
+          2
+        ],
+        [
+          "鈴星",
+          "亥",
+          0
+        ],
+        [
+          "左輔星",
+          "子",
+          3
+        ],
+        [
+          "左輔星",
+          "丑",
+          3
+        ],
+        [
+          "左輔星",
+          "寅",
+          3
+        ],
+        [
+          "左輔星",
+          "卯",
+          3
+        ],
+        [
+          "左輔星",
+          "辰",
+          3
+        ],
+        [
+          "左輔星",
+          "巳",
+          3
+        ],
+        [
+          "左輔星",
+          "午",
+          3
+        ],
+        [
+          "左輔星",
+          "未",
+          3
+        ],
+        [
+          "左輔星",
+          "申",
+          3
+        ],
+        [
+          "左輔星",
+          "酉",
+          3
+        ],
+        [
+          "左輔星",
+          "戌",
+          3
+        ],
+        [
+          "左輔星",
+          "亥",
+          3
+        ],
+        [
+          "右弼星",
+          "子",
+          3
+        ],
+        [
+          "右弼星",
+          "丑",
+          3
+        ],
+        [
+          "右弼星",
+          "寅",
+          3
+        ],
+        [
+          "右弼星",
+          "卯",
+          3
+        ],
+        [
+          "右弼星",
+          "辰",
+          3
+        ],
+        [
+          "右弼星",
+          "巳",
+          3
+        ],
+        [
+          "右弼星",
+          "午",
+          3
+        ],
+        [
+          "右弼星",
+          "未",
+          3
+        ],
+        [
+          "右弼星",
+          "申",
+          3
+        ],
+        [
+          "右弼星",
+          "酉",
+          3
+        ],
+        [
+          "右弼星",
+          "戌",
+          3
+        ],
+        [
+          "右弼星",
+          "亥",
+          3
+        ],
+        [
+          "天魁星",
+          "子",
+          3
+        ],
+        [
+          "天魁星",
+          "丑",
+          3
+        ],
+        [
+          "天魁星",
+          "寅",
+          3
+        ],
+        [
+          "天魁星",
+          "卯",
+          3
+        ],
+        [
+          "天魁星",
+          "辰",
+          3
+        ],
+        [
+          "天魁星",
+          "巳",
+          3
+        ],
+        [
+          "天魁星",
+          "午",
+          3
+        ],
+        [
+          "天魁星",
+          "未",
+          3
+        ],
+        [
+          "天魁星",
+          "申",
+          3
+        ],
+        [
+          "天魁星",
+          "酉",
+          3
+        ],
+        [
+          "天魁星",
+          "戌",
+          3
+        ],
+        [
+          "天魁星",
+          "亥",
+          3
+        ],
+        [
+          "天鉞星",
+          "子",
+          3
+        ],
+        [
+          "天鉞星",
+          "丑",
+          3
+        ],
+        [
+          "天鉞星",
+          "寅",
+          3
+        ],
+        [
+          "天鉞星",
+          "卯",
+          3
+        ],
+        [
+          "天鉞星",
+          "辰",
+          3
+        ],
+        [
+          "天鉞星",
+          "巳",
+          3
+        ],
+        [
+          "天鉞星",
+          "午",
+          3
+        ],
+        [
+          "天鉞星",
+          "未",
+          3
+        ],
+        [
+          "天鉞星",
+          "申",
+          3
+        ],
+        [
+          "天鉞星",
+          "酉",
+          3
+        ],
+        [
+          "天鉞星",
+          "戌",
+          3
+        ],
+        [
+          "天鉞星",
+          "亥",
+          3
+        ],
+        [
+          "化禄星",
+          "子",
+          3
+        ],
+        [
+          "化禄星",
+          "丑",
+          3
+        ],
+        [
+          "化禄星",
+          "寅",
+          3
+        ],
+        [
+          "化禄星",
+          "卯",
+          3
+        ],
+        [
+          "化禄星",
+          "辰",
+          3
+        ],
+        [
+          "化禄星",
+          "巳",
+          3
+        ],
+        [
+          "化禄星",
+          "午",
+          3
+        ],
+        [
+          "化禄星",
+          "未",
+          3
+        ],
+        [
+          "化禄星",
+          "申",
+          3
+        ],
+        [
+          "化禄星",
+          "酉",
+          3
+        ],
+        [
+          "化禄星",
+          "戌",
+          3
+        ],
+        [
+          "化禄星",
+          "亥",
+          3
+        ],
+        [
+          "化科星",
+          "子",
+          3
+        ],
+        [
+          "化科星",
+          "丑",
+          3
+        ],
+        [
+          "化科星",
+          "寅",
+          3
+        ],
+        [
+          "化科星",
+          "卯",
+          3
+        ],
+        [
+          "化科星",
+          "辰",
+          3
+        ],
+        [
+          "化科星",
+          "巳",
+          3
+        ],
+        [
+          "化科星",
+          "午",
+          3
+        ],
+        [
+          "化科星",
+          "未",
+          3
+        ],
+        [
+          "化科星",
+          "申",
+          3
+        ],
+        [
+          "化科星",
+          "酉",
+          3
+        ],
+        [
+          "化科星",
+          "戌",
+          3
+        ],
+        [
+          "化科星",
+          "亥",
+          3
+        ],
+        [
+          "化権星",
+          "子",
+          3
+        ],
+        [
+          "化権星",
+          "丑",
+          3
+        ],
+        [
+          "化権星",
+          "寅",
+          3
+        ],
+        [
+          "化権星",
+          "卯",
+          3
+        ],
+        [
+          "化権星",
+          "辰",
+          3
+        ],
+        [
+          "化権星",
+          "巳",
+          3
+        ],
+        [
+          "化権星",
+          "午",
+          3
+        ],
+        [
+          "化権星",
+          "未",
+          3
+        ],
+        [
+          "化権星",
+          "申",
+          3
+        ],
+        [
+          "化権星",
+          "酉",
+          3
+        ],
+        [
+          "化権星",
+          "戌",
+          3
+        ],
+        [
+          "化権星",
+          "亥",
+          3
+        ],
+        [
+          "化忌星",
+          "子",
+          -3
+        ],
+        [
+          "化忌星",
+          "丑",
+          -3
+        ],
+        [
+          "化忌星",
+          "寅",
+          -3
+        ],
+        [
+          "化忌星",
+          "卯",
+          -3
+        ],
+        [
+          "化忌星",
+          "辰",
+          -3
+        ],
+        [
+          "化忌星",
+          "巳",
+          -3
+        ],
+        [
+          "化忌星",
+          "午",
+          -3
+        ],
+        [
+          "化忌星",
+          "未",
+          -3
+        ],
+        [
+          "化忌星",
+          "申",
+          -3
+        ],
+        [
+          "化忌星",
+          "酉",
+          -3
+        ],
+        [
+          "化忌星",
+          "戌",
+          -3
+        ],
+        [
+          "化忌星",
+          "亥",
+          -3
+        ],
+        [
+          "天空星",
+          "子",
+          -3
+        ],
+        [
+          "天空星",
+          "丑",
+          -3
+        ],
+        [
+          "天空星",
+          "寅",
+          -3
+        ],
+        [
+          "天空星",
+          "卯",
+          -3
+        ],
+        [
+          "天空星",
+          "辰",
+          -3
+        ],
+        [
+          "天空星",
+          "巳",
+          -3
+        ],
+        [
+          "天空星",
+          "午",
+          -3
+        ],
+        [
+          "天空星",
+          "未",
+          -3
+        ],
+        [
+          "天空星",
+          "申",
+          -3
+        ],
+        [
+          "天空星",
+          "酉",
+          -3
+        ],
+        [
+          "天空星",
+          "戌",
+          -3
+        ],
+        [
+          "天空星",
+          "亥",
+          -3
+        ],
+        [
+          "地劫星",
+          "子",
+          -3
+        ],
+        [
+          "地劫星",
+          "丑",
+          -3
+        ],
+        [
+          "地劫星",
+          "寅",
+          -3
+        ],
+        [
+          "地劫星",
+          "卯",
+          -3
+        ],
+        [
+          "地劫星",
+          "辰",
+          -3
+        ],
+        [
+          "地劫星",
+          "巳",
+          -3
+        ],
+        [
+          "地劫星",
+          "午",
+          -3
+        ],
+        [
+          "地劫星",
+          "未",
+          -3
+        ],
+        [
+          "地劫星",
+          "申",
+          -3
+        ],
+        [
+          "地劫星",
+          "酉",
+          -3
+        ],
+        [
+          "地劫星",
+          "戌",
+          -3
+        ],
+        [
+          "地劫星",
+          "亥",
+          -3
+        ]
+      ]
+    },
+    "ignoredStars": {
+      "source": "入門 p.26",
+      "stars": [
+        "天馬星",
+        "天姚星",
+        "紅鸞星"
+      ]
+    },
+    "formula": {
+      "source": "入門 p.34・基礎編 S15/S17",
+      "text": "本宮の運命指数＝本宮の星の力量合計＋対宮の合計×0.5＋三合宮の合計×0.3＋三合宮の合計×0.3"
+    },
+    "grades": {
+      "source": "入門 p.35（基礎編 S17 は平を「並」と表記）",
+      "items": [
+        [
+          "最強",
+          12.0,
+          null
+        ],
+        [
+          "強",
+          9.0,
+          11.9
+        ],
+        [
+          "平",
+          7.0,
+          8.9
+        ],
+        [
+          "弱",
+          3.0,
+          6.9
+        ],
+        [
+          "最弱",
+          null,
+          2.9
+        ]
+      ]
+    },
+    "chartA": {
+      "source": "入門 p.16 図2（星の下の数値・宮の左下の合計・運命指数と段階）",
+      "notes": [
+        "天姚（酉）・天馬・紅鸞（申）には数値なし（入門 p.26 の無視と一致）",
+        "禄存星は命盤に記載なし（§18 U9）。卯宮の合計 12 は禄存（+3）を含まない"
+      ],
+      "stars": [
+        {
+          "branch": "巳",
+          "star": "火星",
+          "printed": 2,
+          "needs_review": true,
+          "note": "needs_review: 表13の火星・巳は0（2は寅・午・戌の値）。命盤の旺衰表示「廟」も表（得地）と不一致（§20 S3）"
+        },
+        {
+          "branch": "巳",
+          "star": "天機星",
+          "printed": 0,
+          "needs_review": false
+        },
+        {
+          "branch": "巳",
+          "star": "化禄星",
+          "printed": 3,
+          "needs_review": false
+        },
+        {
+          "branch": "午",
+          "star": "鈴星",
+          "printed": 2,
+          "needs_review": false
+        },
+        {
+          "branch": "午",
+          "star": "紫微星",
+          "printed": 6,
+          "needs_review": false
+        },
+        {
+          "branch": "午",
+          "star": "化科星",
+          "printed": 3,
+          "needs_review": false
+        },
+        {
+          "branch": "未",
+          "star": "地劫星",
+          "printed": -3,
+          "needs_review": false
+        },
+        {
+          "branch": "申",
+          "star": "天鉞星",
+          "printed": 3,
+          "needs_review": false
+        },
+        {
+          "branch": "申",
+          "star": "破軍星",
+          "printed": 0,
+          "needs_review": false
+        },
+        {
+          "branch": "戌",
+          "star": "廉貞星",
+          "printed": 0,
+          "needs_review": false
+        },
+        {
+          "branch": "戌",
+          "star": "天府星",
+          "printed": 6,
+          "needs_review": false
+        },
+        {
+          "branch": "亥",
+          "star": "太陰星",
+          "printed": 6,
+          "needs_review": false
+        },
+        {
+          "branch": "亥",
+          "star": "化忌星",
+          "printed": -3,
+          "needs_review": false
+        },
+        {
+          "branch": "子",
+          "star": "天魁星",
+          "printed": 3,
+          "needs_review": false
+        },
+        {
+          "branch": "子",
+          "star": "左輔星",
+          "printed": 3,
+          "needs_review": false
+        },
+        {
+          "branch": "子",
+          "star": "文曲星",
+          "printed": 1,
+          "needs_review": false
+        },
+        {
+          "branch": "子",
+          "star": "貪狼星",
+          "printed": 2,
+          "needs_review": false
+        },
+        {
+          "branch": "丑",
+          "star": "巨門星",
+          "printed": -4,
+          "needs_review": false
+        },
+        {
+          "branch": "丑",
+          "star": "天同星",
+          "printed": 0,
+          "needs_review": false
+        },
+        {
+          "branch": "寅",
+          "star": "右弼星",
+          "printed": 3,
+          "needs_review": false
+        },
+        {
+          "branch": "寅",
+          "star": "文昌星",
+          "printed": 0,
+          "needs_review": false
+        },
+        {
+          "branch": "寅",
+          "star": "天相星",
+          "printed": 6,
+          "needs_review": false
+        },
+        {
+          "branch": "寅",
+          "star": "武曲星",
+          "printed": 2,
+          "needs_review": false
+        },
+        {
+          "branch": "寅",
+          "star": "陀羅星",
+          "printed": -3,
+          "needs_review": false
+        },
+        {
+          "branch": "卯",
+          "star": "天梁星",
+          "printed": 6,
+          "needs_review": false
+        },
+        {
+          "branch": "卯",
+          "star": "太陽星",
+          "printed": 6,
+          "needs_review": false
+        },
+        {
+          "branch": "卯",
+          "star": "化権星",
+          "printed": 3,
+          "needs_review": false
+        },
+        {
+          "branch": "卯",
+          "star": "天空星",
+          "printed": -3,
+          "needs_review": false
+        },
+        {
+          "branch": "辰",
+          "star": "擎羊星",
+          "printed": 2,
+          "needs_review": false
+        },
+        {
+          "branch": "辰",
+          "star": "七殺星",
+          "printed": 4,
+          "needs_review": false
+        }
+      ],
+      "palaces": [
+        {
+          "branch": "巳",
+          "palace": "田宅宮",
+          "printedSum": 5,
+          "printedIndex": 5.3,
+          "printedGrade": "弱"
+        },
+        {
+          "branch": "午",
+          "palace": "官禄宮",
+          "printedSum": 11,
+          "printedIndex": 19.7,
+          "printedGrade": "最強"
+        },
+        {
+          "branch": "未",
+          "palace": "奴僕宮",
+          "printedSum": -3,
+          "printedIndex": -0.5,
+          "printedGrade": "最弱"
+        },
+        {
+          "branch": "申",
+          "palace": "遷移宮",
+          "printedSum": 3,
+          "printedIndex": 11.5,
+          "printedGrade": "強"
+        },
+        {
+          "branch": "辰",
+          "palace": "福徳宮",
+          "printedSum": 6,
+          "printedIndex": 12.6,
+          "printedGrade": "最強"
+        },
+        {
+          "branch": "酉",
+          "palace": "疾厄宮",
+          "printedSum": 0,
+          "printedIndex": 6.3,
+          "printedGrade": "弱"
+        },
+        {
+          "branch": "卯",
+          "palace": "父母宮",
+          "printedSum": 12,
+          "printedIndex": 12.0,
+          "printedGrade": "最強"
+        },
+        {
+          "branch": "戌",
+          "palace": "財帛宮",
+          "printedSum": 6,
+          "printedIndex": 14.7,
+          "printedGrade": "最強"
+        },
+        {
+          "branch": "寅",
+          "palace": "命宮",
+          "printedSum": 8,
+          "printedIndex": 14.6,
+          "printedGrade": "最強"
+        },
+        {
+          "branch": "丑",
+          "palace": "兄弟宮",
+          "printedSum": -4,
+          "printedIndex": -4.0,
+          "printedGrade": "最弱"
+        },
+        {
+          "branch": "子",
+          "palace": "夫妻宮",
+          "printedSum": 9,
+          "printedIndex": 17.2,
+          "printedGrade": "最強"
+        },
+        {
+          "branch": "亥",
+          "palace": "子女宮",
+          "printedSum": 3,
+          "printedIndex": 8.2,
+          "printedGrade": "平"
+        }
+      ]
+    },
+    "chartB": {
+      "source": "基礎編 S19（星の下の数値・宮名の右の運命指数。0 は印刷なし＝空欄を0として読む）",
+      "notes": [
+        "段階は印刷なし",
+        "宮の運命指数は、印刷された星の値から推羅式で計算した値より 0.0〜0.2 大きい（11宮）。原因は資料から特定できない → needs_review"
+      ],
+      "stars": [
+        {
+          "branch": "巳",
+          "star": "太陽星",
+          "printed": 4
+        },
+        {
+          "branch": "巳",
+          "star": "火星",
+          "printed": 0
+        },
+        {
+          "branch": "巳",
+          "star": "化忌星",
+          "printed": -3
+        },
+        {
+          "branch": "午",
+          "star": "破軍星",
+          "printed": 4
+        },
+        {
+          "branch": "午",
+          "star": "化権星",
+          "printed": 3
+        },
+        {
+          "branch": "未",
+          "star": "天鉞星",
+          "printed": 3
+        },
+        {
+          "branch": "未",
+          "star": "文曲星",
+          "printed": 2
+        },
+        {
+          "branch": "未",
+          "star": "文昌星",
+          "printed": 0
+        },
+        {
+          "branch": "未",
+          "star": "天機星",
+          "printed": 0
+        },
+        {
+          "branch": "申",
+          "star": "天空星",
+          "printed": -3
+        },
+        {
+          "branch": "申",
+          "star": "天府星",
+          "printed": 2
+        },
+        {
+          "branch": "申",
+          "star": "紫微星",
+          "printed": 4
+        },
+        {
+          "branch": "酉",
+          "star": "太陰星",
+          "printed": 4
+        },
+        {
+          "branch": "戌",
+          "star": "貪狼星",
+          "printed": 4
+        },
+        {
+          "branch": "亥",
+          "star": "巨門星",
+          "printed": 2
+        },
+        {
+          "branch": "子",
+          "star": "化禄星",
+          "printed": 3
+        },
+        {
+          "branch": "子",
+          "star": "右弼星",
+          "printed": 3
+        },
+        {
+          "branch": "子",
+          "star": "天相星",
+          "printed": 6
+        },
+        {
+          "branch": "子",
+          "star": "廉貞星",
+          "printed": -2
+        },
+        {
+          "branch": "丑",
+          "star": "鈴星",
+          "printed": 0
+        },
+        {
+          "branch": "丑",
+          "star": "陀羅星",
+          "printed": 2
+        },
+        {
+          "branch": "丑",
+          "star": "天魁星",
+          "printed": 3
+        },
+        {
+          "branch": "丑",
+          "star": "天梁星",
+          "printed": 4
+        },
+        {
+          "branch": "寅",
+          "star": "地劫星",
+          "printed": -3
+        },
+        {
+          "branch": "寅",
+          "star": "禄存星",
+          "printed": 3
+        },
+        {
+          "branch": "寅",
+          "star": "左輔星",
+          "printed": 3
+        },
+        {
+          "branch": "寅",
+          "star": "七殺星",
+          "printed": 4
+        },
+        {
+          "branch": "卯",
+          "star": "擎羊星",
+          "printed": -3
+        },
+        {
+          "branch": "卯",
+          "star": "天同星",
+          "printed": 0
+        },
+        {
+          "branch": "辰",
+          "star": "化科星",
+          "printed": 3
+        },
+        {
+          "branch": "辰",
+          "star": "武曲星",
+          "printed": 6
+        }
+      ],
+      "palaces": [
+        {
+          "branch": "巳",
+          "palace": "財帛宮",
+          "printedIndex": 6.1,
+          "needs_review": true
+        },
+        {
+          "branch": "午",
+          "palace": "子女宮",
+          "printedIndex": 15.4,
+          "needs_review": true
+        },
+        {
+          "branch": "未",
+          "palace": "夫妻宮",
+          "printedIndex": 9.3,
+          "needs_review": true
+        },
+        {
+          "branch": "申",
+          "palace": "兄弟宮",
+          "printedIndex": 12.3,
+          "needs_review": true
+        },
+        {
+          "branch": "酉",
+          "palace": "命宮",
+          "printedIndex": 5.6,
+          "needs_review": true
+        },
+        {
+          "branch": "戌",
+          "palace": "父母宮",
+          "printedIndex": 12.8,
+          "needs_review": true
+        },
+        {
+          "branch": "亥",
+          "palace": "福徳宮",
+          "printedIndex": 3.3,
+          "needs_review": true
+        },
+        {
+          "branch": "子",
+          "palace": "田宅宮",
+          "printedIndex": 17.2,
+          "needs_review": true
+        },
+        {
+          "branch": "丑",
+          "palace": "官禄宮",
+          "printedIndex": 13.2,
+          "needs_review": true
+        },
+        {
+          "branch": "寅",
+          "palace": "奴僕宮",
+          "printedIndex": 11.9,
+          "needs_review": true
+        },
+        {
+          "branch": "卯",
+          "palace": "遷移宮",
+          "printedIndex": 1.3,
+          "needs_review": true
+        },
+        {
+          "branch": "辰",
+          "palace": "疾厄宮",
+          "printedIndex": 14.9,
+          "needs_review": true
+        }
+      ]
+    }
+  }
+}

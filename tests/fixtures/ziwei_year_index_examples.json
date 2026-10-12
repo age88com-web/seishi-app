@@ -1,0 +1,30 @@
+{
+  "_note": "流年指数（大限運命指数×２＋小限運命指数。入門 p.100）の手計算 fixture。docs/ziwei-basic-spec.md §34。資料に流年指数の計算例はないため、命盤A（入門 p.16 図2）の印刷された宮の運命指数のうち、エンジンの値と一致する6宮（寅14.6・辰12.6・午19.7・申11.5・戌14.7・子17.2）だけを使い、大限・小限の宮がどちらもこの6宮になる年齢を手計算した。印刷値とエンジンが一致しない宮（巳・未・酉・卯・丑・亥。§22 needs_review）は使わない。",
+  "chart": {
+    "id": "A",
+    "source": "入門 p.16 図2",
+    "input": { "birth": { "year": 1955, "month": 10, "day": 16, "hour": 15, "minute": 55 }, "place": "東京", "sex": "female" },
+    "printedIndex": { "寅": 14.6, "辰": 12.6, "午": 19.7, "申": 11.5, "戌": 14.7, "子": 17.2 },
+    "majorFirstStartAge": 5,
+    "majorLastEndAge": 124
+  },
+  "cases": [
+    { "age": 4, "major": null, "minor": "戌", "yearIndex": null, "note": "大限開始前（最初の大限は5歳から）" },
+    { "age": 6, "major": "寅", "minor": "申", "yearIndex": 40.7, "calc": "14.6×2＋11.5" },
+    { "age": 8, "major": "寅", "minor": "午", "yearIndex": 48.9, "calc": "14.6×2＋19.7" },
+    { "age": 10, "major": "寅", "minor": "辰", "yearIndex": 41.8, "calc": "14.6×2＋12.6" },
+    { "age": 12, "major": "寅", "minor": "寅", "yearIndex": 43.8, "calc": "14.6×2＋14.6" },
+    { "age": 14, "major": "寅", "minor": "子", "yearIndex": 46.4, "calc": "14.6×2＋17.2" },
+    { "age": 26, "major": "辰", "minor": "子", "yearIndex": 42.4, "calc": "12.6×2＋17.2" },
+    { "age": 30, "major": "辰", "minor": "申", "yearIndex": 36.7, "calc": "12.6×2＋11.5" },
+    { "age": 32, "major": "辰", "minor": "午", "yearIndex": 44.9, "calc": "12.6×2＋19.7" },
+    { "age": 46, "major": "午", "minor": "辰", "yearIndex": 52.0, "calc": "19.7×2＋12.6" },
+    { "age": 48, "major": "午", "minor": "寅", "yearIndex": 54.0, "calc": "19.7×2＋14.6" },
+    { "age": 50, "major": "午", "minor": "子", "yearIndex": 56.6, "calc": "19.7×2＋17.2" },
+    { "age": 66, "major": "申", "minor": "申", "yearIndex": 34.5, "calc": "11.5×2＋11.5" },
+    { "age": 68, "major": "申", "minor": "午", "yearIndex": 42.7, "calc": "11.5×2＋19.7" },
+    { "age": 88, "major": "戌", "minor": "戌", "yearIndex": 44.1, "calc": "14.7×2＋14.7" },
+    { "age": 106, "major": "子", "minor": "辰", "yearIndex": 47.0, "calc": "17.2×2＋12.6" },
+    { "age": 125, "major": null, "minor": null, "yearIndex": null, "note": "大限表の範囲外（最後の大限は124歳まで）" }
+  ]
+}

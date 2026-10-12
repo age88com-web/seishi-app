@@ -1,0 +1,487 @@
+/* src/app/ziwei/print.css
+ *
+ * /ziwei の印刷専用レイアウト（docs/ziwei-basic-spec.md §25）。
+ *   - 盤印刷 ZiweiChartPrint（A4縦1枚）と解釈印刷 ZiweiInterpretationPrint（複数ページ可）の体裁。
+ *   - 画面表示・印刷対象の切替・余白は共通の src/components/print（PrintRoot・print.css）が受け持つ。
+ *     ここは .print-root の中だけに効くクラス（zwp-*）の体裁だけを書く。
+ *   - 白黒印刷でも読めるよう、意味を背景色に頼らない（四化は枠つきの文字、命宮は太枠）。
+ */
+
+.zwp-h2 {
+  font-size: 12pt;
+  margin: 3mm 0 1.5mm;
+  padding-bottom: 0.5mm;
+  border-bottom: 0.6pt solid #000;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+.zwp-h3 {
+  font-size: 10.5pt;
+  margin: 2.5mm 0 1mm;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+.zwp-h4 {
+  font-size: 9.5pt;
+  margin: 1.5mm 0 0.5mm;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+.zwp-text {
+  margin: 0 0 1.2mm;
+  text-align: justify;
+  overflow-wrap: anywhere;
+}
+.zwp-k,
+.zwp-k-inline {
+  font-weight: 700;
+}
+.zwp-k-inline {
+  margin-right: 2mm;
+}
+
+/* ---- 12宮命盤（盤印刷） ---- */
+.zwp-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 37mm);
+  border: 1pt solid #000;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.zwp-cell {
+  border: 0.5pt solid #000;
+  padding: 1mm 1.2mm;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-size: 7.5pt;
+  line-height: 1.35;
+}
+.zwp-ming {
+  border: 1.6pt solid #000;
+}
+.zwp-stars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.6mm;
+}
+.zwp-subs {
+  margin-top: 0.4mm;
+}
+.zwp-star {
+  white-space: nowrap;
+}
+.zwp-main {
+  font-weight: 700;
+  font-size: 8.5pt;
+}
+.zwp-st {
+  font-weight: 400;
+  font-size: 6.5pt;
+  margin-left: 0.3mm;
+}
+.zwp-pw {
+  font-weight: 400;
+  font-size: 6.5pt;
+  margin-left: 0.3mm;
+}
+.zwp-hua {
+  font-weight: 700;
+  font-size: 6.5pt;
+  border: 0.6pt solid #000;
+  padding: 0 0.4mm;
+  margin-left: 0.5mm;
+}
+.zwp-foot {
+  margin-top: auto;
+  border-top: 0.4pt dashed #000;
+  padding-top: 0.4mm;
+}
+.zwp-name {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 8.5pt;
+}
+.zwp-branch {
+  font-size: 10pt;
+}
+.zwp-shen {
+  font-size: 6.5pt;
+  border: 0.6pt solid #000;
+  padding: 0 0.6mm;
+  margin-left: 1mm;
+}
+.zwp-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 6.8pt;
+}
+.zwp-center {
+  border: 0.5pt solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.zwp-legend {
+  font-size: 7.5pt;
+  line-height: 1.7;
+}
+
+/* ---- 格局（解釈印刷の先頭） ---- */
+.zwp-pattern-list {
+  font-size: 9pt;
+  margin-bottom: 1.5mm;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.zwp-pattern {
+  margin: 0 0 2mm;
+  padding-left: 2mm;
+  border-left: 1pt solid #000;
+}
+.zwp-pattern-head {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.zwp-lines > div {
+  break-inside: avoid;
+}
+.zwp-pattern-name {
+  font-weight: 700;
+  font-size: 10pt;
+  display: flex;
+  gap: 2mm;
+  align-items: baseline;
+}
+.zwp-label {
+  font-size: 8pt;
+  border: 0.8pt solid #000;
+  padding: 0 1mm;
+}
+.zwp-label-review {
+  border-style: dashed;
+}
+.zwp-pattern-at {
+  font-weight: 400;
+  font-size: 8.5pt;
+}
+.zwp-pattern-body {
+  font-size: 8.8pt;
+}
+.zwp-pattern-body ul {
+  margin: 0 0 0.8mm;
+  padding-left: 5mm;
+}
+
+/* ==== 盤印刷: A4横1枚（用紙は page.tsx の PrintRoot page="size: A4 landscape; margin: 10mm"。
+   盤印刷のときだけ有効。解釈印刷・他の術はA4縦のまま）。有効紙面 277mm×190mm ==== */
+.print-root.zw-print-landscape {
+  width: 277mm;
+}
+.print-sheet.zw-chart-sheet,
+.zw-chart-sheet .print-sheet-body {
+  width: 277mm;
+}
+.print-sheet.zw-chart-sheet {
+  height: 188mm;
+}
+/* 基本情報（2行・コンパクト） */
+.zwc-head {
+  height: 12mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 1mm;
+  font-size: 9.5pt;
+  line-height: 1.35;
+}
+.zwc-line1,
+.zwc-line2 {
+  display: flex;
+  align-items: baseline;
+  gap: 5mm;
+  white-space: nowrap;
+}
+.zwc-title {
+  font-size: 14pt;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.zwc-name {
+  font-size: 12pt;
+  font-weight: 700;
+}
+.zwc-line2 {
+  font-size: 9pt;
+}
+/* 命盤: 残りの高さいっぱい（4行均等） */
+.zw-print-chart .zwp-board {
+  height: 175mm;
+  grid-template-rows: repeat(4, 1fr);
+}
+
+/* ==== 解釈印刷 ==== */
+.zw-print-interp {
+  --zw-major: #1d5fc4;
+  --zw-major-bg: #eaf1fc;
+  --zw-minor: #c75b00;
+  --zw-minor-bg: #fdf0e3;
+}
+.zwp-h1 {
+  font-size: 13pt;
+  margin: 5mm 0 2mm;
+  padding-bottom: 0.8mm;
+  border-bottom: 1.2pt solid #000;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+.zwp-section:first-of-type .zwp-h1 {
+  margin-top: 2mm;
+}
+.zwp-sub {
+  font-size: 7.5pt;
+  font-weight: 400;
+}
+.zwp-note {
+  font-size: 8pt;
+  color: #333;
+}
+/* 運命指数（グラフの途中で改ページしない） */
+.zwp-graph {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.zwp-graph .zw-yearindex-svg {
+  max-width: none;
+  width: 100%;
+}
+.zwp-graph .zw-mp-h3 {
+  font-size: 10pt;
+  margin: 0 0 1mm;
+}
+.zwp-index-table,
+.zwp-limit-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2mm 0;
+  font-size: 8.5pt;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.zwp-index-table th,
+.zwp-index-table td,
+.zwp-limit-table th,
+.zwp-limit-table td {
+  border: 0.5pt solid #000;
+  padding: 0.6mm 1mm;
+  text-align: center;
+}
+.zwp-index-table th {
+  font-size: 7.5pt;
+  line-height: 1.25;
+}
+.zwp-limit-table td {
+  text-align: left;
+}
+.zwp-ages {
+  overflow-wrap: anywhere;
+}
+/* 十二宮・大限・小限（見出しと最初の本文を離さない） */
+.zwp-limit {
+  margin: 3mm 0 4mm;
+}
+.zwp-limit > .zwp-h2 {
+  font-size: 10.5pt;
+}
+.zwp-limit .zw-fstar-block {
+  break-inside: auto;
+}
+.zwp-limit .zw-fstar-title,
+.zwp-limit .zw-fstar-sub,
+.zwp-limit .zw-fstar-name {
+  break-after: avoid;
+  page-break-after: avoid;
+}
+.zwp-limit .zw-fstar-star,
+.zwp-limit .zw-pattern-item {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.zwp-pattern {
+  break-inside: avoid-page;
+}
+
+/* ---- 新規諸星（§37）: 雑曜・十二神等。既存の主星・副星より小さく ---- */
+.zwp-minors {
+  margin-top: 0.3mm;
+  gap: 0 1.2mm;
+}
+.zwp-mstar {
+  white-space: nowrap;
+  font-size: 6.4pt;
+  color: #222;
+}
+.zwp-cycles {
+  margin-top: 0.2mm;
+  gap: 0 1.2mm;
+}
+.zwp-cstar {
+  white-space: nowrap;
+  font-size: 5.8pt;
+  color: #444;
+}
+.zwp-masters {
+  margin-bottom: 1mm;
+  font-size: 8.5pt;
+}
+
+/* ==== 解釈印刷：鑑定書の体裁（用紙は A4縦・上下30mm・左右22mm＝page.tsx の PrintRoot page。十二宮は共通の .pp-*） ==== */
+.zw-print-interp {
+  font-size: 10pt;
+  line-height: 1.8;
+}
+.zw-print-interp .zwp-text {
+  margin: 0 0 2mm;
+}
+.zw-print-interp .zwp-h1 {
+  font-size: 14pt;
+  margin: 7mm 0 3mm;
+}
+.zw-print-interp .zwp-h3 {
+  font-size: 11pt;
+  margin: 5mm 0 1.5mm;
+  padding-bottom: 0.5mm;
+  border-bottom: 0.5pt solid #000;
+}
+.zw-print-interp .zwp-h3::before {
+  content: "■ ";
+}
+.zw-print-interp .zwp-h4 {
+  font-size: 10pt;
+  margin: 2.5mm 0 0.5mm;
+}
+.zw-print-interp .zwp-h4::before {
+  content: "◆ ";
+}
+
+/* 十二宮：各宮は必ず新しいページから（「十二宮の解説」の見出しも新しいページ。命宮は見出しと同じページ） */
+.zw-print-interp .zwp-details {
+  break-before: page;
+  page-break-before: always;
+}
+.zw-print-interp .zwp-details > .zwp-h1 {
+  margin-top: 0;
+}
+/* 各宮（共通の PalacePrint。.pp-palace は新しいページから） */
+.zw-print-interp .zwp-details > .zwp-h1 + .pp-palace {
+  break-before: avoid;
+  page-break-before: avoid;
+}
+/* 見出しの直後で改ページしない */
+.zw-print-interp .zwp-block > .zwp-h3 + * {
+  break-before: avoid;
+  page-break-before: avoid;
+}
+
+/* 運命指数・大限・小限の表も同じ罫線 */
+.zw-print-interp .zwp-index-table th,
+.zw-print-interp .zwp-index-table td,
+.zw-print-interp .zwp-limit-table th,
+.zw-print-interp .zwp-limit-table td {
+  border: 0.4pt solid #555;
+  padding: 1.2mm 1.6mm;
+}
+
+/* 格局：左の縦線・枠を使わず、見出し＋本文に */
+.zw-print-interp .zwp-pattern {
+  border-left: none;
+  padding-left: 0;
+  margin: 0 0 4mm;
+}
+.zw-print-interp .zwp-pattern-name {
+  font-size: 11pt;
+  border-bottom: 0.4pt solid #888;
+  padding-bottom: 0.5mm;
+  margin-bottom: 1mm;
+}
+.zw-print-interp .zwp-label {
+  border-width: 0.5pt;
+  font-weight: 400;
+}
+
+/* 大限・小限（画面と同じ部品）：色付きの縦線・バッジ・背景色を出さない */
+.zw-print-interp .zwp-limit > .zwp-h2 {
+  font-size: 11.5pt;
+  border-bottom: 0.8pt solid #000;
+}
+.zw-print-interp .zw-fstar-block {
+  border-left: none;
+  padding-left: 0;
+  margin: 1mm 0 3mm;
+}
+.zw-print-interp .zw-fstar-title,
+.zw-print-interp .zw-fstar-block.is-major .zw-fstar-title,
+.zw-print-interp .zw-fstar-block.is-minor .zw-fstar-title {
+  color: #000;
+  font-size: 10.5pt;
+}
+.zw-print-interp .zw-fstar-meta {
+  color: #000;
+  font-size: 9pt;
+}
+.zw-print-interp .zw-fstar-sub {
+  color: #000;
+  font-size: 10pt;
+  font-weight: 700;
+  margin: 2.5mm 0 0.5mm;
+}
+.zw-print-interp .zw-fstar-sub::before {
+  content: "◆ ";
+}
+.zw-print-interp .zw-fstar-cond {
+  border: none;
+  padding: 0;
+  font-size: 8.5pt;
+  color: #333;
+}
+.zw-print-interp .zw-fstar-cond::before {
+  content: "〔";
+}
+.zw-print-interp .zw-fstar-cond::after {
+  content: "〕";
+}
+.zw-print-interp .zw-fhua,
+.zw-print-interp .zw-fhua-major,
+.zw-print-interp .zw-fhua-minor {
+  color: #000;
+  background: none;
+  border: 0.5pt solid #000;
+  border-radius: 0;
+}
+.zw-print-interp .zw-mp-list {
+  padding-left: 4mm;
+}
+.zw-print-interp .zw-pattern-item {
+  border-left: none;
+  padding-left: 0;
+  margin: 1mm 0 3mm;
+}
+.zw-print-interp .zw-pattern-status,
+.zw-print-interp .zw-pattern-status.is-ok {
+  background: none;
+  color: #000;
+  border: 0.5pt solid #000;
+  border-radius: 0;
+  font-weight: 400;
+}
+.zw-print-interp .zw-pattern-k {
+  color: #000;
+}
+.zw-print-interp .zw-pattern-warn {
+  color: #000;
+}
+.zw-print-interp * {
+  box-shadow: none !important;
+}

@@ -1,0 +1,4236 @@
+{
+  "_meta": {
+    "status": "candidate（未確定。判定エンジン・fixture 確定の前の資料整理）",
+    "spec": "docs/ziwei-basic-spec.md §23",
+    "sources": [
+      "docs/source/紫微斗数基礎２.pdf（正本。S1〜S41）",
+      "docs/source/紫微斗数入門.pdf・紫微斗数基礎編.pdf（格局の記述なし。§23.1）"
+    ],
+    "automationLevels": {
+      "A": "現行エンジン（星配置・宮・同宮・対宮・三合宮・四化・旺衰）だけで条件が判定できる",
+      "B": "条件の一部が未定義（吉星・煞星の範囲、三方の範囲、宮の指定なし、全部か一部か 等）で、ユーザー確認か追加実装が必要",
+      "C": "資料条件が曖昧・資料内で矛盾・34星外の要素が必須で、自動判定が困難"
+    },
+    "priority": "複数格局の優先順位は資料に記載なし",
+    "starNameMapping": {
+      "擎羊": "敬羊星",
+      "地空": "天空星",
+      "天空（S38・S39 の命盤）": "天空星",
+      "貧狼（貧武同行格・馬頭帯箭格・桃花犯主格の本文）": "貪狼星",
+      "刑（天梁の別名、S33）": "天梁星",
+      "印星（S33）": "天相星"
+    },
+    "referenceOnly": "classicalPatterns（全書52格）は referenceOnly: true。判定エンジンの対象外（2026-09-30 ユーザー確定、§23.4）",
+    "decisions": "格局判定の確定仕様は docs/ziwei-basic-spec.md §23.4。patterns[].needsReview は確定前の整理（解消済みの項目を含む）。判定用の最新の資料問題は src/lib/ziwei/patterns/data.ts の sourceIssues"
+  },
+  "patterns": [
+    {
+      "id": "K2-01",
+      "number": 1,
+      "canonicalName": "紫府同宮格",
+      "sourceName": "紫府同宮格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 2,
+        "heading": "格局１      紫府同宮格"
+      },
+      "conditionText": [
+        "命宮に紫微星と天府星が同宮する。寅、申宮のみ"
+      ],
+      "conditions": {
+        "palace": "命宮",
+        "palaceBranches": [
+          "寅",
+          "申"
+        ],
+        "requiredInSamePalace": [
+          "紫微星",
+          "天府星"
+        ],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": "unspecified",
+        "power": "unspecified",
+        "auspiciousStars": "unspecified",
+        "inauspiciousStars": "unspecified",
+        "unsupported": []
+      },
+      "breakConditions": [],
+      "meaningConditions": [
+        {
+          "text": "左輔・右弼、天魁、天鉞と会すると大吉格となる。",
+          "note": "「会する」が同宮か加会か、4星すべてかいずれかかは未記載（needs_review）。大吉格は格局名でなく評価の語"
+        },
+        {
+          "text": "女命の場合その他の吉星と加会すると富貴を得る。",
+          "note": "「吉星」の範囲が基礎２に定義されていない（入門 p.15 の吉星・凶星区分を使うかは未確定）"
+        }
+      ],
+      "meaningText": [
+        "紫微星は北斗に属し、帝王の星で天府は南斗に属し保守の象意",
+        "どちらもリーダの位置であり対照的な星で、衝突してしまう。",
+        "故に若い期間は不利な格局。経験を積んで",
+        "人格が丸くなってから吉となる。",
+        "左輔・右弼、天魁、天鉞と会すると大吉格となる。",
+        "向いている職業、財務、精密機械工作、政治家、",
+        "精密な細工の作家など",
+        "女命の場合その他の吉星と加会すると富貴を得る。",
+        "良い夫と子に恵まれる。"
+      ],
+      "classicalCounterpart": null,
+      "sourceDifferences": [],
+      "examples": [],
+      "automationLevel": "A",
+      "needsReview": []
+    },
+    {
+      "id": "K2-02",
+      "number": 2,
+      "canonicalName": "府相朝垣格",
+      "sourceName": "府相朝垣格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 3,
+        "heading": "格局２      府相朝垣格"
+      },
+      "conditionText": [
+        "天府星、天相星が三方から命宮に加会"
+      ],
+      "conditions": {
+        "palace": "命宮",
+        "palaceBranches": "unspecified",
+        "requiredInSamePalace": [],
+        "requiredInOpposite": [],
+        "requiredInTrines": [
+          "天府星",
+          "天相星"
+        ],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": "unspecified",
+        "power": "unspecified",
+        "auspiciousStars": "unspecified",
+        "inauspiciousStars": "unspecified",
+        "unsupported": []
+      },
+      "breakConditions": [],
+      "meaningConditions": [],
+      "meaningText": [
+        "千鐘の食禄があるとされる。",
+        "年長者や上司との関係が良好",
+        "外柔内剛で自分を律し、高める事を好む",
+        "他人にも同じように求める傾向がある",
+        "外貌は彫りが深く輪郭がはっきりしている",
+        "女命は結婚に注意、夫妻宮に七殺が巡る",
+        "故に晩婚に向いていて、若くして結婚する",
+        "と波乱の人生となる。"
+      ],
+      "classicalCounterpart": "全書 定貴局「府相朝垣」",
+      "sourceDifferences": [
+        {
+          "with": "全書 府相朝垣",
+          "status": "condition_difference",
+          "note": "全書は「命宮無主星」を加える"
+        }
+      ],
+      "examples": [
+        {
+          "type": "diagram",
+          "slide": 3,
+          "note": "図二: 命宮辰（武曲）、天府 申（官禄）、天相 子（財帛）。天府と天相は常に4支離れた三合の関係（エンジンで確認）なので、命宮の三合宮2宮に両星がある配置だけ"
+        }
+      ],
+      "automationLevel": "A",
+      "needsReview": [
+        "全書「府相朝垣（命宮無主星府相三合會照。）」は命宮に主星がないことを条件にするが、基礎２ S3 の図（命宮辰に武曲）は主星あり → condition_difference"
+      ]
+    },
+    {
+      "id": "K2-03",
+      "number": 3,
+      "canonicalName": "紫府朝垣格",
+      "sourceName": "紫府朝垣格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 4,
+        "heading": "格局３     紫府朝垣格"
+      },
+      "conditionText": [
+        "１，命宮と三合四正に紫微星、天府星、",
+        "天相星、その他吉星が加会する",
+        "２，申宮が命宮となり紫微星が子宮に入宮",
+        "天相星、天府星と三合四正で加会するか",
+        "紫微星が辰に入宮し天相星、天府星、",
+        "武曲星と三合四正で加会"
+      ],
+      "conditions": {
+        "palace": "命宮",
+        "palaceBranches": "unspecified",
+        "requiredInSamePalace": [],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": "unspecified",
+        "power": "unspecified",
+        "auspiciousStars": "unspecified",
+        "inauspiciousStars": "unspecified",
+        "unsupported": [],
+        "anyOf": [
+          {
+            "variant": "1",
+            "requiredInSanfangSizheng": [
+              "紫微星",
+              "天府星",
+              "天相星"
+            ],
+            "auspiciousStars": "その他吉星",
+            "note": "「吉星」の範囲が基礎２に定義されていない（入門 p.15 の吉星・凶星区分を使うかは未確定）"
+          },
+          {
+            "variant": "2a",
+            "palaceBranches": [
+              "申"
+            ],
+            "starAt": {
+              "紫微星": "子"
+            },
+            "requiredInSanfangSizheng": [
+              "天相星",
+              "天府星"
+            ]
+          },
+          {
+            "variant": "2b",
+            "palaceBranches": [
+              "申"
+            ],
+            "starAt": {
+              "紫微星": "辰"
+            },
+            "requiredInSanfangSizheng": [
+              "天相星",
+              "天府星",
+              "武曲星"
+            ],
+            "note": "2b の命宮が申かは文から確定できない"
+          }
+        ]
+      },
+      "breakConditions": [
+        {
+          "text": "煞星と加会しなければ富貴、政治家や",
+          "kind": "meaningCondition",
+          "note": "「煞星」の範囲が基礎２に定義されていない（S27「擎羊、陀羅、などの煞星」、S22 火星・鈴星・地空星・地劫星、全書「四煞」の記述だけ）。成立条件でなく象意の条件"
+        }
+      ],
+      "meaningConditions": [],
+      "meaningText": [
+        "煞星と加会しなければ富貴、政治家や",
+        "軍、警察、商業でも成功する。",
+        "父方の先祖の加護が大きい。",
+        "女命は結婚が晩婚となりやすい。"
+      ],
+      "classicalCounterpart": "全書 定貴局「紫府朝垣」",
+      "sourceDifferences": [
+        {
+          "with": "全書 紫府朝垣",
+          "status": "condition_difference",
+          "note": "全書は寅命宮・午戌から紫府が朝す"
+        }
+      ],
+      "examples": [
+        {
+          "type": "diagram",
+          "slide": 4,
+          "note": "図三は図二（府相朝垣）と同じ配置（命宮辰）"
+        }
+      ],
+      "automationLevel": "C",
+      "needsReview": [
+        "条件1と条件2の関係（どちらか／両方）が未記載",
+        "図三（命宮辰・紫微天府申・天相子）が条件2（命宮申）と合わない",
+        "全書「紫府朝垣（寅安命午戌紫府來朝。）」と命宮の支が違う",
+        "「吉星」の範囲が基礎２に定義されていない（入門 p.15 の吉星・凶星区分を使うかは未確定）"
+      ]
+    },
+    {
+      "id": "K2-04",
+      "number": 4,
+      "canonicalName": "明珠出海格",
+      "sourceName": "明珠出海格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 5,
+        "heading": "格局４      明珠出海格"
+      },
+      "conditionText": [
+        "命宮が未宮、太陽が卯宮、太陰星が亥宮",
+        "吉星が加会する"
+      ],
+      "conditions": {
+        "palace": "命宮",
+        "palaceBranches": [
+          "未"
+        ],
+        "requiredInSamePalace": [],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": "unspecified",
+        "power": "unspecified",
+        "auspiciousStars": "吉星が加会する（範囲未定義）",
+        "inauspiciousStars": "unspecified",
+        "unsupported": [
+          "太陽星が卯（命宮未の三合宮）",
+          "太陰星が亥（命宮未の三合宮）"
+        ]
+      },
+      "breakConditions": [],
+      "meaningConditions": [
+        {
+          "text": "女命は煞星が三方四正に加会するのは凶",
+          "note": "「煞星」の範囲が基礎２に定義されていない（S27「擎羊、陀羅、などの煞星」、S22 火星・鈴星・地空星・地劫星、全書「四煞」の記述だけ）"
+        }
+      ],
+      "meaningText": [
+        "公正で無私、慈愛にあふれている",
+        "文曲と会えば智彗霊敏、機知に富み学問に",
+        "秀でる、容易に社会で名を上げる。",
+        "公益福利や慈善事業、教師など",
+        "女命は煞星が三方四正に加会するのは凶",
+        "それがなければ財産、仕事、結婚皆吉",
+        "結婚後も職業婦人として成功",
+        "文昌、文曲が加会すると男女問わず桃花"
+      ],
+      "classicalCounterpart": "全書 定貴局「明珠出海」",
+      "sourceDifferences": [
+        {
+          "with": "全書 明珠出海",
+          "status": "condition_difference"
+        }
+      ],
+      "examples": [
+        {
+          "type": "diagram",
+          "slide": 5,
+          "note": "図四: 命宮未（主星なし）、太陽天梁 卯、太陰 亥。旺衰表では太陽卯＝廟・太陰亥＝廟"
+        }
+      ],
+      "automationLevel": "B",
+      "needsReview": [
+        "「吉星」の範囲が基礎２に定義されていない（入門 p.15 の吉星・凶星区分を使うかは未確定）",
+        "全書「明珠出海（日月同居廟旺會命垣。）」と条件が違う"
+      ]
+    },
+    {
+      "id": "K2-05",
+      "number": 5,
+      "canonicalName": "日月並明格",
+      "sourceName": "日月並明格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 6,
+        "heading": "格局５       日月並明格"
+      },
+      "conditionText": [
+        "太陽、太陰がいずれも廟旺となる宮にあり",
+        "命宮の三方、対宮にある場合をいう。",
+        "命宮午で太陽が寅、太陰が子",
+        "命宮が丑で太陽が巳、太陰が酉"
+      ],
+      "conditions": {
+        "palace": "命宮",
+        "palaceBranches": "unspecified",
+        "requiredInSamePalace": [],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": {
+          "太陽星": [
+            "廟",
+            "旺"
+          ],
+          "太陰星": [
+            "廟",
+            "旺"
+          ]
+        },
+        "transformations": "unspecified",
+        "power": "unspecified",
+        "auspiciousStars": "unspecified",
+        "inauspiciousStars": "unspecified",
+        "unsupported": [
+          "太陽・太陰が命宮の「三方、対宮」にある"
+        ],
+        "anyOf": [
+          {
+            "example": "命宮午・太陽寅・太陰子"
+          },
+          {
+            "example": "命宮丑・太陽巳・太陰酉"
+          }
+        ]
+      },
+      "breakConditions": [],
+      "meaningConditions": [],
+      "meaningText": [
+        "人柄はさっぱり、聡明で記憶力に優れる。",
+        "難関試験にも合格。財官そなえる命",
+        "機械設備、経理、開発国の業務など"
+      ],
+      "classicalCounterpart": "全書 定貴局「日月並明」",
+      "sourceDifferences": [
+        {
+          "with": "全書 日月並明",
+          "status": "condition_difference"
+        }
+      ],
+      "examples": [
+        {
+          "type": "diagram",
+          "slide": 6,
+          "note": "図五: 命宮午、太陽巨門 寅、太陰天同 子"
+        }
+      ],
+      "automationLevel": "B",
+      "needsReview": [
+        "「三方」に本宮・対宮を含むかが資料に定義されていない（基礎編 S16 の「加会」＝対宮・三合宮、既存 sanfangSizheng＝本宮・対宮・三合宮）",
+        "「廟旺」を旺衰の廟・旺だけとするか（得地を含むか）は未記載。例示2配置は旺衰表で太陽寅・巳＝旺、太陰子＝廟・酉＝旺と一致",
+        "全書「日月並明（陰陽日月同宮是也。日命日巳月酉來朝。）」と条件が違う"
+      ]
+    },
+    {
+      "id": "K2-06",
+      "number": 6,
+      "canonicalName": "日照雷門格",
+      "sourceName": "日照雷門格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 7,
+        "heading": "格局６     日照雷門格"
+      },
+      "conditionText": [
+        "卯宮が命宮となり太陽と天梁星が同宮"
+      ],
+      "conditions": {
+        "palace": "命宮",
+        "palaceBranches": [
+          "卯"
+        ],
+        "requiredInSamePalace": [
+          "太陽星",
+          "天梁星"
+        ],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": "unspecified",
+        "power": "unspecified",
+        "auspiciousStars": "unspecified",
+        "inauspiciousStars": "unspecified",
+        "unsupported": []
+      },
+      "breakConditions": [],
+      "meaningConditions": [
+        {
+          "text": "女命の甲年生まれは父や夫との縁が薄く",
+          "note": "象意の条件（性別・生年干）"
+        }
+      ],
+      "meaningText": [
+        "卯は震卦であり、雷を表すため",
+        "個性は豪快でさわやか、正義感が強く",
+        "公明正大",
+        "正直で責任感が強い。",
+        "適職は慈善事業、貿易商、民意代表など",
+        "新たに創業するのには向かない。",
+        "女命の個性は気が強くで男性と衝突しやすい。",
+        "故に夫には温和な性格の男性が良い。",
+        "女命の甲年生まれは父や夫との縁が薄く",
+        "結婚生活は波乱が多い"
+      ],
+      "classicalCounterpart": null,
+      "sourceDifferences": [],
+      "examples": [
+        {
+          "type": "diagram",
+          "slide": 7,
+          "note": "図六: 命宮卯 天梁太陽"
+        }
+      ],
+      "automationLevel": "A",
+      "needsReview": []
+    },
+    {
+      "id": "K2-07",
+      "number": 7,
+      "canonicalName": "月朗天門格",
+      "sourceName": "月朗天門格",
+      "aliases": [
+        {
+          "name": "月落亥宮",
+          "source": "全書 定貴局（基礎２ S34）「月在亥守命是也、又名月朗天門。」"
+        }
+      ],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 8,
+        "heading": "格局７     月朗天門格"
+      },
+      "conditionText": [
+        "命宮が亥宮となり、太陰が入宮する。"
+      ],
+      "conditions": {
+        "palace": "命宮",
+        "palaceBranches": [
+          "亥"
+        ],
+        "requiredInSamePalace": [
+          "太陰星"
+        ],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": "unspecified",
+        "power": "unspecified",
+        "auspiciousStars": "unspecified",
+        "inauspiciousStars": "unspecified",
+        "unsupported": []
+      },
+      "breakConditions": [],
+      "meaningConditions": [
+        {
+          "text": "他の吉星と加会すれば富貴ともに得る",
+          "note": "「吉星」の範囲が基礎２に定義されていない（入門 p.15 の吉星・凶星区分を使うかは未確定）"
+        }
+      ],
+      "meaningText": [
+        "亥の刻は月が最も旺じている時間",
+        "亥宮は乾宮であり乾は天の卦",
+        "また亥は北方であり紫微星垣があるため",
+        "天門という",
+        "個性は天真爛漫で無邪気、男女ともに",
+        "交際範囲が広く、異性からの評価を得られ",
+        "やすい。",
+        "他の吉星と加会すれば富貴ともに得る"
+      ],
+      "classicalCounterpart": "全書 定貴局「月落亥宮」（又名月朗天門）",
+      "sourceDifferences": [
+        {
+          "with": "全書 月落亥宮",
+          "status": "same",
+          "note": "全書が別名として明記"
+        }
+      ],
+      "examples": [
+        {
+          "type": "diagram",
+          "slide": 8,
+          "note": "図七: 命宮亥 太陰"
+        }
+      ],
+      "automationLevel": "A",
+      "needsReview": []
+    },
+    {
+      "id": "K2-08",
+      "number": 8,
+      "canonicalName": "巨機同臨格",
+      "sourceName": "巨機同臨格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 9,
+        "heading": "格局８      巨機同臨格"
+      },
+      "conditionText": [
+        "命宮が卯、酉にあり天機星、巨門星が同宮"
+      ],
+      "conditions": {
+        "palace": "命宮",
+        "palaceBranches": [
+          "卯",
+          "酉"
+        ],
+        "requiredInSamePalace": [
+          "天機星",
+          "巨門星"
+        ],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": "unspecified",
+        "power": "unspecified",
+        "auspiciousStars": "unspecified",
+        "inauspiciousStars": "unspecified",
+        "unsupported": []
+      },
+      "breakConditions": [],
+      "meaningConditions": [
+        {
+          "text": "他の吉星と加会すれば財官相美となりお金と",
+          "note": "「吉星」の範囲が基礎２に定義されていない（入門 p.15 の吉星・凶星区分を使うかは未確定）"
+        }
+      ],
+      "meaningText": [
+        "他の吉星と加会すれば財官相美となりお金と",
+        "地位をえる。",
+        "天機星が金に属すため卯宮より酉命宮の",
+        "ほうが良い格となる。",
+        "機知に富み好奇心が強い。また猜疑心も強く",
+        "自分の経験したことだけを信じる。",
+        "若いうちは苦労するが中年期以降、才能を",
+        "生かし家業を起こす。",
+        "顧問、外交、文化事業などに向いている",
+        "女命にはあまり好ましくなく、結婚に問題があり",
+        "身体が弱く、病気がちで財運もない。"
+      ],
+      "classicalCounterpart": "全書 定貴局「巨機居卯」は条件が違う別名称（辛乙生人・卯宮・昌曲左右）。同一とは書かれていない",
+      "sourceDifferences": [],
+      "examples": [
+        {
+          "type": "diagram",
+          "slide": 9,
+          "note": "図八: 命宮卯 天機巨門"
+        },
+        {
+          "type": "chart",
+          "slide": 39,
+          "note": "S39 命盤の盤面に「巨機同臨」と印字。命宮卯 天機巨門で条件と一致"
+        }
+      ],
+      "automationLevel": "A",
+      "needsReview": [
+        "「天機星が金に属すため卯宮より酉命宮のほうが良い格となる。」は格の上下の記述（順位付けには使わない）"
+      ]
+    },
+    {
+      "id": "K2-09",
+      "number": 9,
+      "canonicalName": "機月同梁格",
+      "sourceName": "機月同梁格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 10,
+        "heading": "格局９      機月同梁格"
+      },
+      "conditionText": [
+        "天機星、太陰星、天梁星、天同星が三方に会合"
+      ],
+      "conditions": {
+        "palace": "unspecified",
+        "palaceBranches": "unspecified",
+        "requiredInSamePalace": [],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": "unspecified",
+        "power": "unspecified",
+        "auspiciousStars": "unspecified",
+        "inauspiciousStars": "unspecified",
+        "unsupported": [
+          "天機星・太陰星・天梁星・天同星が「三方に会合」"
+        ]
+      },
+      "breakConditions": [],
+      "meaningConditions": [
+        {
+          "text": "吉星に会えば貴重な専門知識や技術を",
+          "note": "「吉星」の範囲が基礎２に定義されていない（入門 p.15 の吉星・凶星区分を使うかは未確定）"
+        }
+      ],
+      "meaningText": [
+        "心根が善良で策略家。綿密に計画を練る。",
+        "段取りを組んで物事を進める。",
+        "公職、幕僚に向いている。",
+        "自分で創業するには向かず、また生産業、",
+        "製造業にも向かない。",
+        "吉星に会えば貴重な専門知識や技術を",
+        "習得できる",
+        "故郷より遠方にて成功する命",
+        "女命は感情の起伏が激しく、有名になるなら",
+        "身体を売ることさえ辞さないところがあり",
+        "注意が必要である。"
+      ],
+      "classicalCounterpart": null,
+      "sourceDifferences": [],
+      "examples": [
+        {
+          "type": "diagram",
+          "slide": 10,
+          "note": "図九: 命宮申 天機太陰、天同 辰、天梁 子"
+        }
+      ],
+      "automationLevel": "B",
+      "needsReview": [
+        "「三方」に本宮・対宮を含むかが資料に定義されていない（基礎編 S16 の「加会」＝対宮・三合宮、既存 sanfangSizheng＝本宮・対宮・三合宮）",
+        "宮（命宮か）が文に書かれていない（図九は命宮申）",
+        "S36 は「三方四正に…機月同梁」を命盤の型として使っている（格局としての条件との関係は未記載）"
+      ]
+    },
+    {
+      "id": "K2-10",
+      "number": 10,
+      "canonicalName": "石中隠玉格",
+      "sourceName": "石中隠玉格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 11,
+        "heading": "格局１０       石中隠玉格"
+      },
+      "conditionText": [
+        "命宮が子、午宮となり巨門星が入宮し対宮に",
+        "天機星が入宮、",
+        "巨門に化禄または化権，加えて左輔、右弼、",
+        "文昌、天魁、天鉞に会う"
+      ],
+      "conditions": {
+        "palace": "命宮",
+        "palaceBranches": [
+          "子",
+          "午"
+        ],
+        "requiredInSamePalace": [
+          "巨門星"
+        ],
+        "requiredInOpposite": [
+          "天機星"
+        ],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": {
+          "巨門星": [
+            "化禄星",
+            "化権星"
+          ],
+          "mode": "いずれか"
+        },
+        "power": "unspecified",
+        "auspiciousStars": "unspecified",
+        "inauspiciousStars": "unspecified",
+        "unsupported": [
+          "左輔・右弼・文昌・天魁・天鉞に「会う」"
+        ]
+      },
+      "breakConditions": [],
+      "meaningConditions": [],
+      "meaningText": [
+        "若い間に艱難辛苦を経た後に中年以降",
+        "有名となったり社会的地位向上。",
+        "弁舌の才あり。テレビ、ラジオ、広報，広告",
+        "議員、代表者、弁護士、教師など"
+      ],
+      "classicalCounterpart": null,
+      "sourceDifferences": [],
+      "examples": [
+        {
+          "type": "diagram",
+          "slide": 11,
+          "note": "図十: 命宮午 巨門、天機 子"
+        }
+      ],
+      "automationLevel": "B",
+      "needsReview": [
+        "左輔・右弼・文昌・天魁・天鉞が全部か一部か、「会う」が同宮か加会かが未記載",
+        "巨門が子午にあるとき天機は常に対宮（エンジンで確認）"
+      ]
+    },
+    {
+      "id": "K2-11",
+      "number": 11,
+      "canonicalName": "巨日同宮格",
+      "sourceName": "巨日同宮格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 12,
+        "heading": "格局１１      巨日同宮格"
+      },
+      "conditionText": [
+        "寅、申宮が命宮となり太陽と巨門星が同宮"
+      ],
+      "conditions": {
+        "palace": "命宮",
+        "palaceBranches": [
+          "寅",
+          "申"
+        ],
+        "requiredInSamePalace": [
+          "太陽星",
+          "巨門星"
+        ],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": "unspecified",
+        "power": "unspecified",
+        "auspiciousStars": "unspecified",
+        "inauspiciousStars": "unspecified",
+        "unsupported": []
+      },
+      "breakConditions": [],
+      "meaningConditions": [
+        {
+          "text": "文昌、文曲、左輔、右弼、天魁、天鉞、三台",
+          "note": "「…三台八座が加会するを喜ぶ」は象意。三台・八座は34星外"
+        }
+      ],
+      "meaningText": [
+        "寅刻は日が昇り始める時刻なので、光の無い",
+        "巨門星を明るく照らし吉兆となる",
+        "文昌、文曲、左輔、右弼、天魁、天鉞、三台",
+        "八座が加会するを喜ぶ",
+        "個性が強く、口が達者、事業の成功",
+        "適職は調律師、貿易業、旅行業、医者、教師",
+        "海外と縁があり，外国語の習得が早く、",
+        "中年以降政治的な活動も良し",
+        "女命は夫も子供も得られ、貴婦人となる。"
+      ],
+      "classicalCounterpart": null,
+      "sourceDifferences": [],
+      "examples": [
+        {
+          "type": "diagram",
+          "slide": 12,
+          "note": "図十二: 命宮寅 巨門太陽"
+        }
+      ],
+      "automationLevel": "A",
+      "needsReview": []
+    },
+    {
+      "id": "K2-12",
+      "number": 12,
+      "canonicalName": "月生滄海格",
+      "sourceName": "月生滄海格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 13,
+        "heading": "格局１２       月生滄海格"
+      },
+      "conditionText": [
+        "命宮または田宅宮が子宮となり太陰星と",
+        "天同星が同宮し吉星が加会"
+      ],
+      "conditions": {
+        "palace": "命宮または田宅宮",
+        "palaceBranches": [
+          "子"
+        ],
+        "requiredInSamePalace": [
+          "太陰星",
+          "天同星"
+        ],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": "unspecified",
+        "power": "unspecified",
+        "auspiciousStars": "吉星が加会（範囲未定義）",
+        "inauspiciousStars": "unspecified",
+        "unsupported": []
+      },
+      "breakConditions": [],
+      "meaningConditions": [],
+      "meaningText": [
+        "性格は明るくて陽気、素直で現実的",
+        "策略を弄し危機を事前に察知して避けらる",
+        "スーパーバイザー、コメンテーターなどで",
+        "成功する。",
+        "繊細で頭の回転も早くユーモアがある。",
+        "人望もあり社交性もあるので、娯楽、観光業",
+        "などでも成功できる。",
+        "女命は夫婦生活にむかず、同性愛に走る傾向"
+      ],
+      "classicalCounterpart": "全書 定貴局「月生滄海」",
+      "sourceDifferences": [
+        {
+          "with": "全書 月生滄海",
+          "status": "condition_difference"
+        }
+      ],
+      "examples": [
+        {
+          "type": "diagram",
+          "slide": 13,
+          "note": "図十三: 命宮子 太陰天同"
+        }
+      ],
+      "automationLevel": "B",
+      "needsReview": [
+        "「吉星」の範囲が基礎２に定義されていない（入門 p.15 の吉星・凶星区分を使うかは未確定）",
+        "全書「月生滄海（月在子、守田宅是也。）」は田宅宮だけ"
+      ]
+    },
+    {
+      "id": "K2-13",
+      "number": 13,
+      "canonicalName": "日月照壁格",
+      "sourceName": "日月照壁格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 14,
+        "heading": "格局１３       日月照壁格"
+      },
+      "conditionText": [
+        "丑、未宮が田宅宮で太陽、太陰が同宮",
+        "日月が同宮する時、必ずどちらかが",
+        "落陥するため、吉星と加会することが",
+        "条件"
+      ],
+      "conditions": {
+        "palace": "田宅宮",
+        "palaceBranches": [
+          "丑",
+          "未"
+        ],
+        "requiredInSamePalace": [
+          "太陽星",
+          "太陰星"
+        ],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": "unspecified",
+        "power": "unspecified",
+        "auspiciousStars": "吉星と加会することが条件（範囲未定義）",
+        "inauspiciousStars": "unspecified",
+        "unsupported": []
+      },
+      "breakConditions": [],
+      "meaningConditions": [],
+      "meaningText": [
+        "不動産を継承したり、自分で多く持つ事も化",
+        "故郷を離れて発展し事業を興すと変化が多い",
+        "あるいは家庭も変化が多い",
+        "不動産管理や売買などが適職"
+      ],
+      "classicalCounterpart": "全書 定富局「日月照壁」",
+      "sourceDifferences": [
+        {
+          "with": "全書 日月照壁",
+          "status": "condition_difference",
+          "note": "全書は丑未の限定でなく「喜居墓庫」"
+        }
+      ],
+      "examples": [
+        {
+          "type": "diagram",
+          "slide": 14,
+          "note": "図十四: 田宅丑 太陽太陰、命宮戌"
+        }
+      ],
+      "automationLevel": "B",
+      "needsReview": [
+        "「吉星」の範囲が基礎２に定義されていない（入門 p.15 の吉星・凶星区分を使うかは未確定）",
+        "「落陥」は旺衰表では丑の太陽・未の太陰＝不得地（陥ではない）",
+        "全書「日月照壁（日月臨田宅宮是也。喜居墓庫。）」"
+      ]
+    },
+    {
+      "id": "K2-14",
+      "number": 14,
+      "canonicalName": "貪武同行格",
+      "sourceName": "貧武同行格",
+      "aliases": [
+        {
+          "name": "貪武同行",
+          "source": "S15 図十五・S38 命盤の印字"
+        }
+      ],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 15,
+        "heading": "格局１４       貧武同行格"
+      },
+      "conditionText": [
+        "丑、未宮が命宮で貧狼星と武曲星が同宮"
+      ],
+      "conditions": {
+        "palace": "命宮",
+        "palaceBranches": [
+          "丑",
+          "未"
+        ],
+        "requiredInSamePalace": [
+          "貪狼星",
+          "武曲星"
+        ],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": "unspecified",
+        "power": "unspecified",
+        "auspiciousStars": "unspecified",
+        "inauspiciousStars": "unspecified",
+        "unsupported": []
+      },
+      "breakConditions": [],
+      "meaningConditions": [],
+      "meaningText": [
+        "個性は理想が高く野心家",
+        "家業を継がず、故郷を捨て遠方で成功",
+        "30才ぐらいまではお金は入っても出て行く",
+        "それを過ぎると徐々に頭角を現し成功する",
+        "女命は数字に明るく、打算的、神経質",
+        "恋愛好きで縛られるのを嫌い、晩婚に良い",
+        "桃花が強く、男女とも感情の起伏が激しい",
+        "ところがあるため恋愛には注意が必要である。"
+      ],
+      "classicalCounterpart": null,
+      "sourceDifferences": [],
+      "examples": [
+        {
+          "type": "diagram",
+          "slide": 15,
+          "note": "図十五: 命宮丑 貪狼武曲"
+        },
+        {
+          "type": "chart",
+          "slide": 38,
+          "note": "S38 命盤に「貪武同行」と印字。命宮丑 貪狼武曲で一致"
+        }
+      ],
+      "automationLevel": "A",
+      "needsReview": [
+        "資料の表記「貧武同行格」「貧狼星」は貪狼星の誤記とみられる（図十五は「貪武同行格」「貪狼」）。原表記を sourceName に残す"
+      ]
+    },
+    {
+      "id": "K2-15",
+      "number": 15,
+      "canonicalName": "日月夾命格",
+      "sourceName": "日月夾命格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 16,
+        "heading": "格局１５       日月夾命格"
+      },
+      "conditionText": [
+        "命宮が丑、未宮で天府星が入宮",
+        "太陽と太陰に挟まれる"
+      ],
+      "conditions": {
+        "palace": "命宮",
+        "palaceBranches": [
+          "丑",
+          "未"
+        ],
+        "requiredInSamePalace": [
+          "天府星"
+        ],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": "unspecified",
+        "power": "unspecified",
+        "auspiciousStars": "unspecified",
+        "inauspiciousStars": "unspecified",
+        "unsupported": [
+          "太陽・太陰が命宮の前後の宮（夾）"
+        ]
+      },
+      "breakConditions": [],
+      "meaningConditions": [
+        {
+          "text": "吉星に会えば富貴で一生財運が豊かである",
+          "note": "「吉星」の範囲が基礎２に定義されていない（入門 p.15 の吉星・凶星区分を使うかは未確定）"
+        },
+        {
+          "text": "化禄、化権、左輔、右弼、文昌、文曲と",
+          "note": "「…と加会すれば財官双美」は象意の条件"
+        }
+      ],
+      "meaningText": [
+        "吉星に会えば富貴で一生財運が豊かである",
+        "多学多能、道徳的で倫理観が強く上品",
+        "化禄、化権、左輔、右弼、文昌、文曲と",
+        "加会すれば財官双美（財産と高い地位）"
+      ],
+      "classicalCounterpart": "全書 定貴局「日月夾命」",
+      "sourceDifferences": [
+        {
+          "with": "全書 日月夾命",
+          "status": "condition_difference"
+        }
+      ],
+      "examples": [
+        {
+          "type": "diagram",
+          "slide": 16,
+          "note": "図十六: 命宮未 天府、太陽 午、太陰 申"
+        },
+        {
+          "type": "chart",
+          "slide": 38,
+          "note": "印字「日月夾命」。命宮丑（武曲貪狼・天魁・陀羅）、太陽 寅・太陰 子で夾むが天府なし → needs_review"
+        }
+      ],
+      "automationLevel": "A",
+      "needsReview": [
+        "天府が丑未のとき太陽・太陰は常に前後にある（エンジンで確認）",
+        "S38 命盤は「日月夾命」と印字するが命宮丑に天府がない（武曲貪狼）→ 基礎２の条件と命例が合わない",
+        "全書「日月夾命（不坐空亡、遇逢本宮有吉星是也。）」は天府を条件にしない（空亡は34星外）"
+      ]
+    },
+    {
+      "id": "K2-16",
+      "number": 16,
+      "canonicalName": "英星入廟格",
+      "sourceName": "英星入廟格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 17,
+        "heading": "格局１６       英星入廟格"
+      },
+      "conditionText": [
+        "命宮が子、午で破軍星が入宮"
+      ],
+      "conditions": {
+        "palace": "命宮",
+        "palaceBranches": [
+          "子",
+          "午"
+        ],
+        "requiredInSamePalace": [
+          "破軍星"
+        ],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": "unspecified",
+        "power": "unspecified",
+        "auspiciousStars": "unspecified",
+        "inauspiciousStars": "unspecified",
+        "unsupported": []
+      },
+      "breakConditions": [
+        {
+          "text": "ただし、煞星や冲、破は破格す",
+          "kind": "break",
+          "note": "「煞星」の範囲が基礎２に定義されていない（S27「擎羊、陀羅、などの煞星」、S22 火星・鈴星・地空星・地劫星、全書「四煞」の記述だけ）。「冲」「破」の意味も未定義"
+        }
+      ],
+      "meaningConditions": [
+        {
+          "text": "煞星が無く吉星に会えば大出世する",
+          "note": "「吉星」の範囲が基礎２に定義されていない（入門 p.15 の吉星・凶星区分を使うかは未確定）／「煞星」の範囲が基礎２に定義されていない（S27「擎羊、陀羅、などの煞星」、S22 火星・鈴星・地空星・地劫星、全書「四煞」の記述だけ）"
+        }
+      ],
+      "meaningText": [
+        "ただし、煞星や冲、破は破格す",
+        "性質は勇敢で決断力があり開拓精神を",
+        "もつ。物事を始める人",
+        "煞星が無く吉星に会えば大出世する",
+        "煞星に会えば孤独で病気がち",
+        "故郷を離れると発展、海外で仕事を",
+        "すれば成功する確率が高い"
+      ],
+      "classicalCounterpart": null,
+      "sourceDifferences": [],
+      "examples": [
+        {
+          "type": "diagram",
+          "slide": 17,
+          "note": "図十七: 命宮午 破軍"
+        }
+      ],
+      "automationLevel": "B",
+      "needsReview": [
+        "破格条件の「煞星」「冲」「破」が未定義",
+        "旺衰表では破軍 子・午＝廟（「入廟」と一致）"
+      ]
+    },
+    {
+      "id": "K2-17",
+      "number": 17,
+      "canonicalName": "七殺朝斗格",
+      "sourceName": "七殺朝斗格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 18,
+        "heading": "格局１７       七殺朝斗格"
+      },
+      "conditionText": [
+        "命宮が寅、申、子宮となり七殺星が入宮",
+        "吉星に会って七殺が吉となれば成格"
+      ],
+      "conditions": {
+        "palace": "命宮",
+        "palaceBranches": [
+          "寅",
+          "申",
+          "子"
+        ],
+        "requiredInSamePalace": [
+          "七殺星"
+        ],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": "unspecified",
+        "power": "unspecified",
+        "auspiciousStars": "吉星に会って七殺が吉となれば成格（基準未定義）",
+        "inauspiciousStars": "unspecified",
+        "unsupported": []
+      },
+      "breakConditions": [],
+      "meaningConditions": [],
+      "meaningText": [
+        "文昌、文曲と加会すれば官職より政治家",
+        "軍、警察が良い。左輔、右弼に加会すれば",
+        "権力を得る。",
+        "凶星に会えば官非、訴訟、運の波が激しく",
+        "若年苦労、身体に傷が残る事件、災いに",
+        "巻き込まれる。",
+        "女命は成育がよろしくない。結婚しても",
+        "晩年まで孤独"
+      ],
+      "classicalCounterpart": "全書 定貴局「七殺朝斗」",
+      "sourceDifferences": [
+        {
+          "with": "全書 七殺朝斗",
+          "status": "condition_difference",
+          "note": "午の有無"
+        }
+      ],
+      "examples": [
+        {
+          "type": "diagram",
+          "slide": 18,
+          "note": "図十八: 命宮寅 七殺"
+        }
+      ],
+      "automationLevel": "C",
+      "needsReview": [
+        "「吉星に会って七殺が吉となれば成格」の判定基準がない",
+        "「吉星」の範囲が基礎２に定義されていない（入門 p.15 の吉星・凶星区分を使うかは未確定）",
+        "全書「七殺朝斗（寅申子午安命值七殺。）」は午を含む。基礎２は午を挙げていない"
+      ]
+    },
+    {
+      "id": "K2-18",
+      "number": 18,
+      "canonicalName": "馬頭帯箭格",
+      "sourceName": "馬頭帯箭格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 19,
+        "heading": "格局１８       馬頭帯箭格"
+      },
+      "conditionText": [
+        "命宮が午宮にあり貧狼か天同と",
+        "化禄、擎羊と同宮、加会する"
+      ],
+      "conditions": {
+        "palace": "命宮",
+        "palaceBranches": [
+          "午"
+        ],
+        "requiredInSamePalace": [],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": "unspecified",
+        "power": "unspecified",
+        "auspiciousStars": "unspecified",
+        "inauspiciousStars": "unspecified",
+        "unsupported": [
+          "貪狼星か天同星、化禄、擎羊（敬羊星）と「同宮、加会」"
+        ]
+      },
+      "breakConditions": [],
+      "meaningConditions": [],
+      "meaningText": [
+        "若い期間に苦労を経験して中年期以降",
+        "事業が成功する。",
+        "妻を剋し、子に恵まれない。",
+        "友人が多く、交際も多彩で家にいない",
+        "情が深く浮気に注意",
+        "女命は性格がとても強く孤独",
+        "個人事業が良い"
+      ],
+      "classicalCounterpart": "全書 定貴局「馬頭帯剣」",
+      "sourceDifferences": [
+        {
+          "with": "全書 馬頭帯剣",
+          "status": "needs_review",
+          "note": "名称差・午の扱いが逆"
+        }
+      ],
+      "examples": [
+        {
+          "type": "diagram",
+          "slide": 19,
+          "note": "図十九: 命宮午 擎羊、対宮子 太陰天同"
+        }
+      ],
+      "automationLevel": "C",
+      "needsReview": [
+        "どの星が同宮でどの星が加会か、化禄がどの星に付くかが未記載（図十九は命宮午に擎羊だけ、天同は対宮子）",
+        "全書「馬頭帯剣（謂馬有刃是也、不是居午格。）」は名称が違い（箭／剣）、午を否定している → 条件が矛盾",
+        "原表記「擎羊」は敬羊星、「貧狼」は貪狼星"
+      ]
+    },
+    {
+      "id": "K2-19",
+      "number": 19,
+      "canonicalName": "三奇嘉會格",
+      "sourceName": "三奇嘉會格",
+      "aliases": [
+        {
+          "name": "三奇加会",
+          "source": "S38 命盤の印字"
+        },
+        {
+          "name": "三奇嘉会",
+          "source": "S38 本文"
+        }
+      ],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 20,
+        "heading": "格局１９       三奇嘉會格"
+      },
+      "conditionText": [
+        "命、身宮の三方四正宮に化権、化禄、化科が",
+        "入宮し加会する。化忌が同宮しても成格"
+      ],
+      "conditions": {
+        "palace": "命宮・身宮",
+        "palaceBranches": "unspecified",
+        "requiredInSamePalace": [],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [
+          "化権星",
+          "化禄星",
+          "化科星"
+        ],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": {
+          "required": [
+            "化禄星",
+            "化権星",
+            "化科星"
+          ],
+          "where": "命・身宮の三方四正",
+          "化忌": "同宮しても成格（不成立条件にしない）"
+        },
+        "power": "unspecified",
+        "auspiciousStars": "unspecified",
+        "inauspiciousStars": "unspecified",
+        "unsupported": []
+      },
+      "breakConditions": [
+        {
+          "text": "坐する宮の力量が弱い、煞星と加会すると",
+          "kind": "breakTendency",
+          "note": "次行「破格しやすい」。「しやすい」で確定条件でない。「坐する宮」がどの宮か、「力量が弱い」が運命指数の段階「弱・最弱」かは未記載。「煞星」の範囲が基礎２に定義されていない（S27「擎羊、陀羅、などの煞星」、S22 火星・鈴星・地空星・地劫星、全書「四煞」の記述だけ）"
+        }
+      ],
+      "meaningConditions": [
+        {
+          "text": "化忌がその他の宮にあったり、煞星に",
+          "note": "「…会わなければ財官双美」。象意の条件"
+        }
+      ],
+      "meaningText": [
+        "化忌がその他の宮にあったり、煞星に",
+        "会わなければ財官双美",
+        "化禄：主に財",
+        "化権：権力",
+        "化科：名声",
+        "坐する宮の力量が弱い、煞星と加会すると",
+        "破格しやすい"
+      ],
+      "classicalCounterpart": "全書 定貴局「科権禄拱（命身宮三合科權祿來會。）」は内容が近いが、同一とは書かれていない",
+      "sourceDifferences": [],
+      "examples": [
+        {
+          "type": "diagram",
+          "slide": 20,
+          "note": "図二十: 甲年生人、命宮子（廉貞化禄）、化権 午、化科 辰"
+        },
+        {
+          "type": "chart",
+          "slide": 38,
+          "note": "印字「三奇加会」。命宮丑の三方四正に化禄・化権（酉）・化科（丑）で一致"
+        }
+      ],
+      "automationLevel": "B",
+      "needsReview": [
+        "命宮と身宮のどちらか・両方かが未記載",
+        "破格の記述が「破格しやすい」（確定の破格条件でない）",
+        "力量条件（坐する宮の力量が弱い）の宮と基準が未定義",
+        "S38 は大限の四化で「武曲、化禄と貧狼、化権」の2つだけで「三奇嘉会」と呼ぶ（大限は対象外）",
+        "S38 盤面の印字は「三奇加会」"
+      ]
+    },
+    {
+      "id": "K2-20",
+      "number": 20,
+      "canonicalName": "雄宿朝垣格",
+      "sourceName": "雄宿朝垣格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 21,
+        "heading": "格局２０       雄宿朝垣格"
+      },
+      "conditionText": [
+        "申宮が命宮となり廉貞星が入宮"
+      ],
+      "conditions": {
+        "palace": "命宮",
+        "palaceBranches": [
+          "申"
+        ],
+        "requiredInSamePalace": [
+          "廉貞星"
+        ],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": "unspecified",
+        "power": "unspecified",
+        "auspiciousStars": "unspecified",
+        "inauspiciousStars": "unspecified",
+        "unsupported": []
+      },
+      "breakConditions": [],
+      "meaningConditions": [
+        {
+          "text": "化忌星にあうと官非",
+          "note": "象意の条件"
+        }
+      ],
+      "meaningText": [
+        "個性が強く聡明で自己中心",
+        "年長者にも気に入らなければ意見する",
+        "文昌に会えば音楽好きとなり積善すれば富貴",
+        "女命は吉星にあえば、夫を助け良い子を",
+        "なす。穏やかな性格となる。",
+        "化忌星にあうと官非",
+        "陀羅星、火星にあうと膿が出たり血が出る災い",
+        "短命となる。"
+      ],
+      "classicalCounterpart": null,
+      "sourceDifferences": [],
+      "examples": [
+        {
+          "type": "diagram",
+          "slide": 21,
+          "note": "図二十一: 命宮申 廉貞"
+        }
+      ],
+      "automationLevel": "A",
+      "needsReview": [
+        "旺衰表では廉貞 申＝廟"
+      ]
+    },
+    {
+      "id": "K2-21",
+      "number": 21,
+      "canonicalName": "禄合鴛鴦格",
+      "sourceName": "禄合鴛鴦格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 22,
+        "heading": "格局２１       禄合鴛鴦格"
+      },
+      "conditionText": [
+        "命宮、身宮、財帛宮いずれかに禄存星、",
+        "化禄星が同宮し煞星と加会しない"
+      ],
+      "conditions": {
+        "palace": "命宮・身宮・財帛宮のいずれか",
+        "palaceBranches": "unspecified",
+        "requiredInSamePalace": [
+          "禄存星",
+          "化禄星"
+        ],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": "unspecified",
+        "power": "unspecified",
+        "auspiciousStars": "unspecified",
+        "inauspiciousStars": "unspecified",
+        "unsupported": []
+      },
+      "breakConditions": [
+        {
+          "text": "化禄星が同宮し煞星と加会しない",
+          "kind": "forbidden",
+          "note": "「煞星」の範囲が基礎２に定義されていない（S27「擎羊、陀羅、などの煞星」、S22 火星・鈴星・地空星・地劫星、全書「四煞」の記述だけ）"
+        }
+      ],
+      "meaningConditions": [
+        {
+          "text": "火星、鈴星、地空星、地劫星と加会すると",
+          "note": "「…意外な事で損失」。象意（破格とは書いていない）"
+        }
+      ],
+      "meaningText": [
+        "財運が旺盛で富貴双全、工業、商業界で成功",
+        "火星、鈴星、地空星、地劫星と加会すると",
+        "意外な事で損失を被りお金が流れる。",
+        "通風や神経痛など痛みのある病気になる",
+        "子供に意外な災難など"
+      ],
+      "classicalCounterpart": "全書 定貴局「鴛鴦禄會（天祿化祿臨身命是也。）」は内容が近いが名称が違い、同一とは書かれていない",
+      "sourceDifferences": [],
+      "examples": [
+        {
+          "type": "chart",
+          "slide": 22,
+          "ref": "S22"
+        }
+      ],
+      "automationLevel": "B",
+      "needsReview": [
+        "「煞星」の範囲が基礎２に定義されていない（S27「擎羊、陀羅、などの煞星」、S22 火星・鈴星・地空星・地劫星、全書「四煞」の記述だけ）",
+        "S22 命例（命宮卯 禄存・天機化禄）は命宮に火星、三合宮亥に地空・地劫があり、これらを煞星とすると命例が不成立になる"
+      ]
+    },
+    {
+      "id": "K2-22",
+      "number": 22,
+      "canonicalName": "双禄朝垣格",
+      "sourceName": "双禄朝垣格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 23,
+        "heading": "格局２２          双禄朝垣格"
+      },
+      "conditionText": [
+        "化禄星と禄存星が対宮、三合宮に入宮"
+      ],
+      "conditions": {
+        "palace": "命宮（「朝垣」。文には宮名なし）",
+        "palaceBranches": "unspecified",
+        "requiredInSamePalace": [],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [
+          "化禄星",
+          "禄存星"
+        ],
+        "strengths": "unspecified",
+        "transformations": "unspecified",
+        "power": "unspecified",
+        "auspiciousStars": "unspecified",
+        "inauspiciousStars": "unspecified",
+        "unsupported": []
+      },
+      "breakConditions": [],
+      "meaningConditions": [
+        {
+          "text": "命宮と遷移宮にそれぞれ入宮すれば",
+          "note": "象意の条件"
+        },
+        {
+          "text": "桃花の星に出会わなければ事業は成功する",
+          "note": "桃花の星は未定義"
+        }
+      ],
+      "meaningText": [
+        "命宮と遷移宮にそれぞれ入宮すれば",
+        "かなりの財産をなす。",
+        "桃花の星に出会わなければ事業は成功する",
+        "財産ができると投資の失敗などで失う",
+        "可能性があるので注意が必要",
+        "大限や小限で運の悪い時期は強盗にあったり、",
+        "横領されるなどに注意が必要",
+        "故郷より遠方で成功する"
+      ],
+      "classicalCounterpart": null,
+      "sourceDifferences": [],
+      "examples": [
+        {
+          "type": "chart",
+          "slide": 23,
+          "ref": "S23"
+        }
+      ],
+      "automationLevel": "B",
+      "needsReview": [
+        "基準の宮（命宮）が文に明記されていない",
+        "「命宮と遷移宮にそれぞれ入宮すればかなりの財産をなす」は象意側の上位記述"
+      ]
+    },
+    {
+      "id": "K2-23",
+      "number": 23,
+      "canonicalName": "禄馬交馳格",
+      "sourceName": "禄馬交馳格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 24,
+        "heading": "格局２３          禄馬交馳格"
+      },
+      "conditionText": [
+        "寅、申、巳、亥宮に天馬星が入宮し",
+        "天馬星の対宮に化禄星か禄存星が入宮"
+      ],
+      "conditions": {
+        "palace": "unspecified",
+        "palaceBranches": [
+          "寅",
+          "申",
+          "巳",
+          "亥"
+        ],
+        "requiredInSamePalace": [],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": {
+          "天馬星の対宮": [
+            "化禄星",
+            "禄存星"
+          ],
+          "mode": "いずれか"
+        },
+        "power": "unspecified",
+        "auspiciousStars": "unspecified",
+        "inauspiciousStars": "unspecified",
+        "unsupported": [
+          "天馬星が寅申巳亥（エンジンでは天馬は常にこの4支）"
+        ]
+      },
+      "breakConditions": [],
+      "meaningConditions": [
+        {
+          "text": "擎羊星、陀羅星に夾されるか、化忌星が",
+          "note": "「…同宮すると大きな損失や破産の恐れ」。象意（破格とは書いていない）"
+        },
+        {
+          "text": "禄存星は宮に独居は凶",
+          "note": "象意"
+        }
+      ],
+      "meaningText": [
+        "環境の変化によって発展",
+        "海外など遠方で成功する",
+        "禄存星は宮に独居は凶",
+        "他の主星に助けられるのを喜ぶ。",
+        "擎羊星、陀羅星に夾されるか、化忌星が",
+        "同宮すると大きな損失や破産の恐れがある"
+      ],
+      "classicalCounterpart": "全書 定貴局「禄馬交馳」",
+      "sourceDifferences": [
+        {
+          "with": "全書 禄馬交馳",
+          "status": "condition_difference"
+        }
+      ],
+      "examples": [
+        {
+          "type": "chart",
+          "slide": 24,
+          "ref": "S24"
+        }
+      ],
+      "automationLevel": "A",
+      "needsReview": [
+        "命宮との関係が文にない（S24 命例は天馬 巳＝遷移宮、化禄 亥＝命宮）",
+        "天馬の位置は資料間で違う（既存 §18 U10。S38・S39 の命盤でも天馬だけがエンジンと違う）",
+        "全書「禄馬交馳（二星臨身命、更得吉化同垣。）」と条件が違う"
+      ]
+    },
+    {
+      "id": "K2-24",
+      "number": 24,
+      "canonicalName": "坐貴向貴格",
+      "sourceName": "坐貴向貴格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 25,
+        "heading": "格局２４      坐貴向貴格"
+      },
+      "conditionText": [
+        "天魁星、天鉞星が命宮、遷移宮に入宮"
+      ],
+      "conditions": {
+        "palace": "命宮・遷移宮",
+        "palaceBranches": "unspecified",
+        "requiredInSamePalace": [],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": "unspecified",
+        "power": "unspecified",
+        "auspiciousStars": "unspecified",
+        "inauspiciousStars": "unspecified",
+        "unsupported": [
+          "天魁星・天鉞星が命宮と遷移宮に入宮（どちらがどちらかは未記載）"
+        ]
+      },
+      "breakConditions": [],
+      "meaningConditions": [
+        {
+          "text": "男性で命宮に天鉞星、女性で命宮に天魁星と",
+          "note": "象意の条件（性別）"
+        }
+      ],
+      "meaningText": [
+        "財官双美で一生において地位や身分の高い人",
+        "から助けられる。",
+        "仕事上でも困難な事にあうと意外な所から",
+        "助けられる。先見の明があり困難を避ける",
+        "こともできる。",
+        "男性で命宮に天鉞星、女性で命宮に天魁星と",
+        "なると悪い桃花となり、異性が助けるが",
+        "未婚者には凶"
+      ],
+      "classicalCounterpart": "全書 定貴局「坐貴向貴」",
+      "sourceDifferences": [
+        {
+          "with": "全書 坐貴向貴",
+          "status": "condition_difference",
+          "note": "遷移宮／身宮"
+        }
+      ],
+      "examples": [
+        {
+          "type": "chart",
+          "slide": 25,
+          "ref": "S25"
+        },
+        {
+          "type": "chart",
+          "slide": 38,
+          "note": "天魁 命宮丑・天鉞 遷移未で条件と一致（盤面の印字は「天乙拱命」）"
+        }
+      ],
+      "automationLevel": "A",
+      "needsReview": [
+        "全書「坐貴向貴（謂魁鉞在命、身迭相坐拱是也。）」は命・身",
+        "S38 命盤は同じ配置（天魁 命宮丑・天鉞 遷移未）を「天乙拱命」と印字。基礎２に天乙拱命の記載はなく、同一かは未記載"
+      ]
+    },
+    {
+      "id": "K2-25",
+      "number": 25,
+      "canonicalName": "君臣慶會格",
+      "sourceName": "君臣慶會格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 26,
+        "heading": "格局２５       君臣慶會格"
+      },
+      "conditionText": [
+        "命宮に紫微星が入宮し、左輔星、右弼星、",
+        "文昌星、文曲星が三方四正に加会"
+      ],
+      "conditions": {
+        "palace": "命宮",
+        "palaceBranches": "unspecified",
+        "requiredInSamePalace": [
+          "紫微星"
+        ],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [
+          "左輔星",
+          "右弼星",
+          "文昌星",
+          "文曲星"
+        ],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": "unspecified",
+        "power": "unspecified",
+        "auspiciousStars": "unspecified",
+        "inauspiciousStars": "unspecified",
+        "unsupported": []
+      },
+      "breakConditions": [],
+      "meaningConditions": [],
+      "meaningText": [
+        "男性はリーダーシップを発揮し、人生を謳歌",
+        "女命には不利で男友達が多く、自己中心で",
+        "結婚に向かない。"
+      ],
+      "classicalCounterpart": "全書 定貴局「君臣慶會」",
+      "sourceDifferences": [
+        {
+          "with": "全書 君臣慶會",
+          "status": "condition_difference"
+        }
+      ],
+      "examples": [
+        {
+          "type": "chart",
+          "slide": 26,
+          "ref": "S26"
+        }
+      ],
+      "automationLevel": "B",
+      "needsReview": [
+        "4星すべてか一部かが未記載。S26 命例は文昌が辰（三方四正外）で、全部を条件にすると命例が不成立",
+        "全書「君臣慶會（紫微左右同守命是也。更會相武陰、妙上。）」は左輔・右弼の同宮"
+      ]
+    },
+    {
+      "id": "K2-26",
+      "number": 26,
+      "canonicalName": "日月同臨格",
+      "sourceName": "日月同臨格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 27,
+        "heading": "格局２６      日月同臨格"
+      },
+      "conditionText": [
+        "丑、未宮が命宮で太陽、太陰が同宮",
+        "日月が同宮する時、必ずどちらかが",
+        "落陥するため、吉星と加会することが",
+        "条件"
+      ],
+      "conditions": {
+        "palace": "命宮",
+        "palaceBranches": [
+          "丑",
+          "未"
+        ],
+        "requiredInSamePalace": [
+          "太陽星",
+          "太陰星"
+        ],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": "unspecified",
+        "power": "unspecified",
+        "auspiciousStars": "吉星と加会することが条件（範囲未定義）",
+        "inauspiciousStars": "unspecified",
+        "unsupported": []
+      },
+      "breakConditions": [],
+      "meaningConditions": [
+        {
+          "text": "擎羊、陀羅が加会すると性格が暗く",
+          "note": "象意"
+        }
+      ],
+      "meaningText": [
+        "個性は明るく朗らかで活発、慈愛深く博愛",
+        "文昌、文曲が加会すると出世して富貴",
+        "擎羊、陀羅が加会すると性格が暗く",
+        "なったり明るくなったりと定まらない。"
+      ],
+      "classicalCounterpart": "全書 定貴局「日月同臨」",
+      "sourceDifferences": [
+        {
+          "with": "全書 日月同臨",
+          "status": "condition_difference",
+          "note": "吉星条件の有無"
+        }
+      ],
+      "examples": [
+        {
+          "type": "chart",
+          "slide": 27,
+          "ref": "S27"
+        }
+      ],
+      "automationLevel": "B",
+      "needsReview": [
+        "「吉星」の範囲が基礎２に定義されていない（入門 p.15 の吉星・凶星区分を使うかは未確定）",
+        "S27 命例は命宮戌、太陽太陰は未（子女宮）で条件（命宮丑未）と合わない",
+        "「落陥」は旺衰表では不得地（丑の太陽・未の太陰）",
+        "全書「日月同臨（日月在丑未守命。）」は吉星条件なし"
+      ]
+    },
+    {
+      "id": "K2-27",
+      "number": 27,
+      "canonicalName": "日月蔵輝格",
+      "sourceName": "日月蔵輝格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 28,
+        "heading": "格局２７         日月蔵輝格"
+      },
+      "conditionText": [
+        "太陽、太陰星が落陥し巨門星と加会する"
+      ],
+      "conditions": {
+        "palace": "unspecified",
+        "palaceBranches": "unspecified",
+        "requiredInSamePalace": [],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": {
+          "太陽星": "落陥",
+          "太陰星": "落陥"
+        },
+        "transformations": "unspecified",
+        "power": "unspecified",
+        "auspiciousStars": "unspecified",
+        "inauspiciousStars": "unspecified",
+        "unsupported": [
+          "巨門星と加会（基準の宮は未記載）"
+        ]
+      },
+      "breakConditions": [],
+      "meaningConditions": [
+        {
+          "text": "擎羊、陀羅、などの煞星に会うと、男性は",
+          "note": "象意"
+        }
+      ],
+      "meaningText": [
+        "吉星に加会すれば青年時とても良い",
+        "擎羊、陀羅、などの煞星に会うと、男性は",
+        "妻を剋し、女性は夫を剋す。他郷に流れて",
+        "いき苦労しつくす。",
+        "その後成功し故郷に帰る"
+      ],
+      "classicalCounterpart": "全書 定貧賤局「日月藏輝」",
+      "sourceDifferences": [
+        {
+          "with": "全書 日月藏輝",
+          "status": "wording_difference"
+        }
+      ],
+      "examples": [
+        {
+          "type": "diagram",
+          "slide": 28,
+          "note": "図: 命宮戌 太陽、太陰 辰、巨門 午。旺衰表では太陽戌＝不得地・太陰辰＝陥"
+        }
+      ],
+      "automationLevel": "C",
+      "needsReview": [
+        "「落陥」が旺衰のどの区分か未定義（S14・S27 の記述からは不得地を含む）",
+        "基準の宮（命宮か）が未記載",
+        "全書（定貧賤局）「日月藏輝（日月反背、又逢巨暗是也。）」"
+      ]
+    },
+    {
+      "id": "K2-28",
+      "number": 28,
+      "canonicalName": "極響離命格",
+      "sourceName": "極響離命格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 29,
+        "heading": "格局２８       極響離命格"
+      },
+      "conditionText": [
+        "命宮が午宮で紫微星が入宮"
+      ],
+      "conditions": {
+        "palace": "命宮",
+        "palaceBranches": [
+          "午"
+        ],
+        "requiredInSamePalace": [
+          "紫微星"
+        ],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": "unspecified",
+        "power": "unspecified",
+        "auspiciousStars": "unspecified",
+        "inauspiciousStars": "unspecified",
+        "unsupported": []
+      },
+      "breakConditions": [],
+      "meaningConditions": [
+        {
+          "text": "煞星に会わなければ社会的地位は高くなる",
+          "note": "「煞星」の範囲が基礎２に定義されていない（S27「擎羊、陀羅、などの煞星」、S22 火星・鈴星・地空星・地劫星、全書「四煞」の記述だけ）"
+        }
+      ],
+      "meaningText": [
+        "何事にも動じない超然とした性格",
+        "煞星に会わなければ社会的地位は高くなる",
+        "大会社の幹部、重役、企業家など",
+        "政治家、法律家、財政など国家的な仕事",
+        "にも通じる学識を得ることも可"
+      ],
+      "classicalCounterpart": null,
+      "sourceDifferences": [],
+      "examples": [
+        {
+          "type": "chart",
+          "slide": 29,
+          "ref": "S26",
+          "note": "S29 の命盤は S26 と同じ"
+        }
+      ],
+      "automationLevel": "A",
+      "needsReview": [
+        "旺衰表では紫微 午＝廟"
+      ]
+    },
+    {
+      "id": "K2-29",
+      "number": 29,
+      "canonicalName": "化煞為権格",
+      "sourceName": "化煞為権格",
+      "aliases": [
+        {
+          "name": "化殺為権",
+          "source": "S30 本文"
+        }
+      ],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 30,
+        "heading": "格局２９       化煞為権格"
+      },
+      "conditionText": [
+        "巳、亥宮で紫微星と七殺星が同宮"
+      ],
+      "conditions": {
+        "palace": "unspecified",
+        "palaceBranches": [
+          "巳",
+          "亥"
+        ],
+        "requiredInSamePalace": [
+          "紫微星",
+          "七殺星"
+        ],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": "unspecified",
+        "power": "unspecified",
+        "auspiciousStars": "unspecified",
+        "inauspiciousStars": "unspecified",
+        "unsupported": []
+      },
+      "breakConditions": [],
+      "meaningConditions": [],
+      "meaningText": [
+        "化殺為権とは悪を力に変えるということ",
+        "性格は豪猛で威風堂々とした英雄タイプ",
+        "頻繁に危険に遭遇し、九死に一生を得る",
+        "軍、警察、船員、消防隊員、救助隊など"
+      ],
+      "classicalCounterpart": null,
+      "sourceDifferences": [],
+      "examples": [
+        {
+          "type": "chart",
+          "slide": 30,
+          "ref": "S30"
+        }
+      ],
+      "automationLevel": "B",
+      "needsReview": [
+        "宮（命宮か）が文に書かれていない（S30 命例は命宮巳）",
+        "本文中の表記は「化殺為権」"
+      ]
+    },
+    {
+      "id": "K2-30",
+      "number": 30,
+      "canonicalName": "壽星入廟格",
+      "sourceName": "壽星入廟格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 31,
+        "heading": "格局３０       壽星入廟格"
+      },
+      "conditionText": [
+        "命宮が午宮で天梁星が入宮"
+      ],
+      "conditions": {
+        "palace": "命宮",
+        "palaceBranches": [
+          "午"
+        ],
+        "requiredInSamePalace": [
+          "天梁星"
+        ],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": "unspecified",
+        "power": "unspecified",
+        "auspiciousStars": "unspecified",
+        "inauspiciousStars": "unspecified",
+        "unsupported": []
+      },
+      "breakConditions": [],
+      "meaningConditions": [
+        {
+          "text": "吉星に会えば社会的地位を得て高官となり",
+          "note": "「吉星」の範囲が基礎２に定義されていない（入門 p.15 の吉星・凶星区分を使うかは未確定）"
+        }
+      ],
+      "meaningText": [
+        "正直で私利私欲がなく落ち着いている",
+        "高潔で風格がある。",
+        "吉星に会えば社会的地位を得て高官となり",
+        "多くの給料を得る。"
+      ],
+      "classicalCounterpart": null,
+      "sourceDifferences": [],
+      "examples": [
+        {
+          "type": "chart",
+          "slide": 31,
+          "ref": "S31"
+        }
+      ],
+      "automationLevel": "A",
+      "needsReview": [
+        "旺衰表では天梁 午＝廟"
+      ]
+    },
+    {
+      "id": "K2-31",
+      "number": 31,
+      "canonicalName": "桃花犯主格",
+      "sourceName": "桃花犯主格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 32,
+        "heading": "格局３１        桃花犯主格"
+      },
+      "conditionText": [
+        "卯、酉宮が命宮となり紫微星、貧狼星が同宮",
+        "煞星に会い、紅鸞星、天喜星、咸地星、天桃星",
+        "沐浴星などに加会する"
+      ],
+      "conditions": {
+        "palace": "命宮",
+        "palaceBranches": [
+          "卯",
+          "酉"
+        ],
+        "requiredInSamePalace": [
+          "紫微星",
+          "貪狼星"
+        ],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": "unspecified",
+        "power": "unspecified",
+        "auspiciousStars": "unspecified",
+        "inauspiciousStars": "unspecified",
+        "unsupported": [
+          "煞星に会う",
+          "紅鸞星・天喜星・咸地星・天桃星・沐浴星などに加会（紅鸞以外は34星外。「など」で範囲未確定）"
+        ]
+      },
+      "breakConditions": [],
+      "meaningConditions": [],
+      "meaningText": [
+        "愛情豊かで感受性が強い",
+        "一人の相手では満足できず男女関係が乱れる",
+        "美容師、デザイナー、メイクアップ",
+        "ネイリスト",
+        "その他芸術家などにも良い"
+      ],
+      "classicalCounterpart": null,
+      "sourceDifferences": [],
+      "examples": [
+        {
+          "type": "chart",
+          "slide": 32,
+          "ref": "S32"
+        }
+      ],
+      "automationLevel": "C",
+      "needsReview": [
+        "「煞星」の範囲が基礎２に定義されていない（S27「擎羊、陀羅、などの煞星」、S22 火星・鈴星・地空星・地劫星、全書「四煞」の記述だけ）",
+        "天喜・咸池（原表記「咸地」）・天桃・沐浴は既存エンジンにない",
+        "「など」で星の範囲が確定しない"
+      ]
+    },
+    {
+      "id": "K2-32",
+      "number": 32,
+      "canonicalName": "羊陀夾忌格",
+      "sourceName": "羊陀夾忌格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 33,
+        "heading": "格局３２、３３ 羊陀夾忌格"
+      },
+      "conditionText": [
+        "禄存星が入宮する宮に化忌星が同宮"
+      ],
+      "conditions": {
+        "palace": "unspecified",
+        "palaceBranches": "unspecified",
+        "requiredInSamePalace": [
+          "禄存星"
+        ],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": {
+          "禄存星の宮": "化忌星"
+        },
+        "power": "unspecified",
+        "auspiciousStars": "unspecified",
+        "inauspiciousStars": "unspecified",
+        "unsupported": []
+      },
+      "breakConditions": [],
+      "meaningConditions": [
+        {
+          "text": "流年がこの宮に巡り、三方四正に流年化忌が重なれば",
+          "note": "流年の記述（対象外）"
+        }
+      ],
+      "meaningText": [
+        "一生は多災多難となる。",
+        "流年がこの宮に巡り、三方四正に流年化忌が重なれば",
+        "その年回りは波乱万丈となる。"
+      ],
+      "classicalCounterpart": null,
+      "sourceDifferences": [],
+      "examples": [
+        {
+          "type": "chart",
+          "slide": 38,
+          "note": "S38 本文: 生年干甲の化忌が太陽につき禄存と同宮（寅・父母宮）。エンジンでも寅に禄存・太陽化忌"
+        }
+      ],
+      "automationLevel": "A",
+      "needsReview": [
+        "宮の指定なし（どの宮でも）。禄存の前後は常に陀羅・敬羊（エンジンで確認）",
+        "S38 は「対宮となる疾厄宮も同じ格に属す」と対宮にも広げる（S33 に記載なし）",
+        "S38・S39 は大限の四化で使う（大限は今回対象外）"
+      ]
+    },
+    {
+      "id": "K2-33",
+      "number": 33,
+      "canonicalName": "刑忌夾印格",
+      "sourceName": "刑忌夾印格",
+      "aliases": [],
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 33,
+        "heading": "格局３２、３３ 刑忌夾印格"
+      },
+      "conditionText": [
+        "天相星が命宮に入宮し巨門星が入宮する宮に化忌星が同宮"
+      ],
+      "conditions": {
+        "palace": "命宮",
+        "palaceBranches": "unspecified",
+        "requiredInSamePalace": [
+          "天相星"
+        ],
+        "requiredInOpposite": [],
+        "requiredInTrines": [],
+        "requiredInSanfangSizheng": [],
+        "requiredJiahui": [],
+        "strengths": "unspecified",
+        "transformations": {
+          "巨門星": "化忌星"
+        },
+        "power": "unspecified",
+        "auspiciousStars": "unspecified",
+        "inauspiciousStars": "unspecified",
+        "unsupported": []
+      },
+      "breakConditions": [],
+      "meaningConditions": [],
+      "meaningText": [
+        "刑（天梁の別名）と化忌が印星（天相星）を夾撃するため凶となる。"
+      ],
+      "classicalCounterpart": null,
+      "sourceDifferences": [],
+      "examples": [
+        {
+          "type": "text",
+          "slide": 38,
+          "note": "丁卯の大限で父母宮に適用（大限は対象外）"
+        }
+      ],
+      "automationLevel": "A",
+      "needsReview": [
+        "天相の前後は常に巨門・天梁（エンジンで確認）。資料は「刑（天梁の別名）」と記載",
+        "S38 は大限で父母宮の天相に適用し「敗局」と呼ぶ（S33 は命宮）",
+        "S40「丁：半吉半凶（天相が刑忌夾印を形成）」"
+      ]
+    }
+  ],
+  "classicalPatterns": [
+    {
+      "id": "ZS-01",
+      "category": "定富局",
+      "sourceName": "財蔭夾印",
+      "text": "相守命、武梁來夾是也。田宅宮亦然。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定富局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-02",
+      "category": "定富局",
+      "sourceName": "日月夾財",
+      "text": "武守命、日月來夾是也。財帛宮亦然。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定富局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-03",
+      "category": "定富局",
+      "sourceName": "財禄夾馬",
+      "text": "馬守命、武禄來夾是也。逢生旺尤妙。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定富局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "C",
+      "needsReview": [
+        "生旺の定義がない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-04",
+      "category": "定富局",
+      "sourceName": "蔭印拱身",
+      "text": "身臨田宅、梁相拱沖是也。勿坐空亡。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定富局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "C",
+      "needsReview": [
+        "空亡（旬空・截空）は既存エンジンにない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-05",
+      "category": "定富局",
+      "sourceName": "日月照壁",
+      "text": "日月臨田宅宮是也。喜居墓庫。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定富局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": "K2-13",
+      "automationLevel": "C",
+      "needsReview": [
+        "墓庫・墓運の定義がない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-06",
+      "category": "定富局",
+      "sourceName": "金燦光輝",
+      "text": "太陽單守命在午宮是也。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定富局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-07",
+      "category": "定貴局",
+      "sourceName": "日月夾命",
+      "text": "不坐空亡、遇逢本宮有吉星是也。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": "K2-15",
+      "automationLevel": "C",
+      "needsReview": [
+        "空亡（旬空・截空）は既存エンジンにない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-08",
+      "category": "定貴局",
+      "sourceName": "日出扶桑",
+      "text": "日在卯守命是也、守官禄宮亦然。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-09",
+      "category": "定貴局",
+      "sourceName": "月落亥宮",
+      "text": "月在亥守命是也、又名月朗天門。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": "K2-07",
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-10",
+      "category": "定貴局",
+      "sourceName": "月生滄海",
+      "text": "月在子、守田宅是也。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": "K2-12",
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-11",
+      "category": "定貴局",
+      "sourceName": "輔弼拱主",
+      "text": "紫微守命、二星來拱是也。夾之亦然。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-12",
+      "category": "定貴局",
+      "sourceName": "君臣慶會",
+      "text": "紫微左右同守命是也。更會相武陰、妙上。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": "K2-25",
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-13",
+      "category": "定貴局",
+      "sourceName": "財印夾禄",
+      "text": "禄守命、梁相來夾是也。入財宮亦然。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-14",
+      "category": "定貴局",
+      "sourceName": "鴛鴦禄會",
+      "text": "天禄化禄臨身命是也。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-15",
+      "category": "定貴局",
+      "sourceName": "禄馬交馳",
+      "text": "二星臨身命、更得吉化同垣。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": "K2-23",
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-16",
+      "category": "定貴局",
+      "sourceName": "禄馬佩印",
+      "text": "馬前有禄、印星同宮是也。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-17",
+      "category": "定貴局",
+      "sourceName": "坐貴向貴",
+      "text": "謂魁鉞在命、身迭相坐拱是也。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": "K2-24",
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-18",
+      "category": "定貴局",
+      "sourceName": "馬頭帯剣",
+      "text": "謂馬有刃是也、不是居午格。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": "K2-18",
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-19",
+      "category": "定貴局",
+      "sourceName": "七殺朝斗",
+      "text": "寅申子午安命值七殺。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": "K2-17",
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-20",
+      "category": "定貴局",
+      "sourceName": "日月並明",
+      "text": "陰陽日月同宮是也。日命日巳月酉來朝。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": "K2-05",
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-21",
+      "category": "定貴局",
+      "sourceName": "明珠出海",
+      "text": "日月同居廟旺會命垣。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": "K2-04",
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-22",
+      "category": "定貴局",
+      "sourceName": "日月同臨",
+      "text": "日月在丑未守命。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": "K2-26",
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-23",
+      "category": "定貴局",
+      "sourceName": "刑囚夾印",
+      "text": "天刑廉貞同臨身命、主武勇職。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "C",
+      "needsReview": [
+        "天刑は34星外"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-24",
+      "category": "定貴局",
+      "sourceName": "科権禄拱",
+      "text": "命身宮三合科権禄來會。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-25",
+      "category": "定貴局",
+      "sourceName": "貪火相逢",
+      "text": "謂二星守命同居廟旺是也。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-26",
+      "category": "定貴局",
+      "sourceName": "武曲守垣",
+      "text": "武守命卯宮是也。餘不是。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-27",
+      "category": "定貴局",
+      "sourceName": "府相朝垣",
+      "text": "命宮無主星府相三合會照。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": "K2-02",
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-28",
+      "category": "定貴局",
+      "sourceName": "紫府朝垣",
+      "text": "寅安命午戌紫府來朝。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": "K2-03",
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-29",
+      "category": "定貴局",
+      "sourceName": "文星暗拱",
+      "text": "命宮有吉、遷移官禄財帛二方科星。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-30",
+      "category": "定貴局",
+      "sourceName": "権禄生逢",
+      "text": "二星守命廟旺、陥不是。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-31",
+      "category": "定貴局",
+      "sourceName": "擎羊入廟",
+      "text": "辰戌丑未守命遇吉是也。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-32",
+      "category": "定貴局",
+      "sourceName": "巨機居卯",
+      "text": "辛乙生人、卯宮二星守命遇昌曲左右。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-33",
+      "category": "定貴局",
+      "sourceName": "明禄暗禄",
+      "text": "甲生人安命亥宮、科星守命禄居寅。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-34",
+      "category": "定貴局",
+      "sourceName": "科明禄暗",
+      "text": "因命寅與亥暗合同明禄暗禄。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "C",
+      "needsReview": [
+        "暗合の定義がない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-35",
+      "category": "定貴局",
+      "sourceName": "金輿扶駕",
+      "text": "紫微守命、前後有日月來夾是也。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-36",
+      "category": "定貴局",
+      "sourceName": "火星暗宮",
+      "text": "未詳。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 34,
+        "heading": "紫微斗数全書格局1（定貴局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "C",
+      "needsReview": [
+        "資料自身が「未詳」"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-37",
+      "category": "定貧賤局",
+      "sourceName": "生不逢時",
+      "text": "命坐空亡、逢廉貞是也。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 35,
+        "heading": "紫微斗数全書格局2（定貧賤局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "C",
+      "needsReview": [
+        "空亡（旬空・截空）は既存エンジンにない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-38",
+      "category": "定貧賤局",
+      "sourceName": "禄逢兩煞",
+      "text": "禄坐空亡、又逢空劫煞星是也。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 35,
+        "heading": "紫微斗数全書格局2（定貧賤局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "C",
+      "needsReview": [
+        "空亡（旬空・截空）は既存エンジンにない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-39",
+      "category": "定貧賤局",
+      "sourceName": "馬落空亡",
+      "text": "馬既落亡、雖禄沖會無用、主奔波。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 35,
+        "heading": "紫微斗数全書格局2（定貧賤局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-40",
+      "category": "定貧賤局",
+      "sourceName": "日月藏輝",
+      "text": "日月反背、又逢巨暗是也。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 35,
+        "heading": "紫微斗数全書格局2（定貧賤局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": "K2-27",
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-41",
+      "category": "定貧賤局",
+      "sourceName": "財與囚仇",
+      "text": "武廉同守身命是也。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 35,
+        "heading": "紫微斗数全書格局2（定貧賤局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-42",
+      "category": "定貧賤局",
+      "sourceName": "一生孤貧",
+      "text": "謂破守命、星陥地是也。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 35,
+        "heading": "紫微斗数全書格局2（定貧賤局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-43",
+      "category": "定貧賤局",
+      "sourceName": "君子在野",
+      "text": "謂四煞守身命、而言臨陥地是也。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 35,
+        "heading": "紫微斗数全書格局2（定貧賤局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-44",
+      "category": "定貧賤局",
+      "sourceName": "兩重華蓋",
+      "text": "謂禄存化禄坐命、遇空劫是也。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 35,
+        "heading": "紫微斗数全書格局2（定貧賤局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "B",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-45",
+      "category": "定雑局",
+      "sourceName": "風雲際會",
+      "text": "身命雖弱、二限逢禄馬是也。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 35,
+        "heading": "紫微斗数全書格局2（定雑局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "C",
+      "needsReview": [
+        "大限・小限の運（今回対象外）"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-46",
+      "category": "定雑局",
+      "sourceName": "錦上添花",
+      "text": "謂限破惡星、而行吉地是也。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 35,
+        "heading": "紫微斗数全書格局2（定雑局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "C",
+      "needsReview": [
+        "大限・小限の運（今回対象外）"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-47",
+      "category": "定雑局",
+      "sourceName": "禄衰馬困",
+      "text": "限逢七殺、禄馬空亡是也。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 35,
+        "heading": "紫微斗数全書格局2（定雑局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "C",
+      "needsReview": [
+        "空亡（旬空・截空）は既存エンジンにない",
+        "大限・小限の運（今回対象外）"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-48",
+      "category": "定雑局",
+      "sourceName": "衣錦還郷",
+      "text": "少年不遂、四十後行墓運是也。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 35,
+        "heading": "紫微斗数全書格局2（定雑局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "C",
+      "needsReview": [
+        "墓庫・墓運の定義がない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-49",
+      "category": "定雑局",
+      "sourceName": "歩数無依",
+      "text": "前限接後限、連綿不分是也。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 35,
+        "heading": "紫微斗数全書格局2（定雑局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "C",
+      "needsReview": [
+        "大限・小限の運（今回対象外）"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-50",
+      "category": "定雑局",
+      "sourceName": "水上駕星",
+      "text": "一年好、一年不好是也。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 35,
+        "heading": "紫微斗数全書格局2（定雑局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "C",
+      "needsReview": [
+        "漢文の条件の読み方（語義）が基礎２に説明されていない"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-51",
+      "category": "定雑局",
+      "sourceName": "吉凶相伴",
+      "text": "命有主星、限吉則發、限衰不發是也。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 35,
+        "heading": "紫微斗数全書格局2（定雑局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "C",
+      "needsReview": [
+        "大限・小限の運（今回対象外）"
+      ],
+      "referenceOnly": true
+    },
+    {
+      "id": "ZS-52",
+      "category": "定雑局",
+      "sourceName": "枯木逢春",
+      "text": "謂命衰限好是也。",
+      "sourceRef": {
+        "source": "紫微斗数基礎２",
+        "slide": 35,
+        "heading": "紫微斗数全書格局2（定雑局）",
+        "note": "漢文の格局表（原典: 紫微斗数全書）の画像。条件は漢文のみで、基礎２の日本語の解説はない"
+      },
+      "relatedMainPattern": null,
+      "automationLevel": "C",
+      "needsReview": [
+        "大限・小限の運（今回対象外）"
+      ],
+      "referenceOnly": true
+    }
+  ],
+  "examples": [
+    {
+      "id": "EX-S22",
+      "slide": 22,
+      "printedPatternLabel": "禄合鴛鴦格",
+      "birth": {
+        "sex": "male",
+        "yinyang": "陰男",
+        "lunar": {
+          "yearGanzhi": "乙丑",
+          "year": 1925,
+          "month": 2,
+          "day": "unspecified（命盤の日の欄が空欄）",
+          "hourBranch": "子"
+        },
+        "place": "unspecified（命盤に記載なし）"
+      },
+      "bureau": "土五局",
+      "mingPalace": "卯",
+      "shenPalace": "卯",
+      "printedStars": {
+        "巳": [
+          "左輔星",
+          "天馬星",
+          "天梁星"
+        ],
+        "午": [
+          "七殺星"
+        ],
+        "未": [],
+        "申": [
+          "天鉞星",
+          "廉貞星"
+        ],
+        "辰": [
+          "文曲星",
+          "敬羊星",
+          "天相星",
+          "紫微星"
+        ],
+        "酉": [
+          "右弼星"
+        ],
+        "卯": [
+          "火星",
+          "禄存星",
+          "巨門星",
+          "天機星"
+        ],
+        "戌": [
+          "鈴星",
+          "文昌星",
+          "破軍星"
+        ],
+        "寅": [
+          "天姚星",
+          "紅鸞星",
+          "陀羅星",
+          "貪狼星"
+        ],
+        "丑": [
+          "太陰星",
+          "太陽星"
+        ],
+        "子": [
+          "天魁星",
+          "天府星",
+          "武曲星"
+        ],
+        "亥": [
+          "天空星",
+          "地劫星",
+          "天同星"
+        ]
+      },
+      "printedTransformations": {
+        "化禄星": "天機星",
+        "化権星": "天梁星",
+        "化科星": "紫微星",
+        "化忌星": "太陰星"
+      },
+      "note": "34星外の星（龍池・鳳閣・天喜・天刑・三台・八座・恩光・天貴・陰煞・截空・旬空 など）は省略。星名は既存名に対応付け（擎羊→敬羊星、地空・天空→天空星、貧狼→貪狼星）",
+      "engineCheck": "陰暦2月の3日・15日・19日・27日で34星配置・四化・命宮・身宮・五行局とも完全一致",
+      "patternCheck": {
+        "K2-21": "中核条件（命宮卯に禄存・化禄）は一致。命宮に火星、三合宮亥に地空・地劫があり「煞星と加会しない」は煞星の範囲次第 → needs_review"
+      }
+    },
+    {
+      "id": "EX-S23",
+      "slide": 23,
+      "printedPatternLabel": "双禄朝垣格",
+      "birth": {
+        "sex": "male",
+        "yinyang": "陰男",
+        "lunar": {
+          "yearGanzhi": "丁未",
+          "year": 1907,
+          "month": 11,
+          "day": "unspecified（命盤の日の欄が空欄）",
+          "hourBranch": "寅"
+        },
+        "place": "unspecified（命盤に記載なし）"
+      },
+      "bureau": "金四局",
+      "mingPalace": "戌",
+      "shenPalace": "寅",
+      "printedStars": {
+        "巳": [
+          "陀羅星",
+          "天相星"
+        ],
+        "午": [
+          "文曲星",
+          "禄存星",
+          "天梁星"
+        ],
+        "未": [
+          "敬羊星",
+          "七殺星",
+          "廉貞星"
+        ],
+        "申": [
+          "文昌星",
+          "紅鸞星"
+        ],
+        "辰": [
+          "巨門星"
+        ],
+        "酉": [
+          "天空星",
+          "天鉞星"
+        ],
+        "卯": [
+          "貪狼星",
+          "紫微星"
+        ],
+        "戌": [
+          "天同星"
+        ],
+        "寅": [
+          "左輔星",
+          "天馬星",
+          "太陰星",
+          "天機星"
+        ],
+        "丑": [
+          "地劫星",
+          "天府星"
+        ],
+        "子": [
+          "鈴星",
+          "右弼星",
+          "太陽星"
+        ],
+        "亥": [
+          "火星",
+          "天姚星",
+          "天魁星",
+          "破軍星",
+          "武曲星"
+        ]
+      },
+      "printedTransformations": {
+        "化禄星": "太陰星",
+        "化権星": "天同星",
+        "化科星": "天機星",
+        "化忌星": "巨門星"
+      },
+      "note": "34星外の星（龍池・鳳閣・天喜・天刑・三台・八座・恩光・天貴・陰煞・截空・旬空 など）は省略。星名は既存名に対応付け（擎羊→敬羊星、地空・天空→天空星、貧狼→貪狼星）",
+      "engineCheck": "陰暦11月の8日・11日・17日で完全一致",
+      "patternCheck": {
+        "K2-22": "命宮戌の三合宮に化禄（寅）・禄存（午）で一致"
+      }
+    },
+    {
+      "id": "EX-S24",
+      "slide": 24,
+      "printedPatternLabel": "禄馬交馳格",
+      "birth": {
+        "sex": "male",
+        "yinyang": "陰男",
+        "lunar": {
+          "yearGanzhi": "丁亥",
+          "year": 1947,
+          "month": 2,
+          "day": "unspecified（命盤の日の欄が空欄）",
+          "hourBranch": "辰"
+        },
+        "place": "unspecified（命盤に記載なし）"
+      },
+      "bureau": "金四局",
+      "mingPalace": "亥",
+      "shenPalace": "未",
+      "printedStars": {
+        "巳": [
+          "左輔星",
+          "天馬星",
+          "陀羅星",
+          "天機星"
+        ],
+        "午": [
+          "文昌星",
+          "禄存星",
+          "紫微星"
+        ],
+        "未": [
+          "天空星",
+          "敬羊星"
+        ],
+        "申": [
+          "文曲星",
+          "破軍星"
+        ],
+        "辰": [
+          "紅鸞星",
+          "七殺星"
+        ],
+        "酉": [
+          "右弼星",
+          "天鉞星"
+        ],
+        "卯": [
+          "地劫星",
+          "天梁星",
+          "太陽星"
+        ],
+        "戌": [
+          "天府星",
+          "廉貞星"
+        ],
+        "寅": [
+          "鈴星",
+          "天姚星",
+          "天相星",
+          "武曲星"
+        ],
+        "丑": [
+          "火星",
+          "巨門星",
+          "天同星"
+        ],
+        "子": [
+          "貪狼星"
+        ],
+        "亥": [
+          "天魁星",
+          "太陰星"
+        ]
+      },
+      "printedTransformations": {
+        "化禄星": "太陰星",
+        "化権星": "天同星",
+        "化科星": "天機星",
+        "化忌星": "巨門星"
+      },
+      "note": "34星外の星（龍池・鳳閣・天喜・天刑・三台・八座・恩光・天貴・陰煞・截空・旬空 など）は省略。星名は既存名に対応付け（擎羊→敬羊星、地空・天空→天空星、貧狼→貪狼星）",
+      "engineCheck": "陰暦2月の10日・20日・23日・29日で完全一致",
+      "patternCheck": {
+        "K2-23": "天馬 巳・対宮亥に化禄（太陰）で一致"
+      }
+    },
+    {
+      "id": "EX-S25",
+      "slide": 25,
+      "printedPatternLabel": "坐貴向貴格",
+      "birth": {
+        "sex": "male",
+        "yinyang": "陽男",
+        "lunar": {
+          "yearGanzhi": "戊子",
+          "year": 1948,
+          "month": 9,
+          "day": 11,
+          "hourBranch": "酉"
+        },
+        "place": "unspecified（命盤に記載なし）"
+      },
+      "bureau": "金四局",
+      "mingPalace": "丑",
+      "shenPalace": "未",
+      "printedStars": {
+        "巳": [
+          "禄存星",
+          "天相星"
+        ],
+        "午": [
+          "敬羊星",
+          "天梁星"
+        ],
+        "未": [
+          "鈴星",
+          "天鉞星",
+          "七殺星",
+          "廉貞星"
+        ],
+        "申": [
+          "地劫星",
+          "天馬星"
+        ],
+        "辰": [
+          "陀羅星",
+          "巨門星"
+        ],
+        "酉": [
+          "天姚星"
+        ],
+        "卯": [
+          "紅鸞星",
+          "貪狼星",
+          "紫微星"
+        ],
+        "戌": [
+          "天同星"
+        ],
+        "寅": [
+          "天空星",
+          "右弼星",
+          "太陰星",
+          "天機星"
+        ],
+        "丑": [
+          "文曲星",
+          "文昌星",
+          "天魁星",
+          "天府星"
+        ],
+        "子": [
+          "左輔星",
+          "太陽星"
+        ],
+        "亥": [
+          "火星",
+          "破軍星",
+          "武曲星"
+        ]
+      },
+      "printedTransformations": {
+        "化禄星": "貪狼星",
+        "化権星": "太陰星",
+        "化科星": "右弼星",
+        "化忌星": "天機星"
+      },
+      "note": "34星外の星（龍池・鳳閣・天喜・天刑・三台・八座・恩光・天貴・陰煞・截空・旬空 など）は省略。星名は既存名に対応付け（擎羊→敬羊星、地空・天空→天空星、貧狼→貪狼星）",
+      "engineCheck": "印刷どおりの陰暦9月11日酉時（1948-10-13）で完全一致。化科＝右弼（入門 表10と一致。基礎２ S37 の四化表の戊＝太陽とは違う）",
+      "patternCheck": {
+        "K2-24": "天魁 命宮丑・天鉞 遷移未で一致"
+      }
+    },
+    {
+      "id": "EX-S26",
+      "slide": 26,
+      "printedPatternLabel": "君臣慶會格（S29 極響離命格も同じ命盤）",
+      "birth": {
+        "sex": "male",
+        "yinyang": "陰男",
+        "lunar": {
+          "yearGanzhi": "乙酉",
+          "year": 1945,
+          "month": 11,
+          "day": "unspecified（命盤の日の欄が空欄）",
+          "hourBranch": "午"
+        },
+        "place": "unspecified（命盤に記載なし）"
+      },
+      "bureau": "木三局",
+      "mingPalace": "午",
+      "shenPalace": "午",
+      "printedStars": {
+        "巳": [
+          "天空星",
+          "地劫星",
+          "天機星"
+        ],
+        "午": [
+          "紅鸞星",
+          "紫微星"
+        ],
+        "未": [],
+        "申": [
+          "天鉞星",
+          "破軍星"
+        ],
+        "辰": [
+          "鈴星",
+          "文昌星",
+          "敬羊星",
+          "七殺星"
+        ],
+        "酉": [
+          "火星"
+        ],
+        "卯": [
+          "禄存星",
+          "天梁星",
+          "太陽星"
+        ],
+        "戌": [
+          "文曲星",
+          "天府星",
+          "廉貞星"
+        ],
+        "寅": [
+          "左輔星",
+          "天馬星",
+          "陀羅星",
+          "天相星",
+          "武曲星"
+        ],
+        "丑": [
+          "巨門星",
+          "天同星"
+        ],
+        "子": [
+          "右弼星",
+          "天魁星",
+          "貪狼星"
+        ],
+        "亥": [
+          "天姚星",
+          "太陰星"
+        ]
+      },
+      "printedTransformations": {
+        "化禄星": "天機星",
+        "化権星": "天梁星",
+        "化科星": "紫微星",
+        "化忌星": "太陰星"
+      },
+      "note": "34星外の星（龍池・鳳閣・天喜・天刑・三台・八座・恩光・天貴・陰煞・截空・旬空 など）は省略。星名は既存名に対応付け（擎羊→敬羊星、地空・天空→天空星、貧狼→貪狼星）",
+      "engineCheck": "陰暦11月の7日・15日・17日で完全一致",
+      "patternCheck": {
+        "K2-25": "命宮午 紫微、三方四正に左輔（寅）・右弼（子）・文曲（戌）、文昌は辰で三方四正外 → 4星全部を条件にすると不一致（needs_review）",
+        "K2-28": "命宮午 紫微で一致（S29）"
+      }
+    },
+    {
+      "id": "EX-S27",
+      "slide": 27,
+      "printedPatternLabel": "日月同臨格",
+      "birth": {
+        "sex": "male",
+        "yinyang": "陽男",
+        "lunar": {
+          "yearGanzhi": "丙子",
+          "year": 1936,
+          "month": 12,
+          "day": "unspecified（命盤の日の欄が空欄）",
+          "hourBranch": "卯"
+        },
+        "place": "unspecified（命盤に記載なし）"
+      },
+      "bureau": "木三局",
+      "mingPalace": "戌",
+      "shenPalace": "辰",
+      "printedStars": {
+        "巳": [
+          "火星",
+          "禄存星",
+          "天同星"
+        ],
+        "午": [
+          "敬羊星",
+          "天府星",
+          "武曲星"
+        ],
+        "未": [
+          "文曲星",
+          "文昌星",
+          "太陰星",
+          "太陽星"
+        ],
+        "申": [
+          "天空星",
+          "貪狼星"
+        ],
+        "辰": [
+          "陀羅星",
+          "破軍星"
+        ],
+        "酉": [
+          "天鉞星",
+          "巨門星",
+          "天機星"
+        ],
+        "卯": [
+          "左輔星",
+          "紅鸞星"
+        ],
+        "戌": [
+          "天相星",
+          "紫微星"
+        ],
+        "寅": [
+          "地劫星",
+          "廉貞星"
+        ],
+        "丑": [
+          "鈴星"
+        ],
+        "子": [
+          "天姚星",
+          "七殺星"
+        ],
+        "亥": [
+          "右弼星",
+          "天馬星",
+          "天魁星",
+          "天梁星"
+        ]
+      },
+      "printedTransformations": {
+        "化禄星": "天同星",
+        "化権星": "天機星",
+        "化科星": "文昌星",
+        "化忌星": "廉貞星"
+      },
+      "note": "34星外の星（龍池・鳳閣・天喜・天刑・三台・八座・恩光・天貴・陰煞・截空・旬空 など）は省略。星名は既存名に対応付け（擎羊→敬羊星、地空・天空→天空星、貧狼→貪狼星）",
+      "engineCheck": "陰暦12月の19日・27日・29日で完全一致",
+      "patternCheck": {
+        "K2-26": "不一致: 命宮戌、太陽太陰は未（子女宮）。条件は丑未の命宮 → needs_review"
+      }
+    },
+    {
+      "id": "EX-S30",
+      "slide": 30,
+      "printedPatternLabel": "化煞為権格",
+      "birth": {
+        "sex": "female",
+        "yinyang": "陰女",
+        "lunar": {
+          "yearGanzhi": "癸未",
+          "year": 1943,
+          "month": 10,
+          "day": "unspecified（命盤の日の欄が空欄）",
+          "hourBranch": "午"
+        },
+        "place": "unspecified（命盤に記載なし）"
+      },
+      "bureau": "土五局",
+      "mingPalace": "巳",
+      "shenPalace": "巳",
+      "printedStars": {
+        "巳": [
+          "天空星",
+          "地劫星",
+          "天馬星",
+          "天鉞星",
+          "七殺星",
+          "紫微星"
+        ],
+        "午": [],
+        "未": [],
+        "申": [
+          "紅鸞星"
+        ],
+        "辰": [
+          "鈴星",
+          "文昌星",
+          "天梁星",
+          "天機星"
+        ],
+        "酉": [
+          "破軍星",
+          "廉貞星"
+        ],
+        "卯": [
+          "火星",
+          "天魁星",
+          "天相星"
+        ],
+        "戌": [
+          "文曲星",
+          "天姚星"
+        ],
+        "寅": [
+          "巨門星",
+          "太陽星"
+        ],
+        "丑": [
+          "右弼星",
+          "左輔星",
+          "敬羊星",
+          "貪狼星",
+          "武曲星"
+        ],
+        "子": [
+          "禄存星",
+          "太陰星",
+          "天同星"
+        ],
+        "亥": [
+          "陀羅星",
+          "天府星"
+        ]
+      },
+      "printedTransformations": {
+        "化禄星": "破軍星",
+        "化権星": "巨門星",
+        "化科星": "太陰星",
+        "化忌星": "貪狼星"
+      },
+      "note": "34星外の星（龍池・鳳閣・天喜・天刑・三台・八座・恩光・天貴・陰煞・截空・旬空 など）は省略。星名は既存名に対応付け（擎羊→敬羊星、地空・天空→天空星、貧狼→貪狼星）",
+      "engineCheck": "陰暦10月の8日・20日・24日で完全一致",
+      "patternCheck": {
+        "K2-29": "巳（命宮）に紫微七殺で一致"
+      }
+    },
+    {
+      "id": "EX-S31",
+      "slide": 31,
+      "printedPatternLabel": "壽星入廟格",
+      "birth": {
+        "sex": "male",
+        "yinyang": "陰男",
+        "lunar": {
+          "yearGanzhi": "丁丑",
+          "year": 1937,
+          "month": 8,
+          "day": "unspecified（命盤の日の欄が空欄）",
+          "hourBranch": "卯"
+        },
+        "place": "unspecified（命盤に記載なし）"
+      },
+      "bureau": "水二局",
+      "mingPalace": "午",
+      "shenPalace": "子",
+      "printedStars": {
+        "巳": [
+          "陀羅星",
+          "天相星"
+        ],
+        "午": [
+          "火星",
+          "禄存星",
+          "天梁星"
+        ],
+        "未": [
+          "文曲星",
+          "文昌星",
+          "敬羊星",
+          "七殺星",
+          "廉貞星"
+        ],
+        "申": [
+          "天空星",
+          "天姚星"
+        ],
+        "辰": [
+          "巨門星"
+        ],
+        "酉": [
+          "天鉞星"
+        ],
+        "卯": [
+          "右弼星",
+          "貪狼星",
+          "紫微星"
+        ],
+        "戌": [
+          "天同星"
+        ],
+        "寅": [
+          "地劫星",
+          "紅鸞星",
+          "太陰星",
+          "天機星"
+        ],
+        "丑": [
+          "鈴星",
+          "天府星"
+        ],
+        "子": [
+          "太陽星"
+        ],
+        "亥": [
+          "左輔星",
+          "天馬星",
+          "天魁星",
+          "破軍星",
+          "武曲星"
+        ]
+      },
+      "printedTransformations": {
+        "化禄星": "太陰星",
+        "化権星": "天同星",
+        "化科星": "天機星",
+        "化忌星": "巨門星"
+      },
+      "note": "34星外の星（龍池・鳳閣・天喜・天刑・三台・八座・恩光・天貴・陰煞・截空・旬空 など）は省略。星名は既存名に対応付け（擎羊→敬羊星、地空・天空→天空星、貧狼→貪狼星）",
+      "engineCheck": "陰暦8月の4日・5日・28日・29日で完全一致",
+      "patternCheck": {
+        "K2-30": "命宮午 天梁で一致"
+      }
+    },
+    {
+      "id": "EX-S32",
+      "slide": 32,
+      "printedPatternLabel": "桃花犯主格",
+      "birth": {
+        "sex": "male",
+        "yinyang": "陰男",
+        "lunar": {
+          "yearGanzhi": "癸卯",
+          "year": 1903,
+          "month": 5,
+          "day": "unspecified（命盤の日の欄が空欄）",
+          "hourBranch": "酉"
+        },
+        "place": "unspecified（命盤に記載なし）"
+      },
+      "bureau": "木三局",
+      "mingPalace": "酉",
+      "shenPalace": "卯",
+      "printedStars": {
+        "巳": [
+          "天姚星",
+          "天鉞星",
+          "破軍星",
+          "武曲星"
+        ],
+        "午": [
+          "火星",
+          "右弼星",
+          "太陽星"
+        ],
+        "未": [
+          "鈴星",
+          "天府星"
+        ],
+        "申": [
+          "地劫星",
+          "左輔星",
+          "天馬星",
+          "太陰星",
+          "天機星"
+        ],
+        "辰": [
+          "天同星"
+        ],
+        "酉": [
+          "貪狼星",
+          "紫微星"
+        ],
+        "卯": [
+          "天魁星"
+        ],
+        "戌": [
+          "巨門星"
+        ],
+        "寅": [
+          "天空星"
+        ],
+        "丑": [
+          "文曲星",
+          "文昌星",
+          "敬羊星",
+          "七殺星",
+          "廉貞星"
+        ],
+        "子": [
+          "紅鸞星",
+          "禄存星",
+          "天梁星"
+        ],
+        "亥": [
+          "陀羅星",
+          "天相星"
+        ]
+      },
+      "printedTransformations": {
+        "化禄星": "破軍星",
+        "化権星": "巨門星",
+        "化科星": "太陰星",
+        "化忌星": "貪狼星"
+      },
+      "note": "34星外の星（龍池・鳳閣・天喜・天刑・三台・八座・恩光・天貴・陰煞・截空・旬空 など）は省略。星名は既存名に対応付け（擎羊→敬羊星、地空・天空→天空星、貧狼→貪狼星）",
+      "engineCheck": "陰暦5月の16日・24日・26日で完全一致",
+      "patternCheck": {
+        "K2-31": "命宮酉 紫微貪狼は一致。煞星・天喜など34星外の条件は判定できない"
+      }
+    },
+    {
+      "id": "EX-S38",
+      "slide": 38,
+      "printedPatternLabel": "（盤面の印字）日月夾命・天乙拱命・三奇加会・貪武同行",
+      "birth": {
+        "sex": "male",
+        "yinyang": "陽男",
+        "civil": "1965-01-10T00:00",
+        "lunarPrinted": "1964年12月8日子時",
+        "place": "unspecified（命盤に記載なし）"
+      },
+      "bureau": "水二局",
+      "mingPalace": "丑",
+      "shenPalace": "丑",
+      "printedStars": {
+        "巳": [
+          "天馬星",
+          "七殺星",
+          "紫微星"
+        ],
+        "午": [],
+        "未": [
+          "天鉞星"
+        ],
+        "申": [],
+        "辰": [
+          "文曲星",
+          "天梁星",
+          "天機星"
+        ],
+        "酉": [
+          "破軍星",
+          "廉貞星"
+        ],
+        "卯": [
+          "敬羊星",
+          "左輔星",
+          "天相星"
+        ],
+        "戌": [
+          "鈴星",
+          "文昌星"
+        ],
+        "寅": [
+          "火星",
+          "禄存星",
+          "巨門星",
+          "太陽星"
+        ],
+        "丑": [
+          "陀羅星",
+          "天魁星",
+          "貪狼星",
+          "武曲星"
+        ],
+        "子": [
+          "太陰星",
+          "天同星"
+        ],
+        "亥": [
+          "紅鸞星",
+          "天空星",
+          "地劫星",
+          "右弼星",
+          "天府星"
+        ]
+      },
+      "printedTransformations": {
+        "化禄星": "廉貞星",
+        "化権星": "破軍星",
+        "化科星": "武曲星",
+        "化忌星": "太陽星"
+      },
+      "note": "34星外の星（龍池・鳳閣・天喜・天刑・三台・八座・恩光・天貴・陰煞・截空・旬空 など）は省略。星名は既存名に対応付け（擎羊→敬羊星、地空・天空→天空星、貧狼→貪狼星）。天姚星は画像で読み取れない",
+      "engineCheck": "東京として計算。天馬だけ違う（印刷 巳／エンジン 亥。§18 U10 と同じ型）。天姚は画像で読めず（エンジンは子）",
+      "patternCheck": {
+        "K2-14": "印字「貪武同行」: 命宮丑 貪狼武曲で一致",
+        "K2-19": "印字「三奇加会」: 命宮丑の三方四正に化禄・化権（酉）・化科（丑）で一致",
+        "K2-15": "印字「日月夾命」: 命宮丑に天府がなく基礎２の条件と不一致（全書の条件とは近い）→ needs_review",
+        "K2-24": "印字「天乙拱命」（基礎２に記載なし）: 天魁 命宮・天鉞 遷移は坐貴向貴の条件と一致",
+        "K2-32": "本文: 寅（父母宮）に禄存・太陽化忌で一致"
+      }
+    },
+    {
+      "id": "EX-S39",
+      "slide": 39,
+      "printedPatternLabel": "（盤面の印字）巨機同臨・両重華蓋",
+      "birth": {
+        "sex": "male",
+        "yinyang": "陰男",
+        "civil": "1975-03-09T22:00",
+        "lunarPrinted": "1975年1月27日亥時",
+        "place": "unspecified（命盤に記載なし）"
+      },
+      "bureau": "土五局",
+      "mingPalace": "卯",
+      "shenPalace": "丑",
+      "printedStars": {
+        "巳": [
+          "天梁星"
+        ],
+        "午": [
+          "七殺星"
+        ],
+        "未": [],
+        "申": [
+          "火星",
+          "天鉞星",
+          "廉貞星"
+        ],
+        "辰": [
+          "敬羊星",
+          "左輔星",
+          "天相星",
+          "紫微星"
+        ],
+        "酉": [
+          "鈴星"
+        ],
+        "卯": [
+          "禄存星",
+          "文曲星",
+          "巨門星",
+          "天機星"
+        ],
+        "戌": [
+          "地劫星",
+          "右弼星",
+          "破軍星"
+        ],
+        "寅": [
+          "天馬星",
+          "陀羅星",
+          "貪狼星"
+        ],
+        "丑": [
+          "天姚星",
+          "太陰星",
+          "太陽星"
+        ],
+        "子": [
+          "紅鸞星",
+          "天空星",
+          "天魁星",
+          "天府星",
+          "武曲星"
+        ],
+        "亥": [
+          "文昌星",
+          "天同星"
+        ]
+      },
+      "printedTransformations": {
+        "化禄星": "天機星",
+        "化権星": "天梁星",
+        "化科星": "紫微星",
+        "化忌星": "太陰星"
+      },
+      "note": "34星外の星（龍池・鳳閣・天喜・天刑・三台・八座・恩光・天貴・陰煞・截空・旬空 など）は省略。星名は既存名に対応付け（擎羊→敬羊星、地空・天空→天空星、貧狼→貪狼星）",
+      "engineCheck": "東京として計算。天馬だけ違う（印刷 寅／エンジン 申。§18 U10 と同じ型）",
+      "patternCheck": {
+        "K2-08": "印字「巨機同臨」: 命宮卯 天機巨門で一致",
+        "ZS-兩重華蓋": "印字「両重華蓋」（全書 定貧賤局）: 命宮卯に禄存・化禄。「遇空劫」は地劫 戌・天空 子で三方四正外 → 語義未確定"
+      }
+    }
+  ]
+}

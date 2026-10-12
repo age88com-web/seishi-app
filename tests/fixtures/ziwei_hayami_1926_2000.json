@@ -1,0 +1,9010 @@
+{
+ "_meta": {
+  "description": "入門 p.107 新暦旧暦換算早見表（1926〜2000年、新暦各月1日 → 旧暦月日）。PDF テキスト抽出値（pdftotext -layout）。閏月の網掛けはテキストに出ないため isLeapMonth は含まない。",
+  "source": "docs/source/紫微斗数入門.pdf p.107",
+  "basis": "固定UTC+8（docs/ziwei-basic-spec.md §2.1）",
+  "needs_review": "1989/8/1 のみ needs_review: true（§16.3・§18 U14）"
+ },
+ "rows": [
+  {
+   "date": {
+    "year": 1926,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 17,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1926,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1926,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 17,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1926,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1926,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1926,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1926,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1926,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 23,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1926,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1926,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1926,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1926,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1927,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 28,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1927,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1927,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 28,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1927,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1927,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 1,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1927,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1927,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 3,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1927,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1927,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1927,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1927,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 8,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1927,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 8,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1928,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1928,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1928,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1928,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1928,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 12,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1928,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1928,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1928,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1928,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1928,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1928,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1928,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1929,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1929,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1929,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1929,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1929,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1929,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1929,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1929,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1929,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 28,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1929,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1929,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 1,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1929,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 1,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1930,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1930,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 3,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1930,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1930,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 3,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1930,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 3,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1930,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 5,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1930,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1930,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 7,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1930,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1930,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1930,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1930,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 12,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1931,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1931,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1931,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1931,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1931,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1931,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1931,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1931,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1931,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1931,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1931,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1931,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1932,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1932,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1932,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1932,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1932,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1932,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1932,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 28,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1932,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1932,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 1,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1932,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1932,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1932,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1933,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1933,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 7,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1933,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1933,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 7,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1933,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 7,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1933,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1933,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1933,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1933,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 12,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1933,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 12,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1933,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1933,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1934,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1934,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1934,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1934,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1934,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1934,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1934,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1934,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1934,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 23,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1934,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 23,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1934,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1934,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1935,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1935,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 28,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1935,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1935,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 28,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1935,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1935,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 1,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1935,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 1,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1935,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 3,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1935,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1935,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1935,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1935,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1936,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 7,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1936,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1936,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 8,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1936,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1936,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1936,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 12,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1936,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1936,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1936,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1936,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1936,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1936,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1937,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1937,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1937,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1937,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1937,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1937,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 23,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1937,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 23,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1937,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1937,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1937,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1937,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1937,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1938,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 30,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1938,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1938,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 30,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1938,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 1,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1938,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1938,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1938,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1938,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1938,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 8,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1938,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 8,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1938,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1938,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1939,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1939,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1939,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1939,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 12,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1939,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 12,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1939,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1939,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1939,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1939,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1939,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1939,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1939,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1940,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1940,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1940,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 23,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1940,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1940,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1940,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1940,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1940,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 28,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1940,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1940,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 1,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1940,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1940,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 3,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1941,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1941,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1941,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1941,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 5,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1941,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1941,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 7,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1941,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 7,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1941,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1941,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1941,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1941,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1941,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1942,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1942,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1942,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1942,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1942,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 17,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1942,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1942,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1942,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1942,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1942,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1942,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 23,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1942,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1943,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1943,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1943,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1943,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1943,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1943,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1943,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1943,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 1,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1943,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1943,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 3,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1943,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1943,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 5,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1944,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1944,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 8,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1944,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 7,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1944,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1944,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1944,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1944,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1944,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1944,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1944,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1944,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1944,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1945,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1945,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1945,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 17,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1945,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1945,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1945,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1945,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1945,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1945,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1945,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1945,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1945,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1946,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 28,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1946,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 30,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1946,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 28,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1946,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1946,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 1,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1946,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1946,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 3,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1946,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 5,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1946,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1946,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 7,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1946,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 8,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1946,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 8,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1947,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1947,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1947,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1947,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1947,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1947,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1947,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1947,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1947,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 17,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1947,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 17,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1947,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1947,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1948,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1948,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1948,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1948,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1948,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 23,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1948,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1948,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1948,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1948,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 28,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1948,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1948,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 1,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1948,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 1,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1949,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 3,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1949,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1949,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1949,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1949,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1949,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 5,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1949,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1949,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 7,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1949,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1949,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1949,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1949,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 12,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1950,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1950,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1950,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1950,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1950,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1950,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1950,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 17,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1950,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1950,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1950,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1950,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1950,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1951,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1951,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1951,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1951,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1951,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1951,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1951,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1951,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1951,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 1,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1951,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 1,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1951,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 3,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1951,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 3,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1952,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 5,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1952,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1952,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1952,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 7,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1952,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 8,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1952,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1952,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1952,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1952,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1952,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1952,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1952,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1953,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1953,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1953,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1953,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1953,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1953,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1953,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1953,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1953,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 23,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1953,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1953,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1953,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1954,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1954,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 28,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1954,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1954,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 28,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1954,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1954,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 1,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1954,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1954,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 3,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1954,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 5,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1954,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 5,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1954,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1954,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 7,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1955,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 8,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1955,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1955,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 8,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1955,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1955,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1955,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1955,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 12,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1955,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1955,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1955,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1955,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 17,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1955,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1956,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1956,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1956,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1956,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1956,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1956,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 23,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1956,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 23,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1956,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1956,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1956,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1956,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1956,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1957,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 1,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1957,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1957,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 30,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1957,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1957,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1957,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1957,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1957,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1957,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 8,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1957,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 8,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1957,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1957,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1958,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 12,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1958,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1958,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 12,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1958,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1958,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1958,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1958,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1958,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1958,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1958,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1958,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1958,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1959,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1959,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1959,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1959,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1959,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1959,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1959,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1959,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1959,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1959,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1959,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 1,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1959,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1960,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 3,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1960,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 5,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1960,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1960,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1960,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1960,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 8,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1960,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 8,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1960,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1960,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1960,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1960,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1960,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1961,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1961,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1961,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1961,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1961,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 17,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1961,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1961,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1961,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1961,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1961,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1961,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 23,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1961,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1962,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1962,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1962,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1962,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1962,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1962,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1962,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 30,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1962,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1962,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 3,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1962,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 3,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1962,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 5,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1962,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 5,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1963,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1963,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 8,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1963,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1963,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 8,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1963,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 8,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1963,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1963,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1963,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 12,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1963,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1963,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1963,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1963,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1964,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 17,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1964,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1964,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1964,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1964,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1964,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1964,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1964,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1964,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1964,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1964,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1964,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 28,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1965,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1965,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 30,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1965,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 28,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1965,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 30,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1965,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 1,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1965,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1965,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 3,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1965,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 5,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1965,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1965,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 7,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1965,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1965,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1966,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1966,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 12,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1966,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1966,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1966,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1966,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1966,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1966,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1966,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 17,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1966,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 17,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1966,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1966,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1967,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1967,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1967,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1967,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1967,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1967,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1967,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1967,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1967,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1967,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 28,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1967,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1967,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 30,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1968,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1968,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 3,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1968,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 3,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1968,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1968,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 5,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1968,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1968,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1968,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 8,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1968,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1968,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1968,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1968,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 12,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1969,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1969,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1969,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1969,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1969,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1969,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 17,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1969,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 17,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1969,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1969,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1969,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1969,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1969,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1970,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1970,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1970,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1970,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1970,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1970,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 28,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1970,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 28,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1970,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 30,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1970,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 1,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1970,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1970,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 3,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1970,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 3,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1971,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 5,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1971,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1971,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 5,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1971,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1971,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 7,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1971,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1971,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1971,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1971,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 12,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1971,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1971,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1971,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1972,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1972,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 17,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1972,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1972,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1972,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1972,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1972,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1972,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1972,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1972,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1972,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1972,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1973,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1973,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1973,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1973,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 28,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1973,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1973,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 1,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1973,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1973,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 3,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1973,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 5,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1973,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1973,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 7,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1973,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 7,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1974,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1974,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1974,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 8,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1974,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1974,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1974,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1974,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 12,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1974,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1974,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1974,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1974,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1974,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1975,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1975,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1975,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1975,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1975,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1975,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1975,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1975,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1975,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1975,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1975,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 28,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1975,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1976,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 1,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1976,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1976,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 1,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1976,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1976,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 3,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1976,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1976,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 5,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1976,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1976,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 8,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1976,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 8,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1976,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1976,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1977,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 12,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1977,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1977,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 12,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1977,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1977,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1977,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1977,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1977,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 17,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1977,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1977,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1977,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1977,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1978,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1978,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1978,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 23,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1978,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1978,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1978,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1978,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1978,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 28,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1978,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1978,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1978,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 1,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1978,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1979,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 3,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1979,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 5,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1979,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 3,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1979,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 5,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1979,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1979,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 7,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1979,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 8,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1979,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1979,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1979,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1979,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 12,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1979,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 12,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1980,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1980,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1980,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1980,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1980,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 17,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1980,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1980,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1980,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1980,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1980,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 23,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1980,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1980,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1981,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1981,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1981,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1981,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1981,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1981,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1981,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 30,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1981,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1981,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1981,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1981,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 5,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1981,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1982,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 7,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1982,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 8,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1982,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1982,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 8,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1982,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 8,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1982,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1982,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1982,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 12,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1982,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1982,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1982,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1982,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 17,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1983,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1983,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1983,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 17,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1983,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1983,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1983,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1983,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1983,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 23,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1983,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1983,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1983,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1983,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1984,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1984,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 30,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1984,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1984,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 1,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1984,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 1,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1984,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1984,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 3,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1984,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 5,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1984,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1984,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 7,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1984,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1984,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1985,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1985,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 12,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1985,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1985,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 12,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1985,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 12,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1985,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1985,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1985,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1985,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 17,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1985,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 17,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1985,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1985,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1986,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1986,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 23,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1986,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1986,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 23,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1986,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 23,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1986,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1986,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1986,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1986,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1986,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 28,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1986,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1986,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 30,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1987,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1987,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1987,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1987,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1987,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1987,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1987,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1987,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 7,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1987,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1987,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1987,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1987,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1988,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 12,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1988,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1988,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1988,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1988,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1988,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 17,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1988,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1988,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1988,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1988,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1988,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1988,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 23,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1989,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1989,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1989,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1989,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1989,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1989,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 28,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1989,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 28,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1989,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 1,
+   "needs_review": true
+  },
+  {
+   "date": {
+    "year": 1989,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1989,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1989,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1989,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1990,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 5,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1990,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1990,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 5,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1990,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1990,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 7,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1990,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1990,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1990,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1990,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1990,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1990,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1990,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1991,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1991,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 17,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1991,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1991,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 17,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1991,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 17,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1991,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1991,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1991,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1991,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 23,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1991,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1991,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1991,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1992,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1992,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 28,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1992,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1992,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1992,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1992,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 1,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1992,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1992,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 3,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1992,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 5,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1992,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1992,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 7,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1992,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 8,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1993,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1993,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1993,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1993,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1993,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1993,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 12,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1993,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 12,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1993,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1993,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1993,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1993,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1993,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1994,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1994,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1994,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1994,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1994,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1994,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1994,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 23,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1994,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1994,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1994,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1994,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 28,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1994,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1995,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 1,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1995,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1995,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 1,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1995,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1995,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1995,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1995,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1995,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1995,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 7,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1995,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 7,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1995,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 9,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1995,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1996,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1996,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1996,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 12,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1996,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1996,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1996,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1996,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1996,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 17,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1996,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1996,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 19,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1996,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1996,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 21,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1997,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1997,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1997,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 23,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1997,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1997,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1997,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1997,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1997,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 28,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1997,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 30,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1997,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 30,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1997,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1997,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1998,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 3,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1998,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 5,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1998,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 3,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1998,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 5,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1998,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1998,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 7,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1998,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 8,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1998,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 10,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1998,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1998,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 11,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1998,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1998,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 13,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1999,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1999,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1999,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 14,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1999,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 15,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1999,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 16,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1999,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1999,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 18,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1999,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 6,
+   "lunarDay": 20,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1999,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1999,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 22,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1999,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 1999,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 24,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 2000,
+    "month": 1,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 25,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 2000,
+    "month": 2,
+    "day": 1
+   },
+   "lunarMonth": 12,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 2000,
+    "month": 3,
+    "day": 1
+   },
+   "lunarMonth": 1,
+   "lunarDay": 26,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 2000,
+    "month": 4,
+    "day": 1
+   },
+   "lunarMonth": 2,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 2000,
+    "month": 5,
+    "day": 1
+   },
+   "lunarMonth": 3,
+   "lunarDay": 27,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 2000,
+    "month": 6,
+    "day": 1
+   },
+   "lunarMonth": 4,
+   "lunarDay": 29,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 2000,
+    "month": 7,
+    "day": 1
+   },
+   "lunarMonth": 5,
+   "lunarDay": 30,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 2000,
+    "month": 8,
+    "day": 1
+   },
+   "lunarMonth": 7,
+   "lunarDay": 2,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 2000,
+    "month": 9,
+    "day": 1
+   },
+   "lunarMonth": 8,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 2000,
+    "month": 10,
+    "day": 1
+   },
+   "lunarMonth": 9,
+   "lunarDay": 4,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 2000,
+    "month": 11,
+    "day": 1
+   },
+   "lunarMonth": 10,
+   "lunarDay": 6,
+   "needs_review": false
+  },
+  {
+   "date": {
+    "year": 2000,
+    "month": 12,
+    "day": 1
+   },
+   "lunarMonth": 11,
+   "lunarDay": 6,
+   "needs_review": false
+  }
+ ]
+}

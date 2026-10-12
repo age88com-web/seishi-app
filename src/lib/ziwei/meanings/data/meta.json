@@ -1,0 +1,921 @@
+{
+ "sourceDifferences": [
+  {
+   "topic": "大限・小限の星曜の象意／紫微星",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-ST-RN-022",
+    "N-ST-RN-023",
+    "N-ST-RN-024",
+    "K-ST-DX-001",
+    "K-ST-DX-002",
+    "K-ST-DX-003"
+   ],
+   "note": "語尾・言い回しの違い（例: 入門「〜の暗示あり」／基礎編「〜の時期」）"
+  },
+  {
+   "topic": "大限・小限の星曜の象意／天機星",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-ST-RN-025",
+    "N-ST-RN-026",
+    "N-ST-RN-027",
+    "K-ST-DX-004",
+    "K-ST-DX-005",
+    "K-ST-DX-006"
+   ],
+   "note": "語尾・言い回しの違い（例: 入門「〜の暗示あり」／基礎編「〜の時期」）"
+  },
+  {
+   "topic": "大限・小限の星曜の象意／太陽星",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-ST-RN-028",
+    "N-ST-RN-029",
+    "N-ST-RN-030",
+    "K-ST-DX-007",
+    "K-ST-DX-008",
+    "K-ST-DX-009"
+   ],
+   "note": "語尾・言い回しの違い（例: 入門「〜の暗示あり」／基礎編「〜の時期」）"
+  },
+  {
+   "topic": "大限・小限の星曜の象意／武曲星",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-ST-RN-031",
+    "N-ST-RN-032",
+    "N-ST-RN-033",
+    "K-ST-DX-010",
+    "K-ST-DX-011",
+    "K-ST-DX-012"
+   ],
+   "note": "語尾・言い回しの違い（例: 入門「〜の暗示あり」／基礎編「〜の時期」）"
+  },
+  {
+   "topic": "大限・小限の星曜の象意／廉貞星",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-ST-RN-039",
+    "N-ST-RN-040",
+    "N-ST-RN-041",
+    "K-ST-DX-016",
+    "K-ST-DX-017",
+    "K-ST-DX-018"
+   ],
+   "note": "語尾・言い回しの違い（例: 入門「〜の暗示あり」／基礎編「〜の時期」）"
+  },
+  {
+   "topic": "大限・小限の星曜の象意／天府星",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-ST-RN-042",
+    "N-ST-RN-043",
+    "N-ST-RN-044",
+    "K-ST-DX-019",
+    "K-ST-DX-020",
+    "K-ST-DX-021"
+   ],
+   "note": "語尾・言い回しの違い（例: 入門「〜の暗示あり」／基礎編「〜の時期」）"
+  },
+  {
+   "topic": "大限・小限の星曜の象意／太陰星",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-ST-RN-045",
+    "N-ST-RN-046",
+    "N-ST-RN-047",
+    "K-ST-DX-022",
+    "K-ST-DX-023",
+    "K-ST-DX-024"
+   ],
+   "note": "語尾・言い回しの違い（例: 入門「〜の暗示あり」／基礎編「〜の時期」）"
+  },
+  {
+   "topic": "大限・小限の星曜の象意／貪狼星",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-ST-RN-048",
+    "N-ST-RN-049",
+    "N-ST-RN-050",
+    "K-ST-DX-025",
+    "K-ST-DX-026",
+    "K-ST-DX-027"
+   ],
+   "note": "語尾・言い回しの違い（例: 入門「〜の暗示あり」／基礎編「〜の時期」）"
+  },
+  {
+   "topic": "大限・小限の星曜の象意／巨門星",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-ST-RN-051",
+    "N-ST-RN-052",
+    "N-ST-RN-053",
+    "K-ST-DX-028",
+    "K-ST-DX-029",
+    "K-ST-DX-030"
+   ],
+   "note": "語尾・言い回しの違い（例: 入門「〜の暗示あり」／基礎編「〜の時期」）"
+  },
+  {
+   "topic": "大限・小限の星曜の象意／天相星",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-ST-RN-054",
+    "N-ST-RN-055",
+    "N-ST-RN-056",
+    "K-ST-DX-031",
+    "K-ST-DX-032",
+    "K-ST-DX-033"
+   ],
+   "note": "語尾・言い回しの違い（例: 入門「〜の暗示あり」／基礎編「〜の時期」）"
+  },
+  {
+   "topic": "大限・小限の星曜の象意／天梁星",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-ST-RN-057",
+    "N-ST-RN-058",
+    "N-ST-RN-059",
+    "K-ST-DX-034",
+    "K-ST-DX-035",
+    "K-ST-DX-036"
+   ],
+   "note": "語尾・言い回しの違い（例: 入門「〜の暗示あり」／基礎編「〜の時期」）"
+  },
+  {
+   "topic": "大限・小限の星曜の象意／七殺星",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-ST-RN-060",
+    "N-ST-RN-061",
+    "N-ST-RN-062",
+    "K-ST-DX-037",
+    "K-ST-DX-038",
+    "K-ST-DX-039"
+   ],
+   "note": "語尾・言い回しの違い（例: 入門「〜の暗示あり」／基礎編「〜の時期」）"
+  },
+  {
+   "topic": "大限・小限の星曜の象意／破軍星",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-ST-RN-063",
+    "N-ST-RN-064",
+    "N-ST-RN-065",
+    "K-ST-DX-040",
+    "K-ST-DX-041",
+    "K-ST-DX-042"
+   ],
+   "note": "語尾・言い回しの違い（例: 入門「〜の暗示あり」／基礎編「〜の時期」）"
+  },
+  {
+   "topic": "大限・小限の星曜の象意／天同星",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-ST-RN-066",
+    "N-ST-RN-067",
+    "N-ST-RN-068",
+    "K-ST-DX-013",
+    "K-ST-DX-014",
+    "K-ST-DX-015"
+   ],
+   "note": "語尾・言い回しの違い（例: 入門「〜の暗示あり」／基礎編「〜の時期」）"
+  },
+  {
+   "topic": "大限・小限の星曜の象意／文昌星・文曲星",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-ST-RN-069",
+    "N-ST-RN-070",
+    "K-ST-DX-043",
+    "K-ST-DX-044"
+   ],
+   "note": "語尾・言い回しの違い（例: 入門「〜の暗示あり」／基礎編「〜の時期」）"
+  },
+  {
+   "topic": "大限・小限の星曜の象意／右弼星・左輔星",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-ST-RN-071",
+    "N-ST-RN-072",
+    "K-ST-DX-045",
+    "K-ST-DX-046"
+   ],
+   "note": "語尾・言い回しの違い（例: 入門「〜の暗示あり」／基礎編「〜の時期」）"
+  },
+  {
+   "topic": "大限・小限の星曜の象意／火星・鈴星・擎羊星・陀羅星",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-ST-RN-073",
+    "N-ST-RN-074",
+    "K-ST-DX-047",
+    "K-ST-DX-048"
+   ],
+   "note": "語尾・言い回しの違い（例: 入門「〜の暗示あり」／基礎編「〜の時期」）"
+  },
+  {
+   "topic": "十二宮の象意／命宮",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-PL-001",
+    "N-PL-002",
+    "N-PL-003",
+    "N-PL-004",
+    "K-PL-命宮-01",
+    "K-PL-命宮-02",
+    "K-PL-命宮-03"
+   ],
+   "note": "基礎編は入門の要約的な表記"
+  },
+  {
+   "topic": "十二宮の象意／兄弟宮",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-PL-005",
+    "N-PL-006",
+    "N-PL-007",
+    "K-PL-兄弟宮-01",
+    "K-PL-兄弟宮-02",
+    "K-PL-兄弟宮-03",
+    "K-PL-兄弟宮-04",
+    "K-PL-兄弟宮-05"
+   ],
+   "note": "基礎編は入門の要約的な表記"
+  },
+  {
+   "topic": "十二宮の象意／夫妻宮",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-PL-008",
+    "N-PL-009",
+    "N-PL-010",
+    "N-PL-011",
+    "K-PL-夫妻宮-01",
+    "K-PL-夫妻宮-02"
+   ],
+   "note": "基礎編は入門の要約的な表記"
+  },
+  {
+   "topic": "十二宮の象意／子女宮",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-PL-012",
+    "N-PL-013",
+    "N-PL-014",
+    "N-PL-015",
+    "K-PL-子女宮-01",
+    "K-PL-子女宮-02",
+    "K-PL-子女宮-03"
+   ],
+   "note": "基礎編は入門の要約的な表記"
+  },
+  {
+   "topic": "十二宮の象意／財帛宮",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-PL-016",
+    "N-PL-017",
+    "N-PL-018",
+    "K-PL-財帛宮-01",
+    "K-PL-財帛宮-02",
+    "K-PL-財帛宮-03",
+    "K-PL-財帛宮-04"
+   ],
+   "note": "基礎編は入門の要約的な表記"
+  },
+  {
+   "topic": "十二宮の象意／疾厄宮",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-PL-019",
+    "N-PL-020",
+    "K-PL-疾厄宮-01"
+   ],
+   "note": "基礎編は入門の要約的な表記"
+  },
+  {
+   "topic": "十二宮の象意／遷移宮",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-PL-021",
+    "N-PL-022",
+    "N-PL-023",
+    "K-PL-遷移宮-01"
+   ],
+   "note": "基礎編は入門の要約的な表記"
+  },
+  {
+   "topic": "十二宮の象意／奴僕宮",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-PL-024",
+    "N-PL-025",
+    "N-PL-026",
+    "K-PL-奴僕宮-01",
+    "K-PL-奴僕宮-02",
+    "K-PL-奴僕宮-03",
+    "K-PL-奴僕宮-04"
+   ],
+   "note": "基礎編は入門の要約的な表記"
+  },
+  {
+   "topic": "十二宮の象意／官禄宮",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-PL-027",
+    "N-PL-028",
+    "N-PL-029",
+    "N-PL-030",
+    "K-PL-官禄宮-01",
+    "K-PL-官禄宮-02"
+   ],
+   "note": "基礎編は入門の要約的な表記"
+  },
+  {
+   "topic": "十二宮の象意／田宅宮",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-PL-031",
+    "N-PL-032",
+    "K-PL-田宅宮-01",
+    "K-PL-田宅宮-02"
+   ],
+   "note": "基礎編は入門の要約的な表記"
+  },
+  {
+   "topic": "十二宮の象意／福徳宮",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-PL-033",
+    "N-PL-034",
+    "N-PL-035",
+    "K-PL-福徳宮-01"
+   ],
+   "note": "基礎編は入門の要約的な表記"
+  },
+  {
+   "topic": "十二宮の象意／父母宮",
+   "status": "wording_difference",
+   "entryIds": [
+    "N-PL-036",
+    "N-PL-037",
+    "K-PL-父母宮-01",
+    "K-PL-父母宮-02",
+    "K-PL-父母宮-03",
+    "K-PL-父母宮-04"
+   ],
+   "note": "基礎編は入門の要約的な表記"
+  },
+  {
+   "topic": "身宮",
+   "status": "needs_review",
+   "entryIds": [],
+   "refs": [
+    "入門 p32（1.12宮が示すもの（13）身宮）",
+    "基礎編 S22"
+   ],
+   "note": "入門は「命宮は先天運、身宮は後天運と言われる」「諸説については深く追及しない」。基礎編は「実はとても重要な宮」「数え年35才を過ぎた辺りから身宮の象意が現れ、命宮6：身宮4 から 4：6 に逆転する」を追加。扱いの重みが異なる"
+  },
+  {
+   "topic": "三方四正（本宮・対宮・三合宮）",
+   "status": "wording_difference",
+   "entryIds": [],
+   "refs": [
+    "入門 p33",
+    "基礎編 S15・S16"
+   ],
+   "note": "定義は一致（同宮・加会の用語も一致）。入門は対宮の影響を「50〜60％」、三合宮2つで「約60％」と文章で述べ、計算式は対宮×0.5・三合宮×0.3×2。基礎編は計算式のみ"
+  },
+  {
+   "topic": "運命指数の5段階",
+   "status": "wording_difference",
+   "entryIds": [],
+   "refs": [
+    "入門 p35",
+    "基礎編 S17"
+   ],
+   "note": "段階名が入門「平」、基礎編「並」。数値範囲は同じ"
+  },
+  {
+   "topic": "命宮・身宮の力量と人生傾向",
+   "status": "additional",
+   "entryIds": [],
+   "refs": [
+    "基礎編 S18"
+   ],
+   "note": "基礎編だけに記載（命宮・身宮が強・最強／弱・最弱の場合の人生傾向）"
+  },
+  {
+   "topic": "命盤解読のポイント",
+   "status": "wording_difference",
+   "entryIds": [],
+   "refs": [
+    "入門 p103〜104",
+    "基礎編 S29・S30"
+   ],
+   "note": "手順の骨子は同じ。基礎編は要約的で、夫妻宮・福徳宮について「特に女性の場合は官禄宮と財帛宮と同等か、あるいはそれ以上の重要度」を明記"
+  },
+  {
+   "topic": "大限・小限の星曜の象意",
+   "status": "wording_difference",
+   "entryIds": [],
+   "refs": [
+    "入門 p101〜103（流年における各星曜の意味）",
+    "基礎編 S23〜S28"
+   ],
+   "note": "項目・内容はほぼ同じ。語尾（入門「〜の暗示あり」「〜べし」／基礎編「〜の時期」「〜べき」）などの違い"
+  },
+  {
+   "topic": "星の象意（命宮・イメージ・配合）",
+   "status": "additional",
+   "entryIds": [],
+   "refs": [
+    "入門 p38〜76"
+   ],
+   "note": "基礎編には星ごとの性格・命宮の象意の記載がない（入門のみ）"
+  },
+  {
+   "topic": "星×宮（命宮以外の11宮）",
+   "status": "additional",
+   "entryIds": [],
+   "refs": [
+    "入門 p78〜99"
+   ],
+   "note": "基礎編には記載がない（入門のみ）"
+  }
+ ],
+ "starStatus": [
+  {
+   "star": "紫微星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 56,
+    "transformations": 0,
+    "starPalace": 42,
+    "combinations": 12
+   },
+   "sources": [
+    "紫微斗数入門",
+    "紫微斗数基礎編"
+   ]
+  },
+  {
+   "star": "天機星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 57,
+    "transformations": 0,
+    "starPalace": 40,
+    "combinations": 10
+   },
+   "sources": [
+    "紫微斗数入門",
+    "紫微斗数基礎編"
+   ]
+  },
+  {
+   "star": "太陽星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 56,
+    "transformations": 0,
+    "starPalace": 29,
+    "combinations": 11
+   },
+   "sources": [
+    "紫微斗数入門",
+    "紫微斗数基礎編"
+   ]
+  },
+  {
+   "star": "武曲星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 60,
+    "transformations": 0,
+    "starPalace": 33,
+    "combinations": 10
+   },
+   "sources": [
+    "紫微斗数入門",
+    "紫微斗数基礎編"
+   ]
+  },
+  {
+   "star": "天同星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 57,
+    "transformations": 0,
+    "starPalace": 30,
+    "combinations": 9
+   },
+   "sources": [
+    "紫微斗数入門",
+    "紫微斗数基礎編"
+   ]
+  },
+  {
+   "star": "廉貞星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 54,
+    "transformations": 0,
+    "starPalace": 28,
+    "combinations": 12
+   },
+   "sources": [
+    "紫微斗数入門",
+    "紫微斗数基礎編"
+   ]
+  },
+  {
+   "star": "天府星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 51,
+    "transformations": 0,
+    "starPalace": 26,
+    "combinations": 15
+   },
+   "sources": [
+    "紫微斗数入門",
+    "紫微斗数基礎編"
+   ]
+  },
+  {
+   "star": "太陰星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 55,
+    "transformations": 0,
+    "starPalace": 35,
+    "combinations": 13
+   },
+   "sources": [
+    "紫微斗数入門",
+    "紫微斗数基礎編"
+   ]
+  },
+  {
+   "star": "貪狼星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 57,
+    "transformations": 0,
+    "starPalace": 25,
+    "combinations": 11
+   },
+   "sources": [
+    "紫微斗数入門",
+    "紫微斗数基礎編"
+   ]
+  },
+  {
+   "star": "巨門星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 57,
+    "transformations": 0,
+    "starPalace": 30,
+    "combinations": 10
+   },
+   "sources": [
+    "紫微斗数入門",
+    "紫微斗数基礎編"
+   ]
+  },
+  {
+   "star": "天相星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 49,
+    "transformations": 0,
+    "starPalace": 28,
+    "combinations": 10
+   },
+   "sources": [
+    "紫微斗数入門",
+    "紫微斗数基礎編"
+   ]
+  },
+  {
+   "star": "天梁星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 51,
+    "transformations": 0,
+    "starPalace": 26,
+    "combinations": 9
+   },
+   "sources": [
+    "紫微斗数入門",
+    "紫微斗数基礎編"
+   ]
+  },
+  {
+   "star": "七殺星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 56,
+    "transformations": 0,
+    "starPalace": 25,
+    "combinations": 10
+   },
+   "sources": [
+    "紫微斗数入門",
+    "紫微斗数基礎編"
+   ]
+  },
+  {
+   "star": "破軍星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 55,
+    "transformations": 0,
+    "starPalace": 25,
+    "combinations": 12
+   },
+   "sources": [
+    "紫微斗数入門",
+    "紫微斗数基礎編"
+   ]
+  },
+  {
+   "star": "文昌星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 31,
+    "transformations": 0,
+    "starPalace": 21,
+    "combinations": 25
+   },
+   "sources": [
+    "紫微斗数入門",
+    "紫微斗数基礎編"
+   ]
+  },
+  {
+   "star": "文曲星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 31,
+    "transformations": 0,
+    "starPalace": 21,
+    "combinations": 24
+   },
+   "sources": [
+    "紫微斗数入門",
+    "紫微斗数基礎編"
+   ]
+  },
+  {
+   "star": "天空星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 16,
+    "transformations": 0,
+    "starPalace": 21,
+    "combinations": 16
+   },
+   "sources": [
+    "紫微斗数入門"
+   ]
+  },
+  {
+   "star": "地劫星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 16,
+    "transformations": 0,
+    "starPalace": 21,
+    "combinations": 16
+   },
+   "sources": [
+    "紫微斗数入門"
+   ]
+  },
+  {
+   "star": "火星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 21,
+    "transformations": 0,
+    "starPalace": 20,
+    "combinations": 21
+   },
+   "sources": [
+    "紫微斗数入門",
+    "紫微斗数基礎編"
+   ]
+  },
+  {
+   "star": "鈴星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 21,
+    "transformations": 0,
+    "starPalace": 20,
+    "combinations": 21
+   },
+   "sources": [
+    "紫微斗数入門",
+    "紫微斗数基礎編"
+   ]
+  },
+  {
+   "star": "左輔星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 22,
+    "transformations": 0,
+    "starPalace": 22,
+    "combinations": 17
+   },
+   "sources": [
+    "紫微斗数入門",
+    "紫微斗数基礎編"
+   ]
+  },
+  {
+   "star": "右弼星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 22,
+    "transformations": 0,
+    "starPalace": 22,
+    "combinations": 17
+   },
+   "sources": [
+    "紫微斗数入門",
+    "紫微斗数基礎編"
+   ]
+  },
+  {
+   "star": "天姚星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 5,
+    "transformations": 0,
+    "starPalace": 0,
+    "combinations": 0
+   },
+   "sources": [
+    "紫微斗数入門"
+   ]
+  },
+  {
+   "star": "天馬星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 9,
+    "transformations": 0,
+    "starPalace": 0,
+    "combinations": 1
+   },
+   "sources": [
+    "紫微斗数入門"
+   ]
+  },
+  {
+   "star": "禄存星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 24,
+    "transformations": 0,
+    "starPalace": 22,
+    "combinations": 16
+   },
+   "sources": [
+    "紫微斗数入門"
+   ]
+  },
+  {
+   "star": "擎羊星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 24,
+    "transformations": 0,
+    "starPalace": 22,
+    "combinations": 22
+   },
+   "sources": [
+    "紫微斗数入門",
+    "紫微斗数基礎編"
+   ]
+  },
+  {
+   "star": "陀羅星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 24,
+    "transformations": 0,
+    "starPalace": 22,
+    "combinations": 22
+   },
+   "sources": [
+    "紫微斗数入門",
+    "紫微斗数基礎編"
+   ]
+  },
+  {
+   "star": "天魁星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 19,
+    "transformations": 0,
+    "starPalace": 10,
+    "combinations": 16
+   },
+   "sources": [
+    "紫微斗数入門"
+   ]
+  },
+  {
+   "star": "天鉞星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 19,
+    "transformations": 0,
+    "starPalace": 10,
+    "combinations": 16
+   },
+   "sources": [
+    "紫微斗数入門"
+   ]
+  },
+  {
+   "star": "紅鸞星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 6,
+    "transformations": 0,
+    "starPalace": 0,
+    "combinations": 0
+   },
+   "sources": [
+    "紫微斗数入門"
+   ]
+  },
+  {
+   "star": "化禄星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 0,
+    "transformations": 12,
+    "starPalace": 0,
+    "combinations": 17
+   },
+   "sources": [
+    "紫微斗数入門"
+   ]
+  },
+  {
+   "star": "化権星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 0,
+    "transformations": 7,
+    "starPalace": 0,
+    "combinations": 4
+   },
+   "sources": [
+    "紫微斗数入門"
+   ]
+  },
+  {
+   "star": "化科星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 0,
+    "transformations": 7,
+    "starPalace": 0,
+    "combinations": 16
+   },
+   "sources": [
+    "紫微斗数入門"
+   ]
+  },
+  {
+   "star": "化忌星",
+   "meaningAvailable": true,
+   "counts": {
+    "stars": 0,
+    "transformations": 8,
+    "starPalace": 0,
+    "combinations": 2
+   },
+   "sources": [
+    "紫微斗数入門"
+   ]
+  }
+ ],
+ "extractionNotes": [
+  "基礎編 S20 の見出しは「夫婦宮」（入門・エンジンは夫妻宮）",
+  "基礎編 S26 の表記は「貧狼星」（貪狼星）",
+  "資料のテキストでは「羊星」（先頭の1字が欠けている）",
+  "資料の表記は「右輔星」（左輔星と並記。右弼星の誤記と読める）"
+ ]
+}

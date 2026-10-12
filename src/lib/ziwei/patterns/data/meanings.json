@@ -1,0 +1,286 @@
+{
+  "_note": "格局の象意（基礎２ 本編33格。資料の意味の範囲で書き直した独自文章。docs/ziwei-basic-spec.md §35・§36）。成立条件・成立根拠・破格・注意（warning）は持たない（data.ts）。items: kind base＝無条件／conditional＝when が成立したときだけ／pending＝自動判定できない条件（表示しない）。gender は出生の性別で出し分け。scope natal＝本命の格局だけ／major＝大限の格局だけ（S38 の大限の記述）／any＝どちらでも。when の星の列挙は「いずれか」「等」がなければすべて（K2-10 の確定と同じ読み）。吉星・煞星は入門 p.15 の吉星・凶星（§23.4）。羊陀夾忌の流年の記述は S33 の年運層（fortune/liunian.ts）で扱い、ここには持たない。",
+  "patterns": {
+    "K2-01": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "text": "若いうちは思うように運ばず、経験を重ねて人柄が円くなってから吉に転じる格局です。人の上に立つ性質を持ちながら気質の対照的な二つの星が同じ宮で張り合うためで、年齢とともにその力がまとまっていきます。" },
+        { "kind": "base", "text": "向いているのは、政治や財務の仕事、精密な機械や細工を扱う仕事です。" },
+        { "kind": "pending", "text": "左輔・右弼・天魁・天鉞と会うと、ひときわ大きな吉になります。", "pendingReason": "「会する」が同宮か加会か、4星すべてかいずれかかが資料にない" },
+        { "kind": "conditional", "gender": "female", "when": { "lucky": "jiahui", "exclude": ["紫微星", "天府星"] }, "text": "女性はほかの吉星が加会しているため、財と地位を得て、夫や子どもにも恵まれます。" }
+      ]
+    },
+    "K2-02": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "text": "暮らしに困らないだけでなく、十分な収入や待遇に恵まれる格局です。目上の人や上司との関係がよく、引き立てを受けやすいでしょう。" },
+        { "kind": "base", "text": "物腰は柔らかでも内面は強く、自分を律して高めようとします。その厳しさを周りの人にも求めやすい面があります。" },
+        { "kind": "base", "text": "目鼻立ちがくっきりして、陰影のある顔立ちです。" },
+        { "kind": "base", "gender": "female", "text": "女性は結婚の時期を慎重に見る必要があります。遅めの結婚が合い、若いうちの結婚は人生に波乱を招きやすくなります。" }
+      ]
+    },
+    "K2-03": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "conditional", "when": { "malefic": "jiahui", "negate": true }, "text": "煞星が加会していないため、財と地位に恵まれ、実業でも政治でも、警察や防衛の分野でも成功します。" },
+        { "kind": "base", "text": "父方の祖先から大きな守りを受けている格局です。" },
+        { "kind": "base", "gender": "female", "text": "女性は結婚が遅くなりがちです。" }
+      ]
+    },
+    "K2-04": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "text": "慈しみが深く、私心を持たず公正な人です。教育や慈善、公益のための仕事が向いています。" },
+        { "kind": "conditional", "when": { "meet": ["文曲星"] }, "text": "文曲星と会っているため、頭の働きが鋭く機転もきき、学業に秀でて世に名を上げやすくなります。" },
+        { "kind": "conditional", "gender": "female", "when": { "malefic": "jiahui" }, "text": "女性で三方四正に煞星が加会しているため、凶の面が出やすくなります。" },
+        { "kind": "conditional", "gender": "female", "when": { "malefic": "jiahui", "negate": true }, "text": "女性で三方四正に煞星の加会がないため、財・仕事・結婚のどれにも恵まれ、家庭を持ってからも仕事で成功します。" },
+        { "kind": "conditional", "when": { "jiahui": ["文昌星", "文曲星"] }, "text": "文昌星・文曲星がともに加会しているため、男女とも異性の縁（桃花）が強まります。" }
+      ]
+    },
+    "K2-05": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "text": "財産と社会的地位の両方を備える格局で、難しい試験にも通ります。" },
+        { "kind": "base", "text": "さっぱりした気性で頭がよく、記憶力に優れています。" },
+        { "kind": "base", "text": "会計、機械・設備、開発途上の国に関わる業務などに適性があります。" }
+      ]
+    },
+    "K2-06": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "text": "正義感と責任感が強く、隠しごとをせず堂々と物事を進める、豪快でさわやかな気質です。" },
+        { "kind": "base", "text": "民意を代表する役や貿易、慈善の仕事が向いていますが、新しく事業を起こすことには向きません。" },
+        { "kind": "base", "gender": "female", "text": "女性は気が強く男性とぶつかりやすいので、温和な相手が合っています。" },
+        { "kind": "conditional", "gender": "female", "when": { "yearStem": ["甲"] }, "text": "甲の年に生まれた女性は、父とも夫とも縁が薄く、夫婦の暮らしが揺れやすくなります。" }
+      ]
+    },
+    "K2-07": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "text": "飾り気がなく無邪気な人柄で、男女とも交友が広く、異性からよく思われます。" },
+        { "kind": "conditional", "when": { "lucky": "jiahui", "exclude": ["太陰星"] }, "text": "ほかの吉星が加会しているため、財と地位をともに得ます。" }
+      ]
+    },
+    "K2-08": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "text": "好奇心が強く機転がきく一方、疑い深く、自分で経験したことしか信じません。" },
+        { "kind": "base", "text": "若いうちは苦労しますが、中年以降に才能を生かして家業を興します。" },
+        { "kind": "base", "text": "文化に関わる事業や外交、顧問の仕事に向いています。" },
+        { "kind": "conditional", "when": { "lucky": "jiahui", "exclude": ["天機星", "巨門星"] }, "text": "ほかの吉星が加会しているため、財と地位の両方がそろいます。" },
+        { "kind": "conditional", "when": { "mingBranch": ["酉"] }, "text": "命宮が酉にあるため、卯にある場合より格は上と見ます（天機星が五行の金に属するため）。" },
+        { "kind": "base", "gender": "female", "text": "女性には不向きな格局で、夫婦のことでつまずきやすく、体も丈夫でなく病気をしやすく、お金にも恵まれません。" }
+      ]
+    },
+    "K2-09": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "text": "根は善良で、策を練るのが得意です。細かく計画を立て、段取りを決めてから動きます。" },
+        { "kind": "base", "text": "向いているのは参謀役や公的な職です。自ら事業を始めたり、ものを製造したりする仕事は合いません。" },
+        { "kind": "base", "text": "生まれた土地から遠く離れたところで成功する格局です。" },
+        { "kind": "conditional", "when": { "lucky": "meet", "exclude": ["天機星", "太陰星", "天梁星", "天同星"] }, "text": "ほかの吉星と会っているため、得がたい専門の知識や技術を身につけます。" },
+        { "kind": "base", "gender": "female", "text": "女性は感情の波が大きく、名を上げるためには自分の体を差し出すことさえいとわない危うさがあるので、注意が必要です。" }
+      ]
+    },
+    "K2-10": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "text": "若いうちに大きな苦労を経て、中年以降に名を知られたり、社会的な地位が上がったりする格局です。" },
+        { "kind": "base", "text": "話す力に恵まれ、教育、法律、議員や団体の代表、放送・広報・広告などの仕事が向いています。" }
+      ]
+    },
+    "K2-11": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "text": "吉の兆しを持つ格局です。個性が強く弁が立ち、事業で成功します。" },
+        { "kind": "base", "text": "外国と縁があって外国語の上達が早く、中年以降は政治的な活動もよいでしょう。" },
+        { "kind": "base", "text": "教育や医療、旅行・貿易の仕事、楽器の調律などに適性があります。" },
+        { "kind": "pending", "text": "文昌・文曲・左輔・右弼・天魁・天鉞・三台・八座の加会を喜びます。", "pendingReason": "8星すべての加会か一部でよいかが原文で確定しない。三台・八座の加会は下の conditional で補足として表示する（§37.5）" },
+        { "kind": "conditional", "text": "三台・八座が加会し、この格局の良さを補っています。", "when": { "minorJiahui": ["birth_day/三台", "birth_day/八座"] } },
+        { "kind": "conditional", "text": "三台が加会し、この格局の良さを補っています。", "when": { "all": [{ "minorJiahui": ["birth_day/三台"] }, { "minorJiahui": ["birth_day/八座"], "negate": true }] } },
+        { "kind": "conditional", "text": "八座が加会し、この格局の良さを補っています。", "when": { "all": [{ "minorJiahui": ["birth_day/八座"] }, { "minorJiahui": ["birth_day/三台"], "negate": true }] } },
+        { "kind": "base", "gender": "female", "text": "女性は夫にも子にも恵まれ、高い身分の夫人となります。" }
+      ]
+    },
+    "K2-12": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "text": "現実をよく見る、素直で明るい陽気な人です。ユーモアがあり、繊細で頭の回転も速いでしょう。" },
+        { "kind": "base", "text": "危険を前もって察知し、策を講じて避けることができます。" },
+        { "kind": "base", "text": "人を監督する役や論評する仕事で成功します。社交的で人望もあるので、観光や娯楽の分野でも成功できます。" },
+        { "kind": "base", "gender": "female", "text": "女性は夫婦生活に向かず、同性愛に向かう傾向があります。" }
+      ]
+    },
+    "K2-13": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "text": "不動産を受け継いだり、自分で多く所有したりする格局です。不動産の売買や管理が適職です。" },
+        { "kind": "base", "text": "生まれた土地を出ることで伸びますが、自分で事業を始めると浮き沈みが多く、家庭の事情も変わりやすくなります。" }
+      ]
+    },
+    "K2-14": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "text": "理想が高く、野心のある人です。家業を継がずに故郷を離れ、遠い土地で成功します。" },
+        { "kind": "base", "text": "三十歳ごろまではお金が入っても出ていきますが、その後は徐々に頭角を現して成功します。" },
+        { "kind": "base", "text": "男女とも異性の縁（桃花）が強く、感情の起伏も激しいので、恋愛には注意が必要です。" },
+        { "kind": "base", "gender": "female", "text": "女性は数字に強く、損得に敏感で神経が細やかです。束縛を嫌い恋愛を好むので、遅めの結婚が合っています。" }
+      ]
+    },
+    "K2-15": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "text": "品があり、道徳心が強く、多くの学問や技能に通じています。" },
+        { "kind": "conditional", "when": { "lucky": "meet", "exclude": ["天府星", "太陽星", "太陰星"] }, "text": "ほかの吉星と会っているため、財と地位を得て、生涯にわたって金運に恵まれます。" },
+        { "kind": "conditional", "when": { "jiahui": ["化禄星", "化権星", "左輔星", "右弼星", "文昌星", "文曲星"] }, "text": "化禄・化権・左輔・右弼・文昌・文曲が加会しているため、財産と高い地位の両方を手にします。" }
+      ]
+    },
+    "K2-16": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "text": "恐れずに決断し、まだ誰も手をつけていない道を切り開く、物事の始まりを担う人です。" },
+        { "kind": "base", "text": "故郷を離れると伸び、海外で働くと成功の見込みが高まります。" },
+        { "kind": "conditional", "when": { "all": [{ "malefic": "meet", "exclude": ["破軍星"], "negate": true }, { "lucky": "meet" }] }, "text": "煞星がなく吉星と会っているため、大きく出世します。" },
+        { "kind": "conditional", "when": { "malefic": "meet", "exclude": ["破軍星"] }, "text": "煞星と会っているため、孤独で病気がちになりやすくなります。" }
+      ]
+    },
+    "K2-17": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "conditional", "when": { "jiahui": ["文昌星", "文曲星"] }, "text": "文昌星・文曲星が加会しているため、官職より政治家や警察・防衛の道が合っています。" },
+        { "kind": "conditional", "when": { "jiahui": ["左輔星", "右弼星"] }, "text": "左輔星・右弼星が加会しているため、権力を得ます。" },
+        { "kind": "conditional", "when": { "malefic": "meet", "exclude": ["七殺星"] }, "text": "凶星と会っているため、役所沙汰や訴訟に巻き込まれ、運の波が激しく、若いうちに苦労し、体に傷が残るような事件や災いに遭いやすくなります。" },
+        { "kind": "base", "gender": "female", "text": "女性は育つ環境に恵まれず、結婚しても年老いるまで寂しさを抱えます。" }
+      ]
+    },
+    "K2-18": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "text": "若いうちに苦労を経て、中年以降に事業が成功する格局です。自分で営む事業が向いています。" },
+        { "kind": "base", "text": "交友が多彩で友人も多く、家にいることが少ない人です。情が深いぶん、浮気には注意が必要です。" },
+        { "kind": "base", "gender": "male", "text": "男性は妻との縁を損ない、子にも恵まれません。" },
+        { "kind": "base", "gender": "female", "text": "女性は気性がとても強く、孤独になりがちです。" }
+      ]
+    },
+    "K2-19": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "scope": "any", "text": "三つの化星がそろう格局で、化禄は主に財を、化権は権力を、化科は名声を示します。" },
+        { "kind": "conditional", "when": { "any": [{ "meet": ["化忌星"], "negate": true }, { "malefic": "meet", "negate": true }] }, "text": "化忌がほかの宮にある、または煞星と会っていないという条件にあたるため、財産と社会的地位の両方がそろいます。" },
+        { "kind": "base", "scope": "major", "text": "この大限は、事業が伸びていく時期と見ます。" }
+      ]
+    },
+    "K2-20": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "text": "賢く個性が強い反面、自分中心になりがちで、気に入らなければ年長者にも意見します。" },
+        { "kind": "conditional", "when": { "meet": ["文昌星"] }, "text": "文昌星と会っているため音楽を好むようになり、善い行いを積めば財と地位を得ます。" },
+        { "kind": "conditional", "gender": "female", "when": { "lucky": "meet" }, "text": "女性で吉星と会っているため、穏やかな性格になり、夫を助けてよい子を育てます。" },
+        { "kind": "conditional", "when": { "meet": ["化忌星"] }, "text": "化忌星と会っているため、役所や裁判に関わる災いに注意が必要です。" },
+        { "kind": "conditional", "when": { "meet": ["陀羅星", "火星"] }, "text": "陀羅星・火星と会っているため、膿や出血を伴う災いがあり、命が短くなりやすいとされます。" }
+      ]
+    },
+    "K2-21": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "text": "工業や商業の世界で成功し、金運が強く、財と地位をともに備える格局です。" },
+        { "kind": "conditional", "when": { "jiahui": ["火星", "鈴星", "天空星", "地劫星"] }, "text": "火星・鈴星・天空星・地劫星が加会しているため、思わぬことで損をしてお金が流れ出たり、痛風・神経痛のような痛む病気を患ったり、子どもが思わぬ災難に遭ったりしやすくなります。" }
+      ]
+    },
+    "K2-22": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "conditional", "when": { "luInMingQianyi": true }, "text": "化禄と禄存が命宮と遷移宮に一つずつ入っているため、相当な財を成します。" },
+        { "kind": "base", "text": "生まれた土地から遠いところで成功する格局です。" },
+        { "kind": "base", "text": "財を築いても、投資でしくじって失うおそれがあるので注意が必要です。大限や小限の運が悪い時期は、強盗や横領の被害にも気をつけたいところです。" },
+        { "kind": "pending", "text": "異性の縁をもたらす星（桃花の星）と会わない限り、事業はうまく運びます。", "pendingReason": "桃花の星の範囲が資料に定義されていない" }
+      ]
+    },
+    "K2-23": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "text": "環境が変わるたびに伸びていき、海外など遠い土地で成功する格局です。" },
+        { "kind": "conditional", "when": { "lucunAlone": true }, "text": "禄存星の宮に主星がなく、禄存星が単独で入っているため、凶の面が出やすくなります（禄存星はほかの主星に支えられることを喜びます）。" },
+        { "kind": "pending", "text": "擎羊星・陀羅星に挟まれるか、化忌星と同宮すると、大損や破産のおそれがあります。", "pendingReason": "挟まれる・同宮する主体（天馬か禄の宮か）が資料から一意に決まらない" }
+      ]
+    },
+    "K2-24": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "text": "財産と地位がそろい、生涯にわたって身分の高い人が手を差し伸べてくれる格局です。" },
+        { "kind": "base", "text": "先を見通す目があって難局をかわすこともでき、仕事で行き詰まっても思わぬところから助けが入ります。" },
+        { "kind": "conditional", "gender": "male", "when": { "mingHas": ["天鉞星"] }, "text": "男性で命宮に天鉞星が入っているため、よくない異性の縁（桃花）になります。異性からの助けはありますが、未婚の人には凶です。" },
+        { "kind": "conditional", "gender": "female", "when": { "mingHas": ["天魁星"] }, "text": "女性で命宮に天魁星が入っているため、よくない異性の縁（桃花）になります。異性からの助けはありますが、未婚の人には凶です。" }
+      ]
+    },
+    "K2-25": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "gender": "male", "text": "男性は人を率いる力を発揮し、人生を存分に楽しみます。" },
+        { "kind": "base", "gender": "female", "text": "女性には不利な格局で、男性の友人が多く、自分中心になりやすく、結婚には向きません。" }
+      ]
+    },
+    "K2-26": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "text": "慈しみが深く、誰にでも分け隔てなく愛情を注ぐ、朗らかで活発な人です。" },
+        { "kind": "conditional", "when": { "jiahui": ["文昌星", "文曲星"] }, "text": "文昌星・文曲星が加会しているため、出世を遂げ、財と地位に恵まれます。" },
+        { "kind": "conditional", "when": { "jiahui": ["擎羊星", "陀羅星"] }, "text": "擎羊星・陀羅星が加会しているため、気分が沈んだり明るくなったりして、性格が定まりにくくなります。" }
+      ]
+    },
+    "K2-27": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "conditional", "when": { "lucky": "jiahui", "exclude": ["太陽星", "太陰星"] }, "text": "吉星が加会しているため、若いころはとても恵まれます。" },
+        { "kind": "conditional", "gender": "male", "when": { "malefic": "meet", "exclude": ["巨門星"] }, "text": "男性で煞星と会っているため、妻との縁を損ないます。他郷を転々として苦労を重ねますが、のちに成功して故郷に戻ります。" },
+        { "kind": "conditional", "gender": "female", "when": { "malefic": "meet", "exclude": ["巨門星"] }, "text": "女性で煞星と会っているため、夫との縁を損ないます。他郷を転々として苦労を重ねますが、のちに成功して故郷に戻ります。" }
+      ]
+    },
+    "K2-28": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "text": "どんなことが起きても平然として、世事から一歩引いた気質です。" },
+        { "kind": "conditional", "when": { "malefic": "meet", "negate": true }, "text": "煞星と会っていないため、世の中で高い地位に就けます。" },
+        { "kind": "base", "text": "企業の経営者や重役、幹部として活躍するほか、法律や財政、政治のように国を動かす仕事にも通用する学識を得られます。" }
+      ]
+    },
+    "K2-29": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "text": "凶の力を転じて自分の力にする格局です。勇猛で威厳があり、豪快な気質です。" },
+        { "kind": "base", "text": "たびたび危険に遭いながら、そのたびに危ういところで助かります。" },
+        { "kind": "base", "text": "消防や救助、警察・防衛、船員などの仕事に向いています。" }
+      ]
+    },
+    "K2-30": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "text": "私欲がなく正直で、落ち着いた人です。気高く、風格を備えています。" },
+        { "kind": "conditional", "when": { "lucky": "meet", "exclude": ["天梁星"] }, "text": "ほかの吉星と会っているため、社会的な地位を得て高い役職に就き、多くの報酬を受けます。" }
+      ]
+    },
+    "K2-31": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "text": "感受性が強く、愛情の豊かな人です。一人の相手では満たされず、男女関係が乱れがちです。" },
+        { "kind": "base", "text": "芸術全般のほか、美容・化粧・ネイルなどの仕事やデザインの仕事に向いています。" }
+      ]
+    },
+    "K2-32": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "text": "人生を通して災難や困難の多い格局です。" },
+        { "kind": "base", "scope": "major", "text": "この大限は凶と見ます。" },
+        { "kind": "conditional", "scope": "major", "when": { "touchesNatalPalace": "疾厄宮" }, "text": "格の影響が本命の疾厄宮に及んでいるため、この大限は特に病気に注意が必要です。" }
+      ]
+    },
+    "K2-33": {
+      "meaningStatus": "ok",
+      "items": [
+        { "kind": "base", "text": "凶の働きを持つ格局です。" },
+        { "kind": "base", "scope": "major", "text": "この大限は格が崩れた形（敗局）となり、凶と見ます。" },
+        { "kind": "conditional", "scope": "major", "when": { "fortunePalace": "父母宮" }, "text": "大限の父母宮で成立しているため、両親や年長者の助けを得にくくなります。" }
+      ]
+    }
+  }
+}

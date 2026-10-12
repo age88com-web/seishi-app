@@ -1,0 +1,606 @@
+{
+ "_note": "行運四化の fixture（docs/ziwei-basic-spec.md §26）。資料に印刷された値だけ。出生地は記載がないため東京として作盤（S38・S39 は天馬だけが資料と違う。§18 U10）",
+ "wuhudun": {
+  "source": "基礎２ S37 五虎遁表（生年天干と十二宮の天干）",
+  "cells": [
+   {
+    "yearStems": "甲己",
+    "branch": "寅",
+    "stem": "丙"
+   },
+   {
+    "yearStems": "甲己",
+    "branch": "卯",
+    "stem": "丁"
+   },
+   {
+    "yearStems": "甲己",
+    "branch": "辰",
+    "stem": "戊"
+   },
+   {
+    "yearStems": "甲己",
+    "branch": "巳",
+    "stem": "己"
+   },
+   {
+    "yearStems": "甲己",
+    "branch": "午",
+    "stem": "庚"
+   },
+   {
+    "yearStems": "甲己",
+    "branch": "未",
+    "stem": "辛"
+   },
+   {
+    "yearStems": "甲己",
+    "branch": "申",
+    "stem": "壬"
+   },
+   {
+    "yearStems": "甲己",
+    "branch": "酉",
+    "stem": "癸"
+   },
+   {
+    "yearStems": "甲己",
+    "branch": "戌",
+    "stem": "甲"
+   },
+   {
+    "yearStems": "甲己",
+    "branch": "亥",
+    "stem": "乙"
+   },
+   {
+    "yearStems": "甲己",
+    "branch": "子",
+    "stem": "丙"
+   },
+   {
+    "yearStems": "甲己",
+    "branch": "丑",
+    "stem": "丁"
+   },
+   {
+    "yearStems": "乙庚",
+    "branch": "寅",
+    "stem": "戊"
+   },
+   {
+    "yearStems": "乙庚",
+    "branch": "卯",
+    "stem": "己"
+   },
+   {
+    "yearStems": "乙庚",
+    "branch": "辰",
+    "stem": "庚"
+   },
+   {
+    "yearStems": "乙庚",
+    "branch": "巳",
+    "stem": "辛"
+   },
+   {
+    "yearStems": "乙庚",
+    "branch": "午",
+    "stem": "壬"
+   },
+   {
+    "yearStems": "乙庚",
+    "branch": "未",
+    "stem": "癸"
+   },
+   {
+    "yearStems": "乙庚",
+    "branch": "申",
+    "stem": "甲"
+   },
+   {
+    "yearStems": "乙庚",
+    "branch": "酉",
+    "stem": "乙"
+   },
+   {
+    "yearStems": "乙庚",
+    "branch": "戌",
+    "stem": "丙"
+   },
+   {
+    "yearStems": "乙庚",
+    "branch": "亥",
+    "stem": "丁"
+   },
+   {
+    "yearStems": "乙庚",
+    "branch": "子",
+    "stem": "戊"
+   },
+   {
+    "yearStems": "乙庚",
+    "branch": "丑",
+    "stem": "己"
+   },
+   {
+    "yearStems": "丙辛",
+    "branch": "寅",
+    "stem": "庚"
+   },
+   {
+    "yearStems": "丙辛",
+    "branch": "卯",
+    "stem": "辛"
+   },
+   {
+    "yearStems": "丙辛",
+    "branch": "辰",
+    "stem": "壬"
+   },
+   {
+    "yearStems": "丙辛",
+    "branch": "巳",
+    "stem": "癸"
+   },
+   {
+    "yearStems": "丙辛",
+    "branch": "午",
+    "stem": "甲"
+   },
+   {
+    "yearStems": "丙辛",
+    "branch": "未",
+    "stem": "乙"
+   },
+   {
+    "yearStems": "丙辛",
+    "branch": "申",
+    "stem": "丙"
+   },
+   {
+    "yearStems": "丙辛",
+    "branch": "酉",
+    "stem": "丁"
+   },
+   {
+    "yearStems": "丙辛",
+    "branch": "戌",
+    "stem": "戊"
+   },
+   {
+    "yearStems": "丙辛",
+    "branch": "亥",
+    "stem": "己"
+   },
+   {
+    "yearStems": "丙辛",
+    "branch": "子",
+    "stem": "庚"
+   },
+   {
+    "yearStems": "丙辛",
+    "branch": "丑",
+    "stem": "辛"
+   },
+   {
+    "yearStems": "丁壬",
+    "branch": "寅",
+    "stem": "壬"
+   },
+   {
+    "yearStems": "丁壬",
+    "branch": "卯",
+    "stem": "癸"
+   },
+   {
+    "yearStems": "丁壬",
+    "branch": "辰",
+    "stem": "甲"
+   },
+   {
+    "yearStems": "丁壬",
+    "branch": "巳",
+    "stem": "乙"
+   },
+   {
+    "yearStems": "丁壬",
+    "branch": "午",
+    "stem": "丙"
+   },
+   {
+    "yearStems": "丁壬",
+    "branch": "未",
+    "stem": "丁"
+   },
+   {
+    "yearStems": "丁壬",
+    "branch": "申",
+    "stem": "戊"
+   },
+   {
+    "yearStems": "丁壬",
+    "branch": "酉",
+    "stem": "己"
+   },
+   {
+    "yearStems": "丁壬",
+    "branch": "戌",
+    "stem": "庚"
+   },
+   {
+    "yearStems": "丁壬",
+    "branch": "亥",
+    "stem": "辛"
+   },
+   {
+    "yearStems": "丁壬",
+    "branch": "子",
+    "stem": "壬"
+   },
+   {
+    "yearStems": "丁壬",
+    "branch": "丑",
+    "stem": "癸"
+   },
+   {
+    "yearStems": "戊癸",
+    "branch": "寅",
+    "stem": "甲"
+   },
+   {
+    "yearStems": "戊癸",
+    "branch": "卯",
+    "stem": "乙"
+   },
+   {
+    "yearStems": "戊癸",
+    "branch": "辰",
+    "stem": "丙"
+   },
+   {
+    "yearStems": "戊癸",
+    "branch": "巳",
+    "stem": "丁"
+   },
+   {
+    "yearStems": "戊癸",
+    "branch": "午",
+    "stem": "戊"
+   },
+   {
+    "yearStems": "戊癸",
+    "branch": "未",
+    "stem": "己"
+   },
+   {
+    "yearStems": "戊癸",
+    "branch": "申",
+    "stem": "庚"
+   },
+   {
+    "yearStems": "戊癸",
+    "branch": "酉",
+    "stem": "辛"
+   },
+   {
+    "yearStems": "戊癸",
+    "branch": "戌",
+    "stem": "壬"
+   },
+   {
+    "yearStems": "戊癸",
+    "branch": "亥",
+    "stem": "癸"
+   },
+   {
+    "yearStems": "戊癸",
+    "branch": "子",
+    "stem": "甲"
+   },
+   {
+    "yearStems": "戊癸",
+    "branch": "丑",
+    "stem": "乙"
+   }
+  ]
+ },
+ "printedPalaceStems": [
+  {
+   "id": "基礎編S19 命盤B",
+   "input": {
+    "birth": {
+     "year": 1964,
+     "month": 12,
+     "day": 21,
+     "hour": 6,
+     "minute": 0
+    },
+    "place": "東京",
+    "sex": "male"
+   },
+   "yearStem": "甲",
+   "stems": {
+    "巳": "己",
+    "午": "庚",
+    "未": "辛",
+    "申": "壬",
+    "辰": "戊",
+    "酉": "癸",
+    "卯": "丁",
+    "戌": "甲",
+    "寅": "丙",
+    "丑": "丁",
+    "子": "丙",
+    "亥": "乙"
+   }
+  },
+  {
+   "id": "基礎２S38",
+   "input": {
+    "birth": {
+     "year": 1965,
+     "month": 1,
+     "day": 10,
+     "hour": 0,
+     "minute": 0
+    },
+    "place": "東京",
+    "sex": "male"
+   },
+   "yearStem": "甲",
+   "stems": {
+    "巳": "己",
+    "午": "庚",
+    "未": "辛",
+    "申": "壬",
+    "辰": "戊",
+    "酉": "癸",
+    "卯": "丁",
+    "戌": "甲",
+    "寅": "丙",
+    "丑": "丁",
+    "子": "丙",
+    "亥": "乙"
+   }
+  },
+  {
+   "id": "基礎２S39",
+   "input": {
+    "birth": {
+     "year": 1975,
+     "month": 3,
+     "day": 9,
+     "hour": 22,
+     "minute": 0
+    },
+    "place": "東京",
+    "sex": "male"
+   },
+   "yearStem": "乙",
+   "stems": {
+    "巳": "辛",
+    "午": "壬",
+    "未": "癸",
+    "申": "甲",
+    "辰": "庚",
+    "酉": "乙",
+    "卯": "己",
+    "戌": "丙",
+    "寅": "戊",
+    "丑": "己",
+    "子": "戊",
+    "亥": "丁"
+   }
+  },
+  {
+   "id": "基礎２S22",
+   "input": {
+    "birth": {
+     "year": 1925,
+     "month": 2,
+     "day": 25,
+     "hour": 0,
+     "minute": 10
+    },
+    "place": "東京",
+    "sex": "male"
+   },
+   "yearStem": "乙",
+   "stems": {
+    "巳": "辛",
+    "午": "壬",
+    "未": "癸",
+    "申": "甲",
+    "辰": "庚",
+    "酉": "乙",
+    "卯": "己",
+    "戌": "丙",
+    "寅": "戊",
+    "丑": "己",
+    "子": "戊",
+    "亥": "丁"
+   },
+   "note": "日は空欄の命盤。印刷と完全一致する陰暦日の1つ（§23.3.4）"
+  }
+ ],
+ "majorLimits": [
+  {
+   "id": "S38-丙寅",
+   "source": "基礎２ S38「丙寅の大限（12〜21）」",
+   "input": "基礎２S38",
+   "ageRange": [
+    12,
+    21
+   ],
+   "branch": "寅",
+   "stem": "丙",
+   "checks": [],
+   "note": "本文は生年干甲の化忌（太陽）が寅で禄存と同宮する羊陀夾忌を述べる（生年の層）。大限の化忌の星は本文に記載なし",
+   "natalChecks": [
+    {
+     "kind": "化忌星",
+     "star": "太陽星",
+     "branch": "寅"
+    }
+   ]
+  },
+  {
+   "id": "S38-丁卯",
+   "source": "基礎２ S38「丁卯の大限（22〜31）丁の化忌は巨門星で、父母宮に２つの化忌」",
+   "input": "基礎２S38",
+   "ageRange": [
+    22,
+    31
+   ],
+   "branch": "卯",
+   "stem": "丁",
+   "checks": [
+    {
+     "kind": "化忌星",
+     "star": "巨門星",
+     "branch": "寅",
+     "palace": "父母宮"
+    }
+   ],
+   "overlapWithNatal": {
+    "kind": "化忌星",
+    "branch": "寅"
+   }
+  },
+  {
+   "id": "S38-戊辰",
+   "source": "基礎２ S38「戊辰の大限（32〜41）戊の化忌は天機星で大限命宮に入宮」",
+   "input": "基礎２S38",
+   "ageRange": [
+    32,
+    41
+   ],
+   "branch": "辰",
+   "stem": "戊",
+   "checks": [
+    {
+     "kind": "化忌星",
+     "star": "天機星",
+     "branch": "辰"
+    }
+   ]
+  },
+  {
+   "id": "S38-己巳",
+   "source": "基礎２ S38「己巳の大限（42〜51）武曲、化禄と貧狼、化権が三方四正にあり」",
+   "input": "基礎２S38",
+   "ageRange": [
+    42,
+    51
+   ],
+   "branch": "巳",
+   "stem": "己",
+   "checks": [
+    {
+     "kind": "化禄星",
+     "star": "武曲星",
+     "branch": "丑"
+    },
+    {
+     "kind": "化権星",
+     "star": "貪狼星",
+     "branch": "丑"
+    }
+   ],
+   "inSanfangOfLimit": [
+    "丑"
+   ]
+  },
+  {
+   "id": "S39-己卯",
+   "source": "基礎２ S39「己卯（5〜14） 文曲化忌」",
+   "input": "基礎２S39",
+   "ageRange": [
+    5,
+    14
+   ],
+   "branch": "卯",
+   "stem": "己",
+   "checks": [
+    {
+     "kind": "化忌星",
+     "star": "文曲星",
+     "branch": "卯"
+    }
+   ]
+  },
+  {
+   "id": "S39-戊寅",
+   "source": "基礎２ S39「戊寅（15〜24） 天機化忌」",
+   "input": "基礎２S39",
+   "ageRange": [
+    15,
+    24
+   ],
+   "branch": "寅",
+   "stem": "戊",
+   "checks": [
+    {
+     "kind": "化忌星",
+     "star": "天機星",
+     "branch": "卯"
+    }
+   ]
+  },
+  {
+   "id": "S39-己丑",
+   "source": "基礎２ S39「己丑（25〜34） 文曲化忌」",
+   "input": "基礎２S39",
+   "ageRange": [
+    25,
+    34
+   ],
+   "branch": "丑",
+   "stem": "己",
+   "checks": [
+    {
+     "kind": "化忌星",
+     "star": "文曲星",
+     "branch": "卯"
+    }
+   ]
+  },
+  {
+   "id": "S39-戊子",
+   "source": "基礎２ S39「戊子（35〜44） 天機化忌」",
+   "input": "基礎２S39",
+   "ageRange": [
+    35,
+    44
+   ],
+   "branch": "子",
+   "stem": "戊",
+   "checks": [
+    {
+     "kind": "化忌星",
+     "star": "天機星",
+     "branch": "卯"
+    }
+   ]
+  },
+  {
+   "id": "S39-丁亥",
+   "source": "基礎２ S39「丁亥（45〜54） 巨門化忌」「化忌星がすべて卯宮に入宮」",
+   "input": "基礎２S39",
+   "ageRange": [
+    45,
+    54
+   ],
+   "branch": "亥",
+   "stem": "丁",
+   "checks": [
+    {
+     "kind": "化忌星",
+     "star": "巨門星",
+     "branch": "卯"
+    }
+   ]
+  }
+ ]
+}

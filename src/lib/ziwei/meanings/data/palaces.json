@@ -1,0 +1,2729 @@
+[
+ {
+  "id": "N-PL-001",
+  "text": "命宮は、命盤を読むうえで土台となる、もっとも重要な宮です。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 29,
+   "docPage": 30,
+   "section": "1.12宮が示すもの／命宮"
+  },
+  "palace": "命宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-001",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 28
+ },
+ {
+  "id": "N-PL-002",
+  "text": "性格や気質、持ち味、運命の大きな流れといった基本的な事柄は、すべて命宮にあらわれます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 29,
+   "docPage": 30,
+   "section": "1.12宮が示すもの／命宮"
+  },
+  "palace": "命宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-002",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 42
+ },
+ {
+  "id": "N-PL-003",
+  "text": "才能や仕事の向き不向き、どこまで伸びていけるか、成功の度合いも、命宮から読み取ります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 29,
+   "docPage": 30,
+   "section": "1.12宮が示すもの／命宮"
+  },
+  "palace": "命宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-003",
+  "opener": "また",
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 48
+ },
+ {
+  "id": "N-PL-004",
+  "text": "体の丈夫さの基本や、顔立ち・体つきも命宮で判断します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 29,
+   "docPage": 30,
+   "section": "1.12宮が示すもの／命宮"
+  },
+  "palace": "命宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-004",
+  "opener": "また",
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 20
+ },
+ {
+  "id": "N-PL-005",
+  "text": "兄弟宮は、きょうだいとの関係や、きょうだいの数を示します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 29,
+   "docPage": 30,
+   "section": "1.12宮が示すもの／兄弟宮"
+  },
+  "palace": "兄弟宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "N-PL-005",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 26
+ },
+ {
+  "id": "N-PL-006",
+  "text": "きょうだいの人柄や、仲がよく助け合えるのか、反発したり疎遠になったりするのかも、兄弟宮で判断します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 29,
+   "docPage": 30,
+   "section": "1.12宮が示すもの／兄弟宮"
+  },
+  "palace": "兄弟宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "N-PL-006",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 51
+ },
+ {
+  "id": "N-PL-007",
+  "text": "きょうだいの体調や性格のおおよそも、兄弟宮から読み取れます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 29,
+   "docPage": 30,
+   "section": "1.12宮が示すもの／兄弟宮"
+  },
+  "palace": "兄弟宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "N-PL-007",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 26
+ },
+ {
+  "id": "N-PL-008",
+  "text": "夫妻宮は、配偶者と恋愛に関する事柄を受け持ちます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 29,
+   "docPage": 30,
+   "section": "1.12宮が示すもの／夫妻宮"
+  },
+  "palace": "夫妻宮",
+  "category": "target",
+  "tags": [
+   "relationship"
+  ],
+  "textKey": "N-PL-008",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 20
+ },
+ {
+  "id": "N-PL-009",
+  "text": "配偶者の人柄やタイプ、結婚生活の様子を夫妻宮から読み取ります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 29,
+   "docPage": 30,
+   "section": "1.12宮が示すもの／夫妻宮"
+  },
+  "palace": "夫妻宮",
+  "category": "target",
+  "tags": [
+   "relationship"
+  ],
+  "textKey": "N-PL-009",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 29
+ },
+ {
+  "id": "N-PL-010",
+  "text": "恋愛の傾向や、惹かれる異性のタイプも夫妻宮で判断します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 29,
+   "docPage": 30,
+   "section": "1.12宮が示すもの／夫妻宮"
+  },
+  "palace": "夫妻宮",
+  "category": "target",
+  "tags": [
+   "relationship"
+  ],
+  "textKey": "N-PL-010",
+  "opener": "また",
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 24
+ },
+ {
+  "id": "N-PL-011",
+  "text": "恋愛がどのような経過をたどるかも、夫妻宮にあらわれます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 29,
+   "docPage": 30,
+   "section": "1.12宮が示すもの／夫妻宮"
+  },
+  "palace": "夫妻宮",
+  "category": "target",
+  "tags": [
+   "relationship"
+  ],
+  "textKey": "N-PL-011",
+  "opener": "さらに",
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 30
+ },
+ {
+  "id": "N-PL-012",
+  "text": "子女宮は、子どもに関する事柄を受け持ちます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 29,
+   "docPage": 30,
+   "section": "1.12宮が示すもの／子女宮"
+  },
+  "palace": "子女宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "N-PL-012",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 13
+ },
+ {
+  "id": "N-PL-013",
+  "text": "授かる子どもの性格やタイプを、子女宮で判断します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 29,
+   "docPage": 30,
+   "section": "1.12宮が示すもの／子女宮"
+  },
+  "palace": "子女宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "N-PL-013",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 36
+ },
+ {
+  "id": "N-PL-014",
+  "text": "子どもの人数や、生まれるときの状況も子女宮から読み取ります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 29,
+   "docPage": 30,
+   "section": "1.12宮が示すもの／子女宮"
+  },
+  "palace": "子女宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "N-PL-014",
+  "opener": "また",
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 39
+ },
+ {
+  "id": "N-PL-015",
+  "text": "やや応用的な読み方として、性に関する事柄も子女宮にあらわれます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 29,
+   "docPage": 30,
+   "section": "1.12宮が示すもの／子女宮"
+  },
+  "palace": "子女宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "N-PL-015",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 37
+ },
+ {
+  "id": "N-PL-016",
+  "text": "財帛宮は、財産に関する事柄を受け持ちます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 30,
+   "docPage": 31,
+   "section": "1.12宮が示すもの／財帛宮"
+  },
+  "palace": "財帛宮",
+  "category": "target",
+  "tags": [
+   "wealth"
+  ],
+  "textKey": "N-PL-016",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 13
+ },
+ {
+  "id": "N-PL-017",
+  "text": "金運の有無、どの分野から財が入るのか、地道に働いて得るのか急に得るのかを、財帛宮から読み取ります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 30,
+   "docPage": 31,
+   "section": "1.12宮が示すもの／財帛宮"
+  },
+  "palace": "財帛宮",
+  "category": "target",
+  "tags": [
+   "wealth"
+  ],
+  "textKey": "N-PL-017",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 84
+ },
+ {
+  "id": "N-PL-018",
+  "text": "財帛宮を官禄宮と合わせて見ると、勤め人と独立した自由業のどちらが向いているかを判断できます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 30,
+   "docPage": 31,
+   "section": "1.12宮が示すもの／財帛宮"
+  },
+  "palace": "財帛宮",
+  "category": "target",
+  "tags": [
+   "wealth"
+  ],
+  "textKey": "N-PL-018",
+  "opener": "また",
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "官禄宮"
+  ],
+  "sourceLength": 55
+ },
+ {
+  "id": "N-PL-019",
+  "text": "疾厄宮は、体の状態を読み取る宮です。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 30,
+   "docPage": 31,
+   "section": "1.12宮が示すもの／疾厄宮"
+  },
+  "palace": "疾厄宮",
+  "category": "target",
+  "tags": [
+   "health"
+  ],
+  "textKey": "N-PL-019",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 22
+ },
+ {
+  "id": "N-PL-020",
+  "text": "疾厄宮では、かかりやすい病気や体の弱点、健やかに過ごすために気をつけたい点を判断します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 30,
+   "docPage": 31,
+   "section": "1.12宮が示すもの／疾厄宮"
+  },
+  "palace": "疾厄宮",
+  "category": "caution",
+  "tags": [
+   "caution",
+   "health"
+  ],
+  "textKey": "N-PL-020",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 57
+ },
+ {
+  "id": "N-PL-021",
+  "text": "遷移宮は、移動に関する事柄を受け持ちます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 30,
+   "docPage": 31,
+   "section": "1.12宮が示すもの／遷移宮"
+  },
+  "palace": "遷移宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-021",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 13
+ },
+ {
+  "id": "N-PL-022",
+  "text": "ここでいう移動には、引っ越しや転勤、旅行が含まれます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 30,
+   "docPage": 31,
+   "section": "1.12宮が示すもの／遷移宮"
+  },
+  "palace": "遷移宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-022",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 25
+ },
+ {
+  "id": "N-PL-023",
+  "text": "移動が吉と出るのか、一か所にとどまるほうがよいのか、外出の多い暮らしになるのかを、遷移宮から読み取ります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 30,
+   "docPage": 31,
+   "section": "1.12宮が示すもの／遷移宮"
+  },
+  "palace": "遷移宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-023",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 73
+ },
+ {
+  "id": "N-PL-024",
+  "text": "奴僕宮は、友人や目下の人との関係を示します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 30,
+   "docPage": 31,
+   "section": "1.12宮が示すもの／奴僕宮"
+  },
+  "palace": "奴僕宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-024",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 16
+ },
+ {
+  "id": "N-PL-025",
+  "text": "奴僕宮が示すのは、狭くとらえれば部下や雇っている人との関係、広くとらえれば友人やとくに年下の後輩との関係です。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 30,
+   "docPage": 31,
+   "section": "1.12宮が示すもの／奴僕宮"
+  },
+  "palace": "奴僕宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-025",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 48
+ },
+ {
+  "id": "N-PL-026",
+  "text": "奴僕宮はさらに、助言を求めてくる人々や世の中一般とのつながりも示します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 30,
+   "docPage": 31,
+   "section": "1.12宮が示すもの／奴僕宮"
+  },
+  "palace": "奴僕宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-026",
+  "opener": "さらに",
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 30
+ },
+ {
+  "id": "N-PL-027",
+  "text": "官禄宮は、仕事に関する事柄を受け持ちます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 30,
+   "docPage": 31,
+   "section": "1.12宮が示すもの／官禄宮"
+  },
+  "palace": "官禄宮",
+  "category": "target",
+  "tags": [
+   "career"
+  ],
+  "textKey": "N-PL-027",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 13
+ },
+ {
+  "id": "N-PL-028",
+  "text": "勤め人か自由業かを問わず、仕事全般を官禄宮で判断します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 30,
+   "docPage": 31,
+   "section": "1.12宮が示すもの／官禄宮"
+  },
+  "palace": "官禄宮",
+  "category": "target",
+  "tags": [
+   "career"
+  ],
+  "textKey": "N-PL-028",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 30
+ },
+ {
+  "id": "N-PL-029",
+  "text": "仕事の向き不向き、上の人や同じ職場の人・取引相手との間柄、仕事がうまく運ぶかどうかを、官禄宮から読み取ります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 30,
+   "docPage": 31,
+   "section": "1.12宮が示すもの／官禄宮"
+  },
+  "palace": "官禄宮",
+  "category": "target",
+  "tags": [
+   "career"
+  ],
+  "textKey": "N-PL-029",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 67
+ },
+ {
+  "id": "N-PL-030",
+  "text": "仕事の向き不向きは、官禄宮だけでなく命宮と合わせて判断します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 30,
+   "docPage": 31,
+   "section": "1.12宮が示すもの／官禄宮"
+  },
+  "palace": "官禄宮",
+  "category": "target",
+  "tags": [
+   "career"
+  ],
+  "textKey": "N-PL-030",
+  "opener": "また",
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 33
+ },
+ {
+  "id": "N-PL-031",
+  "text": "田宅宮は、不動産の運を受け持ちます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 30,
+   "docPage": 31,
+   "section": "1.12宮が示すもの／田宅宮"
+  },
+  "palace": "田宅宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-031",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 15
+ },
+ {
+  "id": "N-PL-032",
+  "text": "不動産に恵まれるか、どのような形で手に入れるか、住まいの環境や訪ねてくる人の多さを、田宅宮で判断します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 30,
+   "docPage": 31,
+   "section": "1.12宮が示すもの／田宅宮"
+  },
+  "palace": "田宅宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-032",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 83
+ },
+ {
+  "id": "N-PL-033",
+  "text": "福徳宮は、その人の福の厚さを示します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 31,
+   "docPage": 32,
+   "section": "1.12宮が示すもの／福徳宮"
+  },
+  "palace": "福徳宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-033",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 11
+ },
+ {
+  "id": "N-PL-034",
+  "text": "人生の楽しみの多さ、何に喜びを感じるか、趣味、付き合いの多さを、福徳宮から読み取ります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 31,
+   "docPage": 32,
+   "section": "1.12宮が示すもの／福徳宮"
+  },
+  "palace": "福徳宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-034",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 70
+ },
+ {
+  "id": "N-PL-035",
+  "text": "文化や趣味の分野での才能も、福徳宮で判断します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 31,
+   "docPage": 32,
+   "section": "1.12宮が示すもの／福徳宮"
+  },
+  "palace": "福徳宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-035",
+  "opener": "また",
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 24
+ },
+ {
+  "id": "N-PL-036",
+  "text": "父母宮は、両親との関係を示します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 31,
+   "docPage": 32,
+   "section": "1.12宮が示すもの／父母宮"
+  },
+  "palace": "父母宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "N-PL-036",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 11
+ },
+ {
+  "id": "N-PL-037",
+  "text": "両親の人柄や容貌、親との縁の深さ、温かく育てられるかどうかを、父母宮で判断します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 31,
+   "docPage": 32,
+   "section": "1.12宮が示すもの／父母宮"
+  },
+  "palace": "父母宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "N-PL-037",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 65
+ },
+ {
+  "id": "N-PL-038",
+  "text": "十二宮とは別に、身宮が命宮・遷移宮・夫妻宮・財帛宮・官禄宮・福徳宮のいずれかに置かれます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 31,
+   "docPage": 32,
+   "section": "1.12宮が示すもの／身宮"
+  },
+  "palace": "身宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-038",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "命宮",
+   "夫妻宮",
+   "財帛宮",
+   "遷移宮",
+   "官禄宮",
+   "福徳宮"
+  ],
+  "sourceLength": 72
+ },
+ {
+  "id": "N-PL-039",
+  "text": "命宮が生まれ持った運を、身宮がその後に形づくられる運を示すと考えるのが一般的です。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 31,
+   "docPage": 32,
+   "section": "1.12宮が示すもの／身宮"
+  },
+  "palace": "身宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-039",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 36
+ },
+ {
+  "id": "N-PL-040",
+  "text": "身宮の扱い方には流派によって違いがあり、見解は定まっていません。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 31,
+   "docPage": 32,
+   "section": "1.12宮が示すもの／身宮"
+  },
+  "palace": "身宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-040",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 44
+ },
+ {
+  "id": "N-PL-041",
+  "text": "",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 31,
+   "docPage": 32,
+   "section": "1.12宮が示すもの／身宮"
+  },
+  "palace": "身宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-041",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 49
+ },
+ {
+  "id": "N-PL-兄弟宮-0047",
+  "text": "兄弟宮では、きょうだいの人柄と、本人ときょうだいとの関係を見ます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 77,
+   "docPage": 78,
+   "section": "5.諸星曜の各宮における判断／兄弟宮"
+  },
+  "palace": "兄弟宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "N-PL-兄弟宮-0047",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "兄弟宮"
+  ],
+  "sourceLength": 55
+ },
+ {
+  "id": "N-PL-兄弟宮-0048",
+  "text": "兄弟宮の力量が強ければ、きょうだいが多く仲もよく、互いに協力できます。兄弟宮の力量が弱ければ、きょうだいは少なく、疎遠になるか対立しがちです。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 77,
+   "docPage": 78,
+   "section": "5.諸星曜の各宮における判断／兄弟宮"
+  },
+  "palace": "兄弟宮",
+  "category": "strengthRule",
+  "tags": [
+   "family"
+  ],
+  "textKey": "N-PL-兄弟宮-0048",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "兄弟宮"
+  ],
+  "sourceLength": 112
+ },
+ {
+  "id": "N-PL-兄弟宮-0049",
+  "text": "ただし、現代の家族のあり方は、この読み方が生まれた時代とは大きく異なります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 77,
+   "docPage": 78,
+   "section": "5.諸星曜の各宮における判断／兄弟宮"
+  },
+  "palace": "兄弟宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "N-PL-兄弟宮-0049",
+  "opener": "しかし",
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 49
+ },
+ {
+  "id": "N-PL-兄弟宮-0050",
+  "text": "子どもの少ない現代では、きょうだいの多少や一人っ子かどうかに、この原則がそのまま当てはまるとは限りません。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 77,
+   "docPage": 78,
+   "section": "5.諸星曜の各宮における判断／兄弟宮"
+  },
+  "palace": "兄弟宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "N-PL-兄弟宮-0050",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 85
+ },
+ {
+  "id": "N-PL-兄弟宮-0051",
+  "text": "きょうだいの人数については、慎重に判断する必要があります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 77,
+   "docPage": 78,
+   "section": "5.諸星曜の各宮における判断／兄弟宮"
+  },
+  "palace": "兄弟宮",
+  "category": "caution",
+  "tags": [
+   "caution",
+   "family"
+  ],
+  "textKey": "N-PL-兄弟宮-0051",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 26
+ },
+ {
+  "id": "N-PL-夫妻宮-0108",
+  "text": "夫妻宮では、結婚相手の人柄と、本人と相手との間柄を見ます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 79,
+   "docPage": 80,
+   "section": "5.諸星曜の各宮における判断／夫妻宮"
+  },
+  "palace": "夫妻宮",
+  "category": "target",
+  "tags": [
+   "relationship"
+  ],
+  "textKey": "N-PL-夫妻宮-0108",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "夫妻宮"
+  ],
+  "sourceLength": 53
+ },
+ {
+  "id": "N-PL-夫妻宮-0109",
+  "text": "恋愛の経過や傾向、惹かれる異性のタイプも夫妻宮で判断します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 79,
+   "docPage": 80,
+   "section": "5.諸星曜の各宮における判断／夫妻宮"
+  },
+  "palace": "夫妻宮",
+  "category": "target",
+  "tags": [
+   "relationship"
+  ],
+  "textKey": "N-PL-夫妻宮-0109",
+  "opener": "また",
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 43
+ },
+ {
+  "id": "N-PL-夫妻宮-0110",
+  "text": "夫妻宮の力量が強ければ、恋愛も結婚生活もおおむね順調です。夫妻宮の力量が弱ければ、恋愛に問題や障害が生じやすく、結婚生活も安定しにくくなります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 79,
+   "docPage": 80,
+   "section": "5.諸星曜の各宮における判断／夫妻宮"
+  },
+  "palace": "夫妻宮",
+  "category": "strengthRule",
+  "tags": [
+   "relationship"
+  ],
+  "textKey": "N-PL-夫妻宮-0110",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "夫妻宮"
+  ],
+  "sourceLength": 107
+ },
+ {
+  "id": "N-PL-夫妻宮-0111",
+  "text": "夫妻宮の状態がよい人は夫妻宮に示されるタイプの相手を、よくない人は示されるタイプとは異なる相手を伴侶に選ぶのが望ましいとされます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 79,
+   "docPage": 80,
+   "section": "5.諸星曜の各宮における判断／夫妻宮"
+  },
+  "palace": "夫妻宮",
+  "category": "target",
+  "tags": [
+   "relationship"
+  ],
+  "textKey": "N-PL-夫妻宮-0111",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "夫妻宮"
+  ],
+  "sourceLength": 86
+ },
+ {
+  "id": "N-PL-夫妻宮-0112",
+  "text": "夫妻宮の状態がよくない人は、遅めに結婚するほうが幸せをつかみやすいでしょう。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 79,
+   "docPage": 80,
+   "section": "5.諸星曜の各宮における判断／夫妻宮"
+  },
+  "palace": "夫妻宮",
+  "category": "target",
+  "tags": [
+   "relationship"
+  ],
+  "textKey": "N-PL-夫妻宮-0112",
+  "opener": "また",
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "夫妻宮"
+  ],
+  "sourceLength": 41
+ },
+ {
+  "id": "N-PL-子女宮-0156",
+  "text": "子女宮では、どのような子どもに恵まれるかと、本人と子どもとの関係を見ます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 81,
+   "docPage": 82,
+   "section": "5.諸星曜の各宮における判断／子女宮"
+  },
+  "palace": "子女宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "N-PL-子女宮-0156",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "子女宮"
+  ],
+  "sourceLength": 53
+ },
+ {
+  "id": "N-PL-子女宮-0157",
+  "text": "子女宮の力量が強ければ、頼りになる親思いの子どもに恵まれ、子どもも健やかに育ちます。子女宮の力量が弱ければ、子どもに恵まれにくいか、出産時に問題が起きる暗示があります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 81,
+   "docPage": 82,
+   "section": "5.諸星曜の各宮における判断／子女宮"
+  },
+  "palace": "子女宮",
+  "category": "strengthRule",
+  "tags": [
+   "family"
+  ],
+  "textKey": "N-PL-子女宮-0157",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "子女宮"
+  ],
+  "sourceLength": 107
+ },
+ {
+  "id": "N-PL-子女宮-0158",
+  "text": "子女宮の力量が弱い場合は、子どもが生まれても手を焼き、苦労させられることがあります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 81,
+   "docPage": 82,
+   "section": "5.諸星曜の各宮における判断／子女宮"
+  },
+  "palace": "子女宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "N-PL-子女宮-0158",
+  "opener": "また",
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 38
+ },
+ {
+  "id": "N-PL-子女宮-0159",
+  "text": "ただしこれは一般的な原則で、現代の家族のあり方はこの読み方が生まれた時代とは大きく違います。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 81,
+   "docPage": 82,
+   "section": "5.諸星曜の各宮における判断／子女宮"
+  },
+  "palace": "子女宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "N-PL-子女宮-0159",
+  "opener": "しかし",
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "兄弟宮"
+  ],
+  "sourceLength": 86
+ },
+ {
+  "id": "N-PL-子女宮-0160",
+  "text": "子どもの少ない現代では、子どもの有無や人数については慎重に吟味する必要があります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 81,
+   "docPage": 82,
+   "section": "5.諸星曜の各宮における判断／子女宮"
+  },
+  "palace": "子女宮",
+  "category": "caution",
+  "tags": [
+   "caution",
+   "family"
+  ],
+  "textKey": "N-PL-子女宮-0160",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 67
+ },
+ {
+  "id": "N-PL-財帛宮-0211",
+  "text": "財帛宮では、金運、つまりどれほどの財を築けるか、どの分野から財を得るかを見ます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 83,
+   "docPage": 84,
+   "section": "5.諸星曜の各宮における判断／財帛宮"
+  },
+  "palace": "財帛宮",
+  "category": "target",
+  "tags": [
+   "wealth"
+  ],
+  "textKey": "N-PL-財帛宮-0211",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "財帛宮"
+  ],
+  "sourceLength": 72
+ },
+ {
+  "id": "N-PL-財帛宮-0212",
+  "text": "財帛宮の力量が強ければ、さほど苦労せずに財を蓄え、豊かな財産を築けます。財帛宮の力量が弱ければ、財を築くのに苦労が伴い、大きな財産は得にくくなります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 83,
+   "docPage": 84,
+   "section": "5.諸星曜の各宮における判断／財帛宮"
+  },
+  "palace": "財帛宮",
+  "category": "strengthRule",
+  "tags": [
+   "wealth"
+  ],
+  "textKey": "N-PL-財帛宮-0212",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "財帛宮"
+  ],
+  "sourceLength": 102
+ },
+ {
+  "id": "N-PL-疾厄宮-0264",
+  "text": "疾厄宮では、体の状態、つまりかかりやすい病気や健康面で気をつけたい点を見ます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 85,
+   "docPage": 86,
+   "section": "5.諸星曜の各宮における判断／疾厄宮"
+  },
+  "palace": "疾厄宮",
+  "category": "caution",
+  "tags": [
+   "caution",
+   "health"
+  ],
+  "textKey": "N-PL-疾厄宮-0264",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "疾厄宮"
+  ],
+  "sourceLength": 64
+ },
+ {
+  "id": "N-PL-疾厄宮-0265",
+  "text": "疾厄宮だけを見て病を判断すると、正確さを欠きます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 85,
+   "docPage": 86,
+   "section": "5.諸星曜の各宮における判断／疾厄宮"
+  },
+  "palace": "疾厄宮",
+  "category": "caution",
+  "tags": [
+   "caution",
+   "health"
+  ],
+  "textKey": "N-PL-疾厄宮-0265",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "疾厄宮"
+  ],
+  "sourceLength": 52
+ },
+ {
+  "id": "N-PL-疾厄宮-0266",
+  "text": "健康を見るときは、命宮の様子を軸にして判断します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 85,
+   "docPage": 86,
+   "section": "5.諸星曜の各宮における判断／疾厄宮"
+  },
+  "palace": "疾厄宮",
+  "category": "target",
+  "tags": [
+   "health"
+  ],
+  "textKey": "N-PL-疾厄宮-0266",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 38
+ },
+ {
+  "id": "N-PL-疾厄宮-0267",
+  "text": "太陰星は水の精で、下半身や腰をあらわします。そのため、命宮の太陰星の力量が弱い場合は、腎臓や膀胱の炎症、性病などの暗示があります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 85,
+   "docPage": 86,
+   "section": "5.諸星曜の各宮における判断／疾厄宮"
+  },
+  "palace": "疾厄宮",
+  "category": "strengthRule",
+  "tags": [
+   "health"
+  ],
+  "textKey": "N-PL-疾厄宮-0267",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [
+   "太陰星"
+  ],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 71
+ },
+ {
+  "id": "N-PL-疾厄宮-0268",
+  "text": "命宮や疾厄宮の力量が強ければ、生涯をほぼ健康に過ごせ、大きな病気やけがにも遭いません。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 85,
+   "docPage": 86,
+   "section": "5.諸星曜の各宮における判断／疾厄宮"
+  },
+  "palace": "疾厄宮",
+  "category": "strengthRule",
+  "tags": [
+   "health"
+  ],
+  "textKey": "N-PL-疾厄宮-0268",
+  "opener": "また",
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "命宮",
+   "疾厄宮"
+  ],
+  "sourceLength": 75
+ },
+ {
+  "id": "N-PL-疾厄宮-0269",
+  "text": "命宮や疾厄宮の力量が弱ければ、体の不調や病気に悩まされるおそれがあります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 85,
+   "docPage": 86,
+   "section": "5.諸星曜の各宮における判断／疾厄宮"
+  },
+  "palace": "疾厄宮",
+  "category": "strengthRule",
+  "tags": [
+   "health"
+  ],
+  "textKey": "N-PL-疾厄宮-0269",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "命宮",
+   "疾厄宮"
+  ],
+  "sourceLength": 54
+ },
+ {
+  "id": "N-PL-遷移宮-0316",
+  "text": "遷移宮では、外出や移動の運を見ます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 87,
+   "docPage": 88,
+   "section": "5.諸星曜の各宮における判断／遷移宮"
+  },
+  "palace": "遷移宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-遷移宮-0316",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "遷移宮"
+  ],
+  "sourceLength": 21
+ },
+ {
+  "id": "N-PL-遷移宮-0317",
+  "text": "故郷を離れて外へ出るほうがよいのか、故郷に残るほうがよいのか、旅行の運のよしあしも遷移宮で判断します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 87,
+   "docPage": 88,
+   "section": "5.諸星曜の各宮における判断／遷移宮"
+  },
+  "palace": "遷移宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-遷移宮-0317",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 67
+ },
+ {
+  "id": "N-PL-遷移宮-0318",
+  "text": "住む場所や仕事の変更、海外での勤務といった大きな動きから、短い旅行や日々の外出まで、人の移動全般を遷移宮で占います。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 87,
+   "docPage": 88,
+   "section": "5.諸星曜の各宮における判断／遷移宮"
+  },
+  "palace": "遷移宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-遷移宮-0318",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 63
+ },
+ {
+  "id": "N-PL-遷移宮-0319",
+  "text": "遷移宮でいう外とは、故郷から離れた土地を指しますが、場所が変わらなくても、家業とは別の仕事に就くような環境の変化も含みます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 87,
+   "docPage": 88,
+   "section": "5.諸星曜の各宮における判断／遷移宮"
+  },
+  "palace": "遷移宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-遷移宮-0319",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 94
+ },
+ {
+  "id": "N-PL-奴僕宮-0366",
+  "text": "奴僕宮では、部下や雇っている人との縁を見ます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 89,
+   "docPage": 90,
+   "section": "5.諸星曜の各宮における判断／奴僕宮"
+  },
+  "palace": "奴僕宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-奴僕宮-0366",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "奴僕宮"
+  ],
+  "sourceLength": 24
+ },
+ {
+  "id": "N-PL-奴僕宮-0367",
+  "text": "宮の名前は昔の社会に由来するもので、現代の暮らしにはそのままの意味では当てはまりません。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 89,
+   "docPage": 90,
+   "section": "5.諸星曜の各宮における判断／奴僕宮"
+  },
+  "palace": "奴僕宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-奴僕宮-0367",
+  "opener": "とはいえ",
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 73
+ },
+ {
+  "id": "N-PL-奴僕宮-0368",
+  "text": "奴僕宮は、会社や組織での部下との縁を示すほか、より広く、後輩や友人、教え子との関係もあらわします。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 89,
+   "docPage": 90,
+   "section": "5.諸星曜の各宮における判断／奴僕宮"
+  },
+  "palace": "奴僕宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-奴僕宮-0368",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 67
+ },
+ {
+  "id": "N-PL-奴僕宮-0369",
+  "text": "奴僕宮で見る友人は自分より目下にあたる相手ですが、年下とは限りません。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 89,
+   "docPage": 90,
+   "section": "5.諸星曜の各宮における判断／奴僕宮"
+  },
+  "palace": "奴僕宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-奴僕宮-0369",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 47
+ },
+ {
+  "id": "N-PL-奴僕宮-0370",
+  "text": "読者や聞き手、支持してくれる人など、世間一般との関係も奴僕宮で見ます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 89,
+   "docPage": 90,
+   "section": "5.諸星曜の各宮における判断／奴僕宮"
+  },
+  "palace": "奴僕宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-奴僕宮-0370",
+  "opener": "また",
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 32
+ },
+ {
+  "id": "N-PL-官禄宮-0427",
+  "text": "官禄宮では、仕事の運や、勤め先での人付き合いを見ます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 91,
+   "docPage": 92,
+   "section": "5.諸星曜の各宮における判断／官禄宮"
+  },
+  "palace": "官禄宮",
+  "category": "target",
+  "tags": [
+   "career"
+  ],
+  "textKey": "N-PL-官禄宮-0427",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "官禄宮"
+  ],
+  "sourceLength": 30
+ },
+ {
+  "id": "N-PL-官禄宮-0428",
+  "text": "ただし、本人の能力や仕事の向き不向きは命宮からも判断できます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 91,
+   "docPage": 92,
+   "section": "5.諸星曜の各宮における判断／官禄宮"
+  },
+  "palace": "官禄宮",
+  "category": "target",
+  "tags": [
+   "career"
+  ],
+  "textKey": "N-PL-官禄宮-0428",
+  "opener": "しかし",
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 64
+ },
+ {
+  "id": "N-PL-官禄宮-0429",
+  "text": "仕事の運や向き不向きは、まず命宮で判断し、そのうえで官禄宮を参照します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 91,
+   "docPage": 92,
+   "section": "5.諸星曜の各宮における判断／官禄宮"
+  },
+  "palace": "官禄宮",
+  "category": "target",
+  "tags": [
+   "career"
+  ],
+  "textKey": "N-PL-官禄宮-0429",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "命宮",
+   "官禄宮"
+  ],
+  "sourceLength": 49
+ },
+ {
+  "id": "N-PL-官禄宮-0430",
+  "text": "命宮と官禄宮は三合の関係にあって結びつきが強いので、両方を同じように重んじて判断します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 91,
+   "docPage": 92,
+   "section": "5.諸星曜の各宮における判断／官禄宮"
+  },
+  "palace": "官禄宮",
+  "category": "target",
+  "tags": [
+   "career"
+  ],
+  "textKey": "N-PL-官禄宮-0430",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "命宮",
+   "官禄宮"
+  ],
+  "sourceLength": 108
+ },
+ {
+  "id": "N-PL-官禄宮-0431",
+  "text": "官禄宮の力量が弱い場合は、仕事選びでは官禄宮が示す職業より、命宮や財帛宮の示す内容を優先します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 91,
+   "docPage": 92,
+   "section": "5.諸星曜の各宮における判断／官禄宮"
+  },
+  "palace": "官禄宮",
+  "category": "strengthRule",
+  "tags": [
+   "career"
+  ],
+  "textKey": "N-PL-官禄宮-0431",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "命宮",
+   "財帛宮",
+   "官禄宮"
+  ],
+  "sourceLength": 57
+ },
+ {
+  "id": "N-PL-田宅宮-0470",
+  "text": "田宅宮では、不動産の運を見ます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 93,
+   "docPage": 94,
+   "section": "5.諸星曜の各宮における判断／田宅宮"
+  },
+  "palace": "田宅宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-田宅宮-0470",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "田宅宮"
+  ],
+  "sourceLength": 22
+ },
+ {
+  "id": "N-PL-田宅宮-0471",
+  "text": "ただし、現代の住宅事情は、この読み方が生まれた時代とは大きく異なります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 93,
+   "docPage": 94,
+   "section": "5.諸星曜の各宮における判断／田宅宮"
+  },
+  "palace": "田宅宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-田宅宮-0471",
+  "opener": "しかし",
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 51
+ },
+ {
+  "id": "N-PL-田宅宮-0472",
+  "text": "多くの不動産を得るという読みも、現代の住宅事情に合わせて控えめに解釈する必要があります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 93,
+   "docPage": 94,
+   "section": "5.諸星曜の各宮における判断／田宅宮"
+  },
+  "palace": "田宅宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-田宅宮-0472",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 46
+ },
+ {
+  "id": "N-PL-田宅宮-0473",
+  "text": "先祖や親から受け継ぐ財の多さや、住まいの環境も田宅宮で判断できます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 93,
+   "docPage": 94,
+   "section": "5.諸星曜の各宮における判断／田宅宮"
+  },
+  "palace": "田宅宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-田宅宮-0473",
+  "opener": "また",
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "田宅宮"
+  ],
+  "sourceLength": 52
+ },
+ {
+  "id": "N-PL-田宅宮-0474",
+  "text": "田宅宮の力量が強ければ、親の財産を引き継ぎ、何らかの不動産を手に入れます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 93,
+   "docPage": 94,
+   "section": "5.諸星曜の各宮における判断／田宅宮"
+  },
+  "palace": "田宅宮",
+  "category": "strengthRule",
+  "tags": [],
+  "textKey": "N-PL-田宅宮-0474",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "田宅宮"
+  ],
+  "sourceLength": 56
+ },
+ {
+  "id": "N-PL-田宅宮-0475",
+  "text": "田宅宮の力量が強ければ、近所付き合いも良好です。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 93,
+   "docPage": 94,
+   "section": "5.諸星曜の各宮における判断／田宅宮"
+  },
+  "palace": "田宅宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-田宅宮-0475",
+  "opener": "また",
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 15
+ },
+ {
+  "id": "N-PL-田宅宮-0476",
+  "text": "田宅宮の力量が弱ければ、親の財産を引き継ぐのは難しく、近所付き合いでももめごとに悩まされがちです。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 93,
+   "docPage": 94,
+   "section": "5.諸星曜の各宮における判断／田宅宮"
+  },
+  "palace": "田宅宮",
+  "category": "strengthRule",
+  "tags": [],
+  "textKey": "N-PL-田宅宮-0476",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "田宅宮"
+  ],
+  "sourceLength": 53
+ },
+ {
+  "id": "N-PL-福徳宮-0526",
+  "text": "福徳宮では、趣味や好み、楽しみの多い人生を送れるかどうかを見ます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 95,
+   "docPage": 96,
+   "section": "5.諸星曜の各宮における判断／福徳宮"
+  },
+  "palace": "福徳宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-福徳宮-0526",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "福徳宮"
+  ],
+  "sourceLength": 58
+ },
+ {
+  "id": "N-PL-福徳宮-0527",
+  "text": "福徳宮の力量が強ければ趣味が豊かで、それが物心両面で暮らしにゆとりと潤いをもたらします。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 95,
+   "docPage": 96,
+   "section": "5.諸星曜の各宮における判断／福徳宮"
+  },
+  "palace": "福徳宮",
+  "category": "strengthRule",
+  "tags": [],
+  "textKey": "N-PL-福徳宮-0527",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "福徳宮"
+  ],
+  "sourceLength": 69
+ },
+ {
+  "id": "N-PL-福徳宮-0528",
+  "text": "福徳宮の力量が弱ければ、暮らしに余裕がなく、常に何かに追い立てられるようで、人生を十分に楽しみにくくなります。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 95,
+   "docPage": 96,
+   "section": "5.諸星曜の各宮における判断／福徳宮"
+  },
+  "palace": "福徳宮",
+  "category": "strengthRule",
+  "tags": [],
+  "textKey": "N-PL-福徳宮-0528",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "福徳宮"
+  ],
+  "sourceLength": 66
+ },
+ {
+  "id": "N-PL-福徳宮-0529",
+  "text": "情報があふれる現代では、福徳宮に示される事柄が人生に与える影響は大きくなっていると考えられます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 95,
+   "docPage": 96,
+   "section": "5.諸星曜の各宮における判断／福徳宮"
+  },
+  "palace": "福徳宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "N-PL-福徳宮-0529",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "福徳宮"
+  ],
+  "sourceLength": 66
+ },
+ {
+  "id": "N-PL-父母宮-0577",
+  "text": "父母宮では、両親の人柄と、本人と両親との関係を見ます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 97,
+   "docPage": 98,
+   "section": "5.諸星曜の各宮における判断／父母宮"
+  },
+  "palace": "父母宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "N-PL-父母宮-0577",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "父母宮"
+  ],
+  "sourceLength": 50
+ },
+ {
+  "id": "N-PL-父母宮-0578",
+  "text": "父母宮の力量が強ければ、父も母も立派な人で、親子の間柄も良好です。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 97,
+   "docPage": 98,
+   "section": "5.諸星曜の各宮における判断／父母宮"
+  },
+  "palace": "父母宮",
+  "category": "strengthRule",
+  "tags": [
+   "family"
+  ],
+  "textKey": "N-PL-父母宮-0578",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "父母宮"
+  ],
+  "sourceLength": 40
+ },
+ {
+  "id": "N-PL-父母宮-0579",
+  "text": "父母宮の力量が強ければ、両親に温かく守られて健やかに育ちます。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 97,
+   "docPage": 98,
+   "section": "5.諸星曜の各宮における判断／父母宮"
+  },
+  "palace": "父母宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "N-PL-父母宮-0579",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 31
+ },
+ {
+  "id": "N-PL-父母宮-0580",
+  "text": "父母宮の力量が弱ければ、両親に何らかの問題があるか、十分な愛情を受けにくいか、親子で対立するか、縁が薄く疎遠になると判断します。",
+  "ref": {
+   "source": "紫微斗数入門",
+   "pdfPage": 97,
+   "docPage": 98,
+   "section": "5.諸星曜の各宮における判断／父母宮"
+  },
+  "palace": "父母宮",
+  "category": "strengthRule",
+  "tags": [
+   "family"
+  ],
+  "textKey": "N-PL-父母宮-0580",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "父母宮"
+  ],
+  "sourceLength": 87
+ },
+ {
+  "id": "K-PL-命宮-01",
+  "text": "命宮は命盤を読む土台となる最重要の宮で、性格や気質、持ち味、運命の大きな流れがわかります。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 20,
+   "docPage": null,
+   "section": "十二宮の象意／命宮"
+  },
+  "palace": "命宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "K-PL-命宮-01",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 55
+ },
+ {
+  "id": "K-PL-命宮-02",
+  "text": "才能や仕事の向き不向き、どこまで伸びるか、成功の度合いも命宮で見ます。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 20,
+   "docPage": null,
+   "section": "十二宮の象意／命宮"
+  },
+  "palace": "命宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "K-PL-命宮-02",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 32
+ },
+ {
+  "id": "K-PL-命宮-03",
+  "text": "体の丈夫さの基本や容姿も命宮で見ます。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 20,
+   "docPage": null,
+   "section": "十二宮の象意／命宮"
+  },
+  "palace": "命宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "K-PL-命宮-03",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 13
+ },
+ {
+  "id": "K-PL-兄弟宮-01",
+  "text": "兄弟宮は、きょうだいとの関係を示します。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 20,
+   "docPage": null,
+   "section": "十二宮の象意／兄弟宮"
+  },
+  "palace": "兄弟宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "K-PL-兄弟宮-01",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 9
+ },
+ {
+  "id": "K-PL-兄弟宮-02",
+  "text": "きょうだいの人数も兄弟宮で見ます。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 20,
+   "docPage": null,
+   "section": "十二宮の象意／兄弟宮"
+  },
+  "palace": "兄弟宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "K-PL-兄弟宮-02",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 14
+ },
+ {
+  "id": "K-PL-兄弟宮-03",
+  "text": "きょうだいの人柄や仲のよさも兄弟宮で見ます。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 20,
+   "docPage": null,
+   "section": "十二宮の象意／兄弟宮"
+  },
+  "palace": "兄弟宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "K-PL-兄弟宮-03",
+  "opener": "また",
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 21
+ },
+ {
+  "id": "K-PL-兄弟宮-04",
+  "text": "きょうだいの体調や性格も兄弟宮からわかります。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 20,
+   "docPage": null,
+   "section": "十二宮の象意／兄弟宮"
+  },
+  "palace": "兄弟宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "K-PL-兄弟宮-04",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 13
+ },
+ {
+  "id": "K-PL-兄弟宮-05",
+  "text": "",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 20,
+   "docPage": null,
+   "section": "十二宮の象意／兄弟宮"
+  },
+  "palace": "兄弟宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "K-PL-兄弟宮-05",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 5
+ },
+ {
+  "id": "K-PL-夫妻宮-01",
+  "text": "夫妻宮は、結婚相手と恋愛にまつわる事柄を示し、相手の人柄やタイプ、夫婦の暮らしぶりがわかります。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 20,
+   "docPage": null,
+   "section": "十二宮の象意／夫婦宮"
+  },
+  "palace": "夫妻宮",
+  "category": "target",
+  "tags": [
+   "relationship"
+  ],
+  "textKey": "K-PL-夫妻宮-01",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 37
+ },
+ {
+  "id": "K-PL-夫妻宮-02",
+  "text": "恋愛の傾向や惹かれる異性のタイプ、恋愛がどう進むかも夫妻宮で見ます。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 20,
+   "docPage": null,
+   "section": "十二宮の象意／夫婦宮"
+  },
+  "palace": "夫妻宮",
+  "category": "target",
+  "tags": [
+   "relationship"
+  ],
+  "textKey": "K-PL-夫妻宮-02",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 34
+ },
+ {
+  "id": "K-PL-子女宮-01",
+  "text": "子女宮は、子どもを授かるかどうかを示します。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 20,
+   "docPage": null,
+   "section": "十二宮の象意／子女宮"
+  },
+  "palace": "子女宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "K-PL-子女宮-01",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 11
+ },
+ {
+  "id": "K-PL-子女宮-02",
+  "text": "授かる子どもの性格やタイプも子女宮で見ます。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 20,
+   "docPage": null,
+   "section": "十二宮の象意／子女宮"
+  },
+  "palace": "子女宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "K-PL-子女宮-02",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 22
+ },
+ {
+  "id": "K-PL-子女宮-03",
+  "text": "子どもの人数も子女宮で見ます。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 20,
+   "docPage": null,
+   "section": "十二宮の象意／子女宮"
+  },
+  "palace": "子女宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "K-PL-子女宮-03",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 15
+ },
+ {
+  "id": "K-PL-財帛宮-01",
+  "text": "財帛宮は、財の有無を示します。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 21,
+   "docPage": null,
+   "section": "十二宮の象意／財帛宮"
+  },
+  "palace": "財帛宮",
+  "category": "target",
+  "tags": [
+   "wealth"
+  ],
+  "textKey": "K-PL-財帛宮-01",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 9
+ },
+ {
+  "id": "K-PL-財帛宮-02",
+  "text": "どのようなことで財を得るかも財帛宮で見ます。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 21,
+   "docPage": null,
+   "section": "十二宮の象意／財帛宮"
+  },
+  "palace": "財帛宮",
+  "category": "target",
+  "tags": [
+   "wealth"
+  ],
+  "textKey": "K-PL-財帛宮-02",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 11
+ },
+ {
+  "id": "K-PL-財帛宮-03",
+  "text": "財が急に入るのか地道に働いて得るのか、また給与・自由業・投資のどの収入の形が合うかも財帛宮で見ます。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 21,
+   "docPage": null,
+   "section": "十二宮の象意／財帛宮"
+  },
+  "palace": "財帛宮",
+  "category": "target",
+  "tags": [
+   "wealth"
+  ],
+  "textKey": "K-PL-財帛宮-03",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 36
+ },
+ {
+  "id": "K-PL-財帛宮-04",
+  "text": "",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 21,
+   "docPage": null,
+   "section": "十二宮の象意／財帛宮"
+  },
+  "palace": "財帛宮",
+  "category": "target",
+  "tags": [
+   "wealth"
+  ],
+  "textKey": "K-PL-財帛宮-04",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 7
+ },
+ {
+  "id": "K-PL-疾厄宮-01",
+  "text": "疾厄宮は、体の状態やかかりやすい病気、弱点、体質を示します。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 21,
+   "docPage": null,
+   "section": "十二宮の象意／疾厄宮"
+  },
+  "palace": "疾厄宮",
+  "category": "target",
+  "tags": [
+   "health"
+  ],
+  "textKey": "K-PL-疾厄宮-01",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 26
+ },
+ {
+  "id": "K-PL-遷移宮-01",
+  "text": "遷移宮は、引っ越しや転勤、旅行など移動の多い暮らしが合うのか、一か所にとどまるほうがよいのかを示します。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 21,
+   "docPage": null,
+   "section": "十二宮の象意／遷移宮"
+  },
+  "palace": "遷移宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "K-PL-遷移宮-01",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 47
+ },
+ {
+  "id": "K-PL-奴僕宮-01",
+  "text": "奴僕宮は、部下との関係を示します。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 21,
+   "docPage": null,
+   "section": "十二宮の象意／奴僕宮"
+  },
+  "palace": "奴僕宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "K-PL-奴僕宮-01",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 4
+ },
+ {
+  "id": "K-PL-奴僕宮-02",
+  "text": "目下の人や友人との関係も奴僕宮で見ます。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 21,
+   "docPage": null,
+   "section": "十二宮の象意／奴僕宮"
+  },
+  "palace": "奴僕宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "K-PL-奴僕宮-02",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 15
+ },
+ {
+  "id": "K-PL-奴僕宮-03",
+  "text": "年下や後輩との関係も奴僕宮で見ます。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 21,
+   "docPage": null,
+   "section": "十二宮の象意／奴僕宮"
+  },
+  "palace": "奴僕宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "K-PL-奴僕宮-03",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 7
+ },
+ {
+  "id": "K-PL-奴僕宮-04",
+  "text": "",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 21,
+   "docPage": null,
+   "section": "十二宮の象意／奴僕宮"
+  },
+  "palace": "奴僕宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "K-PL-奴僕宮-04",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 4
+ },
+ {
+  "id": "K-PL-官禄宮-01",
+  "text": "官禄宮は仕事にまつわる事柄を示し、仕事の向き不向きや、上の人・同じ職場の人・取引相手との間柄がわかります。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 21,
+   "docPage": null,
+   "section": "十二宮の象意／官禄宮"
+  },
+  "palace": "官禄宮",
+  "category": "target",
+  "tags": [
+   "career"
+  ],
+  "textKey": "K-PL-官禄宮-01",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 31
+ },
+ {
+  "id": "K-PL-官禄宮-02",
+  "text": "仕事がうまく運ぶかどうかも官禄宮で見ます。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 21,
+   "docPage": null,
+   "section": "十二宮の象意／官禄宮"
+  },
+  "palace": "官禄宮",
+  "category": "target",
+  "tags": [
+   "career"
+  ],
+  "textKey": "K-PL-官禄宮-02",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 16
+ },
+ {
+  "id": "K-PL-田宅宮-01",
+  "text": "田宅宮は、不動産に関する事柄を示します。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 22,
+   "docPage": null,
+   "section": "十二宮の象意／田宅宮"
+  },
+  "palace": "田宅宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "K-PL-田宅宮-01",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 8
+ },
+ {
+  "id": "K-PL-田宅宮-02",
+  "text": "不動産を持つかどうか、どのように手に入れるか、自宅の環境も田宅宮で見ます。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 22,
+   "docPage": null,
+   "section": "十二宮の象意／田宅宮"
+  },
+  "palace": "田宅宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "K-PL-田宅宮-02",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 29
+ },
+ {
+  "id": "K-PL-福徳宮-01",
+  "text": "福徳宮は、満ち足りた人生を送れるかどうか、趣味や、どんなときに幸福を覚えるかを示します。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 22,
+   "docPage": null,
+   "section": "十二宮の象意／福徳宮"
+  },
+  "palace": "福徳宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "K-PL-福徳宮-01",
+  "opener": null,
+  "continuesToNext": true,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 31
+ },
+ {
+  "id": "K-PL-父母宮-01",
+  "text": "父母宮は、両親の人柄を示します。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 22,
+   "docPage": null,
+   "section": "十二宮の象意／父母宮"
+  },
+  "palace": "父母宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "K-PL-父母宮-01",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 9
+ },
+ {
+  "id": "K-PL-父母宮-02",
+  "text": "両親の性格や容姿も父母宮で見ます。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 22,
+   "docPage": null,
+   "section": "十二宮の象意／父母宮"
+  },
+  "palace": "父母宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "K-PL-父母宮-02",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 6
+ },
+ {
+  "id": "K-PL-父母宮-03",
+  "text": "両親との縁の深さも父母宮で見ます。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 22,
+   "docPage": null,
+   "section": "十二宮の象意／父母宮"
+  },
+  "palace": "父母宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "K-PL-父母宮-03",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 10
+ },
+ {
+  "id": "K-PL-父母宮-04",
+  "text": "親から愛情を受けて育ったかどうかも父母宮で見ます。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 22,
+   "docPage": null,
+   "section": "十二宮の象意／父母宮"
+  },
+  "palace": "父母宮",
+  "category": "target",
+  "tags": [
+   "family"
+  ],
+  "textKey": "K-PL-父母宮-04",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 17
+ },
+ {
+  "id": "K-PL-身宮-01",
+  "text": "身宮は、命宮・遷移宮・夫妻宮・財帛宮・官禄宮・福徳宮のいずれかと重なります。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 22,
+   "docPage": null,
+   "section": "十二宮の象意／身宮"
+  },
+  "palace": "身宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "K-PL-身宮-01",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "命宮",
+   "夫妻宮",
+   "財帛宮",
+   "遷移宮",
+   "官禄宮",
+   "福徳宮"
+  ],
+  "sourceLength": 37
+ },
+ {
+  "id": "K-PL-身宮-02",
+  "text": "命宮が生まれ持った運、身宮がその後に形づくられる運を示すとして軽く見られがちですが、身宮は欠かせない宮です。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 22,
+   "docPage": null,
+   "section": "十二宮の象意／身宮"
+  },
+  "palace": "身宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "K-PL-身宮-02",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 43
+ },
+ {
+  "id": "K-PL-身宮-03",
+  "text": "数え年で三十五歳を過ぎたころから、身宮の意味が少しずつ表に出てきます。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 22,
+   "docPage": null,
+   "section": "十二宮の象意／身宮"
+  },
+  "palace": "身宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "K-PL-身宮-03",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 31
+ },
+ {
+  "id": "K-PL-身宮-04",
+  "text": "命宮と身宮の比重は、三十五歳まではおよそ六対四、それ以降は四対六に入れ替わると考えてよいでしょう。",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 22,
+   "docPage": null,
+   "section": "十二宮の象意／身宮"
+  },
+  "palace": "身宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "K-PL-身宮-04",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [
+   "命宮"
+  ],
+  "sourceLength": 49
+ },
+ {
+  "id": "K-PL-身宮-05",
+  "text": "",
+  "ref": {
+   "source": "紫微斗数基礎編",
+   "pdfPage": 22,
+   "docPage": null,
+   "section": "十二宮の象意／身宮"
+  },
+  "palace": "身宮",
+  "category": "target",
+  "tags": [],
+  "textKey": "K-PL-身宮-05",
+  "opener": null,
+  "continuesToNext": false,
+  "mentionsStars": [],
+  "mentionsPalaces": [],
+  "sourceLength": 25
+ }
+]
