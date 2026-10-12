@@ -24,6 +24,23 @@ export interface CalendarInput {
 
   longitude?: number;
   latitude?: number;
+
+  /**
+   * 二十八宿暦（宿値日）の基準日（JDN）。未指定時は
+   * src/lib/calendar/shukuYoAnchor.ts の検証済みアンカー
+   * （2025-12-21＝虚）を既定値として使う。別の通書の検証結果に
+   * 差し替えたい場合など、呼び出し側で上書きしたいときだけ指定する。
+   */
+  epochJdn?: number;
+
+  /**
+   * 農暦（太陰太陽暦）の暦法設定。未指定時は "定気"（実視黄経）で計算する。
+   * epochJdn と異なり、未指定でも常に計算される（「計算するかどうか」ではなく
+   * 「どう計算するか」の設定）。型は src/lib/calendar/lunisolar.ts の
+   * LunisolarConfig と構造的に同じものをここでは import せず直接記述する
+   * （本ファイルは calendar 配下の他モジュールに依存しない方針のため）。
+   */
+  lunisolarConfig?: { method?: "定気" };
 }
 
 /** calculate() の出力（docs/03 と docs/05 を統合した最終仕様） */
@@ -50,6 +67,39 @@ export interface CalendarResult {
 
   hourStem: string;
   hourBranch: string;
+
+  /**
+   * 二十八宿暦（宿値日）。常に算出される（input.epochJdn 未指定時は
+   * shukuYoAnchor.ts の検証済みアンカーを使う）。
+   * src/lib/mansions28.ts の二十八宿（黄経ベース・七政四餘用）とは別概念。
+   * 現代の曜日（Gregorian の週7日）とは無関係。
+   */
+  lodge28?: string;
+  /** 当日の宿の七曜属性（木金土日月火水）。現代の曜日とは別概念。 */
+  shukuYo?: string;
+  /** LODGE_28 内のインデックス（0=角 … 27=軫）。 */
+  lodgeIndex?: number;
+  /** 小周（84日）内の位置（0..83）。 */
+  minorCycleDay?: number;
+  /** 大周（420日）内の位置（0..419）。 */
+  majorCycleDay?: number;
+  /** 七元（420日周期を60日ずつ7分割、1〜7）。『協紀辨方書』七元表。 */
+  yuan?: number;
+
+  /**
+   * 農暦（太陰太陽暦）。月境界＝朔、月番号は中気の有無で確定する
+   * （無中気置閏法）。src/lib/calendar/lunisolar.ts 参照。
+   * lunarYear は今回未実装（非破壊で後日追加予定）。
+   */
+  lunarMonth?: number;
+  /** 閏月かどうか。 */
+  isLeapMonth?: boolean;
+  /** 農暦日（1〜30）。朔が発生した現地暦日（timezone基準）を1とする。 */
+  lunarDay?: number;
+  /** 対象の暦日を含む月の朔の瞬間（UTC の ISO 8601 文字列）。朔の当日で朔より前の時刻なら対象時刻より後になる。 */
+  newMoonTime?: string;
+  /** 次の朔の瞬間（UTC の ISO 8601 文字列）。 */
+  nextNewMoonTime?: string;
 }
 
 /**

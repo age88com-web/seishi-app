@@ -75,8 +75,11 @@ function solarMonthOrdinal(sunLongitude: number): number {
   return Math.floor(mod(sunLongitude - 315, 360) / 30);
 }
 
-/** 現地暦日（子初 23:00 ルール適用後）の JDN。 */
-function civilJdn(
+/**
+ * 現地暦日（子初 23:00 ルール適用後）の JDN。
+ * shukuYo.ts が二十八宿の日境界を日柱と揃えるために再利用する（export）。
+ */
+export function civilJdn(
   year: number,
   month: number,
   day: number,
