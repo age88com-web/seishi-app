@@ -23,7 +23,7 @@ export type {
   JikakuMatch,
 } from "./jikaku";
 
-export { resolveKyokakuFromQimen } from "./kyokaku";
+export { resolveKyokakuFromQimen, PALACE_TRIGRAM } from "./kyokaku";
 export type {
   KyokakuResult,
   KyokakuMatch,

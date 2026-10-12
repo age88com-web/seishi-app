@@ -71,13 +71,23 @@
 //   門迫      人盤八門が地盤九宮を剋す。休門が坤・艮宮、生死門が震巽宮、景門が坎宮、
 //             開・驚門が離宮、傷・杜門が乾・兌宮
 //   宮迫      地盤九宮が人盤八門を剋す。休門が離宮、死門が坎宮、傷・杜門が坤・艮宮、
-//             開・驚門が震・巽宮、景門が乾・兌宮
+//             開・驚門が震・巽宮、景門が乾・兌宮（本文に生門の記載なし）
+//
+//   【方針】門迫／宮迫は Slide-4380（講義案N.pdf 61頁）の記載を仕様として採用する。
+//   docs/source/1080.pdf 全1080局の実例照合では、この2格の名称・対応が本文と入れ替わって
+//   見える形（門迫1560件が本文の宮迫と、宮迫1560件が本文の門迫と、生門→坎一宮1件を除いて
+//   一致）を示しており、一時的に1080.pdf側に合わせて本表を書き換えたことがあるが、
+//   本プロジェクトは「講義テキスト＝仕様、1080.pdf＝検証資料」を優先原則とするため、
+//   最終的に講義案N.pdf 61頁の原文どおりに戻した（1080.pdf側の実例体系とは異なる状態を
+//   意図的に維持している。1080.pdf基準へ再度合わせないこと）。
 //
 // 推測しない範囲（TODO 参照）:
 //   ・条件が本文どおり一致する別名格（太白入熒／大格、奇格の地盤丙、三奇受刑／各奇入墓 等）は
 //     スライドの記載どおり別々の格として保持し、統合はしない。
-//   ・六儀撃刑・時格の (甲子)(甲申)… や 六儀撃刑の旬注記、天網四張の高格／低格の区別は
-//     本文に判定規則が無いため実装しない。
+//   ・六儀撃刑・時格の (甲子)(甲申)… や 六儀撃刑の旬注記は本文に判定規則が無いため実装しない。
+//   ・天網四張の高格／低格（低格＝坎1・坤2・震3・巽4宮、高格＝中5・乾6・兌7・艮8・離9宮）は
+//     講義案N.pdfの本文には無く、追加資料により確定した区分を detail 表示にのみ用いる
+//     （成立条件自体は追加資料でも変更なし）。
 //   ・複数格が同時成立した場合の優先順位、吉格との相殺はスライドに記載が無いため付けない。
 
 import type { QimenResult, PalaceSummary } from "./qimenEngine";
@@ -186,8 +196,9 @@ const SIX_YI_XING: Record<string, number> = {
 };
 
 /**
- * 門迫: 八門 → その門にとって「門迫」となる宮の集合（Slide-4380 本文どおり。
- * 五行の再導出はせず本文の列挙をそのまま用いる）。
+ * 門迫: 八門 → その門にとって「門迫」となる宮の集合（Slide-4380＝講義案N.pdf 61頁の
+ * 本文どおり。1080.pdfの実例体系とは異なるが、本プロジェクトは講義テキストを仕様として
+ * 優先するため、この対応表を仕様とする。1080.pdf側に再び合わせて変更しないこと）。
  */
 const MEN_HAKU: Record<BaMenName, readonly number[]> = {
   "休門": [2, 8],
@@ -201,7 +212,8 @@ const MEN_HAKU: Record<BaMenName, readonly number[]> = {
 };
 
 /**
- * 宮迫: 八門 → その門にとって「宮迫」となる宮の集合（Slide-4380 本文どおり）。
+ * 宮迫: 八門 → その門にとって「宮迫」となる宮の集合（Slide-4380＝講義案N.pdf 61頁の
+ * 本文どおり。本文に生門の記載が無いため、生門は含めない＝推測で補わない）。
  */
 const KYU_HAKU: Partial<Record<BaMenName, readonly number[]>> = {
   "休門": [9],
@@ -554,10 +566,15 @@ const RULES: readonly Rule[] = [
     source: S5,
     needs: ["天盤", "値符"],
     // 「天盤の値符が地盤の庚に臨む」＝ 値符の宮の地盤干が庚。
-    match: (i) =>
-      i.zhifuPalace !== null && dp(i.palaces[i.zhifuPalace]) === "庚"
-        ? [i.zhifuPalace]
-        : [],
+    // 追加資料（値符例2・例3）により、中5宮の地盤庚は坤二宮へ寄宮して判定することが
+    // 確定したため、値符が坤二宮にある場合は中5宮の地盤干も庚か確認する
+    // （地盤の配置ロジック自体は変更せず、本ルールの判定内でのみ寄宮を考慮する）。
+    match: (i) => {
+      if (i.zhifuPalace === null) return [];
+      const direct = dp(i.palaces[i.zhifuPalace]) === "庚";
+      const centerYuji = i.zhifuPalace === 2 && dp(i.palaces[5]) === "庚";
+      return direct || centerYuji ? [i.zhifuPalace] : [];
+    },
   },
   {
     name: "戦格",
@@ -668,9 +685,10 @@ const RULES: readonly Rule[] = [
     board: (i) => {
       const v: string[] = [];
       if (segmentAvailable("九星", i) && jiuxingFuyin(i.palaces)) v.push("九星伏吟");
-      // 値符伏吟: 八神「直符」が定位（陽遁=坎一/陰遁=離九）にあること。
-      // 「値符」を八神直符と解釈している（TODO 参照）。
-      if (segmentAvailable("八神", i) && zhifuFuyin(i.palaces, i.dun)) v.push("値符伏吟");
+      // 直符伏吟: 八神「直符」が定位（陽遁=坎一/陰遁=離九）にあること。
+      // 講義案N.pdfの原文表記は「値符伏吟」だが、追加図版により八神の「直符」を
+      // 指すことが確定したため、表示名は「直符伏吟」とする（判定ロジックは無変更）。
+      if (segmentAvailable("八神", i) && zhifuFuyin(i.palaces, i.dun)) v.push("直符伏吟");
       if (segmentAvailable("八門", i) && bamenFuyin(i.palaces)) v.push("八門伏吟");
       return { hit: v.length > 0, detail: v.join("・") };
     },
@@ -685,8 +703,9 @@ const RULES: readonly Rule[] = [
     board: (i) => {
       const v: string[] = [];
       if (segmentAvailable("九星", i) && jiuxingFanyin(i.palaces)) v.push("九星反吟");
-      // 値符反吟: 八神「直符」が定位の相沖宮にあること（TODO 参照）。
-      if (segmentAvailable("八神", i) && zhifuFanyin(i.palaces, i.dun)) v.push("値符反吟");
+      // 直符反吟: 八神「直符」が定位の相沖宮にあること。表示名の由来は直符伏吟と同じ
+      // （講義案N.pdfの表記「値符反吟」→追加図版により「直符反吟」に変更。判定は無変更）。
+      if (segmentAvailable("八神", i) && zhifuFanyin(i.palaces, i.dun)) v.push("直符反吟");
       if (segmentAvailable("八門", i) && bamenFanyin(i.palaces)) v.push("八門反吟");
       return { hit: v.length > 0, detail: v.join("・") };
     },
@@ -694,11 +713,21 @@ const RULES: readonly Rule[] = [
   {
     name: "天網四張",
     meaning:
-      "天網高格は作用を起こさない。妨げにはならず。天網が低格ならばはって進むことができる。（高格／低格の区別は本文に規則が無く未判定）",
+      "天網高格は作用を起こさない。妨げにはならず。天網が低格ならばはって進むことができる。",
     source: S8,
     needs: ["天盤"],
-    // 「天盤癸儀が地盤の用事となる時干に臨んで加わる」
+    // 「天盤癸儀が地盤の用事となる時干に臨んで加わる」（成立条件は無変更）。
     match: (i) => scan(i, (p) => tp(p) === "癸" && dp(p) === i.hourStem),
+    // 追加資料により、低格＝坎1・坤2・震3・巽4宮、高格＝中5・乾6・兌7・艮8・離9宮と
+    // 確定したため、成立宮からどちらかを表示する（成立条件自体は変更しない）。
+    detail: (_i, palaces) => {
+      const low = palaces.some((p) => p >= 1 && p <= 4);
+      const high = palaces.some((p) => p === 5 || (p >= 6 && p <= 9));
+      const labels: string[] = [];
+      if (low) labels.push("天網低格");
+      if (high) labels.push("天網高格");
+      return labels.length > 0 ? labels.join("・") : undefined;
+    },
   },
 
   // --- 凶格９ -------------------------------------------------------
