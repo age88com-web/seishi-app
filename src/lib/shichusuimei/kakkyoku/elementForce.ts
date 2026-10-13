@@ -1,7 +1,7 @@
 // src/lib/shichusuimei/kakkyoku/elementForce.ts
 //
-// 新方式の内格力量（監修確定 KD27。仕様 §39）。画面の内格強弱・resolveEffectiveStrength はこの結果を使う。
-// 旧 innerScore.ts（KD12・KD13）は比較・回帰確認用に残すが、通常の身強・身弱判定には使わない。
+// 秀山式内格力量判定法（監修確定 KD27。仕様 §39）。四柱推命の内格強弱の正式方式。
+// 画面の内格強弱・印刷・resolveEffectiveStrength・解釈入力はこの結果を使う。
 //
 //   季節: 五季の旺相休囚死（辰戌丑未は月全体を土旺）。係数 旺1.5・相1.25・休1.0・囚0.75・死0.5 を地支の基礎点にだけ掛ける
 //   地支: 月支5・他2。その支自身の五行（化した支は化後の五行）に1回だけ加える。蔵干は基礎点に足さない
@@ -31,7 +31,7 @@ import type {
   StrengthAssessment,
 } from "./types";
 import { BRANCH_ELEMENT, ELEMENTS, inElementOf, monthPatternOf, slotsOf } from "./common";
-import { branchStates } from "./innerScore";
+import { branchStates } from "./branchState";
 
 /** 月支 → 月令の五行（五季。辰戌丑未は月全体を土旺：KD27-1） */
 const RULING_ELEMENT: Record<string, Element> = {

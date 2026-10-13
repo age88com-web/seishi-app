@@ -130,7 +130,7 @@ export interface KakkyokuCandidate {
 export type Route = "gaikakuCandidate" | "naikaku";
 
 // ---------------------------------------------------------------------------
-// 内格点数（KD12・KD13）
+// 地支関係と化（KD13・KD14。branchState.ts）
 // ---------------------------------------------------------------------------
 
 export interface BranchState {
@@ -138,28 +138,11 @@ export interface BranchState {
   branch: Branch;
   relations: string[];
   transformedTo: Element | null;
-  decay: number;
   notes: string[];
 }
 
-/** 内格補助の判定（比劫＋印 対 食傷＋財＋官。KD17） */
+/** 内格の強弱の判定（秀山式内格力量判定法 KD27） */
 export type InnerJudgment = "身強" | "身弱" | "境界";
-
-export interface InnerPatternScore {
-  system: "inner-pattern-scoring";
-  /** 比劫＋印 と 食傷＋財＋官 の比較（日干単独点ではない） */
-  judgment: InnerJudgment;
-  /** 日主側を助ける比劫・印の配置（短い根拠） */
-  helps: string[];
-  dayMaster: { stem: Stem; points: number };
-  supportingSide: { elements: Element[]; points: number };
-  weakeningSide: { elements: Element[]; points: number };
-  byElement: Record<Element, number>;
-  byStem: { pillar: PillarKey; stem: Stem; total: number; fromBranches: number; adjacent: number }[];
-  branchStates: BranchState[];
-  assumptions: string[];
-  referenceOnly: boolean;
-}
 
 /** 五季の旺相休囚死（KD27-1） */
 export type SeasonalState = "旺" | "相" | "休" | "囚" | "死";
@@ -167,7 +150,7 @@ export type SeasonalState = "旺" | "相" | "休" | "囚" | "死";
 /** 天干の通根の段階（KD27-4）。month は月支に通根（2根相当） */
 export type RootLevel = "none" | "one" | "twoOrMore" | "month";
 
-/** 新方式の地支1支の力量（KD27）。地支の五行に1回だけ加える */
+/** 秀山式の地支1支の力量（KD27）。地支の五行に1回だけ加える */
 export interface ElementForceBranch {
   pillar: PillarKey;
   branch: Branch;
@@ -182,7 +165,7 @@ export interface ElementForceBranch {
   force: number;
 }
 
-/** 新方式の天干1本の力量（KD27）。季節係数は掛けない */
+/** 秀山式の天干1本の力量（KD27）。季節係数は掛けない */
 export interface ElementForceStem {
   pillar: PillarKey;
   stem: Stem;
@@ -194,7 +177,7 @@ export interface ElementForceStem {
   force: number;
 }
 
-/** 新方式の内格力量（KD27）。旧 InnerPatternScore とは別の結果 */
+/** 秀山式内格力量判定法（KD27）の結果 */
 export interface ElementForceResult {
   system: "element-force";
   monthBranch: Branch;
@@ -230,11 +213,9 @@ export interface KakkyokuResult {
   route: Route;
   /** エンジン判定の要約（外格候補がなければ内格。外格候補が並ぶときは null で candidates を参照。1つを自動選択しない） */
   enginePattern: { name: string; status: CandidateStatus } | null;
-  /** 旧方式の内格補助点（KD12・KD13・KD17）。比較・回帰確認用に残す。通常の身強・身弱判定には使わない（KD27） */
-  innerScore: InnerPatternScore;
   /** 内格補助の位置づけ: 内格の経路／外格・特殊格局候補あり（内格補助点は参考） */
-  innerScoreScope: "naikaku" | "withGaikakuCandidates";
-  /** 新方式の内格力量（KD27）。画面の内格強弱・resolveEffectiveStrength・印刷はこれを使う（外格・化格の機械判定にかかわらず常に計算する） */
+  innerPatternScope: "naikaku" | "withGaikakuCandidates";
+  /** 秀山式内格力量判定法（KD27）。画面の内格強弱・resolveEffectiveStrength・印刷はこれを使う（外格・化格の機械判定にかかわらず常に計算する） */
   elementForce: ElementForceResult;
   finalJudgment: "requires_practitioner_judgment";
 }

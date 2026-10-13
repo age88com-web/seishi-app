@@ -16,7 +16,7 @@ import type { Branch, Element, PillarKey } from "../types";
 import type { NatalHehua, Pillars } from "./types";
 import { BRANCH_ELEMENT, inElementOf, slotsOf } from "./common";
 import { assessTouta } from "./strength";
-import { branchRelationsOf } from "./innerScore";
+import { branchRelationsOf } from "./branchState";
 
 const sangoOf = (x: Element): readonly Branch[] => SANGO.find(([, kyoku]) => kyoku[0] === x)![0];
 

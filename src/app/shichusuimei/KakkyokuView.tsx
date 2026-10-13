@@ -2,7 +2,7 @@
 //
 // 強弱・格局の補助判定の表示（術者向けの短い根拠表示）。
 // ① エンジン判定（格局候補）② 内格補助 ③ 術者最終判断 を分けて表示する（KD19）。
-// 内格補助は新方式の内格力量（elementForce：KD27）を表示する。旧 innerScore は表示しない。
+// 内格補助は秀山式内格力量判定法（elementForce：KD27）を表示する。
 // 計算は src/lib/shichusuimei/kakkyoku に任せ、ここでは並べるだけ。最終判断は術者。
 
 import { FINAL_PATTERN_OPTIONS, FINAL_STRENGTH_OPTIONS, santokuSideOf } from "@/lib/shichusuimei/kakkyoku";
@@ -123,9 +123,9 @@ export default function KakkyokuView({
         <div className="sc-kk-box">
           <h3 className="sc-h3">内格補助</h3>
           <div className="sc-kk-main">
-            {k.innerScoreScope === "naikaku" ? "内格補助" : "内格として見る場合"}：{ef.finalJudgment}
+            {k.innerPatternScope === "naikaku" ? "内格補助" : "内格として見る場合"}：{ef.finalJudgment}
           </div>
-          {k.innerScoreScope !== "naikaku" && <div className="sc-muted">内格補助点は参考（外格・特殊格局候補あり）</div>}
+          {k.innerPatternScope !== "naikaku" && <div className="sc-muted">内格補助点は参考（外格・特殊格局候補あり）</div>}
           {ef.monthPattern && <div>{ef.monthPattern}成立 → 日主強（格局表）</div>}
           <div>
             扶助率：{ef.supportRatioPercent.toFixed(1)}%（点数判定：{ef.scoreJudgment}）

@@ -2,7 +2,7 @@
 //
 // 術者の最終格局・最終強弱（KD19・KD20。仕様 §30・§31）。
 //   ① エンジン判定（KakkyokuResult.candidates / enginePattern）
-//   ② 内格の強弱（KakkyokuResult.elementForce：新方式 KD27。旧 innerScore は比較用で使わない）
+//   ② 内格の強弱（KakkyokuResult.elementForce：秀山式内格力量判定法 KD27）
 //   ③ 術者最終判断（PractitionerDecision）
 // を別データとして持つ。将来の象意生成では ③ を最優先する。
 //   格局: 術者最終格局 ＞ エンジン判定／強弱: 術者最終強弱 ＞ 内格の強弱（elementForce の最終判定）
@@ -70,7 +70,7 @@ export function resolveEffectivePattern(k: KakkyokuResult, d: PractitionerDecisi
 }
 
 export interface EffectiveStrength {
-  /** practitioner … 術者の最終強弱／elementForce … 新方式の内格力量の最終判定（KD27。建禄格・月刃格なら身強） */
+  /** practitioner … 術者の最終強弱／elementForce … 秀山式内格力量判定法の最終判定（KD27。建禄格・月刃格なら身強） */
   source: "practitioner" | "elementForce";
   value: string | null;
   /** 術者が「保留」を選んだ場合 true（値は elementForce から採る） */
@@ -85,7 +85,7 @@ export function santokuSideOf(classes: StrengthClass[]): "強側" | "弱側" | "
   return strong ? "強側" : weak ? "弱側" : "境界";
 }
 
-/** 象意生成で使う強弱: 術者最終強弱 ＞ 新方式の内格力量の最終判定（KD27。旧 innerScore は使わない）。「保留」は術者未確定として elementForce へ */
+/** 象意生成で使う強弱: 術者最終強弱 ＞ 秀山式内格力量判定法の最終判定（KD27）。「保留」は術者未確定として elementForce へ */
 export function resolveEffectiveStrength(k: KakkyokuResult, d: PractitionerDecision): EffectiveStrength {
   if (d.finalStrength && d.finalStrength !== "保留") return { source: "practitioner", value: d.finalStrength };
   const deferred = d.finalStrength === "保留" ? { practitionerDeferred: true } : {};
@@ -101,7 +101,7 @@ export interface InterpretationInput {
     candidates: KakkyokuResult["candidates"];
     hehua: KakkyokuResult["hehua"];
   };
-  /** 内格の強弱（新方式 KD27）。scoreJudgment は点数だけの判定、judgment は建禄格・月刃格を反映した最終判定 */
+  /** 内格の強弱（秀山式内格力量判定法 KD27）。scoreJudgment は点数だけの判定、judgment は建禄格・月刃格を反映した最終判定 */
   innerPattern: {
     judgment: InnerJudgment;
     scoreJudgment: InnerJudgment;
