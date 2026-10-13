@@ -50,7 +50,6 @@ const ev = (fact: string, detail: string): DomainEvidenceItem => ({ fact, detail
 // ---- 盤の読み取り ----
 const dayStem = (i: Input) => i.facts.basic.dayStem;
 const path = (i: Input, p: TransmissionPosition) => i.comparison.path[p];
-const voidText = (s: { isVoid: boolean; isSeatedOnVoid: boolean }) => (s.isVoid ? "旬空" : s.isSeatedOnVoid ? "坐空" : "");
 const overcomes = (a: Branch, b: Branch) => relationBetween(a, b).relations.includes("overcomes");
 /** 返吟の剛日は空でも妨げない（『指南』「返吟四絶人必至（剛日…），雖見天中亦不羈」） */
 const fanyinYang = (i: Input) => i.m.method === "返吟" && i.m.isYangDay;
@@ -69,6 +68,21 @@ const harm = () => ({ direction: "hindering" as DomainDirection, note: "道中�
 /** 空の妨げ（返吟の剛日なら向きを決めない） */
 const voidBlocks = (i: Input, s: string | undefined, g: InterpretationGoal | undefined) =>
   fanyinYang(i) ? { direction: "neutral" as DomainDirection, note: "返吟の剛日は空でも妨げない（『指南』「雖見天中亦不羈」）" } : notReturns(i, s, g);
+
+/**
+ * 日干（干・干上・寄宮）を使うルールが、日干を誰として読んでいるか（出典の見方。Phase 5C 監査）。
+ *   traveler … 日干＝行人（『直指』「以干為行客」・『入式』「以日干為行人」・『指南』歌「干若克支離彼方」）
+ *   asker    … 日干＝問う人（『指南』増補「我克他生他，都是我想他來也」）
+ * 本命・類神で特定した人物を日干と同一視するルールはない（本命は travelerNatal、類神は symbol だけで見る）。
+ */
+export const STEM_PERSPECTIVE: Readonly<Record<string, "traveler" | "asker">> = {
+  stemOvercomesBranch: "traveler", branchOvercomesStem: "traveler", stemBranchSame: "traveler", stemBranchDiscord: "traveler", mutualOverlay: "traveler",
+  siteToStem: "traveler", stemToSite: "traveler", finalAtDayBranch: "traveler", divinationOnStemSite: "traveler",
+  tombCoversStemOrSite: "traveler", tianGangOnStemOrSite: "traveler", initialJue: "traveler", initialOfficer: "traveler", finalJue: "traveler",
+  yimaInTransit: "traveler", xuanwuYimaOnStem: "traveler",
+  initialGeneratesStem: "asker", stemActsOnInitial: "asker",
+};
+const PERSPECTIVE_TEXT = { traveler: "（日干＝行人の見方）", asker: "（日干＝問う人の見方。『指南』増補）" } as const;
 
 const TRAVELER_RULES: readonly Rule[] = [
   // ===== 行人と家（relation） =====
@@ -234,14 +248,14 @@ const TRAVELER_RULES: readonly Rule[] = [
   {
     id: "traveler.initialOfficer", when: { domain: "traveler" },
     reading: { axis: "trajectory", topic: "return", key: "initialOfficer", label: "初伝が官鬼（日干を剋す。帰る）", level: "direct",
-      citations: [ZZ("或为日之官鬼…此皆归者也"), ZN(ZN_X, "注", "增补：…生日为至克亦来")] },
+      citations: [ZZ("或为日之官鬼…此皆归者也")] },
     conditions: (i) => path(i, "initial").sixRelation === "官鬼"
       ? { detected: `初伝 ${i.m.transmissions.initial} が官鬼（日干 ${dayStem(i)} を剋す）`, evidence: [ev("initial.sixRelation", "官鬼")] } : null,
     assess: returns,
   },
   {
     id: "traveler.initialGeneratesStem", when: { domain: "traveler" },
-    reading: { axis: "trajectory", topic: "return", key: "initialGeneratesStem", label: "初伝が日干を生ず（至る）", level: "direct",
+    reading: { axis: "trajectory", topic: "return", key: "initialGeneratesStem", label: "初伝が日干（問う人）を生ず（至る）", level: "direct",
       citations: [ZN(ZN_X, "注", "增补：若问行人来与否…生日为至")] },
     conditions: (i) => path(i, "initial").relationToDayStem === "transmissionGeneratesDayStem"
       ? { detected: `初伝 ${i.m.transmissions.initial} が日干 ${dayStem(i)} を生ず`, evidence: [ev("initial.relationToDayStem", "生")] } : null,
@@ -249,7 +263,7 @@ const TRAVELER_RULES: readonly Rule[] = [
   },
   {
     id: "traveler.stemActsOnInitial", when: { domain: "traveler" },
-    reading: { axis: "trajectory", topic: "return", key: "stemActsOnInitial", label: "日干が初伝を生ず・剋す（こちらが思うだけで来ない）", level: "direct",
+    reading: { axis: "trajectory", topic: "return", key: "stemActsOnInitial", label: "日干（問う人）が初伝を生ず・剋す（こちらが思うだけで来ない）", level: "direct",
       citations: [ZN(ZN_X, "注", "增补：…日生日克空心有…我克他生他，都是我想他来也"), ZZ("若日克初传…皆以不归断之")] },
     conditions: (i) => {
       const r = path(i, "initial").relationToDayStem;
@@ -335,14 +349,14 @@ const TRAVELER_RULES: readonly Rule[] = [
     reading: { axis: "actualization", topic: "return", key: "fuyinYangDingMa", label: "剛日の伏吟に丁馬（すぐ着く）", level: "direct",
       citations: [ZN(ZN_X, "原文", "刚日伏吟丁马见，立刻游人到草堂")] },
     conditions: (i) => i.m.method === "伏吟" && i.m.isYangDay && (i.m.xunDing.lessons.length || i.m.xunDing.transmissions.length || i.m.yima.lessons.length || i.m.yima.transmissions.length)
-      ? { detected: `剛日（${dayStem(i)}）の伏吟で、丁馬（旬丁 ${i.m.xunDing.branch}・驛馬 ${i.m.yima.branch}）が課伝にある`, evidence: [ev("method", "伏吟"), ev("dingMa", "課伝")] } : null,
+      ? { detected: `剛日（${i.facts.basic.dayStem}）の伏吟で、丁馬（旬丁 ${i.m.xunDing.branch}・驛馬 ${i.m.yima.branch}）が課伝にある`, evidence: [ev("method", "伏吟"), ev("dingMa", "課伝")] } : null,
     assess: returns,
   },
   {
     id: "traveler.fanyinYang", when: { domain: "traveler" },
     reading: { axis: "actualization", topic: "return", key: "fanyinYang", label: "剛日の返吟（必ず至る。空でも妨げない）", level: "direct",
       citations: [ZN(ZN_X, "原文", "返吟四绝人必至（刚日为四绝体，柔日不是），虽见天中亦不羁")] },
-    conditions: (i) => fanyinYang(i) ? { detected: `剛日（${dayStem(i)}）の返吟`, evidence: [ev("method", "返吟")] } : null,
+    conditions: (i) => fanyinYang(i) ? { detected: `剛日（${i.facts.basic.dayStem}）の返吟`, evidence: [ev("method", "返吟")] } : null,
     assess: returns,
   },
   // 逆十二格（三伝の並び）
@@ -375,20 +389,27 @@ const TRAVELER_RULES: readonly Rule[] = [
     assess: notReturns,
   },
   // ===== 帰還の妨げ（obstacle） =====
+  // 空は旬空（空亡・天中）で読む。坐空（『指南』の割注でいう「落空」）を古典の「空陷」の「陷」に当てる根拠は資料にないので、
+  // 初伝・中伝の坐空は読まない（不足に出す）。末伝の坐空だけは、行人 占験一で「中末空亡」とし割注に「寅卯落空」とある（末伝 寅 は落空）
+  // ことを根拠に、組合せとして読む。
   ...([
-    ["initial", "initialVoid", "初伝が空（阻みがある・帰らない）", [ZN(ZN_X, "原文", "初传若是逢空陷，有阻还当逐类推"), ZZ("或初传空亡…皆以不归断之")]],
-    ["middle", "middleVoid", "中伝が空（道中で阻まれる）", [ZN(ZN_X, "原文", "中传空亡途路阻")]],
-    ["final", "finalVoid", "末伝が空（近くまで来て滞る）", [ZN(ZN_X, "原文", "末遇天中邻近滞"), XJ("注", "一云…如末传空亡墓绝者，不来也")]],
+    ["initial", "initialVoid", "初伝が旬空（阻みがある・帰らない）", [ZN(ZN_X, "原文", "初传若是逢空陷，有阻还当逐类推"), ZZ("或初传空亡…皆以不归断之")]],
+    ["middle", "middleVoid", "中伝が旬空（道中で阻まれる）", [ZN(ZN_X, "原文", "中传空亡途路阻")]],
+    ["final", "finalVoid", "末伝が旬空（近くまで来て滞る）", [ZN(ZN_X, "原文", "末遇天中邻近滞"), XJ("注", "一云…如末传空亡墓绝者，不来也")]],
   ] as const).map(([p, key, label, citations]): Rule => ({
     id: `traveler.${key}`, when: { domain: "traveler" },
     reading: { axis: "obstruction", topic: "obstacle", key, label, level: "direct", citations },
-    conditions: (i) => {
-      const s = path(i, p);
-      if (!s.isVoid && !s.isSeatedOnVoid) return null;
-      return { detected: `${LABEL[p]} ${s.branch} が${voidText(s)}${s.isVoid ? "" : "（坐空は『指南』の「陥」として読む）"}`, evidence: [ev(`${p}.void`, voidText(s))] };
-    },
+    conditions: (i) => path(i, p).isVoid ? { detected: `${LABEL[p]} ${path(i, p).branch} が旬空`, evidence: [ev(`${p}.isVoid`, "旬空")] } : null,
     assess: voidBlocks,
   })),
+  {
+    id: "traveler.finalSeatedOnVoid", when: { domain: "traveler" },
+    reading: { axis: "obstruction", topic: "obstacle", key: "finalSeatedOnVoid", label: "末伝が坐空（落空。近くまで来て滞る）", level: "combined",
+      citations: [ZN(`${ZN_X} 占験一`, "原文", "辰巳空，寅卯落空"), ZN(`${ZN_X} 占験一`, "原文", "盖因中末空亡，是以月内不来")] },
+    conditions: (i) => !path(i, "final").isVoid && path(i, "final").isSeatedOnVoid
+      ? { detected: `末伝 ${i.m.transmissions.final} が坐空（地盤 ${i.m.transmissionEarth.final} が旬空。『指南』の「落空」）`, evidence: [ev("final.isSeatedOnVoid", "坐空")] } : null,
+    assess: voidBlocks,
+  },
   {
     id: "traveler.yimaVoid", when: { domain: "traveler" },
     reading: { axis: "obstruction", topic: "obstacle", key: "yimaVoid", label: "驛馬が空（帰らない）", level: "direct",
@@ -475,7 +496,7 @@ function symbolOf(facts: InterpretationFacts, context: InterpretationContext, mi
 export function evaluateTravelerDomain(facts: InterpretationFacts, context: InterpretationContext, monthBranch?: Branch | null): DomainResult {
   if (context.domain !== "traveler") throw new Error(`行人以外の DOMAIN です: ${context.domain}`);
   const subject = "行人の帰還";
-  const lead = [{ topic: "relation", label: "行人と家の関係（干＝行人・支＝家）" }];
+  const lead = [{ topic: "relation", label: "行人と家の関係（干＝行人・支＝家。『直指』『入式』の見方）" }];
   const { input, missing } = buildDomainBoardInput(facts, context, monthBranch);
   if (!input) return summarizeDomainReadings("traveler", context.subtype, context.goal, [], missing, subject, lead);
   // 問う人の本命は行人の読みに使わない（buildDomainBoardInput の不足は問う人のもの）
@@ -489,7 +510,10 @@ export function evaluateTravelerDomain(facts: InterpretationFacts, context: Inte
     { key: "youShen", detail: "遊神・戯神は資料の表が食い違う（冬＝辰／戌）ので未対応" },
   );
   const full: Input = { ...input, m: movementFactsOf(input), travelerNatal, symbol };
-  const readings = evaluateDomainRules(TRAVELER_RULES, full, "traveler", context.subtype, context.goal);
+  const readings = evaluateDomainRules(TRAVELER_RULES, full, "traveler", context.subtype, context.goal)
+    .map((r) => (STEM_PERSPECTIVE[r.key] ? { ...r, detected: `${r.detected}${PERSPECTIVE_TEXT[STEM_PERSPECTIVE[r.key]]}` } : r));
+  const seated = (["initial", "middle"] as const).filter((p) => !input.comparison.path[p].isVoid && input.comparison.path[p].isSeatedOnVoid);
+  if (seated.length) own.push({ key: "seatedOnVoid", detail: `${seated.map((p) => `${LABEL[p]} ${input.comparison.path[p].branch}`).join("・")}が坐空。古典の「空陷」の「陷」に坐空を当てる根拠が不十分なので、初伝・中伝の坐空は読まない（保留）` });
   return summarizeDomainReadings("traveler", context.subtype, context.goal, readings, own, subject, lead);
 }
 

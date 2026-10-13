@@ -39,8 +39,9 @@ const ev = (fact: string, detail: string): DomainEvidenceItem => ({ fact, detail
 
 const dayStem = (i: Input) => i.facts.basic.dayStem;
 const path = (i: Input, p: TransmissionPosition) => i.comparison.path[p];
-const isEmpty = (s: { isVoid: boolean; isSeatedOnVoid: boolean }) => s.isVoid || s.isSeatedOnVoid;
-const voidText = (s: { isVoid: boolean; isSeatedOnVoid: boolean }) => (s.isVoid ? "旬空" : s.isSeatedOnVoid ? "坐空" : "空でない");
+/** 空は旬空で読む。坐空を「空」「空陷」に当てる根拠は出行の資料にないので使わない（Phase 5C 監査） */
+const isEmpty = (s: { isVoid: boolean }) => s.isVoid;
+const voidText = (s: { isVoid: boolean }) => (s.isVoid ? "旬空" : "空でない");
 const rel = (a: Branch, b: Branch) => relationBetween(a, b).relations;
 const strong = (s: SeasonalStrength | null) => s === "旺" || s === "相";
 const weak = (s: SeasonalStrength | null) => s === "休" || s === "囚" || s === "死";
@@ -176,7 +177,7 @@ const TRAVEL_RULES: readonly Rule[] = [
   },
   {
     id: "travel.stemUpperVoid", when: { domain: "travel" },
-    reading: { axis: "obstruction", topic: "departure", key: "stemUpperVoid", label: "日干に空亡（動けない）", level: "combined",
+    reading: { axis: "obstruction", topic: "departure", key: "stemUpperVoid", label: "日干（干上）に空亡（動けない）", level: "combined",
       citations: [XJ("注", "《入式》…及日干见空亡，即不能动")] },
     conditions: (i) => isEmpty(i.comparison.standing)
       ? { detected: `干上 ${i.m.stemUpper} が${voidText(i.comparison.standing)}`, evidence: [ev("standing.void", voidText(i.comparison.standing))] } : null,
@@ -314,6 +315,9 @@ export function evaluateTravelDomain(facts: InterpretationFacts, context: Interp
     { key: "shensha", detail: "往亡・天車・飛廉・劫煞などの神煞は表が資料にないので未対応" },
     { key: "route", detail: "水路・陸路の選び方（「干吉宜行陸路，支吉宜行水路」）と天気は未対応" },
   );
+  const seated = (["initial", "middle", "final"] as const).filter((p) => !input.comparison.path[p].isVoid && input.comparison.path[p].isSeatedOnVoid);
+  if (seated.length || (!input.comparison.standing.isVoid && input.comparison.standing.isSeatedOnVoid))
+    missing.push({ key: "seatedOnVoid", detail: "坐空の位置がある。出行の資料には坐空を「空」「空陷」に当てる根拠がないので、坐空は読まない（保留）" });
   const full: Input = { ...input, m: movementFactsOf(input) };
   const readings = evaluateDomainRules(TRAVEL_RULES, full, "travel", context.subtype, context.goal);
   return summarizeDomainReadings("travel", context.subtype, context.goal, readings, missing, subject, lead);

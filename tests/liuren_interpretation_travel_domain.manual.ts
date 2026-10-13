@@ -16,7 +16,7 @@ import type { Branch, Stem } from "../src/lib/liuren";
 import { STEMS, BRANCHES } from "../src/lib/eto";
 import { buildInterpretationFacts } from "../src/lib/liuren/interpretation/facts";
 import { natalYearStateOf } from "../src/lib/liuren/interpretation/natalYear";
-import { TRAVELER_DOMAIN_RULES, evaluateTravelerDomain } from "../src/lib/liuren/interpretation/travelerDomain";
+import { STEM_PERSPECTIVE, TRAVELER_DOMAIN_RULES, evaluateTravelerDomain } from "../src/lib/liuren/interpretation/travelerDomain";
 import { TRAVEL_DOMAIN_RULES, evaluateTravelDomain } from "../src/lib/liuren/interpretation/travelDomain";
 import type { DomainResult } from "../src/lib/liuren/interpretation/domainResult";
 import type { InterpretationContext, InterpretationGoal } from "../src/lib/liuren/interpretation/roles";
@@ -47,9 +47,10 @@ const mismatches: string[] = [];
   const f = factsOf("庚子", "午", "申");
   const r = traveler(f, {}, "申");
   check("行人 占験一 三伝 午→辰→寅（顧祖）・空亡 辰巳", seq(f) === "午辰寅" && f.xun.voidBranches.join("") === "辰巳");
-  check("行人 占験一 顧祖格は来る（『大全』）・中伝 辰 旬空・末伝 寅 坐空は妨げ（月内は来ない）で、追い風と妨げが併存",
-    dir(r, "reverseTwelve.顧祖格") === "favoring" && dir(r, "middleVoid") === "hindering" && dir(r, "finalVoid") === "hindering" && r.overview.contradiction);
-  check("行人 占験一 坐空は「坐空」として旬空と区別して表示", reading(r, "finalVoid")!.detected.includes("坐空") && reading(r, "middleVoid")!.detected.includes("旬空"));
+  check("行人 占験一 顧祖格は来る（『大全』）・中伝 辰 旬空・末伝 寅 坐空（落空）は妨げ（月内は来ない）で、追い風と妨げが併存",
+    dir(r, "reverseTwelve.顧祖格") === "favoring" && dir(r, "middleVoid") === "hindering" && dir(r, "finalSeatedOnVoid") === "hindering" && r.overview.contradiction);
+  check("行人 占験一 末伝の坐空は旬空の読みと別のルール（組合せ・占験一の「寅卯落空」が根拠）",
+    !reading(r, "finalVoid") && reading(r, "finalSeatedOnVoid")!.level === "combined" && reading(r, "finalSeatedOnVoid")!.citations.some((c) => c.quote.includes("落空")));
   lines.push(`行人 占験一（来る・ただし月内は来ない）: ${keys(r)}`);
 }
 {
@@ -194,6 +195,83 @@ const mismatches: string[] = [];
   check("類神の指定がなければ不足として明示し、類神の読みは出さない", !traveler(f1).readings.some((x) => x.key.startsWith("symbol")) && traveler(f1).missing.some((m) => m.key === "targetSymbol"));
 }
 
+// ---- 監査（Phase 5C 最終）----
+{
+  // (1) 日干の見方: 日干・干上・寄宮を使うルールはすべて見方（行人／問う人）を持つ。本命・類神のルールは日干を使わない
+  const tr = readFileSync("src/lib/liuren/interpretation/travelerDomain.ts", "utf8").replace(/\/\/.*$/gm, "");
+  const body = tr.slice(tr.indexOf("const TRAVELER_RULES"));
+  const blocks = body.split(/\n  \{\n    id: /).slice(1).map((b) => ({ key: b.slice(b.indexOf("key: \"") + 6, b.indexOf("\"", b.indexOf("key: \"") + 6)), code: b }));
+  // 剛日・柔日の判定（日干の陰陽）は見方と関係しないので数えない
+  const usesStem = (c: string) => /dayStem\(i\)|stemUpper|lodgingBranch/.test(c.slice(c.indexOf("conditions")));
+  const noPerspective = blocks.filter((b) => usesStem(b.code) && !STEM_PERSPECTIVE[b.key]).map((b) => b.key);
+  check("監査1: 日干・干上・寄宮を使う行人のルールはすべて「日干＝行人／問う人」の見方を持つ", noPerspective.length === 0, noPerspective.join(","));
+  const personRules = blocks.filter((b) => ["natalInitial", "symbolOnSite", "symbolInBoard", "symbolVoid"].includes(b.key));
+  check("監査1: 本命・類神のルールは日干・干上・寄宮を使わない（人物を日干と同一視しない）", personRules.length === 4 && personRules.every((b) => !usesStem(b.code)));
+  const askerKeys = Object.entries(STEM_PERSPECTIVE).filter(([, v]) => v === "asker").map(([k]) => k);
+  check("監査1: 日干＝問う人で読むのは『指南』増補の2ルールだけで、出典は増補だけ",
+    askerKeys.join() === "initialGeneratesStem,stemActsOnInitial" &&
+    TRAVELER_DOMAIN_RULES.filter((r) => askerKeys.includes(r.reading.key)).every((r) => r.reading.citations.some((c) => c.quote.startsWith("增补"))));
+  check("監査1: 初伝が官鬼（日干＝行人）の出典に、日＝我の増補を混ぜない",
+    TRAVELER_DOMAIN_RULES.find((r) => r.reading.key === "initialOfficer")!.reading.citations.every((c) => c.source === "『御定六壬直指』"));
+  const r = traveler(factsOf("辛巳", "辰", "卯"));
+  check("監査1: 日干を使う読みの検出文に見方が表示される", r.readings.filter((x) => STEM_PERSPECTIVE[x.key]).every((x) => /日干＝(行人|問う人)/.test(x.detected)));
+  // (2) 坐空: 初伝・中伝の坐空は読まず保留として出す・出行は坐空を使わない
+  let seatedOnly: DomainResult | null = null;
+  for (let i = 0; i < 60 && !seatedOnly; i++) for (let o = 0; o < 12 && !seatedOnly; o++) {
+    const f = factsOf(`${STEMS[i % 10]}${BRANCHES[i % 12]}`, BRANCHES[o] as Branch, "子");
+    const t0 = f.transmissions![0];
+    const seated = f.xun.voidBranches.includes(f.plate.earthUnder[t0.branch]) && !t0.isVoid;
+    if (seated) seatedOnly = traveler(f);
+  }
+  check("監査2: 初伝が坐空だけ（旬空でない）なら初伝の空の読みは出ず、保留を不足に出す",
+    !!seatedOnly && !reading(seatedOnly, "initialVoid") && seatedOnly.missing.some((m) => m.key === "seatedOnVoid" && m.detail.includes("保留")));
+  const tv = readFileSync("src/lib/liuren/interpretation/travelDomain.ts", "utf8").replace(/\/\/.*$/gm, "").replace(/\/\*\*[\s\S]*?\*\//g, "");
+  check("監査2: 出行のルールは坐空（isSeatedOnVoid）を判断に使わない（不足の判定だけ）", !tv.slice(tv.indexOf("const TRAVEL_RULES"), tv.indexOf("export function evaluateTravelDomain")).includes("isSeatedOnVoid"));
+  check("監査2: 行人で坐空を読むのは末伝の1ルールだけ（組合せ）",
+    TRAVELER_DOMAIN_RULES.filter((x) => (x.reading.label.includes("坐空"))).map((x) => `${x.reading.key}:${x.reading.level}`).join() === "finalSeatedOnVoid:combined");
+}
+// (3) 古典占験9例: 三伝一致と占断一致を分ける。部分再現を完全再現としない
+type Verdict = "一致" | "部分一致" | "不一致";
+const CASES: { name: string; day: string; jiang: Branch; shi: Branch; sanchuan: string; methodInSource: string | null; verdict: Verdict; reproduced: string; notReproduced: string; circular: boolean }[] = [
+  { name: "行人 占験一", day: "庚子", jiang: "午", shi: "申", sanchuan: "午辰寅", methodInSource: "涉害", verdict: "部分一致",
+    reproduced: "顧祖格＝来る・中末の空＝遅れる（併存）", notReproduced: "「月内は来ない・過月に来る」の時期（帰期は未対応）", circular: false },
+  { name: "行人 占験二", day: "壬戌", jiang: "寅", shi: "巳", sanchuan: "巳寅亥", methodInSource: "元首", verdict: "部分一致",
+    reproduced: "天罡が季＝すぐ至る（近くまで来ている）", notReproduced: "道中の馬賊（天将が原典と違う）・寅日着（帰期）・「支が干を剋す」「末伝が初伝を剋す」の妨げが残る", circular: false },
+  { name: "行人 占験三", day: "丁丑", jiang: "午", shi: "巳", sanchuan: "申酉戌", methodInSource: "重審", verdict: "部分一致",
+    reproduced: "連茹に空＝遅れる", notReproduced: "「まだ発っていない」（天罡は仲＝途中）・九月の到着（帰期）", circular: false },
+  { name: "行人 占験四", day: "辛巳", jiang: "辰", shi: "卯", sanchuan: "午未申", methodInSource: "蒿矢", verdict: "部分一致",
+    reproduced: "蒿矢＝速く来る・驛馬が干上＝已に起程（途中）", notReproduced: "丙戌日の到着（帰期）・貴人入辰は未対応・「支が干を剋す」「末伝が空」の妨げが残る", circular: false },
+  { name: "行人 増補一", day: "辛未", jiang: "亥", shi: "酉", sanchuan: "寅辰午", methodInSource: "弾射", verdict: "部分一致",
+    reproduced: "弾射＝来ない・天罡が孟＝未発", notReproduced: "「占時が支上」「初伝が絶」の追い風が残る", circular: false },
+  { name: "行人 増補二", day: "己丑", jiang: "戌", shi: "卯", sanchuan: "卯戌巳", methodInSource: "斫輪", verdict: "不一致",
+    reproduced: "（なし）", notReproduced: "斫輪＝遅く来ない（斫輪は未対応）。追い風の読みが多い", circular: false },
+  { name: "出行 占験一", day: "庚申", jiang: "申", shi: "丑", sanchuan: "戌巳子", methodInSource: "八専", verdict: "部分一致",
+    reproduced: "追い風なし・河井相加＝車船の災い・天関地関", notReproduced: "劫煞・旬丁の刑剋、末伝の死（死字）、盗難・他郷での死・沈没（未対応）。課体名は比用", circular: true },
+  { name: "出行 増補一", day: "辛卯", jiang: "辰", shi: "酉", sanchuan: "戌巳子", methodInSource: null, verdict: "部分一致",
+    reproduced: "馬星が干を剋す・鬼が身に臨む＝出られない", notReproduced: "「日上神が辰上神を生ず」「魁罡」の追い風が残る", circular: true },
+  { name: "出行 増補二", day: "戊子", jiang: "巳", shi: "子", sanchuan: "巳戌卯", methodInSource: null, verdict: "部分一致",
+    reproduced: "鋳印・日禄が支に剋される＝迫られて出る", notReproduced: "回環（数か所を回る）は未対応・「斗罡が孟」「墓が日に臨む」の妨げが残る", circular: true },
+];
+const caseLines: string[] = [];
+for (const c of CASES) {
+  const f = factsOf(c.day, c.jiang, c.shi);
+  const sanchuanOk = seq(f) === c.sanchuan;
+  // 原典の課体名は九宗法の法名（涉害・元首など）か格名（蒿矢・弾射・斫輪）。格名はエンジンの sanchuan.pattern（「〜格」）と照合する
+  const engineNames = [f.sanchuan.method, f.sanchuan.status === "determined" && f.sanchuan.pattern ? f.sanchuan.pattern.replace(/格$/, "") : ""];
+  const methodOk = c.methodInSource === null ? null : engineNames.includes(c.methodInSource);
+  check(`監査3: ${c.name} 三伝が原典と一致（${c.sanchuan}）`, sanchuanOk, seq(f));
+  caseLines.push(`${c.name}｜三伝 ${sanchuanOk ? "一致" : "不一致"}（${c.sanchuan}）｜課体名 ${methodOk === null ? "原典に記載なし" : methodOk ? "一致" : `不一致（原典 ${c.methodInSource}・エンジン ${engineNames.filter(Boolean).join("・")}）`}｜占断 ${c.verdict}${c.circular ? "（規則の一部がこの例から取ったもので、独立の検証ではない）" : ""}｜再現: ${c.reproduced}｜未再現: ${c.notReproduced}`);
+}
+check("監査3: 三伝は9例すべて一致", CASES.every((c) => seq(factsOf(c.day, c.jiang, c.shi)) === c.sanchuan));
+check("監査3: 占断を「一致」（完全再現）とした例はない（部分一致8・不一致1）",
+  CASES.filter((c) => c.verdict === "一致").length === 0 && CASES.filter((c) => c.verdict === "部分一致").length === 8 && CASES.filter((c) => c.verdict === "不一致").length === 1);
+const nameMismatch = CASES.filter((c) => {
+  const f = factsOf(c.day, c.jiang, c.shi);
+  const names = [f.sanchuan.method, f.sanchuan.status === "determined" && f.sanchuan.pattern ? f.sanchuan.pattern.replace(/格$/, "") : ""];
+  return c.methodInSource !== null && !names.includes(c.methodInSource);
+}).map((c) => c.name).join();
+check("監査3: 課体名が原典と違うのは 出行 占験一（八専／比用）と 行人 増補二（斫輪はエンジンに格名なし）", nameMismatch === "行人 増補二,出行 占験一", nameMismatch);
+
 // ---- 5. 720課・基盤 ----
 const goals: (InterpretationGoal | undefined)[] = [undefined, "return", "avoid", "move", "maintain"];
 const counts: Record<string, Record<string, number>> = { traveler: {}, travel: {} };
@@ -242,6 +320,8 @@ check("行人・出行とも、全ルールが720課のどこかで成立する�
 
 console.log("断例:");
 for (const l of lines) console.log(`  ${l}`);
+console.log("古典占験9例（三伝一致と占断一致を分ける）:");
+for (const l of caseLines) console.log(`  ${l}`);
 console.log("原典との不一致（記録）:");
 for (const m of mismatches) console.log(`  ${m}`);
 console.log("行人 占験四 の要約:");
