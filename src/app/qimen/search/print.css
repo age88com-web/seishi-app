@@ -1,0 +1,96 @@
+/* src/app/qimen/search/print.css
+ *
+ * /qimen/search の印刷レイアウト専用スタイル。
+ *   - 画面表示は一切変更しない（.qms-print-doc は画面では display:none）。
+ *   - 印刷時は「検索格局」「検索期間」「検索結果一覧」の3点だけを出し、
+ *     操作UI（検索方法・OR/AND・凶格除外・スロット数・進捗・各種ボタン・
+ *     チェックボックス・上部ナビ・戻るリンク等）はすべて隠す。
+ *   - 検索結果はカード枠（border/box-shadow/背景色）を持たない単純な一覧にする。
+ */
+
+/* 画面では印刷用ドキュメントを出さない */
+.qms-print-doc {
+  display: none;
+}
+
+@media print {
+  /* ---- 通常UI（検索フォーム・画面用結果カード等・上部ナビ）を全部隠す。
+     .qms-print-doc は main の外（兄弟要素）に置いているため、main ごと隠せばよい。
+     上部ナビ（AppSwitcher）は AppSwitcher.css 自身の @media print で非表示になる。
+     注意: 裸の `main` 要素セレクタは使わない。Next.js はグローバルCSSを
+     アプリ全体で共有するため、他ページ（/qimen 等）の <main> まで
+     display:none になってしまい、そちらの印刷が白紙になる不具合の原因になった。
+     必ず本ページ専用の .qms-main クラスに限定して指定すること。 ---- */
+  .qms-main {
+    display: none !important;
+  }
+
+@page {
+    size: A4 portrait;
+    /* 全ページ共通の鑑定書余白（上下左右22mm・本文幅166mm）。
+       Next.js はページ遷移後も各ページのCSSを共有するため、どのページも同じ値にそろえる */
+    margin: 22mm;
+  }
+
+  .qms-print-doc {
+    display: block !important;
+    width: auto !important;
+    max-width: 166mm !important;
+    margin: 0 auto !important;
+    color: #000;
+    background: #fff;
+    font-size: 10.5pt;
+    line-height: 1.5;
+  }
+
+  .qms-print-doc h1 {
+    font-size: 15pt;
+    margin: 0 0 3mm;
+  }
+
+  .qms-print-doc h2 {
+    font-size: 11pt;
+    margin: 4mm 0 1.5mm;
+    padding-bottom: 0.5mm;
+    border-bottom: 1px solid #000;
+  }
+
+  .qms-format-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .qms-format-list li {
+    padding: 0.3mm 0;
+  }
+
+  .qms-period {
+    padding: 0.3mm 0;
+  }
+
+  /* 検索結果一覧: 紙面の横幅いっぱいを使う4列グリッド。カード枠は一切持たない。 */
+  .qms-result-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 5mm;
+    row-gap: 3mm;
+  }
+  .qms-result-list li {
+    break-inside: avoid;
+    font-size: 9pt;
+    line-height: 1.4;
+  }
+  .qms-result-dt {
+    font-weight: 700;
+  }
+  .qms-result-kaku {
+    color: #000;
+  }
+  .qms-palace {
+    white-space: nowrap;
+  }
+}
