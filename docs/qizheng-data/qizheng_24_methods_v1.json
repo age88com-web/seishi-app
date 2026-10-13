@@ -1,0 +1,1230 @@
+{
+  "schema_version": "1.0.0",
+  "source_file": "七政四餘鑑定用資料.docx",
+  "intro_text": "２．二十四要法\n\n　「二十四要法」は『星平会海』では「入門四十四看法」の次に配されています。\n　これは七政占星の看方のポイントを二十四の詩で示したものです。ここでは詩の原文は紹介はせず、ポイントだけを述べることにします。",
+  "intro_note": "資料に「『星平会海』では…」「詩の原文は紹介はせず、ポイントだけを述べる」とあるため本文は qizheng_secondary",
+  "usage": "鑑定時の判断原則。資料に書かれた範囲を超えて数値化・点数化しない",
+  "records": [
+    {
+      "id": "qz_m24_01",
+      "category": "principle_24",
+      "name": "看三主",
+      "target": null,
+      "conditions": {},
+      "interpretation": "（１）看三主\n　三主を見よ、ということですが、三主とは宮主（命主）、度主、身主の３つです。身主というのは身宮の宮主のことです。これらの星の廟旺陥落、生剋（星と宮や宿、星どうしの関係）、化曜星、神殺などをみて判断することがまず第一に看るべきこと、重要なことであるということをいっています。",
+      "source_text": "（１）看三主\n　三主を見よ、ということですが、三主とは宮主（命主）、度主、身主の３つです。身主というのは身宮の宮主のことです。これらの星の廟旺陥落、生剋（星と宮や宿、星どうしの関係）、化曜星、神殺などをみて判断することがまず第一に看るべきこと、重要なことであるということをいっています。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（1）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "number": 1,
+      "heading_raw": "看三主",
+      "checks": [
+        "命主（宮主）",
+        "度主",
+        "身主"
+      ],
+      "aspects": [
+        "廟旺陥落",
+        "生剋",
+        "化曜星",
+        "神殺"
+      ],
+      "rules": [],
+      "embedded_comments": [],
+      "priority": "first"
+    },
+    {
+      "id": "qz_m24_02",
+      "category": "principle_24",
+      "name": "論四時",
+      "target": null,
+      "conditions": {},
+      "interpretation": "（２）論四時\n　四時を論ずるとは季節の気を見ることです。暑さ寒さと陰陽の関係をみます。",
+      "source_text": "（２）論四時\n　四時を論ずるとは季節の気を見ることです。暑さ寒さと陰陽の関係をみます。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（2）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "number": 2,
+      "heading_raw": "論四時",
+      "checks": [
+        "季節の気",
+        "暑さ寒さと陰陽の関係"
+      ],
+      "aspects": [],
+      "rules": [],
+      "embedded_comments": [],
+      "priority": null
+    },
+    {
+      "id": "qz_m24_03",
+      "category": "principle_24",
+      "name": "分昼夜",
+      "target": null,
+      "conditions": {},
+      "interpretation": "（３）分昼夜\n　昼夜を分けるというのは、昼生まれか夜生まれかということです。\n　昼生まれの場合は、日木土紫計水孛が陽宮陽度にいるのがよく、夜生まれの場合は、月火金羅が陰宮陰度にいるのがよいとされます。",
+      "source_text": "（３）分昼夜\n　昼夜を分けるというのは、昼生まれか夜生まれかということです。\n　昼生まれの場合は、日木土紫計水孛が陽宮陽度にいるのがよく、夜生まれの場合は、月火金羅が陰宮陰度にいるのがよいとされます。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（3）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "number": 3,
+      "heading_raw": "分昼夜",
+      "checks": [
+        "昼生・夜生"
+      ],
+      "aspects": [],
+      "rules": [
+        {
+          "condition": {
+            "birth": "day",
+            "stars": [
+              "sun",
+              "jupiter",
+              "saturn",
+              "ziqi",
+              "ketu",
+              "mercury",
+              "yuebo"
+            ],
+            "stars_raw": "日木土紫計水孛",
+            "position": "陽宮陽度"
+          },
+          "result": "よい",
+          "effect": "good",
+          "source_fragment": "昼生まれの場合は、日木土紫計水孛が陽宮陽度にいるのがよく"
+        },
+        {
+          "condition": {
+            "birth": "night",
+            "stars": [
+              "moon",
+              "mars",
+              "venus",
+              "rahu"
+            ],
+            "stars_raw": "月火金羅",
+            "position": "陰宮陰度"
+          },
+          "result": "よい",
+          "effect": "good",
+          "source_fragment": "夜生まれの場合は、月火金羅が陰宮陰度にいるのがよいとされます"
+        }
+      ],
+      "embedded_comments": [],
+      "priority": null
+    },
+    {
+      "id": "qz_m24_04",
+      "category": "principle_24",
+      "name": "弁陰陽",
+      "target": null,
+      "conditions": {},
+      "interpretation": "（４）弁陰陽\n　陰陽を弁えるとは太陽と太陰（月）の関係を見るということです。詩を訳すと、太陽と月がバラバラで暗いと孤独で、子供を損なわなければ妻を損なう。太陽と月が明るければ妻子は盛ん、光がなければ父母と生別する、となります。それを字義通りとるのはどうかと思いますが、要は、太陽と月の明るさと位置に着目せよ、ということでしょう。",
+      "source_text": "（４）弁陰陽\n　陰陽を弁えるとは太陽と太陰（月）の関係を見るということです。詩を訳すと、太陽と月がバラバラで暗いと孤独で、子供を損なわなければ妻を損なう。太陽と月が明るければ妻子は盛ん、光がなければ父母と生別する、となります。それを字義通りとるのはどうかと思いますが、要は、太陽と月の明るさと位置に着目せよ、ということでしょう。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（4）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "number": 4,
+      "heading_raw": "弁陰陽",
+      "checks": [
+        "太陽と太陰の明るさと位置"
+      ],
+      "aspects": [],
+      "rules": [
+        {
+          "condition": {
+            "sun_moon": "バラバラで暗い"
+          },
+          "result": "孤独で、子供を損なわなければ妻を損なう",
+          "effect": null,
+          "source_fragment": "太陽と月がバラバラで暗いと孤独で、子供を損なわなければ妻を損なう"
+        },
+        {
+          "condition": {
+            "sun_moon": "明るい"
+          },
+          "result": "妻子は盛ん",
+          "effect": null,
+          "source_fragment": "太陽と月が明るければ妻子は盛ん"
+        },
+        {
+          "condition": {
+            "sun_moon": "光がない"
+          },
+          "result": "父母と生別する",
+          "effect": null,
+          "source_fragment": "光がなければ父母と生別する"
+        }
+      ],
+      "embedded_comments": [
+        {
+          "text": "それを字義通りとるのはどうかと思いますが、要は、太陽と月の明るさと位置に着目せよ、ということでしょう。",
+          "source_kind": "author_commentary"
+        }
+      ],
+      "priority": null
+    },
+    {
+      "id": "qz_m24_05",
+      "category": "principle_24",
+      "name": "推遅留",
+      "target": null,
+      "conditions": {},
+      "interpretation": "（５）推遅留\n（６）考伏逆\n　以上の２句をあわせて述べます。\n　遅は文字通り進みの遅いこと、留はとどまること（動かないこと）、伏は太陽と重なって見えなくなること、逆は天球上の逆方向に進むことです。。\n　木火土金水の五星、すなわち五惑星は、それぞれの進む速さ（あくまで天球上の）がそのときどきで異なります。また通常は十二宮位を逆に進む（亥→戌→酉という順）のですが、ときどき後戻りします。天文用語でいう逆行です。\n　天文学的には、逆行現象というのは見かけの問題ですが、それは（天文学用語でいう）合や衝の時期に起こります。地球と惑星との軌道上の速度が異なり、外惑星については地球が追い越し、内惑星の場合は地球が追い抜かれますので、このときに惑星の天球上での速さが極端に変わったり逆行したりします。このあたりは他の天文関係のサイトを参照してください。\n　ところで、天文学用語でいう合や衝の位置というのは太陽との位置関係によるわけで、とくに合の位置は太陽の方向に惑星があることになりますから、すなわち見えないということになるわけです。\n　この惑星の動きに着目せよというのがこの詩の趣旨です。これは七政だけではなく西洋占星術でも重視していることです。",
+      "source_text": "（５）推遅留\n（６）考伏逆\n　以上の２句をあわせて述べます。\n　遅は文字通り進みの遅いこと、留はとどまること（動かないこと）、伏は太陽と重なって見えなくなること、逆は天球上の逆方向に進むことです。。\n　木火土金水の五星、すなわち五惑星は、それぞれの進む速さ（あくまで天球上の）がそのときどきで異なります。また通常は十二宮位を逆に進む（亥→戌→酉という順）のですが、ときどき後戻りします。天文用語でいう逆行です。\n　天文学的には、逆行現象というのは見かけの問題ですが、それは（天文学用語でいう）合や衝の時期に起こります。地球と惑星との軌道上の速度が異なり、外惑星については地球が追い越し、内惑星の場合は地球が追い抜かれますので、このときに惑星の天球上での速さが極端に変わったり逆行したりします。このあたりは他の天文関係のサイトを参照してください。\n　ところで、天文学用語でいう合や衝の位置というのは太陽との位置関係によるわけで、とくに合の位置は太陽の方向に惑星があることになりますから、すなわち見えないということになるわけです。\n　この惑星の動きに着目せよというのがこの詩の趣旨です。これは七政だけではなく西洋占星術でも重視していることです。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（5）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "qz_m24_06"
+      ],
+      "notes": [
+        "資料で（５）推遅留と（６）考伏逆は「以上の２句をあわせて述べます」として共通の説明（source_text は共通）"
+      ],
+      "number": 5,
+      "heading_raw": "推遅留",
+      "checks": [
+        "遅",
+        "留"
+      ],
+      "aspects": [],
+      "rules": [],
+      "embedded_comments": [],
+      "priority": null
+    },
+    {
+      "id": "qz_m24_06",
+      "category": "principle_24",
+      "name": "考伏逆",
+      "target": null,
+      "conditions": {},
+      "interpretation": "（５）推遅留\n（６）考伏逆\n　以上の２句をあわせて述べます。\n　遅は文字通り進みの遅いこと、留はとどまること（動かないこと）、伏は太陽と重なって見えなくなること、逆は天球上の逆方向に進むことです。。\n　木火土金水の五星、すなわち五惑星は、それぞれの進む速さ（あくまで天球上の）がそのときどきで異なります。また通常は十二宮位を逆に進む（亥→戌→酉という順）のですが、ときどき後戻りします。天文用語でいう逆行です。\n　天文学的には、逆行現象というのは見かけの問題ですが、それは（天文学用語でいう）合や衝の時期に起こります。地球と惑星との軌道上の速度が異なり、外惑星については地球が追い越し、内惑星の場合は地球が追い抜かれますので、このときに惑星の天球上での速さが極端に変わったり逆行したりします。このあたりは他の天文関係のサイトを参照してください。\n　ところで、天文学用語でいう合や衝の位置というのは太陽との位置関係によるわけで、とくに合の位置は太陽の方向に惑星があることになりますから、すなわち見えないということになるわけです。\n　この惑星の動きに着目せよというのがこの詩の趣旨です。これは七政だけではなく西洋占星術でも重視していることです。",
+      "source_text": "（５）推遅留\n（６）考伏逆\n　以上の２句をあわせて述べます。\n　遅は文字通り進みの遅いこと、留はとどまること（動かないこと）、伏は太陽と重なって見えなくなること、逆は天球上の逆方向に進むことです。。\n　木火土金水の五星、すなわち五惑星は、それぞれの進む速さ（あくまで天球上の）がそのときどきで異なります。また通常は十二宮位を逆に進む（亥→戌→酉という順）のですが、ときどき後戻りします。天文用語でいう逆行です。\n　天文学的には、逆行現象というのは見かけの問題ですが、それは（天文学用語でいう）合や衝の時期に起こります。地球と惑星との軌道上の速度が異なり、外惑星については地球が追い越し、内惑星の場合は地球が追い抜かれますので、このときに惑星の天球上での速さが極端に変わったり逆行したりします。このあたりは他の天文関係のサイトを参照してください。\n　ところで、天文学用語でいう合や衝の位置というのは太陽との位置関係によるわけで、とくに合の位置は太陽の方向に惑星があることになりますから、すなわち見えないということになるわけです。\n　この惑星の動きに着目せよというのがこの詩の趣旨です。これは七政だけではなく西洋占星術でも重視していることです。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（6）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "qz_m24_05"
+      ],
+      "notes": [
+        "資料で（５）推遅留と（６）考伏逆は「以上の２句をあわせて述べます」として共通の説明（source_text は共通）"
+      ],
+      "number": 6,
+      "heading_raw": "考伏逆",
+      "checks": [
+        "伏",
+        "逆"
+      ],
+      "aspects": [],
+      "rules": [],
+      "embedded_comments": [
+        {
+          "text": "これは七政だけではなく西洋占星術でも重視していることです。",
+          "source_kind": "western_comparison"
+        },
+        {
+          "text": "このあたりは他の天文関係のサイトを参照してください。",
+          "source_kind": "author_commentary"
+        }
+      ],
+      "priority": null
+    },
+    {
+      "id": "qz_m24_07",
+      "category": "principle_24",
+      "name": "明禄貴",
+      "target": null,
+      "conditions": {},
+      "interpretation": "（７）明禄貴\n　禄貴を明らかにせよとは、宮主や身主、度主が禄宮や貴宮にあるかどうかを見ます。禄宮とか貴宮とは、十二宮位の神殺で判断します。例えば天乙とか玉堂とかは貴宮といえますし、飛刃とかは殺宮（悪い）です。",
+      "source_text": "（７）明禄貴\n　禄貴を明らかにせよとは、宮主や身主、度主が禄宮や貴宮にあるかどうかを見ます。禄宮とか貴宮とは、十二宮位の神殺で判断します。例えば天乙とか玉堂とかは貴宮といえますし、飛刃とかは殺宮（悪い）です。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（7）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "number": 7,
+      "heading_raw": "明禄貴",
+      "checks": [
+        "命主・身主・度主が禄宮・貴宮にあるか"
+      ],
+      "aspects": [],
+      "rules": [
+        {
+          "condition": {
+            "subject": [
+              "宮主",
+              "身主",
+              "度主"
+            ],
+            "in": "禄宮や貴宮"
+          },
+          "result": "（看るべき点）",
+          "effect": null,
+          "source_fragment": "宮主や身主、度主が禄宮や貴宮にあるかどうかを見ます"
+        },
+        {
+          "condition": {
+            "classification": "貴宮",
+            "examples": [
+              "天乙",
+              "玉堂"
+            ]
+          },
+          "result": "貴宮といえる",
+          "effect": null,
+          "source_fragment": "例えば天乙とか玉堂とかは貴宮といえますし"
+        },
+        {
+          "condition": {
+            "classification": "殺宮",
+            "examples": [
+              "飛刃"
+            ]
+          },
+          "result": "殺宮（悪い）",
+          "effect": "bad",
+          "source_fragment": "飛刃とかは殺宮（悪い）です"
+        }
+      ],
+      "embedded_comments": [],
+      "priority": null
+    },
+    {
+      "id": "qz_m24_08",
+      "category": "principle_24",
+      "name": "利生旺",
+      "target": null,
+      "conditions": {},
+      "interpretation": "（８）利生旺\n　生旺を利するとは、命主、身主、度主が生旺の宮にあることをいいます。前の明禄と似たような話です。",
+      "source_text": "（８）利生旺\n　生旺を利するとは、命主、身主、度主が生旺の宮にあることをいいます。前の明禄と似たような話です。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（8）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "number": 8,
+      "heading_raw": "利生旺",
+      "checks": [
+        "命主・身主・度主が生旺の宮にあるか"
+      ],
+      "aspects": [],
+      "rules": [],
+      "embedded_comments": [],
+      "priority": null
+    },
+    {
+      "id": "qz_m24_09",
+      "category": "principle_24",
+      "name": "忌断躔",
+      "target": null,
+      "conditions": {},
+      "interpretation": "（９）忌断躔\n　断躔を忌むとは、七政四餘が忌む宮のことをいいます。それを訳しますと、木星は辰宮と酉宮で失い、火星は辰宮と酉宮を恐れ、土星は亥宮と寅宮を走り、金星は卯宮と戌宮で溶け、水星は戌宮と午宮で漂い、刑都は寅亥卯で愁い、紫気は酉宮を憂い、月孛が戌宮にあるのを三丘（墓地のことか？）とし、羅[ｺﾞｳ]は酉宮亥宮を忌み、日月は光なく卯酉にあるのはよくない、とあります。",
+      "source_text": "（９）忌断躔\n　断躔を忌むとは、七政四餘が忌む宮のことをいいます。それを訳しますと、木星は辰宮と酉宮で失い、火星は辰宮と酉宮を恐れ、土星は亥宮と寅宮を走り、金星は卯宮と戌宮で溶け、水星は戌宮と午宮で漂い、刑都は寅亥卯で愁い、紫気は酉宮を憂い、月孛が戌宮にあるのを三丘（墓地のことか？）とし、羅[ｺﾞｳ]は酉宮亥宮を忌み、日月は光なく卯酉にあるのはよくない、とあります。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（9）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [
+        "「刑都」「三丘（墓地のことか？）」は資料のまま（訂正・解決しない）"
+      ],
+      "number": 9,
+      "heading_raw": "忌断躔",
+      "checks": [
+        "星が忌む宮"
+      ],
+      "aspects": [],
+      "rules": [
+        {
+          "condition": {
+            "star": "jupiter",
+            "palaces": [
+              "辰",
+              "酉"
+            ]
+          },
+          "result": "失い",
+          "effect": null,
+          "source_fragment": "木星は辰宮と酉宮で失い"
+        },
+        {
+          "condition": {
+            "star": "mars",
+            "palaces": [
+              "辰",
+              "酉"
+            ]
+          },
+          "result": "恐れ",
+          "effect": null,
+          "source_fragment": "火星は辰宮と酉宮を恐れ"
+        },
+        {
+          "condition": {
+            "star": "saturn",
+            "palaces": [
+              "亥",
+              "寅"
+            ]
+          },
+          "result": "走り",
+          "effect": null,
+          "source_fragment": "土星は亥宮と寅宮を走り"
+        },
+        {
+          "condition": {
+            "star": "venus",
+            "palaces": [
+              "卯",
+              "戌"
+            ]
+          },
+          "result": "溶け",
+          "effect": null,
+          "source_fragment": "金星は卯宮と戌宮で溶け"
+        },
+        {
+          "condition": {
+            "star": "mercury",
+            "palaces": [
+              "戌",
+              "午"
+            ]
+          },
+          "result": "漂い",
+          "effect": null,
+          "source_fragment": "水星は戌宮と午宮で漂い"
+        },
+        {
+          "condition": {
+            "star_raw": "刑都",
+            "palaces": [
+              "寅",
+              "亥",
+              "卯"
+            ]
+          },
+          "result": "愁い",
+          "effect": null,
+          "source_fragment": "刑都は寅亥卯で愁い",
+          "note": "「刑都」は資料の表記のまま（訂正しない）"
+        },
+        {
+          "condition": {
+            "star": "ziqi",
+            "palaces": [
+              "酉"
+            ]
+          },
+          "result": "憂い",
+          "effect": null,
+          "source_fragment": "紫気は酉宮を憂い"
+        },
+        {
+          "condition": {
+            "star": "yuebo",
+            "palaces": [
+              "戌"
+            ]
+          },
+          "result": "三丘とする",
+          "effect": null,
+          "source_fragment": "月孛が戌宮にあるのを三丘（墓地のことか？）とし",
+          "note": "「三丘（墓地のことか？）」は資料の推量のまま（解決しない）"
+        },
+        {
+          "condition": {
+            "star": "rahu",
+            "palaces": [
+              "酉",
+              "亥"
+            ]
+          },
+          "result": "忌み",
+          "effect": null,
+          "source_fragment": "羅[ｺﾞｳ]は酉宮亥宮を忌み"
+        },
+        {
+          "condition": {
+            "stars": [
+              "sun",
+              "moon"
+            ],
+            "palaces": [
+              "卯",
+              "酉"
+            ],
+            "state": "光なく"
+          },
+          "result": "よくない",
+          "effect": "bad",
+          "source_fragment": "日月は光なく卯酉にあるのはよくない"
+        }
+      ],
+      "embedded_comments": [],
+      "priority": null
+    },
+    {
+      "id": "qz_m24_10",
+      "category": "principle_24",
+      "name": "逢死絶",
+      "target": null,
+      "conditions": {},
+      "interpretation": "（10）逢死絶\n　死絶に逢うとは、命主、身主、度主が死絶宮に入ったり、大限や小限が死絶宮になったりすることをいいます。死絶とは十二運でいう死や絶のことですが、悪い神殺のときも含まれると考えていいでしょう。",
+      "source_text": "（10）逢死絶\n　死絶に逢うとは、命主、身主、度主が死絶宮に入ったり、大限や小限が死絶宮になったりすることをいいます。死絶とは十二運でいう死や絶のことですが、悪い神殺のときも含まれると考えていいでしょう。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（10）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "number": 10,
+      "heading_raw": "逢死絶",
+      "checks": [
+        "命主・身主・度主が死絶宮に入るか",
+        "大限・小限が死絶宮になるか"
+      ],
+      "aspects": [],
+      "rules": [],
+      "embedded_comments": [
+        {
+          "text": "悪い神殺のときも含まれると考えていいでしょう。",
+          "source_kind": "author_commentary"
+        }
+      ],
+      "priority": null
+    },
+    {
+      "id": "qz_m24_11",
+      "category": "principle_24",
+      "name": "太歳衝",
+      "target": null,
+      "conditions": {},
+      "interpretation": "（11）太歳衝\n　太歳とは流年干支のことですが、それとの衝はよくないということです。太歳との衝というのは歳破です。歳破という神殺はかくも重く見るということでしょうか。",
+      "source_text": "（11）太歳衝\n　太歳とは流年干支のことですが、それとの衝はよくないということです。太歳との衝というのは歳破です。歳破という神殺はかくも重く見るということでしょうか。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（11）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "number": 11,
+      "heading_raw": "太歳衝",
+      "checks": [
+        "太歳（流年干支）との衝＝歳破"
+      ],
+      "aspects": [],
+      "rules": [
+        {
+          "condition": {
+            "with": "太歳との衝（歳破）"
+          },
+          "result": "よくない",
+          "effect": "bad",
+          "source_fragment": "それとの衝はよくないということです"
+        }
+      ],
+      "embedded_comments": [
+        {
+          "text": "歳破という神殺はかくも重く見るということでしょうか。",
+          "source_kind": "author_commentary"
+        }
+      ],
+      "priority": null
+    },
+    {
+      "id": "qz_m24_12",
+      "category": "principle_24",
+      "name": "神殺露",
+      "target": null,
+      "conditions": {},
+      "interpretation": "（12）神殺露\n　神殺が露わとありますが、流年月神殺が巡ってくることを指しているようです。流年月神殺は数多くありますので、取捨選択が重要です。それについては、別に説明したいと思います。",
+      "source_text": "（12）神殺露\n　神殺が露わとありますが、流年月神殺が巡ってくることを指しているようです。流年月神殺は数多くありますので、取捨選択が重要です。それについては、別に説明したいと思います。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（12）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [
+        "資料内で説明が完結していない（未完）"
+      ],
+      "number": 12,
+      "heading_raw": "神殺露",
+      "checks": [
+        "流年月神殺"
+      ],
+      "aspects": [],
+      "rules": [],
+      "embedded_comments": [
+        {
+          "text": "それについては、別に説明したいと思います。",
+          "source_kind": "author_commentary",
+          "note": "資料内で説明が完結していない（未完）"
+        }
+      ],
+      "priority": null
+    },
+    {
+      "id": "qz_m24_13",
+      "category": "principle_24",
+      "name": "寿令泄",
+      "target": null,
+      "conditions": {},
+      "interpretation": "（13）寿令泄\n　寿令を泄らすとはわかりにくいので、『星平会海』にある例を示します。納音が火に属する命（例えば甲戌年生まれ）で夏生まれで、命度が参宿、度主が水星の場合、大限なり小限が胃宿（度主は土星）に行けば、寿令ともに泄らすといいます。すなわち、土は夏生まれの火命を洩らしますが、同時に度主の水星を剋するわけです。すなわち極端に命が弱くなるわけでよくありません。",
+      "source_text": "（13）寿令泄\n　寿令を泄らすとはわかりにくいので、『星平会海』にある例を示します。納音が火に属する命（例えば甲戌年生まれ）で夏生まれで、命度が参宿、度主が水星の場合、大限なり小限が胃宿（度主は土星）に行けば、寿令ともに泄らすといいます。すなわち、土は夏生まれの火命を洩らしますが、同時に度主の水星を剋するわけです。すなわち極端に命が弱くなるわけでよくありません。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（13）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "number": 13,
+      "heading_raw": "寿令泄",
+      "checks": [
+        "納音・季節・度主と行限の度主の生剋"
+      ],
+      "aspects": [],
+      "rules": [],
+      "embedded_comments": [],
+      "priority": null
+    },
+    {
+      "id": "qz_m24_14",
+      "category": "principle_24",
+      "name": "剋命度",
+      "target": null,
+      "conditions": {},
+      "interpretation": "（14）剋命度\n　『星平会海』にはくどくど説明がありますが、要するに命主や度主を宮や二十八宿が剋するのはよくないということであります。その程度というのがありますが、詳細は省略します。",
+      "source_text": "（14）剋命度\n　『星平会海』にはくどくど説明がありますが、要するに命主や度主を宮や二十八宿が剋するのはよくないということであります。その程度というのがありますが、詳細は省略します。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（14）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "number": 14,
+      "heading_raw": "剋命度",
+      "checks": [
+        "命主・度主を宮や二十八宿が剋するか"
+      ],
+      "aspects": [],
+      "rules": [
+        {
+          "condition": {
+            "subject": [
+              "命主",
+              "度主"
+            ],
+            "by": "宮や二十八宿",
+            "relation": "剋"
+          },
+          "result": "よくない",
+          "effect": "bad",
+          "source_fragment": "要するに命主や度主を宮や二十八宿が剋するのはよくないということであります"
+        }
+      ],
+      "embedded_comments": [
+        {
+          "text": "その程度というのがありますが、詳細は省略します。",
+          "source_kind": "author_commentary"
+        }
+      ],
+      "priority": null
+    },
+    {
+      "id": "qz_m24_15",
+      "category": "principle_24",
+      "name": "六甲空",
+      "target": null,
+      "conditions": {},
+      "interpretation": "（15）六甲空\n　いわゆる空亡のことです。命主や大限、流年支等で空亡が重なれば死は疑いなしと注釈にあります。そこまでではないにしろ、空亡の象意（中身がない）が出てくることになります。",
+      "source_text": "（15）六甲空\n　いわゆる空亡のことです。命主や大限、流年支等で空亡が重なれば死は疑いなしと注釈にあります。そこまでではないにしろ、空亡の象意（中身がない）が出てくることになります。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（15）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "number": 15,
+      "heading_raw": "六甲空",
+      "checks": [
+        "空亡（命主・大限・流年支等）"
+      ],
+      "aspects": [],
+      "rules": [
+        {
+          "condition": {
+            "overlap": [
+              "命主",
+              "大限",
+              "流年支等"
+            ],
+            "with": "空亡"
+          },
+          "result": "死は疑いなし（注釈）",
+          "effect": "bad",
+          "source_fragment": "命主や大限、流年支等で空亡が重なれば死は疑いなしと注釈にあります"
+        }
+      ],
+      "embedded_comments": [
+        {
+          "text": "そこまでではないにしろ、空亡の象意（中身がない）が出てくることになります。",
+          "source_kind": "author_commentary"
+        }
+      ],
+      "priority": null
+    },
+    {
+      "id": "qz_m24_16",
+      "category": "principle_24",
+      "name": "四刑忌",
+      "target": null,
+      "conditions": {},
+      "interpretation": "（16）四刑忌\n　註には、これは４つの賎格にあたることを刑忌というとあります。また解釈には、金星が寅宮にある、土星が巳宮にある、火星が酉宮（牛角とありますが金牛のことでしょう）にある、水星が子宮にあることをいっています。",
+      "source_text": "（16）四刑忌\n　註には、これは４つの賎格にあたることを刑忌というとあります。また解釈には、金星が寅宮にある、土星が巳宮にある、火星が酉宮（牛角とありますが金牛のことでしょう）にある、水星が子宮にあることをいっています。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（16）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "number": 16,
+      "heading_raw": "四刑忌",
+      "checks": [
+        "四つの賎格"
+      ],
+      "aspects": [],
+      "rules": [
+        {
+          "condition": {
+            "star": "venus",
+            "palace": "寅"
+          },
+          "result": "刑忌（賎格）",
+          "effect": null,
+          "source_fragment": "金星が寅宮にある"
+        },
+        {
+          "condition": {
+            "star": "saturn",
+            "palace": "巳"
+          },
+          "result": "刑忌（賎格）",
+          "effect": null,
+          "source_fragment": "土星が巳宮にある"
+        },
+        {
+          "condition": {
+            "star": "mars",
+            "palace": "酉"
+          },
+          "result": "刑忌（賎格）",
+          "effect": null,
+          "source_fragment": "火星が酉宮（牛角とありますが金牛のことでしょう）にある",
+          "note": "「牛角とありますが金牛のことでしょう」は資料の推量のまま"
+        },
+        {
+          "condition": {
+            "star": "mercury",
+            "palace": "子"
+          },
+          "result": "刑忌（賎格）",
+          "effect": null,
+          "source_fragment": "水星が子宮にある"
+        }
+      ],
+      "embedded_comments": [],
+      "priority": null
+    },
+    {
+      "id": "qz_m24_17",
+      "category": "principle_24",
+      "name": "値難[ｷｮｳ]",
+      "target": null,
+      "conditions": {},
+      "interpretation": "（17）値難[ｷｮｳ]（[ｷｮｳ]は木へんに号）\n　註によれば、値とは正月二月の太陽の類い（冬の太陽で勢いがない）、難とは八殺宮の主とありますが、疾厄宮の主星のことでしょう。[ｷｮｳ]とは天囚星、天耗星のことだということです。ただし、八殺宮については、別の説もあります。（判田格師の『七政四余』に八殺宮が載っています）それらを命主、身主、度主、あるいは行限の主星が犯せば「雪上に霜を加える」ような悪さだということだそうです。",
+      "source_text": "（17）値難[ｷｮｳ]（[ｷｮｳ]は木へんに号）\n　註によれば、値とは正月二月の太陽の類い（冬の太陽で勢いがない）、難とは八殺宮の主とありますが、疾厄宮の主星のことでしょう。[ｷｮｳ]とは天囚星、天耗星のことだということです。ただし、八殺宮については、別の説もあります。（判田格師の『七政四余』に八殺宮が載っています）それらを命主、身主、度主、あるいは行限の主星が犯せば「雪上に霜を加える」ような悪さだということだそうです。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（17）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [
+        "見出しの「[ｷｮｳ]」は資料の欠字表記をそのまま保持（資料に「木へんに号」とある）"
+      ],
+      "number": 17,
+      "heading_raw": "値難[ｷｮｳ]（[ｷｮｳ]は木へんに号）",
+      "checks": [
+        "値",
+        "難（八殺宮の主）",
+        "[ｷｮｳ]（天囚星・天耗星）"
+      ],
+      "aspects": [],
+      "rules": [
+        {
+          "condition": {
+            "subject": [
+              "命主",
+              "身主",
+              "度主",
+              "行限の主星"
+            ],
+            "violates": [
+              "値",
+              "難",
+              "[ｷｮｳ]"
+            ]
+          },
+          "result": "「雪上に霜を加える」ような悪さ",
+          "effect": "bad",
+          "source_fragment": "それらを命主、身主、度主、あるいは行限の主星が犯せば「雪上に霜を加える」ような悪さだということだそうです"
+        }
+      ],
+      "embedded_comments": [
+        {
+          "text": "難とは八殺宮の主とありますが、疾厄宮の主星のことでしょう。",
+          "source_kind": "author_commentary",
+          "note": "八殺宮＝疾厄宮かは資料の推量（解決しない）"
+        },
+        {
+          "text": "ただし、八殺宮については、別の説もあります。（判田格師の『七政四余』に八殺宮が載っています）",
+          "source_kind": "qizheng_secondary",
+          "note": "八殺宮の別説（解決しない）"
+        }
+      ],
+      "priority": null
+    },
+    {
+      "id": "qz_m24_18",
+      "category": "principle_24",
+      "name": "怒失令",
+      "target": null,
+      "conditions": {},
+      "interpretation": "（18）怒失令\n　失令を怒るとは、まさに季節的に弱い星のことです。春生まれの土星、夏生まれの金星、秋生まれの木星、冬生まれの火星で、これらを黒道の星としています。何らかの救いがあればいいのですが、なければ悪いということになります。",
+      "source_text": "（18）怒失令\n　失令を怒るとは、まさに季節的に弱い星のことです。春生まれの土星、夏生まれの金星、秋生まれの木星、冬生まれの火星で、これらを黒道の星としています。何らかの救いがあればいいのですが、なければ悪いということになります。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（18）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "number": 18,
+      "heading_raw": "怒失令",
+      "checks": [
+        "季節的に弱い星（黒道の星）"
+      ],
+      "aspects": [],
+      "rules": [
+        {
+          "condition": {
+            "season": "春",
+            "star": "saturn"
+          },
+          "result": "黒道の星",
+          "effect": null,
+          "source_fragment": "春生まれの土星"
+        },
+        {
+          "condition": {
+            "season": "夏",
+            "star": "venus"
+          },
+          "result": "黒道の星",
+          "effect": null,
+          "source_fragment": "夏生まれの金星"
+        },
+        {
+          "condition": {
+            "season": "秋",
+            "star": "jupiter"
+          },
+          "result": "黒道の星",
+          "effect": null,
+          "source_fragment": "秋生まれの木星"
+        },
+        {
+          "condition": {
+            "season": "冬",
+            "star": "mars"
+          },
+          "result": "黒道の星",
+          "effect": null,
+          "source_fragment": "冬生まれの火星"
+        },
+        {
+          "condition": {
+            "rescue": false
+          },
+          "result": "悪い",
+          "effect": "bad",
+          "source_fragment": "何らかの救いがあればいいのですが、なければ悪いということになります"
+        }
+      ],
+      "embedded_comments": [],
+      "priority": null
+    },
+    {
+      "id": "qz_m24_19",
+      "category": "principle_24",
+      "name": "殺畳殺",
+      "target": null,
+      "conditions": {},
+      "interpretation": "（19）殺畳殺\n　殺に殺を重ねるとは字義のとおりで、凶の神殺が重なると悪いということです。註ではとくに天雄とか地雄、劫殺亡神が取り上げられていますが、とにかく凶殺が重なることはよくありません。",
+      "source_text": "（19）殺畳殺\n　殺に殺を重ねるとは字義のとおりで、凶の神殺が重なると悪いということです。註ではとくに天雄とか地雄、劫殺亡神が取り上げられていますが、とにかく凶殺が重なることはよくありません。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（19）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "qz_comb_殺畳殺"
+      ],
+      "notes": [],
+      "number": 19,
+      "heading_raw": "殺畳殺",
+      "checks": [
+        "凶の神殺の重なり"
+      ],
+      "aspects": [],
+      "rules": [
+        {
+          "condition": {
+            "overlap": "凶の神殺"
+          },
+          "result": "悪い",
+          "effect": "bad",
+          "source_fragment": "凶の神殺が重なると悪いということです"
+        }
+      ],
+      "embedded_comments": [],
+      "priority": null
+    },
+    {
+      "id": "qz_m24_20",
+      "category": "principle_24",
+      "name": "鬼見鬼",
+      "target": null,
+      "conditions": {},
+      "interpretation": "（20）鬼見鬼\n　鬼が鬼を見るとは、命主や身主、度主に対して、大限、小限、流年、あるいは剋する星が重なることを言います。例えば度主が木星の場合、大限で亢宿（金星が主星）に行き、流年が金星で三合や対になった場合に、鬼見鬼となります。",
+      "source_text": "（20）鬼見鬼\n　鬼が鬼を見るとは、命主や身主、度主に対して、大限、小限、流年、あるいは剋する星が重なることを言います。例えば度主が木星の場合、大限で亢宿（金星が主星）に行き、流年が金星で三合や対になった場合に、鬼見鬼となります。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（20）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "qz_m24_21"
+      ],
+      "notes": [],
+      "number": 20,
+      "heading_raw": "鬼見鬼",
+      "checks": [
+        "三主に対する大限・小限・流年・剋する星の重なり"
+      ],
+      "aspects": [],
+      "rules": [],
+      "embedded_comments": [],
+      "priority": null
+    },
+    {
+      "id": "qz_m24_21",
+      "category": "principle_24",
+      "name": "利添利",
+      "target": null,
+      "conditions": {},
+      "interpretation": "（21）利添利\n　利に利を添えるとは、鬼見鬼の逆であり、生じる場合をいいます。",
+      "source_text": "（21）利添利\n　利に利を添えるとは、鬼見鬼の逆であり、生じる場合をいいます。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（21）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "qz_m24_20"
+      ],
+      "notes": [],
+      "number": 21,
+      "heading_raw": "利添利",
+      "checks": [
+        "鬼見鬼の逆（生じる場合）"
+      ],
+      "aspects": [],
+      "rules": [],
+      "embedded_comments": [],
+      "priority": null
+    },
+    {
+      "id": "qz_m24_22",
+      "category": "principle_24",
+      "name": "空中空",
+      "target": null,
+      "conditions": {},
+      "interpretation": "（22）空中空\n　ここでいう空とは、いわゆる空亡（旬空）のほか、天空を指します。太歳の次を天空殺といい、太歳の後を驀越殺といいますが、これに空亡が加わることをいいます。",
+      "source_text": "（22）空中空\n　ここでいう空とは、いわゆる空亡（旬空）のほか、天空を指します。太歳の次を天空殺といい、太歳の後を驀越殺といいますが、これに空亡が加わることをいいます。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（22）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "qz_comb_空中空"
+      ],
+      "notes": [],
+      "number": 22,
+      "heading_raw": "空中空",
+      "checks": [
+        "空亡（旬空）",
+        "天空殺（太歳の次）",
+        "驀越殺（太歳の後）"
+      ],
+      "aspects": [],
+      "rules": [],
+      "embedded_comments": [],
+      "priority": null
+    },
+    {
+      "id": "qz_m24_23",
+      "category": "principle_24",
+      "name": "扶陽勢",
+      "target": null,
+      "conditions": {},
+      "interpretation": "（23）扶陽勢\n　陽勢を扶けるとは、命度主と太陽との関係をいっています。また命度主以外の星が太陽によって勢いづけられ、その星が命度主を剋する場合は非常に悪いとします。",
+      "source_text": "（23）扶陽勢\n　陽勢を扶けるとは、命度主と太陽との関係をいっています。また命度主以外の星が太陽によって勢いづけられ、その星が命度主を剋する場合は非常に悪いとします。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（23）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "number": 23,
+      "heading_raw": "扶陽勢",
+      "checks": [
+        "命度主と太陽の関係"
+      ],
+      "aspects": [],
+      "rules": [
+        {
+          "condition": {
+            "other_star": "太陽によって勢いづけられた星",
+            "relation": "命度主を剋する"
+          },
+          "result": "非常に悪い",
+          "effect": "bad",
+          "source_fragment": "命度主以外の星が太陽によって勢いづけられ、その星が命度主を剋する場合は非常に悪いとします"
+        }
+      ],
+      "embedded_comments": [],
+      "priority": null
+    },
+    {
+      "id": "qz_m24_24",
+      "category": "principle_24",
+      "name": "三滅関",
+      "target": null,
+      "conditions": {},
+      "interpretation": "（24）三滅関\n　三関とは、初関、中関、末関で、これは十二宮位の深さを示しています。太陽は十二支を逆行していきますが、例えば子の初関とは丑宮から子宮に入ったばかりのとき、すなわち子の初度、中関とは子宮の真ん中、つまり子１５度、末関とは子の２９度ということです。凶の神殺のある位置によって悪い時期が変わってくるというものです。このことはおいおい解説していきたいと思います。",
+      "source_text": "（24）三滅関\n　三関とは、初関、中関、末関で、これは十二宮位の深さを示しています。太陽は十二支を逆行していきますが、例えば子の初関とは丑宮から子宮に入ったばかりのとき、すなわち子の初度、中関とは子宮の真ん中、つまり子１５度、末関とは子の２９度ということです。凶の神殺のある位置によって悪い時期が変わってくるというものです。このことはおいおい解説していきたいと思います。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（24）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [
+        "資料内で説明が完結していない（未完）"
+      ],
+      "number": 24,
+      "heading_raw": "三滅関",
+      "checks": [
+        "初関・中関・末関（十二宮位の深さ）と凶の神殺の位置"
+      ],
+      "aspects": [],
+      "rules": [],
+      "embedded_comments": [
+        {
+          "text": "このことはおいおい解説していきたいと思います。",
+          "source_kind": "author_commentary",
+          "note": "資料内で説明が完結していない（未完）"
+        }
+      ],
+      "priority": null
+    },
+    {
+      "id": "qz_m24_closing",
+      "category": "principle_24_commentary",
+      "name": "二十四要法のまとめ",
+      "target": null,
+      "conditions": {},
+      "interpretation": "　以上で二十四要法の説明は終わりです。読めばわかるように、要するに、命主、度主、身主と宮、宿、星、神殺、空亡等と太歳、行限（大限、小限）などとの関係をよく見なさいと言っているわけです。\n　私は、七政四餘の看方はこの二十四要法に尽きるといっても過言ではないと思っています。とまあ、そこまでのことはないにしても、七政四餘の考え方の基本であるということは言えるのではないでしょうか。このことは別に紹介する占例を見たときにわかると思います。",
+      "source_text": "　以上で二十四要法の説明は終わりです。読めばわかるように、要するに、命主、度主、身主と宮、宿、星、神殺、空亡等と太歳、行限（大限、小限）などとの関係をよく見なさいと言っているわけです。\n　私は、七政四餘の看方はこの二十四要法に尽きるといっても過言ではないと思っています。とまあ、そこまでのことはないにしても、七政四餘の考え方の基本であるということは言えるのではないでしょうか。このことは別に紹介する占例を見たときにわかると思います。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（結び）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "author_commentary",
+      "related_ids": [],
+      "notes": [
+        "著者のまとめ・見解"
+      ]
+    }
+  ]
+}

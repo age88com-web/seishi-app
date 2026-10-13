@@ -1,0 +1,702 @@
+{
+  "schema_version": "1.0.0",
+  "source_file": "七政四餘鑑定用資料.docx",
+  "records": [
+    {
+      "id": "qz_starbranch_sun_戌",
+      "category": "star_branch",
+      "name": "太陽",
+      "target": "戌",
+      "conditions": {},
+      "interpretation": "戌宮の太陽を天枢という\n戌宮は太陽が強まる地である\n月と同宮ならば栄貴で\n福余りある",
+      "source_text": "戌宮の太陽を天枢という\n戌宮は太陽が強まる地である\n月と同宮ならば栄貴で\n福余りある",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "２．日宮推命法",
+        "table": 3,
+        "row": 1,
+        "column": "星曜入宮歌",
+        "block": null
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "sun_branch_戌"
+      ],
+      "notes": [
+        "欄名「星曜入宮歌」の和訳。資料「７．星曜歌訣について」で『星平会海』の「星曜入宮歌」として言及",
+        "既存『張果星宗』データ（related_ids）とは別資料による別解釈として保持（上書きしない）"
+      ],
+      "star": "sun",
+      "branch": "戌",
+      "position_raw": "戌宮\nおひつじ"
+    },
+    {
+      "id": "qz_starbranch_sun_戌_shoui",
+      "category": "star_branch_other",
+      "name": "太陽",
+      "target": "戌",
+      "conditions": {},
+      "interpretation": "自主、向上心、衝動、勇気\n芸術、投資、金銭に淡白",
+      "source_text": "自主、向上心、衝動、勇気\n芸術、投資、金銭に淡白",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "２．日宮推命法",
+        "table": 3,
+        "row": 1,
+        "column": "象意等",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_starbranch_sun_戌",
+        "sun_branch_戌"
+      ],
+      "notes": [
+        "欄名は「象意等」。宮位欄に星座名（例：おひつじ）が併記されているが、西洋占星術由来とは資料に明記されていないため unspecified"
+      ],
+      "star": "sun",
+      "branch": "戌",
+      "position_raw": "戌宮\nおひつじ"
+    },
+    {
+      "id": "qz_starbranch_sun_酉",
+      "category": "star_branch",
+      "name": "太陽",
+      "target": "酉",
+      "conditions": {},
+      "interpretation": "おうしの太陽は九空という\n夜生まれは短命でも運がよい\n昼生まれは実力が伴わない\nもし刑囚に変われば悪い",
+      "source_text": "おうしの太陽は九空という\n夜生まれは短命でも運がよい\n昼生まれは実力が伴わない\nもし刑囚に変われば悪い",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "２．日宮推命法",
+        "table": 3,
+        "row": 2,
+        "column": "星曜入宮歌",
+        "block": null
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "sun_branch_酉"
+      ],
+      "notes": [
+        "欄名「星曜入宮歌」の和訳。資料「７．星曜歌訣について」で『星平会海』の「星曜入宮歌」として言及",
+        "既存『張果星宗』データ（related_ids）とは別資料による別解釈として保持（上書きしない）"
+      ],
+      "star": "sun",
+      "branch": "酉",
+      "position_raw": "酉宮\nおうし"
+    },
+    {
+      "id": "qz_starbranch_sun_酉_shoui",
+      "category": "star_branch_other",
+      "name": "太陽",
+      "target": "酉",
+      "conditions": {},
+      "interpretation": "独立、頑固、忍耐、深謀遠慮\n善良、美術、理財に精通",
+      "source_text": "独立、頑固、忍耐、深謀遠慮\n善良、美術、理財に精通",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "２．日宮推命法",
+        "table": 3,
+        "row": 2,
+        "column": "象意等",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_starbranch_sun_酉",
+        "sun_branch_酉"
+      ],
+      "notes": [
+        "欄名は「象意等」。宮位欄に星座名（例：おひつじ）が併記されているが、西洋占星術由来とは資料に明記されていないため unspecified"
+      ],
+      "star": "sun",
+      "branch": "酉",
+      "position_raw": "酉宮\nおうし"
+    },
+    {
+      "id": "qz_starbranch_sun_申",
+      "category": "star_branch",
+      "name": "太陽",
+      "target": "申",
+      "conditions": {},
+      "interpretation": "申宮の太陽を天暗という\nここでは太陽は光が暗い\n昼生まれであれば\n百％の実行力はない",
+      "source_text": "申宮の太陽を天暗という\nここでは太陽は光が暗い\n昼生まれであれば\n百％の実行力はない",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "２．日宮推命法",
+        "table": 3,
+        "row": 3,
+        "column": "星曜入宮歌",
+        "block": null
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "sun_branch_申"
+      ],
+      "notes": [
+        "欄名「星曜入宮歌」の和訳。資料「７．星曜歌訣について」で『星平会海』の「星曜入宮歌」として言及",
+        "既存『張果星宗』データ（related_ids）とは別資料による別解釈として保持（上書きしない）"
+      ],
+      "star": "sun",
+      "branch": "申",
+      "position_raw": "申宮\nふたご"
+    },
+    {
+      "id": "qz_starbranch_sun_申_shoui",
+      "category": "star_branch_other",
+      "name": "太陽",
+      "target": "申",
+      "conditions": {},
+      "interpretation": "二重個性、自信、楽観、聡明\n弁舌、多才、投機、浪費好き",
+      "source_text": "二重個性、自信、楽観、聡明\n弁舌、多才、投機、浪費好き",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "２．日宮推命法",
+        "table": 3,
+        "row": 3,
+        "column": "象意等",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_starbranch_sun_申",
+        "sun_branch_申"
+      ],
+      "notes": [
+        "欄名は「象意等」。宮位欄に星座名（例：おひつじ）が併記されているが、西洋占星術由来とは資料に明記されていないため unspecified"
+      ],
+      "star": "sun",
+      "branch": "申",
+      "position_raw": "申宮\nふたご"
+    },
+    {
+      "id": "qz_starbranch_sun_未",
+      "category": "star_branch",
+      "name": "太陽",
+      "target": "未",
+      "conditions": {},
+      "interpretation": "未宮の太陽を天輝という\n月と同宮するのは稀である\nもし月に落陥がなければ\n君臣は慶会、枢機を掌る",
+      "source_text": "未宮の太陽を天輝という\n月と同宮するのは稀である\nもし月に落陥がなければ\n君臣は慶会、枢機を掌る",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "２．日宮推命法",
+        "table": 3,
+        "row": 4,
+        "column": "星曜入宮歌",
+        "block": null
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "sun_branch_未"
+      ],
+      "notes": [
+        "欄名「星曜入宮歌」の和訳。資料「７．星曜歌訣について」で『星平会海』の「星曜入宮歌」として言及",
+        "既存『張果星宗』データ（related_ids）とは別資料による別解釈として保持（上書きしない）"
+      ],
+      "star": "sun",
+      "branch": "未",
+      "position_raw": "未宮\nかに"
+    },
+    {
+      "id": "qz_starbranch_sun_未_shoui",
+      "category": "star_branch_other",
+      "name": "太陽",
+      "target": "未",
+      "conditions": {},
+      "interpretation": "老実、感情的、孤独、文才\n負けず嫌い、浪費、財運はない",
+      "source_text": "老実、感情的、孤独、文才\n負けず嫌い、浪費、財運はない",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "２．日宮推命法",
+        "table": 3,
+        "row": 4,
+        "column": "象意等",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_starbranch_sun_未",
+        "sun_branch_未"
+      ],
+      "notes": [
+        "欄名は「象意等」。宮位欄に星座名（例：おひつじ）が併記されているが、西洋占星術由来とは資料に明記されていないため unspecified"
+      ],
+      "star": "sun",
+      "branch": "未",
+      "position_raw": "未宮\nかに"
+    },
+    {
+      "id": "qz_starbranch_sun_午",
+      "category": "star_branch",
+      "name": "太陽",
+      "target": "午",
+      "conditions": {},
+      "interpretation": "午宮の太陽は少微という\n人望厚いリーダーとなる\nたとえ悪星と同宮しても\n富貴栄華は非常である",
+      "source_text": "午宮の太陽は少微という\n人望厚いリーダーとなる\nたとえ悪星と同宮しても\n富貴栄華は非常である",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "２．日宮推命法",
+        "table": 3,
+        "row": 5,
+        "column": "星曜入宮歌",
+        "block": null
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "sun_branch_午"
+      ],
+      "notes": [
+        "欄名「星曜入宮歌」の和訳。資料「７．星曜歌訣について」で『星平会海』の「星曜入宮歌」として言及",
+        "既存『張果星宗』データ（related_ids）とは別資料による別解釈として保持（上書きしない）"
+      ],
+      "star": "sun",
+      "branch": "午",
+      "position_raw": "午宮\nしし"
+    },
+    {
+      "id": "qz_starbranch_sun_午_shoui",
+      "category": "star_branch_other",
+      "name": "太陽",
+      "target": "午",
+      "conditions": {},
+      "interpretation": "意志、自己表現、自己中心\n誇り高い、縁遠い",
+      "source_text": "意志、自己表現、自己中心\n誇り高い、縁遠い",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "２．日宮推命法",
+        "table": 3,
+        "row": 5,
+        "column": "象意等",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_starbranch_sun_午",
+        "sun_branch_午"
+      ],
+      "notes": [
+        "欄名は「象意等」。宮位欄に星座名（例：おひつじ）が併記されているが、西洋占星術由来とは資料に明記されていないため unspecified"
+      ],
+      "star": "sun",
+      "branch": "午",
+      "position_raw": "午宮\nしし"
+    },
+    {
+      "id": "qz_starbranch_sun_巳",
+      "category": "star_branch",
+      "name": "太陽",
+      "target": "巳",
+      "conditions": {},
+      "interpretation": "乙女の太陽は幽微という\n禄厚く権威があり位が高い\n若くして名をあげるが\nあっさりと地位を捨て去る",
+      "source_text": "乙女の太陽は幽微という\n禄厚く権威があり位が高い\n若くして名をあげるが\nあっさりと地位を捨て去る",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "２．日宮推命法",
+        "table": 3,
+        "row": 6,
+        "column": "星曜入宮歌",
+        "block": null
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "sun_branch_巳"
+      ],
+      "notes": [
+        "欄名「星曜入宮歌」の和訳。資料「７．星曜歌訣について」で『星平会海』の「星曜入宮歌」として言及",
+        "既存『張果星宗』データ（related_ids）とは別資料による別解釈として保持（上書きしない）"
+      ],
+      "star": "sun",
+      "branch": "巳",
+      "position_raw": "巳宮\nおとめ"
+    },
+    {
+      "id": "qz_starbranch_sun_巳_shoui",
+      "category": "star_branch_other",
+      "name": "太陽",
+      "target": "巳",
+      "conditions": {},
+      "interpretation": "聡明、手際よさ、実務、現実的\nロマン、毒舌、献身",
+      "source_text": "聡明、手際よさ、実務、現実的\nロマン、毒舌、献身",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "２．日宮推命法",
+        "table": 3,
+        "row": 6,
+        "column": "象意等",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_starbranch_sun_巳",
+        "sun_branch_巳"
+      ],
+      "notes": [
+        "欄名は「象意等」。宮位欄に星座名（例：おひつじ）が併記されているが、西洋占星術由来とは資料に明記されていないため unspecified"
+      ],
+      "star": "sun",
+      "branch": "巳",
+      "position_raw": "巳宮\nおとめ"
+    },
+    {
+      "id": "qz_starbranch_sun_辰",
+      "category": "star_branch",
+      "name": "太陽",
+      "target": "辰",
+      "conditions": {},
+      "interpretation": "角亢の方の龍門を出るのは\n天爽といい最も光輝く\n学問を修め試験に合格する\nその名声は中央にまで達する",
+      "source_text": "角亢の方の龍門を出るのは\n天爽といい最も光輝く\n学問を修め試験に合格する\nその名声は中央にまで達する",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "２．日宮推命法",
+        "table": 3,
+        "row": 7,
+        "column": "星曜入宮歌",
+        "block": null
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "sun_branch_辰"
+      ],
+      "notes": [
+        "欄名「星曜入宮歌」の和訳。資料「７．星曜歌訣について」で『星平会海』の「星曜入宮歌」として言及",
+        "既存『張果星宗』データ（related_ids）とは別資料による別解釈として保持（上書きしない）"
+      ],
+      "star": "sun",
+      "branch": "辰",
+      "position_raw": "辰宮\nてんびん"
+    },
+    {
+      "id": "qz_starbranch_sun_辰_shoui",
+      "category": "star_branch_other",
+      "name": "太陽",
+      "target": "辰",
+      "conditions": {},
+      "interpretation": "交友、公平、協調、虚栄心、誤解\n同情、浪費",
+      "source_text": "交友、公平、協調、虚栄心、誤解\n同情、浪費",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "２．日宮推命法",
+        "table": 3,
+        "row": 7,
+        "column": "象意等",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_starbranch_sun_辰",
+        "sun_branch_辰"
+      ],
+      "notes": [
+        "欄名は「象意等」。宮位欄に星座名（例：おひつじ）が併記されているが、西洋占星術由来とは資料に明記されていないため unspecified"
+      ],
+      "star": "sun",
+      "branch": "辰",
+      "position_raw": "辰宮\nてんびん"
+    },
+    {
+      "id": "qz_starbranch_sun_卯",
+      "category": "star_branch",
+      "name": "太陽",
+      "target": "卯",
+      "conditions": {},
+      "interpretation": "卯宮の太陽は天烏という\n性は稟として英明でいい男\n多芸多才で非凡である\n一生栄誉と富に恵まれる",
+      "source_text": "卯宮の太陽は天烏という\n性は稟として英明でいい男\n多芸多才で非凡である\n一生栄誉と富に恵まれる",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "２．日宮推命法",
+        "table": 3,
+        "row": 8,
+        "column": "星曜入宮歌",
+        "block": null
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "sun_branch_卯"
+      ],
+      "notes": [
+        "欄名「星曜入宮歌」の和訳。資料「７．星曜歌訣について」で『星平会海』の「星曜入宮歌」として言及",
+        "既存『張果星宗』データ（related_ids）とは別資料による別解釈として保持（上書きしない）"
+      ],
+      "star": "sun",
+      "branch": "卯",
+      "position_raw": "卯宮\nさそり"
+    },
+    {
+      "id": "qz_starbranch_sun_卯_shoui",
+      "category": "star_branch_other",
+      "name": "太陽",
+      "target": "卯",
+      "conditions": {},
+      "interpretation": "陰険、堅忍不抜、善悪、謹厳\n秘密、信念、自律、集中力",
+      "source_text": "陰険、堅忍不抜、善悪、謹厳\n秘密、信念、自律、集中力",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "２．日宮推命法",
+        "table": 3,
+        "row": 8,
+        "column": "象意等",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_starbranch_sun_卯",
+        "sun_branch_卯"
+      ],
+      "notes": [
+        "欄名は「象意等」。宮位欄に星座名（例：おひつじ）が併記されているが、西洋占星術由来とは資料に明記されていないため unspecified"
+      ],
+      "star": "sun",
+      "branch": "卯",
+      "position_raw": "卯宮\nさそり"
+    },
+    {
+      "id": "qz_starbranch_sun_寅",
+      "category": "star_branch",
+      "name": "太陽",
+      "target": "寅",
+      "conditions": {},
+      "interpretation": "いての太陽は天桑という\n東から昇り光を照らす\n禄厚く福高く名をあげる\nまた高い地位に昇る",
+      "source_text": "いての太陽は天桑という\n東から昇り光を照らす\n禄厚く福高く名をあげる\nまた高い地位に昇る",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "２．日宮推命法",
+        "table": 3,
+        "row": 9,
+        "column": "星曜入宮歌",
+        "block": null
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "sun_branch_寅"
+      ],
+      "notes": [
+        "欄名「星曜入宮歌」の和訳。資料「７．星曜歌訣について」で『星平会海』の「星曜入宮歌」として言及",
+        "既存『張果星宗』データ（related_ids）とは別資料による別解釈として保持（上書きしない）"
+      ],
+      "star": "sun",
+      "branch": "寅",
+      "position_raw": "寅宮\nいて"
+    },
+    {
+      "id": "qz_starbranch_sun_寅_shoui",
+      "category": "star_branch_other",
+      "name": "太陽",
+      "target": "寅",
+      "conditions": {},
+      "interpretation": "運動、活発、冒険、自由、追求\n優柔不断、物質欲、賭博",
+      "source_text": "運動、活発、冒険、自由、追求\n優柔不断、物質欲、賭博",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "２．日宮推命法",
+        "table": 3,
+        "row": 9,
+        "column": "象意等",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_starbranch_sun_寅",
+        "sun_branch_寅"
+      ],
+      "notes": [
+        "欄名は「象意等」。宮位欄に星座名（例：おひつじ）が併記されているが、西洋占星術由来とは資料に明記されていないため unspecified"
+      ],
+      "star": "sun",
+      "branch": "寅",
+      "position_raw": "寅宮\nいて"
+    },
+    {
+      "id": "qz_starbranch_sun_丑",
+      "category": "star_branch",
+      "name": "太陽",
+      "target": "丑",
+      "conditions": {},
+      "interpretation": "丑宮の太陽は天幽という\nこの位置は斗牛宿である\nもし臨官禄の地に照らせば\nきっと悠々自適となる",
+      "source_text": "丑宮の太陽は天幽という\nこの位置は斗牛宿である\nもし臨官禄の地に照らせば\nきっと悠々自適となる",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "２．日宮推命法",
+        "table": 3,
+        "row": 10,
+        "column": "星曜入宮歌",
+        "block": null
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "sun_branch_丑"
+      ],
+      "notes": [
+        "欄名「星曜入宮歌」の和訳。資料「７．星曜歌訣について」で『星平会海』の「星曜入宮歌」として言及",
+        "既存『張果星宗』データ（related_ids）とは別資料による別解釈として保持（上書きしない）"
+      ],
+      "star": "sun",
+      "branch": "丑",
+      "position_raw": "丑宮\nやぎ"
+    },
+    {
+      "id": "qz_starbranch_sun_丑_shoui",
+      "category": "star_branch_other",
+      "name": "太陽",
+      "target": "丑",
+      "conditions": {},
+      "interpretation": "意志堅固、刻苦、熱心、保守\n堅実、責任感、義務",
+      "source_text": "意志堅固、刻苦、熱心、保守\n堅実、責任感、義務",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "２．日宮推命法",
+        "table": 3,
+        "row": 10,
+        "column": "象意等",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_starbranch_sun_丑",
+        "sun_branch_丑"
+      ],
+      "notes": [
+        "欄名は「象意等」。宮位欄に星座名（例：おひつじ）が併記されているが、西洋占星術由来とは資料に明記されていないため unspecified"
+      ],
+      "star": "sun",
+      "branch": "丑",
+      "position_raw": "丑宮\nやぎ"
+    },
+    {
+      "id": "qz_starbranch_sun_子",
+      "category": "star_branch",
+      "name": "太陽",
+      "target": "子",
+      "conditions": {},
+      "interpretation": "子宮の太陽は天宜である\n夜生まれは却って有情\nもし昼生まれなら光は暗く\n禄は高くとも成すことなし",
+      "source_text": "子宮の太陽は天宜である\n夜生まれは却って有情\nもし昼生まれなら光は暗く\n禄は高くとも成すことなし",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "２．日宮推命法",
+        "table": 3,
+        "row": 11,
+        "column": "星曜入宮歌",
+        "block": null
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "sun_branch_子"
+      ],
+      "notes": [
+        "欄名「星曜入宮歌」の和訳。資料「７．星曜歌訣について」で『星平会海』の「星曜入宮歌」として言及",
+        "既存『張果星宗』データ（related_ids）とは別資料による別解釈として保持（上書きしない）"
+      ],
+      "star": "sun",
+      "branch": "子",
+      "position_raw": "子宮\nみずがめ"
+    },
+    {
+      "id": "qz_starbranch_sun_子_shoui",
+      "category": "star_branch_other",
+      "name": "太陽",
+      "target": "子",
+      "conditions": {},
+      "interpretation": "独立自主、革新、進歩、主張、自由\n人道主義、企画、科学、浪費",
+      "source_text": "独立自主、革新、進歩、主張、自由\n人道主義、企画、科学、浪費",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "２．日宮推命法",
+        "table": 3,
+        "row": 11,
+        "column": "象意等",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_starbranch_sun_子",
+        "sun_branch_子"
+      ],
+      "notes": [
+        "欄名は「象意等」。宮位欄に星座名（例：おひつじ）が併記されているが、西洋占星術由来とは資料に明記されていないため unspecified"
+      ],
+      "star": "sun",
+      "branch": "子",
+      "position_raw": "子宮\nみずがめ"
+    },
+    {
+      "id": "qz_starbranch_sun_亥",
+      "category": "star_branch",
+      "name": "太陽",
+      "target": "亥",
+      "conditions": {},
+      "interpretation": "太陽が亥宮で輝けば\n君主のそばで仕える\nもし化曜が官禄となれば\n若くして勲功を立てる",
+      "source_text": "太陽が亥宮で輝けば\n君主のそばで仕える\nもし化曜が官禄となれば\n若くして勲功を立てる",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "２．日宮推命法",
+        "table": 3,
+        "row": 12,
+        "column": "星曜入宮歌",
+        "block": null
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "sun_branch_亥"
+      ],
+      "notes": [
+        "欄名「星曜入宮歌」の和訳。資料「７．星曜歌訣について」で『星平会海』の「星曜入宮歌」として言及",
+        "既存『張果星宗』データ（related_ids）とは別資料による別解釈として保持（上書きしない）"
+      ],
+      "star": "sun",
+      "branch": "亥",
+      "position_raw": "亥宮\nうお"
+    },
+    {
+      "id": "qz_starbranch_sun_亥_shoui",
+      "category": "star_branch_other",
+      "name": "太陽",
+      "target": "亥",
+      "conditions": {},
+      "interpretation": "情感、芸術、修養、犠牲、控えめ\n思慮、優柔不断、金銭トラブル",
+      "source_text": "情感、芸術、修養、犠牲、控えめ\n思慮、優柔不断、金銭トラブル",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "２．日宮推命法",
+        "table": 3,
+        "row": 12,
+        "column": "象意等",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_starbranch_sun_亥",
+        "sun_branch_亥"
+      ],
+      "notes": [
+        "欄名は「象意等」。宮位欄に星座名（例：おひつじ）が併記されているが、西洋占星術由来とは資料に明記されていないため unspecified"
+      ],
+      "star": "sun",
+      "branch": "亥",
+      "position_raw": "亥宮\nうお"
+    }
+  ]
+}

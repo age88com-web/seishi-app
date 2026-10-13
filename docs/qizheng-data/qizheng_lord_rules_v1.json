@@ -1,0 +1,1094 @@
+{
+  "schema_version": "1.0.0",
+  "source_file": "七政四餘鑑定用資料.docx",
+  "intro_text": "　「専論十主」は『星平会海』では始めの方で出てきますので、２の「二十四要法」からさかのぼることになりますが、主星の重要性をあらためて説くという意味で、ここにとりあげようと思います。",
+  "guard_intro_text": "原文は省略しますが、意味はほぼ原文のとおりです。",
+  "usage": "宮主（命主・身主・財主等）の判断。rules は subject/condition/result 形式（資料に明記された範囲のみ）",
+  "records": [
+    {
+      "id": "qz_lord_命主",
+      "category": "ten_lords",
+      "name": "命主",
+      "target": "命宮",
+      "conditions": {},
+      "interpretation": "　原詩は「命主高強一世栄、若還落陥苦匇匇、相逢貴格須云貴、遇悪応知不善終」\n　意味は、命主が強ければ一生安泰で、逆に弱ければ一生貧苦である。貴格を得れば必ず富貴で、弱くてさらに悪い神殺等がつけば終わりはよくないということです。",
+      "source_text": "（１）命主\n　原詩は「命主高強一世栄、若還落陥苦匇匇、相逢貴格須云貴、遇悪応知不善終」\n　意味は、命主が強ければ一生安泰で、逆に弱ければ一生貧苦である。貴格を得れば必ず富貴で、弱くてさらに悪い神殺等がつけば終わりはよくないということです。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）４．専論十主（1）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 177
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "number": 1,
+      "subject": "命主",
+      "subject_palace": "命宮",
+      "classical_text": {
+        "text": "命主高強一世栄、若還落陥苦匇匇、相逢貴格須云貴、遇悪応知不善終",
+        "source_kind": "classical",
+        "note": "資料に「原詩は「…」」として引用"
+      },
+      "rules": [
+        {
+          "condition": {
+            "state": "強"
+          },
+          "result": "一生安泰",
+          "effect": null,
+          "source_fragment": "命主が強ければ一生安泰"
+        },
+        {
+          "condition": {
+            "state": "弱"
+          },
+          "result": "一生貧苦",
+          "effect": null,
+          "source_fragment": "逆に弱ければ一生貧苦である"
+        },
+        {
+          "condition": {
+            "with": "貴格"
+          },
+          "result": "必ず富貴",
+          "effect": null,
+          "source_fragment": "貴格を得れば必ず富貴"
+        },
+        {
+          "condition": {
+            "state": "弱",
+            "with": "悪い神殺等"
+          },
+          "result": "終わりはよくない",
+          "effect": "bad",
+          "source_fragment": "弱くてさらに悪い神殺等がつけば終わりはよくない"
+        }
+      ]
+    },
+    {
+      "id": "qz_lord_身主",
+      "category": "ten_lords",
+      "name": "身主",
+      "target": "身宮",
+      "conditions": {},
+      "interpretation": "　原詩は「七強倶愛更閑宮、計孛来穿襁褓凶、[ｼｮｳ]得所躔度経度正、少年事業擬[ｷ]龍」（[ｼｮｳ]はにんべんに尚という字です）\n　七強というのは強い宮のことで、命宮、官禄、夫妻、田宅、男女、福徳、財帛をいいます。閑宮というのは兄弟宮のことです。襁褓というのは赤ん坊を背負うときに使う帯とおくるみです。また[ｷ]龍というのは龍の紋様です。ということで、意味は、身主は七宮や兄弟宮にあるのがよく、計都月孛が来るのは凶、もし躔度経度が正しければ、若くして成功する、という意味です。註には、身星はまさにその人の一身を示すとあります。",
+      "source_text": "（２）身主\n　原詩は「七強倶愛更閑宮、計孛来穿襁褓凶、[ｼｮｳ]得所躔度経度正、少年事業擬[ｷ]龍」（[ｼｮｳ]はにんべんに尚という字です）\n　七強というのは強い宮のことで、命宮、官禄、夫妻、田宅、男女、福徳、財帛をいいます。閑宮というのは兄弟宮のことです。襁褓というのは赤ん坊を背負うときに使う帯とおくるみです。また[ｷ]龍というのは龍の紋様です。ということで、意味は、身主は七宮や兄弟宮にあるのがよく、計都月孛が来るのは凶、もし躔度経度が正しければ、若くして成功する、という意味です。註には、身星はまさにその人の一身を示すとあります。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）４．専論十主（2）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 177
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [
+        "「[ｼｮｳ]」「[ｷ]」は資料の欠字表記をそのまま保持",
+        "説明中の「七宮」は資料のまま（訂正しない）"
+      ],
+      "number": 2,
+      "subject": "身主",
+      "subject_palace": "身宮",
+      "classical_text": {
+        "text": "七強倶愛更閑宮、計孛来穿襁褓凶、[ｼｮｳ]得所躔度経度正、少年事業擬[ｷ]龍",
+        "source_kind": "classical",
+        "note": "資料に「原詩は「…」」として引用"
+      },
+      "rules": [
+        {
+          "condition": {
+            "palace_raw": "七宮や兄弟宮"
+          },
+          "result": "よい",
+          "effect": "good",
+          "source_fragment": "身主は七宮や兄弟宮にあるのがよく",
+          "note": "「七宮」は資料の表記のまま（原詩・前文は「七強」。訂正しない）"
+        },
+        {
+          "condition": {
+            "with_stars": [
+              "ketu",
+              "yuebo"
+            ]
+          },
+          "result": "凶",
+          "effect": "bad",
+          "source_fragment": "計都月孛が来るのは凶"
+        },
+        {
+          "condition": {
+            "state": "躔度経度が正しい"
+          },
+          "result": "若くして成功する",
+          "effect": null,
+          "source_fragment": "もし躔度経度が正しければ、若くして成功する"
+        }
+      ]
+    },
+    {
+      "id": "qz_lord_恩主",
+      "category": "ten_lords",
+      "name": "恩主",
+      "target": "命宮の恩星",
+      "conditions": {},
+      "interpretation": "　原詩は「恩居恩地喜非常、若在仇郷富不長、福禄二垣無悪攪、限行至此慶難量」\n　恩主というのは、命宮の恩星のことです。恩星は「その２－４．十二宮位と七政四餘」で示しました。また恩地とは恩星が主星になる宮位、仇郷とはその宮位の仇星が主星となるところの宮位です。ちょっとややこしいかと思いますので例で示します。例えば命宮が辰宮の場合には恩星は土星（七政をとります）です。土星が主星となる宮位は子丑宮となります。この子丑宮が恩地というわけです。子丑宮の仇星は水星で、水星が主星となっている宮位は巳申です。これが仇郷というわけです。\n　ということをふまえて、意味は、恩主（恩星）が恩地にいるのは非常によく、もし仇郷にいれば富は続かない、福徳官禄二宮に悪い神殺がなければ、行限に至れば必ず発福する、ということです。",
+      "source_text": "（３）恩主\n　原詩は「恩居恩地喜非常、若在仇郷富不長、福禄二垣無悪攪、限行至此慶難量」\n　恩主というのは、命宮の恩星のことです。恩星は「その２－４．十二宮位と七政四餘」で示しました。また恩地とは恩星が主星になる宮位、仇郷とはその宮位の仇星が主星となるところの宮位です。ちょっとややこしいかと思いますので例で示します。例えば命宮が辰宮の場合には恩星は土星（七政をとります）です。土星が主星となる宮位は子丑宮となります。この子丑宮が恩地というわけです。子丑宮の仇星は水星で、水星が主星となっている宮位は巳申です。これが仇郷というわけです。\n　ということをふまえて、意味は、恩主（恩星）が恩地にいるのは非常によく、もし仇郷にいれば富は続かない、福徳官禄二宮に悪い神殺がなければ、行限に至れば必ず発福する、ということです。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）４．専論十主（3）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 177
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "number": 3,
+      "subject": "恩主",
+      "subject_palace": "命宮の恩星",
+      "classical_text": {
+        "text": "恩居恩地喜非常、若在仇郷富不長、福禄二垣無悪攪、限行至此慶難量",
+        "source_kind": "classical",
+        "note": "資料に「原詩は「…」」として引用"
+      },
+      "rules": [
+        {
+          "condition": {
+            "in": "恩地"
+          },
+          "result": "非常によい",
+          "effect": "good",
+          "source_fragment": "恩主（恩星）が恩地にいるのは非常によく"
+        },
+        {
+          "condition": {
+            "in": "仇郷"
+          },
+          "result": "富は続かない",
+          "effect": null,
+          "source_fragment": "もし仇郷にいれば富は続かない"
+        },
+        {
+          "condition": {
+            "no_bad_shensha_in": [
+              "福徳宮",
+              "官禄宮"
+            ],
+            "limit_reaches": true
+          },
+          "result": "必ず発福する",
+          "effect": null,
+          "source_fragment": "福徳官禄二宮に悪い神殺がなければ、行限に至れば必ず発福する"
+        }
+      ]
+    },
+    {
+      "id": "qz_lord_難主",
+      "category": "ten_lords",
+      "name": "難主",
+      "target": "命宮の難星",
+      "conditions": {},
+      "interpretation": "　原詩は「難居難地事如何、大限行来災病多、若在陥中並用地、縦然填吊得平過」\n　難主も恩主と同じ考え方です。「その２－４．十二宮位と七政四餘」を参照してください。註の例にしたがって説明すると、例えば子宮の場合難星は木星となり、難地は寅亥宮となります。このとき子宮の用星は金星であり、用地というのはこの金星が主星となる辰酉宮になります。\n　また吊というのは吊客のことでしょうが、まあ凶の神殺全般ととらえていいかと思います。\n　意味は、難星が難地にあって、大限がその宮に至れば災いや病が多い。もし難星が陥であって用地にあれば、たとえ凶殺が同宮しても平穏に過ぎる、というように意味です。",
+      "source_text": "（４）難主\n　原詩は「難居難地事如何、大限行来災病多、若在陥中並用地、縦然填吊得平過」\n　難主も恩主と同じ考え方です。「その２－４．十二宮位と七政四餘」を参照してください。註の例にしたがって説明すると、例えば子宮の場合難星は木星となり、難地は寅亥宮となります。このとき子宮の用星は金星であり、用地というのはこの金星が主星となる辰酉宮になります。\n　また吊というのは吊客のことでしょうが、まあ凶の神殺全般ととらえていいかと思います。\n　意味は、難星が難地にあって、大限がその宮に至れば災いや病が多い。もし難星が陥であって用地にあれば、たとえ凶殺が同宮しても平穏に過ぎる、というように意味です。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）４．専論十主（4）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 177
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "qz_comb_難主吊客"
+      ],
+      "notes": [
+        "「吊というのは吊客のことでしょうが、まあ凶の神殺全般ととらえていいかと思います」は著者見解"
+      ],
+      "number": 4,
+      "subject": "難主",
+      "subject_palace": "命宮の難星",
+      "classical_text": {
+        "text": "難居難地事如何、大限行来災病多、若在陥中並用地、縦然填吊得平過",
+        "source_kind": "classical",
+        "note": "資料に「原詩は「…」」として引用"
+      },
+      "rules": [
+        {
+          "condition": {
+            "in": "難地",
+            "big_limit_reaches": true
+          },
+          "result": "災いや病が多い",
+          "effect": null,
+          "source_fragment": "難星が難地にあって、大限がその宮に至れば災いや病が多い"
+        },
+        {
+          "condition": {
+            "state": "陥",
+            "in": "用地",
+            "even_with": "凶殺同宮"
+          },
+          "result": "平穏に過ぎる",
+          "effect": "mitigate",
+          "source_fragment": "もし難星が陥であって用地にあれば、たとえ凶殺が同宮しても平穏に過ぎる"
+        }
+      ]
+    },
+    {
+      "id": "qz_lord_財主",
+      "category": "ten_lords",
+      "name": "財主",
+      "target": "財帛宮",
+      "conditions": {},
+      "interpretation": "　原詩は「財主帰垣古石崇、重空無実范丹同、若教飛出為恩用、定主嚢箱晩景豊」\n　財主とは財帛宮の主星で、命主と考え方は同じです。帰垣というのはその財主が主星となる十二宮位に財主が入ることです。\n　意味は、財主が帰垣すれば富を得、陥だったり空だったりすれば貧乏である、もし財主が恩用となれば晩年は豊かであるというような意味です。ちなみに、石崇は金持ちの代名詞であり范丹は清廉な官吏で貧乏役人の代名詞です。",
+      "source_text": "（５）財主\n　原詩は「財主帰垣古石崇、重空無実范丹同、若教飛出為恩用、定主嚢箱晩景豊」\n　財主とは財帛宮の主星で、命主と考え方は同じです。帰垣というのはその財主が主星となる十二宮位に財主が入ることです。\n　意味は、財主が帰垣すれば富を得、陥だったり空だったりすれば貧乏である、もし財主が恩用となれば晩年は豊かであるというような意味です。ちなみに、石崇は金持ちの代名詞であり范丹は清廉な官吏で貧乏役人の代名詞です。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）４．専論十主（5）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 177
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "number": 5,
+      "subject": "財主",
+      "subject_palace": "財帛宮",
+      "classical_text": {
+        "text": "財主帰垣古石崇、重空無実范丹同、若教飛出為恩用、定主嚢箱晩景豊",
+        "source_kind": "classical",
+        "note": "資料に「原詩は「…」」として引用"
+      },
+      "rules": [
+        {
+          "condition": {
+            "state": "帰垣"
+          },
+          "result": "富を得",
+          "effect": null,
+          "source_fragment": "財主が帰垣すれば富を得"
+        },
+        {
+          "condition": {
+            "state": [
+              "陥",
+              "空"
+            ]
+          },
+          "result": "貧乏",
+          "effect": null,
+          "source_fragment": "陥だったり空だったりすれば貧乏である"
+        },
+        {
+          "condition": {
+            "state": "恩用"
+          },
+          "result": "晩年は豊か",
+          "effect": null,
+          "source_fragment": "もし財主が恩用となれば晩年は豊かである"
+        }
+      ]
+    },
+    {
+      "id": "qz_lord_田主",
+      "category": "ten_lords",
+      "name": "田主",
+      "target": "田宅宮",
+      "conditions": {},
+      "interpretation": "　原詩は「田宮田守祖多遺、空陥須教自鬻之、忽遇飛高逢貴格、壮年興造遍東西」\n　田主は田宅宮の主星で考え方は同じです。意味は、田主が帰垣すれば祖業をさらに発展させる。もし空亡や陥になれば必ずこれを売る、というようなことです。田宅というのは不動産ですが、祖業というか先祖代々の事業という意味もあります。",
+      "source_text": "（６）田主\n　原詩は「田宮田守祖多遺、空陥須教自鬻之、忽遇飛高逢貴格、壮年興造遍東西」\n　田主は田宅宮の主星で考え方は同じです。意味は、田主が帰垣すれば祖業をさらに発展させる。もし空亡や陥になれば必ずこれを売る、というようなことです。田宅というのは不動産ですが、祖業というか先祖代々の事業という意味もあります。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）４．専論十主（6）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 177
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "number": 6,
+      "subject": "田主",
+      "subject_palace": "田宅宮",
+      "classical_text": {
+        "text": "田宮田守祖多遺、空陥須教自鬻之、忽遇飛高逢貴格、壮年興造遍東西",
+        "source_kind": "classical",
+        "note": "資料に「原詩は「…」」として引用"
+      },
+      "rules": [
+        {
+          "condition": {
+            "state": "帰垣"
+          },
+          "result": "祖業をさらに発展させる",
+          "effect": null,
+          "source_fragment": "田主が帰垣すれば祖業をさらに発展させる"
+        },
+        {
+          "condition": {
+            "state": [
+              "空亡",
+              "陥"
+            ]
+          },
+          "result": "必ずこれを売る",
+          "effect": null,
+          "source_fragment": "もし空亡や陥になれば必ずこれを売る"
+        }
+      ]
+    },
+    {
+      "id": "qz_lord_妻主",
+      "category": "ten_lords",
+      "name": "妻主",
+      "target": "夫妻宮",
+      "conditions": {},
+      "interpretation": "　原詩は「七位逢生坐実中、玉人賢淑賽花容、地喪定損兼逢難、妾奪妻権金火鎔」\n　考え方は他の主星と同じです。妻主が強ければいい妻を持ち、もし陥であったり地喪星があったりすれば、妾が妻の座を奪うとします。",
+      "source_text": "（７）妻主\n　原詩は「七位逢生坐実中、玉人賢淑賽花容、地喪定損兼逢難、妾奪妻権金火鎔」\n　考え方は他の主星と同じです。妻主が強ければいい妻を持ち、もし陥であったり地喪星があったりすれば、妾が妻の座を奪うとします。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）４．専論十主（7）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 177
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "number": 7,
+      "subject": "妻主",
+      "subject_palace": "夫妻宮",
+      "classical_text": {
+        "text": "七位逢生坐実中、玉人賢淑賽花容、地喪定損兼逢難、妾奪妻権金火鎔",
+        "source_kind": "classical",
+        "note": "資料に「原詩は「…」」として引用"
+      },
+      "rules": [
+        {
+          "condition": {
+            "state": "強"
+          },
+          "result": "いい妻を持ち",
+          "effect": null,
+          "source_fragment": "妻主が強ければいい妻を持ち"
+        },
+        {
+          "condition": {
+            "state": "陥",
+            "or_with": "地喪星"
+          },
+          "result": "妾が妻の座を奪う",
+          "effect": null,
+          "source_fragment": "もし陥であったり地喪星があったりすれば、妾が妻の座を奪う"
+        }
+      ]
+    },
+    {
+      "id": "qz_lord_男主",
+      "category": "ten_lords",
+      "name": "男主",
+      "target": "男女宮",
+      "conditions": {},
+      "interpretation": "　原詩は「孤陽天狗最難招、独孛如存逆似梟、能得作恩無殺難、五枝丹桂二梅饒」\n　考え方は他の主星と同じで、男女宮の主星です。男女宮は子供を示す宮です。意味は、ただ太陽のみとか月孛のみで金水がなければ孤独であるか、子供は親不孝者である、天狗星があれば子供は育ちにくい。男主が恩地にあって悪い神殺がなければ、必ず子供が多いものである、ということです。",
+      "source_text": "（８）男主\n　原詩は「孤陽天狗最難招、独孛如存逆似梟、能得作恩無殺難、五枝丹桂二梅饒」\n　考え方は他の主星と同じで、男女宮の主星です。男女宮は子供を示す宮です。意味は、ただ太陽のみとか月孛のみで金水がなければ孤独であるか、子供は親不孝者である、天狗星があれば子供は育ちにくい。男主が恩地にあって悪い神殺がなければ、必ず子供が多いものである、ということです。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）４．専論十主（8）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 177
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "number": 8,
+      "subject": "男主",
+      "subject_palace": "男女宮",
+      "classical_text": {
+        "text": "孤陽天狗最難招、独孛如存逆似梟、能得作恩無殺難、五枝丹桂二梅饒",
+        "source_kind": "classical",
+        "note": "資料に「原詩は「…」」として引用"
+      },
+      "rules": [
+        {
+          "condition": {
+            "only": [
+              "太陽のみ",
+              "月孛のみ"
+            ],
+            "without": [
+              "金",
+              "水"
+            ]
+          },
+          "result": "孤独であるか、子供は親不孝者である",
+          "effect": null,
+          "source_fragment": "ただ太陽のみとか月孛のみで金水がなければ孤独であるか、子供は親不孝者である"
+        },
+        {
+          "condition": {
+            "with": "天狗星"
+          },
+          "result": "子供は育ちにくい",
+          "effect": null,
+          "source_fragment": "天狗星があれば子供は育ちにくい"
+        },
+        {
+          "condition": {
+            "in": "恩地",
+            "no_bad_shensha": true
+          },
+          "result": "必ず子供が多い",
+          "effect": null,
+          "source_fragment": "男主が恩地にあって悪い神殺がなければ、必ず子供が多いものである"
+        }
+      ]
+    },
+    {
+      "id": "qz_lord_福主",
+      "category": "ten_lords",
+      "name": "福主",
+      "target": "福徳宮",
+      "conditions": {},
+      "interpretation": "　原詩は「福星守福為真福、遇難逢空享不成、劫殺亡神三悪犯、繊毫安受未堪評」\n　福主は福徳宮の主星で、考え方は今までと同じです。劫殺亡神三悪犯とありますが、悪い神殺と考えていいでしょう。",
+      "source_text": "（９）福主\n　原詩は「福星守福為真福、遇難逢空享不成、劫殺亡神三悪犯、繊毫安受未堪評」\n　福主は福徳宮の主星で、考え方は今までと同じです。劫殺亡神三悪犯とありますが、悪い神殺と考えていいでしょう。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）４．専論十主（9）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 177
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "qz_comb_福主三悪"
+      ],
+      "notes": [
+        "福主は原詩のみで、資料に条件ごとの意味の説明がない（原詩を独自に訳さない）。「劫殺亡神三悪犯とありますが、悪い神殺と考えていいでしょう」は著者見解"
+      ],
+      "number": 9,
+      "subject": "福主",
+      "subject_palace": "福徳宮",
+      "classical_text": {
+        "text": "福星守福為真福、遇難逢空享不成、劫殺亡神三悪犯、繊毫安受未堪評",
+        "source_kind": "classical",
+        "note": "資料に「原詩は「…」」として引用"
+      },
+      "rules": []
+    },
+    {
+      "id": "qz_lord_禄主",
+      "category": "ten_lords",
+      "name": "禄主",
+      "target": "官禄宮",
+      "conditions": {},
+      "interpretation": "　原詩は「禄主為恩禄定豊、天厨再遇爵増隆、若還空陥侵仇難、寂寞寒江釣雪翁」\n　官禄星の主星を禄主といいます。意味は、恩地にあり、さらに天厨星があれば高位につきますが、もし弱ければ孤独で苦労する、ということで、考え方としては、前の９つと同じです。",
+      "source_text": "（10）禄主\n　原詩は「禄主為恩禄定豊、天厨再遇爵増隆、若還空陥侵仇難、寂寞寒江釣雪翁」\n　官禄星の主星を禄主といいます。意味は、恩地にあり、さらに天厨星があれば高位につきますが、もし弱ければ孤独で苦労する、ということで、考え方としては、前の９つと同じです。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）４．専論十主（10）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 177
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "number": 10,
+      "subject": "禄主",
+      "subject_palace": "官禄宮",
+      "classical_text": {
+        "text": "禄主為恩禄定豊、天厨再遇爵増隆、若還空陥侵仇難、寂寞寒江釣雪翁",
+        "source_kind": "classical",
+        "note": "資料に「原詩は「…」」として引用"
+      },
+      "rules": [
+        {
+          "condition": {
+            "in": "恩地",
+            "with": "天厨星"
+          },
+          "result": "高位につきます",
+          "effect": null,
+          "source_fragment": "恩地にあり、さらに天厨星があれば高位につきます"
+        },
+        {
+          "condition": {
+            "state": "弱"
+          },
+          "result": "孤独で苦労する",
+          "effect": null,
+          "source_fragment": "もし弱ければ孤独で苦労する"
+        }
+      ]
+    },
+    {
+      "id": "qz_lord_closing",
+      "category": "ten_lords_commentary",
+      "name": "専論十主のまとめ",
+      "target": null,
+      "conditions": {},
+      "interpretation": "　以上で「専論十主」の説明を終わります。ここで注意すべきは主星をみるのは、身主、恩主は別として、いわゆる強宮についての主星のみ論じていることです。すなわち、兄弟、相貌、遷移、病厄、奴僕の五宮については主星を論じていません。もちろん考え方としてはありうるわけですが、強宮ほどは重視しなくてよいということなのでしょう。\n　しかし、現代では見た目や職業や上下関係、病気ということは、昔以上に重要なポイントですから、考え方をやや変える必要があるかもしれません。",
+      "source_text": "　以上で「専論十主」の説明を終わります。ここで注意すべきは主星をみるのは、身主、恩主は別として、いわゆる強宮についての主星のみ論じていることです。すなわち、兄弟、相貌、遷移、病厄、奴僕の五宮については主星を論じていません。もちろん考え方としてはありうるわけですが、強宮ほどは重視しなくてよいということなのでしょう。\n　しかし、現代では見た目や職業や上下関係、病気ということは、昔以上に重要なポイントですから、考え方をやや変える必要があるかもしれません。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）４．専論十主（結び）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 177
+      },
+      "source_kind": "author_commentary",
+      "related_ids": [],
+      "notes": [
+        "兄弟・相貌・遷移・病厄・奴僕の五宮の主星は論じていない旨と著者見解"
+      ]
+    },
+    {
+      "id": "qz_guard_01",
+      "category": "lord_guard_palace",
+      "name": "主星守宮歌（1）",
+      "target": null,
+      "conditions": {},
+      "interpretation": "命主が身宮に入り身主が命宮に入れば、悪星や凶殺が会しても富貴栄華は間違いありません。",
+      "source_text": "命主が身宮に入り身主が命宮に入れば、悪星や凶殺が会しても富貴栄華は間違いありません。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）８．主星守宮歌",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 182
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [
+        "資料に「原文は省略しますが、意味はほぼ原文のとおりです」とある"
+      ],
+      "rules": [
+        {
+          "condition": {
+            "命主_in": "身宮",
+            "身主_in": "命宮",
+            "even_with": "悪星や凶殺"
+          },
+          "result": "富貴栄華は間違いありません",
+          "effect": null,
+          "source_fragment": "命主が身宮に入り身主が命宮に入れば、悪星や凶殺が会しても富貴栄華は間違いありません"
+        }
+      ]
+    },
+    {
+      "id": "qz_guard_02",
+      "category": "lord_guard_palace",
+      "name": "主星守宮歌（2）",
+      "target": null,
+      "conditions": {},
+      "interpretation": "命主身主が田宅宮に坐すれば財産を守ることができ、田宅宮の主星が命宮に入れば財産を得て貯めることになります。",
+      "source_text": "命主身主が田宅宮に坐すれば財産を守ることができ、田宅宮の主星が命宮に入れば財産を得て貯めることになります。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）８．主星守宮歌",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 182
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [
+        "資料に「原文は省略しますが、意味はほぼ原文のとおりです」とある"
+      ],
+      "rules": [
+        {
+          "condition": {
+            "命主身主_in": "田宅宮"
+          },
+          "result": "財産を守ることができ",
+          "effect": null,
+          "source_fragment": "命主身主が田宅宮に坐すれば財産を守ることができ"
+        },
+        {
+          "condition": {
+            "田宅宮主_in": "命宮"
+          },
+          "result": "財産を得て貯める",
+          "effect": null,
+          "source_fragment": "田宅宮の主星が命宮に入れば財産を得て貯めることになります"
+        }
+      ]
+    },
+    {
+      "id": "qz_guard_03",
+      "category": "lord_guard_palace",
+      "name": "主星守宮歌（3）",
+      "target": null,
+      "conditions": {},
+      "interpretation": "命主身主が男女宮を守れば母は子に恩恵を与え、男女宮の主星がもし命宮に入れば、地位は高く福禄は厚くて世に出ることになります。",
+      "source_text": "命主身主が男女宮を守れば母は子に恩恵を与え、男女宮の主星がもし命宮に入れば、地位は高く福禄は厚くて世に出ることになります。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）８．主星守宮歌",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 182
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [
+        "資料に「原文は省略しますが、意味はほぼ原文のとおりです」とある"
+      ],
+      "rules": [
+        {
+          "condition": {
+            "命主身主_in": "男女宮"
+          },
+          "result": "母は子に恩恵を与え",
+          "effect": null,
+          "source_fragment": "命主身主が男女宮を守れば母は子に恩恵を与え"
+        },
+        {
+          "condition": {
+            "男女宮主_in": "命宮"
+          },
+          "result": "地位は高く福禄は厚くて世に出る",
+          "effect": null,
+          "source_fragment": "男女宮の主星がもし命宮に入れば、地位は高く福禄は厚くて世に出ることになります"
+        }
+      ]
+    },
+    {
+      "id": "qz_guard_04",
+      "category": "lord_guard_palace",
+      "name": "主星守宮歌（4）",
+      "target": null,
+      "conditions": {},
+      "interpretation": "命主身主が奴僕宮に入れば、吉星があっても苦労し、また人に使われることになる。さらに奴僕宮の主星が命宮に入るのはよくありません。",
+      "source_text": "命主身主が奴僕宮に入れば、吉星があっても苦労し、また人に使われることになる。さらに奴僕宮の主星が命宮に入るのはよくありません。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）８．主星守宮歌",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 182
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [
+        "資料に「原文は省略しますが、意味はほぼ原文のとおりです」とある"
+      ],
+      "rules": [
+        {
+          "condition": {
+            "命主身主_in": "奴僕宮"
+          },
+          "result": "吉星があっても苦労し、また人に使われる",
+          "effect": null,
+          "source_fragment": "命主身主が奴僕宮に入れば、吉星があっても苦労し、また人に使われることになる"
+        },
+        {
+          "condition": {
+            "奴僕宮主_in": "命宮"
+          },
+          "result": "よくありません",
+          "effect": "bad",
+          "source_fragment": "さらに奴僕宮の主星が命宮に入るのはよくありません"
+        }
+      ]
+    },
+    {
+      "id": "qz_guard_05",
+      "category": "lord_guard_palace",
+      "name": "主星守宮歌（5）",
+      "target": null,
+      "conditions": {},
+      "interpretation": "命主身主が夫妻宮に入れば、妻財は盛んで顔はきれいです。夫妻宮の主星が命宮に入れば、おそらくは外戚を招き横財（不労所得）を得ます。",
+      "source_text": "命主身主が夫妻宮に入れば、妻財は盛んで顔はきれいです。夫妻宮の主星が命宮に入れば、おそらくは外戚を招き横財（不労所得）を得ます。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）８．主星守宮歌",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 182
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [
+        "資料に「原文は省略しますが、意味はほぼ原文のとおりです」とある"
+      ],
+      "rules": [
+        {
+          "condition": {
+            "命主身主_in": "夫妻宮"
+          },
+          "result": "妻財は盛んで顔はきれい",
+          "effect": null,
+          "source_fragment": "命主身主が夫妻宮に入れば、妻財は盛んで顔はきれいです"
+        },
+        {
+          "condition": {
+            "夫妻宮主_in": "命宮"
+          },
+          "result": "おそらくは外戚を招き横財（不労所得）を得ます",
+          "effect": null,
+          "source_fragment": "夫妻宮の主星が命宮に入れば、おそらくは外戚を招き横財（不労所得）を得ます"
+        }
+      ]
+    },
+    {
+      "id": "qz_guard_06",
+      "category": "lord_guard_palace",
+      "name": "主星守宮歌（6）",
+      "target": null,
+      "conditions": {},
+      "interpretation": "命主身主が八殺宮（疾厄宮？）に入れば財禄は若いうちに得て、もし疾厄宮の主星が命宮に入れば、疾厄が身にまとわりついて離れません。",
+      "source_text": "命主身主が八殺宮（疾厄宮？）に入れば財禄は若いうちに得て、もし疾厄宮の主星が命宮に入れば、疾厄が身にまとわりついて離れません。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）８．主星守宮歌",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 182
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [
+        "資料に「原文は省略しますが、意味はほぼ原文のとおりです」とある",
+        "「八殺宮（疾厄宮？）」は資料の推量のまま"
+      ],
+      "rules": [
+        {
+          "condition": {
+            "命主身主_in_raw": "八殺宮（疾厄宮？）"
+          },
+          "result": "財禄は若いうちに得て",
+          "effect": null,
+          "source_fragment": "命主身主が八殺宮（疾厄宮？）に入れば財禄は若いうちに得て",
+          "note": "「八殺宮（疾厄宮？）」は資料の推量のまま（解決しない）"
+        },
+        {
+          "condition": {
+            "疾厄宮主_in": "命宮"
+          },
+          "result": "疾厄が身にまとわりついて離れません",
+          "effect": null,
+          "source_fragment": "もし疾厄宮の主星が命宮に入れば、疾厄が身にまとわりついて離れません"
+        }
+      ]
+    },
+    {
+      "id": "qz_guard_07",
+      "category": "lord_guard_palace",
+      "name": "主星守宮歌（7）",
+      "target": null,
+      "conditions": {},
+      "interpretation": "命主身主が遷移宮に入った場合には養子になったり家を出たりする。もし遷移宮の主星が命宮に入れば養子を得ます。",
+      "source_text": "命主身主が遷移宮に入った場合には養子になったり家を出たりする。もし遷移宮の主星が命宮に入れば養子を得ます。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）８．主星守宮歌",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 182
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [
+        "資料に「原文は省略しますが、意味はほぼ原文のとおりです」とある"
+      ],
+      "rules": [
+        {
+          "condition": {
+            "命主身主_in": "遷移宮"
+          },
+          "result": "養子になったり家を出たりする",
+          "effect": null,
+          "source_fragment": "命主身主が遷移宮に入った場合には養子になったり家を出たりする"
+        },
+        {
+          "condition": {
+            "遷移宮主_in": "命宮"
+          },
+          "result": "養子を得ます",
+          "effect": null,
+          "source_fragment": "もし遷移宮の主星が命宮に入れば養子を得ます"
+        }
+      ]
+    },
+    {
+      "id": "qz_guard_08",
+      "category": "lord_guard_palace",
+      "name": "主星守宮歌（8）",
+      "target": null,
+      "conditions": {},
+      "interpretation": "財帛、田宅の主星は身主、命主と遇うのを喜び、もし悪星、凶殺がなければ大変な富を得ます。",
+      "source_text": "財帛、田宅の主星は身主、命主と遇うのを喜び、もし悪星、凶殺がなければ大変な富を得ます。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）８．主星守宮歌",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 182
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [
+        "資料に「原文は省略しますが、意味はほぼ原文のとおりです」とある"
+      ],
+      "rules": [
+        {
+          "condition": {
+            "財帛宮主・田宅宮主": "身主・命主と遇う",
+            "without": "悪星、凶殺"
+          },
+          "result": "大変な富を得ます",
+          "effect": null,
+          "source_fragment": "財帛、田宅の主星は身主、命主と遇うのを喜び、もし悪星、凶殺がなければ大変な富を得ます"
+        }
+      ]
+    },
+    {
+      "id": "qz_guard_09",
+      "category": "lord_guard_palace",
+      "name": "主星守宮歌（9）",
+      "target": null,
+      "conditions": {},
+      "interpretation": "兄弟宮の主星が命宮に入れば、吉星があっても空となり、日中からぼーっとして過ごすことになります。",
+      "source_text": "兄弟宮の主星が命宮に入れば、吉星があっても空となり、日中からぼーっとして過ごすことになります。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）８．主星守宮歌",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 182
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [
+        "資料に「原文は省略しますが、意味はほぼ原文のとおりです」とある"
+      ],
+      "rules": [
+        {
+          "condition": {
+            "兄弟宮主_in": "命宮",
+            "even_with": "吉星"
+          },
+          "result": "空となり、日中からぼーっとして過ごす",
+          "effect": null,
+          "source_fragment": "兄弟宮の主星が命宮に入れば、吉星があっても空となり、日中からぼーっとして過ごすことになります"
+        }
+      ]
+    },
+    {
+      "id": "qz_guard_10",
+      "category": "lord_guard_palace",
+      "name": "主星守宮歌（10）",
+      "target": null,
+      "conditions": {},
+      "interpretation": "官禄宮の主星が命宮に入れば、忌星があっても空とはなりません。命主が官禄宮に入れば高位に上ります。",
+      "source_text": "官禄宮の主星が命宮に入れば、忌星があっても空とはなりません。命主が官禄宮に入れば高位に上ります。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）８．主星守宮歌",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 182
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [
+        "資料に「原文は省略しますが、意味はほぼ原文のとおりです」とある"
+      ],
+      "rules": [
+        {
+          "condition": {
+            "官禄宮主_in": "命宮",
+            "even_with": "忌星"
+          },
+          "result": "空とはなりません",
+          "effect": null,
+          "source_fragment": "官禄宮の主星が命宮に入れば、忌星があっても空とはなりません"
+        },
+        {
+          "condition": {
+            "命主_in": "官禄宮"
+          },
+          "result": "高位に上ります",
+          "effect": null,
+          "source_fragment": "命主が官禄宮に入れば高位に上ります"
+        }
+      ]
+    },
+    {
+      "id": "qz_guard_11",
+      "category": "lord_guard_palace",
+      "name": "主星守宮歌（11）",
+      "target": null,
+      "conditions": {},
+      "interpretation": "福徳宮の主星が命宮に来れば、主に福寿が長く続き災いなしとします。命主が福徳宮にいれば高位に上ります。",
+      "source_text": "福徳宮の主星が命宮に来れば、主に福寿が長く続き災いなしとします。命主が福徳宮にいれば高位に上ります。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）８．主星守宮歌",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 182
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [
+        "資料に「原文は省略しますが、意味はほぼ原文のとおりです」とある"
+      ],
+      "rules": [
+        {
+          "condition": {
+            "福徳宮主_in": "命宮"
+          },
+          "result": "福寿が長く続き災いなし",
+          "effect": null,
+          "source_fragment": "福徳宮の主星が命宮に来れば、主に福寿が長く続き災いなしとします"
+        },
+        {
+          "condition": {
+            "命主_in": "福徳宮"
+          },
+          "result": "高位に上ります",
+          "effect": null,
+          "source_fragment": "命主が福徳宮にいれば高位に上ります"
+        }
+      ]
+    },
+    {
+      "id": "qz_guard_12",
+      "category": "lord_guard_palace",
+      "name": "主星守宮歌（12）",
+      "target": null,
+      "conditions": {},
+      "interpretation": "相貌宮の主星が命宮に入れば、顔つきは堂々としています。もし凶殺がくれば顔は悪いです。",
+      "source_text": "相貌宮の主星が命宮に入れば、顔つきは堂々としています。もし凶殺がくれば顔は悪いです。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）８．主星守宮歌",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 182
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [
+        "資料に「原文は省略しますが、意味はほぼ原文のとおりです」とある"
+      ],
+      "rules": [
+        {
+          "condition": {
+            "相貌宮主_in": "命宮"
+          },
+          "result": "顔つきは堂々としています",
+          "effect": null,
+          "source_fragment": "相貌宮の主星が命宮に入れば、顔つきは堂々としています"
+        },
+        {
+          "condition": {
+            "相貌宮主_in": "命宮",
+            "with": "凶殺"
+          },
+          "result": "顔は悪いです",
+          "effect": null,
+          "source_fragment": "もし凶殺がくれば顔は悪いです"
+        }
+      ]
+    },
+    {
+      "id": "qz_guard_principle",
+      "category": "lord_guard_principle",
+      "name": "主星守宮歌（宮主を明らかにする）",
+      "target": null,
+      "conditions": {},
+      "interpretation": "五星（木火土金水の各星）を論ずるには多くの言葉はいらず、まず宮主を明らかにして判断すればいいです。世の人は元守星を説きますが、元守星にはあまり作用はありません。",
+      "source_text": "五星（木火土金水の各星）を論ずるには多くの言葉はいらず、まず宮主を明らかにして判断すればいいです。世の人は元守星を説きますが、元守星にはあまり作用はありません。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）８．主星守宮歌",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 182
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [
+        "元守星（宮にいる星）より宮主を重視する原則"
+      ]
+    },
+    {
+      "id": "qz_guard_commentary",
+      "category": "lord_guard_commentary",
+      "name": "主星守宮歌（著者解釈）",
+      "target": null,
+      "conditions": {},
+      "interpretation": "上の文でいう元守星とは、その宮に居る五星のことだと思いますが、居る星自体の意味よりも宮主や命主身主がどこにどうあるかが重要であるという意味でしょう。これはなかなか重要です。",
+      "source_text": "上の文でいう元守星とは、その宮に居る五星のことだと思いますが、居る星自体の意味よりも宮主や命主身主がどこにどうあるかが重要であるという意味でしょう。これはなかなか重要です。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）８．主星守宮歌",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 182
+      },
+      "source_kind": "author_commentary",
+      "related_ids": [
+        "qz_guard_principle"
+      ],
+      "notes": []
+    }
+  ]
+}

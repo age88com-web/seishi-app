@@ -1,0 +1,5072 @@
+{
+  "schema_version": "1.0.0",
+  "source_file": "七政四餘鑑定用資料.docx",
+  "usage": "宮クリック時に「神殺名＋基本象意」を表示するための名称単位データ。宮別解釈は含まない（資料に記載がないため）",
+  "records": [
+    {
+      "id": "qz_shensha_ys_star_禄元",
+      "category": "shensha",
+      "name": "禄元",
+      "target": null,
+      "conditions": {},
+      "interpretation": "財禄",
+      "source_text": "財禄",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干神殺　その１",
+        "table": 18,
+        "row": 1,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "ys_star",
+      "shensha_table_label": "年干神殺　その１",
+      "base": "年干",
+      "attaches_to": "star",
+      "names_in_row": [
+        "禄元"
+      ],
+      "name_cell_raw": "禄元",
+      "row_meaning": "財禄",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 18,
+        "row": 1
+      }
+    },
+    {
+      "id": "qz_shensha_ys_star_仁元",
+      "category": "shensha",
+      "name": "仁元",
+      "target": null,
+      "conditions": {},
+      "interpretation": "官爵、名声、長寿",
+      "source_text": "科名に同じ。\n官爵、名声、長寿",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干神殺　その１",
+        "table": 18,
+        "row": 2,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）",
+        "資料の意味欄に「科名に同じ。」とある"
+      ],
+      "shensha_table": "ys_star",
+      "shensha_table_label": "年干神殺　その１",
+      "base": "年干",
+      "attaches_to": "star",
+      "names_in_row": [
+        "仁元",
+        "科名"
+      ],
+      "name_cell_raw": "仁元\n科名",
+      "row_meaning": "科名に同じ。\n官爵、名声、長寿",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 18,
+        "row": 2
+      }
+    },
+    {
+      "id": "qz_shensha_ys_star_科名",
+      "category": "shensha",
+      "name": "科名",
+      "target": null,
+      "conditions": {},
+      "interpretation": "官爵、名声、長寿",
+      "source_text": "科名に同じ。\n官爵、名声、長寿",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干神殺　その１",
+        "table": 18,
+        "row": 2,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）",
+        "資料の意味欄に「科名に同じ。」とある"
+      ],
+      "shensha_table": "ys_star",
+      "shensha_table_label": "年干神殺　その１",
+      "base": "年干",
+      "attaches_to": "star",
+      "names_in_row": [
+        "仁元",
+        "科名"
+      ],
+      "name_cell_raw": "仁元\n科名",
+      "row_meaning": "科名に同じ。\n官爵、名声、長寿",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 18,
+        "row": 2
+      }
+    },
+    {
+      "id": "qz_shensha_ys_star_文星",
+      "category": "shensha",
+      "name": "文星",
+      "target": null,
+      "conditions": {},
+      "interpretation": "文章、秀気",
+      "source_text": "文章、秀気",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干神殺　その１",
+        "table": 18,
+        "row": 3,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "ys_star",
+      "shensha_table_label": "年干神殺　その１",
+      "base": "年干",
+      "attaches_to": "star",
+      "names_in_row": [
+        "文星"
+      ],
+      "name_cell_raw": "文星",
+      "row_meaning": "文章、秀気",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 18,
+        "row": 3
+      }
+    },
+    {
+      "id": "qz_shensha_ys_star_魁星",
+      "category": "shensha",
+      "name": "魁星",
+      "target": null,
+      "conditions": {},
+      "interpretation": "文武、官職",
+      "source_text": "文武、官職",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干神殺　その１",
+        "table": 18,
+        "row": 4,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "ys_star",
+      "shensha_table_label": "年干神殺　その１",
+      "base": "年干",
+      "attaches_to": "star",
+      "names_in_row": [
+        "魁星"
+      ],
+      "name_cell_raw": "魁星",
+      "row_meaning": "文武、官職",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 18,
+        "row": 4
+      }
+    },
+    {
+      "id": "qz_shensha_ys_star_官星",
+      "category": "shensha",
+      "name": "官星",
+      "target": null,
+      "conditions": {},
+      "interpretation": "官職、政事、輔弼",
+      "source_text": "官職、政事、輔弼",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干神殺　その１",
+        "table": 18,
+        "row": 5,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "ys_star",
+      "shensha_table_label": "年干神殺　その１",
+      "base": "年干",
+      "attaches_to": "star",
+      "names_in_row": [
+        "官星"
+      ],
+      "name_cell_raw": "官星",
+      "row_meaning": "官職、政事、輔弼",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 18,
+        "row": 5
+      }
+    },
+    {
+      "id": "qz_shensha_ys_star_印星",
+      "category": "shensha",
+      "name": "印星",
+      "target": null,
+      "conditions": {},
+      "interpretation": "印章、権威",
+      "source_text": "印章、権威",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干神殺　その１",
+        "table": 18,
+        "row": 6,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "ys_star",
+      "shensha_table_label": "年干神殺　その１",
+      "base": "年干",
+      "attaches_to": "star",
+      "names_in_row": [
+        "印星"
+      ],
+      "name_cell_raw": "印星",
+      "row_meaning": "印章、権威",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 18,
+        "row": 6
+      }
+    },
+    {
+      "id": "qz_shensha_ys_star_催官",
+      "category": "shensha",
+      "name": "催官",
+      "target": null,
+      "conditions": {},
+      "interpretation": "遷官、昇進、転職",
+      "source_text": "遷官、昇進、転職",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干神殺　その１",
+        "table": 18,
+        "row": 7,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "ys_star",
+      "shensha_table_label": "年干神殺　その１",
+      "base": "年干",
+      "attaches_to": "star",
+      "names_in_row": [
+        "催官"
+      ],
+      "name_cell_raw": "催官",
+      "row_meaning": "遷官、昇進、転職",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 18,
+        "row": 7
+      }
+    },
+    {
+      "id": "qz_shensha_ys_star_禄神",
+      "category": "shensha",
+      "name": "禄神",
+      "target": null,
+      "conditions": {},
+      "interpretation": "俸禄",
+      "source_text": "俸禄",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干神殺　その１",
+        "table": 18,
+        "row": 8,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "ys_star",
+      "shensha_table_label": "年干神殺　その１",
+      "base": "年干",
+      "attaches_to": "star",
+      "names_in_row": [
+        "禄神"
+      ],
+      "name_cell_raw": "禄神",
+      "row_meaning": "俸禄",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 18,
+        "row": 8
+      }
+    },
+    {
+      "id": "qz_shensha_ys_star_喜神",
+      "category": "shensha",
+      "name": "喜神",
+      "target": null,
+      "conditions": {},
+      "interpretation": "婚姻、慶事",
+      "source_text": "婚姻、慶事",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干神殺　その１",
+        "table": 18,
+        "row": 9,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "ys_star",
+      "shensha_table_label": "年干神殺　その１",
+      "base": "年干",
+      "attaches_to": "star",
+      "names_in_row": [
+        "喜神"
+      ],
+      "name_cell_raw": "喜神",
+      "row_meaning": "婚姻、慶事",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 18,
+        "row": 9
+      }
+    },
+    {
+      "id": "qz_shensha_ys_star_天嗣",
+      "category": "shensha",
+      "name": "天嗣",
+      "target": null,
+      "conditions": {},
+      "interpretation": "子孫、子息",
+      "source_text": "子孫、子息",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干神殺　その１",
+        "table": 18,
+        "row": 10,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "ys_star",
+      "shensha_table_label": "年干神殺　その１",
+      "base": "年干",
+      "attaches_to": "star",
+      "names_in_row": [
+        "天嗣"
+      ],
+      "name_cell_raw": "天嗣",
+      "row_meaning": "子孫、子息",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 18,
+        "row": 10
+      }
+    },
+    {
+      "id": "qz_shensha_ys_star_追魂",
+      "category": "shensha",
+      "name": "追魂",
+      "target": null,
+      "conditions": {},
+      "interpretation": null,
+      "source_text": ".",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干神殺　その１",
+        "table": 18,
+        "row": 11,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "意味欄は「.」で記載なし"
+      ],
+      "shensha_table": "ys_star",
+      "shensha_table_label": "年干神殺　その１",
+      "base": "年干",
+      "attaches_to": "star",
+      "names_in_row": [
+        "追魂"
+      ],
+      "name_cell_raw": "追魂",
+      "row_meaning": ".",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 18,
+        "row": 11
+      }
+    },
+    {
+      "id": "qz_shensha_ys_branch_禄勲",
+      "category": "shensha",
+      "name": "禄勲",
+      "target": null,
+      "conditions": {},
+      "interpretation": "地位、財禄",
+      "source_text": "地位、財禄",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干神殺　その２",
+        "table": 19,
+        "row": 1,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "ys_branch",
+      "shensha_table_label": "年干神殺　その２",
+      "base": "年干",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "禄勲"
+      ],
+      "name_cell_raw": "禄勲",
+      "row_meaning": "地位、財禄",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 19,
+        "row": 1
+      }
+    },
+    {
+      "id": "qz_shensha_ys_branch_天乙",
+      "category": "shensha",
+      "name": "天乙",
+      "target": null,
+      "conditions": {},
+      "interpretation": "昼貴人、福禄、貴人",
+      "source_text": "昼貴人、異説あり\n福禄、貴人",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干神殺　その２",
+        "table": 19,
+        "row": 2,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「異説あり」と明記（解決しない）"
+      ],
+      "shensha_table": "ys_branch",
+      "shensha_table_label": "年干神殺　その２",
+      "base": "年干",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "天乙"
+      ],
+      "name_cell_raw": "天乙",
+      "row_meaning": "昼貴人、異説あり\n福禄、貴人",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 19,
+        "row": 2
+      }
+    },
+    {
+      "id": "qz_shensha_ys_branch_玉堂",
+      "category": "shensha",
+      "name": "玉堂",
+      "target": null,
+      "conditions": {},
+      "interpretation": "夜貴人、福禄、貴人",
+      "source_text": "夜貴人、異説あり\n福禄、貴人",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干神殺　その２",
+        "table": 19,
+        "row": 3,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_shensha_yb_palace_玉堂"
+      ],
+      "notes": [
+        "資料に「異説あり」と明記（解決しない）",
+        "同名の神殺が別の表にもある（別項目として保持。統合しない）"
+      ],
+      "shensha_table": "ys_branch",
+      "shensha_table_label": "年干神殺　その２",
+      "base": "年干",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "玉堂"
+      ],
+      "name_cell_raw": "玉堂",
+      "row_meaning": "夜貴人、異説あり\n福禄、貴人",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 19,
+        "row": 3
+      }
+    },
+    {
+      "id": "qz_shensha_ys_branch_文昌",
+      "category": "shensha",
+      "name": "文昌",
+      "target": null,
+      "conditions": {},
+      "interpretation": "聡明、文学",
+      "source_text": "聡明、文学",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干神殺　その２",
+        "table": 19,
+        "row": 4,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "ys_branch",
+      "shensha_table_label": "年干神殺　その２",
+      "base": "年干",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "文昌"
+      ],
+      "name_cell_raw": "文昌",
+      "row_meaning": "聡明、文学",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 19,
+        "row": 4
+      }
+    },
+    {
+      "id": "qz_shensha_ys_branch_天厨",
+      "category": "shensha",
+      "name": "天厨",
+      "target": null,
+      "conditions": {},
+      "interpretation": "食禄",
+      "source_text": "食禄",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干神殺　その２",
+        "table": 19,
+        "row": 5,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "ys_branch",
+      "shensha_table_label": "年干神殺　その２",
+      "base": "年干",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "天厨"
+      ],
+      "name_cell_raw": "天厨",
+      "row_meaning": "食禄",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 19,
+        "row": 5
+      }
+    },
+    {
+      "id": "qz_shensha_ys_branch_唐符",
+      "category": "shensha",
+      "name": "唐符",
+      "target": null,
+      "conditions": {},
+      "interpretation": "顕爵、分離",
+      "source_text": "顕爵、分離",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干神殺　その２",
+        "table": 19,
+        "row": 6,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "ys_branch",
+      "shensha_table_label": "年干神殺　その２",
+      "base": "年干",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "唐符",
+        "飛刃"
+      ],
+      "name_cell_raw": "唐符\n飛刃",
+      "row_meaning": "顕爵、分離",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 19,
+        "row": 6
+      }
+    },
+    {
+      "id": "qz_shensha_ys_branch_飛刃",
+      "category": "shensha",
+      "name": "飛刃",
+      "target": null,
+      "conditions": {},
+      "interpretation": "顕爵、分離",
+      "source_text": "顕爵、分離",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干神殺　その２",
+        "table": 19,
+        "row": 6,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "ys_branch",
+      "shensha_table_label": "年干神殺　その２",
+      "base": "年干",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "唐符",
+        "飛刃"
+      ],
+      "name_cell_raw": "唐符\n飛刃",
+      "row_meaning": "顕爵、分離",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 19,
+        "row": 6
+      }
+    },
+    {
+      "id": "qz_shensha_ys_branch_国印",
+      "category": "shensha",
+      "name": "国印",
+      "target": null,
+      "conditions": {},
+      "interpretation": "顕爵、権力",
+      "source_text": "顕爵、権力",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干神殺　その２",
+        "table": 19,
+        "row": 7,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "ys_branch",
+      "shensha_table_label": "年干神殺　その２",
+      "base": "年干",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "国印"
+      ],
+      "name_cell_raw": "国印",
+      "row_meaning": "顕爵、権力",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 19,
+        "row": 7
+      }
+    },
+    {
+      "id": "qz_shensha_ys_branch_陽刃",
+      "category": "shensha",
+      "name": "陽刃",
+      "target": null,
+      "conditions": {},
+      "interpretation": "分離、凶刃",
+      "source_text": "紫暗星とも\n分離、凶刃",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干神殺　その２",
+        "table": 19,
+        "row": 8,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）",
+        "資料の意味欄に「紫暗星とも」とある"
+      ],
+      "shensha_table": "ys_branch",
+      "shensha_table_label": "年干神殺　その２",
+      "base": "年干",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "陽刃",
+        "陰刃"
+      ],
+      "name_cell_raw": "陽刃\n陰刃",
+      "row_meaning": "紫暗星とも\n分離、凶刃",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 19,
+        "row": 8
+      }
+    },
+    {
+      "id": "qz_shensha_ys_branch_陰刃",
+      "category": "shensha",
+      "name": "陰刃",
+      "target": null,
+      "conditions": {},
+      "interpretation": "分離、凶刃",
+      "source_text": "紫暗星とも\n分離、凶刃",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干神殺　その２",
+        "table": 19,
+        "row": 8,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）",
+        "資料の意味欄に「紫暗星とも」とある"
+      ],
+      "shensha_table": "ys_branch",
+      "shensha_table_label": "年干神殺　その２",
+      "base": "年干",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "陽刃",
+        "陰刃"
+      ],
+      "name_cell_raw": "陽刃\n陰刃",
+      "row_meaning": "紫暗星とも\n分離、凶刃",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 19,
+        "row": 8
+      }
+    },
+    {
+      "id": "qz_shensha_ys_branch_流霞",
+      "category": "shensha",
+      "name": "流霞",
+      "target": null,
+      "conditions": {},
+      "interpretation": "出奔",
+      "source_text": "出奔",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干神殺　その２",
+        "table": 19,
+        "row": 9,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "ys_branch",
+      "shensha_table_label": "年干神殺　その２",
+      "base": "年干",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "流霞"
+      ],
+      "name_cell_raw": "流霞",
+      "row_meaning": "出奔",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 19,
+        "row": 9
+      }
+    },
+    {
+      "id": "qz_shensha_ys_branch_紅艶",
+      "category": "shensha",
+      "name": "紅艶",
+      "target": null,
+      "conditions": {},
+      "interpretation": "淫欲",
+      "source_text": "淫欲",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干神殺　その２",
+        "table": 19,
+        "row": 10,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "ys_branch",
+      "shensha_table_label": "年干神殺　その２",
+      "base": "年干",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "紅艶"
+      ],
+      "name_cell_raw": "紅艶",
+      "row_meaning": "淫欲",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 19,
+        "row": 10
+      }
+    },
+    {
+      "id": "qz_shensha_ys_branch_天蠱",
+      "category": "shensha",
+      "name": "天蠱",
+      "target": null,
+      "conditions": {},
+      "interpretation": "小児の疾病、疱疹",
+      "source_text": "小児の疾病、疱疹",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干神殺　その２",
+        "table": 19,
+        "row": 11,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "ys_branch",
+      "shensha_table_label": "年干神殺　その２",
+      "base": "年干",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "天蠱"
+      ],
+      "name_cell_raw": "天蠱",
+      "row_meaning": "小児の疾病、疱疹",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 19,
+        "row": 11
+      }
+    },
+    {
+      "id": "qz_shensha_yb_star_爵星",
+      "category": "shensha",
+      "name": "爵星",
+      "target": null,
+      "conditions": {},
+      "interpretation": "進爵、受禄",
+      "source_text": "進爵、受禄",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その１",
+        "table": 20,
+        "row": 1,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_star",
+      "shensha_table_label": "年支神殺　その１",
+      "base": "年支",
+      "attaches_to": "star",
+      "names_in_row": [
+        "爵星"
+      ],
+      "name_cell_raw": "爵星",
+      "row_meaning": "進爵、受禄",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 20,
+        "row": 1
+      }
+    },
+    {
+      "id": "qz_shensha_yb_star_赦文",
+      "category": "shensha",
+      "name": "赦文",
+      "target": null,
+      "conditions": {},
+      "interpretation": "化悪為善",
+      "source_text": "化悪為善",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その１",
+        "table": 20,
+        "row": 2,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_star",
+      "shensha_table_label": "年支神殺　その１",
+      "base": "年支",
+      "attaches_to": "star",
+      "names_in_row": [
+        "赦文"
+      ],
+      "name_cell_raw": "赦文",
+      "row_meaning": "化悪為善",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 20,
+        "row": 2
+      }
+    },
+    {
+      "id": "qz_shensha_yb_star_産星",
+      "category": "shensha",
+      "name": "産星",
+      "target": null,
+      "conditions": {},
+      "interpretation": "生産、産厄",
+      "source_text": "生産、産厄",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その１",
+        "table": 20,
+        "row": 3,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_star",
+      "shensha_table_label": "年支神殺　その１",
+      "base": "年支",
+      "attaches_to": "star",
+      "names_in_row": [
+        "産星"
+      ],
+      "name_cell_raw": "産星",
+      "row_meaning": "生産、産厄",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 20,
+        "row": 3
+      }
+    },
+    {
+      "id": "qz_shensha_yb_star_血支",
+      "category": "shensha",
+      "name": "血支",
+      "target": null,
+      "conditions": {},
+      "interpretation": "血光の災い",
+      "source_text": "血光の災い",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その１",
+        "table": 20,
+        "row": 4,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_shensha_mb_血支"
+      ],
+      "notes": [
+        "同名の神殺が別の表にもある（別項目として保持。統合しない）"
+      ],
+      "shensha_table": "yb_star",
+      "shensha_table_label": "年支神殺　その１",
+      "base": "年支",
+      "attaches_to": "star",
+      "names_in_row": [
+        "血支"
+      ],
+      "name_cell_raw": "血支",
+      "row_meaning": "血光の災い",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 20,
+        "row": 4
+      }
+    },
+    {
+      "id": "qz_shensha_yb_star_血忌",
+      "category": "shensha",
+      "name": "血忌",
+      "target": null,
+      "conditions": {},
+      "interpretation": "疾病、血毒",
+      "source_text": "疾病、血毒",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その１",
+        "table": 20,
+        "row": 5,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_star",
+      "shensha_table_label": "年支神殺　その１",
+      "base": "年支",
+      "attaches_to": "star",
+      "names_in_row": [
+        "血忌"
+      ],
+      "name_cell_raw": "血忌",
+      "row_meaning": "疾病、血毒",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 20,
+        "row": 5
+      }
+    },
+    {
+      "id": "qz_shensha_yb_star_馬元",
+      "category": "shensha",
+      "name": "馬元",
+      "target": null,
+      "conditions": {},
+      "interpretation": "行動",
+      "source_text": "行動",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その１",
+        "table": 20,
+        "row": 6,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_star",
+      "shensha_table_label": "年支神殺　その１",
+      "base": "年支",
+      "attaches_to": "star",
+      "names_in_row": [
+        "馬元"
+      ],
+      "name_cell_raw": "馬元",
+      "row_meaning": "行動",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 20,
+        "row": 6
+      }
+    },
+    {
+      "id": "qz_shensha_yb_star_天馬",
+      "category": "shensha",
+      "name": "天馬",
+      "target": null,
+      "conditions": {},
+      "interpretation": "行動、進退",
+      "source_text": "行動、進退",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その１",
+        "table": 20,
+        "row": 7,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_shensha_ym_天馬"
+      ],
+      "notes": [
+        "同名の神殺が別の表にもある（別項目として保持。統合しない）"
+      ],
+      "shensha_table": "yb_star",
+      "shensha_table_label": "年支神殺　その１",
+      "base": "年支",
+      "attaches_to": "star",
+      "names_in_row": [
+        "天馬"
+      ],
+      "name_cell_raw": "天馬",
+      "row_meaning": "行動、進退",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 20,
+        "row": 7
+      }
+    },
+    {
+      "id": "qz_shensha_yb_star_地駅",
+      "category": "shensha",
+      "name": "地駅",
+      "target": null,
+      "conditions": {},
+      "interpretation": "行動、進退",
+      "source_text": "行動、進退",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その１",
+        "table": 20,
+        "row": 8,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_shensha_ym_地駅"
+      ],
+      "notes": [
+        "同名の神殺が別の表にもある（別項目として保持。統合しない）"
+      ],
+      "shensha_table": "yb_star",
+      "shensha_table_label": "年支神殺　その１",
+      "base": "年支",
+      "attaches_to": "star",
+      "names_in_row": [
+        "地駅"
+      ],
+      "name_cell_raw": "地駅",
+      "row_meaning": "行動、進退",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 20,
+        "row": 8
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_歳駕",
+      "category": "shensha",
+      "name": "歳駕",
+      "target": null,
+      "conditions": {},
+      "interpretation": "不測の災い",
+      "source_text": "不測の災い",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 1,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "歳駕",
+        "太歳",
+        "剣鋒",
+        "伏屍"
+      ],
+      "name_cell_raw": "歳駕\n太歳\n剣鋒\n伏屍",
+      "row_meaning": "不測の災い",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 1
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_太歳",
+      "category": "shensha",
+      "name": "太歳",
+      "target": null,
+      "conditions": {},
+      "interpretation": "不測の災い",
+      "source_text": "不測の災い",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 1,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "歳駕",
+        "太歳",
+        "剣鋒",
+        "伏屍"
+      ],
+      "name_cell_raw": "歳駕\n太歳\n剣鋒\n伏屍",
+      "row_meaning": "不測の災い",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 1
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_剣鋒",
+      "category": "shensha",
+      "name": "剣鋒",
+      "target": null,
+      "conditions": {},
+      "interpretation": "不測の災い",
+      "source_text": "不測の災い",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 1,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "歳駕",
+        "太歳",
+        "剣鋒",
+        "伏屍"
+      ],
+      "name_cell_raw": "歳駕\n太歳\n剣鋒\n伏屍",
+      "row_meaning": "不測の災い",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 1
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_伏屍",
+      "category": "shensha",
+      "name": "伏屍",
+      "target": null,
+      "conditions": {},
+      "interpretation": "不測の災い",
+      "source_text": "不測の災い",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 1,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "歳駕",
+        "太歳",
+        "剣鋒",
+        "伏屍"
+      ],
+      "name_cell_raw": "歳駕\n太歳\n剣鋒\n伏屍",
+      "row_meaning": "不測の災い",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 1
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_天雄",
+      "category": "shensha",
+      "name": "天雄",
+      "target": null,
+      "conditions": {},
+      "interpretation": "官事、破財",
+      "source_text": "官事、破財",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 2,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "天雄",
+        "飛廉",
+        "白虎",
+        "大殺"
+      ],
+      "name_cell_raw": "天雄\n飛廉\n白虎\n大殺",
+      "row_meaning": "官事、破財",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 2
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_飛廉",
+      "category": "shensha",
+      "name": "飛廉",
+      "target": null,
+      "conditions": {},
+      "interpretation": "官事、破財",
+      "source_text": "官事、破財",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 2,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "天雄",
+        "飛廉",
+        "白虎",
+        "大殺"
+      ],
+      "name_cell_raw": "天雄\n飛廉\n白虎\n大殺",
+      "row_meaning": "官事、破財",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 2
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_白虎",
+      "category": "shensha",
+      "name": "白虎",
+      "target": null,
+      "conditions": {},
+      "interpretation": "官事、破財",
+      "source_text": "官事、破財",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 2,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "天雄",
+        "飛廉",
+        "白虎",
+        "大殺"
+      ],
+      "name_cell_raw": "天雄\n飛廉\n白虎\n大殺",
+      "row_meaning": "官事、破財",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 2
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_大殺",
+      "category": "shensha",
+      "name": "大殺",
+      "target": null,
+      "conditions": {},
+      "interpretation": "官事、破財",
+      "source_text": "官事、破財",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 2,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "天雄",
+        "飛廉",
+        "白虎",
+        "大殺"
+      ],
+      "name_cell_raw": "天雄\n飛廉\n白虎\n大殺",
+      "row_meaning": "官事、破財",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 2
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_地雌",
+      "category": "shensha",
+      "name": "地雌",
+      "target": null,
+      "conditions": {},
+      "interpretation": "破財、喪服",
+      "source_text": "破財、喪服",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 3,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "地雌",
+        "喪門"
+      ],
+      "name_cell_raw": "地雌\n喪門",
+      "row_meaning": "破財、喪服",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 3
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_喪門",
+      "category": "shensha",
+      "name": "喪門",
+      "target": null,
+      "conditions": {},
+      "interpretation": "破財、喪服",
+      "source_text": "破財、喪服",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 3,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "地雌",
+        "喪門"
+      ],
+      "name_cell_raw": "地雌\n喪門",
+      "row_meaning": "破財、喪服",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 3
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_太陽",
+      "category": "shensha",
+      "name": "太陽",
+      "target": null,
+      "conditions": {},
+      "interpretation": "男に吉",
+      "source_text": "阻害、命限、刑罰、太陽は男に吉",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 4,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "同じ行の他の名称と共通の記述「阻害、命限、刑罰」がこの名称にも及ぶかは資料上明確でない（行の原文は row_meaning に保持）",
+        "神殺名が星名・他術の名称と同字（星曜の太陽・太陰とは別物）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "太陽",
+        "晦気",
+        "天空"
+      ],
+      "name_cell_raw": "太陽\n晦気\n天空",
+      "row_meaning": "阻害、命限、刑罰、太陽は男に吉",
+      "name_specific": "太陽は男に吉",
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 4
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_晦気",
+      "category": "shensha",
+      "name": "晦気",
+      "target": null,
+      "conditions": {},
+      "interpretation": "阻害、命限、刑罰",
+      "source_text": "阻害、命限、刑罰、太陽は男に吉",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 4,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "太陽",
+        "晦気",
+        "天空"
+      ],
+      "name_cell_raw": "太陽\n晦気\n天空",
+      "row_meaning": "阻害、命限、刑罰、太陽は男に吉",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 4
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_天空",
+      "category": "shensha",
+      "name": "天空",
+      "target": null,
+      "conditions": {},
+      "interpretation": "阻害、命限、刑罰",
+      "source_text": "阻害、命限、刑罰、太陽は男に吉",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 4,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "太陽",
+        "晦気",
+        "天空"
+      ],
+      "name_cell_raw": "太陽\n晦気\n天空",
+      "row_meaning": "阻害、命限、刑罰、太陽は男に吉",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 4
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_太陰",
+      "category": "shensha",
+      "name": "太陰",
+      "target": null,
+      "conditions": {},
+      "interpretation": "女に吉",
+      "source_text": "官災、刑罰、凶悪、太陰は女に吉",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 5,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "同じ行の他の名称と共通の記述「官災、刑罰、凶悪」がこの名称にも及ぶかは資料上明確でない（行の原文は row_meaning に保持）",
+        "神殺名が星名・他術の名称と同字（星曜の太陽・太陰とは別物）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "太陰",
+        "勾絞",
+        "貫索",
+        "卒暴"
+      ],
+      "name_cell_raw": "太陰\n勾絞\n貫索\n卒暴",
+      "row_meaning": "官災、刑罰、凶悪、太陰は女に吉",
+      "name_specific": "太陰は女に吉",
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 5
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_勾絞",
+      "category": "shensha",
+      "name": "勾絞",
+      "target": null,
+      "conditions": {},
+      "interpretation": "官災、刑罰、凶悪",
+      "source_text": "官災、刑罰、凶悪、太陰は女に吉",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 5,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "太陰",
+        "勾絞",
+        "貫索",
+        "卒暴"
+      ],
+      "name_cell_raw": "太陰\n勾絞\n貫索\n卒暴",
+      "row_meaning": "官災、刑罰、凶悪、太陰は女に吉",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 5
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_貫索",
+      "category": "shensha",
+      "name": "貫索",
+      "target": null,
+      "conditions": {},
+      "interpretation": "官災、刑罰、凶悪",
+      "source_text": "官災、刑罰、凶悪、太陰は女に吉",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 5,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "太陰",
+        "勾絞",
+        "貫索",
+        "卒暴"
+      ],
+      "name_cell_raw": "太陰\n勾絞\n貫索\n卒暴",
+      "row_meaning": "官災、刑罰、凶悪、太陰は女に吉",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 5
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_卒暴",
+      "category": "shensha",
+      "name": "卒暴",
+      "target": null,
+      "conditions": {},
+      "interpretation": "官災、刑罰、凶悪",
+      "source_text": "官災、刑罰、凶悪、太陰は女に吉",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 5,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "太陰",
+        "勾絞",
+        "貫索",
+        "卒暴"
+      ],
+      "name_cell_raw": "太陰\n勾絞\n貫索\n卒暴",
+      "row_meaning": "官災、刑罰、凶悪、太陰は女に吉",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 5
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_飛符",
+      "category": "shensha",
+      "name": "飛符",
+      "target": null,
+      "conditions": {},
+      "interpretation": "官災、横事",
+      "source_text": "官災、横事、三台は科甲の喜",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 6,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "飛符",
+        "官符",
+        "五鬼",
+        "三台"
+      ],
+      "name_cell_raw": "飛符\n官符\n五鬼\n三台",
+      "row_meaning": "官災、横事、三台は科甲の喜",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 6
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_官符",
+      "category": "shensha",
+      "name": "官符",
+      "target": null,
+      "conditions": {},
+      "interpretation": "官災、横事",
+      "source_text": "官災、横事、三台は科甲の喜",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 6,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "飛符",
+        "官符",
+        "五鬼",
+        "三台"
+      ],
+      "name_cell_raw": "飛符\n官符\n五鬼\n三台",
+      "row_meaning": "官災、横事、三台は科甲の喜",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 6
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_五鬼",
+      "category": "shensha",
+      "name": "五鬼",
+      "target": null,
+      "conditions": {},
+      "interpretation": "官災、横事",
+      "source_text": "官災、横事、三台は科甲の喜",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 6,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "飛符",
+        "官符",
+        "五鬼",
+        "三台"
+      ],
+      "name_cell_raw": "飛符\n官符\n五鬼\n三台",
+      "row_meaning": "官災、横事、三台は科甲の喜",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 6
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_三台",
+      "category": "shensha",
+      "name": "三台",
+      "target": null,
+      "conditions": {},
+      "interpretation": "科甲の喜",
+      "source_text": "官災、横事、三台は科甲の喜",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 6,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "同じ行の他の名称と共通の記述「官災、横事」がこの名称にも及ぶかは資料上明確でない（行の原文は row_meaning に保持）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "飛符",
+        "官符",
+        "五鬼",
+        "三台"
+      ],
+      "name_cell_raw": "飛符\n官符\n五鬼\n三台",
+      "row_meaning": "官災、横事、三台は科甲の喜",
+      "name_specific": "三台は科甲の喜",
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 6
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_死符",
+      "category": "shensha",
+      "name": "死符",
+      "target": null,
+      "conditions": {},
+      "interpretation": "訴訟、災病、散財",
+      "source_text": "訴訟、災病、散財、月徳は貴",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 7,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "死符",
+        "小耗",
+        "月徳"
+      ],
+      "name_cell_raw": "死符\n小耗\n月徳",
+      "row_meaning": "訴訟、災病、散財、月徳は貴",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 7
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_小耗",
+      "category": "shensha",
+      "name": "小耗",
+      "target": null,
+      "conditions": {},
+      "interpretation": "訴訟、災病、散財",
+      "source_text": "訴訟、災病、散財、月徳は貴",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 7,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "死符",
+        "小耗",
+        "月徳"
+      ],
+      "name_cell_raw": "死符\n小耗\n月徳",
+      "row_meaning": "訴訟、災病、散財、月徳は貴",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 7
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_月徳",
+      "category": "shensha",
+      "name": "月徳",
+      "target": null,
+      "conditions": {},
+      "interpretation": "貴",
+      "source_text": "訴訟、災病、散財、月徳は貴",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 7,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "同じ行の他の名称と共通の記述「訴訟、災病、散財」がこの名称にも及ぶかは資料上明確でない（行の原文は row_meaning に保持）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "死符",
+        "小耗",
+        "月徳"
+      ],
+      "name_cell_raw": "死符\n小耗\n月徳",
+      "row_meaning": "訴訟、災病、散財、月徳は貴",
+      "name_specific": "月徳は貴",
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 7
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_歳破",
+      "category": "shensha",
+      "name": "歳破",
+      "target": null,
+      "conditions": {},
+      "interpretation": "官事破財、不成功、傷残、自縊",
+      "source_text": "官事破財、不成功、傷残、自縊",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 8,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "歳破",
+        "大耗",
+        "闌干",
+        "月空"
+      ],
+      "name_cell_raw": "歳破\n大耗\n闌干\n月空",
+      "row_meaning": "官事破財、不成功、傷残、自縊",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 8
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_大耗",
+      "category": "shensha",
+      "name": "大耗",
+      "target": null,
+      "conditions": {},
+      "interpretation": "官事破財、不成功、傷残、自縊",
+      "source_text": "官事破財、不成功、傷残、自縊",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 8,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "歳破",
+        "大耗",
+        "闌干",
+        "月空"
+      ],
+      "name_cell_raw": "歳破\n大耗\n闌干\n月空",
+      "row_meaning": "官事破財、不成功、傷残、自縊",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 8
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_闌干",
+      "category": "shensha",
+      "name": "闌干",
+      "target": null,
+      "conditions": {},
+      "interpretation": "官事破財、不成功、傷残、自縊",
+      "source_text": "官事破財、不成功、傷残、自縊",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 8,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "歳破",
+        "大耗",
+        "闌干",
+        "月空"
+      ],
+      "name_cell_raw": "歳破\n大耗\n闌干\n月空",
+      "row_meaning": "官事破財、不成功、傷残、自縊",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 8
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_月空",
+      "category": "shensha",
+      "name": "月空",
+      "target": null,
+      "conditions": {},
+      "interpretation": "官事破財、不成功、傷残、自縊",
+      "source_text": "官事破財、不成功、傷残、自縊",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 8,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "歳破",
+        "大耗",
+        "闌干",
+        "月空"
+      ],
+      "name_cell_raw": "歳破\n大耗\n闌干\n月空",
+      "row_meaning": "官事破財、不成功、傷残、自縊",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 8
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_暴敗",
+      "category": "shensha",
+      "name": "暴敗",
+      "target": null,
+      "conditions": {},
+      "interpretation": "破財、訴訟、災病、化吉",
+      "source_text": "破財、訴訟、災病、化吉",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 9,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "暴敗",
+        "天厄",
+        "紫微",
+        "龍徳"
+      ],
+      "name_cell_raw": "暴敗\n天厄\n紫微\n龍徳",
+      "row_meaning": "破財、訴訟、災病、化吉",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 9
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_天厄",
+      "category": "shensha",
+      "name": "天厄",
+      "target": null,
+      "conditions": {},
+      "interpretation": "破財、訴訟、災病、化吉",
+      "source_text": "破財、訴訟、災病、化吉",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 9,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "暴敗",
+        "天厄",
+        "紫微",
+        "龍徳"
+      ],
+      "name_cell_raw": "暴敗\n天厄\n紫微\n龍徳",
+      "row_meaning": "破財、訴訟、災病、化吉",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 9
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_紫微",
+      "category": "shensha",
+      "name": "紫微",
+      "target": null,
+      "conditions": {},
+      "interpretation": "破財、訴訟、災病、化吉",
+      "source_text": "破財、訴訟、災病、化吉",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 9,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）",
+        "神殺名が星名・他術の名称と同字（星曜の太陽・太陰とは別物）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "暴敗",
+        "天厄",
+        "紫微",
+        "龍徳"
+      ],
+      "name_cell_raw": "暴敗\n天厄\n紫微\n龍徳",
+      "row_meaning": "破財、訴訟、災病、化吉",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 9
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_龍徳",
+      "category": "shensha",
+      "name": "龍徳",
+      "target": null,
+      "conditions": {},
+      "interpretation": "破財、訴訟、災病、化吉",
+      "source_text": "破財、訴訟、災病、化吉",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 9,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "暴敗",
+        "天厄",
+        "紫微",
+        "龍徳"
+      ],
+      "name_cell_raw": "暴敗\n天厄\n紫微\n龍徳",
+      "row_meaning": "破財、訴訟、災病、化吉",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 9
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_福星",
+      "category": "shensha",
+      "name": "福星",
+      "target": null,
+      "conditions": {},
+      "interpretation": "福禄吉利、官非横事",
+      "source_text": "福禄吉利、官非横事",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 10,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "福星",
+        "巻舌",
+        "福徳",
+        "天徳",
+        "披麻"
+      ],
+      "name_cell_raw": "福星\n巻舌\n福徳\n天徳\n披麻",
+      "row_meaning": "福禄吉利、官非横事",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 10
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_巻舌",
+      "category": "shensha",
+      "name": "巻舌",
+      "target": null,
+      "conditions": {},
+      "interpretation": "福禄吉利、官非横事",
+      "source_text": "福禄吉利、官非横事",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 10,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "福星",
+        "巻舌",
+        "福徳",
+        "天徳",
+        "披麻"
+      ],
+      "name_cell_raw": "福星\n巻舌\n福徳\n天徳\n披麻",
+      "row_meaning": "福禄吉利、官非横事",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 10
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_福徳",
+      "category": "shensha",
+      "name": "福徳",
+      "target": null,
+      "conditions": {},
+      "interpretation": "福禄吉利、官非横事",
+      "source_text": "福禄吉利、官非横事",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 10,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "福星",
+        "巻舌",
+        "福徳",
+        "天徳",
+        "披麻"
+      ],
+      "name_cell_raw": "福星\n巻舌\n福徳\n天徳\n披麻",
+      "row_meaning": "福禄吉利、官非横事",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 10
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_天徳",
+      "category": "shensha",
+      "name": "天徳",
+      "target": null,
+      "conditions": {},
+      "interpretation": "福禄吉利、官非横事",
+      "source_text": "福禄吉利、官非横事",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 10,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "福星",
+        "巻舌",
+        "福徳",
+        "天徳",
+        "披麻"
+      ],
+      "name_cell_raw": "福星\n巻舌\n福徳\n天徳\n披麻",
+      "row_meaning": "福禄吉利、官非横事",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 10
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_披麻",
+      "category": "shensha",
+      "name": "披麻",
+      "target": null,
+      "conditions": {},
+      "interpretation": "福禄吉利、官非横事",
+      "source_text": "福禄吉利、官非横事",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 10,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "福星",
+        "巻舌",
+        "福徳",
+        "天徳",
+        "披麻"
+      ],
+      "name_cell_raw": "福星\n巻舌\n福徳\n天徳\n披麻",
+      "row_meaning": "福禄吉利、官非横事",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 10
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_天狗",
+      "category": "shensha",
+      "name": "天狗",
+      "target": null,
+      "conditions": {},
+      "interpretation": "血光、刑剋、葬式、家宅不安",
+      "source_text": "血光、刑剋、葬式、家宅不安",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 11,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "天狗",
+        "弔客"
+      ],
+      "name_cell_raw": "天狗\n弔客",
+      "row_meaning": "血光、刑剋、葬式、家宅不安",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 11
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_弔客",
+      "category": "shensha",
+      "name": "弔客",
+      "target": null,
+      "conditions": {},
+      "interpretation": "血光、刑剋、葬式、家宅不安",
+      "source_text": "血光、刑剋、葬式、家宅不安",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 11,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "天狗",
+        "弔客"
+      ],
+      "name_cell_raw": "天狗\n弔客",
+      "row_meaning": "血光、刑剋、葬式、家宅不安",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 11
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_病符",
+      "category": "shensha",
+      "name": "病符",
+      "target": null,
+      "conditions": {},
+      "interpretation": "命限、訴訟、災病",
+      "source_text": "命限、訴訟、災病",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 12,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "病符",
+        "陌越"
+      ],
+      "name_cell_raw": "病符\n陌越",
+      "row_meaning": "命限、訴訟、災病",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 12
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_陌越",
+      "category": "shensha",
+      "name": "陌越",
+      "target": null,
+      "conditions": {},
+      "interpretation": "命限、訴訟、災病",
+      "source_text": "命限、訴訟、災病",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 12,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "病符",
+        "陌越"
+      ],
+      "name_cell_raw": "病符\n陌越",
+      "row_meaning": "命限、訴訟、災病",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 12
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_的殺",
+      "category": "shensha",
+      "name": "的殺",
+      "target": null,
+      "conditions": {},
+      "interpretation": "破財、官非、破耗",
+      "source_text": "破財、官非、破耗",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 13,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "的殺",
+        "破砕"
+      ],
+      "name_cell_raw": "的殺\n破砕",
+      "row_meaning": "破財、官非、破耗",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 13
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_破砕",
+      "category": "shensha",
+      "name": "破砕",
+      "target": null,
+      "conditions": {},
+      "interpretation": "破財、官非、破耗",
+      "source_text": "破財、官非、破耗",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 13,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "的殺",
+        "破砕"
+      ],
+      "name_cell_raw": "的殺\n破砕",
+      "row_meaning": "破財、官非、破耗",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 13
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_咸池",
+      "category": "shensha",
+      "name": "咸池",
+      "target": null,
+      "conditions": {},
+      "interpretation": "淫欲、浪漫",
+      "source_text": "淫欲、浪漫",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 14,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "咸池",
+        "桃花"
+      ],
+      "name_cell_raw": "咸池\n桃花",
+      "row_meaning": "淫欲、浪漫",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 14
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_桃花",
+      "category": "shensha",
+      "name": "桃花",
+      "target": null,
+      "conditions": {},
+      "interpretation": "淫欲、浪漫",
+      "source_text": "淫欲、浪漫",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 14,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "咸池",
+        "桃花"
+      ],
+      "name_cell_raw": "咸池\n桃花",
+      "row_meaning": "淫欲、浪漫",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 14
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_血刃",
+      "category": "shensha",
+      "name": "血刃",
+      "target": null,
+      "conditions": {},
+      "interpretation": "血光、疾厄、命限",
+      "source_text": "血光、疾厄、命限\n天解解神は凶を解く",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 15,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_shensha_mb_血刃"
+      ],
+      "notes": [
+        "同名の神殺が別の表にもある（別項目として保持。統合しない）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "血刃",
+        "浮沈",
+        "天解",
+        "解神"
+      ],
+      "name_cell_raw": "血刃\n浮沈\n天解\n解神",
+      "row_meaning": "血光、疾厄、命限\n天解解神は凶を解く",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 15
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_浮沈",
+      "category": "shensha",
+      "name": "浮沈",
+      "target": null,
+      "conditions": {},
+      "interpretation": "血光、疾厄、命限",
+      "source_text": "血光、疾厄、命限\n天解解神は凶を解く",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 15,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "血刃",
+        "浮沈",
+        "天解",
+        "解神"
+      ],
+      "name_cell_raw": "血刃\n浮沈\n天解\n解神",
+      "row_meaning": "血光、疾厄、命限\n天解解神は凶を解く",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 15
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_天解",
+      "category": "shensha",
+      "name": "天解",
+      "target": null,
+      "conditions": {},
+      "interpretation": "凶を解く",
+      "source_text": "血光、疾厄、命限\n天解解神は凶を解く",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 15,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "同じ行の他の名称と共通の記述「血光、疾厄、命限」がこの名称にも及ぶかは資料上明確でない（行の原文は row_meaning に保持）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "血刃",
+        "浮沈",
+        "天解",
+        "解神"
+      ],
+      "name_cell_raw": "血刃\n浮沈\n天解\n解神",
+      "row_meaning": "血光、疾厄、命限\n天解解神は凶を解く",
+      "name_specific": "天解解神は凶を解く",
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 15
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_解神",
+      "category": "shensha",
+      "name": "解神",
+      "target": null,
+      "conditions": {},
+      "interpretation": "凶を解く",
+      "source_text": "血光、疾厄、命限\n天解解神は凶を解く",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 15,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "同じ行の他の名称と共通の記述「血光、疾厄、命限」がこの名称にも及ぶかは資料上明確でない（行の原文は row_meaning に保持）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "血刃",
+        "浮沈",
+        "天解",
+        "解神"
+      ],
+      "name_cell_raw": "血刃\n浮沈\n天解\n解神",
+      "row_meaning": "血光、疾厄、命限\n天解解神は凶を解く",
+      "name_specific": "天解解神は凶を解く",
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 15
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_孤辰",
+      "category": "shensha",
+      "name": "孤辰",
+      "target": null,
+      "conditions": {},
+      "interpretation": "男に凶",
+      "source_text": "男に凶",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 16,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "孤辰"
+      ],
+      "name_cell_raw": "孤辰",
+      "row_meaning": "男に凶",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 16
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_寡宿",
+      "category": "shensha",
+      "name": "寡宿",
+      "target": null,
+      "conditions": {},
+      "interpretation": "女に凶、寡婦",
+      "source_text": "女に凶、寡婦",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 17,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "寡宿"
+      ],
+      "name_cell_raw": "寡宿",
+      "row_meaning": "女に凶、寡婦",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 17
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_三刑",
+      "category": "shensha",
+      "name": "三刑",
+      "target": null,
+      "conditions": {},
+      "interpretation": "官災、災禍",
+      "source_text": "官災、災禍",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 18,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "三刑"
+      ],
+      "name_cell_raw": "三刑",
+      "row_meaning": "官災、災禍",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 18
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_六害",
+      "category": "shensha",
+      "name": "六害",
+      "target": null,
+      "conditions": {},
+      "interpretation": "官災、災禍",
+      "source_text": "官災、災禍",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 19,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "六害"
+      ],
+      "name_cell_raw": "六害",
+      "row_meaning": "官災、災禍",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 19
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_劫殺",
+      "category": "shensha",
+      "name": "劫殺",
+      "target": null,
+      "conditions": {},
+      "interpretation": "盗賊、失脱",
+      "source_text": "盗賊、失脱",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 20,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "劫殺"
+      ],
+      "name_cell_raw": "劫殺",
+      "row_meaning": "盗賊、失脱",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 20
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_亡神",
+      "category": "shensha",
+      "name": "亡神",
+      "target": null,
+      "conditions": {},
+      "interpretation": "盗賊、失脱",
+      "source_text": "盗賊、失脱",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 21,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "亡神",
+        "天官符"
+      ],
+      "name_cell_raw": "亡神\n天官符",
+      "row_meaning": "盗賊、失脱",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 21
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_天官符",
+      "category": "shensha",
+      "name": "天官符",
+      "target": null,
+      "conditions": {},
+      "interpretation": "盗賊、失脱",
+      "source_text": "盗賊、失脱",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 21,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "亡神",
+        "天官符"
+      ],
+      "name_cell_raw": "亡神\n天官符",
+      "row_meaning": "盗賊、失脱",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 21
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_華蓋",
+      "category": "shensha",
+      "name": "華蓋",
+      "target": null,
+      "conditions": {},
+      "interpretation": "孤独、文章、才芸",
+      "source_text": "孤独、文章、才芸",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 22,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "華蓋"
+      ],
+      "name_cell_raw": "華蓋",
+      "row_meaning": "孤独、文章、才芸",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 22
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_将星",
+      "category": "shensha",
+      "name": "将星",
+      "target": null,
+      "conditions": {},
+      "interpretation": "禄重権高、文武",
+      "source_text": "禄重権高、文武",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 23,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "将星"
+      ],
+      "name_cell_raw": "将星",
+      "row_meaning": "禄重権高、文武",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 23
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_災殺",
+      "category": "shensha",
+      "name": "災殺",
+      "target": null,
+      "conditions": {},
+      "interpretation": "官非、喪事、破財、刑獄",
+      "source_text": "官非、喪事、破財、刑獄",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 24,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "災殺",
+        "囚獄"
+      ],
+      "name_cell_raw": "災殺\n囚獄",
+      "row_meaning": "官非、喪事、破財、刑獄",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 24
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_囚獄",
+      "category": "shensha",
+      "name": "囚獄",
+      "target": null,
+      "conditions": {},
+      "interpretation": "官非、喪事、破財、刑獄",
+      "source_text": "官非、喪事、破財、刑獄",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 24,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "災殺",
+        "囚獄"
+      ],
+      "name_cell_raw": "災殺\n囚獄",
+      "row_meaning": "官非、喪事、破財、刑獄",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 24
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_天殺",
+      "category": "shensha",
+      "name": "天殺",
+      "target": null,
+      "conditions": {},
+      "interpretation": "官非、喪孝、口舌",
+      "source_text": "官非、喪孝、口舌",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 25,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "天殺"
+      ],
+      "name_cell_raw": "天殺",
+      "row_meaning": "官非、喪孝、口舌",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 25
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_地殺",
+      "category": "shensha",
+      "name": "地殺",
+      "target": null,
+      "conditions": {},
+      "interpretation": "官非、喪孝、口舌",
+      "source_text": "官非、喪孝、口舌",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 26,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "地殺"
+      ],
+      "name_cell_raw": "地殺",
+      "row_meaning": "官非、喪孝、口舌",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 26
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_年殺",
+      "category": "shensha",
+      "name": "年殺",
+      "target": null,
+      "conditions": {},
+      "interpretation": "非災、横事",
+      "source_text": "非災、横事",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 27,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "年殺"
+      ],
+      "name_cell_raw": "年殺",
+      "row_meaning": "非災、横事",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 27
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_月殺",
+      "category": "shensha",
+      "name": "月殺",
+      "target": null,
+      "conditions": {},
+      "interpretation": "非災、横事",
+      "source_text": "非災、横事",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 28,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_shensha_mb_月殺"
+      ],
+      "notes": [
+        "同名の神殺が別の表にもある（別項目として保持。統合しない）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "月殺"
+      ],
+      "name_cell_raw": "月殺",
+      "row_meaning": "非災、横事",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 28
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_天哭",
+      "category": "shensha",
+      "name": "天哭",
+      "target": null,
+      "conditions": {},
+      "interpretation": "喪服、家宅不寧",
+      "source_text": "喪服、家宅不寧",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 29,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "天哭"
+      ],
+      "name_cell_raw": "天哭",
+      "row_meaning": "喪服、家宅不寧",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 29
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_天喜",
+      "category": "shensha",
+      "name": "天喜",
+      "target": null,
+      "conditions": {},
+      "interpretation": "喜事",
+      "source_text": "喜事",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 30,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "天喜"
+      ],
+      "name_cell_raw": "天喜",
+      "row_meaning": "喜事",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 30
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_板鞍",
+      "category": "shensha",
+      "name": "板鞍",
+      "target": null,
+      "conditions": {},
+      "interpretation": "変動、遷移、小破財",
+      "source_text": "変動、遷移、小破財",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 31,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "板鞍",
+        "陰殺"
+      ],
+      "name_cell_raw": "板鞍\n陰殺",
+      "row_meaning": "変動、遷移、小破財",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 31
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_陰殺",
+      "category": "shensha",
+      "name": "陰殺",
+      "target": null,
+      "conditions": {},
+      "interpretation": "変動、遷移、小破財",
+      "source_text": "変動、遷移、小破財",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 31,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "板鞍",
+        "陰殺"
+      ],
+      "name_cell_raw": "板鞍\n陰殺",
+      "row_meaning": "変動、遷移、小破財",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 31
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_駅馬",
+      "category": "shensha",
+      "name": "駅馬",
+      "target": null,
+      "conditions": {},
+      "interpretation": "変動、遷移",
+      "source_text": "変動、遷移",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 32,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "駅馬"
+      ],
+      "name_cell_raw": "駅馬",
+      "row_meaning": "変動、遷移",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 32
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_黄旙",
+      "category": "shensha",
+      "name": "黄旙",
+      "target": null,
+      "conditions": {},
+      "interpretation": "病気、破財",
+      "source_text": "病気、破財",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 33,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "黄旙"
+      ],
+      "name_cell_raw": "黄旙",
+      "row_meaning": "病気、破財",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 33
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_豹尾",
+      "category": "shensha",
+      "name": "豹尾",
+      "target": null,
+      "conditions": {},
+      "interpretation": "病気、破財",
+      "source_text": "病気、破財",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 34,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "豹尾"
+      ],
+      "name_cell_raw": "豹尾",
+      "row_meaning": "病気、破財",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 34
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_紅鸞",
+      "category": "shensha",
+      "name": "紅鸞",
+      "target": null,
+      "conditions": {},
+      "interpretation": "喜びあり",
+      "source_text": "喜びあり",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 35,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "紅鸞"
+      ],
+      "name_cell_raw": "紅鸞",
+      "row_meaning": "喜びあり",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 35
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_地解",
+      "category": "shensha",
+      "name": "地解",
+      "target": null,
+      "conditions": {},
+      "interpretation": "化吉",
+      "source_text": "化吉",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 36,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "地解"
+      ],
+      "name_cell_raw": "地解",
+      "row_meaning": "化吉",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 36
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_披頭",
+      "category": "shensha",
+      "name": "披頭",
+      "target": null,
+      "conditions": {},
+      "interpretation": "化吉",
+      "source_text": "化吉",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 37,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "披頭"
+      ],
+      "name_cell_raw": "披頭",
+      "row_meaning": "化吉",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 37
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_指背",
+      "category": "shensha",
+      "name": "指背",
+      "target": null,
+      "conditions": {},
+      "interpretation": "嫉妬、無功、離反、不睦",
+      "source_text": "嫉妬、無功、離反、不睦",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 38,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "指背"
+      ],
+      "name_cell_raw": "指背",
+      "row_meaning": "嫉妬、無功、離反、不睦",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 38
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_八座",
+      "category": "shensha",
+      "name": "八座",
+      "target": null,
+      "conditions": {},
+      "interpretation": "試験、名声",
+      "source_text": "試験、名声",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 39,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "八座"
+      ],
+      "name_cell_raw": "八座",
+      "row_meaning": "試験、名声",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 39
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_呑陥",
+      "category": "shensha",
+      "name": "呑陥",
+      "target": null,
+      "conditions": {},
+      "interpretation": "六親妨害、不睦、難成",
+      "source_text": "六親妨害、不睦、難成",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 40,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "呑陥"
+      ],
+      "name_cell_raw": "呑陥",
+      "row_meaning": "六親妨害、不睦、難成",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 40
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_玉堂",
+      "category": "shensha",
+      "name": "玉堂",
+      "target": null,
+      "conditions": {},
+      "interpretation": "福禄、近貴人",
+      "source_text": "福禄、近貴人",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 41,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_shensha_ys_branch_玉堂"
+      ],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）",
+        "同名の神殺が別の表にもある（別項目として保持。統合しない）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "玉堂",
+        "歳合"
+      ],
+      "name_cell_raw": "玉堂\n歳合",
+      "row_meaning": "福禄、近貴人",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 41
+      }
+    },
+    {
+      "id": "qz_shensha_yb_palace_歳合",
+      "category": "shensha",
+      "name": "歳合",
+      "target": null,
+      "conditions": {},
+      "interpretation": "福禄、近貴人",
+      "source_text": "福禄、近貴人",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年支神殺　その２",
+        "table": 21,
+        "row": 41,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "一つの行に複数の名称が並び、意味欄は行全体で共通（名称ごとの区別は資料になし）"
+      ],
+      "shensha_table": "yb_palace",
+      "shensha_table_label": "年支神殺　その２",
+      "base": "年支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "玉堂",
+        "歳合"
+      ],
+      "name_cell_raw": "玉堂\n歳合",
+      "row_meaning": "福禄、近貴人",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 21,
+        "row": 41
+      }
+    },
+    {
+      "id": "qz_shensha_mb_令星",
+      "category": "shensha",
+      "name": "令星",
+      "target": null,
+      "conditions": {},
+      "interpretation": null,
+      "source_text": ".",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "月支神殺",
+        "table": 23,
+        "row": 1,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "意味欄は「.」で記載なし"
+      ],
+      "shensha_table": "mb",
+      "shensha_table_label": "月支神殺",
+      "base": "月支",
+      "attaches_to": "star",
+      "names_in_row": [
+        "令星"
+      ],
+      "name_cell_raw": "令星",
+      "row_meaning": ".",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 23,
+        "row": 1
+      }
+    },
+    {
+      "id": "qz_shensha_mb_氷消瓦解",
+      "category": "shensha",
+      "name": "氷消瓦解",
+      "target": null,
+      "conditions": {},
+      "interpretation": "先祖を破る",
+      "source_text": "先祖を破る",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "月支神殺",
+        "table": 23,
+        "row": 2,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "mb",
+      "shensha_table_label": "月支神殺",
+      "base": "月支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "氷消瓦解"
+      ],
+      "name_cell_raw": "氷消瓦解",
+      "row_meaning": "先祖を破る",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 23,
+        "row": 2
+      }
+    },
+    {
+      "id": "qz_shensha_mb_天耗",
+      "category": "shensha",
+      "name": "天耗",
+      "target": null,
+      "conditions": {},
+      "interpretation": "破耗",
+      "source_text": "破耗",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "月支神殺",
+        "table": 23,
+        "row": 3,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_henyou_天耗"
+      ],
+      "notes": [
+        "十干変曜「天耗」と同名（別物として保持。統合しない）"
+      ],
+      "shensha_table": "mb",
+      "shensha_table_label": "月支神殺",
+      "base": "月支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "天耗"
+      ],
+      "name_cell_raw": "天耗",
+      "row_meaning": "破耗",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 23,
+        "row": 3
+      }
+    },
+    {
+      "id": "qz_shensha_mb_地耗",
+      "category": "shensha",
+      "name": "地耗",
+      "target": null,
+      "conditions": {},
+      "interpretation": "破耗",
+      "source_text": "破耗",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "月支神殺",
+        "table": 23,
+        "row": 4,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "mb",
+      "shensha_table_label": "月支神殺",
+      "base": "月支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "地耗"
+      ],
+      "name_cell_raw": "地耗",
+      "row_meaning": "破耗",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 23,
+        "row": 4
+      }
+    },
+    {
+      "id": "qz_shensha_mb_月官符",
+      "category": "shensha",
+      "name": "月官符",
+      "target": null,
+      "conditions": {},
+      "interpretation": "官災、口舌",
+      "source_text": "官災、口舌",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "月支神殺",
+        "table": 23,
+        "row": 5,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "mb",
+      "shensha_table_label": "月支神殺",
+      "base": "月支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "月官符"
+      ],
+      "name_cell_raw": "月官符",
+      "row_meaning": "官災、口舌",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 23,
+        "row": 5
+      }
+    },
+    {
+      "id": "qz_shensha_mb_月飛廉",
+      "category": "shensha",
+      "name": "月飛廉",
+      "target": null,
+      "conditions": {},
+      "interpretation": "不吉、官災、口舌、破財",
+      "source_text": "不吉、官災、口舌、破財",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "月支神殺",
+        "table": 23,
+        "row": 6,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "mb",
+      "shensha_table_label": "月支神殺",
+      "base": "月支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "月飛廉"
+      ],
+      "name_cell_raw": "月飛廉",
+      "row_meaning": "不吉、官災、口舌、破財",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 23,
+        "row": 6
+      }
+    },
+    {
+      "id": "qz_shensha_mb_血刃",
+      "category": "shensha",
+      "name": "血刃",
+      "target": null,
+      "conditions": {},
+      "interpretation": "血光の災",
+      "source_text": "血光の災",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "月支神殺",
+        "table": 23,
+        "row": 7,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_shensha_yb_palace_血刃"
+      ],
+      "notes": [
+        "同名の神殺が別の表にもある（別項目として保持。統合しない）"
+      ],
+      "shensha_table": "mb",
+      "shensha_table_label": "月支神殺",
+      "base": "月支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "血刃"
+      ],
+      "name_cell_raw": "血刃",
+      "row_meaning": "血光の災",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 23,
+        "row": 7
+      }
+    },
+    {
+      "id": "qz_shensha_mb_血支",
+      "category": "shensha",
+      "name": "血支",
+      "target": null,
+      "conditions": {},
+      "interpretation": "血光の災",
+      "source_text": "血光の災",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "月支神殺",
+        "table": 23,
+        "row": 8,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_shensha_yb_star_血支"
+      ],
+      "notes": [
+        "同名の神殺が別の表にもある（別項目として保持。統合しない）"
+      ],
+      "shensha_table": "mb",
+      "shensha_table_label": "月支神殺",
+      "base": "月支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "血支"
+      ],
+      "name_cell_raw": "血支",
+      "row_meaning": "血光の災",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 23,
+        "row": 8
+      }
+    },
+    {
+      "id": "qz_shensha_mb_注受",
+      "category": "shensha",
+      "name": "注受",
+      "target": null,
+      "conditions": {},
+      "interpretation": "化吉",
+      "source_text": "化吉",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "月支神殺",
+        "table": 23,
+        "row": 9,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "mb",
+      "shensha_table_label": "月支神殺",
+      "base": "月支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "注受"
+      ],
+      "name_cell_raw": "注受",
+      "row_meaning": "化吉",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 23,
+        "row": 9
+      }
+    },
+    {
+      "id": "qz_shensha_mb_値難",
+      "category": "shensha",
+      "name": "値難",
+      "target": null,
+      "conditions": {},
+      "interpretation": "災禍",
+      "source_text": "災禍",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "月支神殺",
+        "table": 23,
+        "row": 10,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "mb",
+      "shensha_table_label": "月支神殺",
+      "base": "月支",
+      "attaches_to": "star",
+      "names_in_row": [
+        "値難"
+      ],
+      "name_cell_raw": "値難",
+      "row_meaning": "災禍",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 23,
+        "row": 10
+      }
+    },
+    {
+      "id": "qz_shensha_mb_月殺",
+      "category": "shensha",
+      "name": "月殺",
+      "target": null,
+      "conditions": {},
+      "interpretation": "誤殺人",
+      "source_text": "誤殺人",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "月支神殺",
+        "table": 23,
+        "row": 11,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_shensha_yb_palace_月殺"
+      ],
+      "notes": [
+        "同名の神殺が別の表にもある（別項目として保持。統合しない）"
+      ],
+      "shensha_table": "mb",
+      "shensha_table_label": "月支神殺",
+      "base": "月支",
+      "attaches_to": "branch",
+      "names_in_row": [
+        "月殺"
+      ],
+      "name_cell_raw": "月殺",
+      "row_meaning": "誤殺人",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 23,
+        "row": 11
+      }
+    },
+    {
+      "id": "qz_shensha_ym_天経",
+      "category": "shensha",
+      "name": "天経",
+      "target": null,
+      "conditions": {},
+      "interpretation": "身命なら貴",
+      "source_text": "身命なら貴",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干命宮神殺",
+        "table": 24,
+        "row": 1,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "ym",
+      "shensha_table_label": "年干命宮神殺",
+      "base": "年干＋命宮",
+      "attaches_to": "star",
+      "names_in_row": [
+        "天経"
+      ],
+      "name_cell_raw": "天経",
+      "row_meaning": "身命なら貴",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 24,
+        "row": 1
+      }
+    },
+    {
+      "id": "qz_shensha_ym_地緯",
+      "category": "shensha",
+      "name": "地緯",
+      "target": null,
+      "conditions": {},
+      "interpretation": "天経に同じ",
+      "source_text": "天経に同じ",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干命宮神殺",
+        "table": 24,
+        "row": 6,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_shensha_ym_天経"
+      ],
+      "notes": [
+        "資料の意味欄は「天経に同じ」"
+      ],
+      "shensha_table": "ym",
+      "shensha_table_label": "年干命宮神殺",
+      "base": "年干＋命宮",
+      "attaches_to": "star",
+      "names_in_row": [
+        "地緯"
+      ],
+      "name_cell_raw": "地緯",
+      "row_meaning": "天経に同じ",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 24,
+        "row": 6
+      }
+    },
+    {
+      "id": "qz_shensha_ym_天元",
+      "category": "shensha",
+      "name": "天元",
+      "target": null,
+      "conditions": {},
+      "interpretation": "順ならば吉、逆留陥を忌む。",
+      "source_text": "順ならば吉、逆留陥を忌む。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干命宮神殺",
+        "table": 24,
+        "row": 7,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "ym",
+      "shensha_table_label": "年干命宮神殺",
+      "base": "年干＋命宮",
+      "attaches_to": "star",
+      "names_in_row": [
+        "天元"
+      ],
+      "name_cell_raw": "天元",
+      "row_meaning": "順ならば吉、逆留陥を忌む。",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 24,
+        "row": 7
+      }
+    },
+    {
+      "id": "qz_shensha_ym_地元",
+      "category": "shensha",
+      "name": "地元",
+      "target": null,
+      "conditions": {},
+      "interpretation": "廟旺に吉、文僚より武権",
+      "source_text": "廟旺に吉、文僚より武権",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干命宮神殺",
+        "table": 24,
+        "row": 12,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "ym",
+      "shensha_table_label": "年干命宮神殺",
+      "base": "年干＋命宮",
+      "attaches_to": "star",
+      "names_in_row": [
+        "地元"
+      ],
+      "name_cell_raw": "地元",
+      "row_meaning": "廟旺に吉、文僚より武権",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 24,
+        "row": 12
+      }
+    },
+    {
+      "id": "qz_shensha_ym_人元",
+      "category": "shensha",
+      "name": "人元",
+      "target": null,
+      "conditions": {},
+      "interpretation": "旺ならば福寿",
+      "source_text": "旺ならば福寿",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干命宮神殺",
+        "table": 24,
+        "row": 22,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "ym",
+      "shensha_table_label": "年干命宮神殺",
+      "base": "年干＋命宮",
+      "attaches_to": "star",
+      "names_in_row": [
+        "人元"
+      ],
+      "name_cell_raw": "人元",
+      "row_meaning": "旺ならば福寿",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 24,
+        "row": 22
+      }
+    },
+    {
+      "id": "qz_shensha_ym_天馬",
+      "category": "shensha",
+      "name": "天馬",
+      "target": null,
+      "conditions": {},
+      "interpretation": "変動、移動",
+      "source_text": "変動、移動",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干命宮神殺",
+        "table": 24,
+        "row": 27,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_shensha_yb_star_天馬"
+      ],
+      "notes": [
+        "同名の神殺が別の表にもある（別項目として保持。統合しない）"
+      ],
+      "shensha_table": "ym",
+      "shensha_table_label": "年干命宮神殺",
+      "base": "年干＋命宮",
+      "attaches_to": "star",
+      "names_in_row": [
+        "天馬"
+      ],
+      "name_cell_raw": "天馬",
+      "row_meaning": "変動、移動",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 24,
+        "row": 27
+      }
+    },
+    {
+      "id": "qz_shensha_ym_地駅",
+      "category": "shensha",
+      "name": "地駅",
+      "target": null,
+      "conditions": {},
+      "interpretation": "天馬に同じ",
+      "source_text": "天馬に同じ",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干命宮神殺",
+        "table": 24,
+        "row": 32,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_shensha_yb_star_地駅",
+        "qz_shensha_ym_天馬"
+      ],
+      "notes": [
+        "資料の意味欄は「天馬に同じ」",
+        "同名の神殺が別の表にもある（別項目として保持。統合しない）"
+      ],
+      "shensha_table": "ym",
+      "shensha_table_label": "年干命宮神殺",
+      "base": "年干＋命宮",
+      "attaches_to": "star",
+      "names_in_row": [
+        "地駅"
+      ],
+      "name_cell_raw": "地駅",
+      "row_meaning": "天馬に同じ",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 24,
+        "row": 32
+      }
+    },
+    {
+      "id": "qz_shensha_ym_職元",
+      "category": "shensha",
+      "name": "職元",
+      "target": null,
+      "conditions": {},
+      "interpretation": "官職、才能",
+      "source_text": "官職、才能",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干命宮神殺",
+        "table": 24,
+        "row": 34,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "ym",
+      "shensha_table_label": "年干命宮神殺",
+      "base": "年干＋命宮",
+      "attaches_to": "star",
+      "names_in_row": [
+        "職元"
+      ],
+      "name_cell_raw": "職元",
+      "row_meaning": "官職、才能",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 24,
+        "row": 34
+      }
+    },
+    {
+      "id": "qz_shensha_ym_局主",
+      "category": "shensha",
+      "name": "局主",
+      "target": null,
+      "conditions": {},
+      "interpretation": "増吉、貴人に吉",
+      "source_text": "増吉、貴人に吉",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "年干命宮神殺",
+        "table": 24,
+        "row": 44,
+        "column": "意味、備考",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "shensha_table": "ym",
+      "shensha_table_label": "年干命宮神殺",
+      "base": "年干＋命宮",
+      "attaches_to": "star",
+      "names_in_row": [
+        "局主"
+      ],
+      "name_cell_raw": "局主",
+      "row_meaning": "増吉、貴人に吉",
+      "name_specific": null,
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "table": 24,
+        "row": 44
+      }
+    }
+  ]
+}

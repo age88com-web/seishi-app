@@ -1,0 +1,1541 @@
+{
+  "schema_version": "1.0.0",
+  "source_file": "七政四餘鑑定用資料.docx",
+  "records": [
+    {
+      "id": "qz_mgroup_def_日度",
+      "category": "mansion_group_definition",
+      "name": "日度",
+      "target": "日度",
+      "conditions": {},
+      "interpretation": "房、虚、昴、星",
+      "source_text": "日度：房、虚、昴、星",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 83
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "group_star": "sun",
+      "mansions_raw": [
+        "房",
+        "虚",
+        "昴",
+        "星"
+      ]
+    },
+    {
+      "id": "qz_mgroup_def_月度",
+      "category": "mansion_group_definition",
+      "name": "月度",
+      "target": "月度",
+      "conditions": {},
+      "interpretation": "心、危、畢、張",
+      "source_text": "月度：心、危、畢、張",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 83
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "group_star": "moon",
+      "mansions_raw": [
+        "心",
+        "危",
+        "畢",
+        "張"
+      ]
+    },
+    {
+      "id": "qz_mgroup_def_木度",
+      "category": "mansion_group_definition",
+      "name": "木度",
+      "target": "木度",
+      "conditions": {},
+      "interpretation": "角、斗、奎、井",
+      "source_text": "木度：角、斗、奎、井",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 83
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "group_star": "jupiter",
+      "mansions_raw": [
+        "角",
+        "斗",
+        "奎",
+        "井"
+      ]
+    },
+    {
+      "id": "qz_mgroup_def_火度",
+      "category": "mansion_group_definition",
+      "name": "火度",
+      "target": "火度",
+      "conditions": {},
+      "interpretation": "尾、室、觜、翼",
+      "source_text": "火度：尾、室、觜、翼",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 83
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "group_star": "mars",
+      "mansions_raw": [
+        "尾",
+        "室",
+        "觜",
+        "翼"
+      ]
+    },
+    {
+      "id": "qz_mgroup_def_土度",
+      "category": "mansion_group_definition",
+      "name": "土度",
+      "target": "土度",
+      "conditions": {},
+      "interpretation": "[ﾃｲ]、女、胃、柳",
+      "source_text": "土度：[ﾃｲ]、女、胃、柳",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 83
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "「[ﾃｲ]」は資料の欠字表記をそのまま保持（訂正しない）"
+      ],
+      "group_star": "saturn",
+      "mansions_raw": [
+        "[ﾃｲ]",
+        "女",
+        "胃",
+        "柳"
+      ]
+    },
+    {
+      "id": "qz_mgroup_def_金度",
+      "category": "mansion_group_definition",
+      "name": "金度",
+      "target": "金度",
+      "conditions": {},
+      "interpretation": "亢、牛、婁、鬼",
+      "source_text": "金度：亢、牛、婁、鬼",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 83
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "group_star": "venus",
+      "mansions_raw": [
+        "亢",
+        "牛",
+        "婁",
+        "鬼"
+      ]
+    },
+    {
+      "id": "qz_mgroup_def_水度",
+      "category": "mansion_group_definition",
+      "name": "水度",
+      "target": "水度",
+      "conditions": {},
+      "interpretation": "箕、壁、参、軫",
+      "source_text": "水度：箕、壁、参、軫",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 83
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "group_star": "mercury",
+      "mansions_raw": [
+        "箕",
+        "壁",
+        "参",
+        "軫"
+      ]
+    },
+    {
+      "id": "qz_mgroup_sun_日度",
+      "category": "star_mansion_group",
+      "name": "太陽躔度",
+      "target": "日度",
+      "conditions": {},
+      "interpretation": "忠直、道芸、仕官、声名、大貴、昼生は高位",
+      "source_text": "忠直、道芸、仕官、声名、大貴、昼生は高位",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （１）太陽躔度",
+        "table": 8,
+        "row": 1,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_日度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "sun",
+      "group": "日度"
+    },
+    {
+      "id": "qz_mgroup_sun_月度",
+      "category": "star_mansion_group",
+      "name": "太陽躔度",
+      "target": "月度",
+      "conditions": {},
+      "interpretation": "父母助力、密謀、深遠、財、大富",
+      "source_text": "父母助力、密謀、深遠、財、大富",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （１）太陽躔度",
+        "table": 8,
+        "row": 2,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_月度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "sun",
+      "group": "月度"
+    },
+    {
+      "id": "qz_mgroup_sun_木度",
+      "category": "star_mansion_group",
+      "name": "太陽躔度",
+      "target": "木度",
+      "conditions": {},
+      "interpretation": "貴達、多福、仕官、財布、晩年主富",
+      "source_text": "貴達、多福、仕官、財布、晩年主富",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （１）太陽躔度",
+        "table": 8,
+        "row": 3,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_木度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "sun",
+      "group": "木度"
+    },
+    {
+      "id": "qz_mgroup_sun_火度",
+      "category": "star_mansion_group",
+      "name": "太陽躔度",
+      "target": "火度",
+      "conditions": {},
+      "interpretation": "清廉、有福、性直、危険を顧みず、世渡り",
+      "source_text": "清廉、有福、性直、危険を顧みず、世渡り",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （１）太陽躔度",
+        "table": 8,
+        "row": 4,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_火度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "sun",
+      "group": "火度"
+    },
+    {
+      "id": "qz_mgroup_sun_土度",
+      "category": "star_mansion_group",
+      "name": "太陽躔度",
+      "target": "土度",
+      "conditions": {},
+      "interpretation": "貴人委用、子女、技巧、中身のない貴",
+      "source_text": "貴人委用、子女、技巧、中身のない貴",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （１）太陽躔度",
+        "table": 8,
+        "row": 5,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_土度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "sun",
+      "group": "土度"
+    },
+    {
+      "id": "qz_mgroup_sun_金度",
+      "category": "star_mansion_group",
+      "name": "太陽躔度",
+      "target": "金度",
+      "conditions": {},
+      "interpretation": "音楽、歓楽、困難、主星で昼生は福力あり",
+      "source_text": "音楽、歓楽、困難、主星で昼生は福力あり",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （１）太陽躔度",
+        "table": 8,
+        "row": 6,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_金度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "sun",
+      "group": "金度"
+    },
+    {
+      "id": "qz_mgroup_sun_水度",
+      "category": "star_mansion_group",
+      "name": "太陽躔度",
+      "target": "水度",
+      "conditions": {},
+      "interpretation": "財帛充足、多学多智、清潔、浪費",
+      "source_text": "財帛充足、多学多智、清潔、浪費",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （１）太陽躔度",
+        "table": 8,
+        "row": 7,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_水度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "sun",
+      "group": "水度"
+    },
+    {
+      "id": "qz_mgroup_moon_日度",
+      "category": "star_mansion_group",
+      "name": "太陰躔度",
+      "target": "日度",
+      "conditions": {},
+      "interpretation": "多才、有福、声名、主星ならば大貴、夫位",
+      "source_text": "多才、有福、声名、主星ならば大貴、夫位",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （２）太陰躔度",
+        "table": 9,
+        "row": 1,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_日度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "moon",
+      "group": "日度"
+    },
+    {
+      "id": "qz_mgroup_moon_月度",
+      "category": "star_mansion_group",
+      "name": "太陰躔度",
+      "target": "月度",
+      "conditions": {},
+      "interpretation": "形貌超群、爽快、巧言、淫欲",
+      "source_text": "形貌超群、爽快、巧言、淫欲",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （２）太陰躔度",
+        "table": 9,
+        "row": 2,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_月度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "moon",
+      "group": "月度"
+    },
+    {
+      "id": "qz_mgroup_moon_木度",
+      "category": "star_mansion_group",
+      "name": "太陰躔度",
+      "target": "木度",
+      "conditions": {},
+      "interpretation": "文学、経営、財産、老富、中年は弱",
+      "source_text": "文学、経営、財産、老富、中年は弱",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （２）太陰躔度",
+        "table": 9,
+        "row": 3,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_木度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "moon",
+      "group": "木度"
+    },
+    {
+      "id": "qz_mgroup_moon_火度",
+      "category": "star_mansion_group",
+      "name": "太陰躔度",
+      "target": "火度",
+      "conditions": {},
+      "interpretation": "性急、兵火、卑賎、悪星と同宮なら寿短",
+      "source_text": "性急、兵火、卑賎、悪星と同宮なら寿短",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （２）太陰躔度",
+        "table": 9,
+        "row": 4,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_火度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "moon",
+      "group": "火度"
+    },
+    {
+      "id": "qz_mgroup_moon_土度",
+      "category": "star_mansion_group",
+      "name": "太陰躔度",
+      "target": "土度",
+      "conditions": {},
+      "interpretation": "困難、妻子に憂いあり、３２を過ぎて吉",
+      "source_text": "困難、妻子に憂いあり、３２を過ぎて吉",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （２）太陰躔度",
+        "table": 9,
+        "row": 5,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_土度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "moon",
+      "group": "土度"
+    },
+    {
+      "id": "qz_mgroup_moon_金度",
+      "category": "star_mansion_group",
+      "name": "太陰躔度",
+      "target": "金度",
+      "conditions": {},
+      "interpretation": "富貴、歓楽、婦人による災い",
+      "source_text": "富貴、歓楽、婦人による災い",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （２）太陰躔度",
+        "table": 9,
+        "row": 6,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_金度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "moon",
+      "group": "金度"
+    },
+    {
+      "id": "qz_mgroup_moon_水度",
+      "category": "star_mansion_group",
+      "name": "太陰躔度",
+      "target": "水度",
+      "conditions": {},
+      "interpretation": "聡明、智恵、学問",
+      "source_text": "聡明、智恵、学問",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （２）太陰躔度",
+        "table": 9,
+        "row": 7,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_水度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "moon",
+      "group": "水度"
+    },
+    {
+      "id": "qz_mgroup_jupiter_日度",
+      "category": "star_mansion_group",
+      "name": "木星躔度",
+      "target": "日度",
+      "conditions": {},
+      "interpretation": "文芸、声名、貴族、大貴",
+      "source_text": "文芸、声名、貴族、大貴",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （３）木星躔度",
+        "table": 10,
+        "row": 1,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_日度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "jupiter",
+      "group": "日度"
+    },
+    {
+      "id": "qz_mgroup_jupiter_月度",
+      "category": "star_mansion_group",
+      "name": "木星躔度",
+      "target": "月度",
+      "conditions": {},
+      "interpretation": "文章、予知、主星ならば福力、大貴",
+      "source_text": "文章、予知、主星ならば福力、大貴",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （３）木星躔度",
+        "table": 10,
+        "row": 2,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_月度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "jupiter",
+      "group": "月度"
+    },
+    {
+      "id": "qz_mgroup_jupiter_木度",
+      "category": "star_mansion_group",
+      "name": "木星躔度",
+      "target": "木度",
+      "conditions": {},
+      "interpretation": "寛大、文章出群、二妻、多子女、主星で昼生は富貴",
+      "source_text": "寛大、文章出群、二妻、多子女、主星で昼生は富貴",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （３）木星躔度",
+        "table": 10,
+        "row": 3,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_木度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "jupiter",
+      "group": "木度"
+    },
+    {
+      "id": "qz_mgroup_jupiter_火度",
+      "category": "star_mansion_group",
+      "name": "木星躔度",
+      "target": "火度",
+      "conditions": {},
+      "interpretation": "災厄、争訟、夭折、妻財、国務",
+      "source_text": "災厄、争訟、夭折、妻財、国務",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （３）木星躔度",
+        "table": 10,
+        "row": 4,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_火度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "jupiter",
+      "group": "火度"
+    },
+    {
+      "id": "qz_mgroup_jupiter_土度",
+      "category": "star_mansion_group",
+      "name": "木星躔度",
+      "target": "土度",
+      "conditions": {},
+      "interpretation": "口舌、憂い、昼生まれならよい、晩婚、再婚",
+      "source_text": "口舌、憂い、昼生まれならよい、晩婚、再婚",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （３）木星躔度",
+        "table": 10,
+        "row": 5,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_土度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "jupiter",
+      "group": "土度"
+    },
+    {
+      "id": "qz_mgroup_jupiter_金度",
+      "category": "star_mansion_group",
+      "name": "木星躔度",
+      "target": "金度",
+      "conditions": {},
+      "interpretation": "美妻、文武、子女、財を手にする",
+      "source_text": "美妻、文武、子女、財を手にする",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （３）木星躔度",
+        "table": 10,
+        "row": 6,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_金度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "jupiter",
+      "group": "金度"
+    },
+    {
+      "id": "qz_mgroup_jupiter_水度",
+      "category": "star_mansion_group",
+      "name": "木星躔度",
+      "target": "水度",
+      "conditions": {},
+      "interpretation": "性情不定、詩画、芸術",
+      "source_text": "性情不定、詩画、芸術",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （３）木星躔度",
+        "table": 10,
+        "row": 7,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_水度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "jupiter",
+      "group": "水度"
+    },
+    {
+      "id": "qz_mgroup_mars_日度",
+      "category": "star_mansion_group",
+      "name": "火星躔度",
+      "target": "日度",
+      "conditions": {},
+      "interpretation": "性急、是非、夜生まれは位、昼生まれは財、損祖財、兵厄",
+      "source_text": "性急、是非、夜生まれは位、昼生まれは財、損祖財、兵厄",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （４）火星躔度",
+        "table": 11,
+        "row": 1,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_日度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある",
+        "見出し番号「（４）」が火星躔度と土星躔度で重複（資料のまま）"
+      ],
+      "star": "mars",
+      "group": "日度"
+    },
+    {
+      "id": "qz_mgroup_mars_月度",
+      "category": "star_mansion_group",
+      "name": "火星躔度",
+      "target": "月度",
+      "conditions": {},
+      "interpretation": "性急、聡明、夭折、不実、交際は続かない、主星なら吉",
+      "source_text": "性急、聡明、夭折、不実、交際は続かない、主星なら吉",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （４）火星躔度",
+        "table": 11,
+        "row": 2,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_月度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある",
+        "見出し番号「（４）」が火星躔度と土星躔度で重複（資料のまま）"
+      ],
+      "star": "mars",
+      "group": "月度"
+    },
+    {
+      "id": "qz_mgroup_mars_木度",
+      "category": "star_mansion_group",
+      "name": "火星躔度",
+      "target": "木度",
+      "conditions": {},
+      "interpretation": "災厄、疾病、損傷子女、風狂",
+      "source_text": "災厄、疾病、損傷子女、風狂",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （４）火星躔度",
+        "table": 11,
+        "row": 3,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_木度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある",
+        "見出し番号「（４）」が火星躔度と土星躔度で重複（資料のまま）"
+      ],
+      "star": "mars",
+      "group": "木度"
+    },
+    {
+      "id": "qz_mgroup_mars_火度",
+      "category": "star_mansion_group",
+      "name": "火星躔度",
+      "target": "火度",
+      "conditions": {},
+      "interpretation": "威厳、武芸、多子孫、主星なら人に損なわれる、知勇超群",
+      "source_text": "威厳、武芸、多子孫、主星なら人に損なわれる、知勇超群",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （４）火星躔度",
+        "table": 11,
+        "row": 4,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_火度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある",
+        "見出し番号「（４）」が火星躔度と土星躔度で重複（資料のまま）"
+      ],
+      "star": "mars",
+      "group": "火度"
+    },
+    {
+      "id": "qz_mgroup_mars_土度",
+      "category": "star_mansion_group",
+      "name": "火星躔度",
+      "target": "土度",
+      "conditions": {},
+      "interpretation": "損兄弟、子女死、木があればよい、３２以降財あり",
+      "source_text": "損兄弟、子女死、木があればよい、３２以降財あり",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （４）火星躔度",
+        "table": 11,
+        "row": 5,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_土度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある",
+        "見出し番号「（４）」が火星躔度と土星躔度で重複（資料のまま）"
+      ],
+      "star": "mars",
+      "group": "土度"
+    },
+    {
+      "id": "qz_mgroup_mars_金度",
+      "category": "star_mansion_group",
+      "name": "火星躔度",
+      "target": "金度",
+      "conditions": {},
+      "interpretation": "貧困、女性で身を滅ぼす、主星で昼生は福力、貴あり",
+      "source_text": "貧困、女性で身を滅ぼす、主星で昼生は福力、貴あり",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （４）火星躔度",
+        "table": 11,
+        "row": 6,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_金度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある",
+        "見出し番号「（４）」が火星躔度と土星躔度で重複（資料のまま）"
+      ],
+      "star": "mars",
+      "group": "金度"
+    },
+    {
+      "id": "qz_mgroup_mars_水度",
+      "category": "star_mansion_group",
+      "name": "火星躔度",
+      "target": "水度",
+      "conditions": {},
+      "interpretation": "災厄、施恩徳、不善",
+      "source_text": "災厄、施恩徳、不善",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （４）火星躔度",
+        "table": 11,
+        "row": 7,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_水度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある",
+        "見出し番号「（４）」が火星躔度と土星躔度で重複（資料のまま）"
+      ],
+      "star": "mars",
+      "group": "水度"
+    },
+    {
+      "id": "qz_mgroup_saturn_日度",
+      "category": "star_mansion_group",
+      "name": "土星躔度",
+      "target": "日度",
+      "conditions": {},
+      "interpretation": "父貴、冷疾、重厚、主星で昼生は大貴、夜生は微福",
+      "source_text": "父貴、冷疾、重厚、主星で昼生は大貴、夜生は微福",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （４）土星躔度",
+        "table": 12,
+        "row": 1,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_日度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある",
+        "見出し番号「（４）」が火星躔度と土星躔度で重複（資料のまま）"
+      ],
+      "star": "saturn",
+      "group": "日度"
+    },
+    {
+      "id": "qz_mgroup_saturn_月度",
+      "category": "star_mansion_group",
+      "name": "土星躔度",
+      "target": "月度",
+      "conditions": {},
+      "interpretation": "損母財、冷疾、文章、主星ならば大貴",
+      "source_text": "損母財、冷疾、文章、主星ならば大貴",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （４）土星躔度",
+        "table": 12,
+        "row": 2,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_月度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある",
+        "見出し番号「（４）」が火星躔度と土星躔度で重複（資料のまま）"
+      ],
+      "star": "saturn",
+      "group": "月度"
+    },
+    {
+      "id": "qz_mgroup_saturn_木度",
+      "category": "star_mansion_group",
+      "name": "土星躔度",
+      "target": "木度",
+      "conditions": {},
+      "interpretation": "財あり、貴人を見る、晩年子女の助力",
+      "source_text": "財あり、貴人を見る、晩年子女の助力",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （４）土星躔度",
+        "table": 12,
+        "row": 3,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_木度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある",
+        "見出し番号「（４）」が火星躔度と土星躔度で重複（資料のまま）"
+      ],
+      "star": "saturn",
+      "group": "木度"
+    },
+    {
+      "id": "qz_mgroup_saturn_火度",
+      "category": "star_mansion_group",
+      "name": "土星躔度",
+      "target": "火度",
+      "conditions": {},
+      "interpretation": "損父母兄弟、女性の災い、昼生は福、夜生は凶、残疾",
+      "source_text": "損父母兄弟、女性の災い、昼生は福、夜生は凶、残疾",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （４）土星躔度",
+        "table": 12,
+        "row": 4,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_火度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある",
+        "見出し番号「（４）」が火星躔度と土星躔度で重複（資料のまま）"
+      ],
+      "star": "saturn",
+      "group": "火度"
+    },
+    {
+      "id": "qz_mgroup_saturn_土度",
+      "category": "star_mansion_group",
+      "name": "土星躔度",
+      "target": "土度",
+      "conditions": {},
+      "interpretation": "大富貴、声名、財産、地位",
+      "source_text": "大富貴、声名、財産、地位",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （４）土星躔度",
+        "table": 12,
+        "row": 5,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_土度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある",
+        "見出し番号「（４）」が火星躔度と土星躔度で重複（資料のまま）"
+      ],
+      "star": "saturn",
+      "group": "土度"
+    },
+    {
+      "id": "qz_mgroup_saturn_金度",
+      "category": "star_mansion_group",
+      "name": "土星躔度",
+      "target": "金度",
+      "conditions": {},
+      "interpretation": "父亡、３０前辛苦、再婚、主星なら福あり、貴人を見る",
+      "source_text": "父亡、３０前辛苦、再婚、主星なら福あり、貴人を見る",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （４）土星躔度",
+        "table": 12,
+        "row": 6,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_金度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある",
+        "見出し番号「（４）」が火星躔度と土星躔度で重複（資料のまま）"
+      ],
+      "star": "saturn",
+      "group": "金度"
+    },
+    {
+      "id": "qz_mgroup_saturn_水度",
+      "category": "star_mansion_group",
+      "name": "土星躔度",
+      "target": "水度",
+      "conditions": {},
+      "interpretation": "損子女、損害、木と同宮なら免れる",
+      "source_text": "損子女、損害、木と同宮なら免れる",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （４）土星躔度",
+        "table": 12,
+        "row": 7,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_水度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある",
+        "見出し番号「（４）」が火星躔度と土星躔度で重複（資料のまま）"
+      ],
+      "star": "saturn",
+      "group": "水度"
+    },
+    {
+      "id": "qz_mgroup_venus_日度",
+      "category": "star_mansion_group",
+      "name": "金星躔度",
+      "target": "日度",
+      "conditions": {},
+      "interpretation": "離婚、闘争、功名",
+      "source_text": "離婚、闘争、功名",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （５）金星躔度",
+        "table": 13,
+        "row": 1,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_日度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "venus",
+      "group": "日度"
+    },
+    {
+      "id": "qz_mgroup_venus_月度",
+      "category": "star_mansion_group",
+      "name": "金星躔度",
+      "target": "月度",
+      "conditions": {},
+      "interpretation": "多淫、婦人財物で出世、非礼、男は貴、女は淫",
+      "source_text": "多淫、婦人財物で出世、非礼、男は貴、女は淫",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （５）金星躔度",
+        "table": 13,
+        "row": 2,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_月度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "venus",
+      "group": "月度"
+    },
+    {
+      "id": "qz_mgroup_venus_木度",
+      "category": "star_mansion_group",
+      "name": "金星躔度",
+      "target": "木度",
+      "conditions": {},
+      "interpretation": "武勇、歓楽、爽快、財物、貴人",
+      "source_text": "武勇、歓楽、爽快、財物、貴人",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （５）金星躔度",
+        "table": 13,
+        "row": 3,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_木度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "venus",
+      "group": "木度"
+    },
+    {
+      "id": "qz_mgroup_venus_火度",
+      "category": "star_mansion_group",
+      "name": "金星躔度",
+      "target": "火度",
+      "conditions": {},
+      "interpretation": "女性、離婚、婦人による損害",
+      "source_text": "女性、離婚、婦人による損害",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （５）金星躔度",
+        "table": 13,
+        "row": 4,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_火度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "venus",
+      "group": "火度"
+    },
+    {
+      "id": "qz_mgroup_venus_土度",
+      "category": "star_mansion_group",
+      "name": "金星躔度",
+      "target": "土度",
+      "conditions": {},
+      "interpretation": "晩婚、離郷、妻妾で憂い、色欲、散財、主星なら地位",
+      "source_text": "晩婚、離郷、妻妾で憂い、色欲、散財、主星なら地位",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （５）金星躔度",
+        "table": 13,
+        "row": 5,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_土度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "venus",
+      "group": "土度"
+    },
+    {
+      "id": "qz_mgroup_venus_金度",
+      "category": "star_mansion_group",
+      "name": "金星躔度",
+      "target": "金度",
+      "conditions": {},
+      "interpretation": "兵権、色欲、子女",
+      "source_text": "兵権、色欲、子女",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （５）金星躔度",
+        "table": 13,
+        "row": 6,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_金度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "venus",
+      "group": "金度"
+    },
+    {
+      "id": "qz_mgroup_venus_水度",
+      "category": "star_mansion_group",
+      "name": "金星躔度",
+      "target": "水度",
+      "conditions": {},
+      "interpretation": "敬愛、良妻、一生貴達",
+      "source_text": "敬愛、良妻、一生貴達",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （５）金星躔度",
+        "table": 13,
+        "row": 7,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_水度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "venus",
+      "group": "水度"
+    },
+    {
+      "id": "qz_mgroup_mercury_日度",
+      "category": "star_mansion_group",
+      "name": "水星躔度",
+      "target": "日度",
+      "conditions": {},
+      "interpretation": "温厚、聡明、芸道、文芸、主星で昼生は貴、夜生は富",
+      "source_text": "温厚、聡明、芸道、文芸、主星で昼生は貴、夜生は富",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （６）水星躔度",
+        "table": 14,
+        "row": 1,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_日度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "mercury",
+      "group": "日度"
+    },
+    {
+      "id": "qz_mgroup_mercury_月度",
+      "category": "star_mansion_group",
+      "name": "水星躔度",
+      "target": "月度",
+      "conditions": {},
+      "interpretation": "聡明、有信、性急、多巧",
+      "source_text": "聡明、有信、性急、多巧",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （６）水星躔度",
+        "table": 14,
+        "row": 2,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_月度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "mercury",
+      "group": "月度"
+    },
+    {
+      "id": "qz_mgroup_mercury_木度",
+      "category": "star_mansion_group",
+      "name": "水星躔度",
+      "target": "木度",
+      "conditions": {},
+      "interpretation": "智謀、子女多い、義理、吉慶、主星でなければ多災",
+      "source_text": "智謀、子女多い、義理、吉慶、主星でなければ多災",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （６）水星躔度",
+        "table": 14,
+        "row": 3,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_木度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "mercury",
+      "group": "木度"
+    },
+    {
+      "id": "qz_mgroup_mercury_火度",
+      "category": "star_mansion_group",
+      "name": "水星躔度",
+      "target": "火度",
+      "conditions": {},
+      "interpretation": "災厄、毒害、機密、損財、木を見れは災い半減",
+      "source_text": "災厄、毒害、機密、損財、木を見れは災い半減",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （６）水星躔度",
+        "table": 14,
+        "row": 4,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_火度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "mercury",
+      "group": "火度"
+    },
+    {
+      "id": "qz_mgroup_mercury_土度",
+      "category": "star_mansion_group",
+      "name": "水星躔度",
+      "target": "土度",
+      "conditions": {},
+      "interpretation": "損兄弟、子女有厄、婚姻不定、貪財論訟、火相剋は凶",
+      "source_text": "損兄弟、子女有厄、婚姻不定、貪財論訟、火相剋は凶",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （６）水星躔度",
+        "table": 14,
+        "row": 5,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_土度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "mercury",
+      "group": "土度"
+    },
+    {
+      "id": "qz_mgroup_mercury_金度",
+      "category": "star_mansion_group",
+      "name": "水星躔度",
+      "target": "金度",
+      "conditions": {},
+      "interpretation": "聡明、兵法、予知、声名、財帛、威風、女性による災い",
+      "source_text": "聡明、兵法、予知、声名、財帛、威風、女性による災い",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （６）水星躔度",
+        "table": 14,
+        "row": 6,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_金度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "mercury",
+      "group": "金度"
+    },
+    {
+      "id": "qz_mgroup_mercury_水度",
+      "category": "star_mansion_group",
+      "name": "水星躔度",
+      "target": "水度",
+      "conditions": {},
+      "interpretation": "文学、声名、快楽、論争、財帛、女性は厄",
+      "source_text": "文学、声名、快楽、論争、財帛、女性は厄",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．七政と宿度 （６）水星躔度",
+        "table": 14,
+        "row": 7,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_mgroup_def_水度"
+      ],
+      "notes": [
+        "資料に「参考程度に見る程度でいいと思います」（著者見解）とある"
+      ],
+      "star": "mercury",
+      "group": "水度"
+    }
+  ]
+}

@@ -1,0 +1,558 @@
+{
+  "schema_version": "1.0.0",
+  "source_file": "七政四餘鑑定用資料.docx",
+  "records": [
+    {
+      "id": "qz_starpalace_jupiter_命宮",
+      "category": "star_palace",
+      "name": "木星",
+      "target": "命宮",
+      "conditions": {},
+      "interpretation": "聡敏、芸術、文才、名声、衣禄\n危険に逢っても災いを脱する。",
+      "source_text": "聡敏、芸術、文才、名声、衣禄\n危険に逢っても災いを脱する。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "５．七政四餘と命宮",
+        "table": 7,
+        "row": 1,
+        "column": "星曜照宮歌の象意",
+        "block": null
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "jupiter_palace_命宮"
+      ],
+      "notes": [
+        "欄名「星曜照宮歌の象意」。資料「７．星曜歌訣について」で『星平会海』の「星曜照宮歌」として言及",
+        "既存『張果星宗』データ（related_ids）とは別資料による別解釈として保持（上書きしない）"
+      ],
+      "star": "jupiter",
+      "palace_key": "命宮"
+    },
+    {
+      "id": "qz_starpalace_western_jupiter_命宮",
+      "category": "western_house_planet_comparison",
+      "name": "木星",
+      "target": "命宮",
+      "conditions": {},
+      "interpretation": "楽天、寛大、幸運、反応",
+      "source_text": "楽天、寛大、幸運、反応",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "５．七政四餘と命宮",
+        "table": 7,
+        "row": 1,
+        "column": "第１ハウスの象意",
+        "block": null
+      },
+      "source_kind": "western_comparison",
+      "related_ids": [
+        "qz_starpalace_jupiter_命宮"
+      ],
+      "notes": [
+        "資料本文「西洋占星術での第１ハウスの惑星の象意」"
+      ],
+      "star": "jupiter",
+      "palace_key": "命宮"
+    },
+    {
+      "id": "qz_starpalace_mars_命宮",
+      "category": "star_palace",
+      "name": "火星",
+      "target": "命宮",
+      "conditions": {},
+      "interpretation": "公明正大、名声、権力、度量\n初年は散財、晩年は無事",
+      "source_text": "公明正大、名声、権力、度量\n初年は散財、晩年は無事",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "５．七政四餘と命宮",
+        "table": 7,
+        "row": 2,
+        "column": "星曜照宮歌の象意",
+        "block": null
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "mars_palace_命宮"
+      ],
+      "notes": [
+        "欄名「星曜照宮歌の象意」。資料「７．星曜歌訣について」で『星平会海』の「星曜照宮歌」として言及",
+        "既存『張果星宗』データ（related_ids）とは別資料による別解釈として保持（上書きしない）"
+      ],
+      "star": "mars",
+      "palace_key": "命宮"
+    },
+    {
+      "id": "qz_starpalace_western_mars_命宮",
+      "category": "western_house_planet_comparison",
+      "name": "火星",
+      "target": "命宮",
+      "conditions": {},
+      "interpretation": "勇気、決断、情熱、積極、短気",
+      "source_text": "勇気、決断、情熱、積極、短気",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "５．七政四餘と命宮",
+        "table": 7,
+        "row": 2,
+        "column": "第１ハウスの象意",
+        "block": null
+      },
+      "source_kind": "western_comparison",
+      "related_ids": [
+        "qz_starpalace_mars_命宮"
+      ],
+      "notes": [
+        "資料本文「西洋占星術での第１ハウスの惑星の象意」"
+      ],
+      "star": "mars",
+      "palace_key": "命宮"
+    },
+    {
+      "id": "qz_starpalace_saturn_命宮",
+      "category": "star_palace",
+      "name": "土星",
+      "target": "命宮",
+      "conditions": {},
+      "interpretation": "孤独、苦労、憂い、白手起家\n初年は苦労、晩年は平穏",
+      "source_text": "孤独、苦労、憂い、白手起家\n初年は苦労、晩年は平穏",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "５．七政四餘と命宮",
+        "table": 7,
+        "row": 3,
+        "column": "星曜照宮歌の象意",
+        "block": null
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "saturn_palace_命宮"
+      ],
+      "notes": [
+        "欄名「星曜照宮歌の象意」。資料「７．星曜歌訣について」で『星平会海』の「星曜照宮歌」として言及",
+        "既存『張果星宗』データ（related_ids）とは別資料による別解釈として保持（上書きしない）"
+      ],
+      "star": "saturn",
+      "palace_key": "命宮"
+    },
+    {
+      "id": "qz_starpalace_western_saturn_命宮",
+      "category": "western_house_planet_comparison",
+      "name": "土星",
+      "target": "命宮",
+      "conditions": {},
+      "interpretation": "陰性、不器用、堅実、忍耐、勤勉",
+      "source_text": "陰性、不器用、堅実、忍耐、勤勉",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "５．七政四餘と命宮",
+        "table": 7,
+        "row": 3,
+        "column": "第１ハウスの象意",
+        "block": null
+      },
+      "source_kind": "western_comparison",
+      "related_ids": [
+        "qz_starpalace_saturn_命宮"
+      ],
+      "notes": [
+        "資料本文「西洋占星術での第１ハウスの惑星の象意」"
+      ],
+      "star": "saturn",
+      "palace_key": "命宮"
+    },
+    {
+      "id": "qz_starpalace_venus_命宮",
+      "category": "star_palace",
+      "name": "金星",
+      "target": "命宮",
+      "conditions": {},
+      "interpretation": "志高い、権勢、義理、華麗\n初年は失敗、成功失敗多い",
+      "source_text": "志高い、権勢、義理、華麗\n初年は失敗、成功失敗多い",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "５．七政四餘と命宮",
+        "table": 7,
+        "row": 4,
+        "column": "星曜照宮歌の象意",
+        "block": null
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "venus_palace_命宮"
+      ],
+      "notes": [
+        "欄名「星曜照宮歌の象意」。資料「７．星曜歌訣について」で『星平会海』の「星曜照宮歌」として言及",
+        "既存『張果星宗』データ（related_ids）とは別資料による別解釈として保持（上書きしない）"
+      ],
+      "star": "venus",
+      "palace_key": "命宮"
+    },
+    {
+      "id": "qz_starpalace_western_venus_命宮",
+      "category": "western_house_planet_comparison",
+      "name": "金星",
+      "target": "命宮",
+      "conditions": {},
+      "interpretation": "美的、芸術、異性、援助、好印象",
+      "source_text": "美的、芸術、異性、援助、好印象",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "５．七政四餘と命宮",
+        "table": 7,
+        "row": 4,
+        "column": "第１ハウスの象意",
+        "block": null
+      },
+      "source_kind": "western_comparison",
+      "related_ids": [
+        "qz_starpalace_venus_命宮"
+      ],
+      "notes": [
+        "資料本文「西洋占星術での第１ハウスの惑星の象意」"
+      ],
+      "star": "venus",
+      "palace_key": "命宮"
+    },
+    {
+      "id": "qz_starpalace_mercury_命宮",
+      "category": "star_palace",
+      "name": "水星",
+      "target": "命宮",
+      "conditions": {},
+      "interpretation": "聡明、機知、文才、引立て\n晩年に財を築く",
+      "source_text": "聡明、機知、文才、引立て\n晩年に財を築く",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "５．七政四餘と命宮",
+        "table": 7,
+        "row": 5,
+        "column": "星曜照宮歌の象意",
+        "block": null
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "mercury_palace_命宮"
+      ],
+      "notes": [
+        "欄名「星曜照宮歌の象意」。資料「７．星曜歌訣について」で『星平会海』の「星曜照宮歌」として言及",
+        "既存『張果星宗』データ（related_ids）とは別資料による別解釈として保持（上書きしない）"
+      ],
+      "star": "mercury",
+      "palace_key": "命宮"
+    },
+    {
+      "id": "qz_starpalace_western_mercury_命宮",
+      "category": "western_house_planet_comparison",
+      "name": "水星",
+      "target": "命宮",
+      "conditions": {},
+      "interpretation": "敏捷、性急、若々しい、知的、無責任",
+      "source_text": "敏捷、性急、若々しい、知的、無責任",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "５．七政四餘と命宮",
+        "table": 7,
+        "row": 5,
+        "column": "第１ハウスの象意",
+        "block": null
+      },
+      "source_kind": "western_comparison",
+      "related_ids": [
+        "qz_starpalace_mercury_命宮"
+      ],
+      "notes": [
+        "資料本文「西洋占星術での第１ハウスの惑星の象意」"
+      ],
+      "star": "mercury",
+      "palace_key": "命宮"
+    },
+    {
+      "id": "qz_starpalace_sun_命宮",
+      "category": "star_palace",
+      "name": "太陽",
+      "target": "命宮",
+      "conditions": {},
+      "interpretation": "情厚い、和やか、健康、幸運、長命\n西にあれば福は少ない",
+      "source_text": "情厚い、和やか、健康、幸運、長命\n西にあれば福は少ない",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "５．七政四餘と命宮",
+        "table": 7,
+        "row": 6,
+        "column": "星曜照宮歌の象意",
+        "block": null
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "sun_palace_命宮"
+      ],
+      "notes": [
+        "欄名「星曜照宮歌の象意」。資料「７．星曜歌訣について」で『星平会海』の「星曜照宮歌」として言及",
+        "既存『張果星宗』データ（related_ids）とは別資料による別解釈として保持（上書きしない）"
+      ],
+      "star": "sun",
+      "palace_key": "命宮"
+    },
+    {
+      "id": "qz_starpalace_western_sun_命宮",
+      "category": "western_house_planet_comparison",
+      "name": "太陽",
+      "target": "命宮",
+      "conditions": {},
+      "interpretation": "寛容、自信、孤高、親分肌、ピンチに強い",
+      "source_text": "寛容、自信、孤高、親分肌、ピンチに強い",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "５．七政四餘と命宮",
+        "table": 7,
+        "row": 6,
+        "column": "第１ハウスの象意",
+        "block": null
+      },
+      "source_kind": "western_comparison",
+      "related_ids": [
+        "qz_starpalace_sun_命宮"
+      ],
+      "notes": [
+        "資料本文「西洋占星術での第１ハウスの惑星の象意」"
+      ],
+      "star": "sun",
+      "palace_key": "命宮"
+    },
+    {
+      "id": "qz_starpalace_moon_命宮",
+      "category": "star_palace",
+      "name": "太陰",
+      "target": "命宮",
+      "conditions": {},
+      "interpretation": "孤高、短気、財、富貴\n凶神があれば成果無し",
+      "source_text": "孤高、短気、財、富貴\n凶神があれば成果無し",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "５．七政四餘と命宮",
+        "table": 7,
+        "row": 7,
+        "column": "星曜照宮歌の象意",
+        "block": null
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "moon_palace_命宮"
+      ],
+      "notes": [
+        "欄名「星曜照宮歌の象意」。資料「７．星曜歌訣について」で『星平会海』の「星曜照宮歌」として言及",
+        "既存『張果星宗』データ（related_ids）とは別資料による別解釈として保持（上書きしない）"
+      ],
+      "star": "moon",
+      "palace_key": "命宮"
+    },
+    {
+      "id": "qz_starpalace_western_moon_命宮",
+      "category": "western_house_planet_comparison",
+      "name": "太陰",
+      "target": "命宮",
+      "conditions": {},
+      "interpretation": "直感、想像力、感情的、変化",
+      "source_text": "直感、想像力、感情的、変化",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "５．七政四餘と命宮",
+        "table": 7,
+        "row": 7,
+        "column": "第１ハウスの象意",
+        "block": null
+      },
+      "source_kind": "western_comparison",
+      "related_ids": [
+        "qz_starpalace_moon_命宮"
+      ],
+      "notes": [
+        "資料本文「西洋占星術での第１ハウスの惑星の象意」"
+      ],
+      "star": "moon",
+      "palace_key": "命宮"
+    },
+    {
+      "id": "qz_starpalace_ziqi_命宮",
+      "category": "star_palace",
+      "name": "紫気",
+      "target": "命宮",
+      "conditions": {},
+      "interpretation": "遊芸、名声、離散、晩成\n他の星曜と共にあるのがよい",
+      "source_text": "遊芸、名声、離散、晩成\n他の星曜と共にあるのがよい",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "５．七政四餘と命宮",
+        "table": 7,
+        "row": 8,
+        "column": "星曜照宮歌の象意",
+        "block": null
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "ziqi_palace_命宮"
+      ],
+      "notes": [
+        "欄名「星曜照宮歌の象意」。資料「７．星曜歌訣について」で『星平会海』の「星曜照宮歌」として言及",
+        "既存『張果星宗』データ（related_ids）とは別資料による別解釈として保持（上書きしない）"
+      ],
+      "star": "ziqi",
+      "palace_key": "命宮"
+    },
+    {
+      "id": "qz_starpalace_yuebo_命宮",
+      "category": "star_palace",
+      "name": "月孛",
+      "target": "命宮",
+      "conditions": {},
+      "interpretation": "自尊、災厄、権謀術数\n廟であれば大成する",
+      "source_text": "自尊、災厄、権謀術数\n廟であれば大成する",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "５．七政四餘と命宮",
+        "table": 7,
+        "row": 9,
+        "column": "星曜照宮歌の象意",
+        "block": null
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "yuebo_palace_命宮"
+      ],
+      "notes": [
+        "欄名「星曜照宮歌の象意」。資料「７．星曜歌訣について」で『星平会海』の「星曜照宮歌」として言及",
+        "既存『張果星宗』データ（related_ids）とは別資料による別解釈として保持（上書きしない）"
+      ],
+      "star": "yuebo",
+      "palace_key": "命宮"
+    },
+    {
+      "id": "qz_starpalace_rahu_命宮",
+      "category": "star_palace",
+      "name": "羅[ｺﾞｳ]",
+      "target": "命宮",
+      "conditions": {},
+      "interpretation": "権勢、渋滞、浮沈が激しい\n昼宮ならば恩を受ける",
+      "source_text": "権勢、渋滞、浮沈が激しい\n昼宮ならば恩を受ける",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "５．七政四餘と命宮",
+        "table": 7,
+        "row": 10,
+        "column": "星曜照宮歌の象意",
+        "block": null
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "rahu_palace_命宮"
+      ],
+      "notes": [
+        "欄名「星曜照宮歌の象意」。資料「７．星曜歌訣について」で『星平会海』の「星曜照宮歌」として言及",
+        "既存『張果星宗』データ（related_ids）とは別資料による別解釈として保持（上書きしない）",
+        "星名の「[ｺﾞｳ]」は資料の欠字表記をそのまま保持"
+      ],
+      "star": "rahu",
+      "palace_key": "命宮"
+    },
+    {
+      "id": "qz_starpalace_western_rahu_命宮",
+      "category": "western_house_planet_comparison",
+      "name": "羅[ｺﾞｳ]",
+      "target": "命宮",
+      "conditions": {},
+      "interpretation": "個性、自己中心、人間関係",
+      "source_text": "個性、自己中心、人間関係",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "５．七政四餘と命宮",
+        "table": 7,
+        "row": 10,
+        "column": "第１ハウスの象意",
+        "block": null
+      },
+      "source_kind": "western_comparison",
+      "related_ids": [
+        "qz_starpalace_rahu_命宮"
+      ],
+      "notes": [
+        "資料本文「西洋占星術での第１ハウスの惑星の象意」"
+      ],
+      "star": "rahu",
+      "palace_key": "命宮"
+    },
+    {
+      "id": "qz_starpalace_ketu_命宮",
+      "category": "star_palace",
+      "name": "計都",
+      "target": "命宮",
+      "conditions": {},
+      "interpretation": "性暴、孤立、災禍\n廟旺ならば補佐として出世",
+      "source_text": "性暴、孤立、災禍\n廟旺ならば補佐として出世",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "５．七政四餘と命宮",
+        "table": 7,
+        "row": 11,
+        "column": "星曜照宮歌の象意",
+        "block": null
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "ketu_palace_命宮"
+      ],
+      "notes": [
+        "欄名「星曜照宮歌の象意」。資料「７．星曜歌訣について」で『星平会海』の「星曜照宮歌」として言及",
+        "既存『張果星宗』データ（related_ids）とは別資料による別解釈として保持（上書きしない）"
+      ],
+      "star": "ketu",
+      "palace_key": "命宮"
+    },
+    {
+      "id": "qz_starpalace_western_ketu_命宮",
+      "category": "western_house_planet_comparison",
+      "name": "計都",
+      "target": "命宮",
+      "conditions": {},
+      "interpretation": "自己中心、自我、他者",
+      "source_text": "自己中心、自我、他者",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "５．七政四餘と命宮",
+        "table": 7,
+        "row": 11,
+        "column": "第１ハウスの象意",
+        "block": null
+      },
+      "source_kind": "western_comparison",
+      "related_ids": [
+        "qz_starpalace_ketu_命宮"
+      ],
+      "notes": [
+        "資料本文「西洋占星術での第１ハウスの惑星の象意」"
+      ],
+      "star": "ketu",
+      "palace_key": "命宮"
+    }
+  ]
+}

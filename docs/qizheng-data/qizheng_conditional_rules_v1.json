@@ -1,0 +1,903 @@
+{
+  "schema_version": "1.0.0",
+  "source_file": "七政四餘鑑定用資料.docx",
+  "usage": "資料に明記された宮・状態・性別などの条件付き記述のみ。神殺一般の宮別解釈ではない",
+  "effect_values": {
+    "good": "資料に「吉」「よい」等と明記",
+    "bad": "資料に「凶」「よくない」「忌む」等と明記",
+    "null": "評価語の明記なし（result の文言のみ）"
+  },
+  "records": [
+    {
+      "id": "qz_cond_henyou_天禄_1",
+      "category": "conditional_rule",
+      "name": "天禄",
+      "target": null,
+      "conditions": {
+        "palace_in": [
+          "命宮",
+          "官禄宮",
+          "夫妻宮",
+          "田宅宮",
+          "男女宮",
+          "福徳宮",
+          "財帛宮"
+        ],
+        "palace_not_in": [],
+        "palace_terms_raw": "七強宮",
+        "with_stars": [],
+        "motion": [],
+        "status": [],
+        "sex": null
+      },
+      "interpretation": "吉",
+      "source_text": "七強宮（命、官禄、夫妻、田宅、男女、福徳、財帛）にあれば吉",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅳ）１．十干変曜星（意味と特徴）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 126
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_henyou_天禄"
+      ],
+      "notes": [],
+      "subject_type": "henyou",
+      "result": "吉",
+      "effect": "good",
+      "source_line": "天禄：禄貴の星。七強宮（命、官禄、夫妻、田宅、男女、福徳、財帛）にあれば吉。"
+    },
+    {
+      "id": "qz_cond_henyou_天暗_1",
+      "category": "conditional_rule",
+      "name": "天暗",
+      "target": null,
+      "conditions": {
+        "palace_in": [
+          "命宮",
+          "官禄宮",
+          "夫妻宮",
+          "田宅宮",
+          "男女宮",
+          "福徳宮",
+          "財帛宮"
+        ],
+        "palace_not_in": [],
+        "palace_terms_raw": "七強宮",
+        "with_stars": [],
+        "motion": [],
+        "status": [],
+        "sex": null
+      },
+      "interpretation": "よくない",
+      "source_text": "七強宮に入るのはよくない",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅳ）１．十干変曜星（意味と特徴）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 126
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_henyou_天暗"
+      ],
+      "notes": [
+        "七強宮の構成は天禄の項の資料記述による"
+      ],
+      "subject_type": "henyou",
+      "result": "よくない",
+      "effect": "bad",
+      "source_line": "天暗：暗澹の星。七強宮に入るのはよくない。日月と同宮を忌む。"
+    },
+    {
+      "id": "qz_cond_henyou_天暗_2",
+      "category": "conditional_rule",
+      "name": "天暗",
+      "target": null,
+      "conditions": {
+        "palace_in": [],
+        "palace_not_in": [],
+        "palace_terms_raw": null,
+        "with_stars": [
+          "sun",
+          "moon"
+        ],
+        "motion": [],
+        "status": [],
+        "sex": null
+      },
+      "interpretation": "忌む",
+      "source_text": "日月と同宮を忌む",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅳ）１．十干変曜星（意味と特徴）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 126
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_henyou_天暗"
+      ],
+      "notes": [
+        "「日月」が日・月のいずれか／両方のどちらを指すかは資料上明確でない"
+      ],
+      "subject_type": "henyou",
+      "result": "忌む",
+      "effect": "bad",
+      "source_line": "天暗：暗澹の星。七強宮に入るのはよくない。日月と同宮を忌む。"
+    },
+    {
+      "id": "qz_cond_henyou_天福_1",
+      "category": "conditional_rule",
+      "name": "天福",
+      "target": null,
+      "conditions": {
+        "palace_in": [
+          "命宮",
+          "身宮"
+        ],
+        "palace_not_in": [],
+        "palace_terms_raw": "強宮や命身宮",
+        "with_stars": [],
+        "motion": [],
+        "status": [],
+        "sex": null
+      },
+      "interpretation": "富む",
+      "source_text": "強宮や命身宮に入れば富む",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅳ）１．十干変曜星（意味と特徴）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 126
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_henyou_天福"
+      ],
+      "notes": [
+        "「強宮」の範囲は資料のこの項では明記なし（七強宮と同一かは断定しない）"
+      ],
+      "subject_type": "henyou",
+      "result": "富む",
+      "effect": null,
+      "source_line": "天福：財福の星。福寿をうける。強宮や命身宮に入れば富む。"
+    },
+    {
+      "id": "qz_cond_henyou_天耗_1",
+      "category": "conditional_rule",
+      "name": "天耗",
+      "target": null,
+      "conditions": {
+        "palace_in": [
+          "財帛宮",
+          "田宅宮"
+        ],
+        "palace_not_in": [],
+        "palace_terms_raw": null,
+        "with_stars": [],
+        "motion": [],
+        "status": [],
+        "sex": null
+      },
+      "interpretation": "忌む",
+      "source_text": "財帛、田宅宮を忌む",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅳ）１．十干変曜星（意味と特徴）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 126
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_henyou_天耗"
+      ],
+      "notes": [],
+      "subject_type": "henyou",
+      "result": "忌む",
+      "effect": "bad",
+      "source_line": "天耗：耗財の星。財帛、田宅宮を忌む。"
+    },
+    {
+      "id": "qz_cond_henyou_天蔭_1",
+      "category": "conditional_rule",
+      "name": "天蔭",
+      "target": null,
+      "conditions": {
+        "palace_in": [
+          "夫妻宮"
+        ],
+        "palace_not_in": [],
+        "palace_terms_raw": null,
+        "with_stars": [],
+        "motion": [],
+        "status": [],
+        "sex": null
+      },
+      "interpretation": "配偶者の援助を受ける",
+      "source_text": "夫妻宮なら配偶者の援助を受ける",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅳ）１．十干変曜星（意味と特徴）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 126
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_henyou_天蔭"
+      ],
+      "notes": [],
+      "subject_type": "henyou",
+      "result": "配偶者の援助を受ける",
+      "effect": null,
+      "source_line": "天蔭：蔭助の星。夫妻宮なら配偶者の援助を受ける。弱宮を忌む。"
+    },
+    {
+      "id": "qz_cond_henyou_天蔭_2",
+      "category": "conditional_rule",
+      "name": "天蔭",
+      "target": null,
+      "conditions": {
+        "palace_in": [],
+        "palace_not_in": [],
+        "palace_terms_raw": "弱宮",
+        "with_stars": [],
+        "motion": [],
+        "status": [],
+        "sex": null
+      },
+      "interpretation": "忌む",
+      "source_text": "弱宮を忌む",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅳ）１．十干変曜星（意味と特徴）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 126
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_henyou_天蔭"
+      ],
+      "notes": [
+        "「弱宮」の範囲は資料のこの項では明記なし"
+      ],
+      "subject_type": "henyou",
+      "result": "忌む",
+      "effect": "bad",
+      "source_line": "天蔭：蔭助の星。夫妻宮なら配偶者の援助を受ける。弱宮を忌む。"
+    },
+    {
+      "id": "qz_cond_henyou_天貴_1",
+      "category": "conditional_rule",
+      "name": "天貴",
+      "target": null,
+      "conditions": {
+        "palace_in": [
+          "命宮",
+          "官禄宮",
+          "夫妻宮",
+          "田宅宮",
+          "男女宮",
+          "福徳宮",
+          "財帛宮"
+        ],
+        "palace_not_in": [],
+        "palace_terms_raw": "七強宮",
+        "with_stars": [],
+        "motion": [],
+        "status": [],
+        "sex": null
+      },
+      "interpretation": "貴子を得る",
+      "source_text": "七強宮にあれば貴子を得る",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅳ）１．十干変曜星（意味と特徴）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 126
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_henyou_天貴"
+      ],
+      "notes": [],
+      "subject_type": "henyou",
+      "result": "貴子を得る",
+      "effect": null,
+      "source_line": "天貴：天嗣の星。七強宮にあれば貴子を得る。"
+    },
+    {
+      "id": "qz_cond_henyou_天刑_1",
+      "category": "conditional_rule",
+      "name": "天刑",
+      "target": null,
+      "conditions": {
+        "palace_in": [
+          "兄弟宮",
+          "奴僕宮"
+        ],
+        "palace_not_in": [],
+        "palace_terms_raw": null,
+        "with_stars": [],
+        "motion": [],
+        "status": [],
+        "sex": null
+      },
+      "interpretation": "目下の助力をえる",
+      "source_text": "兄弟宮および奴僕宮にいれば目下の助力をえる",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅳ）１．十干変曜星（意味と特徴）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 126
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_henyou_天刑"
+      ],
+      "notes": [],
+      "subject_type": "henyou",
+      "result": "目下の助力をえる",
+      "effect": null,
+      "source_line": "天刑：掌刑の星。兄弟宮および奴僕宮にいれば目下の助力をえる。それ以外はだいたい凶。"
+    },
+    {
+      "id": "qz_cond_henyou_天刑_2",
+      "category": "conditional_rule",
+      "name": "天刑",
+      "target": null,
+      "conditions": {
+        "palace_in": [],
+        "palace_not_in": [
+          "兄弟宮",
+          "奴僕宮"
+        ],
+        "palace_terms_raw": null,
+        "with_stars": [],
+        "motion": [],
+        "status": [],
+        "sex": null
+      },
+      "interpretation": "だいたい凶",
+      "source_text": "それ以外はだいたい凶",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅳ）１．十干変曜星（意味と特徴）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 126
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_henyou_天刑"
+      ],
+      "notes": [],
+      "subject_type": "henyou",
+      "result": "だいたい凶",
+      "effect": "bad",
+      "source_line": "天刑：掌刑の星。兄弟宮および奴僕宮にいれば目下の助力をえる。それ以外はだいたい凶。"
+    },
+    {
+      "id": "qz_cond_henyou_天印_1",
+      "category": "conditional_rule",
+      "name": "天印",
+      "target": null,
+      "conditions": {
+        "palace_in": [
+          "命宮",
+          "官禄宮",
+          "夫妻宮",
+          "田宅宮",
+          "男女宮",
+          "福徳宮",
+          "財帛宮"
+        ],
+        "palace_not_in": [],
+        "palace_terms_raw": "七強宮",
+        "with_stars": [],
+        "motion": [],
+        "status": [],
+        "sex": null
+      },
+      "interpretation": "祖先の援助をうける。あるいは家業を継ぐ",
+      "source_text": "七強宮に入れば祖先の援助をうける。あるいは家業を継ぐ",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅳ）１．十干変曜星（意味と特徴）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 126
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_henyou_天印"
+      ],
+      "notes": [],
+      "subject_type": "henyou",
+      "result": "祖先の援助をうける。あるいは家業を継ぐ",
+      "effect": null,
+      "source_line": "天印：印綬の星。七強宮に入れば祖先の援助をうける。あるいは家業を継ぐ。"
+    },
+    {
+      "id": "qz_cond_henyou_天囚_1",
+      "category": "conditional_rule",
+      "name": "天囚",
+      "target": null,
+      "conditions": {
+        "palace_in": [
+          "命宮",
+          "疾病宮"
+        ],
+        "palace_not_in": [],
+        "palace_terms_raw": "命宮や疾病宮",
+        "with_stars": [],
+        "motion": [],
+        "status": [],
+        "sex": null
+      },
+      "interpretation": "病気や障害に苦しむ",
+      "source_text": "命宮や疾病宮に入れば病気や障害に苦しむ",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅳ）１．十干変曜星（意味と特徴）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 126
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_henyou_天囚"
+      ],
+      "notes": [
+        "「疾病宮」は資料の表記のまま（十二宮名の「疾厄宮」と同一かは断定しない）"
+      ],
+      "subject_type": "henyou",
+      "result": "病気や障害に苦しむ",
+      "effect": null,
+      "source_line": "天囚：休囚の星。命宮や疾病宮に入れば病気や障害に苦しむ。他の神殺に悪影響を与える。"
+    },
+    {
+      "id": "qz_cond_henyou_天囚_2",
+      "category": "conditional_rule",
+      "name": "天囚",
+      "target": null,
+      "conditions": {
+        "palace_in": [],
+        "palace_not_in": [],
+        "palace_terms_raw": null,
+        "with_stars": [],
+        "motion": [],
+        "status": [],
+        "sex": null
+      },
+      "interpretation": "他の神殺に悪影響を与える",
+      "source_text": "他の神殺に悪影響を与える",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅳ）１．十干変曜星（意味と特徴）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 126
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_henyou_天囚"
+      ],
+      "notes": [
+        "宮条件なし。他の神殺への作用として資料に明記"
+      ],
+      "subject_type": "henyou",
+      "result": "他の神殺に悪影響を与える",
+      "effect": null,
+      "source_line": "天囚：休囚の星。命宮や疾病宮に入れば病気や障害に苦しむ。他の神殺に悪影響を与える。"
+    },
+    {
+      "id": "qz_cond_henyou_天権_1",
+      "category": "conditional_rule",
+      "name": "天権",
+      "target": null,
+      "conditions": {
+        "palace_in": [
+          "命宮",
+          "身宮"
+        ],
+        "palace_not_in": [],
+        "palace_terms_raw": null,
+        "with_stars": [
+          "sun"
+        ],
+        "motion": [],
+        "status": [],
+        "sex": null
+      },
+      "interpretation": "福禄を得る",
+      "source_text": "命宮や身宮にあって太陽にあえば福禄を得る",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅳ）１．十干変曜星（意味と特徴）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 126
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_henyou_天権"
+      ],
+      "notes": [],
+      "subject_type": "henyou",
+      "result": "福禄を得る",
+      "effect": null,
+      "source_line": "天権：権貴の星。主には権威。命宮や身宮にあって太陽にあえば福禄を得る。"
+    },
+    {
+      "id": "qz_cond_ym_天経_1",
+      "category": "conditional_rule",
+      "name": "天経",
+      "target": null,
+      "conditions": {
+        "palace_in": [
+          "命宮",
+          "身宮"
+        ],
+        "palace_not_in": [],
+        "palace_terms_raw": "身命",
+        "with_stars": [],
+        "motion": [],
+        "status": [],
+        "sex": null
+      },
+      "interpretation": "貴",
+      "source_text": "身命なら貴",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "８．年干命宮神殺",
+        "table": 24,
+        "row": 1,
+        "column": null,
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_shensha_ym_天経"
+      ],
+      "notes": [],
+      "subject_type": "shensha",
+      "result": "貴",
+      "effect": null,
+      "source_line": "身命なら貴"
+    },
+    {
+      "id": "qz_cond_ym_天元_1",
+      "category": "conditional_rule",
+      "name": "天元",
+      "target": null,
+      "conditions": {
+        "palace_in": [],
+        "palace_not_in": [],
+        "palace_terms_raw": null,
+        "with_stars": [],
+        "motion": [
+          "順"
+        ],
+        "status": [],
+        "sex": null
+      },
+      "interpretation": "吉",
+      "source_text": "順ならば吉",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "８．年干命宮神殺",
+        "table": 24,
+        "row": 7,
+        "column": null,
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_shensha_ym_天元"
+      ],
+      "notes": [],
+      "subject_type": "shensha",
+      "result": "吉",
+      "effect": "good",
+      "source_line": "順ならば吉、逆留陥を忌む。"
+    },
+    {
+      "id": "qz_cond_ym_天元_2",
+      "category": "conditional_rule",
+      "name": "天元",
+      "target": null,
+      "conditions": {
+        "palace_in": [],
+        "palace_not_in": [],
+        "palace_terms_raw": null,
+        "with_stars": [],
+        "motion": [
+          "逆",
+          "留"
+        ],
+        "status": [
+          "陥"
+        ],
+        "sex": null
+      },
+      "interpretation": "忌む",
+      "source_text": "逆留陥を忌む",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "８．年干命宮神殺",
+        "table": 24,
+        "row": 7,
+        "column": null,
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_shensha_ym_天元"
+      ],
+      "notes": [
+        "逆・留・陥のいずれかで該当するのか、すべてが条件かは資料上明確でない"
+      ],
+      "subject_type": "shensha",
+      "result": "忌む",
+      "effect": "bad",
+      "source_line": "順ならば吉、逆留陥を忌む。"
+    },
+    {
+      "id": "qz_cond_ym_地元_1",
+      "category": "conditional_rule",
+      "name": "地元",
+      "target": null,
+      "conditions": {
+        "palace_in": [],
+        "palace_not_in": [],
+        "palace_terms_raw": "廟旺",
+        "with_stars": [],
+        "motion": [],
+        "status": [
+          "廟",
+          "旺"
+        ],
+        "sex": null
+      },
+      "interpretation": "吉",
+      "source_text": "廟旺に吉",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "８．年干命宮神殺",
+        "table": 24,
+        "row": 12,
+        "column": null,
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_shensha_ym_地元"
+      ],
+      "notes": [],
+      "subject_type": "shensha",
+      "result": "吉",
+      "effect": "good",
+      "source_line": "廟旺に吉、文僚より武権"
+    },
+    {
+      "id": "qz_cond_ym_人元_1",
+      "category": "conditional_rule",
+      "name": "人元",
+      "target": null,
+      "conditions": {
+        "palace_in": [],
+        "palace_not_in": [],
+        "palace_terms_raw": null,
+        "with_stars": [],
+        "motion": [],
+        "status": [
+          "旺"
+        ],
+        "sex": null
+      },
+      "interpretation": "福寿",
+      "source_text": "旺ならば福寿",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "８．年干命宮神殺",
+        "table": 24,
+        "row": 22,
+        "column": null,
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_shensha_ym_人元"
+      ],
+      "notes": [],
+      "subject_type": "shensha",
+      "result": "福寿",
+      "effect": null,
+      "source_line": "旺ならば福寿"
+    },
+    {
+      "id": "qz_cond_yb_太陽_1",
+      "category": "conditional_rule",
+      "name": "太陽",
+      "target": null,
+      "conditions": {
+        "palace_in": [],
+        "palace_not_in": [],
+        "palace_terms_raw": null,
+        "with_stars": [],
+        "motion": [],
+        "status": [],
+        "sex": "男"
+      },
+      "interpretation": "吉",
+      "source_text": "太陽は男に吉",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "５．年支神殺　その２",
+        "table": 21,
+        "row": 4,
+        "column": null,
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_shensha_yb_palace_太陽"
+      ],
+      "notes": [],
+      "subject_type": "shensha",
+      "result": "吉",
+      "effect": "good",
+      "source_line": "阻害、命限、刑罰、太陽は男に吉"
+    },
+    {
+      "id": "qz_cond_yb_太陰_1",
+      "category": "conditional_rule",
+      "name": "太陰",
+      "target": null,
+      "conditions": {
+        "palace_in": [],
+        "palace_not_in": [],
+        "palace_terms_raw": null,
+        "with_stars": [],
+        "motion": [],
+        "status": [],
+        "sex": "女"
+      },
+      "interpretation": "吉",
+      "source_text": "太陰は女に吉",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "５．年支神殺　その２",
+        "table": 21,
+        "row": 5,
+        "column": null,
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_shensha_yb_palace_太陰"
+      ],
+      "notes": [],
+      "subject_type": "shensha",
+      "result": "吉",
+      "effect": "good",
+      "source_line": "官災、刑罰、凶悪、太陰は女に吉"
+    },
+    {
+      "id": "qz_cond_yb_孤辰_1",
+      "category": "conditional_rule",
+      "name": "孤辰",
+      "target": null,
+      "conditions": {
+        "palace_in": [],
+        "palace_not_in": [],
+        "palace_terms_raw": null,
+        "with_stars": [],
+        "motion": [],
+        "status": [],
+        "sex": "男"
+      },
+      "interpretation": "凶",
+      "source_text": "男に凶",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "５．年支神殺　その２",
+        "table": 21,
+        "row": 16,
+        "column": null,
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_shensha_yb_palace_孤辰"
+      ],
+      "notes": [],
+      "subject_type": "shensha",
+      "result": "凶",
+      "effect": "bad",
+      "source_line": "男に凶"
+    },
+    {
+      "id": "qz_cond_yb_寡宿_1",
+      "category": "conditional_rule",
+      "name": "寡宿",
+      "target": null,
+      "conditions": {
+        "palace_in": [],
+        "palace_not_in": [],
+        "palace_terms_raw": null,
+        "with_stars": [],
+        "motion": [],
+        "status": [],
+        "sex": "女"
+      },
+      "interpretation": "凶",
+      "source_text": "女に凶",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "５．年支神殺　その２",
+        "table": 21,
+        "row": 17,
+        "column": null,
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_shensha_yb_palace_寡宿"
+      ],
+      "notes": [],
+      "subject_type": "shensha",
+      "result": "凶",
+      "effect": "bad",
+      "source_line": "女に凶、寡婦"
+    }
+  ]
+}

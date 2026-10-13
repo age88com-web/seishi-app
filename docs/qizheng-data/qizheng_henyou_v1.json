@@ -1,0 +1,453 @@
+{
+  "schema_version": "1.0.0",
+  "source_file": "七政四餘鑑定用資料.docx",
+  "intro_text": "　十干変曜星というのは、年干によって各星曜が天○星と変わるとするものです。考え方は年干を基準にした四柱推命でいう変通星のようなものです。",
+  "intro_note": "資料に「考え方は年干を基準にした四柱推命でいう変通星のようなもの」とある（shichusuimei_comparison）",
+  "records": [
+    {
+      "id": "qz_henyou_天禄",
+      "category": "henyou",
+      "name": "天禄",
+      "target": null,
+      "conditions": {},
+      "interpretation": "禄貴の星。七強宮（命、官禄、夫妻、田宅、男女、福徳、財帛）にあれば吉。",
+      "source_text": "天禄：禄貴の星。七強宮（命、官禄、夫妻、田宅、男女、福徳、財帛）にあれば吉。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅳ）１．十干変曜星（意味と特徴）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 126
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_cond_henyou_天禄_1"
+      ],
+      "notes": [
+        "資料本文「各変曜星のおおざっぱな意味と特徴」"
+      ],
+      "nature": "禄貴の星",
+      "shichusuimei_comparison": {
+        "text": "比肩に同じ",
+        "source_kind": "shichusuimei_comparison",
+        "source_ref": {
+          "file": "七政四餘鑑定用資料.docx",
+          "page": null,
+          "section": "Ⅳ）１．十干変曜星（変曜表）",
+          "table": 17,
+          "row": 1,
+          "column": "備考",
+          "block": null
+        }
+      },
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "id": "ref_henyou_by_stem",
+        "row": 1
+      }
+    },
+    {
+      "id": "qz_henyou_天暗",
+      "category": "henyou",
+      "name": "天暗",
+      "target": null,
+      "conditions": {},
+      "interpretation": "暗澹の星。七強宮に入るのはよくない。日月と同宮を忌む。",
+      "source_text": "天暗：暗澹の星。七強宮に入るのはよくない。日月と同宮を忌む。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅳ）１．十干変曜星（意味と特徴）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 126
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_cond_henyou_天暗_1",
+        "qz_cond_henyou_天暗_2"
+      ],
+      "notes": [
+        "資料本文「各変曜星のおおざっぱな意味と特徴」"
+      ],
+      "nature": "暗澹の星",
+      "shichusuimei_comparison": {
+        "text": "陽干は劫財、陰干は傷官",
+        "source_kind": "shichusuimei_comparison",
+        "source_ref": {
+          "file": "七政四餘鑑定用資料.docx",
+          "page": null,
+          "section": "Ⅳ）１．十干変曜星（変曜表）",
+          "table": 17,
+          "row": 2,
+          "column": "備考",
+          "block": null
+        }
+      },
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "id": "ref_henyou_by_stem",
+        "row": 2
+      }
+    },
+    {
+      "id": "qz_henyou_天福",
+      "category": "henyou",
+      "name": "天福",
+      "target": null,
+      "conditions": {},
+      "interpretation": "財福の星。福寿をうける。強宮や命身宮に入れば富む。",
+      "source_text": "天福：財福の星。福寿をうける。強宮や命身宮に入れば富む。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅳ）１．十干変曜星（意味と特徴）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 126
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_cond_henyou_天福_1"
+      ],
+      "notes": [
+        "資料本文「各変曜星のおおざっぱな意味と特徴」"
+      ],
+      "nature": "財福の星",
+      "shichusuimei_comparison": {
+        "text": "食神に同じ",
+        "source_kind": "shichusuimei_comparison",
+        "source_ref": {
+          "file": "七政四餘鑑定用資料.docx",
+          "page": null,
+          "section": "Ⅳ）１．十干変曜星（変曜表）",
+          "table": 17,
+          "row": 3,
+          "column": "備考",
+          "block": null
+        }
+      },
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "id": "ref_henyou_by_stem",
+        "row": 3
+      }
+    },
+    {
+      "id": "qz_henyou_天耗",
+      "category": "henyou",
+      "name": "天耗",
+      "target": null,
+      "conditions": {},
+      "interpretation": "耗財の星。財帛、田宅宮を忌む。",
+      "source_text": "天耗：耗財の星。財帛、田宅宮を忌む。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅳ）１．十干変曜星（意味と特徴）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 126
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_cond_henyou_天耗_1"
+      ],
+      "notes": [
+        "資料本文「各変曜星のおおざっぱな意味と特徴」"
+      ],
+      "nature": "耗財の星",
+      "shichusuimei_comparison": {
+        "text": "陽年は傷官、陰年は正財",
+        "source_kind": "shichusuimei_comparison",
+        "source_ref": {
+          "file": "七政四餘鑑定用資料.docx",
+          "page": null,
+          "section": "Ⅳ）１．十干変曜星（変曜表）",
+          "table": 17,
+          "row": 4,
+          "column": "備考",
+          "block": null
+        }
+      },
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "id": "ref_henyou_by_stem",
+        "row": 4
+      }
+    },
+    {
+      "id": "qz_henyou_天蔭",
+      "category": "henyou",
+      "name": "天蔭",
+      "target": null,
+      "conditions": {},
+      "interpretation": "蔭助の星。夫妻宮なら配偶者の援助を受ける。弱宮を忌む。",
+      "source_text": "天蔭：蔭助の星。夫妻宮なら配偶者の援助を受ける。弱宮を忌む。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅳ）１．十干変曜星（意味と特徴）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 126
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_cond_henyou_天蔭_1",
+        "qz_cond_henyou_天蔭_2"
+      ],
+      "notes": [
+        "資料本文「各変曜星のおおざっぱな意味と特徴」"
+      ],
+      "nature": "蔭助の星",
+      "shichusuimei_comparison": {
+        "text": "偏財に同じ",
+        "source_kind": "shichusuimei_comparison",
+        "source_ref": {
+          "file": "七政四餘鑑定用資料.docx",
+          "page": null,
+          "section": "Ⅳ）１．十干変曜星（変曜表）",
+          "table": 17,
+          "row": 5,
+          "column": "備考",
+          "block": null
+        }
+      },
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "id": "ref_henyou_by_stem",
+        "row": 5
+      }
+    },
+    {
+      "id": "qz_henyou_天貴",
+      "category": "henyou",
+      "name": "天貴",
+      "target": null,
+      "conditions": {},
+      "interpretation": "天嗣の星。七強宮にあれば貴子を得る。",
+      "source_text": "天貴：天嗣の星。七強宮にあれば貴子を得る。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅳ）１．十干変曜星（意味と特徴）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 126
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_cond_henyou_天貴_1"
+      ],
+      "notes": [
+        "資料本文「各変曜星のおおざっぱな意味と特徴」"
+      ],
+      "nature": "天嗣の星",
+      "shichusuimei_comparison": {
+        "text": "陽年は正財、陰年は正官",
+        "source_kind": "shichusuimei_comparison",
+        "source_ref": {
+          "file": "七政四餘鑑定用資料.docx",
+          "page": null,
+          "section": "Ⅳ）１．十干変曜星（変曜表）",
+          "table": 17,
+          "row": 6,
+          "column": "備考",
+          "block": null
+        }
+      },
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "id": "ref_henyou_by_stem",
+        "row": 6
+      }
+    },
+    {
+      "id": "qz_henyou_天刑",
+      "category": "henyou",
+      "name": "天刑",
+      "target": null,
+      "conditions": {},
+      "interpretation": "掌刑の星。兄弟宮および奴僕宮にいれば目下の助力をえる。それ以外はだいたい凶。",
+      "source_text": "天刑：掌刑の星。兄弟宮および奴僕宮にいれば目下の助力をえる。それ以外はだいたい凶。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅳ）１．十干変曜星（意味と特徴）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 126
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_cond_henyou_天刑_1",
+        "qz_cond_henyou_天刑_2"
+      ],
+      "notes": [
+        "資料本文「各変曜星のおおざっぱな意味と特徴」"
+      ],
+      "nature": "掌刑の星",
+      "shichusuimei_comparison": {
+        "text": "偏官に同じ",
+        "source_kind": "shichusuimei_comparison",
+        "source_ref": {
+          "file": "七政四餘鑑定用資料.docx",
+          "page": null,
+          "section": "Ⅳ）１．十干変曜星（変曜表）",
+          "table": 17,
+          "row": 7,
+          "column": "備考",
+          "block": null
+        }
+      },
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "id": "ref_henyou_by_stem",
+        "row": 7
+      }
+    },
+    {
+      "id": "qz_henyou_天印",
+      "category": "henyou",
+      "name": "天印",
+      "target": null,
+      "conditions": {},
+      "interpretation": "印綬の星。七強宮に入れば祖先の援助をうける。あるいは家業を継ぐ。",
+      "source_text": "天印：印綬の星。七強宮に入れば祖先の援助をうける。あるいは家業を継ぐ。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅳ）１．十干変曜星（意味と特徴）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 126
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_cond_henyou_天印_1"
+      ],
+      "notes": [
+        "資料本文「各変曜星のおおざっぱな意味と特徴」",
+        "備考欄「陽年は正干」は資料のまま（訂正しない）"
+      ],
+      "nature": "印綬の星",
+      "shichusuimei_comparison": {
+        "text": "陽年は正干、陰年は正印",
+        "source_kind": "shichusuimei_comparison",
+        "source_ref": {
+          "file": "七政四餘鑑定用資料.docx",
+          "page": null,
+          "section": "Ⅳ）１．十干変曜星（変曜表）",
+          "table": 17,
+          "row": 8,
+          "column": "備考",
+          "block": null
+        }
+      },
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "id": "ref_henyou_by_stem",
+        "row": 8
+      }
+    },
+    {
+      "id": "qz_henyou_天囚",
+      "category": "henyou",
+      "name": "天囚",
+      "target": null,
+      "conditions": {},
+      "interpretation": "休囚の星。命宮や疾病宮に入れば病気や障害に苦しむ。他の神殺に悪影響を与える。",
+      "source_text": "天囚：休囚の星。命宮や疾病宮に入れば病気や障害に苦しむ。他の神殺に悪影響を与える。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅳ）１．十干変曜星（意味と特徴）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 126
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_cond_henyou_天囚_1",
+        "qz_cond_henyou_天囚_2"
+      ],
+      "notes": [
+        "資料本文「各変曜星のおおざっぱな意味と特徴」"
+      ],
+      "nature": "休囚の星",
+      "shichusuimei_comparison": {
+        "text": "偏印に同じ",
+        "source_kind": "shichusuimei_comparison",
+        "source_ref": {
+          "file": "七政四餘鑑定用資料.docx",
+          "page": null,
+          "section": "Ⅳ）１．十干変曜星（変曜表）",
+          "table": 17,
+          "row": 9,
+          "column": "備考",
+          "block": null
+        }
+      },
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "id": "ref_henyou_by_stem",
+        "row": 9
+      }
+    },
+    {
+      "id": "qz_henyou_天権",
+      "category": "henyou",
+      "name": "天権",
+      "target": null,
+      "conditions": {},
+      "interpretation": "権貴の星。主には権威。命宮や身宮にあって太陽にあえば福禄を得る。",
+      "source_text": "天権：権貴の星。主には権威。命宮や身宮にあって太陽にあえば福禄を得る。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅳ）１．十干変曜星（意味と特徴）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 126
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_cond_henyou_天権_1"
+      ],
+      "notes": [
+        "資料本文「各変曜星のおおざっぱな意味と特徴」"
+      ],
+      "nature": "権貴の星",
+      "shichusuimei_comparison": {
+        "text": "陽年は正印、陰年は劫財",
+        "source_kind": "shichusuimei_comparison",
+        "source_ref": {
+          "file": "七政四餘鑑定用資料.docx",
+          "page": null,
+          "section": "Ⅳ）１．十干変曜星（変曜表）",
+          "table": 17,
+          "row": 10,
+          "column": "備考",
+          "block": null
+        }
+      },
+      "placement_ref": {
+        "file": "qizheng_reference_tables_v1.json",
+        "id": "ref_henyou_by_stem",
+        "row": 10
+      }
+    }
+  ]
+}

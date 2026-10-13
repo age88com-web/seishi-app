@@ -1,0 +1,1296 @@
+{
+  "schema_version": "1.0.0",
+  "source_file": "七政四餘鑑定用資料.docx",
+  "usage": "宮主・主星情報（主星・恩難仇用星、例外、歩天経訣）。旺廟陥の表は qizheng_reference_tables_v1.json（照合専用）",
+  "records": [
+    {
+      "id": "qz_prel_lord_子丑",
+      "category": "palace_star_roles",
+      "name": "子丑",
+      "target": [
+        "子",
+        "丑"
+      ],
+      "conditions": {},
+      "interpretation": null,
+      "source_text": "主星:土|難星:木紫|仇星:水孛|恩星:火羅|用星:金",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "４．十二宮位と七政四餘",
+        "table": 5,
+        "row": null,
+        "column": "子丑",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "roles": {
+        "主星": {
+          "raw": "土",
+          "stars": [
+            "saturn"
+          ]
+        },
+        "難星": {
+          "raw": "木紫",
+          "stars": [
+            "jupiter",
+            "ziqi"
+          ]
+        },
+        "仇星": {
+          "raw": "水孛",
+          "stars": [
+            "mercury",
+            "yuebo"
+          ]
+        },
+        "恩星": {
+          "raw": "火羅",
+          "stars": [
+            "mars",
+            "rahu"
+          ]
+        },
+        "用星": {
+          "raw": "金",
+          "stars": [
+            "venus"
+          ]
+        }
+      }
+    },
+    {
+      "id": "qz_prel_lord_寅亥",
+      "category": "palace_star_roles",
+      "name": "寅亥",
+      "target": [
+        "寅",
+        "亥"
+      ],
+      "conditions": {},
+      "interpretation": null,
+      "source_text": "主星:木|難星:金|仇星:土計|恩星:水孛|用星:火羅",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "４．十二宮位と七政四餘",
+        "table": 5,
+        "row": null,
+        "column": "寅亥",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "roles": {
+        "主星": {
+          "raw": "木",
+          "stars": [
+            "jupiter"
+          ]
+        },
+        "難星": {
+          "raw": "金",
+          "stars": [
+            "venus"
+          ]
+        },
+        "仇星": {
+          "raw": "土計",
+          "stars": [
+            "saturn",
+            "ketu"
+          ]
+        },
+        "恩星": {
+          "raw": "水孛",
+          "stars": [
+            "mercury",
+            "yuebo"
+          ]
+        },
+        "用星": {
+          "raw": "火羅",
+          "stars": [
+            "mars",
+            "rahu"
+          ]
+        }
+      }
+    },
+    {
+      "id": "qz_prel_lord_卯戌",
+      "category": "palace_star_roles",
+      "name": "卯戌",
+      "target": [
+        "卯",
+        "戌"
+      ],
+      "conditions": {},
+      "interpretation": null,
+      "source_text": "主星:火|難星:水孛|仇星:金|恩星:木紫|用星:土計",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "４．十二宮位と七政四餘",
+        "table": 5,
+        "row": null,
+        "column": "卯戌",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "roles": {
+        "主星": {
+          "raw": "火",
+          "stars": [
+            "mars"
+          ]
+        },
+        "難星": {
+          "raw": "水孛",
+          "stars": [
+            "mercury",
+            "yuebo"
+          ]
+        },
+        "仇星": {
+          "raw": "金",
+          "stars": [
+            "venus"
+          ]
+        },
+        "恩星": {
+          "raw": "木紫",
+          "stars": [
+            "jupiter",
+            "ziqi"
+          ]
+        },
+        "用星": {
+          "raw": "土計",
+          "stars": [
+            "saturn",
+            "ketu"
+          ]
+        }
+      }
+    },
+    {
+      "id": "qz_prel_lord_辰酉",
+      "category": "palace_star_roles",
+      "name": "辰酉",
+      "target": [
+        "辰",
+        "酉"
+      ],
+      "conditions": {},
+      "interpretation": null,
+      "source_text": "主星:金|難星:火羅|仇星:木紫|恩星:土計|用星:水孛",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "４．十二宮位と七政四餘",
+        "table": 5,
+        "row": null,
+        "column": "辰酉",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "roles": {
+        "主星": {
+          "raw": "金",
+          "stars": [
+            "venus"
+          ]
+        },
+        "難星": {
+          "raw": "火羅",
+          "stars": [
+            "mars",
+            "rahu"
+          ]
+        },
+        "仇星": {
+          "raw": "木紫",
+          "stars": [
+            "jupiter",
+            "ziqi"
+          ]
+        },
+        "恩星": {
+          "raw": "土計",
+          "stars": [
+            "saturn",
+            "ketu"
+          ]
+        },
+        "用星": {
+          "raw": "水孛",
+          "stars": [
+            "mercury",
+            "yuebo"
+          ]
+        }
+      }
+    },
+    {
+      "id": "qz_prel_lord_巳申",
+      "category": "palace_star_roles",
+      "name": "巳申",
+      "target": [
+        "巳",
+        "申"
+      ],
+      "conditions": {},
+      "interpretation": null,
+      "source_text": "主星:水|難星:土計|仇星:火羅|恩星:金|用星:木紫",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "４．十二宮位と七政四餘",
+        "table": 5,
+        "row": null,
+        "column": "巳申",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "roles": {
+        "主星": {
+          "raw": "水",
+          "stars": [
+            "mercury"
+          ]
+        },
+        "難星": {
+          "raw": "土計",
+          "stars": [
+            "saturn",
+            "ketu"
+          ]
+        },
+        "仇星": {
+          "raw": "火羅",
+          "stars": [
+            "mars",
+            "rahu"
+          ]
+        },
+        "恩星": {
+          "raw": "金",
+          "stars": [
+            "venus"
+          ]
+        },
+        "用星": {
+          "raw": "木紫",
+          "stars": [
+            "jupiter",
+            "ziqi"
+          ]
+        }
+      }
+    },
+    {
+      "id": "qz_prel_lord_午",
+      "category": "palace_star_roles",
+      "name": "午",
+      "target": [
+        "午"
+      ],
+      "conditions": {},
+      "interpretation": null,
+      "source_text": "主星:日|難星:木紫|仇星:土計|恩星:金水|用星:火羅",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "４．十二宮位と七政四餘",
+        "table": 5,
+        "row": null,
+        "column": "午",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "午の列（難星「木紫」・仇星「火羅」・恩星「金水」・用星「火羅」）は、表の説明欄（我を剋すもの等）との対応に疑義あり。資料のまま保持"
+      ],
+      "roles": {
+        "主星": {
+          "raw": "日",
+          "stars": [
+            "sun"
+          ]
+        },
+        "難星": {
+          "raw": "木紫",
+          "stars": [
+            "jupiter",
+            "ziqi"
+          ]
+        },
+        "仇星": {
+          "raw": "土計",
+          "stars": [
+            "saturn",
+            "ketu"
+          ]
+        },
+        "恩星": {
+          "raw": "金水",
+          "stars": [
+            "venus",
+            "mercury"
+          ]
+        },
+        "用星": {
+          "raw": "火羅",
+          "stars": [
+            "mars",
+            "rahu"
+          ]
+        }
+      }
+    },
+    {
+      "id": "qz_prel_lord_未",
+      "category": "palace_star_roles",
+      "name": "未",
+      "target": [
+        "未"
+      ],
+      "conditions": {},
+      "interpretation": null,
+      "source_text": "主星:月|難星:土計|仇星:火羅|恩星:金|用星:木紫",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "４．十二宮位と七政四餘",
+        "table": 5,
+        "row": null,
+        "column": "未",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "roles": {
+        "主星": {
+          "raw": "月",
+          "stars": [
+            "moon"
+          ]
+        },
+        "難星": {
+          "raw": "土計",
+          "stars": [
+            "saturn",
+            "ketu"
+          ]
+        },
+        "仇星": {
+          "raw": "火羅",
+          "stars": [
+            "mars",
+            "rahu"
+          ]
+        },
+        "恩星": {
+          "raw": "金",
+          "stars": [
+            "venus"
+          ]
+        },
+        "用星": {
+          "raw": "木紫",
+          "stars": [
+            "jupiter",
+            "ziqi"
+          ]
+        }
+      }
+    },
+    {
+      "id": "qz_prel_role_definitions",
+      "category": "palace_star_role_definitions",
+      "name": "主星・難星・仇星・恩星・用星の説明",
+      "target": null,
+      "conditions": {},
+      "interpretation": null,
+      "source_text": "主星:我、自分|難星:我を剋すもの|仇星:我が剋すもの|恩星:我を生ずるもの|用星:我が生ずるもの",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "４．十二宮位と七政四餘",
+        "table": 5,
+        "row": null,
+        "column": "説明",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "definitions": {
+        "主星": "我、自分",
+        "難星": "我を剋すもの",
+        "仇星": "我が剋すもの",
+        "恩星": "我を生ずるもの",
+        "用星": "我が生ずるもの"
+      }
+    },
+    {
+      "id": "qz_prel_role_general",
+      "category": "palace_star_role_rule",
+      "name": "主星・恩星・用星は吉、難星・仇星は凶",
+      "target": null,
+      "conditions": {},
+      "interpretation": "主星、恩星、用星は吉、難星、仇星は凶とおおざっぱにはいえます。",
+      "source_text": "主星、恩星、用星は吉、難星、仇星は凶とおおざっぱにはいえます。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "４．十二宮位と七政四餘",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 57
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「おおざっぱにはいえます」とある"
+      ],
+      "rules": [
+        {
+          "condition": {
+            "role": [
+              "主星",
+              "恩星",
+              "用星"
+            ]
+          },
+          "result": "吉",
+          "effect": "good",
+          "source_fragment": "主星、恩星、用星は吉"
+        },
+        {
+          "condition": {
+            "role": [
+              "難星",
+              "仇星"
+            ]
+          },
+          "result": "凶",
+          "effect": "bad",
+          "source_fragment": "難星、仇星は凶"
+        }
+      ]
+    },
+    {
+      "id": "qz_prel_exception_1",
+      "category": "palace_star_exception",
+      "name": "紫気は子宮ではそれほど凶ではありません",
+      "target": null,
+      "conditions": {},
+      "interpretation": "紫気は子宮ではそれほど凶ではありません。丑宮では凶です。",
+      "source_text": "①紫気は子宮ではそれほど凶ではありません。丑宮では凶です。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "４．十二宮位と七政四餘（例外）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 57
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "rules": [
+        {
+          "condition": {
+            "star": "ziqi",
+            "palace": "子"
+          },
+          "result": "それほど凶ではありません",
+          "effect": "mitigate",
+          "source_fragment": "紫気は子宮ではそれほど凶ではありません"
+        },
+        {
+          "condition": {
+            "star": "ziqi",
+            "palace": "丑"
+          },
+          "result": "凶",
+          "effect": "bad",
+          "source_fragment": "丑宮では凶です"
+        }
+      ]
+    },
+    {
+      "id": "qz_prel_exception_2",
+      "category": "palace_star_exception",
+      "name": "亥宮は火星、羅[ｺﾞｳ]を用星としますが恐れます",
+      "target": null,
+      "conditions": {},
+      "interpretation": "亥宮は火星、羅[ｺﾞｳ]を用星としますが恐れます。",
+      "source_text": "②亥宮は火星、羅[ｺﾞｳ]を用星としますが恐れます。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "４．十二宮位と七政四餘（例外）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 57
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "「羅[ｺﾞｳ]」は資料の欠字表記をそのまま保持"
+      ],
+      "rules": [
+        {
+          "condition": {
+            "palace": "亥",
+            "stars": [
+              "mars",
+              "rahu"
+            ]
+          },
+          "result": "用星としますが恐れます",
+          "effect": "bad",
+          "source_fragment": "亥宮は火星、羅[ｺﾞｳ]を用星としますが恐れます"
+        }
+      ]
+    },
+    {
+      "id": "qz_prel_exception_3",
+      "category": "palace_star_exception",
+      "name": "戌宮の主星は火星ですが、戌は火の墓であり凶です",
+      "target": null,
+      "conditions": {},
+      "interpretation": "戌宮の主星は火星ですが、戌は火の墓であり凶です。",
+      "source_text": "③戌宮の主星は火星ですが、戌は火の墓であり凶です。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "４．十二宮位と七政四餘（例外）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 57
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "rules": [
+        {
+          "condition": {
+            "palace": "戌",
+            "star": "mars",
+            "role": "主星"
+          },
+          "result": "戌は火の墓であり凶",
+          "effect": "bad",
+          "source_fragment": "戌宮の主星は火星ですが、戌は火の墓であり凶です"
+        }
+      ]
+    },
+    {
+      "id": "qz_prel_exception_4",
+      "category": "palace_star_exception",
+      "name": "水星、月孛は、辰宮では吉ですが、酉宮では凶です",
+      "target": null,
+      "conditions": {},
+      "interpretation": "水星、月孛は、辰宮では吉ですが、酉宮では凶です。",
+      "source_text": "④水星、月孛は、辰宮では吉ですが、酉宮では凶です。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "４．十二宮位と七政四餘（例外）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 57
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "rules": [
+        {
+          "condition": {
+            "stars": [
+              "mercury",
+              "yuebo"
+            ],
+            "palace": "辰"
+          },
+          "result": "吉",
+          "effect": "good",
+          "source_fragment": "水星、月孛は、辰宮では吉"
+        },
+        {
+          "condition": {
+            "stars": [
+              "mercury",
+              "yuebo"
+            ],
+            "palace": "酉"
+          },
+          "result": "凶",
+          "effect": "bad",
+          "source_fragment": "酉宮では凶です"
+        }
+      ]
+    },
+    {
+      "id": "qz_prel_exception_5",
+      "category": "palace_star_exception",
+      "name": "巳宮、申宮は月孛を恐れます",
+      "target": null,
+      "conditions": {},
+      "interpretation": "巳宮、申宮は月孛を恐れます。",
+      "source_text": "⑤巳宮、申宮は月孛を恐れます。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "４．十二宮位と七政四餘（例外）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 57
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "rules": [
+        {
+          "condition": {
+            "palaces": [
+              "巳",
+              "申"
+            ],
+            "star": "yuebo"
+          },
+          "result": "恐れます",
+          "effect": "bad",
+          "source_fragment": "巳宮、申宮は月孛を恐れます"
+        }
+      ]
+    },
+    {
+      "id": "qz_prel_exception_6",
+      "category": "palace_star_exception",
+      "name": "紫気は午宮ではそれほど凶ではありません",
+      "target": null,
+      "conditions": {},
+      "interpretation": "紫気は午宮ではそれほど凶ではありません。",
+      "source_text": "⑥紫気は午宮ではそれほど凶ではありません。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "４．十二宮位と七政四餘（例外）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 57
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "rules": [
+        {
+          "condition": {
+            "star": "ziqi",
+            "palace": "午"
+          },
+          "result": "それほど凶ではありません",
+          "effect": "mitigate",
+          "source_fragment": "紫気は午宮ではそれほど凶ではありません"
+        }
+      ]
+    },
+    {
+      "id": "qz_prel_butian_1",
+      "category": "butian_jingjue",
+      "name": "子丑二宮",
+      "target": null,
+      "conditions": {},
+      "interpretation": "　子丑二宮の主星は土星です。子宮は木剋土で木星を恐れますが、木星の餘である紫気は恐れません。丑宮は木星を恐れ金星を喜びます。これは丑が金局の地であるためで、ここは子宮と違うところです。また火星羅[ｺﾞｳ]を喜び、水星月孛を忌みます。",
+      "source_text": "（１）子丑二宮\n　子丑二宮の主星は土星です。子宮は木剋土で木星を恐れますが、木星の餘である紫気は恐れません。丑宮は木星を恐れ金星を喜びます。これは丑が金局の地であるためで、ここは子宮と違うところです。また火星羅[ｺﾞｳ]を喜び、水星月孛を忌みます。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）６．歩天経訣（1）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 179
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [
+        "資料に「この論は耶律学士の書」「原詩はあげず説明のみ」とある",
+        "「羅[ｺﾞｳ]」は資料の欠字表記をそのまま保持"
+      ],
+      "rules": [
+        {
+          "condition": {
+            "palace": "子",
+            "star": "jupiter"
+          },
+          "result": "恐れます",
+          "effect": "bad",
+          "source_fragment": "子宮は木剋土で木星を恐れます"
+        },
+        {
+          "condition": {
+            "palace": "子",
+            "star": "ziqi"
+          },
+          "result": "恐れません",
+          "effect": "mitigate",
+          "source_fragment": "木星の餘である紫気は恐れません"
+        },
+        {
+          "condition": {
+            "palace": "丑",
+            "star": "jupiter"
+          },
+          "result": "恐れ",
+          "effect": "bad",
+          "source_fragment": "丑宮は木星を恐れ"
+        },
+        {
+          "condition": {
+            "palace": "丑",
+            "star": "venus"
+          },
+          "result": "喜びます",
+          "effect": "good",
+          "source_fragment": "金星を喜びます"
+        },
+        {
+          "condition": {
+            "palaces": [
+              "子",
+              "丑"
+            ],
+            "stars": [
+              "mars",
+              "rahu"
+            ]
+          },
+          "result": "喜び",
+          "effect": "good",
+          "source_fragment": "また火星羅[ｺﾞｳ]を喜び"
+        },
+        {
+          "condition": {
+            "palaces": [
+              "子",
+              "丑"
+            ],
+            "stars": [
+              "mercury",
+              "yuebo"
+            ]
+          },
+          "result": "忌みます",
+          "effect": "bad",
+          "source_fragment": "水星月孛を忌みます"
+        }
+      ]
+    },
+    {
+      "id": "qz_prel_butian_2",
+      "category": "butian_jingjue",
+      "name": "寅亥二宮",
+      "target": null,
+      "conditions": {},
+      "interpretation": "　寅亥二宮の主星は木星です。水星月孛を喜び、火星羅[ｺﾞｳ]を忌みます。亥宮の場合はとくに火星を忌み、寅宮の場合は土星や計都を恐れます。ただし、火星を忌むといっても星宿が水の場合、例えば箕宿は水ですが、箕宿に火星があっても恐れません。",
+      "source_text": "（２）寅亥二宮\n　寅亥二宮の主星は木星です。水星月孛を喜び、火星羅[ｺﾞｳ]を忌みます。亥宮の場合はとくに火星を忌み、寅宮の場合は土星や計都を恐れます。ただし、火星を忌むといっても星宿が水の場合、例えば箕宿は水ですが、箕宿に火星があっても恐れません。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）６．歩天経訣（2）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 179
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [
+        "資料に「この論は耶律学士の書」「原詩はあげず説明のみ」とある",
+        "「羅[ｺﾞｳ]」は資料の欠字表記をそのまま保持"
+      ],
+      "rules": [
+        {
+          "condition": {
+            "palaces": [
+              "寅",
+              "亥"
+            ],
+            "stars": [
+              "mercury",
+              "yuebo"
+            ]
+          },
+          "result": "喜び",
+          "effect": "good",
+          "source_fragment": "水星月孛を喜び"
+        },
+        {
+          "condition": {
+            "palaces": [
+              "寅",
+              "亥"
+            ],
+            "stars": [
+              "mars",
+              "rahu"
+            ]
+          },
+          "result": "忌みます",
+          "effect": "bad",
+          "source_fragment": "火星羅[ｺﾞｳ]を忌みます"
+        },
+        {
+          "condition": {
+            "palace": "亥",
+            "star": "mars"
+          },
+          "result": "とくに忌み",
+          "effect": "bad",
+          "source_fragment": "亥宮の場合はとくに火星を忌み"
+        },
+        {
+          "condition": {
+            "palace": "寅",
+            "stars": [
+              "saturn",
+              "ketu"
+            ]
+          },
+          "result": "恐れます",
+          "effect": "bad",
+          "source_fragment": "寅宮の場合は土星や計都を恐れます"
+        },
+        {
+          "condition": {
+            "star": "mars",
+            "mansion_element": "水",
+            "example": "箕宿"
+          },
+          "result": "恐れません",
+          "effect": "mitigate",
+          "source_fragment": "箕宿に火星があっても恐れません"
+        }
+      ]
+    },
+    {
+      "id": "qz_prel_butian_3",
+      "category": "butian_jingjue",
+      "name": "卯戌二宮",
+      "target": null,
+      "conditions": {},
+      "interpretation": "　卯戌二宮の主星は火星です。木星や土星を喜び水星月孛金星を恐れます。ただし卯宮は羅[ｺﾞｳ]は恐れず、戌宮は最も忌みます。",
+      "source_text": "（３）卯戌二宮\n　卯戌二宮の主星は火星です。木星や土星を喜び水星月孛金星を恐れます。ただし卯宮は羅[ｺﾞｳ]は恐れず、戌宮は最も忌みます。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）６．歩天経訣（3）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 179
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [
+        "資料に「この論は耶律学士の書」「原詩はあげず説明のみ」とある",
+        "「羅[ｺﾞｳ]」は資料の欠字表記をそのまま保持"
+      ],
+      "rules": [
+        {
+          "condition": {
+            "palaces": [
+              "卯",
+              "戌"
+            ],
+            "stars": [
+              "jupiter",
+              "saturn"
+            ]
+          },
+          "result": "喜び",
+          "effect": "good",
+          "source_fragment": "木星や土星を喜び"
+        },
+        {
+          "condition": {
+            "palaces": [
+              "卯",
+              "戌"
+            ],
+            "stars": [
+              "mercury",
+              "yuebo",
+              "venus"
+            ]
+          },
+          "result": "恐れます",
+          "effect": "bad",
+          "source_fragment": "水星月孛金星を恐れます"
+        },
+        {
+          "condition": {
+            "palace": "卯",
+            "star": "rahu"
+          },
+          "result": "恐れず",
+          "effect": "mitigate",
+          "source_fragment": "卯宮は羅[ｺﾞｳ]は恐れず"
+        },
+        {
+          "condition": {
+            "palace": "戌",
+            "star": "rahu"
+          },
+          "result": "最も忌みます",
+          "effect": "bad",
+          "source_fragment": "戌宮は最も忌みます"
+        }
+      ]
+    },
+    {
+      "id": "qz_prel_butian_4",
+      "category": "butian_jingjue",
+      "name": "辰酉二宮",
+      "target": null,
+      "conditions": {},
+      "interpretation": "　辰酉二宮の主星は金星です。酉宮は洩らすのを嫌い水星月孛を忌みます。しかし辰宮は水星月孛を喜びます。火星羅[ｺﾞｳ]は金を剋すので必ず水が必要となります。土星計都は金を生じて良いです。木星紫気は閑神ですが土を剋すので、土星計都がある場合はよくありません。",
+      "source_text": "（４）辰酉二宮\n　辰酉二宮の主星は金星です。酉宮は洩らすのを嫌い水星月孛を忌みます。しかし辰宮は水星月孛を喜びます。火星羅[ｺﾞｳ]は金を剋すので必ず水が必要となります。土星計都は金を生じて良いです。木星紫気は閑神ですが土を剋すので、土星計都がある場合はよくありません。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）６．歩天経訣（4）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 179
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [
+        "資料に「この論は耶律学士の書」「原詩はあげず説明のみ」とある",
+        "「羅[ｺﾞｳ]」は資料の欠字表記をそのまま保持"
+      ],
+      "rules": [
+        {
+          "condition": {
+            "palace": "酉",
+            "stars": [
+              "mercury",
+              "yuebo"
+            ]
+          },
+          "result": "忌み",
+          "effect": "bad",
+          "source_fragment": "酉宮は洩らすのを嫌い水星月孛を忌みます"
+        },
+        {
+          "condition": {
+            "palace": "辰",
+            "stars": [
+              "mercury",
+              "yuebo"
+            ]
+          },
+          "result": "喜びます",
+          "effect": "good",
+          "source_fragment": "辰宮は水星月孛を喜びます"
+        },
+        {
+          "condition": {
+            "palaces": [
+              "辰",
+              "酉"
+            ],
+            "stars": [
+              "mars",
+              "rahu"
+            ]
+          },
+          "result": "必ず水が必要",
+          "effect": "conditional",
+          "source_fragment": "火星羅[ｺﾞｳ]は金を剋すので必ず水が必要となります"
+        },
+        {
+          "condition": {
+            "palaces": [
+              "辰",
+              "酉"
+            ],
+            "stars": [
+              "saturn",
+              "ketu"
+            ]
+          },
+          "result": "金を生じて良い",
+          "effect": "good",
+          "source_fragment": "土星計都は金を生じて良いです"
+        },
+        {
+          "condition": {
+            "palaces": [
+              "辰",
+              "酉"
+            ],
+            "stars": [
+              "jupiter",
+              "ziqi"
+            ],
+            "with_stars": [
+              "saturn",
+              "ketu"
+            ]
+          },
+          "result": "よくありません",
+          "effect": "bad",
+          "source_fragment": "木星紫気は閑神ですが土を剋すので、土星計都がある場合はよくありません"
+        }
+      ]
+    },
+    {
+      "id": "qz_prel_butian_5",
+      "category": "butian_jingjue",
+      "name": "申巳二宮",
+      "target": null,
+      "conditions": {},
+      "interpretation": "　申巳二宮の主星は水星です。土星計都は土剋水で最もよくありません。巳宮はもともと火ですが、昼生まれであればさらに火（火星羅[ｺﾞｳ]）が加わるのを恐れます。月孛は水の餘ですが、月孛が水星に重なるのはよくありません。巳宮の場合は火星羅[ｺﾞｳ]を恐れ、申宮の場合は木星紫気を恐れます。",
+      "source_text": "（５）申巳二宮\n　申巳二宮の主星は水星です。土星計都は土剋水で最もよくありません。巳宮はもともと火ですが、昼生まれであればさらに火（火星羅[ｺﾞｳ]）が加わるのを恐れます。月孛は水の餘ですが、月孛が水星に重なるのはよくありません。巳宮の場合は火星羅[ｺﾞｳ]を恐れ、申宮の場合は木星紫気を恐れます。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）６．歩天経訣（5）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 179
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [
+        "資料に「この論は耶律学士の書」「原詩はあげず説明のみ」とある",
+        "「羅[ｺﾞｳ]」は資料の欠字表記をそのまま保持"
+      ],
+      "rules": [
+        {
+          "condition": {
+            "palaces": [
+              "申",
+              "巳"
+            ],
+            "stars": [
+              "saturn",
+              "ketu"
+            ]
+          },
+          "result": "最もよくありません",
+          "effect": "bad",
+          "source_fragment": "土星計都は土剋水で最もよくありません"
+        },
+        {
+          "condition": {
+            "palace": "巳",
+            "birth": "day",
+            "stars": [
+              "mars",
+              "rahu"
+            ]
+          },
+          "result": "恐れます",
+          "effect": "bad",
+          "source_fragment": "昼生まれであればさらに火（火星羅[ｺﾞｳ]）が加わるのを恐れます"
+        },
+        {
+          "condition": {
+            "star": "yuebo",
+            "with_stars": [
+              "mercury"
+            ]
+          },
+          "result": "よくありません",
+          "effect": "bad",
+          "source_fragment": "月孛が水星に重なるのはよくありません"
+        },
+        {
+          "condition": {
+            "palace": "巳",
+            "stars": [
+              "mars",
+              "rahu"
+            ]
+          },
+          "result": "恐れ",
+          "effect": "bad",
+          "source_fragment": "巳宮の場合は火星羅[ｺﾞｳ]を恐れ"
+        },
+        {
+          "condition": {
+            "palace": "申",
+            "stars": [
+              "jupiter",
+              "ziqi"
+            ]
+          },
+          "result": "恐れます",
+          "effect": "bad",
+          "source_fragment": "申宮の場合は木星紫気を恐れます"
+        }
+      ]
+    },
+    {
+      "id": "qz_prel_butian_6",
+      "category": "butian_jingjue",
+      "name": "単論午宮",
+      "target": null,
+      "conditions": {},
+      "interpretation": "　午宮の主星は太陽です。とくに忌むものはありませんが、春夏生まれの場合に木星を恐れます。",
+      "source_text": "（６）単論午宮\n　午宮の主星は太陽です。とくに忌むものはありませんが、春夏生まれの場合に木星を恐れます。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）６．歩天経訣（6）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 179
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [
+        "資料に「この論は耶律学士の書」「原詩はあげず説明のみ」とある"
+      ],
+      "rules": [
+        {
+          "condition": {
+            "palace": "午",
+            "season": [
+              "春",
+              "夏"
+            ],
+            "star": "jupiter"
+          },
+          "result": "恐れます",
+          "effect": "bad",
+          "source_fragment": "春夏生まれの場合に木星を恐れます"
+        }
+      ]
+    },
+    {
+      "id": "qz_prel_butian_7",
+      "category": "butian_jingjue",
+      "name": "単論未宮",
+      "target": null,
+      "conditions": {},
+      "interpretation": "　未宮の主星は月です。土星と計都を忌みますが、木星紫気があれば問題ありません。木星や紫気が弱ければ、浮沈が大きいものです。",
+      "source_text": "（７）単論未宮\n　未宮の主星は月です。土星と計都を忌みますが、木星紫気があれば問題ありません。木星や紫気が弱ければ、浮沈が大きいものです。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）６．歩天経訣（7）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 179
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [
+        "資料に「この論は耶律学士の書」「原詩はあげず説明のみ」とある"
+      ],
+      "rules": [
+        {
+          "condition": {
+            "palace": "未",
+            "stars": [
+              "saturn",
+              "ketu"
+            ]
+          },
+          "result": "忌みます",
+          "effect": "bad",
+          "source_fragment": "土星と計都を忌みます"
+        },
+        {
+          "condition": {
+            "palace": "未",
+            "stars": [
+              "saturn",
+              "ketu"
+            ],
+            "with_stars": [
+              "jupiter",
+              "ziqi"
+            ]
+          },
+          "result": "問題ありません",
+          "effect": "mitigate",
+          "source_fragment": "木星紫気があれば問題ありません"
+        },
+        {
+          "condition": {
+            "palace": "未",
+            "stars": [
+              "jupiter",
+              "ziqi"
+            ],
+            "state": "弱"
+          },
+          "result": "浮沈が大きい",
+          "effect": null,
+          "source_fragment": "木星や紫気が弱ければ、浮沈が大きいものです"
+        }
+      ]
+    },
+    {
+      "id": "qz_prel_butian_commentary",
+      "category": "butian_commentary",
+      "name": "歩天経訣のまとめ",
+      "target": null,
+      "conditions": {},
+      "interpretation": "　読めばわかるとおり、主星との五行関係で大体の喜忌が決まります。さらに十二宮位の五行を併せて考えればいいです。とにかく主星を覚えなければ話になりませんので、それは覚えてください。基本的には四柱推命などで使う六合の五行変化と同じです。\n",
+      "source_text": "　読めばわかるとおり、主星との五行関係で大体の喜忌が決まります。さらに十二宮位の五行を併せて考えればいいです。とにかく主星を覚えなければ話になりませんので、それは覚えてください。基本的には四柱推命などで使う六合の五行変化と同じです。\n",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）６．歩天経訣（結び）",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 179
+      },
+      "source_kind": "author_commentary",
+      "related_ids": [],
+      "notes": [],
+      "embedded_comments": [
+        {
+          "text": "基本的には四柱推命などで使う六合の五行変化と同じです。",
+          "source_kind": "shichusuimei_comparison"
+        }
+      ]
+    }
+  ]
+}

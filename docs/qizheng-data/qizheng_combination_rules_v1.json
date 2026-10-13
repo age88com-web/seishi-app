@@ -1,0 +1,139 @@
+{
+  "schema_version": "1.0.0",
+  "source_file": "七政四餘鑑定用資料.docx",
+  "usage": "資料に存在する複合条件のみ。依頼例示の組み合わせ（勾絞＋劫殺＋亡神 等）は本資料に存在しないため作成しない",
+  "records": [
+    {
+      "id": "qz_comb_殺畳殺",
+      "category": "combination_rule",
+      "name": "殺畳殺（凶殺の重なり）",
+      "target": null,
+      "conditions": {},
+      "interpretation": "凶の神殺が重なると悪い。註ではとくに天雄・地雄・劫殺亡神が取り上げられる。",
+      "source_text": "殺に殺を重ねるとは字義のとおりで、凶の神殺が重なると悪いということです。\n註ではとくに天雄とか地雄、劫殺亡神が取り上げられていますが、とにかく凶殺が重なることはよくありません。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（19）殺畳殺",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "qz_m24_19"
+      ],
+      "notes": [
+        "特定の組み合わせ専用の象意ではなく、凶殺の重なり一般の原則",
+        "「地雄」は資料の表記のまま（年支神殺表の名称は「地雌」）"
+      ],
+      "type": "combination_rule",
+      "members": [
+        "凶の神殺（複数）"
+      ],
+      "members_raw": "凶の神殺／註：天雄・地雄・劫殺亡神",
+      "effect": "bad"
+    },
+    {
+      "id": "qz_comb_福主三悪",
+      "category": "combination_rule",
+      "name": "福主と劫殺・亡神（三悪犯）",
+      "target": null,
+      "conditions": {},
+      "interpretation": null,
+      "source_text": "福星守福為真福、遇難逢空享不成、劫殺亡神三悪犯、繊毫安受未堪評\n劫殺亡神三悪犯とありますが、悪い神殺と考えていいでしょう。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）４．専論十主（９）福主",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 177
+      },
+      "source_kind": "classical",
+      "related_ids": [
+        "qz_lord_福主"
+      ],
+      "notes": [
+        "原詩のみで条件ごとの意味の説明が資料にない（原詩を独自に訳さないため interpretation は空）",
+        "「悪い神殺と考えていいでしょう」は著者見解（author_commentary）"
+      ],
+      "type": "combination_rule",
+      "members": [
+        "福主",
+        "劫殺",
+        "亡神"
+      ],
+      "members_raw": "福主／劫殺亡神三悪犯",
+      "effect": null
+    },
+    {
+      "id": "qz_comb_難主吊客",
+      "category": "combination_rule",
+      "name": "難主と凶殺（吊客）",
+      "target": null,
+      "conditions": {},
+      "interpretation": "難星が陥で用地にあれば、凶殺が同宮しても平穏に過ぎる。",
+      "source_text": "若在陥中並用地、縦然填吊得平過\nもし難星が陥であって用地にあれば、たとえ凶殺が同宮しても平穏に過ぎる\nまた吊というのは吊客のことでしょうが、まあ凶の神殺全般ととらえていいかと思います。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）４．専論十主（４）難主",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 177
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "qz_lord_難主"
+      ],
+      "notes": [
+        "原詩は classical、意味の説明は qizheng_secondary",
+        "「吊＝吊客」「凶の神殺全般」は著者見解（解決しない）"
+      ],
+      "type": "combination_rule",
+      "members": [
+        "難主",
+        "吊（吊客）"
+      ],
+      "members_raw": "難主／吊",
+      "effect": "mitigate"
+    },
+    {
+      "id": "qz_comb_空中空",
+      "category": "combination_rule",
+      "name": "空中空（空亡と天空等の重なり）",
+      "target": null,
+      "conditions": {},
+      "interpretation": "天空殺・驀越殺に空亡が加わることをいう。",
+      "source_text": "ここでいう空とは、いわゆる空亡（旬空）のほか、天空を指します。太歳の次を天空殺といい、太歳の後を驀越殺といいますが、これに空亡が加わることをいいます。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（22）空中空",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "qz_m24_22"
+      ],
+      "notes": [
+        "吉凶の評価語は資料のこの項に明記なし（effect は null）"
+      ],
+      "type": "combination_rule",
+      "members": [
+        "空亡（旬空）",
+        "天空殺",
+        "驀越殺"
+      ],
+      "members_raw": "空亡／天空／天空殺・驀越殺",
+      "effect": null
+    }
+  ]
+}

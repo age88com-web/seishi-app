@@ -1,0 +1,515 @@
+{
+  "schema_version": "1.0.0",
+  "source_file": "七政四餘鑑定用資料.docx",
+  "records": [
+    {
+      "id": "qz_star_sun",
+      "category": "star_basic",
+      "name": "太陽",
+      "target": "sun",
+      "conditions": {},
+      "interpretation": "君主、父、恩沢、権力、昇進\n宮の意味を強め同宮の星を助ける",
+      "source_text": "君主、父、恩沢、権力、昇進\n宮の意味を強め同宮の星を助ける",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅱ）１．七政四餘論",
+        "table": 2,
+        "row": 1,
+        "column": "七政四餘",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "star": "sun",
+      "names_raw": "太陽"
+    },
+    {
+      "id": "qz_star_western_sun",
+      "category": "western_planet_comparison",
+      "name": "太陽",
+      "target": "sun",
+      "conditions": {},
+      "interpretation": "生命力、意志、個性、自己\n勇気、尊厳、尊大、短気、わがまま",
+      "source_text": "生命力、意志、個性、自己\n勇気、尊厳、尊大、短気、わがまま",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅱ）１．七政四餘論",
+        "table": 2,
+        "row": 1,
+        "column": "西洋占星術",
+        "block": null
+      },
+      "source_kind": "western_comparison",
+      "related_ids": [
+        "qz_star_sun"
+      ],
+      "notes": [],
+      "star": "sun",
+      "planet_raw": "太陽"
+    },
+    {
+      "id": "qz_star_moon",
+      "category": "star_basic",
+      "name": "太陰",
+      "target": "moon",
+      "conditions": {},
+      "interpretation": "人臣、母、慈柔、自分自身、安身\n新月、月食は凶",
+      "source_text": "人臣、母、慈柔、自分自身、安身\n新月、月食は凶",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅱ）１．七政四餘論",
+        "table": 2,
+        "row": 2,
+        "column": "七政四餘",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "star": "moon",
+      "names_raw": "太陰"
+    },
+    {
+      "id": "qz_star_western_moon",
+      "category": "western_planet_comparison",
+      "name": "月",
+      "target": "moon",
+      "conditions": {},
+      "interpretation": "感受性、母性、想像、直感\n神秘、変動、気まぐれ、依頼心",
+      "source_text": "感受性、母性、想像、直感\n神秘、変動、気まぐれ、依頼心",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅱ）１．七政四餘論",
+        "table": 2,
+        "row": 2,
+        "column": "西洋占星術",
+        "block": null
+      },
+      "source_kind": "western_comparison",
+      "related_ids": [
+        "qz_star_moon"
+      ],
+      "notes": [],
+      "star": "moon",
+      "planet_raw": "月"
+    },
+    {
+      "id": "qz_star_jupiter",
+      "category": "star_basic",
+      "name": "木星",
+      "target": "jupiter",
+      "conditions": {},
+      "interpretation": "君子、仁慈、福徳、東方\n順行は吉、逆行は凶",
+      "source_text": "君子、仁慈、福徳、東方\n順行は吉、逆行は凶",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅱ）１．七政四餘論",
+        "table": 2,
+        "row": 3,
+        "column": "七政四餘",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "star": "jupiter",
+      "names_raw": "木星\n歳星"
+    },
+    {
+      "id": "qz_star_western_jupiter",
+      "category": "western_planet_comparison",
+      "name": "木星",
+      "target": "jupiter",
+      "conditions": {},
+      "interpretation": "幸運、発展、寛大、膨張\n信頼、知識、浪費",
+      "source_text": "幸運、発展、寛大、膨張\n信頼、知識、浪費",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅱ）１．七政四餘論",
+        "table": 2,
+        "row": 3,
+        "column": "西洋占星術",
+        "block": null
+      },
+      "source_kind": "western_comparison",
+      "related_ids": [
+        "qz_star_jupiter"
+      ],
+      "notes": [],
+      "star": "jupiter",
+      "planet_raw": "木星"
+    },
+    {
+      "id": "qz_star_mars",
+      "category": "star_basic",
+      "name": "火星",
+      "target": "mars",
+      "conditions": {},
+      "interpretation": "礼、南方、暴燥、火災",
+      "source_text": "礼、南方、暴燥、火災",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅱ）１．七政四餘論",
+        "table": 2,
+        "row": 4,
+        "column": "七政四餘",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "星名欄の「[ｹｲ]」は資料の欠字表記をそのまま保持"
+      ],
+      "star": "mars",
+      "names_raw": "火星\n[ｹｲ]惑"
+    },
+    {
+      "id": "qz_star_western_mars",
+      "category": "western_planet_comparison",
+      "name": "火星",
+      "target": "mars",
+      "conditions": {},
+      "interpretation": "情熱、主張、攻撃、性急\n衝動的",
+      "source_text": "情熱、主張、攻撃、性急\n衝動的",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅱ）１．七政四餘論",
+        "table": 2,
+        "row": 4,
+        "column": "西洋占星術",
+        "block": null
+      },
+      "source_kind": "western_comparison",
+      "related_ids": [
+        "qz_star_mars"
+      ],
+      "notes": [],
+      "star": "mars",
+      "planet_raw": "火星"
+    },
+    {
+      "id": "qz_star_saturn",
+      "category": "star_basic",
+      "name": "土星",
+      "target": "saturn",
+      "conditions": {},
+      "interpretation": "信、中央、平穏、疫病\n一名を地羅[ｺﾞｳ]",
+      "source_text": "信、中央、平穏、疫病\n一名を地羅[ｺﾞｳ]",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅱ）１．七政四餘論",
+        "table": 2,
+        "row": 5,
+        "column": "七政四餘",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "star": "saturn",
+      "names_raw": "土星\n鎮星"
+    },
+    {
+      "id": "qz_star_western_saturn",
+      "category": "western_planet_comparison",
+      "name": "土星",
+      "target": "saturn",
+      "conditions": {},
+      "interpretation": "制限、倹約、規則、責任\n英知、助言、困難、小心",
+      "source_text": "制限、倹約、規則、責任\n英知、助言、困難、小心",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅱ）１．七政四餘論",
+        "table": 2,
+        "row": 5,
+        "column": "西洋占星術",
+        "block": null
+      },
+      "source_kind": "western_comparison",
+      "related_ids": [
+        "qz_star_saturn"
+      ],
+      "notes": [],
+      "star": "saturn",
+      "planet_raw": "土星"
+    },
+    {
+      "id": "qz_star_venus",
+      "category": "star_basic",
+      "name": "金星",
+      "target": "venus",
+      "conditions": {},
+      "interpretation": "義、西方、剛利、権威、精厳",
+      "source_text": "義、西方、剛利、権威、精厳",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅱ）１．七政四餘論",
+        "table": 2,
+        "row": 6,
+        "column": "七政四餘",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "star": "venus",
+      "names_raw": "金星\n啓明"
+    },
+    {
+      "id": "qz_star_western_venus",
+      "category": "western_planet_comparison",
+      "name": "金星",
+      "target": "venus",
+      "conditions": {},
+      "interpretation": "愛、調和、審美、魅力\n貪欲、競争、官能的",
+      "source_text": "愛、調和、審美、魅力\n貪欲、競争、官能的",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅱ）１．七政四餘論",
+        "table": 2,
+        "row": 6,
+        "column": "西洋占星術",
+        "block": null
+      },
+      "source_kind": "western_comparison",
+      "related_ids": [
+        "qz_star_venus"
+      ],
+      "notes": [],
+      "star": "venus",
+      "planet_raw": "金星"
+    },
+    {
+      "id": "qz_star_mercury",
+      "category": "star_basic",
+      "name": "水星",
+      "target": "mercury",
+      "conditions": {},
+      "interpretation": "智、北方、善に逢えば善\n悪に逢えば悪",
+      "source_text": "智、北方、善に逢えば善\n悪に逢えば悪",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅱ）１．七政四餘論",
+        "table": 2,
+        "row": 7,
+        "column": "七政四餘",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "star": "mercury",
+      "names_raw": "水星\n辰星"
+    },
+    {
+      "id": "qz_star_western_mercury",
+      "category": "western_planet_comparison",
+      "name": "水星",
+      "target": "mercury",
+      "conditions": {},
+      "interpretation": "知識、コミュニケーション、論理\n旅行、おしゃべり、虚言",
+      "source_text": "知識、コミュニケーション、論理\n旅行、おしゃべり、虚言",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅱ）１．七政四餘論",
+        "table": 2,
+        "row": 7,
+        "column": "西洋占星術",
+        "block": null
+      },
+      "source_kind": "western_comparison",
+      "related_ids": [
+        "qz_star_mercury"
+      ],
+      "notes": [],
+      "star": "mercury",
+      "planet_raw": "水星"
+    },
+    {
+      "id": "qz_star_ziqi",
+      "category": "star_basic",
+      "name": "紫気",
+      "target": "ziqi",
+      "conditions": {},
+      "interpretation": "清高、慈善、吉祥、芸術\n学問、富貴",
+      "source_text": "清高、慈善、吉祥、芸術\n学問、富貴",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅱ）１．七政四餘論",
+        "table": 2,
+        "row": 8,
+        "column": "七政四餘",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "star": "ziqi",
+      "names_raw": "紫気\n景星"
+    },
+    {
+      "id": "qz_star_yuebo",
+      "category": "star_basic",
+      "name": "月孛",
+      "target": "yuebo",
+      "conditions": {},
+      "interpretation": "智の余気、凶兆、災禍、兵乱",
+      "source_text": "智の余気、凶兆、災禍、兵乱",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅱ）１．七政四餘論",
+        "table": 2,
+        "row": 9,
+        "column": "七政四餘",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "star": "yuebo",
+      "names_raw": "月孛\n太乙"
+    },
+    {
+      "id": "qz_star_western_yuebo",
+      "category": "western_planet_comparison",
+      "name": "－",
+      "target": "yuebo",
+      "conditions": {},
+      "interpretation": "精神、外国、旅行",
+      "source_text": "精神、外国、旅行",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅱ）１．七政四餘論",
+        "table": 2,
+        "row": 9,
+        "column": "西洋占星術",
+        "block": null
+      },
+      "source_kind": "western_comparison",
+      "related_ids": [
+        "qz_star_yuebo"
+      ],
+      "notes": [
+        "惑星欄は「－」だが西洋占星術欄に記載がある（資料のまま）"
+      ],
+      "star": "yuebo",
+      "planet_raw": "－"
+    },
+    {
+      "id": "qz_star_rahu",
+      "category": "star_basic",
+      "name": "羅[ｺﾞｳ]",
+      "target": "rahu",
+      "conditions": {},
+      "interpretation": "礼の余気、性急、血光",
+      "source_text": "礼の余気、性急、血光",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅱ）１．七政四餘論",
+        "table": 2,
+        "row": 10,
+        "column": "七政四餘",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "星名欄の「[ｺﾞｳ]」は資料の欠字表記をそのまま保持"
+      ],
+      "star": "rahu",
+      "names_raw": "羅[ｺﾞｳ]\n天首"
+    },
+    {
+      "id": "qz_star_western_rahu",
+      "category": "western_planet_comparison",
+      "name": "North\nNode",
+      "target": "rahu",
+      "conditions": {},
+      "interpretation": "運命、努力、進化、成長\n選択、生きる目的",
+      "source_text": "運命、努力、進化、成長\n選択、生きる目的",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅱ）１．七政四餘論",
+        "table": 2,
+        "row": 10,
+        "column": "西洋占星術",
+        "block": null
+      },
+      "source_kind": "western_comparison",
+      "related_ids": [
+        "qz_star_rahu"
+      ],
+      "notes": [],
+      "star": "rahu",
+      "planet_raw": "North\nNode"
+    },
+    {
+      "id": "qz_star_ketu",
+      "category": "star_basic",
+      "name": "計都",
+      "target": "ketu",
+      "conditions": {},
+      "interpretation": "信の余気、毒悪、災禍",
+      "source_text": "信の余気、毒悪、災禍",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅱ）１．七政四餘論",
+        "table": 2,
+        "row": 11,
+        "column": "七政四餘",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "star": "ketu",
+      "names_raw": "計都"
+    },
+    {
+      "id": "qz_star_western_ketu",
+      "category": "western_planet_comparison",
+      "name": "South\nNode",
+      "target": "ketu",
+      "conditions": {},
+      "interpretation": "過去、生き残り、沈滞\n本能的行動",
+      "source_text": "過去、生き残り、沈滞\n本能的行動",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅱ）１．七政四餘論",
+        "table": 2,
+        "row": 11,
+        "column": "西洋占星術",
+        "block": null
+      },
+      "source_kind": "western_comparison",
+      "related_ids": [
+        "qz_star_ketu"
+      ],
+      "notes": [],
+      "star": "ketu",
+      "planet_raw": "South\nNode"
+    }
+  ]
+}

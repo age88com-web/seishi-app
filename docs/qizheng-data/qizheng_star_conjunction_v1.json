@@ -1,0 +1,3123 @@
+{
+  "schema_version": "1.0.0",
+  "source_file": "七政四餘鑑定用資料.docx",
+  "records": [
+    {
+      "id": "qz_conj_日月",
+      "category": "star_conjunction",
+      "name": "日月",
+      "target": null,
+      "conditions": {},
+      "interpretation": "声名、文章、富貴、昼生で日が主星あるいは夜生で月が主星で、旺廟であれば大貴命、重要な地位につく。未宮なら衣食官禄充足、戌辰宮なら甚鞍馬牛羊（意味不明）",
+      "source_text": "声名、文章、富貴、昼生で日が主星あるいは夜生で月が主星で、旺廟であれば大貴命、重要な地位につく。未宮なら衣食官禄充足、戌辰宮なら甚鞍馬牛羊（意味不明）",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 1,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "資料中に「（意味不明）」と明記（甚鞍馬牛羊）。解釈しない"
+      ],
+      "members": [
+        "sun",
+        "moon"
+      ],
+      "members_raw": [
+        "日",
+        "月"
+      ],
+      "condition_mentions": [
+        "昼生",
+        "夜生",
+        "主星",
+        "旺",
+        "廟",
+        "未宮",
+        "戌辰宮"
+      ]
+    },
+    {
+      "id": "qz_conj_日木",
+      "category": "star_conjunction",
+      "name": "日木",
+      "target": null,
+      "conditions": {},
+      "interpretation": "貴人、少災有福、財帛、多子孫、木星旺なら気転、主星なら大貴、木が弱ければ損失。日廟なら貴。",
+      "source_text": "貴人、少災有福、財帛、多子孫、木星旺なら気転、主星なら大貴、木が弱ければ損失。日廟なら貴。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 2,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "sun",
+        "jupiter"
+      ],
+      "members_raw": [
+        "日",
+        "木"
+      ],
+      "condition_mentions": [
+        "主星",
+        "旺",
+        "廟"
+      ]
+    },
+    {
+      "id": "qz_conj_日火",
+      "category": "star_conjunction",
+      "name": "日火",
+      "target": null,
+      "conditions": {},
+      "interpretation": "信用、文章、財物、旺ならば貴",
+      "source_text": "信用、文章、財物、旺ならば貴",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 3,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "sun",
+        "mars"
+      ],
+      "members_raw": [
+        "日",
+        "火"
+      ],
+      "condition_mentions": [
+        "旺"
+      ]
+    },
+    {
+      "id": "qz_conj_日土",
+      "category": "star_conjunction",
+      "name": "日土",
+      "target": null,
+      "conditions": {},
+      "interpretation": "聡明、文章、主星で昼生で日在後なら大貴、日在前なら父母、財産を損なう、父に疾あり",
+      "source_text": "聡明、文章、主星で昼生で日在後なら大貴、日在前なら父母、財産を損なう、父に疾あり",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 4,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "sun",
+        "saturn"
+      ],
+      "members_raw": [
+        "日",
+        "土"
+      ],
+      "condition_mentions": [
+        "昼生",
+        "主星"
+      ]
+    },
+    {
+      "id": "qz_conj_日金",
+      "category": "star_conjunction",
+      "name": "日金",
+      "target": null,
+      "conditions": {},
+      "interpretation": "好色、妻財、夜生で金在前なら大富貴、声名",
+      "source_text": "好色、妻財、夜生で金在前なら大富貴、声名",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 5,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "sun",
+        "venus"
+      ],
+      "members_raw": [
+        "日",
+        "金"
+      ],
+      "condition_mentions": [
+        "夜生"
+      ]
+    },
+    {
+      "id": "qz_conj_日水",
+      "category": "star_conjunction",
+      "name": "日水",
+      "target": null,
+      "conditions": {},
+      "interpretation": "聡明、陰徳、主星ならば人文学出群、順行なら貴、文章では成事父母によって立身、逆なら技芸、音楽、昼生は富、夜生は貴",
+      "source_text": "聡明、陰徳、主星ならば人文学出群、順行なら貴、文章では成事父母によって立身、逆なら技芸、音楽、昼生は富、夜生は貴",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 6,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "sun",
+        "mercury"
+      ],
+      "members_raw": [
+        "日",
+        "水"
+      ],
+      "condition_mentions": [
+        "昼生",
+        "夜生",
+        "主星",
+        "順行",
+        "逆"
+      ]
+    },
+    {
+      "id": "qz_conj_日紫",
+      "category": "star_conjunction",
+      "name": "日紫",
+      "target": null,
+      "conditions": {},
+      "interpretation": "技芸、高位、父疾あり",
+      "source_text": "技芸、高位、父疾あり",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 7,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "sun",
+        "ziqi"
+      ],
+      "members_raw": [
+        "日",
+        "紫"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_日孛",
+      "category": "star_conjunction",
+      "name": "日孛",
+      "target": null,
+      "conditions": {},
+      "interpretation": "国外、昼生なら災い",
+      "source_text": "国外、昼生なら災い",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 8,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "sun",
+        "yuebo"
+      ],
+      "members_raw": [
+        "日",
+        "孛"
+      ],
+      "condition_mentions": [
+        "昼生"
+      ]
+    },
+    {
+      "id": "qz_conj_日羅",
+      "category": "star_conjunction",
+      "name": "日羅",
+      "target": null,
+      "conditions": {},
+      "interpretation": "不寿、身近貴",
+      "source_text": "不寿、身近貴",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 9,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_羅日"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "sun",
+        "rahu"
+      ],
+      "members_raw": [
+        "日",
+        "羅"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_日計",
+      "category": "star_conjunction",
+      "name": "日計",
+      "target": null,
+      "conditions": {},
+      "interpretation": "疾厄、腹部、脱財物",
+      "source_text": "疾厄、腹部、脱財物",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 10,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "sun",
+        "ketu"
+      ],
+      "members_raw": [
+        "日",
+        "計"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_月木",
+      "category": "star_conjunction",
+      "name": "月木",
+      "target": null,
+      "conditions": {},
+      "interpretation": "文学、貴人と会う、一星が旺なら大富貴",
+      "source_text": "文学、貴人と会う、一星が旺なら大富貴",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 11,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "moon",
+        "jupiter"
+      ],
+      "members_raw": [
+        "月",
+        "木"
+      ],
+      "condition_mentions": [
+        "旺"
+      ]
+    },
+    {
+      "id": "qz_conj_月火",
+      "category": "star_conjunction",
+      "name": "月火",
+      "target": null,
+      "conditions": {},
+      "interpretation": "性急、主星なら位有り、主星でなければ災い、遅鈍、富妻、嫁公侯、寿至中年",
+      "source_text": "性急、主星なら位有り、主星でなければ災い、遅鈍、富妻、嫁公侯、寿至中年",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 12,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "moon",
+        "mars"
+      ],
+      "members_raw": [
+        "月",
+        "火"
+      ],
+      "condition_mentions": [
+        "主星"
+      ]
+    },
+    {
+      "id": "qz_conj_月土",
+      "category": "star_conjunction",
+      "name": "月土",
+      "target": null,
+      "conditions": {},
+      "interpretation": "土が主星なら学問、夜生は微福、淫乱、主星でなければ災害、性鈍、母に疾あり",
+      "source_text": "土が主星なら学問、夜生は微福、淫乱、主星でなければ災害、性鈍、母に疾あり",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 13,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "moon",
+        "saturn"
+      ],
+      "members_raw": [
+        "月",
+        "土"
+      ],
+      "condition_mentions": [
+        "夜生",
+        "主星"
+      ]
+    },
+    {
+      "id": "qz_conj_月金",
+      "category": "star_conjunction",
+      "name": "月金",
+      "target": null,
+      "conditions": {},
+      "interpretation": "婦人、主星でなければ事は定まらず、晩婚、情欲、志気",
+      "source_text": "婦人、主星でなければ事は定まらず、晩婚、情欲、志気",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 14,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "moon",
+        "venus"
+      ],
+      "members_raw": [
+        "月",
+        "金"
+      ],
+      "condition_mentions": [
+        "主星"
+      ]
+    },
+    {
+      "id": "qz_conj_月水",
+      "category": "star_conjunction",
+      "name": "月水",
+      "target": null,
+      "conditions": {},
+      "interpretation": "温厚、和睦、水が主星なら文芸、議論、女性は厄",
+      "source_text": "温厚、和睦、水が主星なら文芸、議論、女性は厄",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 15,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "moon",
+        "mercury"
+      ],
+      "members_raw": [
+        "月",
+        "水"
+      ],
+      "condition_mentions": [
+        "主星"
+      ]
+    },
+    {
+      "id": "qz_conj_月紫",
+      "category": "star_conjunction",
+      "name": "月紫",
+      "target": null,
+      "conditions": {},
+      "interpretation": "衣食、医術",
+      "source_text": "衣食、医術",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 16,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "moon",
+        "ziqi"
+      ],
+      "members_raw": [
+        "月",
+        "紫"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_月孛",
+      "category": "star_conjunction",
+      "name": "月孛",
+      "target": null,
+      "conditions": {},
+      "interpretation": "夜生は訴訟、昼生はよい",
+      "source_text": "夜生は訴訟、昼生はよい",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 17,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "moon",
+        "yuebo"
+      ],
+      "members_raw": [
+        "月",
+        "孛"
+      ],
+      "condition_mentions": [
+        "昼生",
+        "夜生"
+      ]
+    },
+    {
+      "id": "qz_conj_月計",
+      "category": "star_conjunction",
+      "name": "月計",
+      "target": null,
+      "conditions": {},
+      "interpretation": "同上",
+      "source_text": "同上",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 18,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "象意欄は「同上」（直前の行を指すと思われるが、資料上の参照先は明記なし。解決しない）"
+      ],
+      "members": [
+        "moon",
+        "ketu"
+      ],
+      "members_raw": [
+        "月",
+        "計"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_月羅",
+      "category": "star_conjunction",
+      "name": "月羅",
+      "target": null,
+      "conditions": {},
+      "interpretation": "貧賎、妻子逃亡、昼生は刑法、夜生はよい",
+      "source_text": "貧賎、妻子逃亡、昼生は刑法、夜生はよい",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 19,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_羅月"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "moon",
+        "rahu"
+      ],
+      "members_raw": [
+        "月",
+        "羅"
+      ],
+      "condition_mentions": [
+        "昼生",
+        "夜生"
+      ]
+    },
+    {
+      "id": "qz_conj_木火",
+      "category": "star_conjunction",
+      "name": "木火",
+      "target": null,
+      "conditions": {},
+      "interpretation": "性快、忠直、文章、木が主星で昼生か火が主星で夜生で旺なら文武で名声",
+      "source_text": "性快、忠直、文章、木が主星で昼生か火が主星で夜生で旺なら文武で名声",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 20,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_火木"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "jupiter",
+        "mars"
+      ],
+      "members_raw": [
+        "木",
+        "火"
+      ],
+      "condition_mentions": [
+        "昼生",
+        "夜生",
+        "主星",
+        "旺"
+      ]
+    },
+    {
+      "id": "qz_conj_木土",
+      "category": "star_conjunction",
+      "name": "木土",
+      "target": null,
+      "conditions": {},
+      "interpretation": "文章、任官、主星で昼生は権威、夜生は給諫",
+      "source_text": "文章、任官、主星で昼生は権威、夜生は給諫",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 21,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_土木"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "jupiter",
+        "saturn"
+      ],
+      "members_raw": [
+        "木",
+        "土"
+      ],
+      "condition_mentions": [
+        "昼生",
+        "夜生",
+        "主星"
+      ]
+    },
+    {
+      "id": "qz_conj_木金",
+      "category": "star_conjunction",
+      "name": "木金",
+      "target": null,
+      "conditions": {},
+      "interpretation": "順行なら文芸、早く発福、名声",
+      "source_text": "順行なら文芸、早く発福、名声",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 22,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_金木"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "jupiter",
+        "venus"
+      ],
+      "members_raw": [
+        "木",
+        "金"
+      ],
+      "condition_mentions": [
+        "順行"
+      ]
+    },
+    {
+      "id": "qz_conj_木水",
+      "category": "star_conjunction",
+      "name": "木水",
+      "target": null,
+      "conditions": {},
+      "interpretation": "文章、主星ならば大貴、貴子あり",
+      "source_text": "文章、主星ならば大貴、貴子あり",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 23,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_水木"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "jupiter",
+        "mercury"
+      ],
+      "members_raw": [
+        "木",
+        "水"
+      ],
+      "condition_mentions": [
+        "主星"
+      ]
+    },
+    {
+      "id": "qz_conj_木紫",
+      "category": "star_conjunction",
+      "name": "木紫",
+      "target": null,
+      "conditions": {},
+      "interpretation": "若くして栄顕、妨害なし",
+      "source_text": "若くして栄顕、妨害なし",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 24,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_紫木"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "jupiter",
+        "ziqi"
+      ],
+      "members_raw": [
+        "木",
+        "紫"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_木孛",
+      "category": "star_conjunction",
+      "name": "木孛",
+      "target": null,
+      "conditions": {},
+      "interpretation": "驚事、憂い",
+      "source_text": "驚事、憂い",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 25,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_孛木"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "jupiter",
+        "yuebo"
+      ],
+      "members_raw": [
+        "木",
+        "孛"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_木羅",
+      "category": "star_conjunction",
+      "name": "木羅",
+      "target": null,
+      "conditions": {},
+      "interpretation": "陽宮なら福厚、陰宮なら悪死",
+      "source_text": "陽宮なら福厚、陰宮なら悪死",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 26,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "jupiter",
+        "rahu"
+      ],
+      "members_raw": [
+        "木",
+        "羅"
+      ],
+      "condition_mentions": [
+        "陽宮",
+        "陰宮"
+      ]
+    },
+    {
+      "id": "qz_conj_木計",
+      "category": "star_conjunction",
+      "name": "木計",
+      "target": null,
+      "conditions": {},
+      "interpretation": "進退不定",
+      "source_text": "進退不定",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 27,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "jupiter",
+        "ketu"
+      ],
+      "members_raw": [
+        "木",
+        "計"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_火土",
+      "category": "star_conjunction",
+      "name": "火土",
+      "target": null,
+      "conditions": {},
+      "interpretation": "凶悪、殺害、土が主星で昼生か火が主星で夜生は官位、逆で旺ならば役人、旺でなければ下っ端、病多い",
+      "source_text": "凶悪、殺害、土が主星で昼生か火が主星で夜生は官位、逆で旺ならば役人、旺でなければ下っ端、病多い",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 28,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_土火"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "mars",
+        "saturn"
+      ],
+      "members_raw": [
+        "火",
+        "土"
+      ],
+      "condition_mentions": [
+        "昼生",
+        "夜生",
+        "主星",
+        "旺",
+        "逆"
+      ]
+    },
+    {
+      "id": "qz_conj_火金",
+      "category": "star_conjunction",
+      "name": "火金",
+      "target": null,
+      "conditions": {},
+      "interpretation": "性急、婦人による損害、不婚、妻妾不良、淫欲",
+      "source_text": "性急、婦人による損害、不婚、妻妾不良、淫欲",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 29,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_金火"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "mars",
+        "venus"
+      ],
+      "members_raw": [
+        "火",
+        "金"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_火水",
+      "category": "star_conjunction",
+      "name": "火水",
+      "target": null,
+      "conditions": {},
+      "interpretation": "道芸、文章、逆行は多難、星の助がなければ眼疾",
+      "source_text": "道芸、文章、逆行は多難、星の助がなければ眼疾",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 30,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_水火"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "mars",
+        "mercury"
+      ],
+      "members_raw": [
+        "火",
+        "水"
+      ],
+      "condition_mentions": [
+        "逆行",
+        "逆"
+      ]
+    },
+    {
+      "id": "qz_conj_火木",
+      "category": "star_conjunction",
+      "name": "火木",
+      "target": null,
+      "conditions": {},
+      "interpretation": "大富貴、権威、兵刑、長命、陽宮なら薄寿",
+      "source_text": "大富貴、権威、兵刑、長命、陽宮なら薄寿",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 31,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_木火"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "mars",
+        "jupiter"
+      ],
+      "members_raw": [
+        "火",
+        "木"
+      ],
+      "condition_mentions": [
+        "陽宮"
+      ]
+    },
+    {
+      "id": "qz_conj_火紫",
+      "category": "star_conjunction",
+      "name": "火紫",
+      "target": null,
+      "conditions": {},
+      "interpretation": "文学、少子、昼生は火災",
+      "source_text": "文学、少子、昼生は火災",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 32,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_紫火"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "mars",
+        "ziqi"
+      ],
+      "members_raw": [
+        "火",
+        "紫"
+      ],
+      "condition_mentions": [
+        "昼生"
+      ]
+    },
+    {
+      "id": "qz_conj_火孛",
+      "category": "star_conjunction",
+      "name": "火孛",
+      "target": null,
+      "conditions": {},
+      "interpretation": "負傷、化膿",
+      "source_text": "負傷、化膿",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 33,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_孛火"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "mars",
+        "yuebo"
+      ],
+      "members_raw": [
+        "火",
+        "孛"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_火羅",
+      "category": "star_conjunction",
+      "name": "火羅",
+      "target": null,
+      "conditions": {},
+      "interpretation": "昼は凶、夜生は官位、無力なら火災",
+      "source_text": "昼は凶、夜生は官位、無力なら火災",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 34,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "mars",
+        "rahu"
+      ],
+      "members_raw": [
+        "火",
+        "羅"
+      ],
+      "condition_mentions": [
+        "夜生"
+      ]
+    },
+    {
+      "id": "qz_conj_火計",
+      "category": "star_conjunction",
+      "name": "火計",
+      "target": null,
+      "conditions": {},
+      "interpretation": "病死、昼生まれは火災、夜生は権威",
+      "source_text": "病死、昼生まれは火災、夜生は権威",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 35,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_計火"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "mars",
+        "ketu"
+      ],
+      "members_raw": [
+        "火",
+        "計"
+      ],
+      "condition_mentions": [
+        "昼生",
+        "夜生"
+      ]
+    },
+    {
+      "id": "qz_conj_土金",
+      "category": "star_conjunction",
+      "name": "土金",
+      "target": null,
+      "conditions": {},
+      "interpretation": "好色、財帛、婦人、軽薄、二母、少子、土が主星で昼生か金が主星で夜生なら官位",
+      "source_text": "好色、財帛、婦人、軽薄、二母、少子、土が主星で昼生か金が主星で夜生なら官位",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 36,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_金土"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "saturn",
+        "venus"
+      ],
+      "members_raw": [
+        "土",
+        "金"
+      ],
+      "condition_mentions": [
+        "昼生",
+        "夜生",
+        "主星"
+      ]
+    },
+    {
+      "id": "qz_conj_土水",
+      "category": "star_conjunction",
+      "name": "土水",
+      "target": null,
+      "conditions": {},
+      "interpretation": "不信、図画書籍、貴人を見る、主星なら禄位",
+      "source_text": "不信、図画書籍、貴人を見る、主星なら禄位",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 37,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_水土"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "saturn",
+        "mercury"
+      ],
+      "members_raw": [
+        "土",
+        "水"
+      ],
+      "condition_mentions": [
+        "主星"
+      ]
+    },
+    {
+      "id": "qz_conj_土木",
+      "category": "star_conjunction",
+      "name": "土木",
+      "target": null,
+      "conditions": {},
+      "interpretation": "重位、財帛",
+      "source_text": "重位、財帛",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 38,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_木土"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "saturn",
+        "jupiter"
+      ],
+      "members_raw": [
+        "土",
+        "木"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_土火",
+      "category": "star_conjunction",
+      "name": "土火",
+      "target": null,
+      "conditions": {},
+      "interpretation": "父母兄弟を妨げる、疾病",
+      "source_text": "父母兄弟を妨げる、疾病",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 39,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_火土"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "saturn",
+        "mars"
+      ],
+      "members_raw": [
+        "土",
+        "火"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_土紫",
+      "category": "star_conjunction",
+      "name": "土紫",
+      "target": null,
+      "conditions": {},
+      "interpretation": "昼生は貴顕、夜生は貧苦",
+      "source_text": "昼生は貴顕、夜生は貧苦",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 40,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_紫土"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "saturn",
+        "ziqi"
+      ],
+      "members_raw": [
+        "土",
+        "紫"
+      ],
+      "condition_mentions": [
+        "昼生",
+        "夜生"
+      ]
+    },
+    {
+      "id": "qz_conj_土孛",
+      "category": "star_conjunction",
+      "name": "土孛",
+      "target": null,
+      "conditions": {},
+      "interpretation": "高位",
+      "source_text": "高位",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 41,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_孛土"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "saturn",
+        "yuebo"
+      ],
+      "members_raw": [
+        "土",
+        "孛"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_土羅",
+      "category": "star_conjunction",
+      "name": "土羅",
+      "target": null,
+      "conditions": {},
+      "interpretation": "芸高強",
+      "source_text": "芸高強",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 42,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_羅土"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "saturn",
+        "rahu"
+      ],
+      "members_raw": [
+        "土",
+        "羅"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_土計",
+      "category": "star_conjunction",
+      "name": "土計",
+      "target": null,
+      "conditions": {},
+      "interpretation": "夜生は貧窮、餓死、徒配、刑名",
+      "source_text": "夜生は貧窮、餓死、徒配、刑名",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 43,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_計土"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "saturn",
+        "ketu"
+      ],
+      "members_raw": [
+        "土",
+        "計"
+      ],
+      "condition_mentions": [
+        "夜生"
+      ]
+    },
+    {
+      "id": "qz_conj_金水",
+      "category": "star_conjunction",
+      "name": "金水",
+      "target": null,
+      "conditions": {},
+      "interpretation": "文武、極貴、水が主星で昼生は文中成事、貴権、不生でなければ文中立身、職位、金が主星で昼生は武中成事、夜生は大貴、逆行は多難、渋滞",
+      "source_text": "文武、極貴、水が主星で昼生は文中成事、貴権、不生でなければ文中立身、職位、金が主星で昼生は武中成事、夜生は大貴、逆行は多難、渋滞",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 44,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_水金"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "venus",
+        "mercury"
+      ],
+      "members_raw": [
+        "金",
+        "水"
+      ],
+      "condition_mentions": [
+        "昼生",
+        "夜生",
+        "主星",
+        "逆行",
+        "逆"
+      ]
+    },
+    {
+      "id": "qz_conj_金木",
+      "category": "star_conjunction",
+      "name": "金木",
+      "target": null,
+      "conditions": {},
+      "interpretation": "大富貴、子孫多し、女性は殺夫",
+      "source_text": "大富貴、子孫多し、女性は殺夫",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 45,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_木金"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "venus",
+        "jupiter"
+      ],
+      "members_raw": [
+        "金",
+        "木"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_金火",
+      "category": "star_conjunction",
+      "name": "金火",
+      "target": null,
+      "conditions": {},
+      "interpretation": "妻を妨げる、妻不良、淫欲",
+      "source_text": "妻を妨げる、妻不良、淫欲",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 46,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_火金"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "venus",
+        "mars"
+      ],
+      "members_raw": [
+        "金",
+        "火"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_金土",
+      "category": "star_conjunction",
+      "name": "金土",
+      "target": null,
+      "conditions": {},
+      "interpretation": "難妻、財物を乱有、子女少なく婚姻難し",
+      "source_text": "難妻、財物を乱有、子女少なく婚姻難し",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 47,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_土金"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "venus",
+        "saturn"
+      ],
+      "members_raw": [
+        "金",
+        "土"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_金紫",
+      "category": "star_conjunction",
+      "name": "金紫",
+      "target": null,
+      "conditions": {},
+      "interpretation": "温和、志節、慈愛、仏道、事業",
+      "source_text": "温和、志節、慈愛、仏道、事業",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 48,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_紫金"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "venus",
+        "ziqi"
+      ],
+      "members_raw": [
+        "金",
+        "紫"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_金孛",
+      "category": "star_conjunction",
+      "name": "金孛",
+      "target": null,
+      "conditions": {},
+      "interpretation": "晩年は禄あり",
+      "source_text": "晩年は禄あり",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 49,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_孛金"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "venus",
+        "yuebo"
+      ],
+      "members_raw": [
+        "金",
+        "孛"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_金羅",
+      "category": "star_conjunction",
+      "name": "金羅",
+      "target": null,
+      "conditions": {},
+      "interpretation": "兵権",
+      "source_text": "兵権",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 50,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "venus",
+        "rahu"
+      ],
+      "members_raw": [
+        "金",
+        "羅"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_金計",
+      "category": "star_conjunction",
+      "name": "金計",
+      "target": null,
+      "conditions": {},
+      "interpretation": "落馬、中年にて死",
+      "source_text": "落馬、中年にて死",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 51,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "venus",
+        "ketu"
+      ],
+      "members_raw": [
+        "金",
+        "計"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_水木",
+      "category": "star_conjunction",
+      "name": "水木",
+      "target": null,
+      "conditions": {},
+      "interpretation": "智恵、文章、大人委用、貴子あり",
+      "source_text": "智恵、文章、大人委用、貴子あり",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 52,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_木水"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "mercury",
+        "jupiter"
+      ],
+      "members_raw": [
+        "水",
+        "木"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_水火",
+      "category": "star_conjunction",
+      "name": "水火",
+      "target": null,
+      "conditions": {},
+      "interpretation": "富、心平、奸悪",
+      "source_text": "富、心平、奸悪",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 53,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_火水"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "mercury",
+        "mars"
+      ],
+      "members_raw": [
+        "水",
+        "火"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_水金",
+      "category": "star_conjunction",
+      "name": "水金",
+      "target": null,
+      "conditions": {},
+      "interpretation": "食妻禄、富貴、若く栄顕、寿",
+      "source_text": "食妻禄、富貴、若く栄顕、寿",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 54,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_金水"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "mercury",
+        "venus"
+      ],
+      "members_raw": [
+        "水",
+        "金"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_水土",
+      "category": "star_conjunction",
+      "name": "水土",
+      "target": null,
+      "conditions": {},
+      "interpretation": "渋滞、言語不快、文章、昼生は吉、夜生は９０",
+      "source_text": "渋滞、言語不快、文章、昼生は吉、夜生は９０",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 55,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_土水"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "「夜生は９０」の意味は資料から読み取れない（疑義）",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "mercury",
+        "saturn"
+      ],
+      "members_raw": [
+        "水",
+        "土"
+      ],
+      "condition_mentions": [
+        "昼生",
+        "夜生"
+      ]
+    },
+    {
+      "id": "qz_conj_水紫",
+      "category": "star_conjunction",
+      "name": "水紫",
+      "target": null,
+      "conditions": {},
+      "interpretation": "財禄、寿",
+      "source_text": "財禄、寿",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 56,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_紫水"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "mercury",
+        "ziqi"
+      ],
+      "members_raw": [
+        "水",
+        "紫"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_水羅",
+      "category": "star_conjunction",
+      "name": "水羅",
+      "target": null,
+      "conditions": {},
+      "interpretation": "若くして病疾、衣食平平、霹靂の難",
+      "source_text": "若くして病疾、衣食平平、霹靂の難",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 57,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "mercury",
+        "rahu"
+      ],
+      "members_raw": [
+        "水",
+        "羅"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_水計",
+      "category": "star_conjunction",
+      "name": "水計",
+      "target": null,
+      "conditions": {},
+      "interpretation": "兵刃、賊盗の厄",
+      "source_text": "兵刃、賊盗の厄",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 58,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "mercury",
+        "ketu"
+      ],
+      "members_raw": [
+        "水",
+        "計"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_水孛",
+      "category": "star_conjunction",
+      "name": "水孛",
+      "target": null,
+      "conditions": {},
+      "interpretation": "貧賎",
+      "source_text": "貧賎",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 59,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_孛水"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "mercury",
+        "yuebo"
+      ],
+      "members_raw": [
+        "水",
+        "孛"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_紫日月",
+      "category": "star_conjunction",
+      "name": "紫日月",
+      "target": null,
+      "conditions": {},
+      "interpretation": "父母助力、貴人に近い",
+      "source_text": "父母助力、貴人に近い",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 60,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "ziqi",
+        "sun",
+        "moon"
+      ],
+      "members_raw": [
+        "紫",
+        "日",
+        "月"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_紫金",
+      "category": "star_conjunction",
+      "name": "紫金",
+      "target": null,
+      "conditions": {},
+      "interpretation": "貴人、女性に愛慕される、陥害なら妨害",
+      "source_text": "貴人、女性に愛慕される、陥害なら妨害",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 61,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_金紫"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "ziqi",
+        "venus"
+      ],
+      "members_raw": [
+        "紫",
+        "金"
+      ],
+      "condition_mentions": [
+        "陥"
+      ]
+    },
+    {
+      "id": "qz_conj_紫水",
+      "category": "star_conjunction",
+      "name": "紫水",
+      "target": null,
+      "conditions": {},
+      "interpretation": "声名、文章、吉宮なら大富貴",
+      "source_text": "声名、文章、吉宮なら大富貴",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 62,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_水紫"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "ziqi",
+        "mercury"
+      ],
+      "members_raw": [
+        "紫",
+        "水"
+      ],
+      "condition_mentions": [
+        "吉宮"
+      ]
+    },
+    {
+      "id": "qz_conj_紫土",
+      "category": "star_conjunction",
+      "name": "紫土",
+      "target": null,
+      "conditions": {},
+      "interpretation": "土地の役人、神仙を好む、長生",
+      "source_text": "土地の役人、神仙を好む、長生",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 63,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_土紫"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "ziqi",
+        "saturn"
+      ],
+      "members_raw": [
+        "紫",
+        "土"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_紫火",
+      "category": "star_conjunction",
+      "name": "紫火",
+      "target": null,
+      "conditions": {},
+      "interpretation": "心卑下、火星順行なら福禄広大",
+      "source_text": "心卑下、火星順行なら福禄広大",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 64,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_火紫"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "ziqi",
+        "mars"
+      ],
+      "members_raw": [
+        "紫",
+        "火"
+      ],
+      "condition_mentions": [
+        "順行"
+      ]
+    },
+    {
+      "id": "qz_conj_紫木",
+      "category": "star_conjunction",
+      "name": "紫木",
+      "target": null,
+      "conditions": {},
+      "interpretation": "大人の推挙、貴を顕す",
+      "source_text": "大人の推挙、貴を顕す",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 65,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_木紫"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "ziqi",
+        "jupiter"
+      ],
+      "members_raw": [
+        "紫",
+        "木"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_紫孛",
+      "category": "star_conjunction",
+      "name": "紫孛",
+      "target": null,
+      "conditions": {},
+      "interpretation": "深謀遠慮、兵機を掌握、高位",
+      "source_text": "深謀遠慮、兵機を掌握、高位",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 66,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_孛紫"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "ziqi",
+        "yuebo"
+      ],
+      "members_raw": [
+        "紫",
+        "孛"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_紫羅",
+      "category": "star_conjunction",
+      "name": "紫羅",
+      "target": null,
+      "conditions": {},
+      "interpretation": "器量広大、雄貴顕禄",
+      "source_text": "器量広大、雄貴顕禄",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 67,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_羅紫"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "ziqi",
+        "rahu"
+      ],
+      "members_raw": [
+        "紫",
+        "羅"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_紫計",
+      "category": "star_conjunction",
+      "name": "紫計",
+      "target": null,
+      "conditions": {},
+      "interpretation": "夜生は文学、昼生は凶険、成敗剋害事物",
+      "source_text": "夜生は文学、昼生は凶険、成敗剋害事物",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 68,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "ziqi",
+        "ketu"
+      ],
+      "members_raw": [
+        "紫",
+        "計"
+      ],
+      "condition_mentions": [
+        "昼生",
+        "夜生"
+      ]
+    },
+    {
+      "id": "qz_conj_孛金",
+      "category": "star_conjunction",
+      "name": "孛金",
+      "target": null,
+      "conditions": {},
+      "interpretation": "行為不良、妻も同じ、巫女",
+      "source_text": "行為不良、妻も同じ、巫女",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 69,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_金孛"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "yuebo",
+        "venus"
+      ],
+      "members_raw": [
+        "孛",
+        "金"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_孛水",
+      "category": "star_conjunction",
+      "name": "孛水",
+      "target": null,
+      "conditions": {},
+      "interpretation": "文により災い、虚訴、刑星、膿血、三九宮なら水死",
+      "source_text": "文により災い、虚訴、刑星、膿血、三九宮なら水死",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 70,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_水孛"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "yuebo",
+        "mercury"
+      ],
+      "members_raw": [
+        "孛",
+        "水"
+      ],
+      "condition_mentions": [
+        "三九宮"
+      ]
+    },
+    {
+      "id": "qz_conj_孛火",
+      "category": "star_conjunction",
+      "name": "孛火",
+      "target": null,
+      "conditions": {},
+      "interpretation": "善良だがうまくいかない、膿血",
+      "source_text": "善良だがうまくいかない、膿血",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 71,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_火孛"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "yuebo",
+        "mars"
+      ],
+      "members_raw": [
+        "孛",
+        "火"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_孛木",
+      "category": "star_conjunction",
+      "name": "孛木",
+      "target": null,
+      "conditions": {},
+      "interpretation": "才芸によくない、夭折、悖逆の徒",
+      "source_text": "才芸によくない、夭折、悖逆の徒",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 72,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_木孛"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "yuebo",
+        "jupiter"
+      ],
+      "members_raw": [
+        "孛",
+        "木"
+      ],
+      "condition_mentions": [
+        "逆"
+      ]
+    },
+    {
+      "id": "qz_conj_孛土",
+      "category": "star_conjunction",
+      "name": "孛土",
+      "target": null,
+      "conditions": {},
+      "interpretation": "夜生なら寿を損なう、傷財、刑害、聾唖",
+      "source_text": "夜生なら寿を損なう、傷財、刑害、聾唖",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 73,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_土孛"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "yuebo",
+        "saturn"
+      ],
+      "members_raw": [
+        "孛",
+        "土"
+      ],
+      "condition_mentions": [
+        "夜生"
+      ]
+    },
+    {
+      "id": "qz_conj_孛日月",
+      "category": "star_conjunction",
+      "name": "孛日月",
+      "target": null,
+      "conditions": {},
+      "interpretation": "権力、昼生は争訟、夜生は飲酒賭博",
+      "source_text": "権力、昼生は争訟、夜生は飲酒賭博",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 74,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "yuebo",
+        "sun",
+        "moon"
+      ],
+      "members_raw": [
+        "孛",
+        "日",
+        "月"
+      ],
+      "condition_mentions": [
+        "昼生",
+        "夜生"
+      ]
+    },
+    {
+      "id": "qz_conj_孛羅",
+      "category": "star_conjunction",
+      "name": "孛羅",
+      "target": null,
+      "conditions": {},
+      "interpretation": "廟旺なら権威",
+      "source_text": "廟旺なら権威",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 75,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_羅孛"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "yuebo",
+        "rahu"
+      ],
+      "members_raw": [
+        "孛",
+        "羅"
+      ],
+      "condition_mentions": [
+        "旺",
+        "廟"
+      ]
+    },
+    {
+      "id": "qz_conj_孛計",
+      "category": "star_conjunction",
+      "name": "孛計",
+      "target": null,
+      "conditions": {},
+      "interpretation": "姦淫、不廉潔、損疾",
+      "source_text": "姦淫、不廉潔、損疾",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 76,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "yuebo",
+        "ketu"
+      ],
+      "members_raw": [
+        "孛",
+        "計"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_孛紫",
+      "category": "star_conjunction",
+      "name": "孛紫",
+      "target": null,
+      "conditions": {},
+      "interpretation": "技巧聡明、技芸、文章、衣禄、権治",
+      "source_text": "技巧聡明、技芸、文章、衣禄、権治",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 77,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_紫孛"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "yuebo",
+        "ziqi"
+      ],
+      "members_raw": [
+        "孛",
+        "紫"
+      ],
+      "condition_mentions": []
+    },
+    {
+      "id": "qz_conj_羅日",
+      "category": "star_conjunction",
+      "name": "羅日",
+      "target": null,
+      "conditions": {},
+      "interpretation": "傷あり、剋陥、衣禄は長くない",
+      "source_text": "傷あり、剋陥、衣禄は長くない",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 78,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_日羅"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "rahu",
+        "sun"
+      ],
+      "members_raw": [
+        "羅",
+        "日"
+      ],
+      "condition_mentions": [
+        "陥"
+      ]
+    },
+    {
+      "id": "qz_conj_羅月",
+      "category": "star_conjunction",
+      "name": "羅月",
+      "target": null,
+      "conditions": {},
+      "interpretation": "刑害、旺廟なら災い軽い、訟厄、是非",
+      "source_text": "刑害、旺廟なら災い軽い、訟厄、是非",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 79,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_月羅"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "rahu",
+        "moon"
+      ],
+      "members_raw": [
+        "羅",
+        "月"
+      ],
+      "condition_mentions": [
+        "旺",
+        "廟"
+      ]
+    },
+    {
+      "id": "qz_conj_羅土",
+      "category": "star_conjunction",
+      "name": "羅土",
+      "target": null,
+      "conditions": {},
+      "interpretation": "廟旺で順行なら権威、高位、夜は忌む、土が逆行なら凶害",
+      "source_text": "廟旺で順行なら権威、高位、夜は忌む、土が逆行なら凶害",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 80,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_土羅"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "rahu",
+        "saturn"
+      ],
+      "members_raw": [
+        "羅",
+        "土"
+      ],
+      "condition_mentions": [
+        "旺",
+        "廟",
+        "順行",
+        "逆行",
+        "逆"
+      ]
+    },
+    {
+      "id": "qz_conj_羅孛",
+      "category": "star_conjunction",
+      "name": "羅孛",
+      "target": null,
+      "conditions": {},
+      "interpretation": "技巧智謀、廟旺なら食禄、背なら漂流の人",
+      "source_text": "技巧智謀、廟旺なら食禄、背なら漂流の人",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 81,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_孛羅"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "rahu",
+        "yuebo"
+      ],
+      "members_raw": [
+        "羅",
+        "孛"
+      ],
+      "condition_mentions": [
+        "旺",
+        "廟",
+        "背"
+      ]
+    },
+    {
+      "id": "qz_conj_羅紫",
+      "category": "star_conjunction",
+      "name": "羅紫",
+      "target": null,
+      "conditions": {},
+      "interpretation": "旺なら清職、禄名高い、旺でなければ名を興し、寿は長く、福資は妙",
+      "source_text": "旺なら清職、禄名高い、旺でなければ名を興し、寿は長く、福資は妙",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 82,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_紫羅"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "rahu",
+        "ziqi"
+      ],
+      "members_raw": [
+        "羅",
+        "紫"
+      ],
+      "condition_mentions": [
+        "旺"
+      ]
+    },
+    {
+      "id": "qz_conj_計木紫",
+      "category": "star_conjunction",
+      "name": "計木紫",
+      "target": null,
+      "conditions": {},
+      "interpretation": "旺なら顕官清俊の任、財帛、子孫繁栄",
+      "source_text": "旺なら顕官清俊の任、財帛、子孫繁栄",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 83,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "ketu",
+        "jupiter",
+        "ziqi"
+      ],
+      "members_raw": [
+        "計",
+        "木",
+        "紫"
+      ],
+      "condition_mentions": [
+        "旺"
+      ]
+    },
+    {
+      "id": "qz_conj_計金孛",
+      "category": "star_conjunction",
+      "name": "計金孛",
+      "target": null,
+      "conditions": {},
+      "interpretation": "夜生で旺なら武職貴顕、文科顕禄、昼生は犯刑、不忠良",
+      "source_text": "夜生で旺なら武職貴顕、文科顕禄、昼生は犯刑、不忠良",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 84,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "ketu",
+        "venus",
+        "yuebo"
+      ],
+      "members_raw": [
+        "計",
+        "金",
+        "孛"
+      ],
+      "condition_mentions": [
+        "昼生",
+        "夜生",
+        "旺"
+      ]
+    },
+    {
+      "id": "qz_conj_計土",
+      "category": "star_conjunction",
+      "name": "計土",
+      "target": null,
+      "conditions": {},
+      "interpretation": "昼生は財利、夜生は経営渋滞",
+      "source_text": "昼生は財利、夜生は経営渋滞",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 85,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_土計"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "ketu",
+        "saturn"
+      ],
+      "members_raw": [
+        "計",
+        "土"
+      ],
+      "condition_mentions": [
+        "昼生",
+        "夜生"
+      ]
+    },
+    {
+      "id": "qz_conj_計日月",
+      "category": "star_conjunction",
+      "name": "計日月",
+      "target": null,
+      "conditions": {},
+      "interpretation": "刑剋、傷父母、成敗多い、主星がなければ困窮下賎、不常",
+      "source_text": "刑剋、傷父母、成敗多い、主星がなければ困窮下賎、不常",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 86,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある"
+      ],
+      "members": [
+        "ketu",
+        "sun",
+        "moon"
+      ],
+      "members_raw": [
+        "計",
+        "日",
+        "月"
+      ],
+      "condition_mentions": [
+        "主星"
+      ]
+    },
+    {
+      "id": "qz_conj_計火",
+      "category": "star_conjunction",
+      "name": "計火",
+      "target": null,
+      "conditions": {},
+      "interpretation": "夜生で廟旺なら生殺威権、兵符可詔、昼生は凶曜",
+      "source_text": "夜生で廟旺なら生殺威権、兵符可詔、昼生は凶曜",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．七政四餘の同宮",
+        "table": 15,
+        "row": 87,
+        "column": "象意",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [
+        "qz_conj_火計"
+      ],
+      "notes": [
+        "資料に「近ければその意味は増しますし、遠ければその意味は薄くなります」とある",
+        "星の順序が逆の別項目があり、内容が異なる（統合しない）"
+      ],
+      "members": [
+        "ketu",
+        "mars"
+      ],
+      "members_raw": [
+        "計",
+        "火"
+      ],
+      "condition_mentions": [
+        "昼生",
+        "夜生",
+        "旺",
+        "廟"
+      ]
+    }
+  ]
+}
