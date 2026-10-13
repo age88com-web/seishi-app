@@ -1,0 +1,3569 @@
+{
+  "schema_version": "1.0.0",
+  "records": [
+    {
+      "id": "sun_branch_子",
+      "star": "sun",
+      "app_label": "日",
+      "classical_name": "太陽",
+      "category": "branch",
+      "target": "子",
+      "source_heading": "太陽入宮、樞要歌",
+      "source_text": "日子：天宜本是太陽星，遇夜生人卻有情。若在日生光太昧，祿高到底總無成。\n夜生人主吉，日生人無成。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3592-3612"
+      },
+      "modern_japanese": "太陽が子宮に入ると「天宜」といい、夜生ではかえって有情で吉とする。昼生では光が暗く、たとえ禄が高くても最後まで成就しにくい。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "sun_branch_丑",
+      "star": "sun",
+      "app_label": "日",
+      "classical_name": "太陽",
+      "category": "branch",
+      "target": "丑",
+      "source_heading": "太陽入宮、樞要歌",
+      "source_text": "日丑：太陽居丑號天幽，此位元來屬斗牛。若是照臨官祿地，管教一世儘優游。\n丑宮陰靜主人清閑之象。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3592-3612"
+      },
+      "modern_japanese": "太陽が丑宮に入ると「天幽」といい、斗・牛の地に属する。官禄の地を照らすなら、一生安穏に過ごす象となる。丑宮は陰静で、清閑を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "sun_branch_寅",
+      "star": "sun",
+      "app_label": "日",
+      "classical_name": "太陽",
+      "category": "branch",
+      "target": "寅",
+      "source_heading": "太陽入宮、樞要歌",
+      "source_text": "日寅：日居人馬號天桑，光照東升遍萬方。祿厚福高名必顯，也應補袞坐朝堂。\n有日出扶桑之象，日之喜宮也。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3592-3612"
+      },
+      "modern_japanese": "太陽が寅宮に入ると「天桑」といい、東から昇る光が万方を照らす象となる。禄が厚く福も高く、名声が顕れ、朝廷で君主を補佐する象を持つ。日の出扶桑の象で、太陽の喜宮である。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "sun_branch_卯",
+      "star": "sun",
+      "app_label": "日",
+      "classical_name": "太陽",
+      "category": "branch",
+      "target": "卯",
+      "source_heading": "太陽入宮、樞要歌",
+      "source_text": "日卯：太陽出卯曰天烏，稟性英明大丈夫。多藝多才非俗士，一生榮顯祿盈餘。\n卯乃日出之門戶，主人俊偉。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3592-3612"
+      },
+      "modern_japanese": "太陽が卯宮に入ると「天烏」といい、英明で堂々とした人物の象となる。多芸多才で平凡ではなく、一生を通じて栄え、禄も豊かになる。卯は日の出の門で、俊偉を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "sun_branch_辰",
+      "star": "sun",
+      "app_label": "日",
+      "classical_name": "太陽",
+      "category": "branch",
+      "target": "辰",
+      "source_heading": "太陽入宮、樞要歌",
+      "source_text": "日辰：日出龍門角亢方，變名天爽最輝光。修文必定登科甲，管取聲名達廟堂。\n日到辰宮有光明，顯達之象。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3592-3612"
+      },
+      "modern_japanese": "太陽が辰宮に入ると「天爽」といい、光が最も輝く象となる。学問・文章を修めれば科挙に登り、名声が朝廷に達する。辰宮の太陽は光明があり、顕達を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "sun_branch_巳",
+      "star": "sun",
+      "app_label": "日",
+      "classical_name": "太陽",
+      "category": "branch",
+      "target": "巳",
+      "source_heading": "太陽入宮、樞要歌",
+      "source_text": "日巳：日臨雙女號幽微，祿厚權高勢位巍。年少功名即顯達，藍衣換取綠袍歸。\n日乘旺於巳故得顯達。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3592-3612"
+      },
+      "modern_japanese": "太陽が巳宮に入ると「幽微」といい、禄が厚く権力と地位も高い。若くして功名を得て顕達し、官位を進める象となる。太陽が巳で乗旺するためである。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "sun_branch_午",
+      "star": "sun",
+      "app_label": "日",
+      "classical_name": "太陽",
+      "category": "branch",
+      "target": "午",
+      "source_heading": "太陽入宮、樞要歌",
+      "source_text": "日午：日到離明曰少微，此為君位眾星依。縱逢惡曜同宮分，也要還他著錦衣。\n午為人君日之正位，故諸星不敢犯。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3592-3612"
+      },
+      "modern_japanese": "太陽が午宮に入ると「少微」といい、君位であって諸星がこれに従う。たとえ悪曜が同宮しても、なお栄達の象を失いにくい。午は君主を象徴する太陽の正位である。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "sun_branch_未",
+      "star": "sun",
+      "app_label": "日",
+      "classical_name": "太陽",
+      "category": "branch",
+      "target": "未",
+      "source_heading": "太陽入宮、樞要歌",
+      "source_text": "日未：太陽臨未號天輝，日月交光世所希。設若太陰無落陷，君臣慶會管樞機。\n未乃月之正位日到，此日月相會主吉。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3592-3612"
+      },
+      "modern_japanese": "太陽が未宮に入ると「天輝」といい、日月が光を交える稀な象となる。太陰が落陷していなければ、君臣の慶会となり、枢要な地位に就く象を持つ。未は月の正位で、ここでの日月相会を吉とする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "sun_branch_申",
+      "star": "sun",
+      "app_label": "日",
+      "classical_name": "太陽",
+      "category": "branch",
+      "target": "申",
+      "source_heading": "太陽入宮、樞要歌",
+      "source_text": "日申：天暗元來屬在申，太陽到此晦光明。若還誕晝逢斯曜，作事須教百不成。\n申屬陰日已西沉。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3592-3612"
+      },
+      "modern_japanese": "太陽が申宮に入ると「天暗」といい、光明が衰える。昼生でこれに当たると、物事が成就しにくい。申は陰に属し、太陽が西に沈み始めるためである。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "sun_branch_酉",
+      "star": "sun",
+      "app_label": "日",
+      "classical_name": "太陽",
+      "category": "branch",
+      "target": "酉",
+      "source_heading": "太陽入宮、樞要歌",
+      "source_text": "日酉：陽到金牛號九空，夜生雖夭卻亨通。日生用事俱無力，若變刑囚不善終。\n酉為金牛，日到此無光，作事不成。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3592-3612"
+      },
+      "modern_japanese": "太陽が酉宮に入ると「九空」といい、夜生では弱いながらも通じる面があるが、昼生では働きが弱い。刑・囚に変化すれば終わりも良くない。酉では太陽の光が失われ、物事が成りにくい。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "sun_branch_戌",
+      "star": "sun",
+      "app_label": "日",
+      "classical_name": "太陽",
+      "category": "branch",
+      "target": "戌",
+      "source_heading": "太陽入宮、樞要歌",
+      "source_text": "日戌：日臨戌位曰天樞，此地元來是旺居。更得太陰相會照，一生榮貴福盈餘。\n日入廟旺之地主榮貴。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3592-3612"
+      },
+      "modern_japanese": "太陽が戌宮に入ると「天枢」といい、もともと旺の地である。さらに太陰と会照すれば、一生栄貴で福も豊かになる。太陽が廟旺の地に入るため、栄貴を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "sun_branch_亥",
+      "star": "sun",
+      "app_label": "日",
+      "classical_name": "太陽",
+      "category": "branch",
+      "target": "亥",
+      "source_heading": "太陽入宮、樞要歌",
+      "source_text": "日亥：太陽光照爍天門，玉璽為名象屬君。倘若化為官祿曜，少年平步立功勳。\n亥為天門日朝天矣，主人聰明英傑。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3592-3612"
+      },
+      "modern_japanese": "太陽が亥宮に入ると「玉璽」といい、天門を照らして君主の象を示す。官禄曜に変化すれば、若くして順調に進み功績を立てる。聡明で英傑の象を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "moon_branch_子",
+      "star": "moon",
+      "app_label": "月",
+      "classical_name": "太陰",
+      "category": "branch",
+      "target": "子",
+      "source_heading": "太陰入宮、樞要歌",
+      "source_text": "月子：月居子上號天姬，女貴男榮百事宜。若是夜生深有慶，日生還恐福傾危。\n月在子宮化為天姬，星夜生人主貴。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3722-3747"
+      },
+      "modern_japanese": "太陰が子宮に入ると「天姫」といい、女性は貴く、男性は栄え、諸事に宜しい。夜生では特に慶びが深いが、昼生では福が傾くことを恐れる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "moon_branch_丑",
+      "star": "moon",
+      "app_label": "月",
+      "classical_name": "太陰",
+      "category": "branch",
+      "target": "丑",
+      "source_heading": "太陰入宮、樞要歌",
+      "source_text": "月丑：太陰居丑曰天機，掛影扶疏耀素輝。巳癸出人如得此，官高祿厚更榮閭。\n天機星主人榮貴。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3722-3747"
+      },
+      "modern_japanese": "太陰が丑宮に入ると「天機」といい、澄んだ月光が輝く象となる。己・癸年生まれがこれに当たれば、官位が高く禄も厚く、家門も栄える。天機星は栄貴を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "moon_branch_寅",
+      "star": "moon",
+      "app_label": "月",
+      "classical_name": "太陰",
+      "category": "branch",
+      "target": "寅",
+      "source_heading": "太陰入宮、樞要歌",
+      "source_text": "月寅：太陰寅上名天昧，白日生人光太晦。在望如逢計火侵，為人穢濁還多退。\n天昧星主人有禍害。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3722-3747"
+      },
+      "modern_japanese": "太陰が寅宮に入ると「天昧」といい、昼生では月光が非常に暗い。満月期であっても計都や火星に侵されれば、濁りが多く後退の象となる。天昧星は禍害を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "moon_branch_卯",
+      "star": "moon",
+      "app_label": "月",
+      "classical_name": "太陰",
+      "category": "branch",
+      "target": "卯",
+      "source_heading": "太陰入宮、樞要歌",
+      "source_text": "月卯：月臨卯上號天琮，與日相逢最吉通。嫌怕計都同此地，夜生反吉變為凶。\n天琮星主吉卯為月之喜宮。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3722-3747"
+      },
+      "modern_japanese": "太陰が卯宮に入ると「天琮」といい、太陽と会うことを最も吉とする。計都が同宮するのを嫌い、夜生の吉意も凶へ変わる。卯は月の喜宮で、天琮星は吉を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "moon_branch_辰",
+      "star": "moon",
+      "app_label": "月",
+      "classical_name": "太陰",
+      "category": "branch",
+      "target": "辰",
+      "source_heading": "太陰入宮、樞要歌",
+      "source_text": "月辰：太陰辰位曰天璿，金若同宮瑞自然。更得孛星相會照，為官為福又長年。\n天璿星主官顯。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3722-3747"
+      },
+      "modern_japanese": "太陰が辰宮に入ると「天璿」といい、金星と同宮すれば自然に瑞祥が生じる。さらに月孛が会照しても、官位・福・長寿の象を持つとする。天璿星は官位の顕達を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "moon_branch_巳",
+      "star": "moon",
+      "app_label": "月",
+      "classical_name": "太陰",
+      "category": "branch",
+      "target": "巳",
+      "source_heading": "太陰入宮、樞要歌",
+      "source_text": "月巳：數當陽極漸陰生，玉鹿天星月化成。珠玉不特多蓄積，更兼官顯有聲名。\n玉鹿星主顯達。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3722-3747"
+      },
+      "modern_japanese": "太陰が巳宮に入ると「玉鹿」といい、陽が極まって陰が生じ始める位置とする。財宝を多く蓄えるだけでなく、官位も顕れ、名声を得る。玉鹿星は顕達を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "moon_branch_午",
+      "star": "moon",
+      "app_label": "月",
+      "classical_name": "太陰",
+      "category": "branch",
+      "target": "午",
+      "source_heading": "太陰入宮、樞要歌",
+      "source_text": "月午：離宮逢月號天衣，此位朝居倍有輝。設若太陽同此位，身榮衣錦故鄉歸。\n太陽太陰同此，宮主享福。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3722-3747"
+      },
+      "modern_japanese": "太陰が午宮に入ると「天衣」といい、朝居の位で輝きを増す。太陽も同宮すれば、身が栄え、故郷に錦を飾る象となる。日月がここで同宮するのは享福を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "moon_branch_未",
+      "star": "moon",
+      "app_label": "月",
+      "classical_name": "太陰",
+      "category": "branch",
+      "target": "未",
+      "source_heading": "太陰入宮、樞要歌",
+      "source_text": "月未：太陰在未號天圭，千載欣逢明聖時。月孛更來同會照，蟾宮折取最高枝。\n未乃月之樂宮，化天圭主大貴。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3722-3747"
+      },
+      "modern_japanese": "太陰が未宮に入ると「天圭」といい、明君の時代に巡り会うような吉象とする。月孛がさらに会照すれば、科挙で最高位を得る象となる。未は月の楽宮で、天圭に化して大貴を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "moon_branch_申",
+      "star": "moon",
+      "app_label": "月",
+      "classical_name": "太陰",
+      "category": "branch",
+      "target": "申",
+      "source_heading": "太陰入宮、樞要歌",
+      "source_text": "月申：太陰晉分曰天潢，與水同居福祿昌。縱有孛星相照破，也須榮貴富而康。\n月化天潢主大富貴。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3722-3747"
+      },
+      "modern_japanese": "太陰が申宮に入ると「天潢」といい、水星と同宮すれば福禄が盛んとなる。月孛の照破があっても、なお栄貴・富裕・安康の象を持つ。天潢は大富貴を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "moon_branch_酉",
+      "star": "moon",
+      "app_label": "月",
+      "classical_name": "太陰",
+      "category": "branch",
+      "target": "酉",
+      "source_heading": "太陰入宮、樞要歌",
+      "source_text": "月酉：天柱之星屬太陰，喜居酉位福原深。夜生管取多祥泰，一世優游禍不侵。\n酉乃月之乘旺，化天柱星主人富厚。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3722-3747"
+      },
+      "modern_japanese": "太陰が酉宮に入ると「天柱」といい、酉に居ることを喜び、福が深い。夜生では祥泰が多く、一生安穏で災いが侵しにくい。酉は月の乗旺の地で、富厚を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "moon_branch_戌",
+      "star": "moon",
+      "app_label": "月",
+      "classical_name": "太陰",
+      "category": "branch",
+      "target": "戌",
+      "source_heading": "太陰入宮、樞要歌",
+      "source_text": "月戌：月臨戌上名天輔，喜到奎婁為妙度。玉兔揚輝倍有情，禹門快躍朝天步。\n戌乃月入廟又化天輔星，主大貴。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3722-3747"
+      },
+      "modern_japanese": "太陰が戌宮に入ると「天輔」といい、奎・婁の度に至ることを喜ぶ。月光が輝き、有情の象が強く、急速に昇進する。戌では月が入廟し、天輔に化して大貴を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "moon_branch_亥",
+      "star": "moon",
+      "app_label": "月",
+      "classical_name": "太陰",
+      "category": "branch",
+      "target": "亥",
+      "source_heading": "太陰入宮、樞要歌",
+      "source_text": "月亥：天？變化太陰星，散彩中宵分外明。吉宿同宮宜貴顯，少年及第播清名。\n月到亥宮化為天？星，主少年科第大顯。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3722-3747"
+      },
+      "modern_japanese": "太陰が亥宮に入ると、原文では星名の一字が欠けており「天？」と記される。夜半に光彩がひときわ明るく、吉宿と同宮すれば貴顕に宜しく、若くして科挙に及第して清名を広める。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "jupiter_branch_子",
+      "star": "jupiter",
+      "app_label": "木",
+      "classical_name": "歲星",
+      "category": "branch",
+      "target": "子",
+      "source_heading": "歲星入宮、樞要歌",
+      "source_text": "木子：地劫為名最不情，木星到此打齊瓶。化為吉曜猶無害，若變凶星不得生。\n木到子宮謂之木打寶瓶。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2860-2885"
+      },
+      "modern_japanese": "木星が子宮に入ると「地劫」と名づけられ、「木打宝瓶」ともいう。吉曜に変化していれば大きな害はないが、凶星に変化すると生育・発展が妨げられる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "jupiter_branch_丑",
+      "star": "jupiter",
+      "app_label": "木",
+      "classical_name": "歲星",
+      "category": "branch",
+      "target": "丑",
+      "source_heading": "歲星入宮、樞要歌",
+      "source_text": "木丑：木德之星拱北斗，名為天廕最優游。功名年少須成就，利祿何須用力求。\n斗木獬升殿。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2860-2885"
+      },
+      "modern_japanese": "木星が丑宮に入ると「天蔭」といい、ゆったりと恵まれた象となる。若いうちに功名を成し、利益や禄にも恵まれやすい。斗宿の木度にあたり、昇殿の意を持つ。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "jupiter_branch_寅",
+      "star": "jupiter",
+      "app_label": "木",
+      "classical_name": "歲星",
+      "category": "branch",
+      "target": "寅",
+      "source_heading": "歲星入宮、樞要歌",
+      "source_text": "木寅：木星寅位曰天淵，偏愛逢生樂自然。甲丙生人如值此，盡教福祿慶雙全。\n寅乃木之祿位。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2860-2885"
+      },
+      "modern_japanese": "木星が寅宮に入ると「天淵」といい、生を得ることを喜ぶ。甲・丙年生まれがこれに当たれば、福と禄の両方に恵まれる。寅は木星の禄位である。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "jupiter_branch_卯",
+      "star": "jupiter",
+      "app_label": "木",
+      "classical_name": "歲星",
+      "category": "branch",
+      "target": "卯",
+      "source_heading": "歲星入宮、樞要歌",
+      "source_text": "木卯：木入幽州號太微，背中反旺卻為奇。最防變作刑囚曜，命若逢之大不宜。\n卯乃乘旺之宮。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2860-2885"
+      },
+      "modern_japanese": "木星が卯宮に入ると「太微」といい、背の位置でありながらかえって旺となるのを奇とする。ただし刑・囚の変曜となることを最も警戒し、命にこれを得れば不宜とする。卯は木星の乗旺の宮である。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "jupiter_branch_辰",
+      "star": "jupiter",
+      "app_label": "木",
+      "classical_name": "歲星",
+      "category": "branch",
+      "target": "辰",
+      "source_heading": "歲星入宮、樞要歌",
+      "source_text": "木辰：木到辰宮號玉龍，與金同位最亨通。丙干之命如逢此，名顯官高祿更豐。\n木金辰宮謂之金木逢龍。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2860-2885"
+      },
+      "modern_japanese": "木星が辰宮に入ると「玉龍」といい、金星と同位することを特に吉とする。丙干の命がこれに当たれば、名声が上がり、官位が高く、禄も豊かになる。木星と金星が辰宮で会うことを「金木逢龍」という。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "jupiter_branch_巳",
+      "star": "jupiter",
+      "app_label": "木",
+      "classical_name": "歲星",
+      "category": "branch",
+      "target": "巳",
+      "source_heading": "歲星入宮、樞要歌",
+      "source_text": "木巳：木居巳上名天福，與水相逢須富足。丙庚之人如遇此，文章年少觀場屋。\n木化天福星、主富貴。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2860-2885"
+      },
+      "modern_japanese": "木星が巳宮に入ると「天福」といい、水星と会えば富足の象となる。丙・庚年生まれがこれに当たれば、若いうちから文章・科挙方面に縁がある。木星が天福に化し、富貴を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "jupiter_branch_午",
+      "star": "jupiter",
+      "app_label": "木",
+      "classical_name": "歲星",
+      "category": "branch",
+      "target": "午",
+      "source_heading": "歲星入宮、樞要歌",
+      "source_text": "木午：歲星午上號天德，一世優游無否塞。更得太陽相會行，家財倍萬珍珠積。\n天德星主清閑。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2860-2885"
+      },
+      "modern_japanese": "木星が午宮に入ると「天徳」といい、一生を通じて安穏で、行き詰まりが少ない。さらに太陽と会えば、家財が大いに増える。天徳星は清閑を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "jupiter_branch_未",
+      "star": "jupiter",
+      "app_label": "木",
+      "classical_name": "歲星",
+      "category": "branch",
+      "target": "未",
+      "source_heading": "歲星入宮、樞要歌",
+      "source_text": "木未：木入秦州號玉班，一生享福更平安。壽高福厚多榮貴，決入朝中作顯官。\n木化玉班星、主入朝班之貴。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2860-2885"
+      },
+      "modern_japanese": "木星が未宮に入ると「玉班」といい、一生福を受けて平安となる。長寿で福が厚く、栄貴に恵まれ、朝廷に入って顕官となる象を持つ。木星が玉班に化し、朝班に列する貴を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "jupiter_branch_申",
+      "star": "jupiter",
+      "app_label": "木",
+      "classical_name": "歲星",
+      "category": "branch",
+      "target": "申",
+      "source_heading": "歲星入宮、樞要歌",
+      "source_text": "木申：木居申上號天鸞，莫作尋常俗命看。男子逢之應紫綬，女人遇此帶金冠。\n天鸞星主人功名富貴。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2860-2885"
+      },
+      "modern_japanese": "木星が申宮に入ると「天鸞」といい、平凡な命として見てはならない。男性なら高位・顕職、女性なら尊貴の象とする。天鸞星は功名と富貴を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "jupiter_branch_酉",
+      "star": "jupiter",
+      "app_label": "木",
+      "classical_name": "歲星",
+      "category": "branch",
+      "target": "酉",
+      "source_heading": "歲星入宮、樞要歌",
+      "source_text": "木酉：木居酉上號天囚，徒配刑流出遠州。若遇火星同到此，少年暴卒命難留。\n酉宮屬金木被傷。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2860-2885"
+      },
+      "modern_japanese": "木星が酉宮に入ると「天囚」といい、刑罰・流罪・遠方への配流の象を持つ。火星も同宮すれば、若年の急死を警戒する。酉宮は金に属し、木星が傷つけられるためである。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "jupiter_branch_戌",
+      "star": "jupiter",
+      "app_label": "木",
+      "classical_name": "歲星",
+      "category": "branch",
+      "target": "戌",
+      "source_heading": "歲星入宮、樞要歌",
+      "source_text": "木戌：木為鼓舞少年孤，男剋妻兮女剋夫。廣覽詩書并藝術，飄蓬四海作生圖。\n化此星主克陷。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2860-2885"
+      },
+      "modern_japanese": "木星が戌宮に入ると「鼓舞」となり、若年に孤独の象がある。男性は妻、女性は夫への剋を主る一方、詩書や芸術に広く通じる。四方を漂泊して生計を立てる象があり、この星への変化は剋陷を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "jupiter_branch_亥",
+      "star": "jupiter",
+      "app_label": "木",
+      "classical_name": "歲星",
+      "category": "branch",
+      "target": "亥",
+      "source_heading": "歲星入宮、樞要歌",
+      "source_text": "木亥：木臨亥上號中台，滿腹當為翰苑才。若是為官并福曜，少年登第作元魁。\n亥乃木之長生廟樂旺之地。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2860-2885"
+      },
+      "modern_japanese": "木星が亥宮に入ると「中台」といい、学才に富み、翰苑の才を備える。官星・福曜として働けば、若くして科挙に登第し首席級となる象がある。亥は木星の長生・廟・楽・旺の地である。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mars_branch_子",
+      "star": "mars",
+      "app_label": "火",
+      "classical_name": "熒惑",
+      "category": "branch",
+      "target": "子",
+      "source_heading": "熒惑入宮、樞要歌",
+      "source_text": "火子：天坎之星到寶瓶，元來是火化為名。萬般施計皆沉滯，多難多災大不情。\n子宮火化為天坎星，極主遲滯。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2998-3023"
+      },
+      "modern_japanese": "火星が子宮に入ると「天坎」といい、物事を計画しても停滞しやすく、困難や災いが多い象となる。子宮の火星は天坎星に化し、特に遅滞を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mars_branch_丑",
+      "star": "mars",
+      "app_label": "火",
+      "classical_name": "熒惑",
+      "category": "branch",
+      "target": "丑",
+      "source_heading": "熒惑入宮、樞要歌",
+      "source_text": "火丑：火星牛斗名黃道，為福為祥誠是好。那更土星相會行，夫妻保守期偕老。\n丑宮火化為黃道。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2998-3023"
+      },
+      "modern_japanese": "火星が丑宮に入ると「黄道」といい、福と祥をもたらす良い象とする。さらに土星と会えば、夫婦が互いを守り、長く連れ添う象となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mars_branch_寅",
+      "star": "mars",
+      "app_label": "火",
+      "classical_name": "熒惑",
+      "category": "branch",
+      "target": "寅",
+      "source_heading": "熒惑入宮、樞要歌",
+      "source_text": "火寅；火居人馬號天升，起處逢生福倍增。更得木星同會此，多才多藝又多能。\n寅為人馬火化天昇星。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2998-3023"
+      },
+      "modern_japanese": "火星が寅宮に入ると「天昇」といい、生を得るため福が増す。さらに木星と同宮すれば、多才多芸で能力に富む。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mars_branch_卯",
+      "star": "mars",
+      "app_label": "火",
+      "classical_name": "熒惑",
+      "category": "branch",
+      "target": "卯",
+      "source_heading": "熒惑入宮、樞要歌",
+      "source_text": "火卯：火到卯宮名天乙，貨財充足庫箱實。若還滿用入垣宮，年少成名登桂籍。\n如一星有三用謂之滿用。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2998-3023"
+      },
+      "modern_japanese": "火星が卯宮に入ると「天乙」といい、財貨が満ち、蓄えが豊かになる。さらに満用となり入垣すれば、若くして名を成し、科挙に登第する象となる。一星が三つの用を兼ねることを満用という。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mars_branch_辰",
+      "star": "mars",
+      "app_label": "火",
+      "classical_name": "熒惑",
+      "category": "branch",
+      "target": "辰",
+      "source_heading": "熒惑入宮、樞要歌",
+      "source_text": "火辰：天滯居辰是火星，一生用事百無成。若還金宿來相會，不夭須當犯國刑。\n火化天滯星，主作事不成。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2998-3023"
+      },
+      "modern_japanese": "火星が辰宮に入ると「天滞」といい、一生を通じて事を行っても成就しにくい。金星と会えば、夭折しなくても刑罰に触れる象を警戒する。天滞星は物事の不成就を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mars_branch_巳",
+      "star": "mars",
+      "app_label": "火",
+      "classical_name": "熒惑",
+      "category": "branch",
+      "target": "巳",
+      "source_heading": "熒惑入宮、樞要歌",
+      "source_text": "火巳：火居雙女曰天刑，與水同行最不寧。若變刑 囚千里外，不然一世苦伶仃。\n巳宮屬水，故火受剋，主人奔蕩。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2998-3023"
+      },
+      "modern_japanese": "火星が巳宮に入ると「天刑」といい、水星と同行すると特に不安定となる。刑・囚に変化すれば遠方への流離を示し、そうでなくても孤独や苦労の象を持つ。巳宮は水に属するため火が剋され、奔波を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mars_branch_午",
+      "star": "mars",
+      "app_label": "火",
+      "classical_name": "熒惑",
+      "category": "branch",
+      "target": "午",
+      "source_heading": "熒惑入宮、樞要歌",
+      "source_text": "火午：火居午位名天赫，此位朝君無戰剋。不為利祿自充盈，必定為官居顯職。\n午為君位，火朝君化天赫，主人豐顯。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2998-3023"
+      },
+      "modern_japanese": "火星が午宮に入ると「天赫」といい、君位に朝するため剋戦を生じにくい。利禄を求めずとも自然に満ち、官職に就けば顕職に至る象となる。午は君位であり、火星が天赫に化して豊かさと顕達を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mars_branch_未",
+      "star": "mars",
+      "app_label": "火",
+      "classical_name": "熒惑",
+      "category": "branch",
+      "target": "未",
+      "source_heading": "熒惑入宮、樞要歌",
+      "source_text": "火未：天廢火星居巨蟹，只愁夭喪深為害。不然多難又多災，縱有資財多破壞。\n此宮主破財災害。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2998-3023"
+      },
+      "modern_japanese": "火星が未宮に入ると「天廃」といい、夭折や喪失を強く警戒する。そうでなくても困難や災いが多く、財産があっても破損・散失しやすい。この宮では破財と災害を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mars_branch_申",
+      "star": "mars",
+      "app_label": "火",
+      "classical_name": "熒惑",
+      "category": "branch",
+      "target": "申",
+      "source_heading": "熒惑入宮、樞要歌",
+      "source_text": "火申：火到申宮曰喜神，中年未免事無成。須教末主方寧貼，到老應知福壽身。\n申乃火之喜宮，故曰喜神。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2998-3023"
+      },
+      "modern_japanese": "火星が申宮に入ると「喜神」といい、中年までは物事が成りにくい面があるが、晩年になって安定し、老後には福寿を得る象となる。申は火星の喜宮である。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mars_branch_酉",
+      "star": "mars",
+      "app_label": "火",
+      "classical_name": "熒惑",
+      "category": "branch",
+      "target": "酉",
+      "source_heading": "熒惑入宮、樞要歌",
+      "source_text": "火酉：火在酉宮名黑道，縱云夜誕非為好。惡星不照吉星臨，方可榮華并壽考。\n酉宮火不得地。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2998-3023"
+      },
+      "modern_japanese": "火星が酉宮に入ると「黒道」といい、夜生であっても良いとはしない。凶星の照らしがなく吉星が臨む場合に限って、栄華と長寿を得るとする。酉宮では火星は不得地である。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mars_branch_戌",
+      "star": "mars",
+      "app_label": "火",
+      "classical_name": "熒惑",
+      "category": "branch",
+      "target": "戌",
+      "source_heading": "熒惑入宮、樞要歌",
+      "source_text": "火戌：天軌火星守白羊，一生享福吉非常。財豐祿厚無虛耗，中主榮華晚更昌。\n戌為白羊火化天軌星，乃火之本宮。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2998-3023"
+      },
+      "modern_japanese": "火星が戌宮に入ると「天軌」といい、一生を通じて福を受け、非常に吉とする。財は豊かで禄も厚く、むだな消耗が少ない。中年に栄え、晩年はさらに昌盛する。戌は火星の本宮である。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mars_branch_亥",
+      "star": "mars",
+      "app_label": "火",
+      "classical_name": "熒惑",
+      "category": "branch",
+      "target": "亥",
+      "source_heading": "熒惑入宮、樞要歌",
+      "source_text": "火亥：火居亥上是吉星，天纛知為變曜名。不論官宮并晝夜，也須備福主豐亨。\n火到此宮主人豐富，緣木有相生之理。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2998-3023"
+      },
+      "modern_japanese": "火星が亥宮に入ると吉星となり、「天纛」と名づけられる。官宮かどうか、昼夜を問わず、福が備わり豊かになる象を主る。亥は木の性を持ち、木が火を生じる理による。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "saturn_branch_子",
+      "star": "saturn",
+      "app_label": "土",
+      "classical_name": "鎮星",
+      "category": "branch",
+      "target": "子",
+      "source_heading": "鎮星入宮、樞要歌",
+      "source_text": "土子：土居齊分號天元，壽筭綿長福祿全。第七宮中如值此，榮妻益子福綿綿。\n子宮土之樂。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3124-3147"
+      },
+      "modern_japanese": "土星が子宮に入ると「天元」といい、寿命が長く、福禄が備わる。第七宮にこれを得れば、妻に栄えがあり、子にも益が及ぶ。子宮は土星の楽の地である。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "saturn_branch_丑",
+      "star": "saturn",
+      "app_label": "土",
+      "classical_name": "鎮星",
+      "category": "branch",
+      "target": "丑",
+      "source_heading": "鎮星入宮、樞要歌",
+      "source_text": "土丑：土到丑宮名印綬，珍珠財寶多般有。此宮廟旺最為佳，縱是夜生為福壽。\n土之本位得為滿、用豈不福。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3124-3147"
+      },
+      "modern_japanese": "土星が丑宮に入ると「印綬」といい、財宝に恵まれる。ここは土星が廟旺となるため最も佳く、夜生であっても福寿を主る。土星の本位であり、満用となれば大いに福がある。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "saturn_branch_寅",
+      "star": "saturn",
+      "app_label": "土",
+      "classical_name": "鎮星",
+      "category": "branch",
+      "target": "寅",
+      "source_heading": "鎮星入宮、樞要歌",
+      "source_text": "土寅：土入寅宮曰貴人，此宮不喜木相親。只愁變作刑囚耗，晚主多災更滯迍。\n化為貴人，星主先貧後富。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3124-3147"
+      },
+      "modern_japanese": "土星が寅宮に入ると「貴人」といい、木星と親しく会うことを喜ばない。刑・囚・耗に変化することを恐れ、その場合は晩年に災いと停滞が多い。貴人星に化し、先に貧しく後に富む象を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "saturn_branch_卯",
+      "star": "saturn",
+      "app_label": "土",
+      "classical_name": "鎮星",
+      "category": "branch",
+      "target": "卯",
+      "source_heading": "鎮星入宮、樞要歌",
+      "source_text": "土卯：土居卯位號天沖，與火相逢亦慶隆。只恐六壬人值此，遭刑受害命須終。\n沖者湧搖之象。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3124-3147"
+      },
+      "modern_japanese": "土星が卯宮に入ると「天沖」といい、火星と会えば慶びが盛んとなる。ただし壬年生まれがこれに当たる場合は、刑害を受けることを警戒する。「沖」は揺れ動く象である。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "saturn_branch_辰",
+      "star": "saturn",
+      "app_label": "土",
+      "classical_name": "鎮星",
+      "category": "branch",
+      "target": "辰",
+      "source_heading": "鎮星入宮、樞要歌",
+      "source_text": "土辰：土曜居辰名太極，喜在亢宮依鄭國。此為入廟最榮華，日誕夜生俱有益。\n辰乃土之樂旺、主榮華。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3124-3147"
+      },
+      "modern_japanese": "土星が辰宮に入ると「太極」といい、亢宿にあることを喜ぶ。入廟となり、栄華の象が強い。昼生・夜生のどちらにも益がある。辰は土星の楽・旺の地で、栄華を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "saturn_branch_巳",
+      "star": "saturn",
+      "app_label": "土",
+      "classical_name": "鎮星",
+      "category": "branch",
+      "target": "巳",
+      "source_heading": "鎮星入宮、樞要歌",
+      "source_text": "土巳：土居雙女非為吉，本主逢之怎奈何。更逢吉宿也多災，若不遭刑須夭折。\n巳宮化天魔星，主人夭折。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3124-3147"
+      },
+      "modern_japanese": "土星が巳宮に入るのは吉とせず、本主がこれに当たるのを嫌う。吉宿に会っても災いが多く、刑を受けなければ夭折の象を警戒する。巳宮では天魔星に化し、夭折を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "saturn_branch_午",
+      "star": "saturn",
+      "app_label": "土",
+      "classical_name": "鎮星",
+      "category": "branch",
+      "target": "午",
+      "source_heading": "鎮星入宮、樞要歌",
+      "source_text": "土午：天道元來是土星，太陰會此倍精神。縱云夜誕仍為福，日裡生人大貴榮。\n化天道星主喜。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3124-3147"
+      },
+      "modern_japanese": "土星が午宮に入ると「天道」といい、太陰と会えばさらに力を増す。夜生でも福があり、昼生では大いに貴く栄える。天道星に化し、喜びを主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "saturn_branch_未",
+      "star": "saturn",
+      "app_label": "土",
+      "classical_name": "鎮星",
+      "category": "branch",
+      "target": "未",
+      "source_heading": "鎮星入宮、樞要歌",
+      "source_text": "土未：土入未宮名四鎮，福多祿厚家豐盛。太陰若也與同行，不是望宵終有慶。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3124-3147"
+      },
+      "modern_japanese": "土星が未宮に入ると「四鎮」といい、福が多く禄も厚く、家が豊かになる。太陰と同行すれば、満月の時でなくても最終的に慶びがある。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "saturn_branch_申",
+      "star": "saturn",
+      "app_label": "土",
+      "classical_name": "鎮星",
+      "category": "branch",
+      "target": "申",
+      "source_heading": "鎮星入宮、樞要歌",
+      "source_text": "土申：申宮土號福生星，本主同鄉祿自成。更有官星相會聚，名彰聲顯貴還榮。\n申乃長生之位。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3124-3147"
+      },
+      "modern_japanese": "土星が申宮に入ると「福生星」といい、本主と同郷の関係を得て禄が自然に成る。さらに官星が会えば、名声が顕れ、貴く栄える。申は長生の位である。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "saturn_branch_酉",
+      "star": "saturn",
+      "app_label": "土",
+      "classical_name": "鎮星",
+      "category": "branch",
+      "target": "酉",
+      "source_heading": "鎮星入宮、樞要歌",
+      "source_text": "土酉：土居酉位號天沐，雖是敗宮須享福。不宜火曜共同行，少年不享人間祿。\n土敗於酉故云壽短。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3124-3147"
+      },
+      "modern_japanese": "土星が酉宮に入ると「天沐」といい、敗宮ではあるが福を享受する面もある。ただし火星との同行を嫌い、その場合は若くして寿を損なう象とする。土星は酉で敗となるため、寿が短いとする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "saturn_branch_戌",
+      "star": "saturn",
+      "app_label": "土",
+      "classical_name": "鎮星",
+      "category": "branch",
+      "target": "戌",
+      "source_heading": "鎮星入宮、樞要歌",
+      "source_text": "土戌：土居戌位號天關，一世優游得自閑。只恐水星相會遇，終身不免受艱難。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3124-3147"
+      },
+      "modern_japanese": "土星が戌宮に入ると「天関」といい、一生を通じて安閑としやすい。ただし水星と会うことを恐れ、その場合は生涯にわたり艱難を免れにくい。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "saturn_branch_亥",
+      "star": "saturn",
+      "app_label": "土",
+      "classical_name": "鎮星",
+      "category": "branch",
+      "target": "亥",
+      "source_heading": "鎮星入宮、樞要歌",
+      "source_text": "土亥：黑符亥上不為榮，實號俱無只有名。不是外居并外發，也須先敗後方成。\n主先凶後吉。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3124-3147"
+      },
+      "modern_japanese": "土星が亥宮に入ると「黒符」といい、実質を伴わず名だけになりやすく、栄えるとはしない。外地に居て外で発展するのでなければ、まず敗れてから後に成る象となる。先凶後吉を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "venus_branch_子",
+      "star": "venus",
+      "app_label": "金",
+      "classical_name": "太白",
+      "category": "branch",
+      "target": "子",
+      "source_heading": "太白入宮、樞要歌",
+      "source_text": "金子：太白之星到寶瓶，名為玉輅福非輕。丙丁之命如逢此，不特長生更富英。\n玉輅星主人富厚，輅者殷之車名。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3243-3267"
+      },
+      "modern_japanese": "金星が子宮に入ると「玉輅」といい、福が厚い。丙・丁年生まれがこれに当たれば、長生だけでなく富にも恵まれる。玉輅星は富厚を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "venus_branch_丑",
+      "star": "venus",
+      "app_label": "金",
+      "classical_name": "太白",
+      "category": "branch",
+      "target": "丑",
+      "source_heading": "太白入宮、樞要歌",
+      "source_text": "金丑：金來丑上名天庫，多玉多金難計數。少年銳志在功名，聲譽播揚人所慕。\n天庫星主福、丑乃金之庫。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3243-3267"
+      },
+      "modern_japanese": "金星が丑宮に入ると「天庫」といい、多くの財宝を蓄える象となる。若いうちから功名への志が強く、名声が広まり人々から慕われる。丑は金の庫であり、天庫星は福を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "venus_branch_寅",
+      "star": "venus",
+      "app_label": "金",
+      "classical_name": "太白",
+      "category": "branch",
+      "target": "寅",
+      "source_heading": "太白入宮、樞要歌",
+      "source_text": "金寅：金星人馬號毛頭，破蕩家財往外州。須是強宮多吉宿，方能救助不為憂。\n寅宮金不得地。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3243-3267"
+      },
+      "modern_japanese": "金星が寅宮に入ると「毛頭」といい、家財を失って外地へ出る象がある。強宮にあり吉宿が多ければ救いがあり、憂いを免れる。寅宮では金星は不得地である。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "venus_branch_卯",
+      "star": "venus",
+      "app_label": "金",
+      "classical_name": "太白",
+      "category": "branch",
+      "target": "卯",
+      "source_heading": "太白入宮、樞要歌",
+      "source_text": "金卯：金星卯上名天敗，起處逢傷人不奈。年少應須剋六親，奔波漂蕩多災害。\n金至此主剋陷。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3243-3267"
+      },
+      "modern_japanese": "金星が卯宮に入ると「天敗」といい、傷を受けやすい。若年には六親への剋があり、奔波・漂泊し、災害が多い象となる。金星がここに至ると剋陷を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "venus_branch_辰",
+      "star": "venus",
+      "app_label": "金",
+      "classical_name": "太白",
+      "category": "branch",
+      "target": "辰",
+      "source_heading": "太白入宮、樞要歌",
+      "source_text": "金辰：金到辰宮曰太常，庶人見此始為良。少年科甲名天下，品秩榮遷輔聖王。\n辰乃金之廟旺。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3243-3267"
+      },
+      "modern_japanese": "金星が辰宮に入ると「太常」といい、良い象となる。若くして科挙に進み、名が天下に知られ、官位が昇って君主を補佐する象となる。辰は金星の廟旺の地である。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "venus_branch_巳",
+      "star": "venus",
+      "app_label": "金",
+      "classical_name": "太白",
+      "category": "branch",
+      "target": "巳",
+      "source_heading": "太白入宮、樞要歌",
+      "source_text": "金巳：巳金天祿本長生，變曜名為天祿星。與水同宮最奇特，官高祿厚佐王庭。\n金會蛇則喜。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3243-3267"
+      },
+      "modern_japanese": "金星が巳宮に入ると「天禄」といい、本来長生の地である。水星との同宮を特に佳しとし、官位が高く禄も厚く、朝廷を補佐する象となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "venus_branch_午",
+      "star": "venus",
+      "app_label": "金",
+      "classical_name": "太白",
+      "category": "branch",
+      "target": "午",
+      "source_heading": "太白入宮、樞要歌",
+      "source_text": "金午：金星變曜曰天暘，入到離宮大吉祥。為子孝廉臣盡節，直須簪冕佐君王。\n金星乘旺。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3243-3267"
+      },
+      "modern_japanese": "金星が午宮に入ると「天暘」といい、大吉祥とする。子として孝、臣として節義を尽くし、冠冕を帯びて君主を補佐する象となる。金星はここで乗旺する。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "venus_branch_未",
+      "star": "venus",
+      "app_label": "金",
+      "classical_name": "太白",
+      "category": "branch",
+      "target": "未",
+      "source_heading": "太白入宮、樞要歌",
+      "source_text": "金未：金居巨蟹曰天倉，與水同宮福祿昌。若是丙丁人值此，多高位顯壽延長。\n天倉者貯積之星，主富貴。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3243-3267"
+      },
+      "modern_japanese": "金星が未宮に入ると「天倉」といい、水星と同宮すれば福禄が盛んとなる。丙・丁年生まれがこれに当たれば、高位顕達と長寿の象が強い。天倉は貯蓄の星で、富貴を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "venus_branch_申",
+      "star": "venus",
+      "app_label": "金",
+      "classical_name": "太白",
+      "category": "branch",
+      "target": "申",
+      "source_heading": "太白入宮、樞要歌",
+      "source_text": "金申：太白臨申號玉堂，庚辛人見旺金鄉。若無羅火同居此，須信生平福熾昌。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3243-3267"
+      },
+      "modern_japanese": "金星が申宮に入ると「玉堂」といい、庚・辛年生まれにとって旺金の地となる。羅喉や火星が同宮しなければ、生涯を通じて福が盛んになる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "venus_branch_酉",
+      "star": "venus",
+      "app_label": "金",
+      "classical_name": "太白",
+      "category": "branch",
+      "target": "酉",
+      "source_heading": "太白入宮、樞要歌",
+      "source_text": "金酉：金居酉位名天印，管取生來常吉慶。火宿若還相會時，刑囚破碎多災病。\n怕火同宮。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3243-3267"
+      },
+      "modern_japanese": "金星が酉宮に入ると「天印」といい、生来吉慶に恵まれる。ただし火星が会えば、刑・囚・破砕の象が強まり、災病が多くなる。火星との同宮を恐れる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "venus_branch_戌",
+      "star": "venus",
+      "app_label": "金",
+      "classical_name": "太白",
+      "category": "branch",
+      "target": "戌",
+      "source_heading": "太白入宮、樞要歌",
+      "source_text": "金戌：魯分金名天弔星，不宜火宿與相鄰。縱然不夭終非美，襁褓須當剋六親。\n主夭害。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3243-3267"
+      },
+      "modern_japanese": "金星が戌宮に入ると「天弔」といい、火星が近くにあることを嫌う。夭折しない場合でも吉とはしにくく、幼少期に六親への剋がある象を持つ。夭害を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "venus_branch_亥",
+      "star": "venus",
+      "app_label": "金",
+      "classical_name": "太白",
+      "category": "branch",
+      "target": "亥",
+      "source_heading": "太白入宮、樞要歌",
+      "source_text": "金亥：金臨亥位號天壽，但管一生長富有。天算綿延無絕期，怕逢熒惑反為咎。\n亥宮金星乘旺。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3243-3267"
+      },
+      "modern_japanese": "金星が亥宮に入ると「天寿」といい、一生富に恵まれ、寿命も長い象となる。ただし火星に会うことを恐れ、その場合はかえって咎となる。亥宮では金星が乗旺する。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mercury_branch_子",
+      "star": "mercury",
+      "app_label": "水",
+      "classical_name": "辰星",
+      "category": "branch",
+      "target": "子",
+      "source_heading": "辰星入宮、樞要歌",
+      "source_text": "水之：水到齊瓶號玉池，亨衢快步莫遲疑。此為學館科名地，軒冕榮華佐聖時。\n朝北又旺。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3374-3395"
+      },
+      "modern_japanese": "水星が子宮に入ると「玉池」といい、進路が開けて速やかに進む象となる。学問・科名に適した地で、官位と栄華を得て朝廷に仕える象を持つ。北に臨み、また旺となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mercury_branch_丑",
+      "star": "mercury",
+      "app_label": "水",
+      "classical_name": "辰星",
+      "category": "branch",
+      "target": "丑",
+      "source_heading": "辰星入宮、樞要歌",
+      "source_text": "水丑：水居丑位號晨門，朝斗分明主勢尊。若不變為刑暗耗，少年及第六殊勳。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3374-3395"
+      },
+      "modern_japanese": "水星が丑宮に入ると「晨門」といい、北斗に朝するため威勢・尊位の象となる。刑・暗・耗に変化しなければ、若くして科挙に合格し、功績を立てる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mercury_branch_寅",
+      "star": "mercury",
+      "app_label": "水",
+      "classical_name": "辰星",
+      "category": "branch",
+      "target": "寅",
+      "source_heading": "辰星入宮、樞要歌",
+      "source_text": "水寅：水臨寅上名天懿，管取一生無阻滯。設若木星會合時，不惟利祿名兼遂。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3374-3395"
+      },
+      "modern_japanese": "水星が寅宮に入ると「天懿」といい、一生を通じて大きな阻滞が少ない。木星と会えば、利禄だけでなく名声も得る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mercury_branch_卯",
+      "star": "mercury",
+      "app_label": "水",
+      "classical_name": "辰星",
+      "category": "branch",
+      "target": "卯",
+      "source_heading": "辰星入宮、樞要歌",
+      "source_text": "水卯：水流卯地名困苦，只怕此星傷本主。奔波役役受艱辛，纔得清閑漂蕩去。\n水至卯而傷。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3374-3395"
+      },
+      "modern_japanese": "水星が卯宮に入ると「困苦」といい、本主を傷つけることを恐れる。奔波して苦労を重ね、ようやく休めても漂泊しやすい。水星は卯に至ると傷を受ける。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mercury_branch_辰",
+      "star": "mercury",
+      "app_label": "水",
+      "classical_name": "辰星",
+      "category": "branch",
+      "target": "辰",
+      "source_heading": "辰星入宮、樞要歌",
+      "source_text": "水辰：辰宮得水號琴堂，太白同行福倍昌。人命逢之多吉泰，少年顯達把名揚。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3374-3395"
+      },
+      "modern_japanese": "水星が辰宮に入ると「琴堂」といい、金星と同行すれば福がさらに盛んとなる。命にこれを得れば吉慶が多く、若くして顕達し名を上げる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mercury_branch_巳",
+      "star": "mercury",
+      "app_label": "水",
+      "classical_name": "辰星",
+      "category": "branch",
+      "target": "巳",
+      "source_heading": "辰星入宮、樞要歌",
+      "source_text": "水巳：水來巳上號榮名，樂廟之宮萬事亨。若得金星同會此，黑頭早著翰林聲。\n金水會蛇。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3374-3395"
+      },
+      "modern_japanese": "水星が巳宮に入ると「栄名」といい、楽・廟の宮であるため万事が通じやすい。金星と同宮すれば、若いうちから翰林の名声を得る象となる。これを「金水会蛇」という。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mercury_branch_午",
+      "star": "mercury",
+      "app_label": "水",
+      "classical_name": "辰星",
+      "category": "branch",
+      "target": "午",
+      "source_heading": "辰星入宮、樞要歌",
+      "source_text": "水午：水臨獅子曰天溫，與日同行倍有文。設若變為官祿主，名高位顯眾人尊。\n水陽相會。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3374-3395"
+      },
+      "modern_japanese": "水星が午宮に入ると「天温」といい、太陽と同行すれば文章の才が倍増する。官禄主に変化すれば、名声が高く、地位も顕れ、人々から尊ばれる。水と太陽が会する象である。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mercury_branch_未",
+      "star": "mercury",
+      "app_label": "水",
+      "classical_name": "辰星",
+      "category": "branch",
+      "target": "未",
+      "source_heading": "辰星入宮、樞要歌",
+      "source_text": "水未：未逢水曜名天乙，與月同宮方入格。縱然惡曜相會行，也須顯達榮家宅。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3374-3395"
+      },
+      "modern_japanese": "水星が未宮に入ると「天乙」といい、太陰と同宮してはじめて格となる。たとえ悪曜が会っても、なお顕達し家を栄えさせる象を持つ。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mercury_branch_申",
+      "star": "mercury",
+      "app_label": "水",
+      "classical_name": "辰星",
+      "category": "branch",
+      "target": "申",
+      "source_heading": "辰星入宮、樞要歌",
+      "source_text": "水申：水居申位名榮顯，此是本垣無否塞。庚與壬人若見之，修文方中青錢遲。\n此為長生之位。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3374-3395"
+      },
+      "modern_japanese": "水星が申宮に入ると「栄顕」といい、本垣にあって阻滞がない。庚・壬年生まれがこれに当たれば、文章を修めて選抜・登用に進む象となる。申は長生の位である。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mercury_branch_酉",
+      "star": "mercury",
+      "app_label": "水",
+      "classical_name": "辰星",
+      "category": "branch",
+      "target": "酉",
+      "source_heading": "辰星入宮、樞要歌",
+      "source_text": "水酉：絕祿元來是水星，嫌居酉位不安寧。生來用事多迍滯，縱有家財也替凌。\n此為敗地。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3374-3395"
+      },
+      "modern_japanese": "水星が酉宮に入るのは嫌い、安寧を得にくい。生来、物事に停滞が多く、家財があっても衰えやすい。酉は水星の敗地である。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mercury_branch_戌",
+      "star": "mercury",
+      "app_label": "水",
+      "classical_name": "辰星",
+      "category": "branch",
+      "target": "戌",
+      "source_heading": "辰星入宮、樞要歌",
+      "source_text": "水戌：水在白羊號伏尸，一生迍滯主災危。雖逢吉曜相扶助，便得成名且亦遲。\n落胎刑相不完。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3374-3395"
+      },
+      "modern_japanese": "水星が戌宮に入ると「伏尸」といい、一生を通じて停滞や災危の象がある。吉曜の助けを得れば名を成すことはできるが、それも遅い。落胎・刑傷など不全の象を伴うとする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mercury_branch_亥",
+      "star": "mercury",
+      "app_label": "水",
+      "classical_name": "辰星",
+      "category": "branch",
+      "target": "亥",
+      "source_heading": "辰星入宮、樞要歌",
+      "source_text": "水亥：亥宮天綬水之精，掌握兵機挫虜人。官祿遷移身命值，何愁方外不揚名。\n此為得祿之地主貴。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3374-3395"
+      },
+      "modern_japanese": "水星が亥宮に入ると「天綬」といい、水の精気を得る。兵機を掌握して敵を制する象があり、官禄・遷移・身命にこれを得れば、外地でも名を上げる。亥は禄を得る地で、貴を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ziqi_branch_子",
+      "star": "ziqi",
+      "app_label": "紫炁",
+      "classical_name": "紫氣",
+      "category": "branch",
+      "target": "子",
+      "source_heading": "紫氣入宮、樞要歌",
+      "source_text": "氣子：紫氣齊瓶號玉清，只宜恬淡養精神。命宮遇者傷妻子，散誕清閑僧道人。\n氣在子宮化為玉清星，主修道清高。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3830-3855"
+      },
+      "modern_japanese": "紫気が子宮に入ると「玉清」といい、静かに心身を養うことに宜しい。命宮でこれに当たると妻子への傷害の象があり、世俗を離れた清閑・僧道の傾向を示す。修道と清高を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ziqi_branch_丑",
+      "star": "ziqi",
+      "app_label": "紫炁",
+      "classical_name": "紫氣",
+      "category": "branch",
+      "target": "丑",
+      "source_heading": "紫氣入宮、樞要歌",
+      "source_text": "氣丑：氣星在丑曰天元，生世無災福慶全。更得吉星相會照，前遮後擁是神仙。\n丑宮化為天元星主吉。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3830-3855"
+      },
+      "modern_japanese": "紫気が丑宮に入ると「天元」といい、生涯に災いが少なく、福慶が備わる。さらに吉星が会照すれば、前後から助けられるような大吉の象となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ziqi_branch_寅",
+      "star": "ziqi",
+      "app_label": "紫炁",
+      "classical_name": "紫氣",
+      "category": "branch",
+      "target": "寅",
+      "source_heading": "紫氣入宮、樞要歌",
+      "source_text": "氣寅：氣居寅上名天飭，獨享清閑人不識。容貌端嚴冠眾倫，落紙煙雲揮彩筆。\n化天飭星主有文章。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3830-3855"
+      },
+      "modern_japanese": "紫気が寅宮に入ると「天飭」といい、独り清閑を楽しむような性質を示す。容貌は端正で人に優れ、文章・書芸の才に恵まれる。天飭星は文章を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ziqi_branch_卯",
+      "star": "ziqi",
+      "app_label": "紫炁",
+      "classical_name": "紫氣",
+      "category": "branch",
+      "target": "卯",
+      "source_heading": "紫氣入宮、樞要歌",
+      "source_text": "氣卯：氣星在卯號天空，剋害妻兒年少終。不是僧尼井藝術，一生孤獨更飄蓬。\n化為天空主，孤獨無積。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3830-3855"
+      },
+      "modern_japanese": "紫気が卯宮に入ると「天空」といい、妻子への剋害や若年での終わりを警戒する。僧尼や芸術の道に入らなければ、一生孤独で漂泊しやすい。天空に化して孤独と蓄積の乏しさを主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ziqi_branch_辰",
+      "star": "ziqi",
+      "app_label": "紫炁",
+      "classical_name": "紫氣",
+      "category": "branch",
+      "target": "辰",
+      "source_heading": "紫氣入宮、樞要歌",
+      "source_text": "氣辰：華蓋從知氣在辰，此星雖獨卻堪親。優游享用無災咎，啖柏餐松物外人。\n化華蓋主清廟。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3830-3855"
+      },
+      "modern_japanese": "紫気が辰宮に入ると「華蓋」といい、孤独性はあるが親しむに足る星とする。安閑に暮らし、災いが少なく、世俗を離れた清修の人物の象となる。華蓋に化し、清廟を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ziqi_branch_巳",
+      "star": "ziqi",
+      "app_label": "紫炁",
+      "classical_name": "紫氣",
+      "category": "branch",
+      "target": "巳",
+      "source_heading": "紫氣入宮、樞要歌",
+      "source_text": "氣巳：氣居雙女號天相，家積珠珍主富藏。福厚清閑井壽永，只愁妻子見刑傷。\n主富而刑妻。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3830-3855"
+      },
+      "modern_japanese": "紫気が巳宮に入ると「天相」といい、家に財宝を蓄え、富を主る。福が厚く清閑で長寿の象があるが、妻子への刑傷を憂える。富む一方で妻への刑を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ziqi_branch_午",
+      "star": "ziqi",
+      "app_label": "紫炁",
+      "classical_name": "紫氣",
+      "category": "branch",
+      "target": "午",
+      "source_heading": "紫氣入宮、樞要歌",
+      "source_text": "氣午：紫氣臨周號玉肌，人生逢此誠為美。太陽設若同宮分，富貴榮華世無比。\n化玉肌主子孫榮貴。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3830-3855"
+      },
+      "modern_japanese": "紫気が午宮に入ると「玉肌」といい、これに当たることを美とする。太陽と同宮すれば、富貴栄華は非常に大きい。玉肌に化し、子孫の栄貴を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ziqi_branch_未",
+      "star": "ziqi",
+      "app_label": "紫炁",
+      "classical_name": "紫氣",
+      "category": "branch",
+      "target": "未",
+      "source_heading": "紫氣入宮、樞要歌",
+      "source_text": "氣未：氣居未位名天廩，潤色文章鋪秀錦。更得主星在高強，家多珍玉豐腴甚。\n化天廩主富足。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3830-3855"
+      },
+      "modern_japanese": "紫気が未宮に入ると「天廩」といい、文章を美しく飾る才を示す。さらに主星が高強であれば、家には財宝が多く、非常に豊かになる。天廩に化し、富足を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ziqi_branch_申",
+      "star": "ziqi",
+      "app_label": "紫炁",
+      "classical_name": "紫氣",
+      "category": "branch",
+      "target": "申",
+      "source_heading": "紫氣入宮、樞要歌",
+      "source_text": "氣申：氣入申宮曰紫微，此宮廟旺最為奇。一生獨享清閑福，作事臨危又不危。\n化紫微清高受福。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3830-3855"
+      },
+      "modern_japanese": "紫気が申宮に入ると「紫微」といい、この宮では廟旺となり特に佳い。一生清閑の福を受け、危機に臨んでも大事に至りにくい。紫微に化して清高と受福を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ziqi_branch_酉",
+      "star": "ziqi",
+      "app_label": "紫炁",
+      "classical_name": "紫氣",
+      "category": "branch",
+      "target": "酉",
+      "source_heading": "紫氣入宮、樞要歌",
+      "source_text": "氣酉：紫氣金牛號鳳凰，一生享福最安康。文章錦繡聞天下，若占高強入廟堂。\n酉為金牛，化鳳凰主富貴。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3830-3855"
+      },
+      "modern_japanese": "紫気が酉宮に入ると「鳳凰」といい、一生福を受けて安康となる。文章の才が天下に知られ、高強を得れば朝廷に入る象となる。鳳凰に化して富貴を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ziqi_branch_戌",
+      "star": "ziqi",
+      "app_label": "紫炁",
+      "classical_name": "紫氣",
+      "category": "branch",
+      "target": "戌",
+      "source_heading": "紫氣入宮、樞要歌",
+      "source_text": "氣戌：氣在白羊名玉貫，空房獨守誰為伴。同宮最怕火羅侵，破敗家財心緒亂。\n戌為白羊化玉貫，忌火羅。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3830-3855"
+      },
+      "modern_japanese": "紫気が戌宮に入ると「玉貫」といい、孤独に空房を守るような象がある。火星・羅喉が同宮して侵すことを最も恐れ、その場合は家財の破敗や心の乱れを主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ziqi_branch_亥",
+      "star": "ziqi",
+      "app_label": "紫炁",
+      "classical_name": "紫氣",
+      "category": "branch",
+      "target": "亥",
+      "source_heading": "紫氣入宮、樞要歌",
+      "source_text": "氣亥：亥宮紫氣名天貴，稟性清閑無所累。木土那堪會舍行，少年顯達功名遂。\n化為天貴主享福。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3830-3855"
+      },
+      "modern_japanese": "紫気が亥宮に入ると「天貴」といい、性質は清閑で煩累が少ない。木星・土星が会すれば、若くして顕達し功名を遂げる象となる。天貴に化し、享福を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "yuebo_branch_子",
+      "star": "yuebo",
+      "app_label": "月孛",
+      "classical_name": "月孛",
+      "category": "branch",
+      "target": "子",
+      "source_heading": "月孛入宮、樞要歌",
+      "source_text": "孛子：孛星在子名天酷，稟性兇頑還有福。遇者妻兒有剋傷，權謀機變般般足。\n孛在子宮化為天酷星。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3949-3974"
+      },
+      "modern_japanese": "月孛が子宮に入ると「天酷」といい、性質は強く頑固だが福もある。妻子への剋傷の象があり、権謀や機変には長ける。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "yuebo_branch_丑",
+      "star": "yuebo",
+      "app_label": "月孛",
+      "classical_name": "月孛",
+      "category": "branch",
+      "target": "丑",
+      "source_heading": "月孛入宮、樞要歌",
+      "source_text": "孛丑：孛居丑位，曰天柔，欽任雍容拱斗牛。化作刑囚終禍害，若為福祿備加休。\n孛在丑化為天柔。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3949-3974"
+      },
+      "modern_japanese": "月孛が丑宮に入ると「天柔」といい、落ち着きと余裕のある象となる。刑・囚に化せば最終的に禍害を生じるが、福・禄に化せば吉慶が加わる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "yuebo_branch_寅",
+      "star": "yuebo",
+      "app_label": "月孛",
+      "classical_name": "月孛",
+      "category": "branch",
+      "target": "寅",
+      "source_heading": "月孛入宮、樞要歌",
+      "source_text": "孛寅：孛臨人馬，名天后，癸乙生人多主壽。若為官祿富文才，一舉登科金印綬。\n孛在寅化為天后。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3949-3974"
+      },
+      "modern_japanese": "月孛が寅宮に入ると「天后」といい、癸・乙年生まれでは長寿を主ることが多い。官禄として働けば文才に富み、一挙に科挙へ登り、高位を得る象となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "yuebo_branch_卯",
+      "star": "yuebo",
+      "app_label": "月孛",
+      "classical_name": "月孛",
+      "category": "branch",
+      "target": "卯",
+      "source_heading": "月孛入宮、樞要歌",
+      "source_text": "孛卯：孛星變曜玉垣星，卯位朝君福非輕。那更化為官祿曜，少年金榜定標名。\n孛在卯化為玉垣星。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3949-3974"
+      },
+      "modern_japanese": "月孛が卯宮に入ると「玉垣」といい、君位に朝するため福が軽くない。さらに官禄曜に化すれば、若くして科挙に名を掲げる象となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "yuebo_branch_辰",
+      "star": "yuebo",
+      "app_label": "月孛",
+      "classical_name": "月孛",
+      "category": "branch",
+      "target": "辰",
+      "source_heading": "月孛入宮、樞要歌",
+      "source_text": "孛辰：辰宮月孛，名天慘，太白同宮應福減。若遇水星相逐行，生來必主多刑陷。\n化為天慘星。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3949-3974"
+      },
+      "modern_japanese": "月孛が辰宮に入ると「天惨」といい、金星と同宮すれば福が減る。水星と同行すれば、生来刑陷が多い象となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "yuebo_branch_巳",
+      "star": "yuebo",
+      "app_label": "月孛",
+      "classical_name": "月孛",
+      "category": "branch",
+      "target": "巳",
+      "source_heading": "月孛入宮、樞要歌",
+      "source_text": "孛巳：孛居巳上號孤鸞，男女逢之必寡鰥。忌曜若臨須減力，吉星來照也艱難。\n化為孤鸞星。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3949-3974"
+      },
+      "modern_japanese": "月孛が巳宮に入ると「孤鸞」といい、男女とも配偶関係の孤独を強く示す。忌曜が臨めばさらに力を失い、吉星が照っても困難が残る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "yuebo_branch_午",
+      "star": "yuebo",
+      "app_label": "月孛",
+      "classical_name": "月孛",
+      "category": "branch",
+      "target": "午",
+      "source_heading": "月孛入宮、樞要歌",
+      "source_text": "孛午：孛星臨午，名玉氣，此地朝君長富貴。變為祿貴與官魁，名顯身彰應品位。\n化為玉氣星。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3949-3974"
+      },
+      "modern_japanese": "月孛が午宮に入ると「玉気」といい、君位に朝するため長く富貴を得る象となる。禄・貴・官・魁に変化すれば、名声と身位が顕れる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "yuebo_branch_未",
+      "star": "yuebo",
+      "app_label": "月孛",
+      "classical_name": "月孛",
+      "category": "branch",
+      "target": "未",
+      "source_heading": "月孛入宮、樞要歌",
+      "source_text": "孛未：孛入秦州，名太乙，穩步蟾宮名第一。一生榮顯少災迍，俊邁聰明超眾職。\n在未化為太乙星。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3949-3974"
+      },
+      "modern_japanese": "月孛が未宮に入ると「太乙」といい、科名で第一となるような象を持つ。一生栄顕し、災いや停滞が少なく、俊敏で聡明、群を抜く。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "yuebo_branch_申",
+      "star": "yuebo",
+      "app_label": "月孛",
+      "classical_name": "月孛",
+      "category": "branch",
+      "target": "申",
+      "source_heading": "月孛入宮、樞要歌",
+      "source_text": "孛申：孛星申位，名天毒，稟性頑愚常碌碌。戀酒迷花無了期，也教賣盡黃金屋。\n在申化為天毒星。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3949-3974"
+      },
+      "modern_japanese": "月孛が申宮に入ると「天毒」といい、頑愚で落ち着かず、酒色に迷いやすい。ついには財産を売り尽くすような破財の象を持つ。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "yuebo_branch_酉",
+      "star": "yuebo",
+      "app_label": "月孛",
+      "classical_name": "月孛",
+      "category": "branch",
+      "target": "酉",
+      "source_heading": "月孛入宮、樞要歌",
+      "source_text": "孛酉：孛到酉宮，名活曜，不常喜怒性情拗。太陰到此與同行，災禍消兮居顯要。\n在酉化為天曜星。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3949-3974"
+      },
+      "modern_japanese": "月孛が酉宮に入ると「活曜」といい、喜怒が一定せず、気性がねじれやすい。太陰が同宮すれば災禍が消え、顕要な地位に就く象となる。注記では天曜星に化すとする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "yuebo_branch_戌",
+      "star": "yuebo",
+      "app_label": "月孛",
+      "classical_name": "月孛",
+      "category": "branch",
+      "target": "戌",
+      "source_heading": "月孛入宮、樞要歌",
+      "source_text": "孛戌：孛星到戌，名死氣，至老孤貧苦未休。身命七強如落陷，牽連官事作冤仇。\n到戌化為死氣星。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3949-3974"
+      },
+      "modern_japanese": "月孛が戌宮に入ると「死気」といい、老年まで孤貧と苦労が続く象となる。身命や七強宮で落陷すれば、官事に巻き込まれ、怨みや争いを生じやすい。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "yuebo_branch_亥",
+      "star": "yuebo",
+      "app_label": "月孛",
+      "classical_name": "月孛",
+      "category": "branch",
+      "target": "亥",
+      "source_heading": "月孛入宮、樞要歌",
+      "source_text": "孛亥：孛星臨亥，曰天聰，此位朝天入帝宮。雖有災殃終不害，若為官祿亦亨通。\n孛在亥化為天聰星。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3949-3974"
+      },
+      "modern_japanese": "月孛が亥宮に入ると「天聡」といい、天に朝して帝宮に入る象となる。災いがあっても最終的な害になりにくく、官禄として働けば亨通する。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "rahu_branch_子",
+      "star": "rahu",
+      "app_label": "羅喉",
+      "classical_name": "羅喉",
+      "category": "branch",
+      "target": "子",
+      "source_heading": "羅喉入宮、樞要歌",
+      "source_text": "羅子：羅?子上名天暴，稟性剛強心太躁。同舍如還見木星，德及邊方弭賊盜。\n性急而心躁，邊鄙以施能。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4073-4089"
+      },
+      "modern_japanese": "羅喉が子宮に入ると「天暴」といい、性質は剛強で心が非常に急躁となる。同宮に木星があれば、その力を辺境で発揮し、賊盗を鎮める象となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "rahu_branch_丑",
+      "star": "rahu",
+      "app_label": "羅喉",
+      "classical_name": "羅喉",
+      "category": "branch",
+      "target": "丑",
+      "source_heading": "羅喉入宮、樞要歌",
+      "source_text": "羅丑：赤道之星本是羅，此星居丑竟如何。若為官祿無凶宿，官職高兮祿亦多。\n威而有仁、品級高遷。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4073-4089"
+      },
+      "modern_japanese": "羅喉が丑宮に入り、官禄として働き凶宿がなければ、官職は高く禄も多い。威厳の中に仁があり、官位が高く昇る象となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "rahu_branch_寅",
+      "star": "rahu",
+      "app_label": "羅喉",
+      "classical_name": "羅喉",
+      "category": "branch",
+      "target": "寅",
+      "source_heading": "羅喉入宮、樞要歌",
+      "source_text": "羅寅：羅居寅上號天威，掌握兵戎擁帝畿。光耀朝廷羌虜服，功成齊奏凱歌歸。\n領百萬之兵、為北門鎖鑰。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4073-4089"
+      },
+      "modern_japanese": "羅喉が寅宮に入ると「天威」といい、軍兵を掌握して都を守る象となる。朝廷に威光を示し、外敵を服させ、功を立てて凱旋する。大軍を率い、北門の要となる象である。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "rahu_branch_卯",
+      "star": "rahu",
+      "app_label": "羅喉",
+      "classical_name": "羅喉",
+      "category": "branch",
+      "target": "卯",
+      "source_heading": "羅喉入宮、樞要歌",
+      "source_text": "羅卯：羅星在卯號天權，雄鎮邊陲勢獨專。入廟奇星威望重，坐令羌虜翕然安。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4073-4089"
+      },
+      "modern_japanese": "羅喉が卯宮に入ると「天権」といい、辺境を雄々しく鎮め、権勢を専らにする象となる。入廟すれば威望が重く、外敵を服させ安定させる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "rahu_branch_辰",
+      "star": "rahu",
+      "app_label": "羅喉",
+      "classical_name": "羅喉",
+      "category": "branch",
+      "target": "辰",
+      "source_heading": "羅喉入宮、樞要歌",
+      "source_text": "羅辰：羅入辰宮名八敗，火金會舍多災怪。傷妻剋子陷雙親，不夭也須刑與害。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4073-4089"
+      },
+      "modern_japanese": "羅喉が辰宮に入ると「八敗」といい、火星・金星が会すれば災異が多い。妻を傷つけ、子を剋し、両親にも難が及ぶ象があり、夭折しなくても刑害を受けやすい。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "rahu_branch_巳",
+      "star": "rahu",
+      "app_label": "羅喉",
+      "classical_name": "羅喉",
+      "category": "branch",
+      "target": "巳",
+      "source_heading": "羅喉入宮、樞要歌",
+      "source_text": "羅巳：巳上羅?為地隔，八煞宮中成水厄。雖然吉曜與同流，性格輕盈招盜賊。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4073-4089"
+      },
+      "modern_japanese": "羅喉が巳宮に入ると「地隔」といい、八煞宮で水厄の象となる。吉曜と同行しても、性質が軽くなり、盗賊を招く象がある。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "rahu_branch_午",
+      "star": "rahu",
+      "app_label": "羅喉",
+      "classical_name": "羅喉",
+      "category": "branch",
+      "target": "午",
+      "source_heading": "羅喉入宮、樞要歌",
+      "source_text": "羅午：午上龍宮羅可羨，名至朝參登玉殿。馳名方面掌藩垣，威鎮四夷能制亂。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4073-4089"
+      },
+      "modern_japanese": "羅喉が午宮に入るのは佳く、朝廷に参じ玉殿に登る象となる。地方に名を馳せ、藩鎮を掌握し、その威で四方を鎮め乱を制する。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "rahu_branch_未",
+      "star": "rahu",
+      "app_label": "羅喉",
+      "classical_name": "羅喉",
+      "category": "branch",
+      "target": "未",
+      "source_heading": "羅喉入宮、樞要歌",
+      "source_text": "羅未：羅?在未名天厄，與月同宮為病賊。最喜木星相會行，家中金玉多財帛。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4073-4089"
+      },
+      "modern_japanese": "羅喉が未宮に入ると「天厄」といい、太陰と同宮すれば病・賊の象となる。木星と会うことを最も喜び、その場合は家に財宝が多くなる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "rahu_branch_申",
+      "star": "rahu",
+      "app_label": "羅喉",
+      "classical_name": "羅喉",
+      "category": "branch",
+      "target": "申",
+      "source_heading": "羅喉入宮、樞要歌",
+      "source_text": "羅申：羅入申宮為伏斷，獨守空房無侶伴。會照如逢月孛星，耽迷酒色心情亂。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4073-4089"
+      },
+      "modern_japanese": "羅喉が申宮に入ると「伏断」といい、独り空房を守り、伴侶に乏しい象となる。月孛が会照すれば、酒色に迷い心が乱れやすい。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "rahu_branch_酉",
+      "star": "rahu",
+      "app_label": "羅喉",
+      "classical_name": "羅喉",
+      "category": "branch",
+      "target": "酉",
+      "source_heading": "羅喉入宮、樞要歌",
+      "source_text": "羅酉：羅居酉位號天文，掌握兵機立大勳。甲癸生人逢此曜，文章顯赫佐明君。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4073-4089"
+      },
+      "modern_japanese": "羅喉が酉宮に入ると「天文」といい、兵機を掌握して大功を立てる象となる。甲・癸年生まれがこれに当たれば、文章でも顕れ、明君を補佐する。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "rahu_branch_戌",
+      "star": "rahu",
+      "app_label": "羅喉",
+      "classical_name": "羅喉",
+      "category": "branch",
+      "target": "戌",
+      "source_heading": "羅喉入宮、樞要歌",
+      "source_text": "羅戌：戌宮天衛是羅喉，骨肉多傷大可愁。設若同宮逢水宿，少年必定主刑流。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4073-4089"
+      },
+      "modern_japanese": "羅喉が戌宮に入ると「天衛」といい、骨肉への傷害が多く憂いとなる。水星が同宮すれば、若年に刑罰や流罪の象を強く示す。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "rahu_branch_亥",
+      "star": "rahu",
+      "app_label": "羅喉",
+      "classical_name": "羅喉",
+      "category": "branch",
+      "target": "亥",
+      "source_heading": "羅喉入宮、樞要歌",
+      "source_text": "羅亥：羅居亥上號文昌，年少多才特異常。天首元來居帝闕，官尊爵大令名彰。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4073-4089"
+      },
+      "modern_japanese": "羅喉が亥宮に入ると「文昌」といい、若くして多才で非凡となる。天首が帝闕に居る象とされ、官位・爵位が高く、名声が顕れる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ketu_branch_子",
+      "star": "ketu",
+      "app_label": "計都",
+      "classical_name": "計都",
+      "category": "branch",
+      "target": "子",
+      "source_heading": "計都入宮、樞要歌",
+      "source_text": "計子：計都入子號天凶，性毒情貪又且窮。惟有己壬人遇此，又還為福主亨通。\n在子化天凶。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4176-4201"
+      },
+      "modern_japanese": "計都が子宮に入ると「天凶」といい、性質は毒があり貪りやすく、困窮の象も持つ。ただし己・壬年生まれでは、かえって福となり亨通する。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ketu_branch_丑",
+      "star": "ketu",
+      "app_label": "計都",
+      "classical_name": "計都",
+      "category": "branch",
+      "target": "丑",
+      "source_heading": "計都入宮、樞要歌",
+      "source_text": "計丑：丑上計都名四喜，身居牛斗威權起。只愁妻子見刑傷，若是為官在朝裡。\n在丑化四喜星。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4176-4201"
+      },
+      "modern_japanese": "計都が丑宮に入ると「四喜」といい、牛・斗の地に居て威権が生じる。ただし妻子への刑傷を憂える。官にある者なら朝廷に仕える象となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ketu_branch_寅",
+      "star": "ketu",
+      "app_label": "計都",
+      "classical_name": "計都",
+      "category": "branch",
+      "target": "寅",
+      "source_heading": "計都入宮、樞要歌",
+      "source_text": "計寅：計都寅上號天淵，反禍為祥吉慶全。壬巳生人若逢此，生來享福更延年。\n在寅化天淵。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4176-4201"
+      },
+      "modern_japanese": "計都が寅宮に入ると「天淵」といい、禍を転じて祥となり、吉慶が備わる。壬・己年生まれがこれに当たれば、生来福を享受し寿命も延びる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ketu_branch_卯",
+      "star": "ketu",
+      "app_label": "計都",
+      "classical_name": "計都",
+      "category": "branch",
+      "target": "卯",
+      "source_heading": "計都入宮、樞要歌",
+      "source_text": "計卯：計在氐房名玉柄，人逢此宿多祥慶。雖然值殺及刑囚，但管一生常富盛。\n在卯化玉柄。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4176-4201"
+      },
+      "modern_japanese": "計都が卯宮に入ると「玉柄」といい、氐・房の地にあって祥慶が多い。殺や刑・囚に当たっても、一生を通じて富盛の象がある。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ketu_branch_辰",
+      "star": "ketu",
+      "app_label": "計都",
+      "classical_name": "計都",
+      "category": "branch",
+      "target": "辰",
+      "source_heading": "計都入宮、樞要歌",
+      "source_text": "計辰：計入辰宮名暴敗，為人兇狠多憎害。若還享福得清閒，只恐天年終不奈。\n在辰化暴敗。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4176-4201"
+      },
+      "modern_japanese": "計都が辰宮に入ると「暴敗」といい、性質が凶狠で憎害が多い。福を受け清閑となる場合でも、寿命については不安を残す。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ketu_branch_巳",
+      "star": "ketu",
+      "app_label": "計都",
+      "classical_name": "計都",
+      "category": "branch",
+      "target": "巳",
+      "source_heading": "計都入宮、樞要歌",
+      "source_text": "計巳：計都在巳名天水，雖曰為凶亦為瑞。便為惡宿相會行，也須顯達身榮貴。\n在巳化天水。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4176-4201"
+      },
+      "modern_japanese": "計都が巳宮に入ると「天水」といい、凶とされながらも瑞祥の面を持つ。悪宿が会っても、なお顕達し身が栄貴となる象がある。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ketu_branch_午",
+      "star": "ketu",
+      "app_label": "計都",
+      "classical_name": "計都",
+      "category": "branch",
+      "target": "午",
+      "source_heading": "計都入宮、樞要歌",
+      "source_text": "計午：計都臨午曰天巋，此是朝元遇者希。若得太陽同會照，白衣換取綠衣歸。\n在午化天巋。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4176-4201"
+      },
+      "modern_japanese": "計都が午宮に入ると「天巋」といい、朝元の象で得がたい配置とする。太陽と同じく会照すれば、庶人から官位を得るような昇進の象となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ketu_branch_未",
+      "star": "ketu",
+      "app_label": "計都",
+      "classical_name": "計都",
+      "category": "branch",
+      "target": "未",
+      "source_heading": "計都入宮、樞要歌",
+      "source_text": "計未：四鬼由來屬計都，只嫌未位不相符。太陰在位同居此，不夭終須主配徒。\n在未化五鬼。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4176-4201"
+      },
+      "modern_japanese": "計都が未宮に入るのは相応しくないとし、太陰も同宮すれば、夭折しなくても刑罰・配流の象を主る。本文では「四鬼」といい、注記では「五鬼に化す」と記されている。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ketu_branch_申",
+      "star": "ketu",
+      "app_label": "計都",
+      "classical_name": "計都",
+      "category": "branch",
+      "target": "申",
+      "source_heading": "計都入宮、樞要歌",
+      "source_text": "計申：計居申位名天賊，與水同居多否塞。不夭終須一世貧，伶仃飄蕩成孤剋。\n在申化天賊。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4176-4201"
+      },
+      "modern_japanese": "計都が申宮に入ると「天賊」といい、水星と同宮すれば阻滞が多い。夭折しなくても一生貧しく、孤独に漂泊する象となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ketu_branch_酉",
+      "star": "ketu",
+      "app_label": "計都",
+      "classical_name": "計都",
+      "category": "branch",
+      "target": "酉",
+      "source_heading": "計都入宮、樞要歌",
+      "source_text": "計酉：酉宮計化為天悴，惟有丁壬災自退。金命當 之須少亡，不然剋陷身難避。\n在酉化天悴。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4176-4201"
+      },
+      "modern_japanese": "計都が酉宮に入ると「天悴」といい、丁・壬年生まれでは災いが退くとする。金命がこれに当たると若年での死亡を警戒し、そうでなくても剋陷を避けにくい。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ketu_branch_戌",
+      "star": "ketu",
+      "app_label": "計都",
+      "classical_name": "計都",
+      "category": "branch",
+      "target": "戌",
+      "source_heading": "計都入宮、樞要歌",
+      "source_text": "計戌：計都戌上名天窘，破蕩資財不自量。壬己生人為祿厚，只愁妻子早年亡。\n在戌化天窘。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4176-4201"
+      },
+      "modern_japanese": "計都が戌宮に入ると「天窘」といい、節度なく資財を破りやすい。壬・己年生まれでは禄が厚いが、妻子の早亡を憂える。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ketu_branch_亥",
+      "star": "ketu",
+      "app_label": "計都",
+      "classical_name": "計都",
+      "category": "branch",
+      "target": "亥",
+      "source_heading": "計都入宮、樞要歌",
+      "source_text": "計亥：乾宮居計名天武，此位朝天無疾苦。縱死為刑及耗囚，也須官職膺封土。\n在亥化天武。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4176-4201"
+      },
+      "modern_japanese": "計都が亥宮に入ると「天武」といい、天に朝する位置で疾苦が少ない。刑・耗・囚に変化しても、なお官職や封土を得る象がある。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    }
+  ]
+}

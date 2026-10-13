@@ -1,0 +1,3569 @@
+{
+  "schema_version": "1.0.0",
+  "records": [
+    {
+      "id": "sun_palace_命宮",
+      "star": "sun",
+      "app_label": "日",
+      "classical_name": "太陽",
+      "category": "palace",
+      "target": "命宮",
+      "source_heading": "太陽照宮、琅玕經",
+      "source_text": "日命宮：太陽臨命照，情重性能和，衣祿堅長久，災疾自消磨，西沉無大福，東出福尤多，壽永臨中末，初年勞碌過。又曰：太陽原是火之精，躔度偏宜金水星。若在命宮官祿上，一生天下有才名。此以太陽在命宮，主人通達性剛健。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3671-3689"
+      },
+      "modern_japanese": "太陽が命宮を照らすと、情が厚く性質は穏やかで、衣食・禄は長く保たれ、災病も次第に消える。西に沈む位置では福が大きくなく、東から昇る位置では福が増す。中年以後は長寿に恵まれるが、初年は労苦が多い。太陽は火の精で、金星・水星とともに躔ることを喜ぶ。命宮や官禄宮にあれば、世に才名を得る。命宮の太陽は、通達して性格が剛健な人物を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "sun_palace_財帛宮",
+      "star": "sun",
+      "app_label": "日",
+      "classical_name": "太陽",
+      "category": "palace",
+      "target": "財帛宮",
+      "source_heading": "太陽照宮、琅玕經",
+      "source_text": "日財帛：日居財帛要陽宮，晝生為福夜為凶。只憂計孛來相剋，財帛尤閑壽不中。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3671-3689"
+      },
+      "modern_japanese": "太陽が財帛宮にある場合は陽宮を喜び、昼生では福となるが夜生では凶意が出る。とくに計都や月孛が来て剋することを嫌い、その場合は財運が弱まり、寿にも不利があるとする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "sun_palace_兄弟宮",
+      "star": "sun",
+      "app_label": "日",
+      "classical_name": "太陽",
+      "category": "palace",
+      "target": "兄弟宮",
+      "source_heading": "太陽照宮、琅玕經",
+      "source_text": "日兄弟：弟兄有若鴈同行，豈使三宮陷太陽。雖是同胞如手足，分張各自置田莊。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3671-3689"
+      },
+      "modern_japanese": "太陽が兄弟宮にあると、兄弟は雁が並ぶように存在するが、太陽が第三宮に陥るため、同胞であってもそれぞれ分かれ、各自で田産を構える象となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "sun_palace_田宅宮",
+      "star": "sun",
+      "app_label": "日",
+      "classical_name": "太陽",
+      "category": "palace",
+      "target": "田宅宮",
+      "source_heading": "太陽照宮、琅玕經",
+      "source_text": "日田宅：田宅宮中有太陽，須知安位最高強。膏腴萬頃連阡陌，榮祖榮宗福祿昌。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3671-3689"
+      },
+      "modern_japanese": "太陽が田宅宮にあると高強の位置となり、豊かな田地や広い不動産を得る象がある。祖先や家門を栄えさせ、福禄も盛んになる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "sun_palace_男女宮",
+      "star": "sun",
+      "app_label": "日",
+      "classical_name": "太陽",
+      "category": "palace",
+      "target": "男女宮",
+      "source_heading": "太陽照宮、琅玕經",
+      "source_text": "日男女：太陽獨行子難當，破損頭男兒受殃。若有吉星來輔佐，二男異日貴非常。\n太陽此宮主孤剋無子，吉星相扶子貴。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3671-3689"
+      },
+      "modern_japanese": "太陽が男女宮に単独であると子息には不利で、長男に損傷の象が出やすい。吉星の助けがあれば二人の男子に恵まれ、後に非常に貴くなる。原注では、この宮の太陽は孤剋・無子を主るが、吉星が扶ければ子が貴くなるとする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "sun_palace_奴僕宮",
+      "star": "sun",
+      "app_label": "日",
+      "classical_name": "太陽",
+      "category": "palace",
+      "target": "奴僕宮",
+      "source_heading": "太陽照宮、琅玕經",
+      "source_text": "日奴僕：奴僕之宮號陷方，照臨君父豈為良。縱饒父體常清健，亦恐身年壽早傷。\n奴僕弱陷之宮，太陽不宜居之。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3671-3689"
+      },
+      "modern_japanese": "奴僕宮は弱陷の宮であり、君父を象徴する太陽がここにあることを良しとしない。父が健やかであっても、本人の寿命に早い損傷が出ることを恐れる。原注でも太陽は奴僕宮に居るのを宜しくないとする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "sun_palace_妻妾宮",
+      "star": "sun",
+      "app_label": "日",
+      "classical_name": "太陽",
+      "category": "palace",
+      "target": "妻妾宮",
+      "source_heading": "太陽照宮、琅玕經",
+      "source_text": "日妻妾：太陽臨照在妻宮，在望尊嚴德貴崇。莫使忌星興悖逆，婚姻皇族也平中。\n相生和睦相剋反目。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3671-3689"
+      },
+      "modern_japanese": "太陽が妻妾宮にあると、配偶者に尊厳と徳のある象が出る。忌星が逆らわなければ婚姻は良好で、相生なら和睦し、相剋なら反目するとする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "sun_palace_疾厄宮",
+      "star": "sun",
+      "app_label": "日",
+      "classical_name": "太陽",
+      "category": "palace",
+      "target": "疾厄宮",
+      "source_heading": "太陽照宮、琅玕經",
+      "source_text": "日疾厄：太陽來到八宮停，身體康榮福自生。設使忌星多犯剋，反傷眼目不光明。\n日為天之目犯剋則傷目。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3671-3689"
+      },
+      "modern_japanese": "太陽が疾厄宮にあると、身体は健やかで福が生じる。ただし忌星が多く犯剋すれば、眼を傷め視力に問題が出るとする。太陽は天の目に配されるため、犯剋されると眼に現れる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "sun_palace_遷移宮",
+      "star": "sun",
+      "app_label": "日",
+      "classical_name": "太陽",
+      "category": "palace",
+      "target": "遷移宮",
+      "source_heading": "太陽照宮、琅玕經",
+      "source_text": "日遷移：第九宮中遇太陽，更無凶曜在其傍。好將平日胸中學，對策天庭謁帝王。\n若有天馬貴人極好。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3671-3689"
+      },
+      "modern_japanese": "太陽が遷移宮にあり、周囲に凶曜がなければ、日頃の学問・才能を外で発揮し、朝廷に進むほどの機会を得る象となる。天馬や貴人があればさらに良い。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "sun_palace_官祿宮",
+      "star": "sun",
+      "app_label": "日",
+      "classical_name": "太陽",
+      "category": "palace",
+      "target": "官祿宮",
+      "source_heading": "太陽照宮、琅玕經",
+      "source_text": "日官福：太陽若在十宮居，抱負宏才仰大儒。或有水金相輔佐，官高職重掌機樞。\n官福乃高強之位，有吉星助之大貴。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3671-3689"
+      },
+      "modern_japanese": "太陽が第十宮すなわち官禄宮にあると、大きな志と才能を持つ。水星・金星が補佐すれば官位は高く、重職や中枢を掌る象となる。官禄宮は高強の位であり、吉星の助けがあれば大貴を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "sun_palace_福德宮",
+      "star": "sun",
+      "app_label": "日",
+      "classical_name": "太陽",
+      "category": "palace",
+      "target": "福德宮",
+      "source_heading": "太陽照宮、琅玕經",
+      "source_text": "日福德：太陽臨福遇吉星，更添命主必官清。若有吉星來輔衛，必然享福壽遐齡。\n福德主星相生有好星夾輔主福。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3671-3689"
+      },
+      "modern_japanese": "太陽が福徳宮にあり吉星を得れば、命主は清廉な官となる象があり、吉星がさらに扶ければ福を享け長寿となる。福徳宮主と相生し、良い星が夾輔すれば福が増す。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "sun_palace_相貌宮",
+      "star": "sun",
+      "app_label": "日",
+      "classical_name": "太陽",
+      "category": "palace",
+      "target": "相貌宮",
+      "source_heading": "太陽照宮、琅玕經",
+      "source_text": "日相貌：相貌宮中名惡弱，吉星拱臨合虛著。惟怕羅?月孛星，喜與太陽相倚約。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3671-3689"
+      },
+      "modern_japanese": "相貌宮は弱い宮とされるが、吉星が拱照すれば補われる。とくに羅喉・月孛を恐れ、太陽と良い関係で寄り添う星を喜ぶ。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "moon_palace_命宮",
+      "star": "moon",
+      "app_label": "月",
+      "classical_name": "太陰",
+      "category": "palace",
+      "target": "命宮",
+      "source_heading": "太陰照宮、琅玕經",
+      "source_text": "月命宮：月照人無俗孤，多自有成掌財宜，市賈托貴有權名，性急招言妒妻良。贅可膺若能員，夜照財祿自興榮。又曰：照命分明有太陰，生來財祿不勞尋。凶神若也來相犯，到老無成枉用心。太陰喜獨行則吉，凶神相犯，變吉為凶。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3792-3816"
+      },
+      "modern_japanese": "太陰が命宮を照らすと、俗気が少なく独立心があり、自力で成就する象を持つ。財を扱うことや商いにも適し、貴人の助けによって権名を得ることがある。性急で言葉の問題や嫉妬を招く面もある。夜生で太陰が照れば財禄は自然に栄える。太陰は独行を喜び、凶神が犯すと吉が凶へ変わる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "moon_palace_財帛宮",
+      "star": "moon",
+      "app_label": "月",
+      "classical_name": "太陰",
+      "category": "palace",
+      "target": "財帛宮",
+      "source_heading": "太陰照宮、琅玕經",
+      "source_text": "月財帛：月居財帛福為深，更加廟旺足珠金。食神若也相兼照，縱有家貲禍更侵。\n食神食月之神月，遇之則食。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3792-3816"
+      },
+      "modern_japanese": "太陰が財帛宮にあると福が深く、さらに廟旺なら財宝に恵まれる。ただし月を食する神が同時に照れば、家財があっても災いを受けるとする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "moon_palace_兄弟宮",
+      "star": "moon",
+      "app_label": "月",
+      "classical_name": "太陰",
+      "category": "palace",
+      "target": "兄弟宮",
+      "source_heading": "太陰照宮、琅玕經",
+      "source_text": "月兄弟：兄弟親疏如手足，若值太陰大為福。只恐女多并異胞，南北分居難並屋。\n太陰女主之象以多女論。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3792-3816"
+      },
+      "modern_japanese": "太陰が兄弟宮にあるのは大きな福とするが、女性のきょうだいや異母・異父のきょうだいが多くなりやすく、南北に分かれて同居しにくい象がある。太陰を女性の象として多女で論じる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "moon_palace_田宅宮",
+      "star": "moon",
+      "app_label": "月",
+      "classical_name": "太陰",
+      "category": "palace",
+      "target": "田宅宮",
+      "source_heading": "太陰照宮、琅玕經",
+      "source_text": "月田宅：太陰田宅若相逢，自立榮華萬事通。陰貴又增招滿益，遷移三處振家風。\n田宅宮無凶星相犯主吉。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3792-3816"
+      },
+      "modern_japanese": "太陰が田宅宮にあると、自立して家を栄えさせ、諸事が通じる。陰貴の助けによって利益が増し、移転を重ねても家運を振興する象がある。凶星の犯しがなければ吉とする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "moon_palace_男女宮",
+      "star": "moon",
+      "app_label": "月",
+      "classical_name": "太陰",
+      "category": "palace",
+      "target": "男女宮",
+      "source_heading": "太陰照宮、琅玕經",
+      "source_text": "月男女：陰偶臨宮識者稀，女先男後始為奇。不惟英俊無刑剋，更見高高折桂枝。\n月乃為人之母故吉。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3792-3816"
+      },
+      "modern_japanese": "太陰が男女宮にあると、先に女児、後に男児を得る形を佳しとする。子は英俊で刑剋が少なく、科名・出世の象もある。太陰は母の象であるため、この宮では吉とする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "moon_palace_奴僕宮",
+      "star": "moon",
+      "app_label": "月",
+      "classical_name": "太陰",
+      "category": "palace",
+      "target": "奴僕宮",
+      "source_heading": "太陰照宮、琅玕經",
+      "source_text": "月奴僕：六位名為奴僕宮，為官須有吉星逢。月守是宮先剋父，晝生夜照母先凶。\n夜生人吉晝生人反此。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3792-3816"
+      },
+      "modern_japanese": "太陰が奴僕宮にある場合、吉星の助けを必要とする。月がこの宮を守ると父への剋を先に論じ、昼生では母にも不利があるとする。夜生は吉、昼生はその反対とする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "moon_palace_妻妾宮",
+      "star": "moon",
+      "app_label": "月",
+      "classical_name": "太陰",
+      "category": "palace",
+      "target": "妻妾宮",
+      "source_heading": "太陰照宮、琅玕經",
+      "source_text": "月妻妾：太陰西沒最為佳，明靜之宮無點瑕。更若尊星相對望，必生貴子佐皇家。\n主妻美麗清潔。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3792-3816"
+      },
+      "modern_japanese": "太陰が妻妾宮にあるのは佳く、明静で瑕のない配偶者の象となる。尊星が対照すれば、貴い子を生み朝廷を補佐するほどの象を持つ。妻は美しく清潔とする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "moon_palace_疾厄宮",
+      "star": "moon",
+      "app_label": "月",
+      "classical_name": "太陰",
+      "category": "palace",
+      "target": "疾厄宮",
+      "source_heading": "太陰照宮、琅玕經",
+      "source_text": "月疾厄：太陰臨照八宮存，畢世災危杳不聞。忌曜莫教同此位，雙眸渾似月遮雲。\n日月為天眼，月在疾厄以目論。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3792-3816"
+      },
+      "modern_japanese": "太陰が疾厄宮にあると、一生を通じて大きな災危が少ない。ただし忌曜が同宮すると眼に問題が出やすい。日月は天の眼であるため、疾厄宮では眼の象として論じる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "moon_palace_遷移宮",
+      "star": "moon",
+      "app_label": "月",
+      "classical_name": "太陰",
+      "category": "palace",
+      "target": "遷移宮",
+      "source_heading": "太陰照宮、琅玕經",
+      "source_text": "月遷移：太陰得在九宮中，三合加臨照命同。偏利遷移商賈客，必因陰貴得財豐。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3792-3816"
+      },
+      "modern_japanese": "太陰が遷移宮にあると、三合から命宮を照らす働きもあり、移動・商売・遠方での活動に特に利がある。女性や陰の貴人の助けによって財が豊かになる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "moon_palace_官祿宮",
+      "star": "moon",
+      "app_label": "月",
+      "classical_name": "太陰",
+      "category": "palace",
+      "target": "官祿宮",
+      "source_heading": "太陰照宮、琅玕經",
+      "source_text": "月官祿：太陰官祿作身宮，朗朗光華福倍隆。更在廟方功愈重，貴因皇戚得侯封。\n要在廟旺之宮方有此貴。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3792-3816"
+      },
+      "modern_japanese": "太陰が官禄宮にあり、身宮にも関係すると光彩が増し福が厚くなる。さらに廟旺なら功績が重くなり、皇族・有力者との縁によって爵位を得る象がある。この貴は廟旺であることを要する。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "moon_palace_福德宮",
+      "star": "moon",
+      "app_label": "月",
+      "classical_name": "太陰",
+      "category": "palace",
+      "target": "福德宮",
+      "source_heading": "太陰照宮、琅玕經",
+      "source_text": "月福德：陰耦來臨福德宮，雍容道德貴尊崇。更有吉星來本位，為官須坐玉堂中。\n吉星同度主有大福。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3792-3816"
+      },
+      "modern_japanese": "太陰が福徳宮にあると、穏やかで徳があり、尊貴の象となる。さらに吉星が同度すれば大福となり、官に就けば高い地位に至る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "moon_palace_相貌宮",
+      "star": "moon",
+      "app_label": "月",
+      "classical_name": "太陰",
+      "category": "palace",
+      "target": "相貌宮",
+      "source_heading": "太陰照宮、琅玕經",
+      "source_text": "月相貌：相貌宮中有太陰，命中吉曜喜相侵。忽然忌曜來相犯，甘旨空持養母心。\n有吉星主吉，有凶殺則凶。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3792-3816"
+      },
+      "modern_japanese": "太陰が相貌宮にある場合、吉曜が関わることを喜ぶ。忌曜が犯せば母に関する心労や孝養が空しくなる象がある。吉星があれば吉、凶殺があれば凶とする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "jupiter_palace_命宮",
+      "star": "jupiter",
+      "app_label": "木",
+      "classical_name": "歲星",
+      "category": "palace",
+      "target": "命宮",
+      "source_heading": "歲星照宮、琅玕經",
+      "source_text": "木命宮：木照人聰敏，藝術及文才，利官俱有益，看遇至恩該，行事人難損，逢危自脫災，聲名終有遇，衣祿晚年來。又曰：木星入命最為奇，間世文章眾所知，三主官星俱不背，他時身到鳳凰池。木乃慈惠仁德，命宮逢之必貴。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2943-2969"
+      },
+      "modern_japanese": "木星が命宮を照らすと、聡明で芸術・文章の才があり、官職にも利益がある。行動を損なわれにくく、危難に遭っても自ら脱し、やがて名声を得て晩年には衣禄が整う。木星が命宮に入るのは特に佳く、文章で世に知られ、官星の助けがそろえば高位に至る。木星は慈恵・仁徳を象徴し、命宮でこれに会えば貴を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "jupiter_palace_財帛宮",
+      "star": "jupiter",
+      "app_label": "木",
+      "classical_name": "歲星",
+      "category": "palace",
+      "target": "財帛宮",
+      "source_heading": "歲星照宮、琅玕經",
+      "source_text": "木財帛：木星好廟更臨財，一世榮華少有災。更得善星居上下，雖然運蹇福還來。\n若與財帛主相生，主大富更招外財。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2943-2969"
+      },
+      "modern_japanese": "木星が廟旺で財帛宮にあれば、一生栄華に恵まれ災いが少ない。さらに善星が上下にあれば、運が滞っても福が戻る。財帛宮主と相生すれば大富となり、外財も招く。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "jupiter_palace_兄弟宮",
+      "star": "jupiter",
+      "app_label": "木",
+      "classical_name": "歲星",
+      "category": "palace",
+      "target": "兄弟宮",
+      "source_heading": "歲星照宮、琅玕經",
+      "source_text": "木兄弟：兄弟宮中木照時，吉星遇著甚相宜。假饒鴈序恩情斷，只恐中間惡曜隨。\n有吉星和順凶星主分散。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2943-2969"
+      },
+      "modern_japanese": "木星が兄弟宮を照らすのは吉星と会えば非常に良く、兄弟関係は和順となる。悪曜が混じれば恩情が断たれ、兄弟が分散する象となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "jupiter_palace_田宅宮",
+      "star": "jupiter",
+      "app_label": "木",
+      "classical_name": "歲星",
+      "category": "palace",
+      "target": "田宅宮",
+      "source_heading": "歲星照宮、琅玕經",
+      "source_text": "木田宅：木星得入四宮中，可見無災喜慶重。田宅昌榮須守祖，不逢破敗福豐隆。\n逢破敗劫殺減半。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2943-2969"
+      },
+      "modern_japanese": "木星が田宅宮に入ると災いが少なく喜慶が重なり、田宅が栄える。祖業を守ることに利があり、破敗がなければ福が豊かになる。破敗・劫殺に会えばその福は減る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "jupiter_palace_男女宮",
+      "star": "jupiter",
+      "app_label": "木",
+      "classical_name": "歲星",
+      "category": "palace",
+      "target": "男女宮",
+      "source_heading": "歲星照宮、琅玕經",
+      "source_text": "木男女：木星子位主三人，吉宿同宮產俊英。凶曜若來相剋陷，恐憂初子損其身。\n若木為男女，主忌金煞相逢。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2943-2969"
+      },
+      "modern_japanese": "木星が男女宮にあると、子は三人を主るとされ、吉宿が同宮すれば優れた子を得る。凶曜が剋陷すれば長子に損傷の恐れがある。とくに金の煞との相逢を忌む。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "jupiter_palace_奴僕宮",
+      "star": "jupiter",
+      "app_label": "木",
+      "classical_name": "歲星",
+      "category": "palace",
+      "target": "奴僕宮",
+      "source_heading": "歲星照宮、琅玕經",
+      "source_text": "木奴僕：第六宮中如見木，決主一生無寸祿。只因吉曜在閑宮，總有衣食妻無福。\n吉星不宜在奴宮。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2943-2969"
+      },
+      "modern_japanese": "木星が奴僕宮にあるのは、吉曜が閑宮に落ちるため良くないとし、一生の禄が薄い象を主る。衣食があっても妻に福が乏しいとする。吉星は奴僕宮に居るのを宜しくない。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "jupiter_palace_妻妾宮",
+      "star": "jupiter",
+      "app_label": "木",
+      "classical_name": "歲星",
+      "category": "palace",
+      "target": "妻妾宮",
+      "source_heading": "歲星照宮、琅玕經",
+      "source_text": "木妻妾：第七宮中木宿遊，聰明典雅備祥休。更饒娶得高賢婦，偕老同心到白頭。\n木主仁故主妻賢。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2943-2969"
+      },
+      "modern_japanese": "木星が妻妾宮にあると、配偶者は聡明で典雅、吉祥を備え、高賢の妻を得て白髪まで共にする象となる。木は仁を主るため妻の賢さを表す。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "jupiter_palace_疾厄宮",
+      "star": "jupiter",
+      "app_label": "木",
+      "classical_name": "歲星",
+      "category": "palace",
+      "target": "疾厄宮",
+      "source_heading": "歲星照宮、琅玕經",
+      "source_text": "木疾厄：木星解散照其宮，且免平生患難凶。財祿更招多潤澤，堂堂人品賽終童。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2943-2969"
+      },
+      "modern_japanese": "木星が疾厄宮を照らすと、災厄を解散し、一生の患難を免れやすい。財禄にも潤いがあり、人物も堂々としたものになる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "jupiter_palace_遷移宮",
+      "star": "jupiter",
+      "app_label": "木",
+      "classical_name": "歲星",
+      "category": "palace",
+      "target": "遷移宮",
+      "source_heading": "歲星照宮、琅玕經",
+      "source_text": "木遷移：木星得地九宮存，三方傍照命宮門。更得高高明健處，榮遷真得貴人尊。\n旺相之地主如是也。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2943-2969"
+      },
+      "modern_japanese": "木星が得地して遷移宮にあると、三方から命宮を照らし、明健な高位を得れば、移動・転任によって栄え、貴人の尊重を受ける。旺相の地で特にこの象が強い。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "jupiter_palace_官祿宮",
+      "star": "jupiter",
+      "app_label": "木",
+      "classical_name": "歲星",
+      "category": "palace",
+      "target": "官祿宮",
+      "source_heading": "歲星照宮、琅玕經",
+      "source_text": "木官祿：第十宮中見木星，平生衣祿享生成。文章華麗人皆仰，甲第高登位九卿。\n官祿高強之宮，主有大文手段。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2943-2969"
+      },
+      "modern_japanese": "木星が官禄宮にあると、平生衣禄に恵まれ、文章は華麗で人々から仰がれる。科挙に高く登り、高官に至る象となる。官禄宮は高強で、文章・文才の大きな働きを主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "jupiter_palace_福德宮",
+      "star": "jupiter",
+      "app_label": "木",
+      "classical_name": "歲星",
+      "category": "palace",
+      "target": "福德宮",
+      "source_heading": "歲星照宮、琅玕經",
+      "source_text": "木福德：木星一曜最尊崇，下照當生福德宮。經史優游多博學，不勞跬步至三公。\n木星居諸星之首，主清秀多文。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2943-2969"
+      },
+      "modern_japanese": "木星が福徳宮にあると尊崇され、経史に通じて博学となる。大きな苦労なく高位に進む象があり、清秀で文才が多いことを主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "jupiter_palace_相貌宮",
+      "star": "jupiter",
+      "app_label": "木",
+      "classical_name": "歲星",
+      "category": "palace",
+      "target": "相貌宮",
+      "source_heading": "歲星照宮、琅玕經",
+      "source_text": "木相貌：木宿如臨相貌宮，清奇古怪好相逢。聞詩聞禮多賢雅，不作郎官作相公。\n主人身長秀麗。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "2943-2969"
+      },
+      "modern_japanese": "木星が相貌宮にあると、清奇でやや古雅な風貌となり、詩礼に通じた賢雅な人物の象を持つ。官途でも高位に至る可能性があり、体つきは長身で秀麗とする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mars_palace_命宮",
+      "star": "mars",
+      "app_label": "火",
+      "classical_name": "熒惑",
+      "category": "palace",
+      "target": "命宮",
+      "source_heading": "熒惑照宮、琅玕經",
+      "source_text": "火命宮：火照命宮中心明，氣量洪倚公成，附勢煩劇立身躬，財利初年散，成家未及終，若能行順旺，權重祿財豐。火在命宮，主人躁急，限到。又曰：身命宮中遇火星，此人躁急性聰明，平生喜怒真難測，凡事須教立便成。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3076-3101"
+      },
+      "modern_japanese": "火星が命宮にあると、頭の働きは明敏で気量も大きいが、性質は急で喜怒が変わりやすい。初年は財が散りやすく、家を成すまでに波乱がある。順行し旺を得れば権勢が重く、禄財も豊かになる。物事は素早く成し遂げる傾向を持つ。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mars_palace_財帛宮",
+      "star": "mars",
+      "app_label": "火",
+      "classical_name": "熒惑",
+      "category": "palace",
+      "target": "財帛宮",
+      "source_heading": "熒惑照宮、琅玕經",
+      "source_text": "火財帛：火居財帛旺初年，中主交時恐不堅。若得善星同到此，末年退後又團圓。有吉扶限平穩。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3076-3101"
+      },
+      "modern_japanese": "火星が財帛宮にあると、初年は財運が旺じても中年には不安定になりやすい。善星が同宮すれば、晩年には再びまとまりを得る。吉星の扶助があれば運は平穏となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mars_palace_兄弟宮",
+      "star": "mars",
+      "app_label": "火",
+      "classical_name": "熒惑",
+      "category": "palace",
+      "target": "兄弟宮",
+      "source_heading": "熒惑照宮、琅玕經",
+      "source_text": "火兄弟：火臨兄弟事如何，爭競紛紛惹禍多。親戚有恩還反目，自然手足不相和。主兄弟兇狠。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3076-3101"
+      },
+      "modern_japanese": "火星が兄弟宮にあると、争い・競争が多く禍を招きやすい。親族に恩があっても反目し、兄弟姉妹は不和になりやすい。兄弟の性が強く激しい象を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mars_palace_田宅宮",
+      "star": "mars",
+      "app_label": "火",
+      "classical_name": "熒惑",
+      "category": "palace",
+      "target": "田宅宮",
+      "source_heading": "熒惑照宮、琅玕經",
+      "source_text": "火田宅：火宿加臨第四宮，祖基破盡受貧窮。若是廟方當發福，不然孤苦一生中。主不受祖業火性炎上之勢、久成灰燼。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3076-3101"
+      },
+      "modern_japanese": "火星が田宅宮にあると、祖業を受けにくく、祖産を失って困窮する象がある。ただし廟の地なら福を発する。そうでなければ孤苦が続きやすい。火の性が上炎し、久しければ灰になるという象で説明する。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mars_palace_男女宮",
+      "star": "mars",
+      "app_label": "火",
+      "classical_name": "熒惑",
+      "category": "palace",
+      "target": "男女宮",
+      "source_heading": "熒惑照宮、琅玕經",
+      "source_text": "火男女：火若來臨第五宮，此星刑剋最為凶。假饒嗣主居廟旺，必產奇男一二龍。\n火在男女宮，火數二、主生二子。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3076-3101"
+      },
+      "modern_japanese": "火星が男女宮にあると刑剋の作用が強い。ただし嗣主が廟旺なら、優れた男子を一、二人得る象となる。原注では火の数を二として、二子を主るとする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mars_palace_奴僕宮",
+      "star": "mars",
+      "app_label": "火",
+      "classical_name": "熒惑",
+      "category": "palace",
+      "target": "奴僕宮",
+      "source_heading": "熒惑照宮、琅玕經",
+      "source_text": "火奴僕：六位如逢火宿來，害刑牛馬定多災。屯殃變異起奴僕，得地專權自劇裁。\n主奴僕性高，則有欺主之故。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3076-3101"
+      },
+      "modern_japanese": "火星が奴僕宮にあると、家畜や使用人に関する損害・災いが起こりやすい。得地すると使用人が権勢を持ち、主人を凌ぐこともある。奴僕の性が高く、主を欺く象とする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mars_palace_妻妾宮",
+      "star": "mars",
+      "app_label": "火",
+      "classical_name": "熒惑",
+      "category": "palace",
+      "target": "妻妾宮",
+      "source_heading": "熒惑照宮、琅玕經",
+      "source_text": "火妻妾：火入妻宮定剋妻，高強非忌作珍奇。女人以火為夫位，禍福同源一例推。\n男以金為妻，女以火為夫。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3076-3101"
+      },
+      "modern_japanese": "火星が妻妾宮にあると、男性命では妻への剋を主る。ただし高強で忌星とならない場合は別に見る。女性にとって火星は夫を表すため、禍福はその状態によって同様に判断する。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mars_palace_疾厄宮",
+      "star": "mars",
+      "app_label": "火",
+      "classical_name": "熒惑",
+      "category": "palace",
+      "target": "疾厄宮",
+      "source_heading": "熒惑照宮、琅玕經",
+      "source_text": "火疾厄：火星八位憂血難，災來非命禍難禁。腰駝背曲缺脣齒，惡殺不臨厄減輕。\n若無煞星同宮，其禍略可。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3076-3101"
+      },
+      "modern_japanese": "火星が疾厄宮にあると、血に関する災難を警戒する。腰背の変形、口唇・歯の欠損などの象も挙げる。ただし悪煞が同宮しなければ、その害は軽くなる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mars_palace_遷移宮",
+      "star": "mars",
+      "app_label": "火",
+      "classical_name": "熒惑",
+      "category": "palace",
+      "target": "遷移宮",
+      "source_heading": "熒惑照宮、琅玕經",
+      "source_text": "火遷移：火星照位入遷移，遷變東西土產移。家舍亦須防火厄，末年有屋可安居。\n主不安，謂火旺動搖。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3076-3101"
+      },
+      "modern_japanese": "火星が遷移宮にあると、東西への移転や住居・産業の変動が多い。家屋の火災にも注意を要するが、晩年には住まいを得て安定する象がある。火が旺じて動揺するため、不安定を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mars_palace_官祿宮",
+      "star": "mars",
+      "app_label": "火",
+      "classical_name": "熒惑",
+      "category": "palace",
+      "target": "官祿宮",
+      "source_heading": "熒惑照宮、琅玕經",
+      "source_text": "火官祿；火星凶燄入官宮，仕列銓曹少始終。若是變為官祿主，會看附鳳與扳龍。\n官祿為強宮，故火附其勢。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3076-3101"
+      },
+      "modern_japanese": "火星が官禄宮にあると、官途では変動が多く、始終を全うしにくい面がある。ただし火星が官禄主として働けば、権勢に付き顕達する象もある。官禄宮は強宮であり、火星がその勢いを得る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mars_palace_福德宮",
+      "star": "mars",
+      "app_label": "火",
+      "classical_name": "熒惑",
+      "category": "palace",
+      "target": "福德宮",
+      "source_heading": "熒惑照宮、琅玕經",
+      "source_text": "火福德：熒惑來臨福德宮，夜生廟旺福豐隆。若值晝生逢水剋，定須破敗受貧窮。\n火夜則明，惟夜生人主福。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3076-3101"
+      },
+      "modern_japanese": "火星が福徳宮にある場合、夜生で廟旺なら福が豊かになる。昼生で水星の剋を受けると、破敗・貧窮を主る。火星は夜に明らかになるとして、夜生を福とする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mars_palace_相貌宮",
+      "star": "mars",
+      "app_label": "火",
+      "classical_name": "熒惑",
+      "category": "palace",
+      "target": "相貌宮",
+      "source_heading": "熒惑照宮、琅玕經",
+      "source_text": "火相貌：火居相貌性剛強，惹禍興災果異常。若得吉神為救助，逢人禮貌把名彰。\n主人形上尖下闊，以禮待人。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3076-3101"
+      },
+      "modern_japanese": "火星が相貌宮にあると性格は剛強で、禍や災いを招きやすい。ただし吉神の救助があれば、礼儀をもって人に接し名を上げる。体形は上が尖り下が広い象とする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "saturn_palace_命宮",
+      "star": "saturn",
+      "app_label": "土",
+      "classical_name": "鎮星",
+      "category": "palace",
+      "target": "命宮",
+      "source_heading": "鎮星照宮、琅玕經",
+      "source_text": "土命宮：土照人命孤，憂勞又有餘，初年多碌碌，祖業有如無，附依終為有，成家晚不虛，如其為祿主，晝遇貴豪居。又曰：土星居命主心癡，若有文章發更遲。更會木星井水宿，此生衣食欠精微。土在命宮主人肥大敦厚而重實，背隆而腰厚必有信義，遇剋主瘦弱面色矮黃。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3197-3222"
+      },
+      "modern_japanese": "土星が命宮にあると、孤独や憂労が多く、初年は忙しく苦労し、祖業にも恵まれにくい。後には人の助けを得て、晩年に家を成す。祿主となり昼生であれば貴人の助けを得やすい。性質は敦厚で重実、発達は遅めとし、剋を受けると痩弱・黄味のある顔色になるとする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "saturn_palace_財帛宮",
+      "star": "saturn",
+      "app_label": "土",
+      "classical_name": "鎮星",
+      "category": "palace",
+      "target": "財帛宮",
+      "source_heading": "鎮星照宮、琅玕經",
+      "source_text": "土財帛：土星財帛最堪嘉，水曜同臨反破家。身命吉星須細筭，陽宮日月問榮華。\n水能化土為泥，故有破家之說。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3197-3222"
+      },
+      "modern_japanese": "土星が財帛宮にあるのは基本的に佳いが、水星が同宮するとかえって破家の象となる。身命の吉星や日月の状態も詳しく見る必要がある。水が土を泥にするという理で破家を論じる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "saturn_palace_兄弟宮",
+      "star": "saturn",
+      "app_label": "土",
+      "classical_name": "鎮星",
+      "category": "palace",
+      "target": "兄弟宮",
+      "source_heading": "鎮星照宮、琅玕經",
+      "source_text": "土兄弟：土臨兄弟五人同，得他之力禍重重。恐招異姓為兄弟，四海相逢也是空。\n土之數五，在兄弟宮，故主五人。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3197-3222"
+      },
+      "modern_japanese": "土星が兄弟宮にあると、兄弟を五人と見る説があるが、兄弟の力を得るよりもかえって禍が重なることがある。異姓の者を兄弟同様に扱う象もある。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "saturn_palace_田宅宮",
+      "star": "saturn",
+      "app_label": "土",
+      "classical_name": "鎮星",
+      "category": "palace",
+      "target": "田宅宮",
+      "source_heading": "鎮星照宮、琅玕經",
+      "source_text": "土田宅：土星尊位為陽德，高占強宮為福澤。或在當生四殺中，起禍，生災豈能滅。\n土正為田宅之用故吉。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3197-3222"
+      },
+      "modern_japanese": "土星が田宅宮にあるのは、本来田宅を司る土の用にかなうため吉とする。高強の位なら福沢がある。ただし四殺など凶条件に入れば、災禍を生じる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "saturn_palace_男女宮",
+      "star": "saturn",
+      "app_label": "土",
+      "classical_name": "鎮星",
+      "category": "palace",
+      "target": "男女宮",
+      "source_heading": "鎮星照宮、琅玕經",
+      "source_text": "土男女：土星五位在陽宮，五箇男兒盡送終。孛氣忽來相犯著，男孫疾患半成空。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3197-3222"
+      },
+      "modern_japanese": "土星が男女宮にあり陽宮にあると、子を五人とする象があるが、すべてが無事に育つとは限らない。月孛や紫気が犯すと、男児・孫に病が出て半ば失う象を示す。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "saturn_palace_奴僕宮",
+      "star": "saturn",
+      "app_label": "土",
+      "classical_name": "鎮星",
+      "category": "palace",
+      "target": "奴僕宮",
+      "source_heading": "鎮星照宮、琅玕經",
+      "source_text": "十奴僕：奴僕宮中見土星，萬般謀運一無成。不如釋道歸林教，高臥雲中有大名。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3197-3222"
+      },
+      "modern_japanese": "土星が奴僕宮にあると、さまざまな計画が成就しにくい。世俗の事業よりも、釈道や隠逸の道に入る方が名を得る象とする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "saturn_palace_妻妾宮",
+      "star": "saturn",
+      "app_label": "土",
+      "classical_name": "鎮星",
+      "category": "palace",
+      "target": "妻妾宮",
+      "source_heading": "鎮星照宮、琅玕經",
+      "source_text": "土妻妾：土宿夜生不可逢，加臨切忌七宮中。坎宮此地居明健，壽考雍容福不窮。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3197-3222"
+      },
+      "modern_japanese": "土星が妻妾宮にある場合、夜生では特に忌む。ただし坎宮など条件が良ければ、長寿・穏やかさ・福のある配偶関係を示すこともある。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "saturn_palace_疾厄宮",
+      "star": "saturn",
+      "app_label": "土",
+      "classical_name": "鎮星",
+      "category": "palace",
+      "target": "疾厄宮",
+      "source_heading": "鎮星照宮、琅玕經",
+      "source_text": "土疾厄：土德來臨疾厄時，凶星焰焰定災危。多因聾啞雙睛翳，不是駝腰必病脾。\n土主脾胃，故病生於脾。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3197-3222"
+      },
+      "modern_japanese": "土星が疾厄宮にあり凶星が強く作用すると、災危を主る。聴覚・発声・眼の障害、腰背の曲がり、脾胃の病などを挙げる。土は脾胃を司るため、脾の疾患として論じる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "saturn_palace_遷移宮",
+      "star": "saturn",
+      "app_label": "土",
+      "classical_name": "鎮星",
+      "category": "palace",
+      "target": "遷移宮",
+      "source_heading": "鎮星照宮、琅玕經",
+      "source_text": "土遷移：土德當生在九宮，命星合照莫相逢。男人漂蕩他鄉裡，女子淫奔外姓中。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3197-3222"
+      },
+      "modern_japanese": "土星が遷移宮にあると、移動・外地での生活に不安定さが出やすい。男性は他郷を漂泊し、女性は家を離れて外姓に従う象として論じる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "saturn_palace_官祿宮",
+      "star": "saturn",
+      "app_label": "土",
+      "classical_name": "鎮星",
+      "category": "palace",
+      "target": "官祿宮",
+      "source_heading": "鎮星照宮、琅玕經",
+      "source_text": "土官祿：土星官祿占高強，兇惡威嚴不可當。若在廟方為祿主，桓圭端冕侍君王。\n官祿高強之位，土喜居之。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3197-3222"
+      },
+      "modern_japanese": "土星が官禄宮にあると、高強の位で威厳が強い。廟の地で祿主となれば、朝廷に仕え高位に至る象となる。官禄宮は高強で、土星が居るのを喜ぶ。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "saturn_palace_福德宮",
+      "star": "saturn",
+      "app_label": "土",
+      "classical_name": "鎮星",
+      "category": "palace",
+      "target": "福德宮",
+      "source_heading": "鎮星照宮、琅玕經",
+      "source_text": "土福德：土星福德照臨時，若處生方始見奇。沙漠揚威名國輔，英聲傳播鎮華夷。\n主福厚。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3197-3222"
+      },
+      "modern_japanese": "土星が福徳宮にあり、生旺の地を得れば特に佳い。辺境で威を振るい国家を補佐し、名声を内外に広める象となる。福が厚いことを主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "saturn_palace_相貌宮",
+      "star": "saturn",
+      "app_label": "土",
+      "classical_name": "鎮星",
+      "category": "palace",
+      "target": "相貌宮",
+      "source_heading": "鎮星照宮、琅玕經",
+      "source_text": "土相貌：土星凶熾不堪聞，限弱身衰主禍迍。不是年來羅蓋網，須愁狂疾不完身。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3197-3222"
+      },
+      "modern_japanese": "土星が相貌宮で凶勢を強め、運限も弱いと、禍や停滞を主る。羅喉などの凶作用が重なる場合は、重い病や身体の損傷を警戒する。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "venus_palace_命宮",
+      "star": "venus",
+      "app_label": "金",
+      "classical_name": "太白",
+      "category": "palace",
+      "target": "命宮",
+      "source_heading": "太白照宮、琅玕經",
+      "source_text": "金命宮：金主人多義，心明志自豪，倚公成附勢，權用自能高，妻娶如無贅，男兒晚歲牢，初年多偃蹇，成敗屢經遭。又曰：金星吉曜最為佳，華麗文章世所誇。莫使當年凶忌犯，婚姻貴族福無涯。\n為人清秀平正，遇土則肥，逢剋破相。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3322-3347"
+      },
+      "modern_japanese": "金星が命宮にあると、義を重んじ、心が明らかで志が高い。権勢ある者の助けを得て力を発揮し、晩年は安定するが、初年は停滞や成敗の反復が多い。文章や容姿にも恵まれやすく、凶忌が犯さなければ婚姻にも福がある。清秀で端正な人物を主り、土星に会えば肥え、剋を受けると相貌に傷が出るとする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "venus_palace_財帛宮",
+      "star": "venus",
+      "app_label": "金",
+      "classical_name": "太白",
+      "category": "palace",
+      "target": "財帛宮",
+      "source_heading": "太白照宮、琅玕經",
+      "source_text": "金財帛：金居財帛喜為深，女祿多招眾所欽。火孛只憂來剋犯，中年惟恐早灰心。\n金居財帛人之所喜也。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3322-3347"
+      },
+      "modern_japanese": "金星が財帛宮にあるのは喜ばしく、財禄に恵まれ人から重んじられる。火星・月孛の剋犯を恐れ、その場合は中年に財運や意気が衰える。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "venus_palace_兄弟宮",
+      "star": "venus",
+      "app_label": "金",
+      "classical_name": "太白",
+      "category": "palace",
+      "target": "兄弟宮",
+      "source_heading": "太白照宮、琅玕經",
+      "source_text": "金兄弟：第三宮內見金星，義斷分金手足情。雖是鴈行同氣者，反成背面不相親。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3322-3347"
+      },
+      "modern_japanese": "金星が兄弟宮にあると、義を重んじつつも兄弟関係に分離の象が出る。同胞であっても背を向け、親しみが薄くなりやすい。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "venus_palace_田宅宮",
+      "star": "venus",
+      "app_label": "金",
+      "classical_name": "太白",
+      "category": "palace",
+      "target": "田宅宮",
+      "source_heading": "太白照宮、琅玕經",
+      "source_text": "金田宅：金星吉曜成奇局，田宅逢之主厚福。上下加臨不見刑，一世安榮自豐足。\n田宅之宮金為極富。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3322-3347"
+      },
+      "modern_japanese": "金星が田宅宮にあると厚い福を主り、刑剋がなければ一生安定して豊かになる。田宅宮の金星は極めて富む象とする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "venus_palace_男女宮",
+      "star": "venus",
+      "app_label": "金",
+      "classical_name": "太白",
+      "category": "palace",
+      "target": "男女宮",
+      "source_heading": "太白照宮、琅玕經",
+      "source_text": "金男女：金星第五別為奇，子息當推有四兒。莫使同宮逢火剋，榮宗耀祖不須疑。\n金數四主有四子。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3322-3347"
+      },
+      "modern_japanese": "金星が男女宮にあると、子を四人と見る説があり、火星の剋がなければ子が家門を栄えさせる。金の数を四として四子を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "venus_palace_奴僕宮",
+      "star": "venus",
+      "app_label": "金",
+      "classical_name": "太白",
+      "category": "palace",
+      "target": "奴僕宮",
+      "source_heading": "太白照宮、琅玕經",
+      "source_text": "金奴僕：金星奴僕限宮時，年少還須剋少妻。又主交朋與親戚，直饒面是背成非。\n金主義故曰交朋。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3322-3347"
+      },
+      "modern_japanese": "金星が奴僕宮にあると、若年の配偶関係に剋が出ることがある。また友人・親戚との付き合いを主るが、表面は良くても裏で不和が生じる象がある。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "venus_palace_妻妾宮",
+      "star": "venus",
+      "app_label": "金",
+      "classical_name": "太白",
+      "category": "palace",
+      "target": "妻妾宮",
+      "source_heading": "太白照宮、琅玕經",
+      "source_text": "金妻妾：金星本是號妻星，要在高強廟旺行。夫婦共榮多福兆，若逢火剋又遭刑。\n男以金為妻，正得其宜。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3322-3347"
+      },
+      "modern_japanese": "金星は男性命における妻星であり、妻妾宮で高強・廟旺を得れば、夫婦ともに栄え福が多い。火星の剋を受けると刑傷の象となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "venus_palace_疾厄宮",
+      "star": "venus",
+      "app_label": "金",
+      "classical_name": "太白",
+      "category": "palace",
+      "target": "疾厄宮",
+      "source_heading": "太白照宮、琅玕經",
+      "source_text": "金疾厄：疾厄金臨本是良，英雄氣概少災殃。若教火孛來交會，骨折根傷不可當。\n忌刑剋惡殺臨。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3322-3347"
+      },
+      "modern_japanese": "金星が疾厄宮にあるのは本来良く、災いが少ない。ただし火星・月孛が交会すると骨折や身体の損傷を警戒する。刑剋や悪殺を忌む。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "venus_palace_遷移宮",
+      "star": "venus",
+      "app_label": "金",
+      "classical_name": "太白",
+      "category": "palace",
+      "target": "遷移宮",
+      "source_heading": "太白照宮、琅玕經",
+      "source_text": "金遷移：金星得地照遷移，調任榮遷福自宜。若更命無凶曜照，仰觀平地上雲梯。\n遷移是金，主遷西方。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3322-3347"
+      },
+      "modern_japanese": "金星が得地して遷移宮にあると、転任・移動によって栄え、福を得る。命宮に凶曜がなければ、平地から雲梯に登るように昇進する象となる。西方への移動にも縁がある。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "venus_palace_官祿宮",
+      "star": "venus",
+      "app_label": "金",
+      "classical_name": "太白",
+      "category": "palace",
+      "target": "官祿宮",
+      "source_heading": "太白照宮、琅玕經",
+      "source_text": "金官祿：官祿宮中太白星，照臨方地產豪英。若為祿主居強位，文武雙全佐聖明。\n官祿高強之宮，故有此兆。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3322-3347"
+      },
+      "modern_japanese": "金星が官禄宮にあると、豪英の人物となる象がある。祿主となり強位を得れば、文武両面に優れ、君主を補佐する高官となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "venus_palace_福德宮",
+      "star": "venus",
+      "app_label": "金",
+      "classical_name": "太白",
+      "category": "palace",
+      "target": "福德宮",
+      "source_heading": "太白照宮、琅玕經",
+      "source_text": "金福德：金居福德最稱奇，德照高門長貴兒。冠世英雄攄錦繡，禹門一躍過天池。\n金神無殺相犯大吉。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3322-3347"
+      },
+      "modern_japanese": "金星が福徳宮にあるのは特に佳く、家門に徳が及び、貴い子を育てる象がある。英雄的な才能を発揮し、急速に出世する。悪殺の犯しがなければ大吉とする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "venus_palace_相貌宮",
+      "star": "venus",
+      "app_label": "金",
+      "classical_name": "太白",
+      "category": "palace",
+      "target": "相貌宮",
+      "source_heading": "太白照宮、琅玕經",
+      "source_text": "金相貌：金星相貌並西鄰，一部髭鬚鬍口入。若遇貴人相接引，定為胥吏處公庭。\n主人白色",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3322-3347"
+      },
+      "modern_japanese": "金星が相貌宮にあると、白い肌色の象を主り、髭の特徴が現れるとする。貴人の引き立てを得れば、公的な役所に勤める象がある。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mercury_palace_命宮",
+      "star": "mercury",
+      "app_label": "水",
+      "classical_name": "辰星",
+      "category": "palace",
+      "target": "命宮",
+      "source_heading": "辰星照宮、琅玕經",
+      "source_text": "水命宮：命見水星臨，文術多智能，外財應有遇，引薦人相承，廟旺遷官職，餘宮道合僧，相貌同豪貴，資財晚歲興。又曰：水德星辰在命宮，得逢旺處便攀龍。聰明智識多機變，生在榮華富貴中。\n水主智動而能變、主人清俊。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3444-3469"
+      },
+      "modern_japanese": "水星が命宮にあると、文章・術数・知恵に優れ、外財や人からの推薦を得やすい。廟旺なら官職の昇進につながり、晩年には財も興る。聡明で機変に富み、清俊な人物を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mercury_palace_財帛宮",
+      "star": "mercury",
+      "app_label": "水",
+      "classical_name": "辰星",
+      "category": "palace",
+      "target": "財帛宮",
+      "source_heading": "辰星照宮、琅玕經",
+      "source_text": "水財帛：水星乘旺莫臨財，進退難逃反起災。手藝一生方可用，凡人財散亦難來。\n水能進退之物故忌之。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3444-3469"
+      },
+      "modern_japanese": "水星が財帛宮にあるのは、水が流動して定まらない性質のため基本的に忌む。財は出入りが激しく散りやすいが、手芸・技術を生かすことで用をなすとする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mercury_palace_兄弟宮",
+      "star": "mercury",
+      "app_label": "水",
+      "classical_name": "辰星",
+      "category": "palace",
+      "target": "兄弟宮",
+      "source_heading": "辰星照宮、琅玕經",
+      "source_text": "水兄弟：水星吉曜遇還稀，來臨三宮便不宜。上有親兄下有弟，兩頭無義便侵欺。\n水性無定決之東則東流、決之西則西流。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3444-3469"
+      },
+      "modern_japanese": "水星が兄弟宮にあるのは宜しくないとされ、兄弟間の情義が定まりにくく、互いに侵し合う象がある。水の性質が方向によって流れを変えることにたとえる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mercury_palace_田宅宮",
+      "star": "mercury",
+      "app_label": "水",
+      "classical_name": "辰星",
+      "category": "palace",
+      "target": "田宅宮",
+      "source_heading": "辰星照宮、琅玕經",
+      "source_text": "水田宅：善星一曜是辰星，得入強宮福轉精。不見當年刑忌照，便須萬頃與千籯。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3444-3469"
+      },
+      "modern_japanese": "水星が田宅宮のような強宮に入り、刑忌の照らしがなければ、田宅・財産が大きく発展する象となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mercury_palace_男女宮",
+      "star": "mercury",
+      "app_label": "水",
+      "classical_name": "辰星",
+      "category": "palace",
+      "target": "男女宮",
+      "source_heading": "辰星照宮、琅玕經",
+      "source_text": "水男女：水星高照子孫位，俊邁文章為國瑞。水數推來只一男，振起家風日榮貴。\n水主子少土剋之則無。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3444-3469"
+      },
+      "modern_japanese": "水星が男女宮にあると、子は俊秀で文章の才を持ち、家門を振興する。水の数から一男を主るとし、土星の剋を受けると子を得にくいとする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mercury_palace_奴僕宮",
+      "star": "mercury",
+      "app_label": "水",
+      "classical_name": "辰星",
+      "category": "palace",
+      "target": "奴僕宮",
+      "source_heading": "辰星照宮、琅玕經",
+      "source_text": "水奴僕：辰星莫入六宮中，冠世文章用處空。縱使南宮高甲過，棲遲薄祿走西東。\n水性主流。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3444-3469"
+      },
+      "modern_japanese": "水星が奴僕宮にあるのは宜しくない。文章の才があっても十分に活用されにくく、高い学識があっても薄禄で東西を奔走する象となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mercury_palace_妻妾宮",
+      "star": "mercury",
+      "app_label": "水",
+      "classical_name": "辰星",
+      "category": "palace",
+      "target": "妻妾宮",
+      "source_heading": "辰星照宮、琅玕經",
+      "source_text": "水妻妾：水到妻宮對照命，富貴貞賢人難並。忽然惡殺又相侵，心濫情淫性無定。\n水主清潔多智。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3444-3469"
+      },
+      "modern_japanese": "水星が妻妾宮にあり命宮を対照すると、富貴で貞賢な配偶者を得る象がある。ただし悪殺が侵せば、情が乱れ性質も不定となる。水星は清潔と知恵を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mercury_palace_疾厄宮",
+      "star": "mercury",
+      "app_label": "水",
+      "classical_name": "辰星",
+      "category": "palace",
+      "target": "疾厄宮",
+      "source_heading": "辰星照宮、琅玕經",
+      "source_text": "水疾厄：第八宮中水德臨，溫柔情性足人欽。忌星凶曜來侵犯，沉溺波濤墜井深。\n主腎疾。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3444-3469"
+      },
+      "modern_japanese": "水星が疾厄宮にあると、性質は温柔で人から敬われる。ただし忌星・凶曜が犯すと水難を警戒し、身体面では腎の疾患を主るとする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mercury_palace_遷移宮",
+      "star": "mercury",
+      "app_label": "水",
+      "classical_name": "辰星",
+      "category": "palace",
+      "target": "遷移宮",
+      "source_heading": "辰星照宮、琅玕經",
+      "source_text": "水遷移：水星合照最為珍，更看當生命位星。賓主和同無惡犯，遷移出處總歡寧。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3444-3469"
+      },
+      "modern_japanese": "水星が遷移宮にあり、命宮との関係が良く悪星の犯しがなければ、移動・外出・転居はおおむね順調で安寧となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mercury_palace_官祿宮",
+      "star": "mercury",
+      "app_label": "水",
+      "classical_name": "辰星",
+      "category": "palace",
+      "target": "官祿宮",
+      "source_heading": "辰星照宮、琅玕經",
+      "source_text": "水官祿：水星偏喜照官宮，出類超群福自隆。委任股肱扶寶祚，官居高品貴尊崇。\n主為官清白。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3444-3469"
+      },
+      "modern_japanese": "水星は官禄宮を照らすことを喜び、群を抜く才によって福が盛んになる。朝廷の補佐役として高位に就く象があり、清廉な官を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mercury_palace_福德宮",
+      "star": "mercury",
+      "app_label": "水",
+      "classical_name": "辰星",
+      "category": "palace",
+      "target": "福德宮",
+      "source_heading": "辰星照宮、琅玕經",
+      "source_text": "水福德：十一宮中水德來，汪洋智識仰賢才。公嚴德厚人欽重，澤被生民遍九垓。\n福德人之所仰，有吉星多福。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3444-3469"
+      },
+      "modern_japanese": "水星が福徳宮にあると、広い知識と賢才を持ち、公正・厳格で徳が厚く、人から尊敬される。吉星が加われば福が多く、その徳が広く人々に及ぶ象となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "mercury_palace_相貌宮",
+      "star": "mercury",
+      "app_label": "水",
+      "classical_name": "辰星",
+      "category": "palace",
+      "target": "相貌宮",
+      "source_heading": "辰星照宮、琅玕經",
+      "source_text": "水相貌：水星相貌最為強，凜凜清風在廟廊。若遇吉星無惡曜，容顏端正動君王。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3444-3469"
+      },
+      "modern_japanese": "水星が相貌宮にあると、清廉で端正な風貌を主る。吉星があり悪曜がなければ、容姿・品格が優れ、君主の目にも留まるほどの象となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ziqi_palace_命宮",
+      "star": "ziqi",
+      "app_label": "紫炁",
+      "classical_name": "紫氣",
+      "category": "palace",
+      "target": "命宮",
+      "source_heading": "紫氣照宮、琅玕經",
+      "source_text": "氣命宮：氣星臨命照遊藝最相宜，任重防傾阻名高財業微，初年多費力聚散六親離，最好中年後興榮向老時。又曰：紫氣臨宮學冠倫如為忌，曜號孤神雖然不是天庭客，也作禪門第一人。紫氣主孤雖貴而無子，逢空主為僧道。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3911-3936"
+      },
+      "modern_japanese": "紫氣が命宮にあると、芸術・技芸に適し、学問でも人に優れる象がある。一方で初年は労力が多く、六親との離散や財業の不安定さが出やすいが、中年以後から晩年にかけて栄える。紫氣は孤星の性質を持つため、貴くても孤独や無子の象を伴うことがあり、空に逢えば僧道の道に入るとする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ziqi_palace_財帛宮",
+      "star": "ziqi",
+      "app_label": "紫炁",
+      "classical_name": "紫氣",
+      "category": "palace",
+      "target": "財帛宮",
+      "source_heading": "紫氣照宮、琅玕經",
+      "source_text": "氣財帛：紫氣木星雖吉曜，第二宮中不為。妙克己待人是此，星宮主強時財可彀。\n主財虛耗散，專為別人求。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3911-3936"
+      },
+      "modern_japanese": "紫氣は吉曜だが、財帛宮では特に妙とはしない。自分を抑えて人のために尽くす傾向があり、財は虚耗・散失しやすい。ただし宮主が強ければ必要な財は得られる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ziqi_palace_兄弟宮",
+      "star": "ziqi",
+      "app_label": "紫炁",
+      "classical_name": "紫氣",
+      "category": "palace",
+      "target": "兄弟宮",
+      "source_heading": "紫氣照宮、琅玕經",
+      "source_text": "氣兄弟：紫氣來臨兄弟時，孤星卻主兩分離。雖然暫且同相聚，反目無情各所之。\n無則自立，有則各分離。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3911-3936"
+      },
+      "modern_japanese": "紫氣が兄弟宮にあると、孤星の性質から兄弟の分離を主る。しばらく同居していても、後には反目して各自別れる象がある。兄弟が少なければ自立し、いれば分離しやすいとする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ziqi_palace_田宅宮",
+      "star": "ziqi",
+      "app_label": "紫炁",
+      "classical_name": "紫氣",
+      "category": "palace",
+      "target": "田宅宮",
+      "source_heading": "紫氣照宮、琅玕經",
+      "source_text": "氣田宅：當生紫氣四宮行，福廕雙親保壽齡。看取耆年精力健，都緣強位老人星。\n田園樂逸黃耇無疆。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3911-3936"
+      },
+      "modern_japanese": "紫氣が田宅宮にあると、両親に福蔭が及び長寿を保つ象となる。老年まで精力が健やかで、田園生活も安楽となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ziqi_palace_男女宮",
+      "star": "ziqi",
+      "app_label": "紫炁",
+      "classical_name": "紫氣",
+      "category": "palace",
+      "target": "男女宮",
+      "source_heading": "紫氣照宮、琅玕經",
+      "source_text": "氣男女：氣星來照子孫宮，穎悟聰明更美容。邁祖超宗榮貴顯，家門昌盛福無窮。\n秋水精神兒女貌，冰清玉潔子孫容。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3911-3936"
+      },
+      "modern_japanese": "紫氣が男女宮を照らすと、子孫は聡明で容貌も美しく、祖先を超えて栄貴となり家門を盛んにする。清らかで端正な子女の象を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ziqi_palace_奴僕宮",
+      "star": "ziqi",
+      "app_label": "紫炁",
+      "classical_name": "紫氣",
+      "category": "palace",
+      "target": "奴僕宮",
+      "source_heading": "紫氣照宮、琅玕經",
+      "source_text": "氣奴僕：僕宮紫氣兩同行，落陷孤高總欠情。奴僕成行難保住，自家炊爨自家親。\n獨行獨坐無人伴，自炊自煮乏親臨。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3911-3936"
+      },
+      "modern_japanese": "紫氣が奴僕宮にあると、落陷・孤高の性質が強まり、人との情縁が薄くなる。使用人がいても長く留まりにくく、自分で身の回りのことをする孤独な象となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ziqi_palace_妻妾宮",
+      "star": "ziqi",
+      "app_label": "紫炁",
+      "classical_name": "紫氣",
+      "category": "palace",
+      "target": "妻妾宮",
+      "source_heading": "紫氣照宮、琅玕經",
+      "source_text": "氣妻妾：七宮妻妾氣相逢，必主當年有剋凶。若在命中及官祿，方袍員頂或孤從。\n玉笙金磬長相守，紙帳梅花獨自眠。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3911-3936"
+      },
+      "modern_japanese": "紫氣が妻妾宮にあると、配偶関係に剋の象がある。命宮や官禄宮でも紫氣の孤高性が強ければ、宗教・清修の道や独身に近い生活を示すことがある。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ziqi_palace_疾厄宮",
+      "star": "ziqi",
+      "app_label": "紫炁",
+      "classical_name": "紫氣",
+      "category": "palace",
+      "target": "疾厄宮",
+      "source_heading": "紫氣照宮、琅玕經",
+      "source_text": "氣疾厄：解災脫難最高強，紫氣生平免禍殃。道德日彰君子泰，超群發秀壽延長。\n添君子之志，解小人之災。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3911-3936"
+      },
+      "modern_japanese": "紫氣が疾厄宮にあると、災いを解き難を逃れる力が強く、一生の禍殃を軽くする。徳が高まり、健康・長寿の象となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ziqi_palace_遷移宮",
+      "star": "ziqi",
+      "app_label": "紫炁",
+      "classical_name": "紫氣",
+      "category": "palace",
+      "target": "遷移宮",
+      "source_heading": "紫氣照宮、琅玕經",
+      "source_text": "氣遷移：第九宮中有壽星，堂堂眉宇美精神。豈知天上清高秀，下照塵寰有道人。\n在天上神仙之府，主人間道德之人。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3911-3936"
+      },
+      "modern_japanese": "紫氣が遷移宮にあると、長寿星として清高な気質と美しい精神を示す。外に出ても道徳的・清雅な人物として見られる象となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ziqi_palace_官祿宮",
+      "star": "ziqi",
+      "app_label": "紫炁",
+      "classical_name": "紫氣",
+      "category": "palace",
+      "target": "官祿宮",
+      "source_heading": "紫氣照宮、琅玕經",
+      "source_text": "氣官祿：紫衣師道九流人，官祿宮中紫氣辰。若是孤高兄弟散，任他清貴作高真。\n受天帝之玉牒，作紫府之元君。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3911-3936"
+      },
+      "modern_japanese": "紫氣が官禄宮にあると、清貴・師道・九流の学芸や宗教的職掌に縁がある。孤高の傾向は強いが、高潔な立場や名誉ある役目に就く象となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ziqi_palace_福德宮",
+      "star": "ziqi",
+      "app_label": "紫炁",
+      "classical_name": "紫氣",
+      "category": "palace",
+      "target": "福德宮",
+      "source_heading": "紫氣照宮、琅玕經",
+      "source_text": "氣福德：俊雅超群紫氣星，來居福德福頻頻。必然顯達應三主，若是為官在大臣。\n立鴛鷺之班，居鳳凰之池。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3911-3936"
+      },
+      "modern_japanese": "紫氣が福徳宮にあると、俊雅で人に優れ、福が重なる。条件が整えば顕達し、官に就けば高い地位に至る象となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ziqi_palace_相貌宮",
+      "star": "ziqi",
+      "app_label": "紫炁",
+      "classical_name": "紫氣",
+      "category": "palace",
+      "target": "相貌宮",
+      "source_heading": "紫氣照宮、琅玕經",
+      "source_text": "氣相貌：相貌宮中紫氣臨，精神瀟灑福原深。如何晚景身康健，壽宿當年在此任。\n福如東海之深，壽比南山之盛。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "3911-3936"
+      },
+      "modern_japanese": "紫氣が相貌宮にあると、精神は洒脱で福が深く、晩年まで身体が健やかで長寿となる象を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "yuebo_palace_命宮",
+      "star": "yuebo",
+      "app_label": "月孛",
+      "classical_name": "月孛",
+      "category": "palace",
+      "target": "命宮",
+      "source_heading": "月孛照宮、琅玕經",
+      "source_text": "孛命宮：月孛照人命，初年災破頻，機術心自有，權謀術數精，早年防反覆，中歲立方成，夜生陰位照，財祿有聲名。夜生人遇之主吉。又曰：月孛須知是惡星，逢之禍患卒難行。若還入廟宮中者，必定前程有大成。與太陰同宮主貴。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4032-4057"
+      },
+      "modern_japanese": "月孛が命宮を照らすと、初年は災いや破敗が多く、早年には反復・不安定を防ぐ必要がある。一方で機略・権謀・術数に長け、中年以後に立身しやすい。夜生で陰位にあれば財禄と名声を得る吉象となる。入廟すれば前途に大成があり、太陰と同宮すれば貴を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "yuebo_palace_財帛宮",
+      "star": "yuebo",
+      "app_label": "月孛",
+      "classical_name": "月孛",
+      "category": "palace",
+      "target": "財帛宮",
+      "source_heading": "月孛照宮、琅玕經",
+      "source_text": "孛財帛：孛照財宮真可畏，須防人賴暗為災。限逢惡曜君須忌，吉宿臨宮主橫財。\n在此宮主失財耗散。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4032-4057"
+      },
+      "modern_japanese": "月孛が財帛宮にあると、他人による損失や暗い災いを警戒し、財の耗散を主る。悪曜が運限に来れば特に忌むが、吉宿が臨めば思いがけない財を得ることもある。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "yuebo_palace_兄弟宮",
+      "star": "yuebo",
+      "app_label": "月孛",
+      "classical_name": "月孛",
+      "category": "palace",
+      "target": "兄弟宮",
+      "source_heading": "月孛照宮、琅玕經",
+      "source_text": "孛兄弟：兄弟不宜見孛星，大小無分手足情。若有三人三路去，四人亦作四方行。\n主不和。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4032-4057"
+      },
+      "modern_japanese": "月孛が兄弟宮にあるのは宜しくなく、兄弟姉妹の情が薄くなりやすい。三人なら三方、四人なら四方へ別れるような離散を主り、不和の象となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "yuebo_palace_田宅宮",
+      "star": "yuebo",
+      "app_label": "月孛",
+      "classical_name": "月孛",
+      "category": "palace",
+      "target": "田宅宮",
+      "source_heading": "月孛照宮、琅玕經",
+      "source_text": "孛田宅：第四宮中月孛臨，定遭疫癘氣相侵。憂煎失業田莊盡，到老倉箱乏寸金。\n主虛乏耗散。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4032-4057"
+      },
+      "modern_japanese": "月孛が田宅宮にあると、災病や心労、失業・田産の喪失などを主り、老年まで蓄えが乏しくなりやすい。虚乏と耗散の象とする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "yuebo_palace_男女宮",
+      "star": "yuebo",
+      "app_label": "月孛",
+      "classical_name": "月孛",
+      "category": "palace",
+      "target": "男女宮",
+      "source_heading": "月孛照宮、琅玕經",
+      "source_text": "孛男女：子孫宮裡孛星攻，狀類根甘蔕苦同。假似門庭當旺盛，也須不肖辱先宗。\n主兒女不肖。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4032-4057"
+      },
+      "modern_japanese": "月孛が男女宮にあると、家門が栄えていても子女に問題が生じやすく、先祖の名を損なうような不肖の象を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "yuebo_palace_奴僕宮",
+      "star": "yuebo",
+      "app_label": "月孛",
+      "classical_name": "月孛",
+      "category": "palace",
+      "target": "奴僕宮",
+      "source_heading": "月孛照宮、琅玕經",
+      "source_text": "孛奴僕：奴僕惟推最弱宮，孛星照臨愈為凶。當生祿主如全陷，衣食奔波守困窮。\n主走失不吉。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4032-4057"
+      },
+      "modern_japanese": "月孛が奴僕宮にあると、もともと弱い宮に凶意が重なり、使用人の離散・逃亡などを主る。祿主まで陷すれば、衣食のため奔走し困窮しやすい。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "yuebo_palace_妻妾宮",
+      "star": "yuebo",
+      "app_label": "月孛",
+      "classical_name": "月孛",
+      "category": "palace",
+      "target": "妻妾宮",
+      "source_heading": "月孛照宮、琅玕經",
+      "source_text": "孛妻妾：望門剋婦婦家貧，月孛如何更絕情。亥戌丑申未酉位，夫妻和順定無因。\n主妻無義。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4032-4057"
+      },
+      "modern_japanese": "月孛が妻妾宮にあると、配偶者との縁が薄く、妻側の家にも困窮の象がある。亥・戌・丑・申・未・酉などの位置では夫婦和順を得にくいとし、妻の情義が薄い象を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "yuebo_palace_疾厄宮",
+      "star": "yuebo",
+      "app_label": "月孛",
+      "classical_name": "月孛",
+      "category": "palace",
+      "target": "疾厄宮",
+      "source_heading": "月孛照宮、琅玕經",
+      "source_text": "孛疾厄：疾厄宮中月孛來，少年伏劍染非災。喜事不聞年歲久，近來常聽哭聲哀。\n主多疾連延。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4032-4057"
+      },
+      "modern_japanese": "月孛が疾厄宮にあると、若年から災厄や傷害を警戒し、喜びが少なく悲事が続く象を持つ。病が長く連続しやすいとする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "yuebo_palace_遷移宮",
+      "star": "yuebo",
+      "app_label": "月孛",
+      "classical_name": "月孛",
+      "category": "palace",
+      "target": "遷移宮",
+      "source_heading": "月孛照宮、琅玕經",
+      "source_text": "孛遷移：孛到遷移為惡宿，口舌陰謀被辱凌。迍厄敗家他處死，路橫屍首不能興。\n主妒害破敗。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4032-4057"
+      },
+      "modern_japanese": "月孛が遷移宮にあると、外出・移動先で口舌、陰謀、侮辱、困難や破敗を受けやすい。極端な災難の象も挙げられ、妬害と破敗を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "yuebo_palace_官祿宮",
+      "star": "yuebo",
+      "app_label": "月孛",
+      "classical_name": "月孛",
+      "category": "palace",
+      "target": "官祿宮",
+      "source_heading": "月孛照宮、琅玕經",
+      "source_text": "孛官祿：月孛光芒號彗星，眾星一見斂威名。廟方若作天元主，貴擁貔貅百萬兵。\n主有權柄。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4032-4057"
+      },
+      "modern_japanese": "月孛が官禄宮にあり、廟の地で天元主となれば、強い威権を持ち、大軍を掌握するほどの権柄を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "yuebo_palace_福德宮",
+      "star": "yuebo",
+      "app_label": "月孛",
+      "classical_name": "月孛",
+      "category": "palace",
+      "target": "福德宮",
+      "source_heading": "月孛照宮、琅玕經",
+      "source_text": "孛福德：福德宮中要好星，如何孛照有和平。光威自覺年來減，困頓須知目下生。\n無益於人有損於己。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4032-4057"
+      },
+      "modern_japanese": "福徳宮は本来良星を要するため、月孛が照ると平穏を得にくい。年とともに威勢が衰え、困頓が生じやすく、人にも自分にも益が少ないとする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "yuebo_palace_相貌宮",
+      "star": "yuebo",
+      "app_label": "月孛",
+      "classical_name": "月孛",
+      "category": "palace",
+      "target": "相貌宮",
+      "source_heading": "月孛照宮、琅玕經",
+      "source_text": "孛相貌：十二宮中有孛星，形容麤醜俱知聞。性情不定如狂妄，舉止無憑似少神。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4032-4057"
+      },
+      "modern_japanese": "月孛が相貌宮にあると、容貌は粗く整いにくいとし、性情も不安定で、言動に落ち着きや一貫性を欠く象となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "rahu_palace_命宮",
+      "star": "rahu",
+      "app_label": "羅喉",
+      "classical_name": "羅喉",
+      "category": "palace",
+      "target": "命宮",
+      "source_heading": "羅喉照宮、琅玕經",
+      "source_text": "羅命宮：羅喉臨命位權勢，自能高少達中有，滯財名晚歲牢，若然入怒地，成敗屢經遭，晝遇限宮見，迎恩見貴豪。又曰：羅喉在命若何看，文武兼貪信不難。但得一星金與木，若非稟筆即登壇。此星得地，主大吉高貴，剋吉凶不可言。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4144-4169"
+      },
+      "modern_japanese": "羅喉が命宮にあると、権勢を持ちやすいが、若年は達しにくく、中年以後に名利が固まる象がある。凶地に入れば成敗を繰り返す。昼生で運限が良ければ貴人の恩を受ける。金星・木星の助けがあれば文武いずれかで顕達し、得地すれば大吉・高貴を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "rahu_palace_財帛宮",
+      "star": "rahu",
+      "app_label": "羅喉",
+      "classical_name": "羅喉",
+      "category": "palace",
+      "target": "財帛宮",
+      "source_heading": "羅喉照宮、琅玕經",
+      "source_text": "羅財帛：財帛之上是羅?，己財須得即方休。更若狂圖多富積，如何不破被姦偷。\n主平等亦主虛耗。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4144-4169"
+      },
+      "modern_japanese": "羅喉が財帛宮にあると、自ら財を得ようとする力は強いが、欲を出して過度に蓄えようとすると破財や盗損を招きやすい。財は得ても虚耗を伴う象とする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "rahu_palace_兄弟宮",
+      "star": "rahu",
+      "app_label": "羅喉",
+      "classical_name": "羅喉",
+      "category": "palace",
+      "target": "兄弟宮",
+      "source_heading": "羅喉照宮、琅玕經",
+      "source_text": "羅兄弟：第三宮內有羅喉，悖逆乖違可自憂。宗派同源恩義等，只因凶曜一時休。\n須有不如無，有則多凶惡。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4144-4169"
+      },
+      "modern_japanese": "羅喉が兄弟宮にあると、兄弟間に反目・不和が生じやすい。同じ血筋でも恩義が続きにくく、兄弟がいることでかえって凶意が増すとする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "rahu_palace_田宅宮",
+      "star": "rahu",
+      "app_label": "羅喉",
+      "classical_name": "羅喉",
+      "category": "palace",
+      "target": "田宅宮",
+      "source_heading": "羅喉照宮、琅玕經",
+      "source_text": "羅田宅：羅?天首最凶殘，祖業雖多守則難。可惜田園千萬頃，都因凶曜見闌珊。\n主無祖業，有則多敗。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4144-4169"
+      },
+      "modern_japanese": "羅喉が田宅宮にあると、祖業が多くても守りにくく、田園・財産を失いやすい。祖業に恵まれにくく、あっても破敗が多いとする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "rahu_palace_男女宮",
+      "star": "rahu",
+      "app_label": "羅喉",
+      "classical_name": "羅喉",
+      "category": "palace",
+      "target": "男女宮",
+      "source_heading": "羅喉照宮、琅玕經",
+      "source_text": "羅男女：羅喉臨照子宮時，戲綵盈門豈所宜。恰似花繁紅艷盛，寂然少有一留枝。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4144-4169"
+      },
+      "modern_japanese": "羅喉が男女宮にあると、子女が多く見えても実際には残りにくく、花が多く咲いても実る枝が少ないような象として論じる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "rahu_palace_奴僕宮",
+      "star": "rahu",
+      "app_label": "羅喉",
+      "classical_name": "羅喉",
+      "category": "palace",
+      "target": "奴僕宮",
+      "source_heading": "羅喉照宮、琅玕經",
+      "source_text": "羅奴僕：羅喉難與善星交，奴僕之宮愈怒號。假使尊嚴崇道德，反居陋巷自簞瓢。\n主奴僕不安。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4144-4169"
+      },
+      "modern_japanese": "羅喉が奴僕宮にあると、使用人との関係が不安定になりやすい。本人に徳や威厳があっても、生活が思うように整わない象がある。奴僕の不安を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "rahu_palace_妻妾宮",
+      "star": "rahu",
+      "app_label": "羅喉",
+      "classical_name": "羅喉",
+      "category": "palace",
+      "target": "妻妾宮",
+      "source_heading": "羅喉照宮、琅玕經",
+      "source_text": "羅妻妾：羅喉凶宿名天首，不占高強對宮守。是惟一世有災迍，孤寡難婚更麤醜。\n主妻妾災疾。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4144-4169"
+      },
+      "modern_japanese": "羅喉が妻妾宮にあり高強を得なければ、婚姻に災いや停滞が多く、孤寡・難婚の象となる。配偶者の病災も主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "rahu_palace_疾厄宮",
+      "star": "rahu",
+      "app_label": "羅喉",
+      "classical_name": "羅喉",
+      "category": "palace",
+      "target": "疾厄宮",
+      "source_heading": "羅喉照宮、琅玕經",
+      "source_text": "羅疾厄：天首羅喉第八宮，世間何事比其凶。直饒食祿重重貴，面首須防有病攻。\n主多疾而有損。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4144-4169"
+      },
+      "modern_japanese": "羅喉が疾厄宮にあるのは凶意が強く、たとえ禄や貴を得ていても病の侵攻を警戒する。多病と身体の損傷を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "rahu_palace_遷移宮",
+      "star": "rahu",
+      "app_label": "羅喉",
+      "classical_name": "羅喉",
+      "category": "palace",
+      "target": "遷移宮",
+      "source_heading": "羅喉照宮、琅玕經",
+      "source_text": "羅遷移：羅喉凶曜號權星，臨照遷移回祿驚。得在旺宮為祿主，必因提薦貴身榮。\n回祿乃火星也。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4144-4169"
+      },
+      "modern_japanese": "羅喉が遷移宮にあると、火災などの驚きを警戒する。ただし旺宮にあり祿主となれば、推薦・引き立てによって身が栄える象となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "rahu_palace_官祿宮",
+      "star": "rahu",
+      "app_label": "羅喉",
+      "classical_name": "羅喉",
+      "category": "palace",
+      "target": "官祿宮",
+      "source_heading": "羅喉照宮、琅玕經",
+      "source_text": "羅官祿：羅喉原是貴權星，四正居強最吉寧。運限逢之多吉慶，更延壽算享遐齡。\n此宮主貴而壽。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4144-4169"
+      },
+      "modern_japanese": "羅喉は権勢を象徴する星で、官禄宮のような強位にあれば特に吉とする。運限でも良く働けば吉慶が多く、貴と長寿を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "rahu_palace_福德宮",
+      "star": "rahu",
+      "app_label": "羅喉",
+      "classical_name": "羅喉",
+      "category": "palace",
+      "target": "福德宮",
+      "source_heading": "羅喉照宮、琅玕經",
+      "source_text": "羅福德：天首羅喉為福德，超群出眾事乖張。合主瘟?兼盜賊，財空貧賤少年亡。\n主人物異常多疾而夭",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4144-4169"
+      },
+      "modern_japanese": "羅喉が福徳宮にあると、人物は人並み外れていても行動が常道を外れやすい。病災・盗難・財の空乏などを主り、多病・夭折の象も挙げる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "rahu_palace_相貌宮",
+      "star": "rahu",
+      "app_label": "羅喉",
+      "classical_name": "羅喉",
+      "category": "palace",
+      "target": "相貌宮",
+      "source_heading": "羅喉照宮、琅玕經",
+      "source_text": "羅相貌：天首羅喉相貌方，別為陰德解其殃。更兼忌曜縱橫見，若不相殘即繫梁。\n主破相凶狠。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4144-4169"
+      },
+      "modern_japanese": "羅喉が相貌宮にあると、破相や凶狠な性質を主る。陰徳によって災いを解く必要があり、さらに忌曜が重なれば身体損傷などの強い凶象を警戒する。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ketu_palace_命宮",
+      "star": "ketu",
+      "app_label": "計都",
+      "classical_name": "計都",
+      "category": "palace",
+      "target": "命宮",
+      "source_heading": "計都照宮、琅玕經",
+      "source_text": "計命宮：計都臨照命，性暴逞才能，背祖身孤立，依高附勢行，初年災禍起，晚歲福宜生，夜逢獨位照，家門財業成。又曰：計都暗曜最凶星，日月無光可畏人，得遇之宮加廟旺，雍容台輔股肱臣。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4258-4283"
+      },
+      "modern_japanese": "計都が命宮にあると、性質は激しく才を恃みやすく、祖業から離れて独立する象がある。初年は災禍が起こりやすいが、晩年には福が生じる。夜生で独位し、かつ廟旺を得れば家門・財業が成り、高位の補佐役となる象もある。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ketu_palace_財帛宮",
+      "star": "ketu",
+      "app_label": "計都",
+      "classical_name": "計都",
+      "category": "palace",
+      "target": "財帛宮",
+      "source_heading": "計都照宮、琅玕經",
+      "source_text": "計財帛：財帛之宮見計都，忽然富貴變為虛。莫教惡曜來侵犯，致使家囊掃地無。\n主財帛不興。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4258-4283"
+      },
+      "modern_japanese": "計都が財帛宮にあると、富貴が突然虚しくなり、財が衰えやすい。悪曜がさらに犯せば家財をほとんど失う象となる。財帛の不振を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ketu_palace_兄弟宮",
+      "star": "ketu",
+      "app_label": "計都",
+      "classical_name": "計都",
+      "category": "palace",
+      "target": "兄弟宮",
+      "source_heading": "計都照宮、琅玕經",
+      "source_text": "計兄弟：昆仲宮中有計都，參商義薄有嗟吁。直饒四海皆同氣，各自營謀各自居。\n主兄弟不睦。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4258-4283"
+      },
+      "modern_japanese": "計都が兄弟宮にあると、兄弟間の情義が薄くなり、同じ血筋でも各自が別々に暮らし、別々に生計を立てる象となる。兄弟不和を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ketu_palace_田宅宮",
+      "star": "ketu",
+      "app_label": "計都",
+      "classical_name": "計都",
+      "category": "palace",
+      "target": "田宅宮",
+      "source_heading": "計都照宮、琅玕經",
+      "source_text": "計田宅：強宮之上計都侵，福祿消亡禍自深。祖業到頭都不管，空勞計較沒身心。\n主不住田宅。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4258-4283"
+      },
+      "modern_japanese": "計都が田宅宮にあると、強宮であっても福禄を損ね、祖業を守りにくい。田宅に定着しにくく、あれこれ計っても身心を労する象となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ketu_palace_男女宮",
+      "star": "ketu",
+      "app_label": "計都",
+      "classical_name": "計都",
+      "category": "palace",
+      "target": "男女宮",
+      "source_heading": "計都照宮、琅玕經",
+      "source_text": "計男女：兒女宮中見計星，多因刑害大無情。雖然亦有二三個，也似梟鷹養不成。\n主兒女悖逆無成。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4258-4283"
+      },
+      "modern_japanese": "計都が男女宮にあると、子女に刑害や不和が生じやすい。二、三人の子がいても育成が難しく、反抗的で成就しにくい象を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ketu_palace_奴僕宮",
+      "star": "ketu",
+      "app_label": "計都",
+      "classical_name": "計都",
+      "category": "palace",
+      "target": "奴僕宮",
+      "source_heading": "計都照宮、琅玕經",
+      "source_text": "計奴僕：計臨奴僕不堪言，不走還須損壽元。月孛會時偷盜散，家中消耗破田園。\n主招賊盜偷財。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4258-4283"
+      },
+      "modern_japanese": "計都が奴僕宮にあるのは良くなく、使用人の離散や損害を主る。月孛と会えば盗難・財物の散失を招き、家産や田園が破れる象となる。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ketu_palace_妻妾宮",
+      "star": "ketu",
+      "app_label": "計都",
+      "classical_name": "計都",
+      "category": "palace",
+      "target": "妻妾宮",
+      "source_heading": "計都照宮、琅玕經",
+      "source_text": "計妻妾：計都暗曜莫相逢，何況加臨對命宮。舉止乖張饒害剋，定知造物不相容。\n主剋妻，主妻不美。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4258-4283"
+      },
+      "modern_japanese": "計都が妻妾宮にあると、配偶関係に剋害や不和が生じやすく、行動も噛み合いにくい。妻への剋、および容貌面の不利を主るとする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ketu_palace_疾厄宮",
+      "star": "ketu",
+      "app_label": "計都",
+      "classical_name": "計都",
+      "category": "palace",
+      "target": "疾厄宮",
+      "source_heading": "計都照宮、琅玕經",
+      "source_text": "計疾厄：次弱之宮名疾厄，計都守此多刑剋。若逢吉曜更加臨，無病卻為衣食迫。\n主多疾貧薄。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4258-4283"
+      },
+      "modern_japanese": "計都が疾厄宮にあると刑剋が多く、病の象が強い。吉曜が加わって病を免れても、衣食の困窮に迫られることがある。多病・貧薄を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ketu_palace_遷移宮",
+      "star": "ketu",
+      "app_label": "計都",
+      "classical_name": "計都",
+      "category": "palace",
+      "target": "遷移宮",
+      "source_heading": "計都照宮、琅玕經",
+      "source_text": "計遷移：計都天尾照遷移，利害之端仔細推。出外迎祥因廟旺，不然平照定傾危。\n主出入不利。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4258-4283"
+      },
+      "modern_japanese": "計都が遷移宮にある場合は、廟旺なら外出・移動によって吉を迎えることもあるが、そうでなければ危険が生じやすい。出入・移動には不利とする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ketu_palace_官祿宮",
+      "star": "ketu",
+      "app_label": "計都",
+      "classical_name": "計都",
+      "category": "palace",
+      "target": "官祿宮",
+      "source_heading": "計都照宮、琅玕經",
+      "source_text": "計官祿：計都之宿最兇殘，官祿逢之利害間。若在廟方須貴重，丹墀廷諍逆天顏。\n士庶少吉、居官多害。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4258-4283"
+      },
+      "modern_japanese": "計都が官禄宮にあると利害が大きく分かれる。廟の地なら貴重な地位を得ることもあるが、朝廷で諫争して上位者に逆らう象もある。一般人には吉が少なく、官にある者には害が多いとする。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ketu_palace_福德宮",
+      "star": "ketu",
+      "app_label": "計都",
+      "classical_name": "計都",
+      "category": "palace",
+      "target": "福德宮",
+      "source_heading": "計都照宮、琅玕經",
+      "source_text": "計福德：天之首尾臨福德，平生凶事反為吉。坦然不忍妄加人，患難尤能拯危急。\n旺宮招吉。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4258-4283"
+      },
+      "modern_japanese": "計都が福徳宮にあり旺を得ると、平生の凶事がかえって吉へ転じることがある。人に無理を加えず、患難の際には他人を救う象があり、旺宮では吉を招く。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    },
+    {
+      "id": "ketu_palace_相貌宮",
+      "star": "ketu",
+      "app_label": "計都",
+      "classical_name": "計都",
+      "category": "palace",
+      "target": "相貌宮",
+      "source_heading": "計都照宮、琅玕經",
+      "source_text": "計相貌：計都加臨最不宜，平生戀酒被花迷。忽然更有忌星照，殘疾應須損四肢。\n此宮主傷殘。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "lines": "4258-4283"
+      },
+      "modern_japanese": "計都が相貌宮にあるのは宜しくなく、酒色に迷いやすい象がある。さらに忌星が照れば身体の損傷、とくに四肢の障害を警戒する。傷残を主る。",
+      "conditions": {
+        "status": [],
+        "motion": [],
+        "dayNight": null,
+        "relatedStars": [],
+        "other": []
+      },
+      "polarity": null,
+      "keywords": [],
+      "meta": {
+        "review_status": "draft"
+      }
+    }
+  ]
+}
