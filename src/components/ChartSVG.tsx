@@ -31,6 +31,15 @@ import { lonToMansionDeg } from "@/lib/mansions28";
 import { normalizeStarKey } from "@/lib/star_key";
 import { JOREI_BY_MONTH_BRANCH, SHITSUGAI_MAP } from "@/lib/jorei_shitsugai";
 import { KOKU_MAP } from "@/lib/koku_rei_eiki";
+import PalaceDetailPanel, { LimitDetailPanel, type LimitSelection, type PalaceDetail } from "@/components/PalaceDetailPanel";
+import { PALACE_MAIN_STAR } from "@/lib/kakkyoku_engine";
+import PalacePrint from "@/components/print/PalacePrint";
+import { buildQzPalacePrintData } from "@/lib/qizheng_palace_print";
+import { smallLimitAgesForBranch } from "@/lib/small_limit";
+import { getBigLimitDegree } from "@/lib/big_limit_degree";
+import { getLiunianForLimit } from "@/lib/liunian";
+import { integerAgesOfBigLimit } from "@/lib/big_limit_ages";
+import { mingMansionOf } from "@/lib/ming_mansion";
 
 const PLOT_OFFSET_DEG = -120; // 度数リングと同じ値
 
@@ -60,7 +69,15 @@ type Props = {
   bigLimits?: BigLimitMap; // 各宮に D... を表示
 　juniunMap?: Record<string, string> | null;
   age?: number; // 互換用（使わない）
-  sex: "男" | "女"; 
+  sex: "男" | "女";
+  palaceDetail?: boolean; // true のとき十二宮クリック＋宮詳細パネルを有効化
+  mingDegree?: number; // アプリ共通の命度（命宮方式に応じて lib/ming_degree.ts で決めた値）。大限・限度・流年・年齢選択に使う
+  targetAge?: number | null; // 対象年齢（既存入力そのまま）。大限パネルの限度計算用
+  birthYear?: number | null; // 出生年（既存の出生日の西暦年）。行限パネルの流年（対象年＝出生年＋対象年齢）用
+  onTargetAgeChange?: (age: number) => void; // 大限パネルの「この大限で見る年齢」で選んだ年齢を既存の対象年齢へ反映する
+  isDayBirth?: boolean; // 宮詳細パネルの条件照合用（既存の昼夜判定結果）
+  kakkyoku?: { good: string[]; bad: string[] } | null; // 宮詳細パネル用（既存の格局エンジン結果）
+  interpretationOnly?: boolean; // 解釈印刷用：星盤を描かず、十二宮すべての印刷用鑑定データ（命宮から順）だけを出す
 };
 
 // 七政用（資料に合わせた宮名）
@@ -110,6 +127,10 @@ function getMonthBranchPalaceShensha(monthBranch?: ShenshaBranch) {
 
   return out;
 }
+
+// 大限・小限ラベルの体裁（盤の補助情報として小さめ）
+const LIMIT_FONT = 9;
+const LIMIT_BOX_H = 11;
 
 // 下半分だけ中心側へ押す（上半分はそのまま）
 function pushToCenterIfLowerHalf(
@@ -191,7 +212,6 @@ React.useEffect(() => {
 
   } = props;
 
-console.log("juniunMap in ChartSVG =", juniunMap);
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const _shen = shenBranch;
@@ -228,6 +248,63 @@ console.log("juniunMap in ChartSVG =", juniunMap);
   // 神殺（宮内の中間あたり）
   const rShensha = r12Inner + (r12Outer - r12Inner) * 0.58;
   const shenshaPushToCenter = 28;
+
+  // 大限・小限ラベル：宮名（既存位置）の上下に2段で置く（宮名の位置は動かさない）。
+  // 十二宮リング内側の円（r12Inner）と中央円（rCenter）の間に収め、他宮の宮名・ラベルとも重ならない位置を
+  // 宮名に近い順に探す
+  type Box = { x0: number; y0: number; x1: number; y1: number };
+  type LimitLabel = { text: string; w: number; x: number; y: number };
+  // 文字幅の見積もり（全角 1em・数字とダッシュ 0.55em・句読点と空白 0.3em）＋左右余白
+  const limitTextW = (t: string) =>
+    [...t].reduce((w, ch) => w + LIMIT_FONT * (/[.,\s]/.test(ch) ? 0.3 : /[\x21-\x7e–]/.test(ch) ? 0.55 : 1), 0) + 6;
+  const PALACE_NAME_FONT = 13;
+  const nameBox = (nx: number, ny: number, name: string): Box => {
+    const w = [...name].length * PALACE_NAME_FONT;
+    return { x0: nx - w / 2, x1: nx + w / 2, y0: ny - 7, y1: ny + 7 };
+  };
+  const boxesOverlap = (a: Box, b: Box, m = 3) => a.x0 < b.x1 + m && a.x1 > b.x0 - m && a.y0 < b.y1 + m && a.y1 > b.y0 - m;
+  function layoutAllLimitLabels(entries: { branch: string; nx: number; ny: number; name: string; bigText: string; smallText: string }[]) {
+    const rMax = r12Inner - 5, rMin = rCenter + 3;
+    const names = entries.map((e) => nameBox(e.nx, e.ny, e.name));
+    const placed: Box[] = [];
+    const out: Record<string, { big: LimitLabel | null; small: LimitLabel | null }> = {};
+    const inRing = (bx: Box) => {
+      const corners = [[bx.x0, bx.y0], [bx.x1, bx.y0], [bx.x0, bx.y1], [bx.x1, bx.y1]];
+      if (corners.some(([x, y]) => Math.hypot(x - cx, y - cy) > rMax)) return false;
+      const qx = Math.max(bx.x0, Math.min(cx, bx.x1)), qy = Math.max(bx.y0, Math.min(cy, bx.y1));
+      return Math.hypot(qx - cx, qy - cy) >= rMin;
+    };
+    for (const [ei, e] of entries.entries()) {
+      const items = [e.bigText, e.smallText].map((t) => ({ text: t, w: t ? limitTextW(t) : 0 }));
+      const step = LIMIT_BOX_H + 1;
+      const nb = nameBox(e.nx, e.ny, e.name);
+      const below = [nb.y1 + 1 + LIMIT_BOX_H / 2, nb.y1 + 1 + LIMIT_BOX_H / 2 + step];
+      const above = [nb.y0 - 1 - LIMIT_BOX_H / 2 - step, nb.y0 - 1 - LIMIT_BOX_H / 2];
+      const orders = e.ny < cy ? [below, above] : [above, below];
+      const dirC = e.nx < cx ? 1 : -1; // 中心方向を優先
+      const dxs: number[] = [0];
+      for (let d = 1; d <= 70; d++) dxs.push(dirC * d, -dirC * d);
+      let chosen: { x: number; ys: number[] } | null = null;
+      search: for (const dx of dxs) {
+        for (const ys of orders) {
+          const x = e.nx + dx;
+          const bxs = items.map((it, i) => (it.text ? { x0: x - it.w / 2, x1: x + it.w / 2, y0: ys[i] - LIMIT_BOX_H / 2, y1: ys[i] + LIMIT_BOX_H / 2 } : null)).filter(Boolean) as Box[];
+          if (!bxs.every(inRing)) continue;
+          // 自宮の宮名とは接してよい（重なりのみ不可）。他宮の宮名・配置済みラベルとは余白を取る
+          if (bxs.some((bx) => boxesOverlap(bx, nb, 0) || names.some((n, j) => j !== ei && boxesOverlap(bx, n)) || placed.some((pb) => boxesOverlap(bx, pb)))) continue;
+          chosen = { x, ys };
+          placed.push(...bxs);
+          break search;
+        }
+      }
+      const c = chosen ?? { x: e.nx, ys: orders[0] };
+      out[e.branch] = {
+        big: items[0].text ? { text: items[0].text, w: items[0].w, x: c.x, y: c.ys[0] } : null,
+        small: items[1].text ? { text: items[1].text, w: items[1].w, x: c.x, y: c.ys[1] } : null,
+      };
+    }
+    return out;
+  }
 
   // 二十八宿の区切り線
   const mansionDividers = useMemo(() => {
@@ -320,7 +397,230 @@ const shenshaMerged = useMemo(() => {
       return { branch: br, palaceName, centerLon: norm360(i * 30 + 15 + PALACE_LON_OFFSET) };
     });
   }, [mingBranch]);
-  
+
+  // ===== 宮クリック（宮詳細パネル）=====
+  const [selectedBranch, setSelectedBranch] = React.useState<string | null>(null);
+  // 大限・小限ラベルのクリック（行限パネル）。宮本体クリックとは別の状態で持つ
+  const [selectedLimit, setSelectedLimit] = React.useState<LimitSelection | null>(null);
+
+  const henyouByPalace = useMemo(
+    () => buildHenyouByPalace(yearStem as any, bodies as any, BRANCHES_B) as Record<string, string[]>,
+    [yearStem, bodies]
+  );
+
+  // ===== 星一覧表の行データ（表と宮詳細パネルで共有。計算内容は従来の表と同一）=====
+  const starRows = useMemo(() => {
+  // 1) 表に出す星の並び（必要なら並び替えてOK）
+  const ORDER = ["日","月","水","金","火","木","土","羅喉","計都","月孛","紫炁"] as const;
+
+  // 2) 表の行データ作成
+  return (bodies as any[])
+    .slice()
+    .sort((a, b) => {
+      const ai = ORDER.indexOf((a?.label ?? "").trim() as any);
+      const bi = ORDER.indexOf((b?.label ?? "").trim() as any);
+      return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
+    })
+    
+   .map((b) => {
+  const label = String(b?.label ?? "").trim();
+  const lon = ((Number(b?.lonDeg) % 360) + 360) % 360;
+  const palace = palaceFromLon(lon);
+
+  const status = (ouboinMap?.[ouboinKey(label)]?.[palace] ?? "") as string;
+
+  const starKey = normalizeStarKey(label);
+
+  const joureiStar = JOREI_BY_MONTH_BRANCH[
+    String(props.monthBranch || "").trim() as keyof typeof JOREI_BY_MONTH_BRANCH
+  ];
+  const jourei = starKey && joureiStar && starKey === joureiStar ? "乗令" : "";
+
+  const shitsugai = SHITSUGAI_MAP[starKey]?.includes(palace) ? "失垣" : "";
+
+  const m = lonToMansionDeg(lon) as any;
+  const mansionText = m ? `${m.mansion.label}${Number(m.degInMansion).toFixed(2)}°` : "";
+  const mansion = m?.mansion?.label;
+
+  const shitten =
+    mansion && SHITTEN_MAP[starKey as keyof typeof SHITTEN_MAP]?.includes(mansion)
+      ? "失躔"
+      : "";
+
+  const nyuuen = NYUUEN_MAP[starKey as keyof typeof NYUUEN_MAP]?.includes(palace as StarPalace) ? "入垣" : "";
+  const syouden = SYOUDEN_MAP[starKey as keyof typeof SYOUDEN_MAP]?.includes(palace as StarPalace) ? "昇殿" : "";
+  const kiraku = KIRAKU_MAP[starKey as keyof typeof KIRAKU_MAP]?.[palace as StarPalace] ?? "";
+  const kokuList = KOKU_MAP[starKey as keyof typeof KOKU_MAP]?.[palace as StarPalace] ?? [];
+　const kokuText = kokuList.join("");
+  function placeLabelNoOverlap(
+  cx: number,
+  cy: number,
+  baseR: number,
+  ang: number,
+  placed: { x: number; y: number }[],
+  stepR = 10,
+  maxTries = 10,
+  minDist = 14
+) {
+  for (let t = 0; t <= maxTries; t++) {
+    const r = baseR + t * stepR;
+    const p = polar(cx, cy, r, ang);
+    const hit = placed.some(q => {
+      const dx = p.x - q.x;
+      const dy = p.y - q.y;
+      
+      const dot = polar(cx, cy, r, ang);
+const lab = polar(cx, cy, r + 14, ang);
+
+      return dx * dx + dy * dy < minDist * minDist;
+    });
+    if (!hit) return { p, r };
+  }
+  const p = polar(cx, cy, baseR + maxTries * stepR, ang);
+  return { p, r: baseR + maxTries * stepR };
+}
+
+  const extra = [jourei, shitsugai, shitten, nyuuen, syouden, kiraku,
+  kokuText]
+    .filter(Boolean)
+    .join(" ");
+
+  return {
+    key: String(b?.id ?? label),
+    label,
+    motion: String(b?.motion ?? ""),
+    palace,
+    status,
+    extra,
+    lonText: Number.isFinite(lon) ? lon.toFixed(2) : "",
+    mansionText,
+  };
+})
+  }, [bodies, ouboinMap, props.monthBranch]);
+
+  // 神殺の出どころ（既存の3関数の結果を合流前のまま保持。合流結果 shenshaMerged と同じ入力）
+  const shenshaSources = useMemo(() => ({
+    year_stem: (yearStem ? getNenganPalaceShensha(yearStem) : {}) as Partial<PalaceMap>,
+    year_branch: (yearBranch ? getNenshiPalaceShensha(yearBranch) : {}) as Partial<PalaceMap>,
+    month_branch: (monthBranch ? getMonthBranchPalaceShensha(monthBranch) : {}) as Record<string, string[]>,
+  }), [yearStem, yearBranch, monthBranch]);
+
+  // 星に付く変曜系（既存の getHenyou2* の結果。henyou2Items と同じ対象名）
+  const henyou2List = useMemo(() => {
+    const out: { name: string; mark: string; origin: "henyou2_year_branch" | "henyou2_stem_ming" }[] = [];
+    for (const name of ["爵星", "産星", "血支", "血忌", "馬元", "天馬", "地駅"] as const) {
+      const mark = getHenyou2ByYearBranch(name, yearBranch as any);
+      if (mark) out.push({ name, mark: String(mark), origin: "henyou2_year_branch" });
+    }
+    for (const name of ["天経", "地緯", "天元", "地元", "人元", "職元", "局主"] as const) {
+      const mark = getHenyou2ByStemAndMing(name, yearStem as any, mingBranch as any);
+      if (mark) out.push({ name, mark: String(mark), origin: "henyou2_stem_ming" });
+    }
+    return out;
+  }, [yearStem, yearBranch, mingBranch]);
+
+  // 指定した宮の詳細データ（宮本体クリックと大限・小限クリックで共用）
+  const buildPalaceDetail = React.useCallback((targetBranch: string): PalaceDetail | null => {
+    const pc = palaceCenters.find((p) => p.branch === targetBranch);
+    if (!pc) return null;
+
+    // 星の所在・宿・状態はすべて既存結果（palaceFromLon / lonToMansionDeg / 星一覧表の行）から
+    const rowByKey = new Map((starRows as any[]).map((r) => [String(r.key), r]));
+    const starInfo = (b: any) => {
+      const lon = ((Number(b?.lonDeg) % 360) + 360) % 360;
+      const m = lonToMansionDeg(lon) as any;
+      const row = rowByKey.get(String(b?.id ?? b?.label ?? ""));
+      return {
+        key: String(b?.id ?? b?.label ?? ""),
+        label: String(b?.label ?? "").trim(),
+        branch: Number.isFinite(lon) ? palaceFromLon(lon) : "",
+        mansion: String(m?.mansion?.label ?? ""),
+        motion: String(row?.motion ?? ""),
+        status: String(row?.status ?? ""),
+        extra: String(row?.extra ?? ""),
+      };
+    };
+    const all = (bodies as any[]).map(starInfo);
+    const ORDER = ["日","月","水","金","火","木","土","羅喉","計都","月孛","紫炁"];
+    const stars = all
+      .filter((s) => s.branch === targetBranch)
+      .sort((a, b) => {
+        const ai = ORDER.indexOf(a.label);
+        const bi = ORDER.indexOf(b.label);
+        return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
+      });
+
+    // 変曜（十干変曜）：buildHenyouByPalace の「天禄(木星)」形式
+    const parseHenyou = (raw: string) => {
+      const m = /^(.+?)\((.+)\)$/.exec(raw);
+      return { raw, name: m ? m[1] : raw, starLabel: m ? m[2] : "" };
+    };
+    const henyou = (henyouByPalace?.[pc.branch] ?? []).map(parseHenyou);
+
+    // 星に付く変曜系：対象の星が当宮にあるものだけ
+    const MARK_TO_ID: Record<string, string> = { 日:"sun", 月:"moon", 木:"jupiter", 火:"mars", 土:"saturn", 金:"venus", 水:"mercury", 気:"ziqi", 孛:"yuebo", 羅:"rahu", 計:"ketu" };
+    const henyou2 = henyou2List
+      .map((h) => ({ ...h, starKey: MARK_TO_ID[h.mark] ?? "", starLabel: HENYOU_MARK_TO_LABEL[h.mark as keyof typeof HENYOU_MARK_TO_LABEL] ?? h.mark }))
+      .filter((h) => stars.some((s) => s.key === h.starKey));
+
+    // 神殺：合流後の名称と、その出どころ（年干／年支／月支）
+    const shenshaAt = (br: string) =>
+      (((shenshaMerged as any)?.[br] ?? []) as string[]).map((name) => ({
+        name,
+        origins: (["year_stem", "year_branch", "month_branch"] as const).filter((o) =>
+          ((shenshaSources[o] as any)?.[br] ?? []).includes(name)
+        ),
+      }));
+    const shensha = shenshaAt(pc.branch);
+
+    // 宮主（既存の十二宮主星表 PALACE_MAIN_STAR）
+    const lordOf = (br: string) => {
+      const label = PALACE_MAIN_STAR[br];
+      const b = (bodies as any[]).find((x) => String(x?.label ?? "").trim() === label);
+      return label ? { lordLabel: String(label), body: b ? starInfo(b) : null } : null;
+    };
+    const lord = lordOf(pc.branch);
+    const mingLord = mingBranch ? lordOf(mingBranch) : null;
+    const shenLord = shenBranch ? lordOf(shenBranch) : null;
+
+    return {
+      branch: pc.branch,
+      palaceName: pc.palaceName,
+      isShenPalace: !!shenBranch && pc.branch === shenBranch,
+      mingBranch: String(mingBranch ?? ""),
+      shenBranch: String(shenBranch ?? ""),
+      sex: props.sex,
+      isDayBirth: props.isDayBirth,
+      // 解釈本文の表示条件（年干・年支で分かれる文）の判定用。既存の年干支をそのまま渡す
+      yearStem: yearStem ? String(yearStem) : undefined,
+      yearBranch: yearBranch ? String(yearBranch) : undefined,
+      stars,
+      henyou,
+      henyou2,
+      shensha,
+      lord,
+      mingLord,
+      shenLord,
+      kakkyoku: props.kakkyoku ?? null,
+      // 宮主星の所在宮を参照するための全体データ（いずれも既存結果をそのまま並べ替えたもの）
+      palaceNameByBranch: Object.fromEntries(palaceCenters.map((p) => [p.branch, p.palaceName])),
+      allStars: all,
+      henyouByBranch: Object.fromEntries(BRANCHES_B.map((br) => [br, (henyouByPalace?.[br] ?? []).map(parseHenyou)])),
+      henyou2All: henyou2List.map((h) => ({ ...h, starKey: MARK_TO_ID[h.mark] ?? "", starLabel: HENYOU_MARK_TO_LABEL[h.mark as keyof typeof HENYOU_MARK_TO_LABEL] ?? h.mark })),
+      shenshaByBranch: Object.fromEntries(BRANCHES_B.map((br) => [br, shenshaAt(br)])),
+    };
+  }, [props.sex, props.isDayBirth, props.kakkyoku, palaceCenters, bodies, starRows,
+      henyouByPalace, henyou2List, shenshaMerged, shenshaSources, mingBranch, shenBranch, yearStem, yearBranch]);
+
+  const selectedDetail = useMemo(
+    () => (props.palaceDetail && selectedBranch ? buildPalaceDetail(selectedBranch) : null),
+    [props.palaceDetail, selectedBranch, buildPalaceDetail]
+  );
+  const limitDetail = useMemo(
+    () => (props.palaceDetail && selectedLimit ? buildPalaceDetail(selectedLimit.branch) : null),
+    [props.palaceDetail, selectedLimit, buildPalaceDetail]
+  );
+
   function tickLen(deg: number) {
     const d = ((deg % 360) + 360) % 360;
     if (d % 30 === 0) return 18;
@@ -409,10 +709,27 @@ const textAnchor = isSide ? (p0.x < cx ? "end" : "start") : "middle";
     );
   }
 
+  // 解釈印刷：星盤は描かず、十二宮の印刷用鑑定データ（buildQzPalacePrintData。宮詳細と同じ buildPalaceDetail の結果から作る）を
+  // 印刷専用レイアウト（PalacePrint）で命宮から順に並べる。画面の宮詳細パネルは使わない。盤全体の格局は各宮に出さない
+  if (props.interpretationOnly) {
+    const ordered = palaceCenters
+      .slice()
+      .sort((a, b) => PALACE_NAMES.indexOf(a.palaceName) - PALACE_NAMES.indexOf(b.palaceName));
+    return (
+      <>
+        {ordered.map((p) => {
+          const d = buildPalaceDetail(p.branch);
+          return d ? <PalacePrint key={p.branch} data={buildQzPalacePrintData(d)} /> : null;
+        })}
+      </>
+    );
+  }
+
   // 左端で星名が切れる対策（viewBox を左に広げる）
   const padL = 60;
 　const padR = 500;   // 右側の余白（表用）
   return (
+    <>
     <svg width={W + padR} height={H} viewBox={`${-padL} 0 ${W + padL + padR} ${H}`}>
       {/* 度目盛り */}
       <g>
@@ -642,7 +959,19 @@ const lab = polar(cx, cy, rBodyLabel, ang);
 
 
         {/* 十二支 + 宮名 + 大限 + 小限（下半分だけ中心側へ押す） */}
-        {palaceCenters.map((p) => {
+        {(() => {
+          // 宮名の位置（下の描画と同じ既存計算）
+          const namePos = (p: (typeof palaceCenters)[number]) => {
+            const q = polar(cx, cy, rPalaceName, angleFromLonCCW(p.centerLon));
+            return pushToCenterIfLowerHalf(q.x, q.y, cx, cy, 22);
+          };
+          // 大限：既存の bigLimits／小限：0歳＝命宮として逆行（規則は lib/small_limit.ts に一本化）
+          const limitLayout = layoutAllLimitLabels(palaceCenters.map((p) => {
+            const pn = namePos(p);
+            const dTxt = bigLimits ? (bigLimits as any)[p.branch] : "";
+            return { branch: p.branch, nx: pn.x, ny: pn.y, name: p.palaceName, bigText: dTxt ? `大限 ${dTxt}` : "", smallText: `小限 ${smallLimitAgesForBranch(mingBranch, p.branch).join(",")}` };
+          }));
+          return palaceCenters.map((p) => {
           const ang = angleFromLonCCW(p.centerLon);
 
           const pb = polar(cx, cy, rBranchLabel, ang);
@@ -650,22 +979,18 @@ const lab = polar(cx, cy, rBodyLabel, ang);
           let pn = polar(cx, cy, rPalaceName, ang);
           pn = pushToCenterIfLowerHalf(pn.x, pn.y, cx, cy, 22);
 
-          // 大限
-          const dTxt = bigLimits ? (bigLimits as any)[p.branch] : "";
-
-          // 小限：命宮を S1 として、逆行で S2,S3...
-         const mingIdx = indexOfBranchB(mingBranch);
-const curIdx  = indexOfBranchB(p.branch);
-
-// 反時計回りに命宮から何宮進んだか（0..11）
-const k = (mingIdx - curIdx + 12) % 12;
-
-// 3つ表示：その宮に入る年（12年周期で同じ宮に戻る）
-const s1  = 1  + k;
-const s13 = 13 + k;
-const s25 = 25 + k;
-
-const sTxt = `S${s1},S${s13},S${s25}`;
+          const lay = limitLayout[p.branch];
+          const dTxt = bigLimits ? String((bigLimits as any)[p.branch] ?? "") : "";
+          const sAges = smallLimitAgesForBranch(mingBranch, p.branch);
+          const clickable = !!props.palaceDetail;
+          const bigSel = selectedLimit?.type === "big" && selectedLimit.branch === p.branch;
+          const smallSel = selectedLimit?.type === "small" && selectedLimit.branch === p.branch;
+          // 宮本体のクリックへ伝播させない
+          const onLimitClick = (sel: LimitSelection) => (e: React.MouseEvent) => {
+            e.stopPropagation();
+            setSelectedBranch(null);
+            setSelectedLimit(sel);
+          };
 
           return (
             <g key={`lab-${p.branch}`}>
@@ -677,18 +1002,27 @@ const sTxt = `S${s1},S${s13},S${s25}`;
                 {p.palaceName}
               </text>
 
-              {dTxt ? (
-                <text x={pn.x} y={pn.y + 16} fontSize={12} textAnchor="middle" dominantBaseline="middle">
-                  {"D" + dTxt}
-                </text>
+              {/* 大限・小限：それぞれ独立した g（後から個別に onClick を付けられる） */}
+              {lay.big ? (
+                <g className="big-limit-label" data-branch={p.branch}
+                  {...(clickable ? { style: { cursor: "pointer" }, onClick: onLimitClick({ type: "big", branch: p.branch, ageRange: dTxt }) } : {})}>
+                  <rect x={lay.big.x - lay.big.w / 2} y={lay.big.y - LIMIT_BOX_H / 2} width={lay.big.w} height={LIMIT_BOX_H} rx={2}
+                    fill={bigSel ? "#dfe7f5" : "#f4f6fb"} stroke={bigSel ? "#466ec8" : "#b9c3d6"} strokeWidth={bigSel ? 1.4 : 0.6} />
+                  <text x={lay.big.x} y={lay.big.y + 0.5} fontSize={LIMIT_FONT} fill="#333" fontWeight={bigSel ? 700 : undefined} textAnchor="middle" dominantBaseline="middle">{lay.big.text}</text>
+                </g>
               ) : null}
-
-              <text x={pn.x} y={pn.y + 32} fontSize={11} textAnchor="middle" dominantBaseline="middle">
-                {sTxt}
-              </text>
+              {lay.small ? (
+                <g className="small-limit-label" data-branch={p.branch}
+                  {...(clickable ? { style: { cursor: "pointer" }, onClick: onLimitClick({ type: "small", branch: p.branch, ages: sAges }) } : {})}>
+                  <rect x={lay.small.x - lay.small.w / 2} y={lay.small.y - LIMIT_BOX_H / 2} width={lay.small.w} height={LIMIT_BOX_H} rx={2}
+                    fill={smallSel ? "#eef2f9" : "#fff"} stroke={smallSel ? "#466ec8" : "#c8c8c8"} strokeWidth={smallSel ? 1.4 : 0.6} />
+                  <text x={lay.small.x} y={lay.small.y + 0.5} fontSize={LIMIT_FONT} fill={smallSel ? "#333" : "#555"} fontWeight={smallSel ? 700 : undefined} textAnchor="middle" dominantBaseline="middle">{lay.small.text}</text>
+                </g>
+              ) : null}
             </g>
           );
-        })}
+          });
+        })()}
       </g>
 
       {/* 神殺 */}
@@ -736,92 +1070,8 @@ const sTxt = `S${s1},S${s13},S${s25}`;
       
       {/* ===== 星一覧（盤の外・左下）===== */}
 {(() => {
-  // 1) 表に出す星の並び（必要なら並び替えてOK）
-  const ORDER = ["日","月","水","金","火","木","土","羅喉","計都","月孛","紫炁"] as const;
-
-  // 2) 表の行データ作成
-  const rows = (bodies as any[])
-    .slice()
-    .sort((a, b) => {
-      const ai = ORDER.indexOf((a?.label ?? "").trim() as any);
-      const bi = ORDER.indexOf((b?.label ?? "").trim() as any);
-      return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
-    })
-    
-   .map((b) => {
-  const label = String(b?.label ?? "").trim();
-  const lon = ((Number(b?.lonDeg) % 360) + 360) % 360;
-  const palace = palaceFromLon(lon);
-
-  const status = (ouboinMap?.[ouboinKey(label)]?.[palace] ?? "") as string;
-
-  const starKey = normalizeStarKey(label);
-
-  const joureiStar = JOREI_BY_MONTH_BRANCH[
-    String(props.monthBranch || "").trim() as keyof typeof JOREI_BY_MONTH_BRANCH
-  ];
-  const jourei = starKey && joureiStar && starKey === joureiStar ? "乗令" : "";
-
-  const shitsugai = SHITSUGAI_MAP[starKey]?.includes(palace) ? "失垣" : "";
-
-  const m = lonToMansionDeg(lon) as any;
-  const mansionText = m ? `${m.mansion.label}${Number(m.degInMansion).toFixed(2)}°` : "";
-  const mansion = m?.mansion?.label;
-
-  const shitten =
-    mansion && SHITTEN_MAP[starKey as keyof typeof SHITTEN_MAP]?.includes(mansion)
-      ? "失躔"
-      : "";
-
-  const nyuuen = NYUUEN_MAP[starKey as keyof typeof NYUUEN_MAP]?.includes(palace as StarPalace) ? "入垣" : "";
-  const syouden = SYOUDEN_MAP[starKey as keyof typeof SYOUDEN_MAP]?.includes(palace as StarPalace) ? "昇殿" : "";
-  const kiraku = KIRAKU_MAP[starKey as keyof typeof KIRAKU_MAP]?.[palace as StarPalace] ?? "";
-  const kokuList = KOKU_MAP[starKey as keyof typeof KOKU_MAP]?.[palace as StarPalace] ?? [];
-　const kokuText = kokuList.join("");
-  function placeLabelNoOverlap(
-  cx: number,
-  cy: number,
-  baseR: number,
-  ang: number,
-  placed: { x: number; y: number }[],
-  stepR = 10,
-  maxTries = 10,
-  minDist = 14
-) {
-  for (let t = 0; t <= maxTries; t++) {
-    const r = baseR + t * stepR;
-    const p = polar(cx, cy, r, ang);
-    const hit = placed.some(q => {
-      const dx = p.x - q.x;
-      const dy = p.y - q.y;
-      
-      const dot = polar(cx, cy, r, ang);
-const lab = polar(cx, cy, r + 14, ang);
-
-      return dx * dx + dy * dy < minDist * minDist;
-    });
-    if (!hit) return { p, r };
-  }
-  const p = polar(cx, cy, baseR + maxTries * stepR, ang);
-  return { p, r: baseR + maxTries * stepR };
-}
-
-  const extra = [jourei, shitsugai, shitten, nyuuen, syouden, kiraku,
-  kokuText]
-    .filter(Boolean)
-    .join(" ");
-
-  return {
-    key: String(b?.id ?? label),
-    label,
-    motion: String(b?.motion ?? ""),
-    palace,
-    status,
-    extra,
-    lonText: Number.isFinite(lon) ? lon.toFixed(2) : "",
-    mansionText,
-  };
-})
+  // 1)・2) 表の行データは starRows（useMemo）で作成済み
+  const rows = starRows;
 
   // 3) 表のレイアウト（左下）
   const tableW = 260;
@@ -943,6 +1193,65 @@ const y0 = cy + r12Outer - 150;
       {txt}
     </text>
   ))}
-</g>    </svg>
+</g>
+
+      {/* 十二宮クリック領域（宮詳細パネル用・最前面の透明扇形） */}
+      {props.palaceDetail && (
+        <g className="zg-palace-hit">
+          {palaceCenters.map((p) => {
+            // 中心角±15°＝宮の境界線と一致
+            const a0 = angleFromLonCCW(p.centerLon - 15);
+            const a1 = angleFromLonCCW(p.centerLon + 15);
+            const o0 = polar(cx, cy, r12Outer, a0);
+            const o1 = polar(cx, cy, r12Outer, a1);
+            const i1 = polar(cx, cy, r12Inner, a1);
+            const i0 = polar(cx, cy, r12Inner, a0);
+            const d = [
+              `M ${o0.x} ${o0.y}`,
+              `A ${r12Outer} ${r12Outer} 0 0 1 ${o1.x} ${o1.y}`,
+              `L ${i1.x} ${i1.y}`,
+              `A ${r12Inner} ${r12Inner} 0 0 0 ${i0.x} ${i0.y}`,
+              "Z",
+            ].join(" ");
+            const selected = selectedBranch === p.branch;
+            return (
+              <path
+                key={`hit-${p.branch}`}
+                d={d}
+                fill={selected ? "rgba(70,110,200,0.10)" : "transparent"}
+                stroke={selected ? "rgba(70,110,200,0.6)" : "none"}
+                strokeWidth={selected ? 1.5 : 0}
+                style={{ cursor: "pointer" }}
+                onClick={() => { setSelectedLimit(null); setSelectedBranch(p.branch); }}
+              >
+                <title>{`${p.palaceName}　${p.branch}`}</title>
+              </path>
+            );
+          })}
+        </g>
+      )}
+    </svg>
+    {selectedDetail && <PalaceDetailPanel key={selectedDetail.branch} detail={selectedDetail} />}
+    {selectedLimit && limitDetail && (
+      <LimitDetailPanel
+        key={`${selectedLimit.type}-${selectedLimit.branch}`}
+        selection={selectedLimit}
+        detail={limitDetail}
+        bigDegree={selectedLimit.type === "big" && props.mingDegree != null
+          ? getBigLimitDegree({ mingBranch: mingBranch as any, mingDegree: props.mingDegree, targetAge: props.targetAge, clickedBranch: selectedLimit.branch })
+          : null}
+        liunian={getLiunianForLimit({ birthYear: props.birthYear, targetAge: props.targetAge, selection: selectedLimit, mingBranch, mingDegree: props.mingDegree })}
+        mingMansion={mingMansionOf(mingBranch, props.mingDegree)?.mansion ?? null}
+        bigAgeSelect={selectedLimit.type === "big" && props.onTargetAgeChange
+          ? (() => {
+              // 選択肢はこの大限に入る整数年齢。既存の対象年齢が範囲内ならそれを選択状態にし、範囲外・未入力なら未選択
+              const ages = integerAgesOfBigLimit(mingBranch, props.mingDegree, selectedLimit.branch);
+              const cur = props.targetAge ?? null;
+              return { ages, value: cur != null && ages.includes(cur) ? cur : null, onChange: props.onTargetAgeChange };
+            })()
+          : null}
+      />
+    )}
+    </>
   );
 }
