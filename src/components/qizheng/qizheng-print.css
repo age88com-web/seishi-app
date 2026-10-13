@@ -1,0 +1,87 @@
+/* src/components/qizheng/qizheng-print.css
+ *
+ * 七政四餘の印刷専用レイアウト（QizhengChartPrint / QizhengInterpretationPrint）。
+ * 画面表示・印刷対象の切替・用紙（@page）は src/components/print（PrintRoot・print.css）が受け持つ。
+ * 解釈印刷は画面の詳細パネルを使わず、印刷用鑑定データを共通の鑑定書レイアウト（components/print の .pp-*）で並べる。
+ * ここは七政四餘だけの追加（盤印刷の星盤の大きさ・吉格凶格の表）。
+ */
+
+/* ---- 盤印刷：A4縦1枚（用紙は page.tsx の PrintRoot page="size: A4 portrait; margin: 14mm 18mm 20mm 18mm"。
+   盤印刷のときだけ有効。解釈印刷・他の術は共通の既定のまま）。有効紙面 174mm×263mm。
+   上部の空白は @page の 14mm ＋ シートの padding-top 10mm（印刷ダイアログの余白設定に左右されない空白帯）。
+   中身に使える高さは 262−10＝252mm（PrintSheet は padding を除いた高さで縮小率を求める）---- */
+.print-root.qz-print-portrait {
+  width: 174mm;
+}
+.print-sheet.qz-chart-sheet,
+.qz-chart-sheet .print-sheet-body {
+  width: 174mm;
+}
+.print-sheet.qz-chart-sheet {
+  height: 262mm;
+  padding-top: 10mm;
+}
+.qz-chart-sheet .print-sheet-body {
+  position: relative;
+}
+/* 基本情報（2行・コンパクト） */
+.qzc-head {
+  margin: 0 0 2mm;
+  padding-bottom: 1mm;
+  border-bottom: 1.2pt solid #000;
+  font-size: 9pt;
+  line-height: 1.4;
+}
+.qzc-line1,
+.qzc-line2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 4.5mm;
+}
+.qzc-title {
+  font-size: 14pt;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+/* 複製元の ChartSVG（不可視・高さ0。紙面の高さに数えない） */
+.qzc-src {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 174mm;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+/* 円盤（幅 174mm）→ 下に変曜・星一覧表（円盤と同じ縮尺）→ 格局一覧 */
+.qzc-main {
+  display: flex;
+  justify-content: center;
+}
+.qzc-sub {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 6mm;
+  margin-top: 1mm;
+}
+.qzc-kk {
+  margin-top: 2mm;
+  padding-top: 1.2mm;
+  border-top: 0.5pt solid #000;
+  font-size: 9pt;
+  line-height: 1.5;
+}
+
+/* ---- 解釈印刷：共通 ---- */
+.qz-print-interp {
+  font-size: 10pt;
+  line-height: 1.75;
+}
+
+/* ---- 吉格・凶格の表 ---- */
+.pp-table.pp-kk-table th {
+  width: 50%;
+  text-align: center;
+}
