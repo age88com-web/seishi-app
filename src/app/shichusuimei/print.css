@@ -13,13 +13,22 @@
   background: #fff; color: #111; cursor: pointer;
 }
 .sc-print-button:hover { background: #111; color: #fff; }
+.sc-print-button:disabled { opacity: 0.6; cursor: default; }
+.sc-print-button:disabled:hover { background: #fff; color: #111; }
+.sc-save-msg { font-size: 12px; }
+.sc-save-msg-ok { color: #2e6b34; }
+.sc-save-msg-error { color: #a33; }
 
-/* ---- 用紙と上下の安全余白 ----
- * 用紙は page.tsx の PrintRoot page（A4縦・上下30mm・左右22mm）。本文高 297−60＝237mm。
- * 1枚のシートは本文高より1mm低くして2ページ目を作らない。中身が高いときは PrintSheet が全体を縮小する。
- * 用紙の余白に加えて、シート側（自動縮小の対象外）の上下に 10mm の固定の空白帯を取る。
- * 縮小されるのは内側の .print-sheet-body だけ（PrintSheet は padding を除いた高さで縮小率を求める）。 */
-.print-sheet.kt-print-sheet { height: 236mm; padding-top: 10mm; padding-bottom: 10mm; box-sizing: border-box; }
+/* ---- 用紙と余白 ----
+ * 用紙は page.tsx の PrintRoot page（A4縦・上下10mm・左右15mm）。本文 210−30＝180mm × 297−20＝277mm。
+ * 共通の .print-root（幅166mm・中央寄せ）のままだと左右が22mmに戻るため、この鑑定表だけ幅を本文幅180mmにする。
+ * シートの高さは本文高より13mm低い264mm（中身は約262mm）。ブラウザ・プリンタ側の余白や丸めで本文高が
+ * 数mm減っても最後の記入罫線が2ページ目へ送られないように余裕を取る。中身が高いときは PrintSheet が全体を縮小する。
+ * シート側の上下 padding（固定の空白帯）は付けない（タイトルを用紙上端から約10mmに置く）。 */
+.print-root.kt-print-root,
+.kt-print-root .print-sheet,
+.kt-print-root .print-sheet-body { width: 180mm; }
+.print-sheet.kt-print-sheet { height: 264mm; padding: 0; box-sizing: border-box; }
 
 /* ---- 鑑定表（.kt-sheet の中だけ） ---- */
 .kt-sheet {
@@ -29,6 +38,10 @@
   line-height: 1.3;
 }
 .kt-sheet .print-header { margin-bottom: 2.5mm; }
+/* 顧客名はタイトルより少し小さい程度で目立たせる（入力された姓名のまま。「様」は付けない） */
+/* タイトル行の行間（共通の line-height 1.5）による上の空きを詰める */
+.kt-sheet .print-title-row { gap: 10mm; line-height: 1.15; }
+.kt-sheet .print-name { font-size: 15pt; letter-spacing: 0.05em; }
 
 .kt-table { border-collapse: collapse; table-layout: fixed; }
 .kt-table th,
@@ -84,11 +97,14 @@
 .kt-daiun .kt-char { font-size: 19pt; }
 .kt-daiun .kt-row-tsuhen td { font-size: 9.5pt; font-weight: 700; }
 .kt-daiun .kt-row-zokan td { height: 13mm; }
-.kt-daiun .kt-row-tags td { height: 9.5mm; }
-.kt-daiun .kt-row-rel td { text-align: left; font-size: 8.5pt; line-height: 1.3; padding: 0.5mm 0.6mm; white-space: nowrap; overflow: hidden; }
-.kt-daiun .kt-row-rel-stem td { height: 13.5mm; }
-.kt-daiun .kt-row-rel-branch td { height: 20mm; border-bottom: none; }
-.kt-rel-head { font-size: 7pt; color: #333; border-bottom: 0.3pt dotted #666; margin-bottom: 0.3mm; }
+/* 命式との干支関係の行は印刷しない（画面だけ）。神煞の行が最下段 */
+.kt-daiun .kt-row-tags td { height: 9.5mm; border-bottom: none; }
+/* 現在の大運（現在の数え年が入る1本）：列全体（年齢〜神煞）を赤のやや太い枠で囲む。
+ * border-collapse では太い線が優先されるので、通常の列の線（1pt）・表の外枠（1.2pt）より太くする */
+.kt-daiun td.kt-current { border-left: 2.4pt solid #d0021b; border-right: 2.4pt solid #d0021b; }
+.kt-daiun .kt-row-age td.kt-current { border-top: 2.4pt solid #d0021b; color: #d0021b; }
+.kt-daiun .kt-row-tags td.kt-current { border-bottom: 2.4pt solid #d0021b; }
+.kt-current-legend { color: #d0021b; font-weight: 700; }
 
 .kt-sheet * { box-shadow: none !important; }
 

@@ -4,7 +4,8 @@
 //   見出し（姓名・生年月日時・性別・出生地・地方真太陽時）
 //   → 上段: 命式（罫線の表。通変・天干・地支・蔵干と通変・神煞）＋ 鑑定情報（順逆・立運・命式内の関係・三得・格局候補）
 //          ＋ 内格補助の点数表（既存 innerScore の値：比劫・印・食傷・財・官・合計・判定）
-//   → 中段: 大運10本（右から左。1本＝1列で、年齢・干支・天干通変・蔵干と通変・神煞・命式との関係を完結）
+//   → 中段: 大運10本（右から左。1本＝1列で、年齢・干支・天干通変・蔵干と通変・神煞。
+//          命式との干支関係は画面だけに出し、印刷しない。現在の大運の列は赤枠）
 //   → 下段: 書き込み用の罫線
 // 術者最終判断（画面の入力欄）は印刷しない。
 // 計算はしない（calculateShichusuimei・assessKakkyoku の結果を並べるだけ）。画面の部品とは別の印刷専用のDOM。
@@ -16,7 +17,13 @@ import type { Element } from "@/lib/shichusuimei";
 import { BRANCH_ELEMENT } from "@/lib/shichusuimei/kakkyoku/common";
 import type { InnerPatternScore, KakkyokuResult } from "@/lib/shichusuimei/kakkyoku";
 import { PrintHeader, PrintSheet, type PrintHeaderInfo } from "@/components/print/PrintRoot";
-import { hitName, LUCK_REL_SHORT, luckRelationItems, luckRelationLabel, pillarShinsatsu } from "../MeishikiParts";
+import {
+  currentDaiunIndex,
+  currentKazoeAge,
+  hitName,
+  LUCK_REL_SHORT,
+  pillarShinsatsu,
+} from "../MeishikiParts";
 
 const STATUS: Record<string, string> = {
   confirmed_by_engine: "成立",
@@ -128,9 +135,10 @@ export default function ShichusuimeiChartPrint({
   k: KakkyokuResult;
 }) {
   const tc = r.meishiki.timeCorrection;
+  // 時刻不明（補正なし）のときは地方真太陽時の行を印刷しない（画面の補正情報欄には出す）
   const extra: [string, string][] = tc
     ? [["地方真太陽時", `${tc.localApparentSolarTime.slice(0, 10)} ${tc.localApparentSolarTime.slice(11, 16)}`]]
-    : [["地方真太陽時", "時刻不明のため補正なし（時柱なし）"]];
+    : [];
   if (tc?.dayChangedAt23) extra.push(["23:00換日", "あり（日柱は翌日）"]);
   const s = k.strength;
   const cls = s.classification ?? `${s.classificationCandidates.join("・")}（候補）`;
@@ -138,6 +146,9 @@ export default function ShichusuimeiChartPrint({
   const natalRel = [...new Set(r.relations.map(natalRelationLabel))];
   // 第1大運を右端に置く（右から左）
   const lucks = [...r.daiun.periods].reverse();
+  // 現在の大運（列全体を赤枠で囲む）
+  const current = currentDaiunIndex(r);
+  const cur = (index: number) => (index === current ? "kt-current" : undefined);
 
   return (
     <PrintSheet className="kt-print-sheet">
@@ -227,17 +238,18 @@ export default function ShichusuimeiChartPrint({
         <div className="kt-daiun-head">
           <b>大運</b>
           <span className="kt-sub">　{r.daiun.direction === "forward" ? "順行" : "逆行"}・立運{r.daiun.startAge}歳（右から第1大運）</span>
+          {current !== null && <span className="kt-sub kt-current-legend">　赤枠＝現在の大運（数え年{currentKazoeAge(r)}歳）</span>}
         </div>
         <table className="kt-table kt-daiun">
           <tbody>
             <tr className="kt-row-age">
               {lucks.map((p) => (
-                <td key={p.index}>{p.ageFrom}〜{p.ageTo}</td>
+                <td key={p.index} className={cur(p.index)}>{p.ageFrom}〜{p.ageTo}</td>
               ))}
             </tr>
             <tr className="kt-row-kanshi">
               {lucks.map((p) => (
-                <td key={p.index}>
+                <td key={p.index} className={cur(p.index)}>
                   <div className="kt-char">{p.pillar.stem}<span className="kt-el">{STEM_ELEMENT[p.pillar.stem]}</span></div>
                   <div className="kt-char">{p.pillar.branch}<span className="kt-el">{BRANCH_ELEMENT[p.pillar.branch]}</span></div>
                 </td>
@@ -245,38 +257,25 @@ export default function ShichusuimeiChartPrint({
             </tr>
             <tr className="kt-row-tsuhen">
               {lucks.map((p) => (
-                <td key={p.index}>{r.daiunDetails[p.index].stemTsuhen}</td>
+                <td key={p.index} className={cur(p.index)}>{r.daiunDetails[p.index].stemTsuhen}</td>
               ))}
             </tr>
             <tr className="kt-row-zokan">
               {lucks.map((p) => (
-                <td key={p.index}><Zokan zokan={r.daiunDetails[p.index].zokan} /></td>
+                <td key={p.index} className={cur(p.index)}><Zokan zokan={r.daiunDetails[p.index].zokan} /></td>
               ))}
             </tr>
             <tr className="kt-row-tags">
               {lucks.map((p) => (
-                <td key={p.index}><Tags names={[...new Set(r.daiunDetails[p.index].shinsatsu.map(hitName))]} /></td>
+                <td key={p.index} className={cur(p.index)}><Tags names={[...new Set(r.daiunDetails[p.index].shinsatsu.map(hitName))]} /></td>
               ))}
             </tr>
-            {(["干", "支"] as const).map((part) => (
-              <tr key={part} className={`kt-row-rel kt-row-rel-${part === "干" ? "stem" : "branch"}`}>
-                {lucks.map((p) => {
-                  const items = luckRelationItems(r.daiunDetails[p.index].relations, part);
-                  return (
-                    <td key={p.index}>
-                      <div className="kt-rel-head">{part}</div>
-                      {items.length ? items.map((x) => <div key={luckRelationLabel(x)}>{luckRelationLabel(x)}</div>) : <span className="kt-none">—</span>}
-                    </td>
-                  );
-                })}
-              </tr>
-            ))}
           </tbody>
         </table>
 
         {/* 書き込み欄（罫線） */}
         <div className="kt-memo">
-          {Array.from({ length: 9 }, (_, i) => (
+          {Array.from({ length: 15 }, (_, i) => (
             <div key={i} className="kt-memo-line" />
           ))}
         </div>

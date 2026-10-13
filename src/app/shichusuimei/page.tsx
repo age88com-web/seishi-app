@@ -7,9 +7,11 @@
 // 補正情報・四柱・大運・蔵干・通変星・神煞（各柱・各大運に表示）・干支関係を表示する。
 
 import { useMemo, useState } from "react";
+import { flushSync } from "react-dom";
 import AppSwitcher from "@/components/AppSwitcher";
 import NatalProfileForm from "@/components/NatalProfileForm";
 import { getNatalProfile, useNatalProfile } from "@/lib/natalProfile/store";
+import { saveNatalProfileToClients } from "@/lib/natalProfile/saveClient";
 import { calculateShichusuimei } from "@/lib/shichusuimei";
 import type {
   Relation,
@@ -85,6 +87,32 @@ export default function ShichusuimeiPage() {
   const p22Name = p22NameForBirthPlace(profile.birthPlace);
   const printAs = usePrintMode();
 
+  // 「命式を印刷」: 先に顧客名簿へ保存（共通入力UIの「保存」と同じ処理）→ 成否にかかわらず印刷する
+  const [printing, setPrinting] = useState(false);
+  const [saveStatus, setSaveStatus] = useState<{ kind: "ok" | "error"; text: string } | null>(null);
+  const printWithSave = async () => {
+    if (printing) return;
+    setPrinting(true);
+    setSaveStatus(null);
+    let status: { kind: "ok" | "error"; text: string };
+    if (getNatalProfile().name.trim() === "") {
+      status = { kind: "error", text: "姓名が未入力のため顧客名簿へ保存しませんでした（印刷は続行）" };
+    } else {
+      try {
+        const { created, client } = await saveNatalProfileToClients();
+        status = { kind: "ok", text: `顧客名簿に${created ? "新規保存" : "更新"}しました（顧客ID ${client.id}）` };
+      } catch (e) {
+        status = { kind: "error", text: `顧客名簿への保存に失敗しました：${e instanceof Error ? e.message : String(e)}（印刷は続行）` };
+      }
+    }
+    // 印刷ダイアログが開いている間は画面が止まるので、通知を先に描画する
+    flushSync(() => {
+      setSaveStatus(status);
+      setPrinting(false);
+    });
+    printAs("chart");
+  };
+
   return (
     <>
       <AppSwitcher />
@@ -136,14 +164,18 @@ export default function ShichusuimeiPage() {
         ) : (
           <>
             <div className="sc-print-bar sc-no-print">
-              <button className="sc-print-button" type="button" onClick={() => printAs("chart")}>
-                命式を印刷
+              {submittedProfile && submittedProfile.name.trim() !== "" && (
+                <span className="sc-client-name">{submittedProfile.name.trim()}</span>
+              )}
+              {saveStatus && <span className={`sc-save-msg sc-save-msg-${saveStatus.kind}`}>{saveStatus.text}</span>}
+              <button className="sc-print-button" type="button" onClick={printWithSave} disabled={printing}>
+                {printing ? "保存中…" : "命式を印刷"}
               </button>
             </div>
             <ResultView r={computed.result} decision={decision} onDecisionChange={setDecision} />
             {/* 印刷専用レイアウト（画面には出さない） */}
             {submittedProfile && (
-              <PrintRoot kind="chart" page="size: A4 portrait; margin: 30mm 22mm 30mm 22mm;">
+              <PrintRoot kind="chart" className="kt-print-root" page="size: A4 portrait; margin: 10mm 15mm 10mm 15mm;">
                 <ShichusuimeiChartPrint
                   info={printInfoOf(submittedProfile)}
                   r={computed.result}

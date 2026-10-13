@@ -35,6 +35,8 @@
 .sc-layout { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 0 24px; align-items: start; }
 .sc-main, .sc-side { min-width: 0; }
 .sc-h2-sub { font-weight: 400; font-size: 12px; color: #555; margin-left: 10px; }
+/* 計算した人物の姓名（命式の上。見出し程度） */
+.sc-client-name { font-size: 18px; font-weight: 700; margin-right: auto; }
 
 .sc-pillars { display: flex; gap: 8px; }
 .sc-pillar {
@@ -53,6 +55,8 @@
 .sc-daiun { display: flex; gap: 6px; overflow-x: auto; direction: rtl; padding-bottom: 4px; }
 .sc-daiun > .sc-luck { direction: ltr; flex: 0 0 72px; min-width: 72px; }
 .sc-luck .sc-char { font-size: 22px; }
+/* 現在の大運（現在の数え年が入る1本）だけ淡いピンクで塗る。文字色・罫線は変えない */
+.sc-luck-current { background: #fdecf1; }
 .sc-luck-tsuhen { margin-top: 2px; border-top: 1px dashed #ddd; padding-top: 2px; min-height: 0; }
 .sc-luck-rel { margin-top: 4px; border-top: 1px dashed #ddd; padding-top: 3px; font-size: 11px; line-height: 1.45; text-align: left; }
 .sc-luck-rel-line { display: flex; flex-wrap: wrap; gap: 0 4px; }

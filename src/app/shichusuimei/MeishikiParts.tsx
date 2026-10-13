@@ -3,6 +3,7 @@
 // 命式（四柱・蔵干・通変・神煞）と大運（通変・蔵干・神煞・命式との干支関係）の表示部品。通常画面と「命式を印刷」で同じものを使う。
 // 計算はしない（calculateShichusuimei() の結果を並べるだけ）。
 
+import { findSolarTermCrossing } from "@/lib/calendar";
 import type { LuckRelation, PillarKey, ShichusuimeiResult, ShinsatsuHit } from "@/lib/shichusuimei";
 
 const PILLAR_KEYS: readonly PillarKey[] = ["時", "日", "月", "年"];
@@ -47,6 +48,30 @@ export function luckRelationItems(relations: LuckRelation[], part: "干" | "支"
     seen.add(key);
     return true;
   });
+}
+
+/** 立春（太陽黄経315°）の瞬間。その年の3月1日より前で最も近い通過を共通暦エンジンで求める */
+function risshunOf(year: number): Date {
+  return findSolarTermCrossing(new Date(Date.UTC(year, 2, 1)), 315);
+}
+
+/**
+ * 現在の数え年（D23。現在大運の判定用）。年の切替は立春:
+ * 今年の立春以降は 現在年−出生年+1、立春より前は前年扱いで 現在年−出生年。
+ */
+export function currentKazoeAge(r: ShichusuimeiResult, today: Date = new Date()): number {
+  const year = today.getFullYear();
+  const y = today.getTime() < risshunOf(year).getTime() ? year - 1 : year;
+  return y - r.meishiki.birthStandardDate.year + 1;
+}
+
+/**
+ * 現在入っている大運の index（既存の大運期間 ageFrom〜ageTo に現在の数え年が入るもの）。
+ * 大運の範囲外（出生前・最後の大運より後）は null。大運の計算はしない。
+ */
+export function currentDaiunIndex(r: ShichusuimeiResult, today: Date = new Date()): number | null {
+  const age = currentKazoeAge(r, today);
+  return r.daiun.periods.find((p) => p.ageFrom <= age && age <= p.ageTo)?.index ?? null;
 }
 
 function LuckRelations({ relations }: { relations: LuckRelation[] }) {
@@ -121,16 +146,18 @@ export function PillarsView({ r }: { r: ShichusuimeiResult }) {
 
 /** 大運（干支・年齢・天干通変星・蔵干と通変星・神煞・命式との干支関係） */
 export function DaiunView({ r }: { r: ShichusuimeiResult }) {
+  const current = currentDaiunIndex(r);
   return (
     <section className="sc-section">
       <h2 className="sc-h2">
         大運<span className="sc-h2-sub">立運{r.daiun.startAge}歳</span>
+        {current !== null && <span className="sc-h2-sub">現在 数え年{currentKazoeAge(r)}歳（色付き＝現在の大運）</span>}
       </h2>
       <div className="sc-daiun">
         {r.daiun.periods.map((p) => {
           const d = r.daiunDetails[p.index];
           return (
-            <div key={p.index} className="sc-pillar sc-luck">
+            <div key={p.index} className={`sc-pillar sc-luck${p.index === current ? " sc-luck-current" : ""}`}>
               <div className="sc-char">{p.pillar.stem}</div>
               <div className="sc-char">{p.pillar.branch}</div>
               <div className="sc-age">{p.ageFrom}〜{p.ageTo}歳</div>
