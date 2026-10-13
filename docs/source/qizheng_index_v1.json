@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0.0",
+  "source_file": "七政四餘鑑定用資料.docx",
+  "files": {
+    "qizheng_palace_meanings_v1.json": "A 十二宮の基本象意（＋ハウス比較 western_comparison）",
+    "qizheng_ming_branch_v1.json": "B 立命十二支の象意（出典混在のため unspecified）",
+    "qizheng_star_basics_v1.json": "C 七政四餘の基本象意（＋西洋惑星比較）",
+    "qizheng_star_branch_v1.json": "D 太陽×十二支（日宮推命法。既存 sun_branch_* と related_ids で関連付け）",
+    "qizheng_star_palace_v1.json": "E 星×命宮（照宮歌。既存 *_palace_命宮 と related_ids で関連付け）",
+    "qizheng_star_mansion_group_v1.json": "F 七政×宿グループ（日度〜水度）",
+    "qizheng_star_conjunction_v1.json": "G 同宮",
+    "qizheng_henyou_v1.json": "H 十干変曜の意味",
+    "qizheng_shensha_v1.json": "I〜L 神殺の基本象意（名称単位）",
+    "qizheng_conditional_rules_v1.json": "資料に明記された条件付きルール（変曜の宮条件・年干命宮神殺の状態条件・性別条件）",
+    "qizheng_combination_rules_v1.json": "資料に存在する複合判断のみ",
+    "qizheng_palace_relations_v1.json": "O 主星・恩難仇用星・例外・歩天経訣",
+    "qizheng_lord_rules_v1.json": "O/P 専論十主・主星守宮歌",
+    "qizheng_24_methods_v1.json": "Q 二十四要法",
+    "qizheng_limits_v1.json": "R 運限（説明のみ）",
+    "qizheng_terms_v1.json": "T 用語・定義",
+    "qizheng_nayin_juniun_v1.json": "M 納音十二運（reference_only）",
+    "qizheng_reference_tables_v1.json": "神殺・変曜・旺廟陥等の配置表（reference_only：既存エンジン照合専用）"
+  },
+  "reference_only_files": [
+    "qizheng_reference_tables_v1.json",
+    "qizheng_nayin_juniun_v1.json"
+  ],
+  "palace_click_sections": [
+    {
+      "order": 1,
+      "key": "palace_name",
+      "label": "宮名",
+      "source": "星盤（既存 ChartSVG の宮名・十二支）"
+    },
+    {
+      "order": 2,
+      "key": "palace_meaning",
+      "label": "宮の基本象意",
+      "source": [
+        "qizheng_palace_meanings_v1.json"
+      ],
+      "lookup": "palace_key（張果星宗データの宮名表記）"
+    },
+    {
+      "order": 3,
+      "key": "stars",
+      "label": "入宮星",
+      "source": "星盤（既存計算）"
+    },
+    {
+      "order": 4,
+      "key": "star_interpretation",
+      "label": "星の解釈",
+      "source": [
+        "zhangguo_general/branch/mansion/palace_v1.json",
+        "qizheng_star_basics_v1.json",
+        "qizheng_star_branch_v1.json",
+        "qizheng_star_palace_v1.json",
+        "qizheng_star_mansion_group_v1.json",
+        "qizheng_star_conjunction_v1.json"
+      ],
+      "note": "資料が異なるものは混ぜず、出典（source_kind）ごとに分けて表示する"
+    },
+    {
+      "order": 5,
+      "key": "henyou",
+      "label": "変曜",
+      "source": [
+        "既存 henyou エンジンの結果（変曜名）",
+        "qizheng_henyou_v1.json",
+        "qizheng_conditional_rules_v1.json（subject_type=henyou）"
+      ]
+    },
+    {
+      "order": 6,
+      "key": "shensha",
+      "label": "神殺名＋基本象意",
+      "source": [
+        "既存 shensha エンジンの結果（神殺名）",
+        "qizheng_shensha_v1.json"
+      ],
+      "note": "宮別解釈は持たない。同名の神殺が複数表にあるため、照合時は表（shensha_table）の特定が必要"
+    },
+    {
+      "order": 7,
+      "key": "kakkyoku",
+      "label": "格局",
+      "source": "既存 格局エンジンの結果（本資料に格局データなし）"
+    },
+    {
+      "order": 8,
+      "key": "palace_lord",
+      "label": "宮主・主星情報",
+      "source": [
+        "qizheng_palace_relations_v1.json",
+        "qizheng_lord_rules_v1.json"
+      ]
+    }
+  ],
+  "not_in_source": [
+    "神殺の宮別解釈",
+    "依頼例示の神殺複合（勾絞＋劫殺＋亡神、血刃＋血支＋金孛、天厄＋天刑＋火羅、浮沈＋土計、飛廉＋金羅）",
+    "十二宮各論",
+    "格局",
+    "流年星法の本文"
+  ]
+}

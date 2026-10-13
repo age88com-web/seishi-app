@@ -1,0 +1,294 @@
+{
+  "schema_version": "1.0.0",
+  "source_file": "七政四餘鑑定用資料.docx",
+  "records": [
+    {
+      "id": "qz_ming_子",
+      "category": "ming_branch",
+      "name": "立命子宮",
+      "target": "子",
+      "conditions": {},
+      "interpretation": "個性的、創意、自由、高尚、反逆、怪異",
+      "source_text": "個性的、創意、自由、高尚、反逆、怪異",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "３．命宮推命法",
+        "table": 4,
+        "row": 1,
+        "column": "象意等",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「この内容は主に『七政四餘推命全書』や『古今七政占星速成』に拠っており、さらに西洋占星術の象意も合わせて記載」とあり、七政由来と西洋由来が同一欄に混在して区別できないため unspecified",
+        "資料に「原文はないので、ここでは象意のみを記します」とある"
+      ]
+    },
+    {
+      "id": "qz_ming_丑",
+      "category": "ming_branch",
+      "name": "立命丑宮",
+      "target": "丑",
+      "conditions": {},
+      "interpretation": "老成、刻苦、壮大、権力、責任感、固執、説教、官僚主義",
+      "source_text": "老成、刻苦、壮大、権力、責任感、固執、説教、官僚主義",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "３．命宮推命法",
+        "table": 4,
+        "row": 2,
+        "column": "象意等",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「この内容は主に『七政四餘推命全書』や『古今七政占星速成』に拠っており、さらに西洋占星術の象意も合わせて記載」とあり、七政由来と西洋由来が同一欄に混在して区別できないため unspecified",
+        "資料に「原文はないので、ここでは象意のみを記します」とある"
+      ]
+    },
+    {
+      "id": "qz_ming_寅",
+      "category": "ming_branch",
+      "name": "立命寅宮",
+      "target": "寅",
+      "conditions": {},
+      "interpretation": "楽観、積極的、理想、宗教、洞察、活力、変化、刺激",
+      "source_text": "楽観、積極的、理想、宗教、洞察、活力、変化、刺激",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "３．命宮推命法",
+        "table": 4,
+        "row": 3,
+        "column": "象意等",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「この内容は主に『七政四餘推命全書』や『古今七政占星速成』に拠っており、さらに西洋占星術の象意も合わせて記載」とあり、七政由来と西洋由来が同一欄に混在して区別できないため unspecified",
+        "資料に「原文はないので、ここでは象意のみを記します」とある"
+      ]
+    },
+    {
+      "id": "qz_ming_卯",
+      "category": "ming_branch",
+      "name": "立命卯宮",
+      "target": "卯",
+      "conditions": {},
+      "interpretation": "沈黙、感情的、直覚、秘密、心霊、色気、こだわり",
+      "source_text": "沈黙、感情的、直覚、秘密、心霊、色気、こだわり",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "３．命宮推命法",
+        "table": 4,
+        "row": 4,
+        "column": "象意等",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「この内容は主に『七政四餘推命全書』や『古今七政占星速成』に拠っており、さらに西洋占星術の象意も合わせて記載」とあり、七政由来と西洋由来が同一欄に混在して区別できないため unspecified",
+        "資料に「原文はないので、ここでは象意のみを記します」とある"
+      ]
+    },
+    {
+      "id": "qz_ming_辰",
+      "category": "ming_branch",
+      "name": "立命辰宮",
+      "target": "辰",
+      "conditions": {},
+      "interpretation": "温和、高雅、交際、中庸、優柔不断、スマート",
+      "source_text": "温和、高雅、交際、中庸、優柔不断、スマート",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "３．命宮推命法",
+        "table": 4,
+        "row": 5,
+        "column": "象意等",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「この内容は主に『七政四餘推命全書』や『古今七政占星速成』に拠っており、さらに西洋占星術の象意も合わせて記載」とあり、七政由来と西洋由来が同一欄に混在して区別できないため unspecified",
+        "資料に「原文はないので、ここでは象意のみを記します」とある"
+      ]
+    },
+    {
+      "id": "qz_ming_巳",
+      "category": "ming_branch",
+      "name": "立命巳宮",
+      "target": "巳",
+      "conditions": {},
+      "interpretation": "冷静、穏健、思慮、秩序、文章、弁舌、細密",
+      "source_text": "冷静、穏健、思慮、秩序、文章、弁舌、細密",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "３．命宮推命法",
+        "table": 4,
+        "row": 6,
+        "column": "象意等",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「この内容は主に『七政四餘推命全書』や『古今七政占星速成』に拠っており、さらに西洋占星術の象意も合わせて記載」とあり、七政由来と西洋由来が同一欄に混在して区別できないため unspecified",
+        "資料に「原文はないので、ここでは象意のみを記します」とある"
+      ]
+    },
+    {
+      "id": "qz_ming_午",
+      "category": "ming_branch",
+      "name": "立命午宮",
+      "target": "午",
+      "conditions": {},
+      "interpretation": "自我、権力、自大、積極、大志、驕慢、派手",
+      "source_text": "自我、権力、自大、積極、大志、驕慢、派手",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "３．命宮推命法",
+        "table": 4,
+        "row": 7,
+        "column": "象意等",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「この内容は主に『七政四餘推命全書』や『古今七政占星速成』に拠っており、さらに西洋占星術の象意も合わせて記載」とあり、七政由来と西洋由来が同一欄に混在して区別できないため unspecified",
+        "資料に「原文はないので、ここでは象意のみを記します」とある"
+      ]
+    },
+    {
+      "id": "qz_ming_未",
+      "category": "ming_branch",
+      "name": "立命未宮",
+      "target": "未",
+      "conditions": {},
+      "interpretation": "善良、家庭、身内、情緒、記憶力、美食家、遠回り",
+      "source_text": "善良、家庭、身内、情緒、記憶力、美食家、遠回り",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "３．命宮推命法",
+        "table": 4,
+        "row": 8,
+        "column": "象意等",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「この内容は主に『七政四餘推命全書』や『古今七政占星速成』に拠っており、さらに西洋占星術の象意も合わせて記載」とあり、七政由来と西洋由来が同一欄に混在して区別できないため unspecified",
+        "資料に「原文はないので、ここでは象意のみを記します」とある"
+      ]
+    },
+    {
+      "id": "qz_ming_申",
+      "category": "ming_branch",
+      "name": "立命申宮",
+      "target": "申",
+      "conditions": {},
+      "interpretation": "活発、多芸多才、聡明機知、博学、表現、情報、好奇心",
+      "source_text": "活発、多芸多才、聡明機知、博学、表現、情報、好奇心",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "３．命宮推命法",
+        "table": 4,
+        "row": 9,
+        "column": "象意等",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「この内容は主に『七政四餘推命全書』や『古今七政占星速成』に拠っており、さらに西洋占星術の象意も合わせて記載」とあり、七政由来と西洋由来が同一欄に混在して区別できないため unspecified",
+        "資料に「原文はないので、ここでは象意のみを記します」とある"
+      ]
+    },
+    {
+      "id": "qz_ming_酉",
+      "category": "ming_branch",
+      "name": "立命酉宮",
+      "target": "酉",
+      "conditions": {},
+      "interpretation": "沈思、穏健、忠実、勤勉、保守、理財、審美、朴訥",
+      "source_text": "沈思、穏健、忠実、勤勉、保守、理財、審美、朴訥",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "３．命宮推命法",
+        "table": 4,
+        "row": 10,
+        "column": "象意等",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「この内容は主に『七政四餘推命全書』や『古今七政占星速成』に拠っており、さらに西洋占星術の象意も合わせて記載」とあり、七政由来と西洋由来が同一欄に混在して区別できないため unspecified",
+        "資料に「原文はないので、ここでは象意のみを記します」とある"
+      ]
+    },
+    {
+      "id": "qz_ming_戌",
+      "category": "ming_branch",
+      "name": "立命戌宮",
+      "target": "戌",
+      "conditions": {},
+      "interpretation": "積極、冒険、剛毅、権勢、独立自主、リーダーシップ、我慢嫌い",
+      "source_text": "積極、冒険、剛毅、権勢、独立自主、リーダーシップ、我慢嫌い",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "３．命宮推命法",
+        "table": 4,
+        "row": 11,
+        "column": "象意等",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「この内容は主に『七政四餘推命全書』や『古今七政占星速成』に拠っており、さらに西洋占星術の象意も合わせて記載」とあり、七政由来と西洋由来が同一欄に混在して区別できないため unspecified",
+        "資料に「原文はないので、ここでは象意のみを記します」とある"
+      ]
+    },
+    {
+      "id": "qz_ming_亥",
+      "category": "ming_branch",
+      "name": "立命亥宮",
+      "target": "亥",
+      "conditions": {},
+      "interpretation": "情感、従順、犠牲、宗教、情操、直感、想像力、耽溺、右往左往",
+      "source_text": "情感、従順、犠牲、宗教、情操、直感、想像力、耽溺、右往左往",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "３．命宮推命法",
+        "table": 4,
+        "row": 12,
+        "column": "象意等",
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料に「この内容は主に『七政四餘推命全書』や『古今七政占星速成』に拠っており、さらに西洋占星術の象意も合わせて記載」とあり、七政由来と西洋由来が同一欄に混在して区別できないため unspecified",
+        "資料に「原文はないので、ここでは象意のみを記します」とある"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,768 @@
+{
+  "schema_version": "1.0.0",
+  "source_file": "七政四餘鑑定用資料.docx",
+  "records": [
+    {
+      "id": "qz_term_四十四看法",
+      "category": "term",
+      "name": "入門四十四看法",
+      "target": null,
+      "conditions": {},
+      "interpretation": "「入門四十四看法」という呼び方は、『星平会海』にある呼び方です。看法とありますが、「四十四基本用語」といった方が適当のように思います。",
+      "source_text": "「入門四十四看法」という呼び方は、『星平会海』にある呼び方です。看法とありますが、「四十四基本用語」といった方が適当のように思います。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）１．入門四十四看法",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 174
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [
+        "「「四十四基本用語」といった方が適当」は著者見解"
+      ],
+      "embedded_comments": []
+    },
+    {
+      "id": "qz_term_重要語",
+      "category": "term",
+      "name": "重要な用語",
+      "target": null,
+      "conditions": {},
+      "interpretation": "この四十四の用語のうちとくに重要な言葉が、“宮主”“度主”“対”“合”“衝”“拱”“夾”“会”“迎”“送”です。",
+      "source_text": "この四十四の用語のうちとくに重要な言葉が、“宮主”“度主”“対”“合”“衝”“拱”“夾”“会”“迎”“送”です。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）１．入門四十四看法",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 174
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "embedded_comments": [],
+      "terms": [
+        "宮主",
+        "度主",
+        "対",
+        "合",
+        "衝",
+        "拱",
+        "夾",
+        "会",
+        "迎",
+        "送"
+      ]
+    },
+    {
+      "id": "qz_term_宮主度主",
+      "category": "term",
+      "name": "宮主・度主（命主・命度主）",
+      "target": null,
+      "conditions": {},
+      "interpretation": "宮主、度主のうち重要なのが、命宮の宮主すなわち命主、命度のある二十八宿（このことを単に命度ということが多い）の度主です。例えば、2012年6月6日7時半のときの命宮は未宮です。未宮の宮主は月（太陰）ですから、命主は月ということになります。また、命度は未１６度で井宿にあたるので、命度主は井宿の主星である木星ということになります。",
+      "source_text": "宮主、度主のうち重要なのが、命宮の宮主すなわち命主、命度のある二十八宿（このことを単に命度ということが多い）の度主です。例えば、2012年6月6日7時半のときの命宮は未宮です。未宮の宮主は月（太陰）ですから、命主は月ということになります。また、命度は未１６度で井宿にあたるので、命度主は井宿の主星である木星ということになります。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）１．入門四十四看法",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 174
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [
+        "例示（2012年6月6日7時半）は資料のまま"
+      ],
+      "embedded_comments": []
+    },
+    {
+      "id": "qz_term_位置関係",
+      "category": "term",
+      "name": "対・合・衝・拱・会",
+      "target": null,
+      "conditions": {},
+      "interpretation": "対、合、衝、拱、会というのは、星や宮の位置関係です。西洋占星術でいうアスペクトです。",
+      "source_text": "対、合、衝、拱、会というのは、星や宮の位置関係です。西洋占星術でいうアスペクトです。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）１．入門四十四看法",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 174
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "embedded_comments": [
+        {
+          "text": "西洋占星術でいうアスペクトです。",
+          "source_kind": "western_comparison"
+        }
+      ]
+    },
+    {
+      "id": "qz_term_対衝",
+      "category": "term",
+      "name": "対・衝",
+      "target": null,
+      "conditions": {},
+      "interpretation": "対と衝は同じで、約180度の関係（オポジション）です。衝の場合はとくに剋関係を意識した言葉です。",
+      "source_text": "対と衝は同じで、約180度の関係（オポジション）です。衝の場合はとくに剋関係を意識した言葉です。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）１．入門四十四看法",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 174
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "embedded_comments": [
+        {
+          "text": "（オポジション）",
+          "source_kind": "western_comparison"
+        }
+      ],
+      "angle_deg": 180
+    },
+    {
+      "id": "qz_term_合拱",
+      "category": "term",
+      "name": "合・拱",
+      "target": null,
+      "conditions": {},
+      "interpretation": "合と拱は約120度の関係（トライン）になります。あわせて合拱という言い方をすることも多いです。",
+      "source_text": "合と拱は約120度の関係（トライン）になります。あわせて合拱という言い方をすることも多いです。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）１．入門四十四看法",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 174
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "embedded_comments": [
+        {
+          "text": "（トライン）",
+          "source_kind": "western_comparison"
+        }
+      ],
+      "angle_deg": 120
+    },
+    {
+      "id": "qz_term_会",
+      "category": "term",
+      "name": "会",
+      "target": null,
+      "conditions": {},
+      "interpretation": "会というのは約0度の関係（コンジャンクション）です。",
+      "source_text": "会というのは約0度の関係（コンジャンクション）です。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）１．入門四十四看法",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 174
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "embedded_comments": [
+        {
+          "text": "（コンジャンクション）",
+          "source_kind": "western_comparison"
+        }
+      ],
+      "angle_deg": 0
+    },
+    {
+      "id": "qz_term_刑",
+      "category": "term",
+      "name": "90度（刑）",
+      "target": null,
+      "conditions": {},
+      "interpretation": "七政では90度の関係、すなわちスクエアはあまり重視しません。しいていえば“刑”ということになるのでしょうが、入門四十四看法では触れていません。",
+      "source_text": "七政では90度の関係、すなわちスクエアはあまり重視しません。しいていえば“刑”ということになるのでしょうが、入門四十四看法では触れていません。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）１．入門四十四看法",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 174
+      },
+      "source_kind": "author_commentary",
+      "related_ids": [],
+      "notes": [
+        "入門四十四看法では触れていないと明記"
+      ],
+      "embedded_comments": [
+        {
+          "text": "スクエア",
+          "source_kind": "western_comparison"
+        }
+      ]
+    },
+    {
+      "id": "qz_term_用語混乱",
+      "category": "term",
+      "name": "他分野の用語との混乱",
+      "target": null,
+      "conditions": {},
+      "interpretation": "さて、これらの用語で注意すべきは、いろいろな専門用語との混乱です。\n　例えば、天文学用語で合というのは、地球から見て惑星が太陽と同じ方向に見える（実際は太陽の光で見えないわけだが）位置を言い、衝とは地球から見て惑星が太陽と逆の方向に見える位置を言います。天文学用語でいう合は120度ではありませんし、合や衝はあくまで太陽が基準で惑星間の位置を示す用語ではありません。\n　四柱推命などで会という場合は、半会というように120度の関係を指す場合が多いので、七政で使われる言葉と混乱しないようにしなければなりません。また、拱は四柱推命では単に挟むという意味で使われることもありますので、これも注意を要します。",
+      "source_text": "さて、これらの用語で注意すべきは、いろいろな専門用語との混乱です。\n　例えば、天文学用語で合というのは、地球から見て惑星が太陽と同じ方向に見える（実際は太陽の光で見えないわけだが）位置を言い、衝とは地球から見て惑星が太陽と逆の方向に見える位置を言います。天文学用語でいう合は120度ではありませんし、合や衝はあくまで太陽が基準で惑星間の位置を示す用語ではありません。\n　四柱推命などで会という場合は、半会というように120度の関係を指す場合が多いので、七政で使われる言葉と混乱しないようにしなければなりません。また、拱は四柱推命では単に挟むという意味で使われることもありますので、これも注意を要します。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）１．入門四十四看法",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 174
+      },
+      "source_kind": "author_commentary",
+      "related_ids": [],
+      "notes": [],
+      "embedded_comments": [
+        {
+          "text": "例えば、天文学用語で合というのは、地球から見て惑星が太陽と同じ方向に見える（実際は太陽の光で見えないわけだが）位置を言い、衝とは地球から見て惑星が太陽と逆の方向に見える位置を言います。天文学用語でいう合は120度ではありませんし、合や衝はあくまで太陽が基準で惑星間の位置を示す用語ではありません。",
+          "source_kind": "author_commentary",
+          "note": "天文学用語との比較"
+        },
+        {
+          "text": "四柱推命などで会という場合は、半会というように120度の関係を指す場合が多いので、七政で使われる言葉と混乱しないようにしなければなりません。また、拱は四柱推命では単に挟むという意味で使われることもありますので、これも注意を要します。",
+          "source_kind": "shichusuimei_comparison"
+        }
+      ]
+    },
+    {
+      "id": "qz_term_夾",
+      "category": "term",
+      "name": "夾",
+      "target": null,
+      "conditions": {},
+      "interpretation": "夾は文字通り“はさむ”という意味です。",
+      "source_text": "夾は文字通り“はさむ”という意味です。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）１．入門四十四看法",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 174
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "embedded_comments": []
+    },
+    {
+      "id": "qz_term_迎送",
+      "category": "term",
+      "name": "迎・送",
+      "target": null,
+      "conditions": {},
+      "interpretation": "迎と送は七政ならではという用語です。例えば大限が寅宮で卯宮に星がある場合、隔宮迎といいます。同じように二十八宿の場合は隔度迎といいます。逆に星からみた場合は寅宮が迎ということになります。送とは迎の逆でもう過ぎ去ったことをいいます。",
+      "source_text": "迎と送は七政ならではという用語です。例えば大限が寅宮で卯宮に星がある場合、隔宮迎といいます。同じように二十八宿の場合は隔度迎といいます。逆に星からみた場合は寅宮が迎ということになります。送とは迎の逆でもう過ぎ去ったことをいいます。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）１．入門四十四看法",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 174
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "embedded_comments": []
+    },
+    {
+      "id": "qz_term_前後引従",
+      "category": "term",
+      "name": "前後・引従",
+      "target": null,
+      "conditions": {},
+      "interpretation": "同じような言葉に前後、引従という用語があります。それぞれ宮に使うのか宿に使うのか星に使うのかという場面によっての違いがあるようですが、位置関係としては、前と引は同じで、後と従は同じです。",
+      "source_text": "同じような言葉に前後、引従という用語があります。それぞれ宮に使うのか宿に使うのか星に使うのかという場面によっての違いがあるようですが、位置関係としては、前と引は同じで、後と従は同じです。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）１．入門四十四看法",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 174
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "embedded_comments": []
+    },
+    {
+      "id": "qz_term_七強宮",
+      "category": "term",
+      "name": "七強（七強宮）",
+      "target": null,
+      "conditions": {},
+      "interpretation": "七強というのは強い宮のことで、命宮、官禄、夫妻、田宅、男女、福徳、財帛をいいます。",
+      "source_text": "七強というのは強い宮のことで、命宮、官禄、夫妻、田宅、男女、福徳、財帛をいいます。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）４．専論十主（２）身主",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 177
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [
+        "十干変曜の天禄の項にも「七強宮（命、官禄、夫妻、田宅、男女、福徳、財帛）」と同じ構成の記述あり"
+      ],
+      "embedded_comments": [],
+      "palaces": [
+        "命宮",
+        "官禄宮",
+        "夫妻宮",
+        "田宅宮",
+        "男女宮",
+        "福徳宮",
+        "財帛宮"
+      ]
+    },
+    {
+      "id": "qz_term_閑宮",
+      "category": "term",
+      "name": "閑宮",
+      "target": null,
+      "conditions": {},
+      "interpretation": "閑宮というのは兄弟宮のことです。",
+      "source_text": "閑宮というのは兄弟宮のことです。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）４．専論十主（２）身主",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 177
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [],
+      "notes": [],
+      "embedded_comments": [],
+      "palaces": [
+        "兄弟宮"
+      ]
+    },
+    {
+      "id": "qz_term_恩地仇郷",
+      "category": "term",
+      "name": "恩地・仇郷",
+      "target": null,
+      "conditions": {},
+      "interpretation": "また恩地とは恩星が主星になる宮位、仇郷とはその宮位の仇星が主星となるところの宮位です。",
+      "source_text": "また恩地とは恩星が主星になる宮位、仇郷とはその宮位の仇星が主星となるところの宮位です。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）４．専論十主（３）恩主",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 177
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "qz_lord_恩主"
+      ],
+      "notes": [],
+      "embedded_comments": []
+    },
+    {
+      "id": "qz_term_難地用地",
+      "category": "term",
+      "name": "難地・用地",
+      "target": null,
+      "conditions": {},
+      "interpretation": "このとき子宮の用星は金星であり、用地というのはこの金星が主星となる辰酉宮になります。",
+      "source_text": "このとき子宮の用星は金星であり、用地というのはこの金星が主星となる辰酉宮になります。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）４．専論十主（４）難主",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 177
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "qz_lord_難主"
+      ],
+      "notes": [
+        "難地の定義は資料では例示（子宮の難星は木星、難地は寅亥宮）で示される"
+      ],
+      "embedded_comments": []
+    },
+    {
+      "id": "qz_term_帰垣",
+      "category": "term",
+      "name": "帰垣",
+      "target": null,
+      "conditions": {},
+      "interpretation": "帰垣というのはその財主が主星となる十二宮位に財主が入ることです。",
+      "source_text": "帰垣というのはその財主が主星となる十二宮位に財主が入ることです。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）４．専論十主（５）財主",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 177
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "qz_lord_財主"
+      ],
+      "notes": [],
+      "embedded_comments": []
+    },
+    {
+      "id": "qz_term_四正宮",
+      "category": "term",
+      "name": "四正宮",
+      "target": null,
+      "conditions": {},
+      "interpretation": "注意してみると命宮と夫妻宮、田宅宮と官禄宮はそれぞれ反対側にあります。このことから、どうしてこういう順序になったかは何となく想像がつくでしょう。なおこの４つの宮を四正宮と呼びます。",
+      "source_text": "注意してみると命宮と夫妻宮、田宅宮と官禄宮はそれぞれ反対側にあります。このことから、どうしてこういう順序になったかは何となく想像がつくでしょう。なおこの４つの宮を四正宮と呼びます。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "十二宮",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 1
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "embedded_comments": [],
+      "palaces": [
+        "命宮",
+        "夫妻宮",
+        "田宅宮",
+        "官禄宮"
+      ]
+    },
+    {
+      "id": "qz_term_十二宮の並び",
+      "category": "term",
+      "name": "十二宮の並び",
+      "target": null,
+      "conditions": {},
+      "interpretation": "命宮の位置が決まれば、命宮を基準として十二支の順とは逆に、すなわち太陽の進行方向に財帛、兄弟、田宅、・・・と並べていけばいいです。",
+      "source_text": "命宮の位置が決まれば、命宮を基準として十二支の順とは逆に、すなわち太陽の進行方向に財帛、兄弟、田宅、・・・と並べていけばいいです。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "十二宮",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 1
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "embedded_comments": []
+    },
+    {
+      "id": "qz_term_禄宮貴宮殺宮",
+      "category": "term",
+      "name": "禄宮・貴宮・殺宮",
+      "target": null,
+      "conditions": {},
+      "interpretation": "禄宮とか貴宮とは、十二宮位の神殺で判断します。例えば天乙とか玉堂とかは貴宮といえますし、飛刃とかは殺宮（悪い）です。",
+      "source_text": "禄宮とか貴宮とは、十二宮位の神殺で判断します。例えば天乙とか玉堂とかは貴宮といえますし、飛刃とかは殺宮（悪い）です。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（７）明禄貴",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "qz_m24_07"
+      ],
+      "notes": [],
+      "embedded_comments": []
+    },
+    {
+      "id": "qz_term_黒道",
+      "category": "term",
+      "name": "黒道の星",
+      "target": null,
+      "conditions": {},
+      "interpretation": "春生まれの土星、夏生まれの金星、秋生まれの木星、冬生まれの火星で、これらを黒道の星としています。",
+      "source_text": "春生まれの土星、夏生まれの金星、秋生まれの木星、冬生まれの火星で、これらを黒道の星としています。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（18）怒失令",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "qz_m24_18"
+      ],
+      "notes": [],
+      "embedded_comments": []
+    },
+    {
+      "id": "qz_term_天空殺驀越殺",
+      "category": "term",
+      "name": "天空殺・驀越殺",
+      "target": null,
+      "conditions": {},
+      "interpretation": "太歳の次を天空殺といい、太歳の後を驀越殺といいますが",
+      "source_text": "太歳の次を天空殺といい、太歳の後を驀越殺といいますが",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（22）空中空",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "qz_m24_22"
+      ],
+      "notes": [],
+      "embedded_comments": []
+    },
+    {
+      "id": "qz_term_三関",
+      "category": "term",
+      "name": "三関（初関・中関・末関）",
+      "target": null,
+      "conditions": {},
+      "interpretation": "三関とは、初関、中関、末関で、これは十二宮位の深さを示しています。",
+      "source_text": "三関とは、初関、中関、末関で、これは十二宮位の深さを示しています。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（24）三滅関",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "qizheng_secondary",
+      "related_ids": [
+        "qz_m24_24"
+      ],
+      "notes": [
+        "資料内で説明が完結していない（未完）"
+      ],
+      "embedded_comments": []
+    },
+    {
+      "id": "qz_term_八殺宮",
+      "category": "term",
+      "name": "八殺宮",
+      "target": null,
+      "conditions": {},
+      "interpretation": "難とは八殺宮の主とありますが、疾厄宮の主星のことでしょう。[ｷｮｳ]とは天囚星、天耗星のことだということです。ただし、八殺宮については、別の説もあります。（判田格師の『七政四余』に八殺宮が載っています）",
+      "source_text": "難とは八殺宮の主とありますが、疾厄宮の主星のことでしょう。[ｷｮｳ]とは天囚星、天耗星のことだということです。ただし、八殺宮については、別の説もあります。（判田格師の『七政四余』に八殺宮が載っています）",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）２．二十四要法（17）値難[ｷｮｳ]",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 175
+      },
+      "source_kind": "author_commentary",
+      "related_ids": [
+        "qz_m24_17",
+        "qz_guard_06"
+      ],
+      "notes": [
+        "八殺宮＝疾厄宮かは資料の推量。別説あり（解決しない）"
+      ],
+      "embedded_comments": []
+    },
+    {
+      "id": "qz_term_元守星",
+      "category": "term",
+      "name": "元守星",
+      "target": null,
+      "conditions": {},
+      "interpretation": "上の文でいう元守星とは、その宮に居る五星のことだと思いますが、居る星自体の意味よりも宮主や命主身主がどこにどうあるかが重要であるという意味でしょう。",
+      "source_text": "上の文でいう元守星とは、その宮に居る五星のことだと思いますが、居る星自体の意味よりも宮主や命主身主がどこにどうあるかが重要であるという意味でしょう。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）８．主星守宮歌",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 182
+      },
+      "source_kind": "author_commentary",
+      "related_ids": [
+        "qz_guard_principle"
+      ],
+      "notes": [],
+      "embedded_comments": []
+    },
+    {
+      "id": "qz_term_量天尺",
+      "category": "term",
+      "name": "量天尺",
+      "target": null,
+      "conditions": {},
+      "interpretation": "また、原詩中の量天尺とは『星平会海』の初めの巻にある「行大限過宮量天総尺」という表のことでしょう。",
+      "source_text": "また、原詩中の量天尺とは『星平会海』の初めの巻にある「行大限過宮量天総尺」という表のことでしょう。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "Ⅴ）５．最緊四事（１）大限",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 178
+      },
+      "source_kind": "author_commentary",
+      "related_ids": [
+        "qz_limit_zuijin_1"
+      ],
+      "notes": [],
+      "embedded_comments": []
+    },
+    {
+      "id": "qz_term_身宮",
+      "category": "term",
+      "name": "身宮（２説）",
+      "target": null,
+      "conditions": {},
+      "interpretation": "　　　　①月（太陰）のある宮位を身宮とする。身度はそのときの月の度数とする。\n　　　　②太陰宮を月将とみたてて占時とで天地盤を作る。ただし天盤を逆に配する。\n　　　　　そのときの酉の上にある十二支を身宮座位とする。身度は太陰の度数とする。",
+      "source_text": "　　　　①月（太陰）のある宮位を身宮とする。身度はそのときの月の度数とする。\n　　　　②太陰宮を月将とみたてて占時とで天地盤を作る。ただし天盤を逆に配する。\n　　　　　そのときの酉の上にある十二支を身宮座位とする。身度は太陰の度数とする。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "８．身宮",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 8
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "身宮の取り方に２説あると資料に明記（統一しない）",
+        "②説の対照表は qizheng_reference_tables_v1.json（ref_shen_palace）"
+      ],
+      "methods": [
+        {
+          "id": 1,
+          "text": "①月（太陰）のある宮位を身宮とする。身度はそのときの月の度数とする。"
+        },
+        {
+          "id": 2,
+          "text": "②太陰宮を月将とみたてて占時とで天地盤を作る。ただし天盤を逆に配する。"
+        }
+      ],
+      "embedded_comments": [
+        {
+          "text": "　①の説は星図をみればいいので簡単です。\n　②の説を例で説明しますと、例えば太陰が卯にある場合で辰時生まれならば、地盤辰を１とすると酉は６番目となります。（これはすぐ前の支ということである）すると卯を１として逆に数えて６番目は戌となり、つまり戌が身宮ということになります。",
+          "source_kind": "unspecified",
+          "note": "②説の例示"
+        }
+      ]
+    },
+    {
+      "id": "qz_term_命宮上昇宮",
+      "category": "term",
+      "name": "命宮と上昇宮",
+      "target": null,
+      "conditions": {},
+      "interpretation": "７．命宮の位置および命度\n\n命宮は、西洋占星術でいえば上昇（星座）宮にあたります。すなわち、その時間に地上に顔を出す宮位を示しています。\n\n西洋占星術でいう上昇宮とはアセンダントが属する星座宮です。アセンダントとは地平線と黄道の交点のうち太陽の昇ってくる方、すなわち東方の交点にあたります。",
+      "source_text": "７．命宮の位置および命度\n\n命宮は、西洋占星術でいえば上昇（星座）宮にあたります。すなわち、その時間に地上に顔を出す宮位を示しています。\n\n西洋占星術でいう上昇宮とはアセンダントが属する星座宮です。アセンダントとは地平線と黄道の交点のうち太陽の昇ってくる方、すなわち東方の交点にあたります。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "７．命宮の位置および命度",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 2
+      },
+      "source_kind": "western_comparison",
+      "related_ids": [],
+      "notes": [
+        "命宮を西洋占星術の上昇宮にあたるとする比較説明"
+      ]
+    },
+    {
+      "id": "qz_term_変曜別名",
+      "category": "term",
+      "name": "七政四餘の入宮別名",
+      "target": null,
+      "conditions": {},
+      "interpretation": "七政四餘が特定の十二宮位に入ったときには別名およびその象意があるのですが（例えば太陽が子に入るのを日華星、天貴星という）、古歌を紹介するときに説明します。",
+      "source_text": "七政四餘が特定の十二宮位に入ったときには別名およびその象意があるのですが（例えば太陽が子に入るのを日華星、天貴星という）、古歌を紹介するときに説明します。",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "４．十二宮位と七政四餘",
+        "table": null,
+        "row": null,
+        "column": null,
+        "block": 60
+      },
+      "source_kind": "author_commentary",
+      "related_ids": [],
+      "notes": [
+        "例示（太陽が子に入るのを日華星、天貴星という）のみで、本資料内に一覧なし"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "schema_version": "1.0.0",
+  "source_file": "七政四餘鑑定用資料.docx",
+  "reference_only": true,
+  "usage": "既存の十二運計算（juniun.ts）の照合専用。判定には使用しない",
+  "intro_text": "　七政占星術においては、四柱推命などとは違い、生年干支の納音五行を求めて十二運を出すのが普通です。納音十二運は次のとおりです。なお土行は水行に寄せます。",
+  "records": [
+    {
+      "id": "qz_nayin_木行",
+      "category": "nayin_juniun",
+      "name": "木行",
+      "target": "木行",
+      "conditions": {},
+      "interpretation": null,
+      "source_text": "木行|亥|子|丑|寅|卯|辰|巳|午|未|申|酉|戌",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．生年納音十二運",
+        "table": 22,
+        "row": 1,
+        "column": null,
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "reference_only": true,
+      "cells": {
+        "長生": "亥",
+        "沐浴": "子",
+        "冠帯": "丑",
+        "建禄": "寅",
+        "帝旺": "卯",
+        "　衰": "辰",
+        "　病": "巳",
+        "　死": "午",
+        "　墓": "未",
+        "　絶": "申",
+        "　胎": "酉",
+        "　養": "戌"
+      }
+    },
+    {
+      "id": "qz_nayin_火行",
+      "category": "nayin_juniun",
+      "name": "火行",
+      "target": "火行",
+      "conditions": {},
+      "interpretation": null,
+      "source_text": "火行|寅|卯|辰|巳|午|未|申|酉|戌|亥|子|丑",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．生年納音十二運",
+        "table": 22,
+        "row": 2,
+        "column": null,
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "reference_only": true,
+      "cells": {
+        "長生": "寅",
+        "沐浴": "卯",
+        "冠帯": "辰",
+        "建禄": "巳",
+        "帝旺": "午",
+        "　衰": "未",
+        "　病": "申",
+        "　死": "酉",
+        "　墓": "戌",
+        "　絶": "亥",
+        "　胎": "子",
+        "　養": "丑"
+      }
+    },
+    {
+      "id": "qz_nayin_土行",
+      "category": "nayin_juniun",
+      "name": "土行",
+      "target": "土行",
+      "conditions": {},
+      "interpretation": null,
+      "source_text": "土行|申|酉|戌|亥|子|丑|寅|卯|辰|巳|午|未",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．生年納音十二運",
+        "table": 22,
+        "row": 3,
+        "column": null,
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料本文「なお土行は水行に寄せます」"
+      ],
+      "reference_only": true,
+      "cells": {
+        "長生": "申",
+        "沐浴": "酉",
+        "冠帯": "戌",
+        "建禄": "亥",
+        "帝旺": "子",
+        "　衰": "丑",
+        "　病": "寅",
+        "　死": "卯",
+        "　墓": "辰",
+        "　絶": "巳",
+        "　胎": "午",
+        "　養": "未"
+      }
+    },
+    {
+      "id": "qz_nayin_金行",
+      "category": "nayin_juniun",
+      "name": "金行",
+      "target": "金行",
+      "conditions": {},
+      "interpretation": null,
+      "source_text": "金行|巳|午|未|申|酉|戌|亥|子|丑|寅|卯|辰",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．生年納音十二運",
+        "table": 22,
+        "row": 4,
+        "column": null,
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [],
+      "reference_only": true,
+      "cells": {
+        "長生": "巳",
+        "沐浴": "午",
+        "冠帯": "未",
+        "建禄": "申",
+        "帝旺": "酉",
+        "　衰": "戌",
+        "　病": "亥",
+        "　死": "子",
+        "　墓": "丑",
+        "　絶": "寅",
+        "　胎": "卯",
+        "　養": "辰"
+      }
+    },
+    {
+      "id": "qz_nayin_水行",
+      "category": "nayin_juniun",
+      "name": "水行",
+      "target": "水行",
+      "conditions": {},
+      "interpretation": null,
+      "source_text": "水行|申|酉|戌|亥|子|丑|寅|卯|辰|巳|午|未",
+      "source_ref": {
+        "file": "七政四餘鑑定用資料.docx",
+        "page": null,
+        "section": "６．生年納音十二運",
+        "table": 22,
+        "row": 5,
+        "column": null,
+        "block": null
+      },
+      "source_kind": "unspecified",
+      "related_ids": [],
+      "notes": [
+        "資料本文「なお土行は水行に寄せます」"
+      ],
+      "reference_only": true,
+      "cells": {
+        "長生": "申",
+        "沐浴": "酉",
+        "冠帯": "戌",
+        "建禄": "亥",
+        "帝旺": "子",
+        "　衰": "丑",
+        "　病": "寅",
+        "　死": "卯",
+        "　墓": "辰",
+        "　絶": "巳",
+        "　胎": "午",
+        "　養": "未"
+      }
+    }
+  ]
+}
