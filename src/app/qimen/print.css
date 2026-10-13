@@ -33,14 +33,23 @@
   }
 
   /* ---- 用紙 ---- */
-  @page {
+@page {
     size: A4 portrait;
-    margin: 9mm;
+    /* 鑑定書余白（上下30mm・左右22mm・本文幅166mm）。本文側（.qm-print-doc）にも上下8mmの安全余白を持たせる */
+    margin: 30mm 22mm 30mm 22mm;
   }
 
   /* ---- 印刷用ドキュメント本体 ---- */
   .qm-print-doc {
     display: block !important;
+    max-width: 166mm;
+    margin: 0 auto;
+    /* 上下の固定の安全余白（ページをまたぐ場合も各ページの上下に付ける） */
+    padding-top: 8mm;
+    padding-bottom: 8mm;
+    box-sizing: border-box;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
     color: #000;
     background: #fff;
     font-size: 9pt;
@@ -127,7 +136,8 @@
     grid-template-columns: repeat(3, 41mm) !important;
     grid-template-rows: repeat(3, 41mm) !important;
     border: 1.4pt solid #000 !important;
-    margin-top: 0.3mm;
+    margin: 0.3mm auto 0 !important;
+    width: max-content !important;
   }
   .qm-print-doc .qm-cell {
     border: 0.7pt solid #000 !important;

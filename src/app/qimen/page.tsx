@@ -5,24 +5,30 @@
 // 奇門遁甲 UI（PC 表示のみ）。
 // 排盤ロジックは一切持たず、既存の qimenEngine.calculate() を呼ぶだけ。
 //
-// 真太陽時 ON のときだけ、入力の壁時計時刻に
-//   均時差 + 経度時差（標準子午線 135°E 基準、地図で選んだ経度を使用）
-// を UI 層で加算してから calculate() へ渡す（排盤ロジックは不変更）。
-// 緯度は将来の天文計算・七政四餘との共用のため保持のみ（計算には未使用）。
+// 真太陽時（方位用途向けの補正）は使用しないことにしたため、
+// チェックUI・地図UI（場所検索・MapPicker・緯度経度入力）は画面から削除した。
+// 内部関数 resolveTime() / equationOfTimeMinutes() 自体は削除せず残しており、
+// trueSolar は常に false で resolveTime() へ渡している（＝標準時での通常計算）。
 
 import { useEffect, useMemo, useState } from "react";
-import dynamic from "next/dynamic";
 import { calculate, resolveKokuoForPalace } from "@/lib/qimen";
 import type { QimenResult, KokuoEntry } from "@/lib/qimen";
+import {
+  lookupBaMenMeaning,
+  BAMEN_WANGSHUAI,
+  BAMEN_WANGSHUAI_STAGES,
+  SOLAR_SEGMENTS,
+  lookupJiuXingMeaning,
+  lookupJiuXingWangShuai,
+  lookupBaShenMeaning,
+  lookupBaShenPalaceFortune,
+  lookupSanQiLiuYiMeaning,
+} from "@/lib/qimenMeaning";
+import type { SanQiLiuYiEntry } from "@/lib/qimenMeaning";
 import AppSwitcher from "@/components/AppSwitcher";
 import { stripRuby } from "./stripRuby";
+import JudgmentPanel from "./JudgmentPanel";
 import "./print.css";
-
-// Leaflet は window 依存のため SSR 無効で読み込む
-const MapPicker = dynamic(() => import("./MapPicker"), {
-  ssr: false,
-  loading: () => <div style={{ height: 300, width: 460, background: "#eee", border: "1px solid #999", borderRadius: 4 }} />,
-});
 
 // ---- 洛書九宮の配置 -----------------------------------------------------
 const GRID_ORDER = [4, 9, 2, 3, 5, 7, 8, 1, 6] as const;
@@ -128,51 +134,35 @@ export default function QimenPage() {
   const [date, setDate] = useState(todayISO());
   const [time, setTime] = useState("12:00");
   const [timezone, setTimezone] = useState("Asia/Tokyo");
-  const [trueSolar, setTrueSolar] = useState(false);
-  const [lat, setLat] = useState(DEFAULT_LAT); // 保持のみ（排盤計算には未使用）
-  const [lng, setLng] = useState(DEFAULT_LNG);
+  // 真太陽時は方位用途向けの機能で使用しないことにしたため、画面UIを削除し
+  // 常にOFF・既定の緯度経度のまま固定する（resolveTime() 自体は変更していない）。
+  const trueSolar = false;
+  const lat = DEFAULT_LAT;
+  const lng = DEFAULT_LNG;
 
   // 宮詳細: クリックで選択（同じ宮を再クリックで解除）。初期は未選択。
   const [selectedPalace, setSelectedPalace] = useState<number | null>(null);
 
-  // ?ts=1 で真太陽時を初期 ON（共有 URL 用。ハイドレーション後に反映）
+  // 吉格日時検索の結果カードから来た場合だけ「← 検索結果に戻る」を出す
+  // （?from=search）。通常の排盤画面から開いたときは表示しない。
+  const [cameFromSearch, setCameFromSearch] = useState(false);
+
+  // ?date=YYYY-MM-DD&time=HH:mm で日時を初期入力（吉格日時検索の結果クリック用）
+  // ?timezone=... でタイムゾーンを初期入力（擇日画面「この時辰の奇門遁甲を見る」用。2026-09-13追記）
   useEffect(() => {
-    if (new URLSearchParams(window.location.search).get("ts") === "1") setTrueSolar(true);
+    const params = new URLSearchParams(window.location.search);
+
+    const qDate = params.get("date");
+    if (qDate && /^\d{4}-\d{2}-\d{2}$/.test(qDate)) setDate(qDate);
+
+    const qTime = params.get("time");
+    if (qTime && /^\d{2}:\d{2}$/.test(qTime)) setTime(qTime);
+
+    const qTimezone = params.get("timezone");
+    if (qTimezone) setTimezone(qTimezone);
+
+    if (params.get("from") === "search") setCameFromSearch(true);
   }, []);
-
-  // 場所検索（OSM Nominatim・無料・APIキー不要・ベストエフォート）
-  const [q, setQ] = useState("");
-  const [hits, setHits] = useState<{ name: string; lat: number; lon: number }[]>([]);
-  const [searchMsg, setSearchMsg] = useState<string | null>(null);
-  const [searching, setSearching] = useState(false);
-
-  async function doSearch(e: React.FormEvent) {
-    e.preventDefault();
-    const query = q.trim();
-    if (!query) return;
-    setSearching(true);
-    setSearchMsg(null);
-    setHits([]);
-    try {
-      // Nominatim 利用規約: 1 req/sec 上限・対話利用のみ（本 UI は手動検索のみ）
-      const url =
-        "https://nominatim.openstreetmap.org/search?format=jsonv2&limit=5" +
-        "&accept-language=ja&countrycodes=jp&q=" +
-        encodeURIComponent(query);
-      const res = await fetch(url);
-      if (!res.ok) throw new Error(String(res.status));
-      const arr = (await res.json()) as { display_name: string; lat: string; lon: string }[];
-      if (arr.length === 0) {
-        setSearchMsg("該当なし");
-        return;
-      }
-      setHits(arr.map((a) => ({ name: a.display_name, lat: Number(a.lat), lon: Number(a.lon) })));
-    } catch {
-      setSearchMsg("検索できませんでした（OSM Nominatim）。地図クリックで指定してください。");
-    } finally {
-      setSearching(false);
-    }
-  }
 
   const resolved = useMemo(
     () => resolveTime(date, time, trueSolar, lng),
@@ -196,8 +186,8 @@ export default function QimenPage() {
     ? `${resolved.year}-${pad(resolved.month)}-${pad(resolved.day)} ${pad(resolved.hour)}:${pad(resolved.minute)}`
     : "—";
 
-  // 場所名（場所検索で選んだときに q へ入る）。取得できたときだけ印刷に出す。
-  const placeName = q.trim();
+  // 場所検索UIを削除したため、場所名は常に空（印刷の「場所」行は出ない）。
+  const placeName = "";
   const shiftLabel =
     resolved && resolved.shiftMin !== null
       ? `${resolved.shiftMin >= 0 ? "+" : ""}${resolved.shiftMin}分`
@@ -208,6 +198,13 @@ export default function QimenPage() {
       <AppSwitcher />
       <main style={S.page} className="qm-main">
       <h1 style={S.h1}>奇門遁甲 排盤</h1>
+      <p className="qm-noprint">
+        {cameFromSearch ? (
+          <a href="/qimen/search?restore=1" style={S.searchLinkBtn}>← 検索結果に戻る</a>
+        ) : (
+          <a href="/qimen/search" style={S.searchLinkBtn}>吉格日時検索</a>
+        )}
+      </p>
 
       {/* ---- 入力 ---- */}
       <section style={S.inputs}>
@@ -257,10 +254,6 @@ export default function QimenPage() {
           タイムゾーン
           <input value={timezone} onChange={(e) => setTimezone(e.target.value)} style={S.input} />
         </label>
-        <label style={{ ...S.field, flexDirection: "row", alignItems: "center", gap: 6 }}>
-          <input type="checkbox" checked={trueSolar} onChange={(e) => setTrueSolar(e.target.checked)} />
-          真太陽時（均時差＋経度時差）
-        </label>
         <button
           type="button"
           className="qm-noprint"
@@ -272,96 +265,12 @@ export default function QimenPage() {
         </button>
       </section>
 
-      {/* ---- 使用時刻の表示 ---- */}
-      <div style={S.timeInfo}>
-        <span>入力時刻：<b>{date} {time}</b></span>
-        <span>
-          排盤に使用：<b>{usedLabel}</b>
-          {resolved && resolved.shiftMin !== null && (
-            <span style={S.shiftNote}>
-              （真太陽時補正 {resolved.shiftMin >= 0 ? "+" : ""}{resolved.shiftMin}分）
-            </span>
-          )}
-          {resolved && resolved.shiftMin === null && <span style={S.shiftNote}>（入力どおり）</span>}
-        </span>
-      </div>
-
-      {/* ---- 真太陽時 ON のとき: 地図＋緯度経度＋検索 ---- */}
-      {trueSolar && (
-        <section style={S.geoBox}>
-          <form onSubmit={doSearch} style={S.searchRow}>
-            <input
-              value={q}
-              onChange={(e) => setQ(e.target.value)}
-              placeholder="場所を検索（例: 岐阜市 / 東京駅 / 京都市）"
-              style={{ ...S.input, width: 300 }}
-            />
-            <button type="submit" disabled={searching} style={S.btn}>
-              {searching ? "検索中…" : "検索"}
-            </button>
-          </form>
-          {searchMsg && <div style={S.searchMsg}>{searchMsg}</div>}
-          {hits.length > 0 && (
-            <ul style={S.hitList}>
-              {hits.map((h, i) => (
-                <li key={i}>
-                  <button
-                    style={S.hitBtn}
-                    onClick={() => {
-                      setLat(Number(h.lat.toFixed(5)));
-                      setLng(Number(h.lon.toFixed(5)));
-                      setHits([]);
-                      setQ(h.name.split(",")[0]);
-                    }}
-                  >
-                    {h.name}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          )}
-
-          <div style={S.mapAndCoords}>
-            <MapPicker
-              lat={lat}
-              lng={lng}
-              onPick={(la, lo) => {
-                setLat(la);
-                setLng(lo);
-              }}
-            />
-            <div style={S.coords}>
-              <label style={S.field}>
-                緯度 latitude
-                <input
-                  type="number" step="0.00001" value={lat}
-                  onChange={(e) => setLat(Number(e.target.value))}
-                  style={{ ...S.input, width: 120 }}
-                />
-              </label>
-              <label style={S.field}>
-                経度 longitude
-                <input
-                  type="number" step="0.00001" value={lng}
-                  onChange={(e) => setLng(Number(e.target.value))}
-                  style={{ ...S.input, width: 120 }}
-                />
-              </label>
-              <div style={S.coordNote}>
-                地図クリックで自動反映。手入力で微調整可。
-                <br />経度は真太陽時補正に使用（基準 {STD_MERIDIAN}°E）。緯度は保持のみ。
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
       {error && <div style={S.error}>計算エラー: {error}</div>}
 
       {result && (
         <div style={S.layout}>
-          {/* ---- 九宮盤（講義資料 p.34 準拠・変更禁止部分） ---- */}
           <div style={S.gridWrap}>
+            {/* ---- 九宮盤（講義資料 p.34 準拠・変更禁止部分） ---- */}
             <div style={S.grid} className="qm-grid">
               {GRID_ORDER.map((n) => (
                 <PalaceCell
@@ -528,14 +437,17 @@ function PrintDoc({
 // 宮ごとに成立している格局（吉→凶の順・既存 matches の順序のまま）を最大5件抽出。
 //   吉格 = result.jikaku.matches のうち palaces に当該宮を含むもの
 //   凶格 = result.kyokaku.matches のうち palaces に当該宮を含むもの
-//   palaces=[] の全盤成立格は宮には属さないため対象外。
+//   盤全体成立（palaces=[]）の凶格は特定の宮に属さないため、判定ロジックは無変更のまま
+//   detail（伏吟格/反吟格の「九星伏吟」「八門反吟」等の内訳）または name（五不遇時など
+//   detail を持たない格）を、9宮すべてに共通で表示する（5件の上限には含めない＝
+//   複数成立時も全件を必ず併記する）。
 type KakuItem = { name: string; kind: "ji" | "kyo" };
 
 function palaceKaku(
   result: QimenResult,
   palace: number,
 ): { shown: KakuItem[]; more: number } {
-  const list: KakuItem[] = [
+  const local: KakuItem[] = [
     ...result.jikaku.matches
       .filter((m) => m.palaces.includes(palace))
       .map((m) => ({ name: m.name, kind: "ji" as const })),
@@ -543,7 +455,14 @@ function palaceKaku(
       .filter((m) => m.palaces.includes(palace))
       .map((m) => ({ name: m.name, kind: "kyo" as const })),
   ];
-  return { shown: list.slice(0, 5), more: Math.max(0, list.length - 5) };
+  const boardWide: KakuItem[] = result.kyokaku.matches
+    .filter((m) => m.palaces.length === 0)
+    .flatMap((m) => (m.detail ? m.detail.split("・") : [m.name]))
+    .map((name) => ({ name, kind: "kyo" as const }));
+
+  const shownLocal = local.slice(0, 5);
+  const more = Math.max(0, local.length - 5);
+  return { shown: [...shownLocal, ...boardWide], more };
 }
 
 function KakuList({ result, palace }: { result: QimenResult; palace: number }) {
@@ -716,23 +635,167 @@ function PalaceKokuo({
   );
 }
 
-// 画面用: 基本詳細 ＋ 剋應（該当なしは「—」表示）＋ 将来拡張枠。
+// ==== 宮詳細（象意接続）: 格局 → 八門 → 九星 → 八神 → 三奇・六儀 → 剋應 ====
+//   各カテゴリとも「名称」「象意（講義資料本文）」「旺衰または宮位吉凶
+//   （資料にあるもののみ）」の3点を表示する。象意データは src/lib/qimenMeaning/
+//   を読むだけで、格局判定・剋應判定・排盤ロジックは一切呼ばない・変更しない。
+
+/** 1件分のカード（名称＋象意の箇条書き＋任意で旺衰/宮位吉凶の1行）。 */
+interface MeaningCardData {
+  meta: string;
+  meanings: string[];
+  extraLabel?: string;
+  extraValue?: string;
+}
+
+function MeaningCard({ meta, meanings, extraLabel, extraValue }: MeaningCardData) {
+  return (
+    <div style={S.kokuoEntry} className="qm-kokuo-entry">
+      <div style={S.kokuoMeta} className="qm-kokuo-meta">{meta}</div>
+      {meanings.length === 0 ? (
+        <div style={S.kokuoEmpty} className="qm-kokuo-empty">—</div>
+      ) : (
+        <ul style={S.meaningList}>
+          {meanings.map((m, i) => (
+            <li key={i} style={S.meaningItem}>{m}</li>
+          ))}
+        </ul>
+      )}
+      {extraLabel && (
+        <div style={S.meaningExtra}>{extraLabel}：{extraValue || "—"}</div>
+      )}
+    </div>
+  );
+}
+
+function MeaningSection({ label, cards }: { label: string; cards: MeaningCardData[] }) {
+  return (
+    <div style={S.kokuoSection} className="qm-kokuo-section">
+      <div style={S.kokuoLabel} className="qm-kokuo-label">{label}</div>
+      {cards.length === 0 ? (
+        <div style={S.kokuoEmpty} className="qm-kokuo-empty">—</div>
+      ) : (
+        cards.map((c, i) => <MeaningCard key={i} {...c} />)
+      )}
+    </div>
+  );
+}
+
+// 2. 八門: 宮内の八門（中宮は無位）。旺衰は p.37 の表を、この門が各節気区分
+//    でどの段階になるかへ変換して表示する（表の値をそのまま読み替えるだけ）。
+function baMenWangShuaiLine(door: string): string {
+  // BAMEN_WANGSHUAI の表は資料の表記どおり「門」を付けない一字（休・生・傷…）で
+  // 値を持つため、比較用にここだけ「門」を外す（象意データ自体は変更しない）。
+  const bare = door.endsWith("門") ? door.slice(0, -1) : door;
+  return SOLAR_SEGMENTS
+    .map((seg) => {
+      const stage = BAMEN_WANGSHUAI_STAGES.find((st) => BAMEN_WANGSHUAI[st][seg] === bare);
+      return `${seg}=${stage ?? "—"}`;
+    })
+    .join("／");
+}
+
+function baMenCards(result: QimenResult, palace: number): MeaningCardData[] {
+  const p = result.palaces[palace];
+  if (!p) return [];
+  return p.baMen.map((door) => {
+    const m = lookupBaMenMeaning(door);
+    return {
+      meta: m ? `${door}（${m.fortuneLabel}）` : door,
+      meanings: m?.basicMeaning ?? [],
+      extraLabel: "旺衰",
+      extraValue: baMenWangShuaiLine(door),
+    };
+  });
+}
+
+// 3. 九星: 宮内の九星。旺相休囚死は p.40 の当該星の行をそのまま表示する。
+function jiuXingCards(result: QimenResult, palace: number): MeaningCardData[] {
+  const p = result.palaces[palace];
+  if (!p) return [];
+  return p.jiuXing.map((star) => {
+    const m = lookupJiuXingMeaning(star);
+    const w = lookupJiuXingWangShuai(star);
+    return {
+      meta: m ? `${star}（${m.fortuneLabel}）` : star,
+      meanings: m?.basicMeaning ?? [],
+      extraLabel: "旺相休囚死",
+      extraValue: w ? `旺:${w.旺}／相:${w.相}／休:${w.休}／囚:${w.囚}／死:${w.死}` : undefined,
+    };
+  });
+}
+
+// 4. 八神: 宮内の八神。宮位吉凶は p.43 の表からこの宮・この神の1マスを引く
+//    （時系列の推測は行わない、その宮という位置だけで決まる値）。
+function baShenCards(result: QimenResult, palace: number): MeaningCardData[] {
+  const p = result.palaces[palace];
+  if (!p) return [];
+  return p.baShen.map((god) => {
+    const m = lookupBaShenMeaning(god);
+    const fortune = lookupBaShenPalaceFortune(god, palace);
+    return {
+      meta: m ? `${god}（${m.fortuneLabel}）` : god,
+      meanings: m?.basicMeaning ?? [],
+      extraLabel: "宮位吉凶",
+      extraValue: fortune,
+    };
+  });
+}
+
+// 5. 三奇・六儀: 宮内の地盤干・天盤干（乙丙丁＝三奇／戊己庚辛壬癸＝六儀）。
+//    旺衰データは資料に「別紙参照」とあるのみで本PDFに含まれないため表示しない。
+function formatSanQiLiuYi(entry: SanQiLiuYiEntry | undefined): string[] {
+  if (!entry) return [];
+  if (entry.basicMeaning) return entry.basicMeaning;
+  const lines: string[] = [];
+  if (entry.personality) lines.push(`性格：${entry.personality.join("、")}`);
+  if (entry.body) {
+    lines.push(`身体：${entry.body.join("、")}${entry.bodyNote ? `（${entry.bodyNote}）` : ""}`);
+  }
+  if (entry.color) lines.push(`色：${entry.color.join("、")}`);
+  if (entry.taste) lines.push(`味：${entry.taste.join("、")}`);
+  if (entry.people) lines.push(`人物：${entry.people.join("、")}`);
+  if (entry.aspiration) lines.push(entry.aspiration);
+  return lines;
+}
+
+function sanQiLiuYiCards(result: QimenResult, palace: number): MeaningCardData[] {
+  const p = result.palaces[palace];
+  if (!p) return [];
+  const stems: { label: string; stem?: string }[] = [
+    { label: "地盤", stem: p.diPanStem },
+    { label: "天盤", stem: p.tianPanStem },
+  ];
+  return stems
+    .filter((s): s is { label: string; stem: string } => !!s.stem)
+    .map(({ label, stem }) => {
+      const entry = lookupSanQiLiuYiMeaning(stem);
+      return {
+        meta: `${label}：${stem}（${entry?.name ?? "—"}）`,
+        meanings: formatSanQiLiuYi(entry),
+      };
+    });
+}
+
+// 画面用: 基本詳細 → 成立している判断材料 → この宮の判断材料について（AI なしの定型説明）
+//   → 単独象意（八門〔旺衰〕・九星・八神・三奇・六儀）。
+//   格局の象意カードと剋應5系統（PalaceKokuo）は「成立している判断材料」と内容が重複するため画面の宮詳細には出さない。
+//   格局の象意カード用の表示関数（kakuCards）は未使用になったため削除した（意味DB lookupMeaning 自体は変更なし）。
+//   PalaceKokuo は印刷用 PrintDoc で引き続き使用する。
 function PalaceDetail({ result, palace }: { result: QimenResult; palace: number }) {
   return (
     <div>
       <PalaceDetailRows result={result} palace={palace} />
 
-      {/* 剋應（資料本文をそのまま表示。該当が無ければ「—」） */}
-      <div style={S.detailSubTitle} className="qm-subtitle">剋應</div>
-      <PalaceKokuo result={result} palace={palace} />
+      <JudgmentPanel result={result} palace={palace} />
 
-      {/* 将来拡張枠（今回はロジック・仮データを作らない。印刷では非表示） */}
-      <div className="qm-pd-future">
-        <div style={S.detailSubTitle} className="qm-subtitle">象意・用神・判断（将来拡張）</div>
-        <Row k="象意" v="未実装" />
-        <Row k="用神" v="未実装" />
-        <Row k="判断" v="未実装" />
-      </div>
+      <div style={S.detailSubTitle} className="qm-subtitle">単独象意</div>
+      <MeaningSection label="八門" cards={baMenCards(result, palace)} />
+      <MeaningSection label="九星" cards={jiuXingCards(result, palace)} />
+      <MeaningSection label="八神" cards={baShenCards(result, palace)} />
+      <MeaningSection label="三奇・六儀" cards={sanQiLiuYiCards(result, palace)} />
+
+      {/* 用神・判断は未実装のため非表示（実装後にここへ再追加する）。 */}
     </div>
   );
 }
@@ -784,24 +847,13 @@ function KokuoSection({
 const S: Record<string, React.CSSProperties> = {
   page: { fontFamily: "system-ui, 'Hiragino Sans', sans-serif", padding: 24, color: "#222", maxWidth: 1100 },
   h1: { fontSize: 20, margin: "0 0 16px" },
-  inputs: { display: "flex", gap: 16, flexWrap: "wrap", alignItems: "flex-end", marginBottom: 8 },
+  inputs: { display: "flex", gap: 16, flexWrap: "wrap", alignItems: "flex-end", marginBottom: 16 },
   field: { display: "flex", flexDirection: "column", fontSize: 12, color: "#555", gap: 4 },
   input: { fontSize: 14, padding: "4px 6px", border: "1px solid #bbb", borderRadius: 4 },
   btn: { fontSize: 13, padding: "5px 12px", border: "1px solid #999", borderRadius: 4, background: "#f5f5f5", cursor: "pointer" },
+  searchLinkBtn: { display: "inline-block", fontSize: 13, fontWeight: 600, padding: "6px 14px", border: "1px solid #999", borderRadius: 4, background: "#f5f5f5", color: "#222", textDecoration: "none", cursor: "pointer" },
   error: { background: "#fdecec", border: "1px solid #e0b4b4", color: "#a33", padding: "8px 12px", borderRadius: 4, marginBottom: 16 },
   layout: { display: "flex", gap: 24, alignItems: "flex-start" },
-
-  timeInfo: { display: "flex", gap: 24, fontSize: 13, color: "#333", padding: "8px 0 12px" },
-  shiftNote: { color: "#888", marginLeft: 4 },
-
-  geoBox: { border: "1px solid #ddd", borderRadius: 6, padding: 12, marginBottom: 16, maxWidth: 720 },
-  searchRow: { display: "flex", gap: 8, marginBottom: 8 },
-  searchMsg: { fontSize: 12, color: "#a60", marginBottom: 6 },
-  hitList: { listStyle: "none", margin: "0 0 10px", padding: 0, display: "flex", flexDirection: "column", gap: 2 },
-  hitBtn: { textAlign: "left", width: "100%", fontSize: 12, padding: "4px 6px", border: "1px solid #ddd", borderRadius: 4, background: "#fafafa", cursor: "pointer" },
-  mapAndCoords: { display: "flex", gap: 16, alignItems: "flex-start" },
-  coords: { display: "flex", flexDirection: "column", gap: 10 },
-  coordNote: { fontSize: 11, color: "#888", lineHeight: 1.5 },
 
   gridWrap: { flex: "0 0 auto" },
   // 画面: 各宮は 156px 正方形が基準。格局名が多い宮だけ行が縦に伸びる（minmax）。
@@ -837,6 +889,9 @@ const S: Record<string, React.CSSProperties> = {
   kokuoSection: { padding: "6px 10px", borderBottom: "1px solid #f0f0f0" },
   kokuoLabel: { fontSize: 12, fontWeight: 600, color: "#555", marginBottom: 4 },
   kokuoEmpty: { fontSize: 13, color: "#888" },
+  meaningList: { margin: "4px 0 0", paddingLeft: 18 },
+  meaningItem: { fontSize: 12, color: "#444", lineHeight: 1.6 },
+  meaningExtra: { fontSize: 12, color: "#555", marginTop: 4 },
   kokuoEntry: { marginBottom: 8 },
   kokuoMeta: { fontSize: 12, fontWeight: 600, color: "#333", marginBottom: 2 },
   kokuoBody: { fontSize: 12, color: "#444", whiteSpace: "pre-wrap", lineHeight: 1.6 },
