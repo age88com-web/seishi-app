@@ -96,9 +96,11 @@ export function lonToMansionDeg(lonDeg: number): MansionDegResult | null {
     const endAbsRaw = m.startLonDeg + m.widthDeg; // 360 を跨ぐ可能性あり
     const endAbs = norm360(endAbsRaw);
 
+    // 終端がちょうど 360° の宿（現行では壁宿 352〜360°）は norm360 で終端が 0 になるため、
+    // 360 を跨がない宿は正規化前の終端（endAbsRaw）で判定する
     const inRange =
       endAbsRaw <= 360
-        ? lon >= startAbs && lon < endAbs
+        ? lon >= startAbs && lon < endAbsRaw
         : lon >= startAbs || lon < endAbs;
 
     if (inRange) {

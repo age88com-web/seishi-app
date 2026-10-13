@@ -57,35 +57,69 @@ export function calcBigLimitStartAge(mingDegree: number): number {
 
 export type BigLimitMap = Record<Branch, string>;
 
-export function buildBigLimits(mingBranch: Branch, mingDegree: number): BigLimitMap {
+/** 大限1区間（数値）。startAge 以上 endAge 未満を、その宮の大限とする */
+export type BigLimitSpan = {
+  order: number;          // 0=第一限（命宮）… 11=第十二限
+  palaceName: string;     // 大限順の宮名（命宮・相貌宮…）
+  branch: Branch;
+  startAge: number;
+  endAge: number;
+};
+
+/** 既存の大限計算（年数・順序）をそのまま数値で返す。buildBigLimits もこれを使う */
+export function buildBigLimitSpans(mingBranch: Branch, mingDegree: number): (BigLimitSpan | null)[] {
   const firstLimitYears = calcBigLimitStartAge(mingDegree);
-  const ranges: string[] = [];
+  const spans: (BigLimitSpan | null)[] = [];
+  const mingIdx = indexOfBranch(mingBranch);
+  const brAt = (step: number) => BRANCHES_B[(mingIdx + step) % 12];
 
   let curStart = 0;
   let curEnd = firstLimitYears;
-  ranges.push(formatRange(curStart, curEnd));
+  spans.push({ order: 0, palaceName: LIMIT_ORDER_NAMES[0], branch: brAt(0), startAge: curStart, endAge: curEnd });
 
   for (let i = 1; i < 12; i++) {
     const yrs = LIMIT_YEARS[i];
     if (yrs == null) {
-      ranges.push("");
+      spans.push(null);
       continue;
     }
 
     curStart = curEnd;
     curEnd = curEnd + yrs;
-    ranges.push(formatRange(curStart, curEnd));
+    spans.push({ order: i, palaceName: LIMIT_ORDER_NAMES[i], branch: brAt(i), startAge: curStart, endAge: curEnd });
   }
+  return spans;
+}
 
+export function buildBigLimits(mingBranch: Branch, mingDegree: number): BigLimitMap {
+  const spans = buildBigLimitSpans(mingBranch, mingDegree);
   const out: BigLimitMap = {} as BigLimitMap;
 
   const mingIdx = indexOfBranch(mingBranch);
   for (let step = 0; step < 12; step++) {
     const br = BRANCHES_B[(mingIdx + step) % 12];
-    out[br] = ranges[step];
+    const sp = spans[step];
+    out[br] = sp ? formatRange(sp.startAge, sp.endAge) : "";
   }
 
   return out;
+}
+
+/**
+ * 指定年齢（targetAge）が入る大限。区間は startAge 以上 endAge 未満。
+ * 大限の合計年数（第十二限の終わり）を超える年齢は null。
+ */
+export function getCurrentBigLimit(mingBranch: Branch, mingDegree: number, targetAge: number): BigLimitSpan | null {
+  if (!Number.isFinite(targetAge) || targetAge < 0) return null;
+  for (const sp of buildBigLimitSpans(mingBranch, mingDegree)) {
+    if (sp && targetAge >= sp.startAge && targetAge < sp.endAge) return sp;
+  }
+  return null;
+}
+
+/** 命宮を基準にした当宮の宮名（大限順・ChartSVG の宮名と同じ並び） */
+export function palaceNameOfBranch(mingBranch: Branch, branch: Branch): string {
+  return LIMIT_ORDER_NAMES[(indexOfBranch(branch) - indexOfBranch(mingBranch) + 12) % 12];
 }
 
 function indexOfBranch(b: Branch): number {
