@@ -18,6 +18,8 @@ import {
   calcShenPalace_v2,
 } from "@/lib/ming_shen";
 import { buildBigLimits } from "@/lib/big_limit";
+import { mingDegreeForMode } from "@/lib/ming_degree";
+import { mingMansionOf, mingMansionText } from "@/lib/ming_mansion";
 import { lonToMansionDeg } from "@/lib/mansions28";
 import { calcJuniun } from "@/lib/juniun";
 import { normalizeStarName } from "@/lib/ouboin";
@@ -37,125 +39,50 @@ import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import * as BigLimit from "@/lib/big_limit";
 import AppSwitcher from "@/components/AppSwitcher";
-
-function exportPDF() {
-  window.print();
-}
+import NatalProfileForm from "@/components/NatalProfileForm";
+import { useNatalProfile } from "@/lib/natalProfile/store";
+import { profileToQizhengInput } from "./qizhengProfileAdapter";
+import { getCurrentSmallLimitBranch } from "@/lib/small_limit";
+import { loadNormalLimitRules, matchLr0550, type LimitRuleRecord } from "@/lib/limit_rules";
+import { PALACE_MAIN_STAR } from "@/lib/kakkyoku_engine";
+import { PrintRoot, usePrintMode, type PrintHeaderInfo } from "@/components/print/PrintRoot";
+import QizhengChartPrint, { type QizhengChartProps } from "@/components/qizheng/QizhengChartPrint";
+import QizhengInterpretationPrint from "@/components/qizheng/QizhengInterpretationPrint";
+import "@/components/print/print.css";
 
 const ChartSVG = dynamic(() => import("@/components/ChartSVG"), { ssr: false });
-
-function clampInt(v: number, min: number, max: number) {
-  if (!Number.isFinite(v)) return min;
-  return Math.min(max, Math.max(min, Math.trunc(v)));
-}
-
-function parseYMD(s: string): { y: number; m: string; d: string } | null {
-  const m = s.match(/^(\d{4})-(\d{2})-(\d{2})$/);
-  if (!m) return null;
-  return { y: Number(m[1]), m: m[2], d: m[3] };
-}
 
 export default function Home() {
 
   const [mounted, setMounted] = useState(false);
 useEffect(() => setMounted(true), []);
 
-  // 名前
-  const [name, setName] = useState("");
-  
-    // ▼ 追加：男女
-  const [sex, setSex] = useState<"男" | "女">("男");
-  const [mingMode, setMingMode] = useState<"getsu" | "handen">("getsu");
+  // 姓名・性別・生年月日・出生時刻・出生地・緯度経度は3術共通のプロフィール（共通入力UIで編集）
+  const { profile, hydrated, revision } = useNatalProfile();
+  const { name, sex, date, time, lat, lon, unavailable } = profileToQizhengInput(profile);
+  // 印刷（盤＝A4縦1枚／解釈＝文章のみ）。印刷専用レイアウトは画面の下の PrintRoot
+  const printAs = usePrintMode();
 
-  // 日付・時刻（ピッカー）
-  const [date, setDate] = useState("1990-01-01");
-  const [time, setTime] = useState("12:00");
-  
+  // ▼ 七政四餘固有の設定
+  // 命宮方式：「古典」チェックなし＝通常（handen：ASC 基準の命宮・命度）／チェックあり＝古典（getsu：月将＋時支の命宮・calcMingDegreeFromSunLon の命度）
+  const [mingMode, setMingMode] = useState<"getsu" | "handen">("handen");
+
   // 手動優先（初期だけ自動で入れる）
   const [isDayBirth, setIsDayBirth] = useState<boolean>(true);
   const [isDayBirthManual, setIsDayBirthManual] = useState<boolean>(false);
-
-
-  // 年（手入力：途中入力で落ちないよう string）
-  const [yearStr, setYearStr] = useState("1990");
-
-  // 地名入力
-  const [place, setPlace] = useState("東京都");
-  const [kakkyokuLimit, setKakkyokuLimit] = useState<8 | 20>(8);
-  const [placeMsg, setPlaceMsg] = useState<string>("");
-
-  // 緯度経度
-  const [lon, setLon] = useState(139.6917);
-  const [lat, setLat] = useState(35.6895);
-  
-  useEffect(() => {
-  try {
-    const s = localStorage.getItem("seishi_inputs");
-    if (!s) return;
-    const v = JSON.parse(s);
-    if (typeof v.date === "string") setDate(v.date);
-    if (typeof v.time === "string") setTime(v.time);
-    if (typeof v.yearStr === "string") setYearStr(v.yearStr);
-    if (typeof v.place === "string") setPlace(v.place);
-    if (typeof v.lat === "number") setLat(v.lat);
-    if (typeof v.lon === "number") setLon(v.lon);
-  } catch {}
-}, []);
-
-  // --- 年手入力 → date の年へ反映（4桁になった時だけ） ---
-  useEffect(() => {
-    if (!/^\d{4}$/.test(yearStr)) return;
-    const p = parseYMD(date);
-    if (!p) return;
-    const next = `${yearStr}-${p.m}-${p.d}`;
-    if (next !== date) setDate(next);
-  }, [yearStr, date]);
-
-  // --- date ピッカーで年が変わったら yearStr を追随 ---
-  useEffect(() => {
-    const p = parseYMD(date);
-    if (!p) return;
-    const y = String(clampInt(p.y, 1, 9999)).padStart(4, "0");
-    if (y !== yearStr) setYearStr(y);
-  }, [date]); // eslint-disable-line react-hooks/exhaustive-deps
-  
-  useEffect(() => {
-  try {
-    localStorage.setItem(
-      "seishi_inputs",
-      JSON.stringify({ date, time, yearStr, place, lat, lon })
-    );
-  } catch {}
-}, [date, time, yearStr, place, lat, lon]);
-
-  async function resolvePlace() {
-    setPlaceMsg("検索中…");
-    try {
-      const r = await fetch(`/api/geocode?q=${encodeURIComponent(place)}`, { cache: "no-store" });
-      const j = await r.json();
-
-      if (!r.ok) {
-        setPlaceMsg(j && j.error ? `見つかりません: ${j.error}` : "見つかりません");
-        return;
-      }
-
-      const newLat = Number(j.lat);
-      const newLon = Number(j.lon);
-      if (!Number.isFinite(newLat) || !Number.isFinite(newLon)) {
-        setPlaceMsg("緯度経度の形式が不正です");
-        return;
-      }
-
-      setLat(newLat);
-      setLon(newLon);
-
-      const disp = j.displayName ? String(j.displayName) : "OK";
-      setPlaceMsg(`OK: ${disp}（lat ${newLat.toFixed(4)}, lon ${newLon.toFixed(4)}）`);
-    } catch (e: any) {
-      console.error("[place search error]", e);
-setPlaceMsg("検索に失敗しました");
-    }
+  // 別の人物（顧客）を読み込んだら昼夜は自動判定に戻す
+  const [manualRevision, setManualRevision] = useState(revision);
+  if (manualRevision !== revision) {
+    setManualRevision(revision);
+    setIsDayBirthManual(false);
   }
+
+
+  const [kakkyokuLimit, setKakkyokuLimit] = useState<8 | 20>(8);
+
+  // 行限（検証用）：対象年齢（整数）。西暦年からの自動計算はしない
+  const [targetAgeStr, setTargetAgeStr] = useState("");
+  const targetAge = /^\d+$/.test(targetAgeStr) ? Number(targetAgeStr) : null;
 
   // 入力日時（ローカル）
   const dObj = useMemo(() => new Date(date + "T" + time), [date, time]);
@@ -200,11 +127,6 @@ setPlaceMsg("検索に失敗しました");
   const ascLon = ascLonMinus;
 
   useEffect(() => {
-    console.log("[ASC] local ISO =", dObj.toISOString());
-    console.log("[ASC] true solar ISO =", trueSolarDate.toISOString());
-    console.log("[ASC] lat/lon =", lat, lon);
-    console.log("[ASC] ASC(+lon) =", ascLonPlus);
-    console.log("[ASC] ASC(-lon) =", ascLonMinus);
   }, [dObj, trueSolarDate, lat, lon, ascLonPlus, ascLonMinus]);
   
   // 日の出・日の入り（昼夜判定用）
@@ -336,7 +258,6 @@ const mingBranch = useMemo(
   const y = { stem: cal.yearStem, branch: cal.yearBranch };
 　const yearGanzhi = y.stem + y.branch;
 
-console.log("yearGanzhi =", yearGanzhi);
 
 
 
@@ -348,10 +269,32 @@ console.log("yearGanzhi =", yearGanzhi);
   const moonPalace = monthGeneralFromSunLon(moonLon);
   const shenBranch = calcShenPalace_v2(moonPalace, hourBr);
 
-  // 大限（既存）
-  const mingDegree = BigLimit.calcMingDegreeFromSunLon(sunLon);
+  // 命度（アプリ全体で共通の1つの値）：通常（ASC＝命度）なら ASC 基準、古典（月将＋時支）なら calcMingDegreeFromSunLon。
+  // 表示・命度宿・大限・限度・流年・年齢選択・印刷はすべてこの mingDegree を使う（lib/ming_degree.ts）
+  const mingDegree = mingDegreeForMode(mingMode, { ascLon, sunLon, mingBranch });
+
+  // 大限（既存の計算に共通の命度を渡す）
 
 const bigLimits = BigLimit.buildBigLimits(mingBranch as any, mingDegree);
+
+// 対象年齢の大限宮・小限宮（既存の大限・小限の規則をそのまま使用）と、その宮主（既存の宮主表）
+const curBigLimit = targetAge != null ? BigLimit.getCurrentBigLimit(mingBranch as any, mingDegree, targetAge) : null;
+const curSmallBranch = targetAge != null ? getCurrentSmallLimitBranch(mingBranch, targetAge) : null;
+const starNameOf = (mark?: string) => (mark ? (HENYOU_MARK_TO_LABEL as any)[mark] ?? mark : "—");
+
+// 行限ルール（検証表示）：通常（normal）のみ読み込み、death_timing は扱わない
+const [limitRules, setLimitRules] = useState<Map<string, LimitRuleRecord> | null>(null);
+useEffect(() => {
+  if (targetAge == null || limitRules) return;
+  let alive = true;
+  loadNormalLimitRules().then((m) => { if (alive) setLimitRules(m); }).catch(() => {});
+  return () => { alive = false; };
+}, [targetAge, limitRules]);
+// 出生時の各星の所在支（既存の branchFromLon）
+const bodiesAtBranch = (bodies as any[]).map((b) => ({ id: String(b.id), label: String(b.label), branch: branchFromLon(Number(b.lonDeg)) }));
+const lr0550Big = curBigLimit ? matchLr0550(curBigLimit.branch, isDayBirth, bodiesAtBranch) : [];
+const lr0550Small = curSmallBranch ? matchLr0550(curSmallBranch, isDayBirth, bodiesAtBranch) : [];
+const lr0550 = limitRules?.get("lr_0550") ?? null;
 
   const day = { stem: cal.dayStem, branch: cal.dayBranch };
   const mBr = cal.monthBranch;
@@ -363,80 +306,21 @@ function degInPalace(lon: number): number {
   return ((lon % 30) + 30) % 30;
 }
 
-// 命宮の開始黄経（寅=0, 卯=30, ...）
-function branchStartLon(branch: string): number {
-  const order = ["寅","卯","辰","巳","午","未","申","酉","戌","亥","子","丑"];
-  const i = order.indexOf(branch);
-  return i >= 0 ? i * 30 : 0;
-}
-
-// 0..30 正規化
-function norm30(x: number): number {
-  x = x % 30;
-  return x < 0 ? x + 30 : x;
-}
-
-// 旧命度の基準＝ASC（黄経）
-
-// 命度の「度数」＝ASCを命宮の宮内度数へ落とす（ここが本体）
-const mingDeg = useMemo(() => {
-  const start = branchStartLon(mingBranch);
-  return norm30(ascLon - start);
-}, [ascLon, mingBranch]);
+// 命度の値は上の mingDegree（命宮方式に応じた共通の命度）を使う
 
 // （任意）命度を宿度でも出すなら：ASCそのものを宿へ変換
 const ming28 = useMemo(() => lonToMansionDeg(ascLon), [ascLon]);
 
 // 命度（十二宮表記）
 const mingdoText = useMemo(() => {
-  return `${mingBranch}${mingDeg.toFixed(2)}°`;
-}, [mingBranch, mingDeg]);
+  return `${mingBranch}${mingDegree.toFixed(2)}°`;
+}, [mingBranch, mingDegree]);
 
-// ===== 命度（宿度表記：いまの命度を二十八宿へ変換）=====
-// 命度の本体は「命宮 + 宮内度数(mingDeg)」なので、黄経へ戻して宿に変換する
-
-// 0°＝戌/亥境（＝亥宮の開始）を前提にする並び
-const BRANCH_BY_30_FROM_0 = ["亥","子","丑","寅","卯","辰","巳","午","未","申","酉","戌"] as const;
-
-function branchStartLon30(branch: string): number {
-  const table: Record<string, number> = {
-    "寅": 240,
-    "卯": 270,
-    "辰": 300,
-    "巳": 330,
-    "午": 0,
-    "未": 30,
-    "申": 60,
-    "酉": 90,
-    "戌": 120,
-    "亥": 150,
-    "子": 180,
-    "丑": 210,
-  };
-  return table[branch] ?? 0;
-}
-
-function norm360(x: number) {
-  x = x % 360;
-  return x < 0 ? x + 360 : x;
-}
-
-// 「いまの命度」を黄経へ戻す（命宮の開始黄経 + 命宮内度数）
-const mingLonForMansion = useMemo(() => {
-  const start = branchStartLon30(mingBranch);
-  return norm360(start + mingDeg);
-}, [mingBranch, mingDeg]);
-
-// その黄経を二十八宿へ
-const ming28ForMingdo = useMemo(() => {
-  return lonToMansionDeg(mingLonForMansion);
-}, [mingLonForMansion]);
-
-// 表示文字列（宿度）
-const mingdoTextMansion = useMemo(() => {
-  if (!ming28ForMingdo) return "—";
-  return `${ming28ForMingdo.mansion.label}${ming28ForMingdo.degInMansion.toFixed(2)}°`;
-}, [ming28ForMingdo]);
+// ===== 命度（宿度表記）=====
+// 命宮の黄経範囲（branchFromLon と同じ割り付け）＋命度 → 既存 lonToMansionDeg（lib/ming_mansion.ts）。
+// 行限ルールの命度宿も同じ関数の値を使う
+const mingMansion = useMemo(() => mingMansionOf(mingBranch, mingDegree), [mingBranch, mingDegree]);
+const mingdoTextMansion = mingMansionText(mingMansion);
 
   const nameLine = name.trim() ? `姓名：${name.trim()}` : "";
   const kakkyokuResult = useMemo(() => {
@@ -463,12 +347,11 @@ const shenshaMerged = shenShaByPalace;
       monthBranch: mBr as any,
       mingBranch: mingBranchHanden as any,
       shenBranch: shenBranch as any,
-      mingDeg: mingDeg,
+      mingDeg: mingDegree, // buildKakkyokuContext は命度を使っていない（格局の結果は変わらない）
       bodies: bodies as any,
       shenShaByPalace: shenShaByPalace as any,
     } as any);
 
-    console.log("CTX", ctx);
 
     return evalKakkyoku(ctx as any) as any;
 
@@ -483,95 +366,91 @@ const shenshaMerged = shenShaByPalace;
 
   }
 
-}, [sex, isDayBirth, y, mBr, mingBranch, shenBranch, mingDeg, bodies]);
+}, [sex, isDayBirth, y, mBr, mingBranch, shenBranch, mingDegree, bodies]);
 
 const shenShaByPalace = mergePalaceShensha(
   getNenganPalaceShensha(y?.stem as any),
   getNenshiPalaceShensha(y?.branch as any)
 );
 
+// 行限判断（画面表示と解釈印刷で共用）
+const limitJudgement = targetAge != null && lr0550 && (lr0550Big.length > 0 || lr0550Small.length > 0) ? (
+          <div style={{ fontSize: 13, lineHeight: 1.6, width: "100%" }} data-testid="limit-judgement">
+            <b>行限判断</b>
+            {lr0550Big.length > 0 && (
+              <div data-testid="limit-judgement-big">
+                大限：向明（{lr0550Big.map((b) => b.label).join("・")}）　{lr0550.modern_japanese}
+              </div>
+            )}
+            {lr0550Small.length > 0 && (
+              <div data-testid="limit-judgement-small">
+                小限：向明（{lr0550Small.map((b) => b.label).join("・")}）　{lr0550.modern_japanese}
+              </div>
+            )}
+          </div>
+) : null;
+
+// ===== 印刷用（画面と同じ計算結果を渡すだけ）=====
+// 行限判断（画面の limitJudgement と同じ文）
+const limitLines =
+  targetAge != null && lr0550
+    ? [
+        ...(lr0550Big.length > 0 ? [`大限：向明（${lr0550Big.map((b) => b.label).join("・")}）　${lr0550.modern_japanese}`] : []),
+        ...(lr0550Small.length > 0 ? [`小限：向明（${lr0550Small.map((b) => b.label).join("・")}）　${lr0550.modern_japanese}`] : []),
+      ]
+    : [];
+const printInfo: PrintHeaderInfo = {
+  name: name.trim() || null,
+  birthDate: date.replaceAll("-", "/"),
+  birthTime: profile.birthTimeUnknown ? "不明" : time,
+  sex,
+  place: profile.birthPlace.trim(),
+};
+const printExtra: [string, string][] = [
+  ["昼夜", isDayBirth ? "昼生れ" : "夜生れ"],
+  ["命宮方式", mingMode === "handen" ? "通常（ASC＝命度）" : "古典（月将＋時支）"],
+  ["命宮", mingBranch],
+  ["身宮", shenBranch],
+  ["命度", `${mingdoText}（${mingdoTextMansion}）`],
+];
+const printChart: QizhengChartProps = {
+  sex,
+  yearStem: y.stem as any,
+  yearBranch: y.branch as any,
+  bodies: bodiesWithMotion as any,
+  mingBranch: mingBranch as any,
+  shenBranch: shenBranch as any,
+  bigLimits: bigLimits as any,
+  juniunMap,
+  centerTitle: "七政四餘",
+  monthBranch: mBr as any,
+  centerLines: [
+    ...(nameLine ? [nameLine] : []),
+    `日：${day.stem}${day.branch}`,
+    `月支：${mBr}`,
+    `命宮：${mingBranch}　身宮：${shenBranch}`,
+    `古典:${mingBranchGetsu} / 　ASC:${mingBranchHanden}`,
+    `命度：${mingdoText}`,
+    `命度（宿度）：${mingdoTextMansion}`,
+  ],
+};
+const printGood = Array.from(new Set(((kakkyokuResult?.good ?? []) as string[]).filter(Boolean))).slice(0, kakkyokuLimit).map(String);
+const printBad = Array.from(new Set(((kakkyokuResult?.bad ?? []) as string[]).filter(Boolean))).slice(0, 8).map(String);
+
  return (
   <>
   <AppSwitcher />
   <main style={{ padding: 18 }}>
 
-  <style jsx global>{`
-  @media print {
-    @page {
-      size: A4 portrait;
-      margin: 8mm;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: #fff;
-    }
-
-    body * {
-      visibility: hidden !important;
-    }
-
-    #pdf-chart-wrap,
-    #pdf-chart-wrap * {
-      visibility: visible !important;
-    }
-
-    #pdf-chart-wrap {
-      position: static !important;
-      width: 100% !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      background: #fff !important;
-      box-sizing: border-box !important;
-    }
-
-    #pdf-chart-wrap svg {
-      display: block !important;
-      width: 190mm !important;
-      height: 190mm !important;
-      margin: 0 auto !important;
-    }
-
-    .pdf-page-break {
-      break-before: page;
-      page-break-before: always;
-      height: 0;
-    }
-
-    button,
-    input,
-    select,
-    textarea {
-      display: none !important;
-    }
-  }
-`}</style>
   
+    {/* 1. 共通人物入力UI（3術共通） */}
+    <NatalProfileForm />
+
+    {/* 2. 七政四餘固有の設定 */}
     <div style={{ display: "grid", gap: 10, maxWidth: 760 }}>
 
-      {/* 名前入力 */}
-      <div style={{ fontSize: 16, lineHeight: 1.4 }}>
-        <input
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="名前（任意）"
-          aria-label="名前"
-        />
-      </div>
-
-      {/* 男女・昼夜 */}
+      {/* 七政四餘固有の設定: 昼夜 */}
       <div style={{ display: "flex", gap: 12, alignItems: "center", marginTop: 8 }}>
-        <label style={{ minWidth: 64 }}>性別</label>
-        <select
-          value={sex}
-          onChange={(e) => setSex(e.target.value as "男" | "女")}
-          style={{ fontSize: 16, padding: "6px 10px" }}
-        >
-          <option value="男">男</option>
-          <option value="女">女</option>
-        </select>
-
         <label>
           昼夜：
           <select
@@ -587,101 +466,64 @@ const shenShaByPalace = mergePalaceShensha(
         </label>
       </div>
 
-      {/* 年 */}
-      <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
-        <input
-          value={yearStr}
-          onChange={(e) => {
-            const v = e.target.value.replace(/[^\d]/g, "").slice(0, 4);
-            setYearStr(v);
-          }}
-          inputMode="numeric"
-          aria-label="西暦年"
-          style={{ width: 110 }}
-        />
-        <div style={{ fontSize: 13, opacity: 0.8 }}>
-          （年を変えると日付の年だけ差し替え）
-        </div>
+      {/* 行限（検証用）：対象年齢 → 現在の大限宮・小限宮 */}
+      <div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
+        <label>
+          対象年齢：
+          <input
+            value={targetAgeStr}
+            onChange={(e) => setTargetAgeStr(e.target.value.replace(/[^\d]/g, "").slice(0, 3))}
+            inputMode="numeric"
+            aria-label="対象年齢"
+            style={{ width: 60 }}
+          />
+          歳
+        </label>
+        {targetAge != null && (
+          <div style={{ fontSize: 13, lineHeight: 1.6 }} data-testid="limit-summary">
+            対象年齢：{targetAge}歳　
+            大限：{curBigLimit ? `${curBigLimit.palaceName}（${curBigLimit.branch}）` : "範囲外"}　
+            大限宮主：{curBigLimit ? starNameOf(PALACE_MAIN_STAR[curBigLimit.branch]) : "—"}　
+            小限：{curSmallBranch ? `${BigLimit.palaceNameOfBranch(mingBranch as any, curSmallBranch)}（${curSmallBranch}）` : "—"}　
+            小限宮主：{curSmallBranch ? starNameOf(PALACE_MAIN_STAR[curSmallBranch]) : "—"}
+          </div>
+        )}
+        {limitJudgement}
       </div>
 
-      {/* 日付・時刻 */}
-      <div style={{ display: "flex", gap: 10 }}>
-        <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
-        <input type="time" value={time} onChange={(e) => setTime(e.target.value)} />
-      </div>
-
-      {/* 出生地 */}
-      <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-        <input
-          value={place}
-          onChange={(e) => setPlace(e.target.value)}
-          placeholder="出生地（例：岐阜市 / 東京都 / Sapporo）"
-          style={{ flex: 1 }}
-        />
-        <button type="button" onClick={resolvePlace}>
-          地名→緯度経度
-        </button>
-      </div>
-
-      <div style={{ fontSize: 13 }}>
-        {placeMsg ? placeMsg : `lat ${lat}, lon ${lon}`}
-      </div>
-
-      {/* 緯度経度 */}
-      <div style={{ display: "flex", gap: 10 }}>
-        <input value={String(lat)} onChange={(e) => setLat(Number(e.target.value))} />
-        <input value={String(lon)} onChange={(e) => setLon(Number(e.target.value))} />
-      </div>
-
-      {/* 命宮方式（古法 / ASC） */}
+      {/* 命宮方式（古典 / ASC） */}
       <div style={{ marginTop: 8 }}>
         <label style={{ display: "flex", gap: 8, alignItems: "center" }}>
           <input
             type="checkbox"
-            checked={mingMode === "handen"}
-            onChange={(e) => setMingMode(e.target.checked ? "handen" : "getsu")}
+            checked={mingMode === "getsu"}
+            onChange={(e) => setMingMode(e.target.checked ? "getsu" : "handen")}
           />
-          命宮方式：{mingMode === "handen" ? "新法（ASC＝命度）" : "月将＋時支（古法）"}
+          古典（月将＋時支の命宮・太陽基準の命度）
+          <span style={{ fontSize: 12, color: "#666" }}>　現在：{mingMode === "handen" ? "通常（ASC＝命度）" : "古典（月将＋時支）"}</span>
         </label>
       </div>
     </div>
     
-<button onClick={() => exportPDF()} style={{
-    marginTop: 10,
-    padding: "6px 14px",
-    fontSize: 14,
-    cursor: "pointer"
-  }}
->
-  PDF出力
-</button>   
-
-<div id="pdf-only" style={{display:"none"}}>
-  <div style={{width:"210mm",padding:"10mm",background:"#fff"}}>
-
-    <div style={{textAlign:"center",marginBottom:"10mm"}}>
-      <ChartSVG
-        sex={sex}
-        yearStem={y.stem as any}
-        yearBranch={y.branch as any}
-        bodies={bodiesWithMotion as any}
-        mingBranch={mingBranch as any}
-        shenBranch={shenBranch as any}
-        bigLimits={bigLimits}
-        juniunMap={juniunMap}
-        centerTitle="七政四餘"
-        monthBranch={mBr as any}
-        centerLines={[
-          ...(nameLine ? [nameLine] : []),
-          `日：${day.stem}${day.branch}`,
-          `月支：${mBr}`,
-          `命宮：${mingBranch}　身宮：${shenBranch}`,
-        ]}
-      />
-    </div>
-
+{hydrated && !unavailable && (
+  <div style={{ display: "flex", gap: 8, marginTop: 10 }}>
+    <button onClick={() => printAs("chart")} style={{ padding: "6px 14px", fontSize: 14, cursor: "pointer" }}>
+      盤を印刷
+    </button>
+    <button onClick={() => printAs("interpretation")} style={{ padding: "6px 14px", fontSize: 14, cursor: "pointer" }}>
+      解釈を印刷
+    </button>
   </div>
-</div> 
+)}
+
+{/* 3. 星盤・格局（出生時刻・緯度経度がそろっているときだけ） */}
+{hydrated && unavailable && (
+  <div style={{ marginTop: 12, padding: "6px 10px", border: "1px solid #e0b4b4", background: "#fdecec", color: "#a33", borderRadius: 4, fontSize: 13, maxWidth: 760 }}>
+    {unavailable}
+  </div>
+)}
+{hydrated && !unavailable && (
+<>
 
    {/* 星盤 */}
 <div id="pdf-chart-wrap"
@@ -703,12 +545,19 @@ const shenShaByPalace = mergePalaceShensha(
     juniunMap={juniunMap}
     centerTitle="七政四餘"
     monthBranch={mBr as any}
+    palaceDetail
+    mingDegree={mingDegree}
+    targetAge={targetAge}
+    birthYear={dObj.getFullYear()}
+    onTargetAgeChange={(a) => setTargetAgeStr(String(a))}
+    isDayBirth={isDayBirth}
+    kakkyoku={kakkyokuResult}
     centerLines={[
       ...(nameLine ? [nameLine] : []),
       `日：${day.stem}${day.branch}`,
       `月支：${mBr}`,
       `命宮：${mingBranch}　身宮：${shenBranch}`,
-      `古法:${mingBranchGetsu} / 　ASC:${mingBranchHanden}`,
+      `古典:${mingBranchGetsu} / 　ASC:${mingBranchHanden}`,
       `命度：${mingdoText}`,
       `命度（宿度）：${mingdoTextMansion}`,
     ]}
@@ -845,6 +694,30 @@ const shenShaByPalace = mergePalaceShensha(
   </>
 )}
 </div>
+
+{/* 印刷専用レイアウト（画面には出さない）：盤＝A4縦1枚／解釈＝星盤なし・文章のみ */}
+{mounted && (
+  <>
+    {/* 盤印刷は A4縦・上14mm・左右18mm・下20mm（有効紙面 174mm×263mm。上はさらにシート側で 10mm の空白帯＝qizheng-print.css） */}
+    <PrintRoot kind="chart" className="qz-print-portrait" page="size: A4 portrait; margin: 14mm 18mm 20mm 18mm;">
+      <QizhengChartPrint info={printInfo} extra={printExtra} chart={printChart} good={printGood} bad={printBad} />
+    </PrintRoot>
+    {/* 解釈印刷は上下30mm・左右22mm（全ページ） */}
+    <PrintRoot kind="interpretation" page="size: A4 portrait; margin: 30mm 22mm 30mm 22mm;">
+      <QizhengInterpretationPrint
+        info={printInfo}
+        extra={printExtra}
+        chart={{ ...printChart, mingDegree, targetAge, isDayBirth, kakkyoku: kakkyokuResult }}
+        good={printGood}
+        bad={printBad}
+        limitLines={limitLines}
+      />
+    </PrintRoot>
+  </>
+)}
+</>
+)}
+
 </main>
   </>
 );
