@@ -64,7 +64,7 @@ const GOALS: Record<InterpretationGoal, string> = {
   discover: "見つけたい", avoid: "避けたい",
 };
 const ROLES: Record<SemanticRole, string> = {
-  self: "主体", counterparty: "相手", target: "目的・対象", resource: "資源", authority: "官・上位者・官府", document: "文書・印綬",
+  self: "主体", counterparty: "相手", groomSide: "新郎側", brideSide: "新婦側", target: "目的・対象", resource: "資源", authority: "官・上位者・官府", document: "文書・印綬",
   movement: "移動", origin: "出発点", destination: "行き先", environment: "環境・条件", obstacle: "妨げ", support: "支え",
   process: "経過", outcome: "結果",
 };
@@ -87,8 +87,8 @@ const MAP: MapRow[] = [
   { domain: "house", subtype: "residence", fact: "日支・三課", roles: ["target"], status: "講座 p67（日支＝家）" },
   { domain: "house", subtype: "moving", fact: "一課（日上神）", roles: ["origin"], status: "講座 p67（転居では日上神＝旧宅）" },
   { domain: "house", subtype: "moving", fact: "三課（支上神）", roles: ["destination"], status: "講座 p67（転居では支上神＝新宅）" },
-  { domain: "marriage", fact: "一課", roles: ["self"], status: "講座 p62（新郎）" },
-  { domain: "marriage", fact: "三課", roles: ["counterparty"], status: "講座 p62（新婦）" },
+  { domain: "marriage", fact: "一課", roles: ["groomSide"], status: "講座 p62（新郎）" },
+  { domain: "marriage", fact: "三課", roles: ["brideSide"], status: "講座 p62（新婦）" },
   { domain: "marriage", fact: "二課・四課", roles: ["environment"], status: "講座 p62（それぞれの家族）" },
   { domain: "exam", fact: "官鬼で長生（学堂）", roles: ["authority", "document"], status: "断案2 例54（官星学堂、科甲）" },
   { domain: "work", fact: "官鬼", roles: ["authority"], status: "候補（原典未確認。subtype ごとに要確認）" },

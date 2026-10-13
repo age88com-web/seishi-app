@@ -183,11 +183,11 @@ export const SEMANTIC_ROLE_RULES: readonly SemanticRoleRule[] = [
   },
   // 婚姻
   {
-    id: "marriage.lesson1.self", when: { domain: "marriage" }, source: { kind: "lesson", index: 1 }, role: "self", confidence: "direct",
+    id: "marriage.lesson1.groomSide", when: { domain: "marriage" }, source: { kind: "lesson", index: 1 }, role: "groomSide", confidence: "direct",
     evidence: [{ kind: "classicalRule", detail: "結婚占いでは一課は新郎", source: KOZA("p62", "四課の見方") }],
   },
   {
-    id: "marriage.lesson3.counterparty", when: { domain: "marriage" }, source: { kind: "lesson", index: 3 }, role: "counterparty", confidence: "direct",
+    id: "marriage.lesson3.brideSide", when: { domain: "marriage" }, source: { kind: "lesson", index: 3 }, role: "brideSide", confidence: "direct",
     evidence: [{ kind: "classicalRule", detail: "結婚占いでは三課は新婦", source: KOZA("p62") }],
   },
   {

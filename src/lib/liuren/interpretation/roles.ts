@@ -42,7 +42,11 @@ export interface DomainSubtypes {
   /** 文試（civil）・武試（military）は『六壬断案２』例54 で評価が分かれる（Phase 5A） */
   exam: "general" | "civil" | "military";
   house: "residence" | "moving";
-  marriage: "general";
+  /**
+   * Phase 5D: proposal（縁談・婚姻が成立するか）・married（夫婦関係が続くか・離別に向かうか）。
+   * dating（交際）・reunion（復縁）は古典の婚姻門に専用の規則がないので未対応（判断せず不足として返す）。general は問いの種類が未指定。
+   */
+  marriage: "general" | "proposal" | "married" | "dating" | "reunion";
   travel: "departure";
   traveler: "return";
   lostItem: "general";
@@ -116,6 +120,12 @@ export interface InterpretationContext<D extends InterpretationDomain = Interpre
    * 例: 『六壬心鏡』行人門「天后神后是妻姬」なら妻を天后で見る。
    */
   targetSymbol?: TargetSymbol;
+  /**
+   * 問う人が、古典の婚姻占の男女（夫・妻）のどちらの側か（Phase 5D。婚姻 DOMAIN で使う）。
+   * 古典は男女で類神を分ける（『御定六壬直指』婚姻「青龍為男，天后為女，日為男，支為女」）。問う人・相手の指定とは別に持ち、
+   * 分からなければ省く（男女別の規則は判断せず不足として返す。類神を推測で置き換えない）。
+   */
+  subjectSide?: "male" | "female";
 }
 
 /** 類神の指定（天将か支） */
@@ -144,10 +154,12 @@ export interface ContextBranchUnresolved {
 
 // ---- ROLE ----
 
-/** 抽象的な ROLE（DOMAIN 固有の名詞は持たない） */
+/** 抽象的な ROLE（DOMAIN 固有の名詞は持たない。例外は婚姻の新郎側・新婦側で、講座 p62 の位置づけをそのまま持つ） */
 export type SemanticRole =
   | "self"          // 主体・問う人
   | "counterparty"  // 相手
+  | "groomSide"     // 婚姻の新郎側（講座 p62。問う人とは限らない）
+  | "brideSide"     // 婚姻の新婦側（講座 p62。問う人とは限らない）
   | "target"        // 目的・対象
   | "resource"      // 財・禄など、得たり保ったりする資源
   | "authority"     // 官・上位者・官府

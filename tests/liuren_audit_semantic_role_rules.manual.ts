@@ -25,7 +25,7 @@ function check(label: string, ok: boolean, detail = ""): void {
   else failures.push(`  FAIL ${label}${detail ? `: ${detail}` : ""}`);
 }
 
-const ROLES: SemanticRole[] = ["self", "counterparty", "target", "resource", "authority", "document", "movement", "origin", "destination", "environment", "obstacle", "support", "process", "outcome"];
+const ROLES: SemanticRole[] = ["self", "counterparty", "groomSide", "brideSide", "target", "resource", "authority", "document", "movement", "origin", "destination", "environment", "obstacle", "support", "process", "outcome"];
 const SUBTYPES: Record<string, string[]> = {
   wealth: ["general"], work: ["employment", "jobChange", "promotion", "transfer", "currentWork", "resignation", "independence"],
   exam: ["general"], house: ["residence", "moving"], marriage: ["general"], travel: ["departure"], traveler: ["return"],
