@@ -161,6 +161,67 @@ export interface InnerPatternScore {
   referenceOnly: boolean;
 }
 
+/** 五季の旺相休囚死（KD27-1） */
+export type SeasonalState = "旺" | "相" | "休" | "囚" | "死";
+
+/** 天干の通根の段階（KD27-4）。month は月支に通根（2根相当） */
+export type RootLevel = "none" | "one" | "twoOrMore" | "month";
+
+/** 新方式の地支1支の力量（KD27）。地支の五行に1回だけ加える */
+export interface ElementForceBranch {
+  pillar: PillarKey;
+  branch: Branch;
+  /** 力量を加える五行（化した地支は化後の五行） */
+  element: Element;
+  /** 化した場合だけ、もとの地支の五行 */
+  originalElement: Element | null;
+  /** 基礎点（月支5・他2） */
+  base: number;
+  seasonal: SeasonalState;
+  coefficient: number;
+  force: number;
+}
+
+/** 新方式の天干1本の力量（KD27）。季節係数は掛けない */
+export interface ElementForceStem {
+  pillar: PillarKey;
+  stem: Stem;
+  element: Element;
+  /** 天干と同じ五行の蔵干を持つ地支（自柱を含む。印は数えない） */
+  roots: PillarKey[];
+  rootLevel: RootLevel;
+  multiplier: number;
+  force: number;
+}
+
+/** 新方式の内格力量（KD27）。旧 InnerPatternScore とは別の結果 */
+export interface ElementForceResult {
+  system: "element-force";
+  monthBranch: Branch;
+  /** 月令の五行（五季。辰戌丑未は月全体を土旺） */
+  rulingElement: Element;
+  seasonal: Record<Element, { state: SeasonalState; coefficient: number }>;
+  branches: ElementForceBranch[];
+  stems: ElementForceStem[];
+  /** 五行ごとに命式全体で1回だけ集計（季節補正後の地支力量＋通根補正後の天干力量） */
+  byElement: Record<Element, { branch: number; stem: number; total: number }>;
+  supportingSide: { elements: Element[]; points: number };
+  weakeningSide: { elements: Element[]; points: number };
+  totalPoints: number;
+  /** 扶助率（％）＝ 扶助側 ÷ 五行総力量 × 100 */
+  supportRatioPercent: number;
+  /** 点数による判定（55%以上 身強・45%以下 身弱・その間 境界） */
+  scoreJudgment: InnerJudgment;
+  /** KD21 の成立（月刃格: 月支本気＝日干の五行／建禄格: 月支本気が日干を生じる） */
+  monthPattern: "月刃格" | "建禄格" | null;
+  /** 最終判定（建禄格・月刃格なら格局表どおり身強。それ以外は点数判定） */
+  finalJudgment: InnerJudgment;
+  finalSource: "monthPattern" | "score";
+  /** 点数判定が境界のときの補助判断材料（数値係数にはしない） */
+  borderlineMaterials: string[];
+  referenceOnly: boolean;
+}
+
 export interface KakkyokuResult {
   referenceOnly: boolean;
   strength: StrengthAssessment;
@@ -169,9 +230,11 @@ export interface KakkyokuResult {
   route: Route;
   /** エンジン判定の要約（外格候補がなければ内格。外格候補が並ぶときは null で candidates を参照。1つを自動選択しない） */
   enginePattern: { name: string; status: CandidateStatus } | null;
-  /** 内格補助点（KD19: 外格・化格の機械判定にかかわらず常に計算する） */
+  /** 旧方式の内格補助点（KD12・KD13・KD17）。比較・回帰確認用に残す。通常の身強・身弱判定には使わない（KD27） */
   innerScore: InnerPatternScore;
   /** 内格補助の位置づけ: 内格の経路／外格・特殊格局候補あり（内格補助点は参考） */
   innerScoreScope: "naikaku" | "withGaikakuCandidates";
+  /** 新方式の内格力量（KD27）。画面の内格強弱・resolveEffectiveStrength・印刷はこれを使う（外格・化格の機械判定にかかわらず常に計算する） */
+  elementForce: ElementForceResult;
   finalJudgment: "requires_practitioner_judgment";
 }

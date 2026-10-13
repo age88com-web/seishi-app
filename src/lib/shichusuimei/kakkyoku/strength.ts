@@ -29,7 +29,6 @@ import {
   adjacentPairs,
   completeSango,
   completeSankai,
-  generates,
   hangoElement,
   hankaiElement,
   inElementOf,
@@ -113,14 +112,13 @@ export function assessTouta(p: Pillars, label: string, target: Element[]): Touta
 // 三得（§13）
 // ---------------------------------------------------------------------------
 
+// 得令（監修確定 N2）: 月支の本気（KD14-1）と日干が同じ五行なら yes。
+//   「本気が透る」の透干先には日干自身を含めるので、同じ五行なら透干条件も成立する。
+//   月支が日干を生じる（印）だけでは得令にしない。yes / no の2値。
 function tokureiOf(p: Pillars, dayEl: Element): SantokuItem {
   const monthEl = BRANCH_ELEMENT[p.月.branch];
   const evidence = [`月支${p.月.branch}の本気の五行 ${monthEl}・日干の五行 ${dayEl}`];
-  if (monthEl === dayEl) return { value: "yes", indexPercent: 50, evidence };
-  if (generates(monthEl, dayEl)) {
-    return { value: "undetermined", indexPercent: 50, evidence, undeterminedReason: "月支の本気が印（得令に印を含むか未確定：N2）" };
-  }
-  return { value: "no", indexPercent: 50, evidence };
+  return { value: monthEl === dayEl ? "yes" : "no", indexPercent: 50, evidence };
 }
 
 function tokuseiOf(touta: ToutaAssessment): SantokuItem {
@@ -131,15 +129,13 @@ function tokuseiOf(touta: ToutaAssessment): SantokuItem {
   return { value: "undetermined", indexPercent: 30, evidence, undeterminedReason: "党多の境界" };
 }
 
+// 得地（監修確定 N4・N5）: 年支・月支・日支・時支の蔵干に日干と同じ五行の干があれば根（印の蔵干は根にしない）。
+//   月支にだけ根があっても yes。「その他の天干も根があるか」（N5）は日干の得地には使わない
+//   （他の天干それぞれの通根の説明として扱う）。yes / no の2値。
 function tokuchiOf(p: Pillars, dayEl: Element): SantokuItem {
-  const slots = slotsOf(p);
   const rootsIn = (k: PillarKey) => zokanOf(p[k]!.branch).stems.some((s) => STEM_ELEMENT[s] === dayEl);
-  const otherRoots = slots.filter((s) => s.pillar !== "月" && rootsIn(s.pillar)).map((s) => `${s.pillar}支${s.branch}`);
-  const evidence = otherRoots.length ? [`根: ${otherRoots.join("・")}`] : [];
-  if (otherRoots.length) return { value: "yes", indexPercent: 20, evidence };
-  if (rootsIn("月")) {
-    return { value: "undetermined", indexPercent: 20, evidence: [`根: 月支${p.月.branch}のみ`], undeterminedReason: "月支にだけ根（「他の地支」の範囲が未確定：N4）" };
-  }
+  const roots = slotsOf(p).filter((s) => rootsIn(s.pillar)).map((s) => `${s.pillar}支${s.branch}`);
+  if (roots.length) return { value: "yes", indexPercent: 20, evidence: [`根: ${roots.join("・")}`] };
   return { value: "no", indexPercent: 20, evidence: ["根なし"] };
 }
 

@@ -9,7 +9,7 @@ import { STEM_ELEMENT } from "../data";
 import { goshinOfElement } from "../tsuhensei";
 import type { Element, GoshinName, Pillar } from "../types";
 import type { CandidateStatus, KakkyokuCandidate, NatalHehua, Pillars, Route, StrengthAssessment } from "./types";
-import { BRANCH_ELEMENT, completeSango, completeSankai, controls, generates, surfaceElements } from "./common";
+import { BRANCH_ELEMENT, completeSango, completeSankai, controls, generates, monthPatternOf, surfaceElements } from "./common";
 import { zokanOf } from "../zokan";
 
 const IKKOU_NAME: Record<Element, string> = {
@@ -152,11 +152,13 @@ export function assessGaikaku(
     add("化格", "not_applicable", hequ.length ? hequ.map((h) => `${fmt(h)}：月支${h.monthBranch}は月支条件外 → 合去`) : ["日干と月干・時干の干合なし"]);
   }
 
-  // 月刃格: 修正済みテキストに命例（ベッカム）はあるが、一般の成立条件の記載はない → 一般判定は要確認
-  // 画面には出さない（成立条件がなく、命式ごとの成立可能性を示せないため）
-  add("月刃格", "needs_review", ["成立条件は資料になし（術者判断）"], [], null, false);
-  // 建禄格: 資料に条件なし
-  add("建禄格", "not_applicable", ["資料に条件なし"]);
+  // 月刃格・建禄格: KD21 の成立条件（月支本気と日干の五行）。強弱判定（elementForce・KD27-7）と同じ monthPatternOf を使う（KD27-U4）。
+  // 他の外格・特殊格局の判定は止めず併存させる（KD21-6）。外格の引き金（route）にはしない（§33）
+  const mp = monthPatternOf(p);
+  for (const name of ["月刃格", "建禄格"] as const) {
+    if (mp?.name === name) add(name, "candidate", [mp.basis, "格局表（四柱推命格局.pdf）では日主強弱＝強"]);
+    else add(name, "not_applicable", [name === "月刃格" ? "月支本気の五行が日干と同じではない（KD21-1）" : "月支本気が日干を生じない（KD21-2）"]);
+  }
 
   return { candidates: out, route: gaikaku ? "gaikakuCandidate" : "naikaku" };
 }

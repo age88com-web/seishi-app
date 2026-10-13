@@ -2,10 +2,10 @@
 //
 // 術者の最終格局・最終強弱（KD19・KD20。仕様 §30・§31）。
 //   ① エンジン判定（KakkyokuResult.candidates / enginePattern）
-//   ② 内格補助（KakkyokuResult.innerScore）
+//   ② 内格の強弱（KakkyokuResult.elementForce：新方式 KD27。旧 innerScore は比較用で使わない）
 //   ③ 術者最終判断（PractitionerDecision）
 // を別データとして持つ。将来の象意生成では ③ を最優先する。
-//   格局: 術者最終格局 ＞ エンジン判定／強弱: 術者最終強弱 ＞ 内格補助 ＞ 三得類型
+//   格局: 術者最終格局 ＞ エンジン判定／強弱: 術者最終強弱 ＞ 内格の強弱（elementForce の最終判定）
 
 import type { Pillars, KakkyokuResult, CandidateStatus, InnerJudgment, StrengthClass } from "./types";
 
@@ -70,10 +70,10 @@ export function resolveEffectivePattern(k: KakkyokuResult, d: PractitionerDecisi
 }
 
 export interface EffectiveStrength {
-  /** practitioner … 術者の最終強弱／innerScore … 内格補助の判定／santoku … 三得の類型（内格補助がない場合の参考） */
-  source: "practitioner" | "innerScore" | "santoku";
+  /** practitioner … 術者の最終強弱／elementForce … 新方式の内格力量の最終判定（KD27。建禄格・月刃格なら身強） */
+  source: "practitioner" | "elementForce";
   value: string | null;
-  /** 術者が「保留」を選んだ場合 true（値は内格補助から採る） */
+  /** 術者が「保留」を選んだ場合 true（値は elementForce から採る） */
   practitionerDeferred?: boolean;
 }
 
@@ -85,12 +85,11 @@ export function santokuSideOf(classes: StrengthClass[]): "強側" | "弱側" | "
   return strong ? "強側" : weak ? "弱側" : "境界";
 }
 
-/** 象意生成で使う強弱: 術者最終強弱 ＞ 内格補助 ＞ 三得類型（KD20）。「保留」は術者未確定として内格補助へ */
+/** 象意生成で使う強弱: 術者最終強弱 ＞ 新方式の内格力量の最終判定（KD27。旧 innerScore は使わない）。「保留」は術者未確定として elementForce へ */
 export function resolveEffectiveStrength(k: KakkyokuResult, d: PractitionerDecision): EffectiveStrength {
   if (d.finalStrength && d.finalStrength !== "保留") return { source: "practitioner", value: d.finalStrength };
   const deferred = d.finalStrength === "保留" ? { practitionerDeferred: true } : {};
-  if (k.innerScore) return { source: "innerScore", value: k.innerScore.judgment, ...deferred };
-  return { source: "santoku", value: santokuSideOf(k.strength.classificationCandidates), ...deferred };
+  return { source: "elementForce", value: k.elementForce.finalJudgment, ...deferred };
 }
 
 /** 将来 AI 等へ渡す命式データ（各層を別々に持つ） */
@@ -102,11 +101,20 @@ export interface InterpretationInput {
     candidates: KakkyokuResult["candidates"];
     hehua: KakkyokuResult["hehua"];
   };
-  innerPattern: { judgment: InnerJudgment; supporting: number; weakening: number; helps: string[] };
+  /** 内格の強弱（新方式 KD27）。scoreJudgment は点数だけの判定、judgment は建禄格・月刃格を反映した最終判定 */
+  innerPattern: {
+    judgment: InnerJudgment;
+    scoreJudgment: InnerJudgment;
+    supportRatioPercent: number;
+    supporting: number;
+    weakening: number;
+    monthPattern: "月刃格" | "建禄格" | null;
+    borderlineMaterials: string[];
+  };
   practitionerDecision: PractitionerDecision;
   /** 象意生成で最優先される格局（術者の最終判断。未入力ならエンジン判定を参考） */
   finalPattern: EffectivePattern;
-  /** 象意生成で使う強弱（術者最終強弱 ＞ 内格補助 ＞ 三得類型） */
+  /** 象意生成で使う強弱（術者最終強弱 ＞ 内格の強弱 elementForce） */
   finalStrength: EffectiveStrength;
   referenceOnly: boolean;
 }
@@ -117,10 +125,13 @@ export function buildInterpretationInput(pillars: Pillars, k: KakkyokuResult, d:
     strength: k.strength,
     engine: { pattern: k.enginePattern, candidates: k.candidates.filter((c) => c.uiVisible), hehua: k.hehua },
     innerPattern: {
-      judgment: k.innerScore.judgment,
-      supporting: k.innerScore.supportingSide.points,
-      weakening: k.innerScore.weakeningSide.points,
-      helps: k.innerScore.helps,
+      judgment: k.elementForce.finalJudgment,
+      scoreJudgment: k.elementForce.scoreJudgment,
+      supportRatioPercent: k.elementForce.supportRatioPercent,
+      supporting: k.elementForce.supportingSide.points,
+      weakening: k.elementForce.weakeningSide.points,
+      monthPattern: k.elementForce.monthPattern,
+      borderlineMaterials: k.elementForce.borderlineMaterials,
     },
     practitionerDecision: { ...d },
     finalPattern: resolveEffectivePattern(k, d),

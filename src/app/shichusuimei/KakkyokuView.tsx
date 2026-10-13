@@ -2,6 +2,7 @@
 //
 // 強弱・格局の補助判定の表示（術者向けの短い根拠表示）。
 // ① エンジン判定（格局候補）② 内格補助 ③ 術者最終判断 を分けて表示する（KD19）。
+// 内格補助は新方式の内格力量（elementForce：KD27）を表示する。旧 innerScore は表示しない。
 // 計算は src/lib/shichusuimei/kakkyoku に任せ、ここでは並べるだけ。最終判断は術者。
 
 import { FINAL_PATTERN_OPTIONS, FINAL_STRENGTH_OPTIONS, santokuSideOf } from "@/lib/shichusuimei/kakkyoku";
@@ -40,7 +41,7 @@ export default function KakkyokuView({
   const fb = s.forceBalance.byElement;
   const notes = [...s.weakeningFactors, ...s.reviewNotes];
   const shown = k.candidates.filter((c) => c.uiVisible);
-  const inner = k.innerScore;
+  const ef = k.elementForce;
 
   return (
     <section className="sc-section">
@@ -121,37 +122,31 @@ export default function KakkyokuView({
 
         <div className="sc-kk-box">
           <h3 className="sc-h3">内格補助</h3>
-          {inner && (
-            <>
-              <div className="sc-kk-main">
-                {k.innerScoreScope === "naikaku" ? "内格補助" : "内格として見る場合"}：{inner.judgment}
-              </div>
-              {k.innerScoreScope !== "naikaku" && <div className="sc-muted">内格補助点は参考（外格・特殊格局候補あり）</div>}
-              <div>比劫＋印：{num(inner.supportingSide.points)}</div>
-              <div>食傷＋財＋官：{num(inner.weakeningSide.points)}</div>
-              <div>
-                {inner.judgment === "身強" ? "日主側が優勢" : inner.judgment === "身弱" ? "反対側が優勢" : "拮抗"}
-              </div>
-              {inner.helps.length > 0 && (
-                <div>
-                  主な助け：
-                  {inner.helps.map((h) => (
-                    <div key={h} className="sc-kk-help">・{h}</div>
-                  ))}
-                </div>
-              )}
-              <div className="sc-muted">
-                五行 木 {num(inner.byElement.木)} / 火 {num(inner.byElement.火)} / 土 {num(inner.byElement.土)} / 金 {num(inner.byElement.金)} / 水 {num(inner.byElement.水)}
-              </div>
-              <div className="sc-muted">
-                日干（{inner.dayMaster.stem}）：{num(inner.dayMaster.points)}（計算の一要素）
-              </div>
-              <div className="sc-muted">
-                {inner.byStem.map((x) => `${x.pillar}干${x.stem} ${num(x.total)}`).join("　")}
-              </div>
-              <div className="sc-kk-final">最終判断：術者</div>
-            </>
+          <div className="sc-kk-main">
+            {k.innerScoreScope === "naikaku" ? "内格補助" : "内格として見る場合"}：{ef.finalJudgment}
+          </div>
+          {k.innerScoreScope !== "naikaku" && <div className="sc-muted">内格補助点は参考（外格・特殊格局候補あり）</div>}
+          {ef.monthPattern && <div>{ef.monthPattern}成立 → 日主強（格局表）</div>}
+          <div>
+            扶助率：{ef.supportRatioPercent.toFixed(1)}%（点数判定：{ef.scoreJudgment}）
+          </div>
+          <div>比劫＋印：{num(ef.supportingSide.points)}</div>
+          <div>食傷＋財＋官：{num(ef.weakeningSide.points)}</div>
+          <div className="sc-muted">
+            五行 木 {num(ef.byElement.木.total)} / 火 {num(ef.byElement.火.total)} / 土 {num(ef.byElement.土.total)} / 金 {num(ef.byElement.金.total)} / 水 {num(ef.byElement.水.total)}
+          </div>
+          <div className="sc-muted">
+            月令：{ef.monthBranch}（{ef.rulingElement}旺）
+          </div>
+          {ef.borderlineMaterials.length > 0 && (
+            <div>
+              境界の補助判断材料：
+              {ef.borderlineMaterials.map((m) => (
+                <div key={m} className="sc-kk-help">・{m}</div>
+              ))}
+            </div>
           )}
+          <div className="sc-kk-final">最終判断：術者</div>
         </div>
       </div>
 

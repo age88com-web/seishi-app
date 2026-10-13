@@ -42,6 +42,26 @@ export function mainQiStem(branch: Branch): Stem {
   return stems[0];
 }
 
+/** 月刃格・建禄格の成立（KD21）。強弱判定（KD27-7）と格局候補（KD27-U4）で同じ規則を使う */
+export interface MonthPattern {
+  name: "月刃格" | "建禄格";
+  /** 月支の本気（KD21-3。中気・余気は見ない） */
+  mainQi: Stem;
+  basis: string;
+}
+
+/** KD21-1: 日干の五行＝月支本気の五行 → 月刃格。KD21-2: 月支本気が日干を生じる → 建禄格。どちらでもなければ null */
+export function monthPatternOf(p: Pillars): MonthPattern | null {
+  const dayStem = p.日.stem;
+  const dayEl = STEM_ELEMENT[dayStem];
+  const mainQi = mainQiStem(p.月.branch);
+  const mainEl = STEM_ELEMENT[mainQi];
+  const head = `日干${dayStem}（${dayEl}）・月支${p.月.branch}の本気${mainQi}（${mainEl}）`;
+  if (mainEl === dayEl) return { name: "月刃格", mainQi, basis: `${head}：比和（KD21-1）` };
+  if (generates(mainEl, dayEl)) return { name: "建禄格", mainQi, basis: `${head}：本気が日干を生じる（KD21-2）` };
+  return null;
+}
+
 /** 本気以外の蔵干 */
 export function otherQiStems(branch: Branch): Stem[] {
   const main = mainQiStem(branch);

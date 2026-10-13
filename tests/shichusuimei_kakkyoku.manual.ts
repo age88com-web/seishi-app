@@ -3,15 +3,22 @@
 // 四柱推命 強弱・格局の補助判定（src/lib/shichusuimei/kakkyoku/）の照合テスト。
 // 実行: npx tsx tests/shichusuimei_kakkyoku.manual.ts
 //
-// 照合方針（docs/shichusuimei-kakkyoku-spec.md §16）:
-//   資料の命例（safe 15件）の格名が、エンジンの候補一覧に含まれるかだけを見る（contains）。
-//   途中の得令・得勢・得地や内格点数は正解値として固定しない（資料に記載がない）。
+// 照合方針（docs/shichusuimei-kakkyoku-spec.md §16・KD20・KD24・KD27）:
+//   資料の命例（safe 15件）のうち「身強」「身弱」は、新方式の内格力量（elementForce：KD27）の最終判定と一致するかを見る。
+//   三得の候補（classificationCandidates）には要求しない（KD24-4）。旧 calculateInnerScore の判定はログに比較用として出すだけ。
+//   それ以外の格名は、エンジンの候補一覧に含まれるかだけを見る（contains）。
+//   命例の得令・得勢・得地・三得類型・内格点数は正解値として固定しない（資料に記載がない）。ログには出す。
+//   KD25（3命例の身強を資料誤記とした確定）は 2026-10-13 に撤回済み。3命例は資料どおり身強として新方式で照合する。
+//   命例は仕様の検証用。命例に合わせて係数を調整しない（KD26-3）。
+//   得令・得地の判定規則そのもの（KD24-1〜3）は、命例とは別に直接テストする。
 //   needs_review の命例（Phase 1 D4 の人物）は照合しない。
 //   あわせて、仕様上の不変条件（内格点数は外格判定のあと・内格の経路か内格候補があるときだけ、時柱なしは参考判定 など）を確認する。
 
 import {
   assessKakkyoku,
+  assessStrength,
   buildInterpretationInput,
+  judgeSupportRatio,
   calculateInnerScore,
   EMPTY_DECISION,
   FINAL_PATTERN_OPTIONS,
@@ -24,6 +31,7 @@ import { createElement } from "react";
 import KakkyokuView from "../src/app/shichusuimei/KakkyokuView";
 import type { Pillars } from "../src/lib/shichusuimei/kakkyoku";
 import type { Branch, Stem } from "../src/lib/shichusuimei";
+import { STEM_ELEMENT, zokanOf } from "../src/lib/shichusuimei";
 
 const toPillars = (s: string): Pillars => {
   const [h, d, m, y] = s.split(" ");
@@ -32,8 +40,15 @@ const toPillars = (s: string): Pillars => {
 };
 
 /** §16 の safe 命例（命式は 時・日・月・年） */
-/** expected は資料の格名。engineCheck: false の格名は一般の成立条件が資料にないため照合しない（needs_review） */
-const FIXTURES: { id: string; name: string; source: string; pillars: string; expected: string[]; notEngineChecked?: string[] }[] = [
+/** expected は資料の格名。notEngineChecked の格名は一般の成立条件が資料にないため照合しない（needs_review） */
+const FIXTURES: {
+  id: string;
+  name: string;
+  source: string;
+  pillars: string;
+  expected: string[];
+  notEngineChecked?: string[];
+}[] = [
   { id: "KK-F09", name: "シュワルツェネッガー", source: "p37・三p29", pillars: "戊寅 庚戌 丁未 丁亥", expected: ["身強"] },
   { id: "KK-F10", name: "佐野量子", source: "p38・三p30", pillars: "甲戌 甲子 庚申 戊申", expected: ["身弱"] },
   { id: "KK-E01", name: "張飛", source: "p39・三p31", pillars: "癸亥 癸亥 癸亥 癸亥", expected: ["従旺格"] },
@@ -41,8 +56,9 @@ const FIXTURES: { id: string; name: string; source: string; pillars: string; exp
   { id: "KK-F24", name: "釈由美子", source: "p87・三p79", pillars: "丙戌 乙巳 戊午 戊午", expected: ["従格"] },
   { id: "KK-F26", name: "堂本剛", source: "p92・三p84", pillars: "丁未 丁未 戊辰 己未", expected: ["従格"] },
   { id: "KK-F01", name: "松下幸之助", source: "p118・三p110", pillars: "丙辰 癸酉 乙亥 甲午", expected: ["身強"] },
-  // ベッカム: 旧資料（三p35）の「身弱」は誤り。修正済みテキスト（伝統命理基礎編.key）の「身強（月刃格）」を正本とする
-  { id: "KK-F13", name: "ベッカム", source: "伝統命理基礎編.key（修正済み）", pillars: "乙卯 戊申 庚辰 乙卯", expected: ["身強", "月刃格"], notEngineChecked: ["月刃格"] },
+  // ベッカム: 修正済みテキスト（伝統命理基礎編.key）の表記は「身強（月刃格）」（KD15-2）。
+  // 月刃格は KD21 の成立条件で照合する（KD27-U4 で格局候補も KD21 に統一）
+  { id: "KK-F13", name: "ベッカム", source: "伝統命理基礎編.key（修正済み）", pillars: "乙卯 戊申 庚辰 乙卯", expected: ["身強", "月刃格"] },
   { id: "KK-F14", name: "雛形あきこ", source: "三p36", pillars: "己巳 己丑 癸丑 丁巳", expected: ["従旺格"] },
   { id: "KK-F15", name: "ジョブズ", source: "三p37", pillars: "辛卯 丙辰 戊寅 乙未", expected: ["身強"] },
   { id: "KK-F16", name: "松坂大輔", source: "三p38", pillars: "己巳 己丑 乙酉 庚申", expected: ["身弱"] },
@@ -69,27 +85,46 @@ for (const f of FIXTURES) {
   const r = assessKakkyoku(toPillars(f.pillars));
   const names = r.candidates.filter((c) => c.status !== "not_applicable").map((c) => c.name);
   const s = r.strength;
+  const inner = r.innerScore; // 旧方式（比較用）
+  const ef = r.elementForce;
   const summary =
-    `類型[${s.classificationCandidates.join("・")}] 令${s.tokurei.value} 勢${s.tokusei.value} 地${s.tokuchi.value}` +
-    ` 党多${s.touta.level}(${s.touta.share.minPercent.toFixed(0)}〜${s.touta.share.maxPercent.toFixed(0)}%) 経路${r.route} 候補[${names.join("・")}]`;
+    `三得[${s.classificationCandidates.join("・")}] 令${s.tokurei.value} 勢${s.tokusei.value} 地${s.tokuchi.value}` +
+    ` 党多${s.touta.level}(${s.touta.share.minPercent.toFixed(0)}〜${s.touta.share.maxPercent.toFixed(0)}%)` +
+    ` 新方式 扶助率${ef.supportRatioPercent.toFixed(1)}%・点数${ef.scoreJudgment}・格局${ef.monthPattern ?? "なし"}→${ef.finalJudgment}` +
+    ` ／旧方式 ${+inner.supportingSide.points.toFixed(2)} 対 ${+inner.weakeningSide.points.toFixed(2)}→${inner.judgment}` +
+    ` 経路${r.route} 候補[${names.join("・")}]`;
   for (const e of f.expected) {
     if (f.notEngineChecked?.includes(e)) {
       console.log(`  SKIP ${f.id} ${f.name}（${e}）照合対象外（needs_review。一般条件なし、または資料と確定規則の食い違い）`);
       continue;
     }
-    console.log(`  ${names.includes(e) ? "PASS" : "FAIL"} ${f.id} ${f.name}（${e}）${summary}`);
-    check(`${f.id} ${f.name}（${f.source}）期待: ${e}`, names.includes(e), summary);
+    const isStrength = e === "身強" || e === "身弱";
+    // 身強・身弱は新方式の最終判定で照合（KD20・KD24-4・KD27）。その他の格名は候補に含まれるか
+    const ok = isStrength ? ef.finalJudgment === e : names.includes(e);
+    console.log(`  ${ok ? "PASS" : "FAIL"} ${f.id} ${f.name}（${e}）${summary}`);
+    check(`${f.id} ${f.name}（${f.source}）期待: ${e}`, ok, summary);
   }
 
   // 不変条件
-  check(`${f.id} 内格補助は常に計算する（KD19）`, r.innerScore !== null, `route=${r.route}`);
+  check(`${f.id} 内格補助は常に計算する（KD19。新方式・旧方式とも）`, r.elementForce !== null && r.innerScore !== null, `route=${r.route}`);
+  check(`${f.id} 画面・resolveEffectiveStrength・解釈入力が同じ新方式を参照`,
+    resolveEffectiveStrength(r, EMPTY_DECISION).value === ef.finalJudgment && resolveEffectiveStrength(r, EMPTY_DECISION).source === "elementForce" &&
+      buildInterpretationInput(toPillars(f.pillars), r, EMPTY_DECISION).innerPattern.judgment === ef.finalJudgment &&
+      renderToStaticMarkup(createElement(KakkyokuView, { k: r, decision: EMPTY_DECISION, onDecisionChange: () => {} })).includes(`：${ef.finalJudgment}</div>`),
+    ef.finalJudgment);
+  // 格局候補の月刃格・建禄格と強弱判定側の KD21 が同じ（KD27-U4）
+  check(`${f.id} 格局候補と強弱判定の KD21 が一致`,
+    (["月刃格", "建禄格"] as const).every((n) => (r.candidates.find((c) => c.name === n)?.status === "candidate") === (ef.monthPattern === n)),
+    `${ef.monthPattern} / ${r.candidates.filter((c) => ["月刃格", "建禄格"].includes(c.name)).map((c) => `${c.name}:${c.status}`).join(" ")}`);
   check(`${f.id} 最終判断は術者`, r.finalJudgment === "requires_practitioner_judgment", "");
 }
 
-// ベッカム: 旧「身弱」fixture が残っていない
+// ベッカム: 資料の表記（KD15-2）。KD25 は撤回済み
 {
   const b = FIXTURES.find((f) => f.name === "ベッカム")!;
-  check("ベッカム: 期待値は身強・月刃格（旧「身弱」なし）", !b.expected.includes("身弱") && b.expected.includes("身強") && b.expected.includes("月刃格"), JSON.stringify(b.expected));
+  check("ベッカム: 資料の表記は身強・月刃格（KD15-2）", !b.expected.includes("身弱") && b.expected.includes("身強") && b.expected.includes("月刃格"), JSON.stringify(b.expected));
+  const kb = assessKakkyoku(toPillars(b.pillars));
+  check("ベッカム: 点数は境界・月刃格で最終身強（KD27-7）", kb.elementForce.scoreJudgment === "境界" && kb.elementForce.monthPattern === "月刃格" && kb.elementForce.finalJudgment === "身強", "");
 }
 
 // 得地のみ（20%）は弱側 → 身弱候補
@@ -103,7 +138,7 @@ for (const f of FIXTURES) {
   const r = assessKakkyoku(toPillars("- 丁巳 甲辰 丁亥"));
   check("時柱なし: referenceOnly", r.referenceOnly, "");
   check("時柱なし: candidate を出さない", r.candidates.every((c) => c.status !== "candidate"), r.candidates.map((c) => `${c.name}:${c.status}`).join(" "));
-  check("時柱なし: 内格点数も referenceOnly", r.innerScore === null || r.innerScore.referenceOnly, "");
+  check("時柱なし: 内格点数も referenceOnly（新方式・旧方式とも）", r.elementForce.referenceOnly && (r.innerScore === null || r.innerScore.referenceOnly), "");
 }
 
 // 干合・化格（KD23）: 月支条件で再評価（命例に合わせた特例はない）
@@ -191,7 +226,7 @@ for (const f of FIXTURES) {
   check("月支と半合した日支申は化す（水）", st(b, "日").transformedTo === "水", JSON.stringify(st(b, "日")));
 }
 
-// 内格補助の判定軸（KD17）: 比劫＋印 対 食傷＋財＋官（貴乃花光司の命式）
+// 旧方式（calculateInnerScore、比較・回帰確認用）の判定軸（KD17）: 比劫＋印 対 食傷＋財＋官（貴乃花光司の命式）
 {
   const r = assessKakkyoku(toPillars("辛巳 乙亥 戊申 壬子"));
   const s = r.innerScore!;
@@ -229,7 +264,12 @@ for (const f of FIXTURES) {
 {
   const r = assessKakkyoku(toPillars("辛巳 乙亥 戊申 壬子"));
   check("化格未成立: 通常どおり内格へ", r.route === "naikaku" && r.enginePattern?.name === "内格", r.candidates.map((c) => `${c.name}:${c.status}`).join(" "));
-  check("月刃格・建禄格は画面に出さない", !r.candidates.some((c) => ["月刃格", "建禄格"].includes(c.name) && c.uiVisible), "");
+  check("KD21 非成立（日干乙・月支申）: 月刃格・建禄格は出さない", !r.candidates.some((c) => ["月刃格", "建禄格"].includes(c.name) && c.uiVisible), "");
+  const ms = assessKakkyoku(toPillars("丙辰 癸酉 乙亥 甲午")); // 松下幸之助（癸・亥）
+  const sw = assessKakkyoku(toPillars("戊寅 庚戌 丁未 丁亥")); // シュワルツェネッガー（庚・未）
+  check("KD21 成立: 月刃格を候補として画面に出す", ms.candidates.some((c) => c.name === "月刃格" && c.status === "candidate" && c.uiVisible) && !ms.candidates.some((c) => c.name === "建禄格" && c.uiVisible), "");
+  check("KD21 成立: 建禄格を候補として画面に出す", sw.candidates.some((c) => c.name === "建禄格" && c.status === "candidate" && c.uiVisible) && !sw.candidates.some((c) => c.name === "月刃格" && c.uiVisible), "");
+  check("KD21 候補は外格の引き金にしない（内格へ）", sw.route === "naikaku", sw.route);
 }
 
 // 3層の分離と術者最終判断（KD19）
@@ -275,28 +315,187 @@ for (const f of FIXTURES) {
   check("UI: 外格候補ありでも内格補助を表示", htmlGai.includes("内格として見る場合"), "");
 }
 
-// 強弱表示の一本化と術者最終強弱（KD20）: 貴乃花光司（三得は弱側・内格補助は身強）
+// 強弱表示の一本化と術者最終強弱（KD20・KD27）: 貴乃花光司（資料に身強・身弱の記載なし。新方式は 39.2% で身弱）
 {
   const pillars = toPillars("辛巳 乙亥 戊申 壬子");
   const k = assessKakkyoku(pillars);
   check("格局候補欄に身強・身弱を出さない", !k.candidates.some((c) => (c.name === "身強" || c.name === "身弱") && c.uiVisible), "");
   check("三得類型は材料として残る", k.strength.classificationCandidates.includes("弱（得地のみ）"), k.strength.classificationCandidates.join("・"));
-  check("内格補助は身強（三得と食い違ってもエラーにならない）", k.innerScore.judgment === "身強", k.innerScore.judgment);
+  check("内格補助は新方式（貴乃花 39.2% → 身弱）", k.elementForce.finalJudgment === "身弱" && k.elementForce.supportRatioPercent.toFixed(1) === "39.2", `${k.elementForce.supportRatioPercent}`);
+  const jobsK = assessKakkyoku(toPillars("辛卯 丙辰 戊寅 乙未")); // ジョブズ（三得は弱側・新方式は身強）
+  check("三得と内格補助が食い違ってもエラーにならない（KD20-4）", jobsK.strength.classificationCandidates.includes("弱（得地のみ）") && jobsK.elementForce.finalJudgment === "身強", "");
   const html = renderToStaticMarkup(createElement(KakkyokuView, { k, decision: EMPTY_DECISION, onDecisionChange: () => {} }));
   const kakuBox = html.slice(html.indexOf("格局候補（機械判定）"), html.indexOf("内格補助</h3>"));
   check("UI: 格局候補欄に身強・身弱が出ない", !/身強|身弱/.test(kakuBox), kakuBox.replace(/<[^>]+>/g, " ").slice(0, 120));
   check("UI: 三得・力量欄に三得では弱側", html.includes("三得では弱側"), "");
-  check("UI: 内格補助欄に身強", html.includes("内格補助：身強"), "");
+  check("UI: 内格補助欄に新方式の判定と扶助率", html.includes("内格補助：身弱") && html.includes("扶助率：39.2%"), "");
+  check("UI: 旧方式の値を表示しない", !html.includes("日干（") && !html.includes("主な助け"), "");
   check("UI: 最終強弱の選択欄", html.includes("最終強弱") && FINAL_STRENGTH_OPTIONS.every((o) => html.includes(`>${o}</option>`)), "");
-  // 優先順位: 術者最終強弱 ＞ 内格補助 ＞ 三得
+  // 優先順位: 術者最終強弱 ＞ 新方式の内格力量（KD27）
   const none = resolveEffectiveStrength(k, EMPTY_DECISION);
-  check("最終強弱 未入力: 内格補助を採用", none.source === "innerScore" && none.value === "身強", JSON.stringify(none));
+  check("最終強弱 未入力: 新方式（elementForce）を採用", none.source === "elementForce" && none.value === "身弱", JSON.stringify(none));
   const chosen = resolveEffectiveStrength(k, { ...EMPTY_DECISION, finalStrength: "身弱" });
   check("最終強弱 選択: 術者を優先", chosen.source === "practitioner" && chosen.value === "身弱", JSON.stringify(chosen));
   const hold = resolveEffectiveStrength(k, { ...EMPTY_DECISION, finalStrength: "保留" });
-  check("最終強弱 保留: 内格補助へ（保留を記録）", hold.source === "innerScore" && hold.practitionerDeferred === true, JSON.stringify(hold));
+  check("最終強弱 保留: 新方式へ（保留を記録）", hold.source === "elementForce" && hold.practitionerDeferred === true, JSON.stringify(hold));
   const input = buildInterpretationInput(pillars, k, { ...EMPTY_DECISION, finalPattern: "内格", finalStrength: "身強" });
   check("格局と強弱を別々に確定", input.finalPattern.name === "内格" && input.finalStrength.value === "身強" && input.practitionerDecision.finalStrength === "身強", "");
+}
+
+// 得令・得地の確定規則（KD24-1〜3）の直接テスト。命例ではなく規則そのものを確認する
+{
+  console.log("\n得令・得地（KD24）");
+  // 地支の五行（＝本気の五行。KD14-1）。エンジンの表とは独立にテスト側で持つ
+  const BR_EL: Record<string, string> = { 子: "水", 丑: "土", 寅: "木", 卯: "木", 辰: "土", 巳: "火", 午: "火", 未: "土", 申: "金", 酉: "金", 戌: "土", 亥: "水" };
+  const hasEl = (b: string, el: string) => zokanOf(b as Branch).stems.some((z) => STEM_ELEMENT[z] === el);
+  const st = (pillars: string) => assessStrength(toPillars(pillars));
+
+  // 得令 yes: 月支の本気と日干が同じ五行（日干甲・月支寅＝木）
+  const reiYes = st("丙寅 甲子 丙寅 甲子");
+  check("得令 yes: 日干甲・月支寅（同じ木）", reiYes.tokurei.value === "yes", JSON.stringify(reiYes.tokurei));
+  // 得令 no: 月支が印であるだけ（日干庚・月支未＝土生金／日干甲・月支子＝水生木）
+  const reiIn1 = st("丙子 庚午 癸未 甲子");
+  check("得令 no: 日干庚・月支未（印）", reiIn1.tokurei.value === "no" && !reiIn1.tokurei.undeterminedReason, JSON.stringify(reiIn1.tokurei));
+  const reiIn2 = st("丙寅 甲午 丙子 甲子");
+  check("得令 no: 日干甲・月支子（印）", reiIn2.tokurei.value === "no" && !reiIn2.tokurei.undeterminedReason, JSON.stringify(reiIn2.tokurei));
+
+  // 得地 yes: 月支だけに根（日干甲。月支卯に木、年支子・日支申・時支午に木なし）
+  const onlyMonth = "庚午 甲申 丁卯 壬子";
+  const om = toPillars(onlyMonth);
+  check("前提: 根が月支だけ", hasEl(om.月.branch, "木") && [om.年, om.日, om.時!].every((x) => !hasEl(x.branch, "木")), onlyMonth);
+  const chiMonth = st(onlyMonth);
+  check("得地 yes: 月支だけに根", chiMonth.tokuchi.value === "yes" && chiMonth.tokuchi.evidence.join("").includes("月支卯"), JSON.stringify(chiMonth.tokuchi));
+  // 得地 no: 印の蔵干しかない（日干甲。子・申に水はあるが木はない）
+  const onlyIn = "甲子 甲申 壬申 庚子";
+  const oi = toPillars(onlyIn);
+  check("前提: 印（水）の蔵干だけ", [oi.年, oi.月, oi.日, oi.時!].every((x) => hasEl(x.branch, "水") && !hasEl(x.branch, "木")), onlyIn);
+  const chiIn = st(onlyIn);
+  check("得地 no: 印の蔵干しかない", chiIn.tokuchi.value === "no" && !chiIn.tokuchi.undeterminedReason, JSON.stringify(chiIn.tokuchi));
+
+  // 時柱なし: 根が時支寅だけの命式は、時柱があれば yes・なければ no。月支だけの根は時柱なしでも yes
+  const withHour = st("丙寅 甲申 丙子 庚申");
+  const noHour = st("- 甲申 丙子 庚申");
+  check("時柱あり: 時支寅の根で得地 yes", withHour.tokuchi.value === "yes", JSON.stringify(withHour.tokuchi));
+  check("時柱なし: 年・月・日支に根がなく得地 no", noHour.tokuchi.value === "no", JSON.stringify(noHour.tokuchi));
+  const noHourMonth = st("- 甲申 丁卯 壬子");
+  check("時柱なし: 月支だけの根で得地 yes・得令は月支で判定", noHourMonth.tokuchi.value === "yes" && noHourMonth.tokurei.value === "yes", JSON.stringify([noHourMonth.tokurei, noHourMonth.tokuchi]));
+
+  // 全組み合わせ: 得令・得地は undetermined を返さず、規則どおりの yes / no になる
+  // 日干10 × 月支12 × 日支12 × 時支（なし＋12）。年支は月支・日支から回す
+  const BR = "子丑寅卯辰巳午未申酉戌亥";
+  let n = 0;
+  let undetermined = 0;
+  const wrong: string[] = [];
+  for (const d of "甲乙丙丁戊己庚辛壬癸") {
+    const el = STEM_ELEMENT[d as Stem];
+    for (let mi = 0; mi < 12; mi++) for (let di = 0; di < 12; di++) for (let hi = -1; hi < 12; hi++) {
+      const m = BR[mi];
+      const db = BR[di];
+      const y = BR[(mi + di) % 12];
+      const h = hi < 0 ? null : BR[hi];
+      const r = st(`${h ? `丙${h}` : "-"} ${d}${db} 丙${m} 丙${y}`);
+      n += 1;
+      if (r.tokurei.value === "undetermined" || r.tokuchi.value === "undetermined") undetermined += 1;
+      const reiWant = BR_EL[m] === el ? "yes" : "no";
+      const chiWant = [m, db, y, ...(h ? [h] : [])].some((b) => hasEl(b, el)) ? "yes" : "no";
+      if ((r.tokurei.value !== reiWant || r.tokuchi.value !== chiWant) && wrong.length < 5) wrong.push(`${h ?? "-"}${d}${db}${m}${y} 令${r.tokurei.value}/${reiWant} 地${r.tokuchi.value}/${chiWant}`);
+    }
+  }
+  console.log(`  全組み合わせ ${n} 件: undetermined ${undetermined} 件・規則との不一致 ${wrong.length} 件`);
+  check("全組み合わせ: 得令・得地が undetermined を返さない", undetermined === 0, `${undetermined}/${n}`);
+  check("全組み合わせ: 得令・得地が規則どおり", wrong.length === 0, wrong.join("／"));
+}
+
+// 新方式の内格力量（KD27）。旧 innerScore（KD12・KD13）と並べて検証する。命例に合わせて係数を変えない（KD26-3）
+{
+  console.log("\n新方式の内格力量（KD27）");
+  type El = "木" | "火" | "土" | "金" | "水";
+  // 期待値は KD27 の式（地支 月5・他2 × 旺相休囚死、天干 1 × 通根補正）を手で当てはめた値。[木, 火, 土, 金, 水]
+  const CASES: { name: string; pillars: string; forces: number[]; ratio: number; score: string; monthPattern: string | null; source: string }[] = [
+    { name: "松下幸之助", pillars: "丙辰 癸酉 乙亥 甲午", forces: [3, 2.25, 1.5, 2, 9], ratio: 62.0, score: "身強", monthPattern: "月刃格", source: "身強" },
+    { name: "シュワルツェネッガー", pillars: "戊寅 庚戌 丁未 丁亥", forces: [1.5, 3, 12, 1.25, 1], ratio: 70.7, score: "身強", monthPattern: "建禄格", source: "身強" },
+    { name: "ベッカム", pillars: "乙卯 戊申 庚辰 乙卯", forces: [6, 0, 9, 3.75, 0], ratio: 48.0, score: "境界", monthPattern: "月刃格", source: "身強" },
+    { name: "ジョブズ", pillars: "辛卯 丙辰 戊寅 乙未", forces: [15, 1.5, 2.5, 1, 0], ratio: 82.5, score: "身強", monthPattern: "建禄格", source: "身強" },
+    { name: "佐野量子", pillars: "甲戌 甲子 庚申 戊申", forces: [2, 0, 3.5, 12, 2.5], ratio: 22.5, score: "身弱", monthPattern: null, source: "身弱" },
+    { name: "千代の富士", pillars: "丙辰 癸巳 辛巳 乙未", forces: [1.5, 15, 2.5, 1.5, 1.25], ratio: 12.6, score: "身弱", monthPattern: null, source: "身弱" },
+    { name: "松坂大輔", pillars: "己巳 己丑 乙酉 庚申", forces: [1, 0, 3, 18, 0], ratio: 13.6, score: "身弱", monthPattern: null, source: "身弱" },
+    { name: "長嶋一茂", pillars: "癸未 乙酉 己丑 乙巳", forces: [2.5, 0, 4.5, 11.25, 1.5], ratio: 20.3, score: "身弱", monthPattern: null, source: "身弱" },
+    { name: "藤原紀香", pillars: "庚午 甲申 甲午 辛亥", forces: [2.5, 10.5, 0, 3.5, 1.5], ratio: 22.2, score: "身弱", monthPattern: null, source: "身弱" },
+  ];
+  const ELS: El[] = ["木", "火", "土", "金", "水"];
+  const near = (a: number, b: number, eps = 1e-9) => Math.abs(a - b) < eps;
+  for (const c of CASES) {
+    const k = assessKakkyoku(toPillars(c.pillars));
+    const e = k.elementForce;
+    const forces = ELS.map((el) => e.byElement[el].total);
+    const line =
+      `五行[${ELS.map((el, i) => `${el}${+forces[i].toFixed(3)}`).join(" ")}] 扶助${+e.supportingSide.points.toFixed(3)} 反対${+e.weakeningSide.points.toFixed(3)}` +
+      ` 扶助率${e.supportRatioPercent.toFixed(1)}% 点数${e.scoreJudgment} 格局${e.monthPattern ?? "なし"} 最終${e.finalJudgment}（${e.finalSource}） 資料${c.source}` +
+      ` ／旧方式 ${k.innerScore.judgment}（比較用）`;
+    console.log(`  ${e.finalJudgment === c.source ? "一致" : "不一致"} ${c.name} ${line}`);
+    check(`KD27 ${c.name}: 五行力量`, ELS.every((_, i) => near(forces[i], c.forces[i])), line);
+    check(`KD27 ${c.name}: 扶助側＋反対側＝総力量`, near(e.supportingSide.points + e.weakeningSide.points, e.totalPoints), line);
+    check(`KD27 ${c.name}: 扶助率`, near(+e.supportRatioPercent.toFixed(1), c.ratio), line);
+    check(`KD27 ${c.name}: 点数判定`, e.scoreJudgment === c.score, line);
+    check(`KD27 ${c.name}: 建禄格・月刃格`, e.monthPattern === c.monthPattern, line);
+    check(`KD27 ${c.name}: 最終判定が資料（${c.source}）と一致`, e.finalJudgment === c.source, line);
+  }
+
+  // 境界値: ちょうど55%は身強・ちょうど45%は身弱
+  check("KD27 判定: 55% ちょうどは身強", judgeSupportRatio(11, 20) === "身強", judgeSupportRatio(11, 20));
+  check("KD27 判定: 45% ちょうどは身弱", judgeSupportRatio(9, 20) === "身弱", judgeSupportRatio(9, 20));
+  check("KD27 判定: 45%超〜55%未満は境界", judgeSupportRatio(9.01, 20) === "境界" && judgeSupportRatio(10.99, 20) === "境界", "");
+
+  const mats = assessKakkyoku(toPillars("丙辰 癸酉 乙亥 甲午")).elementForce; // 松下幸之助
+  // 同じ地支を天干の本数分だけ重複計上しない（木の天干2本でも、木の地支がなければ地支力量は0）
+  check("KD27 重複計上なし: 地支は各1回", mats.branches.length === 4 && near(ELS.reduce((a, el) => a + mats.byElement[el].branch, 0), mats.branches.reduce((a, b) => a + b.force, 0)), "");
+  check("KD27 重複計上なし: 木の天干2本でも木の地支力量は0", mats.byElement.木.branch === 0 && mats.stems.filter((x) => x.element === "木").length === 2, JSON.stringify(mats.byElement.木));
+  // 月支に通根は2根相当（×1.5）。×1.25 の二重加点はしない
+  const kui = mats.stems.find((x) => x.pillar === "日")!;
+  check("KD27 通根: 月支に通根は ×1.5（二重加点なし）", kui.rootLevel === "month" && kui.multiplier === 1.5, JSON.stringify(kui));
+  const hei = mats.stems.find((x) => x.pillar === "時")!;
+  check("KD27 通根: 1根は ×1.25（自柱以外の年支午）", hei.rootLevel === "one" && hei.multiplier === 1.25 && hei.roots.join("") === "年", JSON.stringify(hei));
+  // 六合・冲の減衰（旧 ×1/2）を使わない: 酉辰の六合でも日支酉は 2×休1.0＝2
+  const yu = mats.branches.find((b) => b.pillar === "日")!;
+  check("KD27 六合: 減衰なし（酉辰の六合でも 2）", yu.force === 2, JSON.stringify(yu));
+  // 季節係数は天干に掛けない（天干の力は通根補正だけ）
+  check("KD27 天干に季節係数を掛けない", mats.stems.every((x) => x.force === x.multiplier), JSON.stringify(mats.stems.map((x) => x.force)));
+  // 化: 既存の確定ロジックで化した地支は化後の五行（ジョブズ 寅卯辰の三会で日支辰→木。月支寅は三合以外で化さない）
+  const jobs = assessKakkyoku(toPillars("辛卯 丙辰 戊寅 乙未")).elementForce;
+  const jd = jobs.branches.find((b) => b.pillar === "日")!;
+  check("KD27 化: ジョブズ 日支辰は三会で木", jd.element === "木" && jd.originalElement === "土", JSON.stringify(jd));
+  // KD27-U2: 化した地支も根は元の蔵干で見る（辰は木に化しても蔵干戊があるので月干戊の根に数える）
+  const wu = jobs.stems.find((x) => x.pillar === "月")!;
+  check("KD27-U2 化した地支の根は元の蔵干（月干戊の根に日支辰を含む）", wu.element === "土" && wu.roots.includes("日"), JSON.stringify(wu));
+  // 印の蔵干は根にしない（日干甲・地支に水だけ）
+  const inOnly = assessKakkyoku(toPillars("甲子 甲申 壬申 庚子")).elementForce;
+  check("KD27 通根: 印の蔵干だけなら根なし", inOnly.stems.find((x) => x.pillar === "日")!.rootLevel === "none", "");
+  // 五季の表（KD27-1）
+  const SEASON: [string, Record<El, string>][] = [
+    ["寅卯", { 木: "旺", 火: "相", 水: "休", 金: "囚", 土: "死" }],
+    ["巳午", { 火: "旺", 土: "相", 木: "休", 水: "囚", 金: "死" }],
+    ["申酉", { 金: "旺", 水: "相", 土: "休", 火: "囚", 木: "死" }],
+    ["亥子", { 水: "旺", 木: "相", 金: "休", 土: "囚", 火: "死" }],
+    ["辰戌丑未", { 土: "旺", 金: "相", 火: "休", 木: "囚", 水: "死" }],
+  ];
+  const COEF: Record<string, number> = { 旺: 1.5, 相: 1.25, 休: 1.0, 囚: 0.75, 死: 0.5 };
+  const seasonOk = SEASON.every(([brs, table]) =>
+    [...brs].every((b) => {
+      const r = assessKakkyoku(toPillars(`甲子 甲子 甲${b} 甲子`)).elementForce;
+      return ELS.every((el) => r.seasonal[el].state === table[el] && r.seasonal[el].coefficient === COEF[table[el]]);
+    }),
+  );
+  check("KD27 五季の旺相休囚死と係数（辰戌丑未は月全体を土旺）", seasonOk, "");
+  // 境界帯は補助判断材料を持つ（数値にはしない）
+  const beck = assessKakkyoku(toPillars("乙卯 戊申 庚辰 乙卯")).elementForce;
+  check("KD27-U3 境界: 得令・得勢・得地・党多・会合・合冲を補助判断材料として保持",
+    beck.scoreJudgment === "境界" && ["得令", "得勢", "得地", "党多", "会合", "干合"].every((h) => beck.borderlineMaterials.some((x) => x.startsWith(h))),
+    beck.borderlineMaterials.join("／"));
+  console.log(`  境界の補助判断材料（ベッカム）: ${beck.borderlineMaterials.join("／")}`);
+  check("KD27 境界外は補助判断材料なし", mats.borderlineMaterials.length === 0, "");
+  // 時柱なし: 三柱で計算し参考判定
+  const noHour = assessKakkyoku(toPillars("- 癸酉 乙亥 甲午")).elementForce;
+  check("KD27 時柱なし: 地支3・天干3・referenceOnly", noHour.branches.length === 3 && noHour.stems.length === 3 && noHour.referenceOnly, "");
 }
 
 console.log(`\n合計: PASS ${pass} / FAIL ${fail}`);

@@ -3,7 +3,7 @@
 // 四柱推命の「命式を印刷」＝鑑定表（A4縦1枚）。手書きの鑑定表（docs/source/赤上様.pdf）の一覧性を参考にした印刷専用レイアウト。
 //   見出し（姓名・生年月日時・性別・出生地・地方真太陽時）
 //   → 上段: 命式（罫線の表。通変・天干・地支・蔵干と通変・神煞）＋ 鑑定情報（順逆・立運・命式内の関係・三得・格局候補）
-//          ＋ 内格補助の点数表（既存 innerScore の値：比劫・印・食傷・財・官・合計・判定）
+//          ＋ 内格補助の点数表（新方式 elementForce の値：比劫・印・食傷・財・官・合計・扶助率・判定。KD27）
 //   → 中段: 大運10本（右から左。1本＝1列で、年齢・干支・天干通変・蔵干と通変・神煞。
 //          命式との干支関係は画面だけに出し、印刷しない。現在の大運の列は赤枠）
 //   → 下段: 書き込み用の罫線
@@ -15,7 +15,7 @@ import { STEM_ELEMENT } from "@/lib/shichusuimei";
 import { CONTROLS, GENERATES } from "@/lib/shichusuimei/data";
 import type { Element } from "@/lib/shichusuimei";
 import { BRANCH_ELEMENT } from "@/lib/shichusuimei/kakkyoku/common";
-import type { InnerPatternScore, KakkyokuResult } from "@/lib/shichusuimei/kakkyoku";
+import type { ElementForceResult, KakkyokuResult } from "@/lib/shichusuimei/kakkyoku";
 import { PrintHeader, PrintSheet, type PrintHeaderInfo } from "@/components/print/PrintRoot";
 import {
   currentDaiunIndex,
@@ -71,15 +71,15 @@ function Tags({ names }: { names: string[] }) {
 const num = (n: number) => (Number.isInteger(n) ? String(n) : n.toFixed(1));
 
 /**
- * 内格補助の点数表。値はすべて既存の innerScore（五行別の点・比劫＋印・食傷＋財＋官・判定）のまま。
- * 五行を比劫・印・食傷・財・官に当てるのは既存の五行の生剋表（GENERATES・CONTROLS）と、innerScore の比劫・印の五行による。
+ * 内格補助の点数表。値はすべて新方式の elementForce（五行力量・比劫＋印・食傷＋財＋官・扶助率・最終判定。KD27）のまま。
+ * 五行を比劫・印・食傷・財・官に当てるのは既存の五行の生剋表（GENERATES・CONTROLS）と、elementForce の比劫・印の五行による。
  */
-function InnerScoreTable({ inner }: { inner: InnerPatternScore }) {
+function InnerScoreTable({ inner }: { inner: ElementForceResult }) {
   const [hikou, in_] = inner.supportingSide.elements;
   const shokushou = GENERATES[hikou];
   const zai = CONTROLS[hikou];
   const kan = (Object.keys(CONTROLS) as Element[]).find((e) => CONTROLS[e] === hikou)!;
-  const pt = (e: Element) => num(inner.byElement[e]);
+  const pt = (e: Element) => num(inner.byElement[e].total);
   const left: [string, Element][] = [["比劫", hikou], ["印", in_]];
   const right: [string, Element][] = [["食傷", shokushou], ["財", zai], ["官", kan]];
   return (
@@ -116,8 +116,11 @@ function InnerScoreTable({ inner }: { inner: InnerPatternScore }) {
         <tr className="kt-inner-judge">
           <th>判定</th>
           <td colSpan={3}>
-            <b>{inner.judgment}</b>
-            <span className="kt-sub">（比劫＋印 と 食傷＋財＋官 の比較）</span>
+            <b>{inner.finalJudgment}</b>
+            <span className="kt-sub">
+              （扶助率 {inner.supportRatioPercent.toFixed(1)}%・点数判定 {inner.scoreJudgment}
+              {inner.monthPattern ? `・${inner.monthPattern}成立で日主強` : ""}）
+            </span>
           </td>
         </tr>
       </tbody>
@@ -230,7 +233,7 @@ export default function ShichusuimeiChartPrint({
                 </tr>
               </tbody>
             </table>
-            {k.innerScore && <InnerScoreTable inner={k.innerScore} />}
+            <InnerScoreTable inner={k.elementForce} />
           </div>
         </div>
 
