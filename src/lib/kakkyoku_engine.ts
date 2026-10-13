@@ -91,6 +91,10 @@ export type KakkyokuContext = {
   mingBranch?: Branch;
   /** 身宮の十二支。buildKakkyokuContext がセット済み（型定義がこれまで欠けていた）。 */
   shenBranch?: Branch;
+  /** 命主＝命宮の宮主星（既存の十二宮主星表 PALACE_MAIN_STAR による）。buildKakkyokuContext がセット */
+  mingLordKey?: string | null;
+  /** 身主＝身宮の宮主星（既存の十二宮主星表 PALACE_MAIN_STAR による）。buildKakkyokuContext がセット */
+  shenLordKey?: string | null;
   shenShaByPalace?: Record<Branch, string[]>;
   bodies: Array<{
     key: string;
@@ -226,13 +230,21 @@ const bodies = (args.bodies ?? []).map((b: any, i: number) => {
     lonDegBoard: lonBoard };
   });
 
+  // 性別はここで一度だけ正規化する（ページからは "男"/"女"、型上は "M"/"F" で渡るため両方を受け付ける）。
+  // 以降の格局はすべて ctx.sex（"M" | "F"）で名称を切り替える。成立条件は変更しない。
+  const rawSex = String(args.sex ?? "");
+  const sex: Sex = rawSex === "男" || rawSex === "M" ? "M" : rawSex === "女" || rawSex === "F" ? "F" : args.sex;
+
   return {
-    sex: args.sex,
+    sex,
     isDayBirth: args.isDayBirth,
     monthBranch: args.monthBranch,
     mingBranch: args.mingBranch,
     shenShaByPalace: args.shenShaByPalace,
     shenBranch: args.shenBranch,
+    // 命主・身主（成立条件は変更せず、不足していた値を既存の宮主表から設定する）
+    mingLordKey: args.mingBranch ? PALACE_MAIN_STAR[String(args.mingBranch)] ?? null : null,
+    shenLordKey: args.shenBranch ? PALACE_MAIN_STAR[String(args.shenBranch)] ?? null : null,
     bodies,
   };
 }
@@ -2137,7 +2149,8 @@ add(
   "福徳主が男女宮"
 );
 
-// 田主夫宮（田守妻宮/田守夫宮）：田宅主が夫妻宮にある（表示名は性別で切替）
+// 田主妻宮／田主夫宮：田宅主が夫妻宮にある（表示名は性別で切替。男命＝田主妻宮、女命＝田主夫宮）
+//   性別は buildKakkyokuContext で正規化済み（"男"/"M" → "M"）
 add(
   (ctx.sex === "M" ? "田主妻宮" : "田主夫宮") as any,
   "吉",
@@ -2279,14 +2292,7 @@ add("田居児位", "吉", () => {
   return !!k && palaceOf(k) === palT;
 }, "田宅主が男女宮");
 
-add((ctx.sex === "F" ? "田守夫宮" : "田守妻宮") as any, "吉", () => {
-  if (!ctx.mingBranch) return false;
-  const palM = palaceByOffsetFromMing(PAL_OFF.田宅);
-  const palT = palaceByOffsetFromMing(PAL_OFF.妻妾);
-  if (!palM || !palT) return false;
-  const k = PALACE_MAIN_STAR[String(palM)] ?? null;
-  return !!k && palaceOf(k) === palT;
-}, "田宅主が夫妻宮");
+// 田守妻宮／田守夫宮：「田主妻宮／田主夫宮」と同一条件の重複ルールのため削除（名称は「田主」に統一。2026-10-01）
 
 add("田入官禄", "吉", () => {
   if (!ctx.mingBranch) return false;
