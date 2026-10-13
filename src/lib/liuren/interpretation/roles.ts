@@ -12,7 +12,7 @@
 //
 //   ROLE を自動で割り当てる関数（assignRoles）はまだ実装しない（下の AssignRoles は型だけ）。
 
-import type { Branch } from "../types";
+import type { Branch, HeavenlyGeneral } from "../types";
 import type { ComparisonPosition, InterpretationFacts, NatalYearState, StandingPathActualization, TaiSuiState } from "./types";
 
 // ---- CONTEXT（問う内容） ----
@@ -106,7 +106,20 @@ export interface InterpretationContext<D extends InterpretationDomain = Interpre
   counterpartyPersonId?: PersonContextId;
   /** 太歳（Phase 4L-1。時間側の FACT）。人物（persons）には入れない。年・暦の値はここに持たない */
   taiSui?: TaiSuiState;
+  /**
+   * 外出中の人物（行人）の ID（Phase 5C。行人 DOMAIN で使う）。問う人（subjectPersonId）とは別に持つ。
+   * 行人の本命・年命はこの人物の natalYear から取る。
+   */
+  travelerPersonId?: PersonContextId;
+  /**
+   * 問う対象の類神（Phase 5C）。どの天将・支を類神とするかは問う人が指定する（自動では決めない）。
+   * 例: 『六壬心鏡』行人門「天后神后是妻姬」なら妻を天后で見る。
+   */
+  targetSymbol?: TargetSymbol;
 }
+
+/** 類神の指定（天将か支） */
+export type TargetSymbol = { kind: "general"; general: HeavenlyGeneral } | { kind: "branch"; branch: Branch };
 
 // ---- 盤外の支（Phase 4N）。CONTEXT から得る支を、出典つきで参照する。BoardAnchor（盤上の位置）とは別の型 ----
 

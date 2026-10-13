@@ -18,9 +18,10 @@ export type DomainDirection = "favoring" | "hindering" | "neutral";
 export type DomainInferenceLevel = "direct" | "combined" | "inferred";
 
 export interface DomainCitation {
-  source: "『六壬断案』" | "『六壬断案２』" | "『六壬神課講座』";
+  source: "『六壬断案』" | "『六壬断案２』" | "『六壬神課講座』" | "『大六壬指南』" | "『御定六壬直指』" | "『六壬心鏡』" | "『六壬大全』";
   locator: string;
-  layer: "原文" | "訳注" | "講座";
+  /** 注: 漢籍の注・増補・引用書（『心鏡』の郇注・引『入式』、『指南』の割注・増補など。Phase 5C） */
+  layer: "原文" | "訳注" | "講座" | "注";
   quote: string;
 }
 
