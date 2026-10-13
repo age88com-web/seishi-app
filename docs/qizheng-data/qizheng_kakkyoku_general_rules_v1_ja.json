@@ -1,0 +1,1040 @@
+{
+  "schema_version": "1.0.0",
+  "source_file": "張果星宗.doc",
+  "source_note": "原典ファイル「張果星宗.doc」は現時点で docs/source に存在しない。今回は同一原典（既存張果星宗データの出典）を読み取り専用で参照した。行番号は textutil による UTF-8 テキスト変換の行番号",
+  "usage": "格局全体の判断原則（個別格局とは別）。原典にある記述のみ",
+  "records": [
+    {
+      "id": "kkg_001",
+      "rule_type": "authenticity_and_placement",
+      "name": "入格真偽・分布宜忌",
+      "interpretation": "一太乙抱蟾常人見孛與月同行，便謂之太乙抱蟾其義非也。須是上弦及望前，既望下弦在未上見之。及生于戌亥子丑時，者方合此格如非，其地又非其時名為抱鬼，若值殘晦之月則為抱死，鬼卻不能為福矣。既望盡也已也。太乙孛星也，蟾月也，月與孛同宮在未酉，入秦鬼尤貴。",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "「太乙抱蟾」は、単に月と月孛が同行すれば成立するのではない。上弦から望前、または望後から下弦の月で、未の位置にあり、さらに戌・亥・子・丑時の出生であることを条件とする。時や位置が違えば別格となり、晦に近い月では福をなさない。太乙は月孛、蟾は月を指す。",
+      "source_text": "一太乙抱蟾常人見孛與月同行，便謂之太乙抱蟾其義非也。須是上弦及望前，既望下弦在未上見之。及生于戌亥子丑時，者方合此格如非，其地又非其時名為抱鬼，若值殘晦之月則為抱死，鬼卻不能為福矣。既望盡也已也。太乙孛星也，蟾月也，月與孛同宮在未酉，入秦鬼尤貴。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻十一",
+        "section": "續論七政四餘分布宜忌及入格真偽",
+        "line": 1520,
+        "page": null
+      },
+      "notes": [
+        "格の成立の真偽（時・地・月相など）や星の配置の宜忌を述べる条"
+      ]
+    },
+    {
+      "id": "kkg_002",
+      "rule_type": "authenticity_and_placement",
+      "name": "入格真偽・分布宜忌",
+      "interpretation": "一木羅會舍必在寅上為吉，蓋木喜於寅羅樂於寅，二星相得方為會，舍在他宮則不合格。謂相生得火局之貴。",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "「木羅会舎」は寅で成立するのを吉とする。木星も羅喉も寅を喜ぶため、二星がそこで相得してはじめて格となる。他宮では成立せず、相生して火局の貴を得るとする。",
+      "source_text": "一木羅會舍必在寅上為吉，蓋木喜於寅羅樂於寅，二星相得方為會，舍在他宮則不合格。謂相生得火局之貴。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻十一",
+        "section": "續論七政四餘分布宜忌及入格真偽",
+        "line": 1520,
+        "page": null
+      },
+      "notes": [
+        "格の成立の真偽（時・地・月相など）や星の配置の宜忌を述べる条"
+      ]
+    },
+    {
+      "id": "kkg_003",
+      "rule_type": "authenticity_and_placement",
+      "name": "入格真偽・分布宜忌",
+      "interpretation": "一火氣為職權在寅卯為大吉，蓋火生於寅廟于卯寅為氣樂之。垣卯為氣旺之地，二星相得故為職權不以晝夜為忌。",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "火星と紫気の「職権」は寅・卯で大吉とする。火星は寅に生じ卯で廟となり、紫気も寅を喜び卯で旺じるため、二星が相得して職権の象となる。昼夜による忌みはない。",
+      "source_text": "一火氣為職權在寅卯為大吉，蓋火生於寅廟于卯寅為氣樂之。垣卯為氣旺之地，二星相得故為職權不以晝夜為忌。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻十一",
+        "section": "續論七政四餘分布宜忌及入格真偽",
+        "line": 1520,
+        "page": null
+      },
+      "notes": [
+        "格の成立の真偽（時・地・月相など）や星の配置の宜忌を述べる条"
+      ]
+    },
+    {
+      "id": "kkg_004",
+      "rule_type": "authenticity_and_placement",
+      "name": "入格真偽・分布宜忌",
+      "interpretation": "一木孛為符印在未為得局，蓋木升殿於未孛入廟於未，二星得所為貴，他宮其福減半。",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "木星と月孛の「符印」は未で得局とする。木星は未で昇殿し、月孛も未で入廟するため、二星が得所して貴となる。他宮では福が半減する。",
+      "source_text": "一木孛為符印在未為得局，蓋木升殿於未孛入廟於未，二星得所為貴，他宮其福減半。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻十一",
+        "section": "續論七政四餘分布宜忌及入格真偽",
+        "line": 1520,
+        "page": null
+      },
+      "notes": [
+        "格の成立の真偽（時・地・月相など）や星の配置の宜忌を述べる条"
+      ]
+    },
+    {
+      "id": "kkg_005",
+      "rule_type": "authenticity_and_placement",
+      "name": "入格真偽・分布宜忌",
+      "interpretation": "一火羅計孛乃四凶，曜化凶化吉並宜獨行，則主重權。",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "火星・羅喉・計都・月孛は四凶曜とされるが、凶化・吉化のいずれであっても独行するのをよしとし、その場合は重い権力を主るとする。",
+      "source_text": "一火羅計孛乃四凶，曜化凶化吉並宜獨行，則主重權。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻十一",
+        "section": "續論七政四餘分布宜忌及入格真偽",
+        "line": 1520,
+        "page": null
+      },
+      "notes": [
+        "格の成立の真偽（時・地・月相など）や星の配置の宜忌を述べる条"
+      ]
+    },
+    {
+      "id": "kkg_006",
+      "rule_type": "authenticity_and_placement",
+      "name": "入格真偽・分布宜忌",
+      "interpretation": "一紫氣為災比土猶緩。",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "紫気が災いをなす場合、その作用は土星よりも緩やかである。",
+      "source_text": "一紫氣為災比土猶緩。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻十一",
+        "section": "續論七政四餘分布宜忌及入格真偽",
+        "line": 1520,
+        "page": null
+      },
+      "notes": [
+        "格の成立の真偽（時・地・月相など）や星の配置の宜忌を述べる条"
+      ]
+    },
+    {
+      "id": "kkg_007",
+      "rule_type": "authenticity_and_placement",
+      "name": "入格真偽・分布宜忌",
+      "interpretation": "一土星為災至緩，主病淹滯難痊，使人晦懶作事有頭無尾或出一月方發。土星行最遲二十九年一周天，故主疾淹滯。",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "土星による災いは現れ方が非常に遅く、病が長引いて治りにくい、気が塞いで怠惰になる、物事を始めても完遂しにくいなどを主る。発現まで一か月ほどかかることもあるとする。土星は運行が最も遅いため、疾病や停滞も長引くと説く。",
+      "source_text": "一土星為災至緩，主病淹滯難痊，使人晦懶作事有頭無尾或出一月方發。土星行最遲二十九年一周天，故主疾淹滯。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻十一",
+        "section": "續論七政四餘分布宜忌及入格真偽",
+        "line": 1520,
+        "page": null
+      },
+      "notes": [
+        "格の成立の真偽（時・地・月相など）や星の配置の宜忌を述べる条"
+      ]
+    },
+    {
+      "id": "kkg_008",
+      "rule_type": "authenticity_and_placement",
+      "name": "入格真偽・分布宜忌",
+      "interpretation": "一金星不要在陽刃的煞劫煞之上，蓋金主煞遇煞則煞氣輝騰，故為煞至重。",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "金星は陽刃・的殺・劫殺の位置にあることを忌む。金星自体が殺を主るため、殺に重なると殺気が増し、凶意が重くなるとする。",
+      "source_text": "一金星不要在陽刃的煞劫煞之上，蓋金主煞遇煞則煞氣輝騰，故為煞至重。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻十一",
+        "section": "續論七政四餘分布宜忌及入格真偽",
+        "line": 1520,
+        "page": null
+      },
+      "notes": [
+        "格の成立の真偽（時・地・月相など）や星の配置の宜忌を述べる条"
+      ]
+    },
+    {
+      "id": "kkg_009",
+      "rule_type": "authenticity_and_placement",
+      "name": "入格真偽・分布宜忌",
+      "interpretation": "一羅計攔截之格不宜太陽跳出，犯此名曰：孤君無輔極不為美。蓋太陽乃君象，只欲五星輔佐共行，或拱夾方為吉，論若孤立於外主人一生奔波勞碌，少得人力，我雖親附人人多遠之。",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "羅喉・計都の攔截格では、太陽だけが外へ飛び出すのを忌む。これを「孤君無輔」といい、太陽は君の象であるため、五星が補佐して同行するか、拱・夾するのを吉とする。太陽が孤立すれば、一生奔波して苦労が多く、人の助力を得にくいとする。",
+      "source_text": "一羅計攔截之格不宜太陽跳出，犯此名曰：孤君無輔極不為美。蓋太陽乃君象，只欲五星輔佐共行，或拱夾方為吉，論若孤立於外主人一生奔波勞碌，少得人力，我雖親附人人多遠之。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻十一",
+        "section": "續論七政四餘分布宜忌及入格真偽",
+        "line": 1520,
+        "page": null
+      },
+      "notes": [
+        "格の成立の真偽（時・地・月相など）や星の配置の宜忌を述べる条"
+      ]
+    },
+    {
+      "id": "kkg_010",
+      "rule_type": "authenticity_and_placement",
+      "name": "入格真偽・分布宜忌",
+      "interpretation": "一羅計截斷半天星，此格有凶有吉。或截在左行限在右或截在右，行限在左名曰反背。為限不與諸星會遇故也。　又有升沉之不同或日生而諸曜截在卯辰巳午未申，行限酉戌亥子丑寅，位而無星者不得體，或夜生諸星截在酉戌亥子丑寅，位行限卯辰巳午未申，位無星之地，皆謂升沉不同並不合格者也。計羅截斷漏出有用星辰晝東南而夜西北皆主大貴。",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "羅喉・計都が半天の星を截断する格には吉凶がある。截断された側と行限が反対になり諸星と会わない場合は「反背」とし、昼夜と星の位置・行限の位置が升沈の理に合わない場合も不成立とする。一方、羅喉・計都の截断によって有用な星が昼は東南、夜は西北に漏れ出る形は大貴を主る。",
+      "source_text": "一羅計截斷半天星，此格有凶有吉。或截在左行限在右或截在右，行限在左名曰反背。為限不與諸星會遇故也。　又有升沉之不同或日生而諸曜截在卯辰巳午未申，行限酉戌亥子丑寅，位而無星者不得體，或夜生諸星截在酉戌亥子丑寅，位行限卯辰巳午未申，位無星之地，皆謂升沉不同並不合格者也。計羅截斷漏出有用星辰晝東南而夜西北皆主大貴。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻十一",
+        "section": "續論七政四餘分布宜忌及入格真偽",
+        "line": 1520,
+        "page": null
+      },
+      "notes": [
+        "格の成立の真偽（時・地・月相など）や星の配置の宜忌を述べる条"
+      ]
+    },
+    {
+      "id": "kkg_011",
+      "rule_type": "authenticity_and_placement",
+      "name": "入格真偽・分布宜忌",
+      "interpretation": "一太陰隨日干而化金木水火土，若太陰屬水則不喜土，月同躔太陰屬木，則不許金月同躔。餘可例推，犯之者皆帶疾，防剋如更在空亡，亡神劫煞之上者決主，其人亂說是非言語不定。",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "太陰は日干に従って五行に化すとし、その五行を剋す星との同躔を忌む。これに犯されると疾病を伴いやすく、さらに空亡・亡神・劫殺に重なる場合は、言語が定まらず是非を乱すとする。",
+      "source_text": "一太陰隨日干而化金木水火土，若太陰屬水則不喜土，月同躔太陰屬木，則不許金月同躔。餘可例推，犯之者皆帶疾，防剋如更在空亡，亡神劫煞之上者決主，其人亂說是非言語不定。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻十一",
+        "section": "續論七政四餘分布宜忌及入格真偽",
+        "line": 1520,
+        "page": null
+      },
+      "notes": [
+        "格の成立の真偽（時・地・月相など）や星の配置の宜忌を述べる条"
+      ]
+    },
+    {
+      "id": "kkg_012",
+      "rule_type": "authenticity_and_placement",
+      "name": "入格真偽・分布宜忌",
+      "interpretation": "一令星在太陽之前名曰旺進，若為命主在前曰特進，名曰令星，拱日又曰令星。當衡皆主權貴，若命主及令星在太陽之後者名曰後進，其福減半。金水二星護太陽而行則不離二宮。",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "令星が太陽の前にあれば「旺進」、命主が前にあれば「特進」といい、令星が太陽を拱する形も権貴を主る。命主や令星が太陽の後ろにある「後進」では福が半減する。金星・水星が太陽を護って進む場合は二宮以上離れないとする。",
+      "source_text": "一令星在太陽之前名曰旺進，若為命主在前曰特進，名曰令星，拱日又曰令星。當衡皆主權貴，若命主及令星在太陽之後者名曰後進，其福減半。金水二星護太陽而行則不離二宮。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻十一",
+        "section": "續論七政四餘分布宜忌及入格真偽",
+        "line": 1520,
+        "page": null
+      },
+      "notes": [
+        "格の成立の真偽（時・地・月相など）や星の配置の宜忌を述べる条"
+      ]
+    },
+    {
+      "id": "kkg_013",
+      "rule_type": "authenticity_and_placement",
+      "name": "入格真偽・分布宜忌",
+      "interpretation": "一諸星並行有前有後，凡煞星則欲其前行，主星則欲其後，至假如水火同行水剋火為煞，水在火前則為不剋，火在水前其煞，逼身最為大害，不可不審。經云：煞前主後當膺藩，輔之權，煞後主前必有徒流之患，此之謂也。藩輔布政之職。",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "諸星の前後関係を重視する。煞星は前、主星は後にあるのをよしとする。たとえば水星が火星を剋す関係でも、水星が前なら剋が弱まり、火星が前で水星が後から迫ると害が重いとする。煞が前・主が後なら権を得、逆なら徒流の患いがあると説く。",
+      "source_text": "一諸星並行有前有後，凡煞星則欲其前行，主星則欲其後，至假如水火同行水剋火為煞，水在火前則為不剋，火在水前其煞，逼身最為大害，不可不審。經云：煞前主後當膺藩，輔之權，煞後主前必有徒流之患，此之謂也。藩輔布政之職。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻十一",
+        "section": "續論七政四餘分布宜忌及入格真偽",
+        "line": 1520,
+        "page": null
+      },
+      "notes": [
+        "格の成立の真偽（時・地・月相など）や星の配置の宜忌を述べる条"
+      ]
+    },
+    {
+      "id": "kkg_014",
+      "rule_type": "authenticity_and_placement",
+      "name": "入格真偽・分布宜忌",
+      "interpretation": "一諸星聚會有吉會有凶，會吉會者如命主，度主身主官魁福祿化貴，廕權印則為吉會，雖是火羅計孛。若作吉亦為吉，會若為陽刃劫煞及化刑囚，暗耗皆凶會主禍。",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "諸星の会合には吉会と凶会がある。命主・度主・身主や官・魁・福・禄、化貴・蔭・権・印などとの会合は吉とし、火星・羅喉・計都・月孛でも吉として働く場合は吉会とみる。陽刃・劫殺や化刑・囚・暗・耗などとの会合は凶会で、禍を主る。",
+      "source_text": "一諸星聚會有吉會有凶，會吉會者如命主，度主身主官魁福祿化貴，廕權印則為吉會，雖是火羅計孛。若作吉亦為吉，會若為陽刃劫煞及化刑囚，暗耗皆凶會主禍。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻十一",
+        "section": "續論七政四餘分布宜忌及入格真偽",
+        "line": 1520,
+        "page": null
+      },
+      "notes": [
+        "格の成立の真偽（時・地・月相など）や星の配置の宜忌を述べる条"
+      ]
+    },
+    {
+      "id": "kkg_015",
+      "rule_type": "authenticity_and_placement",
+      "name": "入格真偽・分布宜忌",
+      "interpretation": "一諸星並要分行善惡不宜混雜，故善者專為吉惡者專為凶福祿單行為吉，若福刑相會祿耗並行，吉凶混雜皆主利，名有成有敗處世無成。",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "吉星と凶星は混雑せず、それぞれ専らに働く方がよい。福・禄が単独で作用すれば吉だが、福と刑、禄と耗のように吉凶が混在すると、利もあれば損もあり、成ることと敗れることが入り混じって大成しにくいとする。",
+      "source_text": "一諸星並要分行善惡不宜混雜，故善者專為吉惡者專為凶福祿單行為吉，若福刑相會祿耗並行，吉凶混雜皆主利，名有成有敗處世無成。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻十一",
+        "section": "續論七政四餘分布宜忌及入格真偽",
+        "line": 1520,
+        "page": null
+      },
+      "notes": [
+        "格の成立の真偽（時・地・月相など）や星の配置の宜忌を述べる条"
+      ]
+    },
+    {
+      "id": "kkg_016",
+      "rule_type": "authenticity_and_placement",
+      "name": "入格真偽・分布宜忌",
+      "interpretation": "一五星退行有退而有力者，有退而無力者，且如火金同行，金在前火在後而退。此煞星不敢進前以剋金，謂之退而有力。若金星退遇火，星順行反剋金星，是謂退而無力。餘可例推，　有退而升殿入垣逢生皆謂有情，反作吾論或退而失度逢殺，及入弱宮皆謂無情決作凶論。",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "五星の退行には、退いて力を得る場合と失う場合がある。煞星が後退して主星への剋を避ける形は有力とし、逆に退行した主星が順行する煞星から剋される形は無力とする。退行しても昇殿・入垣・逢生なら有情、失度・逢殺・弱宮なら無情として凶とみる。",
+      "source_text": "一五星退行有退而有力者，有退而無力者，且如火金同行，金在前火在後而退。此煞星不敢進前以剋金，謂之退而有力。若金星退遇火，星順行反剋金星，是謂退而無力。餘可例推，　有退而升殿入垣逢生皆謂有情，反作吾論或退而失度逢殺，及入弱宮皆謂無情決作凶論。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻十一",
+        "section": "續論七政四餘分布宜忌及入格真偽",
+        "line": 1520,
+        "page": null
+      },
+      "notes": [
+        "格の成立の真偽（時・地・月相など）や星の配置の宜忌を述べる条"
+      ]
+    },
+    {
+      "id": "kkg_017",
+      "rule_type": "authenticity_and_placement",
+      "name": "入格真偽・分布宜忌",
+      "interpretation": "一退星為福為禍尤甚，蓋行遲故也。經云：星躔退度善惡分外，有情術者審之。",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "退行する星は運行が遅いため、福も禍も作用が強く出るとする。退行の善悪・有情無情を詳しく見極める必要がある。",
+      "source_text": "一退星為福為禍尤甚，蓋行遲故也。經云：星躔退度善惡分外，有情術者審之。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻十一",
+        "section": "續論七政四餘分布宜忌及入格真偽",
+        "line": 1520,
+        "page": null
+      },
+      "notes": [
+        "格の成立の真偽（時・地・月相など）や星の配置の宜忌を述べる条"
+      ]
+    },
+    {
+      "id": "kkg_018",
+      "rule_type": "authenticity_and_placement",
+      "name": "入格真偽・分布宜忌",
+      "interpretation": "一諸星坐命皆為所屬，既能為吉亦能為凶，其論已有靈驗。",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "命宮に坐す諸星は、その星の所属・作用に従って吉にも凶にも働くとする。",
+      "source_text": "一諸星坐命皆為所屬，既能為吉亦能為凶，其論已有靈驗。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻十一",
+        "section": "續論七政四餘分布宜忌及入格真偽",
+        "line": 1520,
+        "page": null
+      },
+      "notes": [
+        "格の成立の真偽（時・地・月相など）や星の配置の宜忌を述べる条"
+      ]
+    },
+    {
+      "id": "kkg_019",
+      "rule_type": "authenticity_and_placement",
+      "name": "入格真偽・分布宜忌",
+      "interpretation": "一諸星在人盤不但原守為緊而流星及諸神殺，尤為緊關亦如前例，同看知星者鑑之。",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "命盤では元来の配置だけでなく、流星や諸神殺も重要であり、同じ原則で合わせて判断すべきとする。",
+      "source_text": "一諸星在人盤不但原守為緊而流星及諸神殺，尤為緊關亦如前例，同看知星者鑑之。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻十一",
+        "section": "續論七政四餘分布宜忌及入格真偽",
+        "line": 1520,
+        "page": null
+      },
+      "notes": [
+        "格の成立の真偽（時・地・月相など）や星の配置の宜忌を述べる条"
+      ]
+    },
+    {
+      "id": "kkg_020",
+      "rule_type": "section_principle",
+      "name": "合格（見出しの総括）",
+      "interpretation": "合格、七政之星所躔度數亦有好惡喜忌之不同者，喜之者則貴，忌之者則賤",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "七政が躔る度数には好悪・喜忌の違いがあり、喜ぶ度にあれば貴、忌む度にあれば賤と判断する。",
+      "source_text": "合格、七政之星所躔度數亦有好惡喜忌之不同者，喜之者則貴，忌之者則賤",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻十四",
+        "section": "合格",
+        "line": 1594,
+        "page": null
+      },
+      "notes": [
+        "躔度の好悪喜忌で貴賤が分かれるとする見出しの総括"
+      ]
+    },
+    {
+      "id": "kkg_021",
+      "rule_type": "section_text",
+      "name": "合格（歌）",
+      "interpretation": "水土朝北在子方，土熒相會丑中藏，金星助月未兼酉，金木逢龍角亢強，金水會蛇居楚地，水陽相會午南方，日金水木皆居亥，水土相會到申鄉，土日合照居於戌，命中相值貴兒郎，五星六曜歸躔分，時人須用細推詳。",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "合格となる代表配置を歌にまとめたもの。水土が子、土火が丑、金星が月を未・酉で助ける、金木が辰、金水が巳、水と太陽が午、日・金・水・木が亥、水土が申、土と太陽が戌で会するなどを挙げ、命中にこれらを得れば貴とする。",
+      "source_text": "水土朝北在子方，土熒相會丑中藏，金星助月未兼酉，金木逢龍角亢強，金水會蛇居楚地，水陽相會午南方，日金水木皆居亥，水土相會到申鄉，土日合照居於戌，命中相值貴兒郎，五星六曜歸躔分，時人須用細推詳。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻十四",
+        "section": "合格",
+        "line": 1594,
+        "page": null
+      },
+      "notes": []
+    },
+    {
+      "id": "kkg_022",
+      "rule_type": "section_text",
+      "name": "忌躔歌",
+      "interpretation": "火在酉、水在戌，火燒牛角、水漂羊，土埋雙女命尋常，土在巳、木在子，木打寶瓶須粉碎。金騎人馬實恓惶、金在寅巳上五行限之，星如值此終身貧苦走他鄉。星謂之失陷、如忽臨弱地為災淺，如占強宮見禍殃，身命田財官福，若居官祿兼福德，傷官破福實難當。妻嗣限元等主，或在第五并第七，刑妻害子細推詳。是此五星者皆。假令命在金牛宮，歲星當占寶瓶中，為失用俱作凶。第一吉星推木德，反遭難打性強凶。斷之孛在未入。又如命在天秤立，便看巨蟹甚星，值廟木在子失躔此所第一凶星。推月孛當生守占反為吉。謂吉者反凶、凶者反，吉星為禍、凶為福，當從宮分測根源，吉以其宮分言之，故星在喜宮為吉斷，星躔怒地作凶言也。朔日晝生日居朔，日遇羅?月在計都同望夕忌羅計望月夜生，陰陽二星最忌蝕，又怕五星為惡逆怕計羅。前法星分廟怒宮，須知星度在其中，廟星在兮生賢哲，怒在何宮產禍凶，五星留逆最不祥　，善惡之中皆少力，最緊五星明變段，廟旺俱全皆曰吉。\n張果星宗十六",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "五星には失陷となる宮・度があり、そこに入ると本来の吉星でも凶に転じうる。弱宮での災いは比較的浅く、身・命・田・財・官・福などの強宮で失陷すれば禍が重い。星の吉凶は名称だけでなく、宮分・廟怒・留逆・昼夜・日月蝕・羅計との関係まで合わせて判断し、廟旺が整えば吉、留逆や怒地では力が損なわれるとする。",
+      "source_text": "火在酉、水在戌，火燒牛角、水漂羊，土埋雙女命尋常，土在巳、木在子，木打寶瓶須粉碎。金騎人馬實恓惶、金在寅巳上五行限之，星如值此終身貧苦走他鄉。星謂之失陷、如忽臨弱地為災淺，如占強宮見禍殃，身命田財官福，若居官祿兼福德，傷官破福實難當。妻嗣限元等主，或在第五并第七，刑妻害子細推詳。是此五星者皆。假令命在金牛宮，歲星當占寶瓶中，為失用俱作凶。第一吉星推木德，反遭難打性強凶。斷之孛在未入。又如命在天秤立，便看巨蟹甚星，值廟木在子失躔此所第一凶星。推月孛當生守占反為吉。謂吉者反凶、凶者反，吉星為禍、凶為福，當從宮分測根源，吉以其宮分言之，故星在喜宮為吉斷，星躔怒地作凶言也。朔日晝生日居朔，日遇羅?月在計都同望夕忌羅計望月夜生，陰陽二星最忌蝕，又怕五星為惡逆怕計羅。前法星分廟怒宮，須知星度在其中，廟星在兮生賢哲，怒在何宮產禍凶，五星留逆最不祥　，善惡之中皆少力，最緊五星明變段，廟旺俱全皆曰吉。\n張果星宗十六",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻十四",
+        "section": "忌躔歌",
+        "line": 1595,
+        "page": null
+      },
+      "notes": [
+        "星の失陷と、強宮・弱宮による禍の軽重を述べる"
+      ]
+    },
+    {
+      "id": "kkg_023",
+      "rule_type": "section_principle",
+      "name": "星辰貴格圖",
+      "interpretation": "凡貴格星辰，掌身命官福，田財妻嗣等，主者為合格。",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "貴格となる星が、身・命・官・福・田・財・妻・嗣などの主星となる場合を合格とする。",
+      "source_text": "凡貴格星辰，掌身命官福，田財妻嗣等，主者為合格。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": null,
+        "section": "星辰貴格圖",
+        "line": 321,
+        "page": null
+      },
+      "notes": [
+        "原典は図を欠く（「缺圖」）"
+      ]
+    },
+    {
+      "id": "kkg_024",
+      "rule_type": "section_principle",
+      "name": "星辰賤格圖",
+      "interpretation": "凡賤格星辰，掌身命官福，田財妻嗣等，主者為忌格。",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "賤格となる星が、身・命・官・福・田・財・妻・嗣などの主星となる場合を忌格とする。",
+      "source_text": "凡賤格星辰，掌身命官福，田財妻嗣等，主者為忌格。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": null,
+        "section": "星辰賤格圖",
+        "line": 324,
+        "page": null
+      },
+      "notes": [
+        "原典は図を欠く（「缺圖」）"
+      ]
+    },
+    {
+      "id": "kkg_025",
+      "rule_type": "section_principle",
+      "name": "日月忌格（見出しの総括）",
+      "interpretation": "日月專取拱夾拱夾吉則吉拱夾凶則凶",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "日月の格では拱・夾を特に重視し、吉を拱夾すれば吉、凶を拱夾すれば凶とする。",
+      "source_text": "日月專取拱夾拱夾吉則吉拱夾凶則凶",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻五",
+        "section": "日月忌格",
+        "line": 1194,
+        "page": null
+      },
+      "notes": [
+        "節見出しに付された総括。個別格局ではない"
+      ],
+      "applies_to_section": "日月忌格"
+    },
+    {
+      "id": "kkg_026",
+      "rule_type": "section_principle",
+      "name": "五星合格（見出しの総括）",
+      "interpretation": "五星者即木火土金水也",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "ここでいう五星とは、木星・火星・土星・金星・水星を指す。",
+      "source_text": "五星者即木火土金水也",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻五",
+        "section": "五星合格",
+        "line": 1195,
+        "page": null
+      },
+      "notes": [
+        "節見出しに付された総括。個別格局ではない"
+      ],
+      "applies_to_section": "五星合格"
+    },
+    {
+      "id": "kkg_027",
+      "rule_type": "section_principle",
+      "name": "五星忌格（見出しの総括）",
+      "interpretation": "居于垣局則腰金重重入于失次則家破疊疊",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "五星は本垣・得局にあれば大いに栄え、失次に入れば家の破敗を重ねるとする。",
+      "source_text": "居于垣局則腰金重重入于失次則家破疊疊",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻五",
+        "section": "五星忌格",
+        "line": 1196,
+        "page": null
+      },
+      "notes": [
+        "節見出しに付された総括。個別格局ではない"
+      ],
+      "applies_to_section": "五星忌格"
+    },
+    {
+      "id": "kkg_028",
+      "rule_type": "section_principle",
+      "name": "四餘合格（見出しの総括）",
+      "interpretation": "四餘者即是氣孛羅計也",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "四餘とは、紫気・月孛・羅喉・計都を指す。",
+      "source_text": "四餘者即是氣孛羅計也",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻五",
+        "section": "四餘合格",
+        "line": 1196,
+        "page": null
+      },
+      "notes": [
+        "節見出しに付された総括。個別格局ではない"
+      ],
+      "applies_to_section": "四餘合格"
+    },
+    {
+      "id": "kkg_029",
+      "rule_type": "section_principle",
+      "name": "政餘合格（見出しの総括）",
+      "interpretation": "政者日月五星餘者氣孛羅計",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "「政」は日月五星、「餘」は紫気・月孛・羅喉・計都を指す。",
+      "source_text": "政者日月五星餘者氣孛羅計",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻五",
+        "section": "政餘合格",
+        "line": 1197,
+        "page": null
+      },
+      "notes": [
+        "節見出しに付された総括。個別格局ではない"
+      ],
+      "applies_to_section": "政餘合格"
+    },
+    {
+      "id": "kkg_030",
+      "rule_type": "section_principle",
+      "name": "諸星次格（見出しの総括）",
+      "interpretation": "次格者乃補遺之謂也",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "「次格」は補遺として扱う格をいう。",
+      "source_text": "次格者乃補遺之謂也",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻五",
+        "section": "諸星次格",
+        "line": 1198,
+        "page": null
+      },
+      "notes": [
+        "節見出しに付された総括。個別格局ではない"
+      ],
+      "applies_to_section": "諸星次格"
+    },
+    {
+      "id": "kkg_031",
+      "rule_type": "section_principle",
+      "name": "身命合格（見出しの総括）",
+      "interpretation": "合格非富即貴此以身宮命宮主星相合相生得地而論之",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "身宮・命宮の主星が相合・相生し、得地することを身命合格とし、成立すれば富または貴を主る。",
+      "source_text": "合格非富即貴此以身宮命宮主星相合相生得地而論之",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻五",
+        "section": "身命合格",
+        "line": 1199,
+        "page": null
+      },
+      "notes": [
+        "節見出しに付された総括。個別格局ではない"
+      ],
+      "applies_to_section": "身命合格"
+    },
+    {
+      "id": "kkg_032",
+      "rule_type": "section_principle",
+      "name": "命主合格（見出しの総括）",
+      "interpretation": "此以命主星所臨十二宮所喜之地",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "命主星が十二宮のうち、その星が喜ぶ場所に臨むことを命主合格として論じる。",
+      "source_text": "此以命主星所臨十二宮所喜之地",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻五",
+        "section": "命主合格",
+        "line": 1200,
+        "page": null
+      },
+      "notes": [
+        "節見出しに付された総括。個別格局ではない"
+      ],
+      "applies_to_section": "命主合格"
+    },
+    {
+      "id": "kkg_033",
+      "rule_type": "section_principle",
+      "name": "田主合格（見出しの総括）",
+      "interpretation": "此以田宅宮主星所臨得地論之",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "田宅宮の主星が得地する場所に臨むことを田主合格として論じる。",
+      "source_text": "此以田宅宮主星所臨得地論之",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻五",
+        "section": "田主合格",
+        "line": 1201,
+        "page": null
+      },
+      "notes": [
+        "節見出しに付された総括。個別格局ではない"
+      ],
+      "applies_to_section": "田主合格"
+    },
+    {
+      "id": "kkg_034",
+      "rule_type": "section_principle",
+      "name": "財星合格（見出しの総括）",
+      "interpretation": "此以財帛宮主星所臨之地而獲業",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "財帛宮の主星が臨む場所によって、財業を得るかを論じる。",
+      "source_text": "此以財帛宮主星所臨之地而獲業",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻五",
+        "section": "財星合格",
+        "line": 1202,
+        "page": null
+      },
+      "notes": [
+        "節見出しに付された総括。個別格局ではない"
+      ],
+      "applies_to_section": "財星合格"
+    },
+    {
+      "id": "kkg_035",
+      "rule_type": "section_principle",
+      "name": "祿主合格（見出しの総括）",
+      "interpretation": "此以官祿宮主星所臨之地合格者主人富貴",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "官禄宮の主星が臨む場所で合格となれば、富貴を主る。",
+      "source_text": "此以官祿宮主星所臨之地合格者主人富貴",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻五",
+        "section": "祿主合格",
+        "line": 1202,
+        "page": null
+      },
+      "notes": [
+        "節見出しに付された総括。個別格局ではない"
+      ],
+      "applies_to_section": "祿主合格"
+    },
+    {
+      "id": "kkg_036",
+      "rule_type": "section_principle",
+      "name": "福星合格（見出しの総括）",
+      "interpretation": "此以福德宮主星所臨合格主人有福",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "福徳宮の主星が合格となる場所に臨めば、福を得るとする。",
+      "source_text": "此以福德宮主星所臨合格主人有福",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻五",
+        "section": "福星合格",
+        "line": 1202,
+        "page": null
+      },
+      "notes": [
+        "節見出しに付された総括。個別格局ではない"
+      ],
+      "applies_to_section": "福星合格"
+    },
+    {
+      "id": "kkg_037",
+      "rule_type": "section_principle",
+      "name": "妻星合格（見出しの総括）",
+      "interpretation": "此以妻妾宮主星論之",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "妻星合格は妻妾宮の主星を基準として論じる。",
+      "source_text": "此以妻妾宮主星論之",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻五",
+        "section": "妻星合格",
+        "line": 1202,
+        "page": null
+      },
+      "notes": [
+        "節見出しに付された総括。個別格局ではない"
+      ],
+      "applies_to_section": "妻星合格"
+    },
+    {
+      "id": "kkg_038",
+      "rule_type": "section_principle",
+      "name": "嗣星合格（見出しの総括）",
+      "interpretation": "此以男女宮主星坐臨得所則吉",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "男女宮の主星が得所に坐すれば吉とする。",
+      "source_text": "此以男女宮主星坐臨得所則吉",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻五",
+        "section": "嗣星合格",
+        "line": 1202,
+        "page": null
+      },
+      "notes": [
+        "節見出しに付された総括。個別格局ではない"
+      ],
+      "applies_to_section": "嗣星合格"
+    },
+    {
+      "id": "kkg_039",
+      "rule_type": "section_principle",
+      "name": "身星忌格（見出しの総括）",
+      "interpretation": "此以身宮主星所忌而論",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "身星忌格は身宮の主星が忌む配置を基準として論じる。",
+      "source_text": "此以身宮主星所忌而論",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻五",
+        "section": "身星忌格",
+        "line": 1203,
+        "page": null
+      },
+      "notes": [
+        "節見出しに付された総括。個別格局ではない"
+      ],
+      "applies_to_section": "身星忌格"
+    },
+    {
+      "id": "kkg_040",
+      "rule_type": "section_principle",
+      "name": "命主忌格（見出しの総括）",
+      "interpretation": "此以坐命宮主星論之",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "命主忌格は命宮の主星を基準として論じる。",
+      "source_text": "此以坐命宮主星論之",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻五",
+        "section": "命主忌格",
+        "line": 1204,
+        "page": null
+      },
+      "notes": [
+        "節見出しに付された総括。個別格局ではない"
+      ],
+      "applies_to_section": "命主忌格"
+    },
+    {
+      "id": "kkg_041",
+      "rule_type": "section_principle",
+      "name": "田主忌格（見出しの総括）",
+      "interpretation": "此以田主星所忌而論之",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "田主忌格は田宅宮の主星が忌む配置を基準として論じる。",
+      "source_text": "此以田主星所忌而論之",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻五",
+        "section": "田主忌格",
+        "line": 1205,
+        "page": null
+      },
+      "notes": [
+        "節見出しに付された総括。個別格局ではない"
+      ],
+      "applies_to_section": "田主忌格"
+    },
+    {
+      "id": "kkg_042",
+      "rule_type": "section_principle",
+      "name": "財星忌格（見出しの総括）",
+      "interpretation": "此以財帛宮主星所忌論之",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "財星忌格は財帛宮の主星が忌む配置を基準として論じる。",
+      "source_text": "此以財帛宮主星所忌論之",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻五",
+        "section": "財星忌格",
+        "line": 1206,
+        "page": null
+      },
+      "notes": [
+        "節見出しに付された総括。個別格局ではない"
+      ],
+      "applies_to_section": "財星忌格"
+    },
+    {
+      "id": "kkg_043",
+      "rule_type": "section_principle",
+      "name": "祿主忌格（見出しの総括）",
+      "interpretation": "此以官祿宮主星論之",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "禄主忌格は官禄宮の主星を基準として論じる。",
+      "source_text": "此以官祿宮主星論之",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻五",
+        "section": "祿主忌格",
+        "line": 1207,
+        "page": null
+      },
+      "notes": [
+        "節見出しに付された総括。個別格局ではない"
+      ],
+      "applies_to_section": "祿主忌格"
+    },
+    {
+      "id": "kkg_044",
+      "rule_type": "section_principle",
+      "name": "福主忌格（見出しの総括）",
+      "interpretation": "此以福德宮主星論之",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "福主忌格は福徳宮の主星を基準として論じる。",
+      "source_text": "此以福德宮主星論之",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻五",
+        "section": "福主忌格",
+        "line": 1208,
+        "page": null
+      },
+      "notes": [
+        "節見出しに付された総括。個別格局ではない"
+      ],
+      "applies_to_section": "福主忌格"
+    },
+    {
+      "id": "kkg_045",
+      "rule_type": "section_principle",
+      "name": "妻星忌格（見出しの総括）",
+      "interpretation": "此以妻妾宮主星論之",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "妻星忌格は妻妾宮の主星を基準として論じる。",
+      "source_text": "此以妻妾宮主星論之",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻五",
+        "section": "妻星忌格",
+        "line": 1209,
+        "page": null
+      },
+      "notes": [
+        "節見出しに付された総括。個別格局ではない"
+      ],
+      "applies_to_section": "妻星忌格"
+    },
+    {
+      "id": "kkg_046",
+      "rule_type": "section_principle",
+      "name": "子星忌格（見出しの総括）",
+      "interpretation": "此以男女宮主星論之",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "子星忌格は男女宮の主星を基準として論じる。",
+      "source_text": "此以男女宮主星論之",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻五",
+        "section": "子星忌格",
+        "line": 1209,
+        "page": null
+      },
+      "notes": [
+        "節見出しに付された総括。個別格局ではない"
+      ],
+      "applies_to_section": "子星忌格"
+    },
+    {
+      "id": "kkg_047",
+      "rule_type": "section_principle",
+      "name": "諸星互格（見出しの総括）",
+      "interpretation": "此以各星互換有情有助論之",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "諸星互格は、各星が互いに配置を交換し、有情・相助となるかを論じる。",
+      "source_text": "此以各星互換有情有助論之",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻五",
+        "section": "諸星互格",
+        "line": 1210,
+        "page": null
+      },
+      "notes": [
+        "節見出しに付された総括。個別格局ではない"
+      ],
+      "applies_to_section": "諸星互格"
+    },
+    {
+      "id": "kkg_048",
+      "rule_type": "section_principle",
+      "name": "簾幕歌（見出しの総括）",
+      "interpretation": "論女命",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "簾幕歌は女命を論じる章である。",
+      "source_text": "論女命",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻五",
+        "section": "簾幕歌",
+        "line": 1273,
+        "page": null
+      },
+      "notes": [
+        "節見出しに付された総括。個別格局ではない"
+      ],
+      "applies_to_section": "簾幕歌"
+    },
+    {
+      "id": "kkg_049",
+      "rule_type": "section_principle",
+      "name": "通元賦（見出しの総括）",
+      "interpretation": "鄭希誠註",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "通元賦は鄭希誠の注による。",
+      "source_text": "鄭希誠註",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻六",
+        "section": "通元賦",
+        "line": 1273,
+        "page": null
+      },
+      "notes": [
+        "節見出しに付された総括。個別格局ではない"
+      ],
+      "applies_to_section": "通元賦"
+    },
+    {
+      "id": "kkg_050",
+      "rule_type": "section_principle",
+      "name": "排列出類（見出しの総括）",
+      "interpretation": "俱富貴之格且超群而拔其萃也",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "「排列出類」に挙げるものは、いずれも富貴の格で、群を抜いて秀でるとする。",
+      "source_text": "俱富貴之格且超群而拔其萃也",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻八",
+        "section": "排列出類",
+        "line": 1381,
+        "page": null
+      },
+      "notes": [
+        "節見出しに付された総括。個別格局ではない"
+      ],
+      "applies_to_section": "排列出類"
+    },
+    {
+      "id": "kkg_051",
+      "rule_type": "section_principle",
+      "name": "分布得經（見出しの総括）",
+      "interpretation": "俱是十二宮星辰得局貴格",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "「分布得経」に挙げるものは、十二宮で星辰が得局する貴格とする。",
+      "source_text": "俱是十二宮星辰得局貴格",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻八",
+        "section": "分布得經",
+        "line": 1382,
+        "page": null
+      },
+      "notes": [
+        "節見出しに付された総括。個別格局ではない"
+      ],
+      "applies_to_section": "分布得經"
+    },
+    {
+      "id": "kkg_052",
+      "rule_type": "section_text",
+      "name": "八格賦（序）",
+      "interpretation": "天地既判，人物肇生，凡屬乾坤並立之身，均稟陰陽五行之秀，故經緯之學，以之而立法，禍福之機，由是而推。明其運行於天也，則有遲留伏逆生剋制化，其賦予於人也，則有富貴貧賤壽夭賢愚。八者雖殊，一皆有準天之高，星之遠，似若難明涇之濁，渭之清昭然易見，是故，開物成務之作，有待於聖人治曆明時之占，莫逃乎太史，信斯言也，能無從乎。銀河八萬，列宿三千三辰，六合於人五數。銀河星八萬，分野應列卿相諸官，星三千三辰，日月星也，天盤中有六合以取吉凶，六合者子丑合寅亥合之類。",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "天地が分かれ人が生じると、人は陰陽五行の気を受ける。そのため星の運行に遅・留・伏・逆・生・剋・制・化があり、人の運命には富・貴・貧・賤・寿・夭・賢・愚の八格が現れるとする。星は遠く複雑に見えても、その理には一定の基準があり、暦と時を明らかにして占うべきだと説く。さらに銀河・列宿・日月星・六合などを人事の吉凶判断に対応させる。",
+      "source_text": "天地既判，人物肇生，凡屬乾坤並立之身，均稟陰陽五行之秀，故經緯之學，以之而立法，禍福之機，由是而推。明其運行於天也，則有遲留伏逆生剋制化，其賦予於人也，則有富貴貧賤壽夭賢愚。八者雖殊，一皆有準天之高，星之遠，似若難明涇之濁，渭之清昭然易見，是故，開物成務之作，有待於聖人治曆明時之占，莫逃乎太史，信斯言也，能無從乎。銀河八萬，列宿三千三辰，六合於人五數。銀河星八萬，分野應列卿相諸官，星三千三辰，日月星也，天盤中有六合以取吉凶，六合者子丑合寅亥合之類。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻六",
+        "section": "八格賦",
+        "line": 1306,
+        "page": null
+      },
+      "notes": [
+        "富貴貧賤壽夭賢愚の八格を論じる序"
+      ]
+    },
+    {
+      "id": "kkg_053",
+      "rule_type": "strength_principle",
+      "name": "登殿入廟",
+      "interpretation": "七政各有殿有廟，殿廟惟主星及命坐此，名曰登殿入廟，最喜日月同向，乃吾近君，必取高貴。經曰：日正廟奎，八至十三度，月正廟婁，八至十三度；次廟畢九，至畢一度，木正廟角度，火正廟心二至房三度，次廟房四至心初度，土正廟斗十五至二十一度，金正廟亢五至九度，水正廟翼八至十三度，氣正廟奎十一至十五度，次廟觜，孛正廟星三度至五度，計正廟軫十三至十六度，次壁四至七度。凡星辰之登廟升殿入垣局者，如仕宦之在朝堂，乃上格之命也，須得星辰歸於垣局則官職顯要，歷三台八座翰苑，雖榮若命格之高，而星不入局，則雖有祿位，終為中品、下品之貴，不能登於極品之貴也。",
+      "interpretation_lang": "zh_classical",
+      "modern_japanese": "七政にはそれぞれ殿・廟があり、主星や命がそこに坐すれば「登殿入廟」とする。とくに日月が同じ方向にあれば、君に近づく象として高貴を取る。各星には正廟・次廟の度数が定められ、星が登廟・昇殿・入垣して本来の局に帰れば、官職顕要となる上格の命とする。命格が高くても星が局に入らなければ、禄位を得ても中・下級の貴にとどまり、極品の貴には至りにくいとする。",
+      "source_text": "七政各有殿有廟，殿廟惟主星及命坐此，名曰登殿入廟，最喜日月同向，乃吾近君，必取高貴。經曰：日正廟奎，八至十三度，月正廟婁，八至十三度；次廟畢九，至畢一度，木正廟角度，火正廟心二至房三度，次廟房四至心初度，土正廟斗十五至二十一度，金正廟亢五至九度，水正廟翼八至十三度，氣正廟奎十一至十五度，次廟觜，孛正廟星三度至五度，計正廟軫十三至十六度，次壁四至七度。凡星辰之登廟升殿入垣局者，如仕宦之在朝堂，乃上格之命也，須得星辰歸於垣局則官職顯要，歷三台八座翰苑，雖榮若命格之高，而星不入局，則雖有祿位，終為中品、下品之貴，不能登於極品之貴也。",
+      "source_ref": {
+        "file": "張果星宗.doc",
+        "volume": "巻八",
+        "section": "登殿入廟",
+        "line": 1383,
+        "page": null
+      },
+      "notes": [
+        "殿・廟に主星や命が坐す場合の扱い"
+      ]
+    }
+  ]
+}

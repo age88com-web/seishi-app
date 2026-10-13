@@ -1,0 +1,6640 @@
+{
+  "schema_version": "1.0.0",
+  "source_file": "張果星宗.doc",
+  "source_note": "原典ファイル「張果星宗.doc」は現時点で docs/source に存在しない。今回は同一原典（既存張果星宗データの出典）を読み取り専用で参照した。行番号は textutil による UTF-8 テキスト変換の行番号",
+  "counts": {
+    "A": 155,
+    "B": 69,
+    "M": 1,
+    "C": 35,
+    "D": 3,
+    "E": 335
+  },
+  "source_only_names": [
+    {
+      "source_name": "一星滿用",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_08_014"
+      ]
+    },
+    {
+      "source_name": "一福專權",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_08_013"
+      ]
+    },
+    {
+      "source_name": "三台扶斗",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_027"
+      ]
+    },
+    {
+      "source_name": "三方拱殺",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_30_009"
+      ]
+    },
+    {
+      "source_name": "主坐咸池",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_36_015"
+      ]
+    },
+    {
+      "source_name": "乙氣騎牛",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_003"
+      ]
+    },
+    {
+      "source_name": "二星合璧",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_06_010"
+      ]
+    },
+    {
+      "source_name": "二殺同宮",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_30_015"
+      ]
+    },
+    {
+      "source_name": "五星朝斗",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_006"
+      ]
+    },
+    {
+      "source_name": "五星連珠",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_003"
+      ]
+    },
+    {
+      "source_name": "五神當權",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_018"
+      ]
+    },
+    {
+      "source_name": "五臟所屬",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_35_019"
+      ]
+    },
+    {
+      "source_name": "令星",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_35_027"
+      ]
+    },
+    {
+      "source_name": "值難拱夾日月",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_28_004"
+      ]
+    },
+    {
+      "source_name": "值難拱夾身命",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_29_008"
+      ]
+    },
+    {
+      "source_name": "元武持旌",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_03_023"
+      ]
+    },
+    {
+      "source_name": "元武當臺",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_32_006"
+      ]
+    },
+    {
+      "source_name": "兩殺夾命",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_30_005"
+      ]
+    },
+    {
+      "source_name": "八殺朝天",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_08_017"
+      ]
+    },
+    {
+      "source_name": "凶神會聚殺",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_30_020"
+      ]
+    },
+    {
+      "source_name": "刃星居刃宮",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_30_017"
+      ]
+    },
+    {
+      "source_name": "刃雄守命宮",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_30_022"
+      ]
+    },
+    {
+      "source_name": "刃雄居相貌",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_30_021"
+      ]
+    },
+    {
+      "source_name": "刑囚夾身命",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_30_016"
+      ]
+    },
+    {
+      "source_name": "刑囚居殿駕",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_28_006"
+      ]
+    },
+    {
+      "source_name": "剋父母",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_35_016"
+      ]
+    },
+    {
+      "source_name": "劫耗臨田",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_20_013"
+      ]
+    },
+    {
+      "source_name": "十一曜得經",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_06_034"
+      ]
+    },
+    {
+      "source_name": "十一曜拱地戶",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_06_026"
+      ]
+    },
+    {
+      "source_name": "十一曜拱天門",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_06_025"
+      ]
+    },
+    {
+      "source_name": "十一曜拱妻嗣",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_06_030"
+      ]
+    },
+    {
+      "source_name": "十一曜拱官福",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_06_031"
+      ]
+    },
+    {
+      "source_name": "十一曜拱帝座",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_06_024"
+      ]
+    },
+    {
+      "source_name": "十一曜拱殿駕",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_06_027"
+      ]
+    },
+    {
+      "source_name": "十一曜拱田財",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_06_032"
+      ]
+    },
+    {
+      "source_name": "十一曜拱祿馬",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_06_028"
+      ]
+    },
+    {
+      "source_name": "十一曜拱端門",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_06_023"
+      ]
+    },
+    {
+      "source_name": "十一曜拱身命",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_06_029"
+      ]
+    },
+    {
+      "source_name": "十一曜漏關",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_06_033"
+      ]
+    },
+    {
+      "source_name": "合璧連珠",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_001"
+      ]
+    },
+    {
+      "source_name": "命主受剋",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_19_003"
+      ]
+    },
+    {
+      "source_name": "命主失經",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_19_001"
+      ]
+    },
+    {
+      "source_name": "命入閑極",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_19_005"
+      ]
+    },
+    {
+      "source_name": "命坐刃權",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_19_010"
+      ]
+    },
+    {
+      "source_name": "命居奴僕",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_19_006"
+      ]
+    },
+    {
+      "source_name": "命居遷移",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_19_008"
+      ]
+    },
+    {
+      "source_name": "命居鋒廉",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_19_012"
+      ]
+    },
+    {
+      "source_name": "命臨劫的",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_19_011"
+      ]
+    },
+    {
+      "source_name": "命臨疾厄",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_19_007"
+      ]
+    },
+    {
+      "source_name": "命臨相貌",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_19_009"
+      ]
+    },
+    {
+      "source_name": "命臨耗符",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_19_013"
+      ]
+    },
+    {
+      "source_name": "嗣位逢空",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_25_013"
+      ]
+    },
+    {
+      "source_name": "嗣守疾厄",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_25_009"
+      ]
+    },
+    {
+      "source_name": "嗣居遷移",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_25_010"
+      ]
+    },
+    {
+      "source_name": "嗣星守命",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_17_003"
+      ]
+    },
+    {
+      "source_name": "嗣星歸垣",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_17_002"
+      ]
+    },
+    {
+      "source_name": "土主咳嗽肉瘡",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_35_023"
+      ]
+    },
+    {
+      "source_name": "土亢",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_34_008"
+      ]
+    },
+    {
+      "source_name": "土命忌木",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_35_014"
+      ]
+    },
+    {
+      "source_name": "土好太常",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_007"
+      ]
+    },
+    {
+      "source_name": "土好齊瓶",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_002"
+      ]
+    },
+    {
+      "source_name": "土子",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_34_002"
+      ]
+    },
+    {
+      "source_name": "土日合照",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_039"
+      ]
+    },
+    {
+      "source_name": "土星肥大",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_35_003"
+      ]
+    },
+    {
+      "source_name": "土歸鄭國",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_018"
+      ]
+    },
+    {
+      "source_name": "土計夾月產凶",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_35_008"
+      ]
+    },
+    {
+      "source_name": "土金堅實",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_03_017"
+      ]
+    },
+    {
+      "source_name": "天狗臨兒",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_25_012"
+      ]
+    },
+    {
+      "source_name": "太乙朝天",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_045"
+      ]
+    },
+    {
+      "source_name": "太陽逢兔",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_011"
+      ]
+    },
+    {
+      "source_name": "夫星坐祿",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_35_009"
+      ]
+    },
+    {
+      "source_name": "女火為夫",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_35_012"
+      ]
+    },
+    {
+      "source_name": "女重太陰",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_35_006"
+      ]
+    },
+    {
+      "source_name": "妻元失令",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_24_004"
+      ]
+    },
+    {
+      "source_name": "妻守兒宮",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_16_006"
+      ]
+    },
+    {
+      "source_name": "妻守福宮",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_16_010"
+      ]
+    },
+    {
+      "source_name": "妻守財宮",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_16_004"
+      ]
+    },
+    {
+      "source_name": "妻居妻位",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_16_007"
+      ]
+    },
+    {
+      "source_name": "妻居田宅",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_16_005"
+      ]
+    },
+    {
+      "source_name": "妻居祿地",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_16_009"
+      ]
+    },
+    {
+      "source_name": "妻居福德",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_16_008"
+      ]
+    },
+    {
+      "source_name": "妻星升殿",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_16_001"
+      ]
+    },
+    {
+      "source_name": "妻星守命",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_16_003"
+      ]
+    },
+    {
+      "source_name": "妻星秉令",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_16_011"
+      ]
+    },
+    {
+      "source_name": "子入田宮",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_17_005"
+      ]
+    },
+    {
+      "source_name": "子居子位",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_17_006"
+      ]
+    },
+    {
+      "source_name": "子居官祿",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_17_009"
+      ]
+    },
+    {
+      "source_name": "子居相貌",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_25_011"
+      ]
+    },
+    {
+      "source_name": "子居福地",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_17_008"
+      ]
+    },
+    {
+      "source_name": "子居財帛",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_17_004"
+      ]
+    },
+    {
+      "source_name": "子居閑極",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_25_007"
+      ]
+    },
+    {
+      "source_name": "子承父位",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_32_007"
+      ]
+    },
+    {
+      "source_name": "子星得度",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_17_001"
+      ]
+    },
+    {
+      "source_name": "子星秉令",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_17_010"
+      ]
+    },
+    {
+      "source_name": "子行父政",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_026"
+      ]
+    },
+    {
+      "source_name": "孛于東井",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_007"
+      ]
+    },
+    {
+      "source_name": "孛同金",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_34_017"
+      ]
+    },
+    {
+      "source_name": "孛咸",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_36_010"
+      ]
+    },
+    {
+      "source_name": "孛星朝斗",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_004"
+      ]
+    },
+    {
+      "source_name": "孛氣五宮",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_36_009"
+      ]
+    },
+    {
+      "source_name": "孤陽無輔",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_02_011"
+      ]
+    },
+    {
+      "source_name": "官星守命",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_14_003"
+      ]
+    },
+    {
+      "source_name": "官祿臨田",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_14_005"
+      ]
+    },
+    {
+      "source_name": "客曜臨朝垣",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_30_018"
+      ]
+    },
+    {
+      "source_name": "寒月單行",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_02_012"
+      ]
+    },
+    {
+      "source_name": "小兒看木",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_35_013"
+      ]
+    },
+    {
+      "source_name": "左右環拱",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_019"
+      ]
+    },
+    {
+      "source_name": "忌星守殺",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_30_002"
+      ]
+    },
+    {
+      "source_name": "戴天履地",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_06_017",
+        "kk_48_003"
+      ]
+    },
+    {
+      "source_name": "文章祕府",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_005"
+      ]
+    },
+    {
+      "source_name": "斗牛秀氣",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_004"
+      ]
+    },
+    {
+      "source_name": "旄頭直爭",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_012"
+      ]
+    },
+    {
+      "source_name": "日中見斗",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_031"
+      ]
+    },
+    {
+      "source_name": "日出扶桑",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_014",
+        "kk_49_013"
+      ]
+    },
+    {
+      "source_name": "日午戌",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_34_009"
+      ]
+    },
+    {
+      "source_name": "日帝居陽",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_023"
+      ]
+    },
+    {
+      "source_name": "日月並明",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_01_009"
+      ]
+    },
+    {
+      "source_name": "日月分明",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_35_001"
+      ]
+    },
+    {
+      "source_name": "日月包五星",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_01_011"
+      ]
+    },
+    {
+      "source_name": "日月包四餘",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_01_012"
+      ]
+    },
+    {
+      "source_name": "日月失垣",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_02_007"
+      ]
+    },
+    {
+      "source_name": "日月失殿",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_02_008"
+      ]
+    },
+    {
+      "source_name": "日月失經成敗",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_35_026"
+      ]
+    },
+    {
+      "source_name": "日月夾嗣",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_01_030"
+      ]
+    },
+    {
+      "source_name": "日月夾奴僕",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_02_020"
+      ]
+    },
+    {
+      "source_name": "日月夾妻",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_01_028"
+      ]
+    },
+    {
+      "source_name": "日月夾官",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_01_024"
+      ]
+    },
+    {
+      "source_name": "日月夾拱祿馬",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_01_013"
+      ]
+    },
+    {
+      "source_name": "日月夾田",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_01_022"
+      ]
+    },
+    {
+      "source_name": "日月夾福",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_01_026"
+      ]
+    },
+    {
+      "source_name": "日月夾財",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_01_020"
+      ]
+    },
+    {
+      "source_name": "日月居八殺",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_30_001"
+      ]
+    },
+    {
+      "source_name": "日月居刑囚",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_28_005"
+      ]
+    },
+    {
+      "source_name": "日月拱兄弟",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_02_025"
+      ]
+    },
+    {
+      "source_name": "日月拱嗣",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_01_029"
+      ]
+    },
+    {
+      "source_name": "日月拱夾刃雄",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_02_013",
+        "kk_28_001"
+      ]
+    },
+    {
+      "source_name": "日月拱夾刑囚",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_28_002"
+      ]
+    },
+    {
+      "source_name": "日月拱夾刑害",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_02_018"
+      ]
+    },
+    {
+      "source_name": "日月拱夾孤寡",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_02_017"
+      ]
+    },
+    {
+      "source_name": "日月拱夾廉鋒",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_02_015"
+      ]
+    },
+    {
+      "source_name": "日月拱夾斗貴",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_01_015"
+      ]
+    },
+    {
+      "source_name": "日月拱夾殿駕",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_01_014"
+      ]
+    },
+    {
+      "source_name": "日月拱夾的劫",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_02_014"
+      ]
+    },
+    {
+      "source_name": "日月拱夾符印",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_01_016"
+      ]
+    },
+    {
+      "source_name": "日月拱夾耗符",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_02_016"
+      ]
+    },
+    {
+      "source_name": "日月拱夾難星",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_28_003"
+      ]
+    },
+    {
+      "source_name": "日月拱奴僕",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_02_019"
+      ]
+    },
+    {
+      "source_name": "日月拱妻",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_01_027"
+      ]
+    },
+    {
+      "source_name": "日月拱官",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_01_023"
+      ]
+    },
+    {
+      "source_name": "日月拱殺",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_30_008"
+      ]
+    },
+    {
+      "source_name": "日月拱田",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_01_021"
+      ]
+    },
+    {
+      "source_name": "日月拱疾厄",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_02_021"
+      ]
+    },
+    {
+      "source_name": "日月拱福",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_01_025"
+      ]
+    },
+    {
+      "source_name": "日月拱財",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_01_019"
+      ]
+    },
+    {
+      "source_name": "日月拱遷移",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_02_023"
+      ]
+    },
+    {
+      "source_name": "日月眼目",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_35_020"
+      ]
+    },
+    {
+      "source_name": "日月麗正",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_37_004"
+      ]
+    },
+    {
+      "source_name": "日水乘旺",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_021"
+      ]
+    },
+    {
+      "source_name": "日遇白羊",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_041"
+      ]
+    },
+    {
+      "source_name": "明入地中",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_032"
+      ]
+    },
+    {
+      "source_name": "明出地晉",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_033"
+      ]
+    },
+    {
+      "source_name": "星照本家",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_08_016"
+      ]
+    },
+    {
+      "source_name": "星聚東井",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_031"
+      ]
+    },
+    {
+      "source_name": "星辰無故剋戰",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_29_005"
+      ]
+    },
+    {
+      "source_name": "星辰與殺相生",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_29_006"
+      ]
+    },
+    {
+      "source_name": "晝日忌木夜月怕計",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_35_017"
+      ]
+    },
+    {
+      "source_name": "暗耗拱田財",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_29_001"
+      ]
+    },
+    {
+      "source_name": "月到金牛",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_037"
+      ]
+    },
+    {
+      "source_name": "月升滄海",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_038"
+      ]
+    },
+    {
+      "source_name": "月強主旺夫子",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_35_007"
+      ]
+    },
+    {
+      "source_name": "月扶斗柄",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_020"
+      ]
+    },
+    {
+      "source_name": "月掛柳梢",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_030"
+      ]
+    },
+    {
+      "source_name": "月明斗府",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_32_008"
+      ]
+    },
+    {
+      "source_name": "月華金闕",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_030"
+      ]
+    },
+    {
+      "source_name": "月遶崑崙",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_034"
+      ]
+    },
+    {
+      "source_name": "望前木氣",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_36_016"
+      ]
+    },
+    {
+      "source_name": "木上水井",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_034"
+      ]
+    },
+    {
+      "source_name": "木主壽長",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_35_002"
+      ]
+    },
+    {
+      "source_name": "木入秦川",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_027"
+      ]
+    },
+    {
+      "source_name": "木土相會",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_033"
+      ]
+    },
+    {
+      "source_name": "木寅",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_34_003"
+      ]
+    },
+    {
+      "source_name": "木月清貴",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_03_011"
+      ]
+    },
+    {
+      "source_name": "木未鬼度",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_34_004"
+      ]
+    },
+    {
+      "source_name": "木氣聯枝",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_08_002"
+      ]
+    },
+    {
+      "source_name": "木氣腳疾風腸",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_35_022"
+      ]
+    },
+    {
+      "source_name": "木火文明",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_03_015"
+      ]
+    },
+    {
+      "source_name": "木羅",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_36_004"
+      ]
+    },
+    {
+      "source_name": "木臨熒室",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_044"
+      ]
+    },
+    {
+      "source_name": "木計同寅",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_009"
+      ]
+    },
+    {
+      "source_name": "木計逢魚",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_046"
+      ]
+    },
+    {
+      "source_name": "木躔角道",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_017"
+      ]
+    },
+    {
+      "source_name": "朱雀御符",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_03_020"
+      ]
+    },
+    {
+      "source_name": "殺上加殺",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_30_006"
+      ]
+    },
+    {
+      "source_name": "殺夾身命",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_30_004"
+      ]
+    },
+    {
+      "source_name": "殺拱身命",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_30_012"
+      ]
+    },
+    {
+      "source_name": "殺星入殺",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_30_011"
+      ]
+    },
+    {
+      "source_name": "殺星圍身",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_30_013"
+      ]
+    },
+    {
+      "source_name": "殺神出照",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_30_010"
+      ]
+    },
+    {
+      "source_name": "殺神拱主",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_30_007"
+      ]
+    },
+    {
+      "source_name": "殺臨命主",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_30_003"
+      ]
+    },
+    {
+      "source_name": "殺與惡星同黨",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_29_007"
+      ]
+    },
+    {
+      "source_name": "殿駕拱刑囚",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_28_008"
+      ]
+    },
+    {
+      "source_name": "氣孛朝斗",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_08_011"
+      ]
+    },
+    {
+      "source_name": "氣羅剋子",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_35_011"
+      ]
+    },
+    {
+      "source_name": "水名榮顯",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_025"
+      ]
+    },
+    {
+      "source_name": "水土遭刑",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_32_011"
+      ]
+    },
+    {
+      "source_name": "水孛",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_36_005"
+      ]
+    },
+    {
+      "source_name": "水孛倡優",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_35_010"
+      ]
+    },
+    {
+      "source_name": "水愛逢金",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_006"
+      ]
+    },
+    {
+      "source_name": "水月巳",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_34_005"
+      ]
+    },
+    {
+      "source_name": "水氣空華",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_36_013"
+      ]
+    },
+    {
+      "source_name": "水注東南",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_037"
+      ]
+    },
+    {
+      "source_name": "水涵蟾魄",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_03_014"
+      ]
+    },
+    {
+      "source_name": "水清寶瓶",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_001"
+      ]
+    },
+    {
+      "source_name": "水潤金明",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_015"
+      ]
+    },
+    {
+      "source_name": "水火午",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_34_013"
+      ]
+    },
+    {
+      "source_name": "水火相刑",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_32_004"
+      ]
+    },
+    {
+      "source_name": "水田",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_34_015"
+      ]
+    },
+    {
+      "source_name": "水臨雙女",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_022"
+      ]
+    },
+    {
+      "source_name": "水財",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_34_014"
+      ]
+    },
+    {
+      "source_name": "水陽相會",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_024"
+      ]
+    },
+    {
+      "source_name": "火卯",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_34_006"
+      ]
+    },
+    {
+      "source_name": "火土得牛",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_008"
+      ]
+    },
+    {
+      "source_name": "火土高強",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_03_016"
+      ]
+    },
+    {
+      "source_name": "火孛擎天",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_08_012"
+      ]
+    },
+    {
+      "source_name": "火居婁宿",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_040"
+      ]
+    },
+    {
+      "source_name": "火明天市",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_012"
+      ]
+    },
+    {
+      "source_name": "火月同宵",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_03_012"
+      ]
+    },
+    {
+      "source_name": "火歸坤地",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_035"
+      ]
+    },
+    {
+      "source_name": "火水未濟",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_038"
+      ]
+    },
+    {
+      "source_name": "火申",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_34_011"
+      ]
+    },
+    {
+      "source_name": "火羅膿血",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_35_024"
+      ]
+    },
+    {
+      "source_name": "火號文昌",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_032"
+      ]
+    },
+    {
+      "source_name": "火計孛粗",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_35_005"
+      ]
+    },
+    {
+      "source_name": "火酉辰",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_34_010"
+      ]
+    },
+    {
+      "source_name": "玉女嫦娥",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_08_006"
+      ]
+    },
+    {
+      "source_name": "玉猴嘯月",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_08_005"
+      ]
+    },
+    {
+      "source_name": "玉猿守崑",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_08_003"
+      ]
+    },
+    {
+      "source_name": "田主失宮",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_20_002"
+      ]
+    },
+    {
+      "source_name": "田主失次",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_20_001"
+      ]
+    },
+    {
+      "source_name": "田主逢空",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_20_007"
+      ]
+    },
+    {
+      "source_name": "田元坐耗",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_20_006"
+      ]
+    },
+    {
+      "source_name": "田元失時",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_20_005"
+      ]
+    },
+    {
+      "source_name": "田元泄氣",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_20_004"
+      ]
+    },
+    {
+      "source_name": "田入閑極",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_20_008"
+      ]
+    },
+    {
+      "source_name": "田居疾厄",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_20_010"
+      ]
+    },
+    {
+      "source_name": "田居相貌",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_20_012"
+      ]
+    },
+    {
+      "source_name": "田星值剋",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_20_003"
+      ]
+    },
+    {
+      "source_name": "田星升殿",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_12_005"
+      ]
+    },
+    {
+      "source_name": "田落九宮",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_20_011"
+      ]
+    },
+    {
+      "source_name": "田財主失陷",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_29_004"
+      ]
+    },
+    {
+      "source_name": "田財值空耗",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_29_003"
+      ]
+    },
+    {
+      "source_name": "田財遇暗耗",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_29_002"
+      ]
+    },
+    {
+      "source_name": "男女數目",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_35_018"
+      ]
+    },
+    {
+      "source_name": "畢星好雨",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_016"
+      ]
+    },
+    {
+      "source_name": "白虎從駕",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_03_022"
+      ]
+    },
+    {
+      "source_name": "眾星拱北",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_011"
+      ]
+    },
+    {
+      "source_name": "眾星環月",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_035"
+      ]
+    },
+    {
+      "source_name": "神羊觸邪",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_013"
+      ]
+    },
+    {
+      "source_name": "祿居斗柄",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_14_011"
+      ]
+    },
+    {
+      "source_name": "祿馬",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_36_002"
+      ]
+    },
+    {
+      "source_name": "福入遷移",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_23_010"
+      ]
+    },
+    {
+      "source_name": "福星守命",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_15_005"
+      ]
+    },
+    {
+      "source_name": "福星逢生",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_15_004"
+      ]
+    },
+    {
+      "source_name": "空破守田",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_20_014"
+      ]
+    },
+    {
+      "source_name": "箕星好風",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_015"
+      ]
+    },
+    {
+      "source_name": "箕風斗口",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_32_013"
+      ]
+    },
+    {
+      "source_name": "精神具足",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_029"
+      ]
+    },
+    {
+      "source_name": "紫微四輔",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_028"
+      ]
+    },
+    {
+      "source_name": "縱關橫關",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_48_015"
+      ]
+    },
+    {
+      "source_name": "羅計",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_36_001"
+      ]
+    },
+    {
+      "source_name": "老人壽看木氣",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_35_015"
+      ]
+    },
+    {
+      "source_name": "蒼龍入井",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_08_008"
+      ]
+    },
+    {
+      "source_name": "虎嘯猿吟",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_08_010"
+      ]
+    },
+    {
+      "source_name": "虎踞龍盤",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_022"
+      ]
+    },
+    {
+      "source_name": "角木斷躔",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_32_002"
+      ]
+    },
+    {
+      "source_name": "計孛夭壽",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_35_025"
+      ]
+    },
+    {
+      "source_name": "財元逢泄",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_21_004"
+      ]
+    },
+    {
+      "source_name": "財居財位",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_13_003"
+      ]
+    },
+    {
+      "source_name": "財星值剋",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_21_003"
+      ]
+    },
+    {
+      "source_name": "財星失次",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_21_001"
+      ]
+    },
+    {
+      "source_name": "身命會刑囚值難",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_29_010"
+      ]
+    },
+    {
+      "source_name": "身命會殺",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_30_014"
+      ]
+    },
+    {
+      "source_name": "身命迎忌星",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_28_007"
+      ]
+    },
+    {
+      "source_name": "身坐刃雄",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_18_003"
+      ]
+    },
+    {
+      "source_name": "身居兄弟",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_18_007"
+      ]
+    },
+    {
+      "source_name": "身居八殺",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_08_018"
+      ]
+    },
+    {
+      "source_name": "身居劫的",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_18_004"
+      ]
+    },
+    {
+      "source_name": "身居相貌",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_18_011"
+      ]
+    },
+    {
+      "source_name": "身居福德",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_10_010"
+      ]
+    },
+    {
+      "source_name": "身居遷移",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_18_010"
+      ]
+    },
+    {
+      "source_name": "身居閑極",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_10_004"
+      ]
+    },
+    {
+      "source_name": "身臨疾厄",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_18_009"
+      ]
+    },
+    {
+      "source_name": "身臨耗符",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_18_006"
+      ]
+    },
+    {
+      "source_name": "身臨鋒廉",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_18_005"
+      ]
+    },
+    {
+      "source_name": "遷移夫星",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_36_008"
+      ]
+    },
+    {
+      "source_name": "金助月華",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_03_013",
+        "kk_49_036"
+      ]
+    },
+    {
+      "source_name": "金孛淫癆",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_35_021"
+      ]
+    },
+    {
+      "source_name": "金居乾位",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_036"
+      ]
+    },
+    {
+      "source_name": "金居衛分",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_043"
+      ]
+    },
+    {
+      "source_name": "金星入斗",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_32_012"
+      ]
+    },
+    {
+      "source_name": "金星助月",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_029"
+      ]
+    },
+    {
+      "source_name": "金昴",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_34_007"
+      ]
+    },
+    {
+      "source_name": "金木乘旺",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_042"
+      ]
+    },
+    {
+      "source_name": "金木亥室",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_34_001"
+      ]
+    },
+    {
+      "source_name": "金木子",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_34_012"
+      ]
+    },
+    {
+      "source_name": "金木氣",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_36_012"
+      ]
+    },
+    {
+      "source_name": "金木逢龍",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_014"
+      ]
+    },
+    {
+      "source_name": "金水",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_36_003",
+        "kk_36_006"
+      ]
+    },
+    {
+      "source_name": "金水孛咸",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_36_007"
+      ]
+    },
+    {
+      "source_name": "金水孛沐",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_36_011"
+      ]
+    },
+    {
+      "source_name": "金水性巧",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_35_004"
+      ]
+    },
+    {
+      "source_name": "金水會蛇",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_020"
+      ]
+    },
+    {
+      "source_name": "金火羅",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_36_014"
+      ]
+    },
+    {
+      "source_name": "金神持刃",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_32_005"
+      ]
+    },
+    {
+      "source_name": "金號太常",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_016"
+      ]
+    },
+    {
+      "source_name": "金躔鬼宿",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_026"
+      ]
+    },
+    {
+      "source_name": "金遷移",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_34_016"
+      ]
+    },
+    {
+      "source_name": "金騎人馬",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_32_003"
+      ]
+    },
+    {
+      "source_name": "金鶯宿柳",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_08_009"
+      ]
+    },
+    {
+      "source_name": "長庚朝斗",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_49_005"
+      ]
+    },
+    {
+      "source_name": "閑神誤進日月",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_29_009"
+      ]
+    },
+    {
+      "source_name": "闢拱闔拱",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_48_016"
+      ]
+    },
+    {
+      "source_name": "陰陽交輔",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_024"
+      ]
+    },
+    {
+      "source_name": "陰陽俱晦",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_02_009"
+      ]
+    },
+    {
+      "source_name": "陰陽類聚",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_010"
+      ]
+    },
+    {
+      "source_name": "雙魚戲水",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_08_004"
+      ]
+    },
+    {
+      "source_name": "離坎交會",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_023"
+      ]
+    },
+    {
+      "source_name": "青龍扶硯",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_03_019"
+      ]
+    },
+    {
+      "source_name": "非祿守祿位",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_30_019"
+      ]
+    },
+    {
+      "source_name": "風生浪擊",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_021"
+      ]
+    },
+    {
+      "source_name": "首攜龍角",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_008"
+      ]
+    },
+    {
+      "source_name": "鰲頭獨步",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_31_025"
+      ]
+    },
+    {
+      "source_name": "齊插寒梅",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_32_001"
+      ]
+    },
+    {
+      "source_name": "龍躍天池",
+      "class": "E",
+      "match_status": "source_only",
+      "source_ids": [
+        "kk_08_007"
+      ]
+    }
+  ],
+  "engine_file": "src/lib/kakkyoku_engine.ts（add()・addMutual()・性別切替の三項式・push() から生成される全格局名。エラー表示用「（rule error）」は除外）",
+  "normalization_map": {
+    "祿": "禄",
+    "氣": "気",
+    "炁": "気",
+    "气": "気",
+    "歲": "歳",
+    "鄉": "郷",
+    "乘": "乗",
+    "剋": "尅",
+    "會": "会",
+    "雜": "雑",
+    "戰": "戦",
+    "獨": "独",
+    "舍": "舎",
+    "從": "従",
+    "隨": "随",
+    "眾": "衆",
+    "兩": "両",
+    "澤": "沢",
+    "焰": "焔",
+    "當": "当",
+    "兒": "児",
+    "經": "経",
+    "勳": "勲",
+    "權": "権",
+    "陷": "陥",
+    "歸": "帰",
+    "樂": "楽",
+    "黃": "黄",
+    "對": "対",
+    "實": "実",
+    "寶": "宝",
+    "齊": "斉",
+    "處": "処",
+    "德": "徳",
+    "步": "歩",
+    "濟": "済",
+    "沉": "沈",
+    "與": "与",
+    "靈": "霊",
+    "臺": "台",
+    "滿": "満",
+    "顯": "顕",
+    "戲": "戯",
+    "學": "学",
+    "爭": "争",
+    "亂": "乱",
+    "雙": "双",
+    "劍": "剣",
+    "號": "号",
+    "邊": "辺",
+    "關": "関",
+    "闢": "闢",
+    "闔": "闔",
+    "縱": "縦",
+    "橫": "横",
+    "開": "開"
+  },
+  "similar_glyph_pairs_for_review_only": {
+    "攔": "欄",
+    "截": "載"
+  },
+  "usage": "現行エンジン228件と資料の対応表。C は自動統合しない（manual_review）",
+  "records": [
+    {
+      "app_name": "日居日位",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "日居日位"
+      ],
+      "source_ids": [
+        "kk_01_001"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "月入月垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "月入月垣"
+      ],
+      "source_ids": [
+        "kk_01_002"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "日至日躔",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "日到日躔"
+      ],
+      "candidate_ids": [
+        "kk_01_003"
+      ],
+      "notes": [
+        "自動統合しない。人による確認が必要"
+      ]
+    },
+    {
+      "app_name": "月升月殿",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "月升月殿"
+      ],
+      "source_ids": [
+        "kk_01_004"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "日東月西",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "日東月西"
+      ],
+      "source_ids": [
+        "kk_01_005"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "日南月北",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "日南月北"
+      ],
+      "source_ids": [
+        "kk_01_006"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "日月居垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "日月居垣"
+      ],
+      "source_ids": [
+        "kk_01_007"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "日月升殿",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "日月升殿"
+      ],
+      "source_ids": [
+        "kk_01_008"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "日居月位",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "日居月位"
+      ],
+      "source_ids": [
+        "kk_02_001"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "月到日宮",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "月到日宮"
+      ],
+      "source_ids": [
+        "kk_02_002"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "日北月南",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "日北月南"
+      ],
+      "source_ids": [
+        "kk_02_006"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "日西月東",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "日西月東"
+      ],
+      "source_ids": [
+        "kk_02_005"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "金木共躔",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "金木共躔"
+      ],
+      "source_ids": [
+        "kk_04_011"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "土水相激",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "土水相激"
+      ],
+      "source_ids": [
+        "kk_04_015"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "陰陽得地",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "陰陽得地"
+      ],
+      "source_ids": [
+        "kk_01_010"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "日月失所",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "日月失所"
+      ],
+      "source_ids": [
+        "kk_02_010"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "歳星居垣",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "歲星居垣"
+      ],
+      "source_ids": [
+        "kk_03_001"
+      ],
+      "normalization": [
+        {
+          "original": "歲",
+          "normalized": "歳"
+        }
+      ]
+    },
+    {
+      "app_name": "熒惑居垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "熒惑居垣"
+      ],
+      "source_ids": [
+        "kk_03_002"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "鎮星居垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "鎮星居垣"
+      ],
+      "source_ids": [
+        "kk_03_003"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "太白居垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "太白居垣"
+      ],
+      "source_ids": [
+        "kk_03_004"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "辰星居垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "辰星居垣"
+      ],
+      "source_ids": [
+        "kk_03_005"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "木星升殿",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "木星升殿"
+      ],
+      "source_ids": [
+        "kk_03_006"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "土星升殿",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "土星升殿"
+      ],
+      "source_ids": [
+        "kk_03_008"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "水星升殿",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "水星升殿"
+      ],
+      "source_ids": [
+        "kk_03_010"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "金星升殿",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "金星升殿"
+      ],
+      "source_ids": [
+        "kk_03_009"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "火星升殿",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "火星升殿"
+      ],
+      "source_ids": [
+        "kk_03_007"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "木入金郷",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "木入金鄉"
+      ],
+      "source_ids": [
+        "kk_04_001"
+      ],
+      "normalization": [
+        {
+          "original": "鄉",
+          "normalized": "郷"
+        }
+      ]
+    },
+    {
+      "app_name": "火居水地",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "火居水地"
+      ],
+      "source_ids": [
+        "kk_04_002"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "土在木宮",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "土在木宮"
+      ],
+      "source_ids": [
+        "kk_04_003"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "金乗火位",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "金乘火位"
+      ],
+      "source_ids": [
+        "kk_04_004"
+      ],
+      "normalization": [
+        {
+          "original": "乘",
+          "normalized": "乗"
+        }
+      ]
+    },
+    {
+      "app_name": "水居土室",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "水居土室"
+      ],
+      "source_ids": [
+        "kk_04_005"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "火到金郷",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "火到金鄉"
+      ],
+      "source_ids": [
+        "kk_04_006"
+      ],
+      "normalization": [
+        {
+          "original": "鄉",
+          "normalized": "郷"
+        }
+      ]
+    },
+    {
+      "app_name": "土居水地",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "土居水地"
+      ],
+      "source_ids": [
+        "kk_04_007"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "金在木宮",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "金在木宮"
+      ],
+      "source_ids": [
+        "kk_04_008"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "水乗火位",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "水乘火位"
+      ],
+      "source_ids": [
+        "kk_04_009"
+      ],
+      "normalization": [
+        {
+          "original": "乘",
+          "normalized": "乗"
+        }
+      ]
+    },
+    {
+      "app_name": "木入土室",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "木入土室"
+      ],
+      "source_ids": [
+        "kk_04_010"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "水火同歩",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "水火同步"
+      ],
+      "source_ids": [
+        "kk_04_012"
+      ],
+      "normalization": [
+        {
+          "original": "步",
+          "normalized": "歩"
+        }
+      ]
+    },
+    {
+      "app_name": "木土相尅",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "木土相剋"
+      ],
+      "source_ids": [
+        "kk_04_013"
+      ],
+      "normalization": [
+        {
+          "original": "剋",
+          "normalized": "尅"
+        }
+      ]
+    },
+    {
+      "app_name": "火金交戦",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "火金交戰"
+      ],
+      "source_ids": [
+        "kk_04_014"
+      ],
+      "normalization": [
+        {
+          "original": "戰",
+          "normalized": "戦"
+        }
+      ]
+    },
+    {
+      "app_name": "羅計中分",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "羅計中分"
+      ],
+      "source_ids": [
+        "kk_05_001"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "出乾入巽",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "出乾入巽"
+      ],
+      "source_ids": [
+        "kk_05_002",
+        "kk_48_004"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "一星跳垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "一星跳垣"
+      ],
+      "source_ids": [
+        "kk_05_005"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "首尾陰陽居四正",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "首尾陰陽居四正"
+      ],
+      "source_ids": [
+        "kk_05_015",
+        "kk_48_017"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "計孛同宮",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "計孛同宮"
+      ],
+      "source_ids": [
+        "kk_07_008"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "水計相刑",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "水計相刑"
+      ],
+      "source_ids": [
+        "kk_07_009"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "土孛混雑",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "土孛混雜"
+      ],
+      "source_ids": [
+        "kk_07_010"
+      ],
+      "normalization": [
+        {
+          "original": "雜",
+          "normalized": "雑"
+        }
+      ]
+    },
+    {
+      "app_name": "金羅同尅",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "金羅同剋"
+      ],
+      "source_ids": [
+        "kk_07_011"
+      ],
+      "normalization": [
+        {
+          "original": "剋",
+          "normalized": "尅"
+        }
+      ]
+    },
+    {
+      "app_name": "火孛共戦",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "火孛共戰"
+      ],
+      "source_ids": [
+        "kk_07_012"
+      ],
+      "normalization": [
+        {
+          "original": "戰",
+          "normalized": "戦"
+        }
+      ]
+    },
+    {
+      "app_name": "四餘独歩",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "四餘獨步"
+      ],
+      "source_ids": [
+        "kk_05_004"
+      ],
+      "normalization": [
+        {
+          "original": "獨",
+          "normalized": "独"
+        },
+        {
+          "original": "步",
+          "normalized": "歩"
+        }
+      ]
+    },
+    {
+      "app_name": "羅計欄載",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "羅計攔截"
+      ],
+      "candidate_ids": [
+        "kk_05_003"
+      ],
+      "notes": [
+        "自動統合しない。人による確認が必要"
+      ]
+    },
+    {
+      "app_name": "水火既済",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "水火既濟"
+      ],
+      "source_ids": [
+        "kk_06_021",
+        "kk_31_039",
+        "kk_37_008",
+        "kk_48_013"
+      ],
+      "normalization": [
+        {
+          "original": "濟",
+          "normalized": "済"
+        }
+      ]
+    },
+    {
+      "app_name": "水火相射",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "水火相射"
+      ],
+      "source_ids": [
+        "kk_07_015",
+        "kk_37_011"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "日月聯輝",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "日月聯輝"
+      ],
+      "source_ids": [
+        "kk_08_001"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "木羅会舎",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "木羅會舍"
+      ],
+      "source_ids": [
+        "kk_05_006",
+        "kk_49_010"
+      ],
+      "normalization": [
+        {
+          "original": "會",
+          "normalized": "会"
+        },
+        {
+          "original": "舍",
+          "normalized": "舎"
+        }
+      ]
+    },
+    {
+      "app_name": "火炁職権",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "火氣職權"
+      ],
+      "source_ids": [
+        "kk_05_007"
+      ],
+      "normalization": [
+        {
+          "original": "氣",
+          "normalized": "炁"
+        },
+        {
+          "original": "權",
+          "normalized": "権"
+        }
+      ]
+    },
+    {
+      "app_name": "木孛符印",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "木孛符印"
+      ],
+      "source_ids": [
+        "kk_05_008"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "身星升殿",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "身星升殿"
+      ],
+      "source_ids": [
+        "kk_10_001"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "身星入垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "身星入垣"
+      ],
+      "source_ids": [
+        "kk_10_002"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "身居財帛",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "身居財帛"
+      ],
+      "source_ids": [
+        "kk_10_003"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "身居田宅",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "身居田宅"
+      ],
+      "source_ids": [
+        "kk_10_005"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "身宮清吉",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "身星清吉"
+      ],
+      "candidate_ids": [
+        "kk_10_007"
+      ],
+      "notes": [
+        "自動統合しない。人による確認が必要"
+      ]
+    },
+    {
+      "app_name": "身居官禄",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "身居官祿"
+      ],
+      "source_ids": [
+        "kk_10_009"
+      ],
+      "normalization": [
+        {
+          "original": "祿",
+          "normalized": "禄"
+        }
+      ]
+    },
+    {
+      "app_name": "身坐崇勲",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "身坐崇勳"
+      ],
+      "source_ids": [
+        "kk_10_011"
+      ],
+      "normalization": [
+        {
+          "original": "勳",
+          "normalized": "勲"
+        }
+      ]
+    },
+    {
+      "app_name": "身星坐貴",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "身星坐貴"
+      ],
+      "source_ids": [
+        "kk_10_012"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "身臨卦気",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "身臨卦氣"
+      ],
+      "source_ids": [
+        "kk_10_013"
+      ],
+      "normalization": [
+        {
+          "original": "氣",
+          "normalized": "気"
+        }
+      ]
+    },
+    {
+      "app_name": "身居斗杓",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "身居斗杓"
+      ],
+      "source_ids": [
+        "kk_10_014"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "身坐長生",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "身坐長生"
+      ],
+      "source_ids": [
+        "kk_10_015"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "命主得経",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "命主得經"
+      ],
+      "source_ids": [
+        "kk_11_001"
+      ],
+      "normalization": [
+        {
+          "original": "經",
+          "normalized": "経"
+        }
+      ]
+    },
+    {
+      "app_name": "命主居垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "命主居垣"
+      ],
+      "source_ids": [
+        "kk_11_002"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "命主清吉",
+      "class": "D",
+      "match_status": "app_only",
+      "possible_candidates_for_review": [
+        "身星清吉",
+        "命主得經",
+        "命主居垣",
+        "命主乘旺",
+        "命主失經",
+        "命主失垣",
+        "命主受剋",
+        "命主失令"
+      ],
+      "notes": [
+        "資料に同名・表記差の格局が見つからない。意味は作成しない",
+        "2字違いの類似名あり（参考。統合しない）"
+      ]
+    },
+    {
+      "app_name": "命坐崇勲",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "命坐崇勳"
+      ],
+      "source_ids": [
+        "kk_11_014"
+      ],
+      "normalization": [
+        {
+          "original": "勳",
+          "normalized": "勲"
+        }
+      ]
+    },
+    {
+      "app_name": "命坐貴人",
+      "class": "D",
+      "match_status": "app_only",
+      "possible_candidates_for_review": [
+        "命坐玉堂",
+        "命坐長生",
+        "命坐崇勳",
+        "命坐斗杓",
+        "命坐刃權"
+      ],
+      "notes": [
+        "資料に同名・表記差の格局が見つからない。意味は作成しない",
+        "2字違いの類似名あり（参考。統合しない）"
+      ]
+    },
+    {
+      "app_name": "命坐斗杓",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "命坐斗杓"
+      ],
+      "source_ids": [
+        "kk_11_016"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "命坐長生",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "命坐長生"
+      ],
+      "source_ids": [
+        "kk_11_011"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "祥雲捧月",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "祥雲捧月"
+      ],
+      "source_ids": [
+        "kk_05_009",
+        "kk_32_009"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "太乙抱蟾",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "太乙抱蟾"
+      ],
+      "source_ids": [
+        "kk_05_010",
+        "kk_32_010",
+        "kk_49_028"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "羅月交輝",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "羅月交輝"
+      ],
+      "source_ids": [
+        "kk_05_011"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "首星捧日",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "首星捧日"
+      ],
+      "source_ids": [
+        "kk_05_012"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "金計動垣",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "金計同垣"
+      ],
+      "candidate_ids": [
+        "kk_05_013"
+      ],
+      "notes": [
+        "自動統合しない。人による確認が必要"
+      ]
+    },
+    {
+      "app_name": "土羅相会",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "土羅相會"
+      ],
+      "source_ids": [
+        "kk_05_014",
+        "kk_49_019"
+      ],
+      "normalization": [
+        {
+          "original": "會",
+          "normalized": "会"
+        }
+      ]
+    },
+    {
+      "app_name": "火羅計孛守四雑",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "火羅計孛守四維"
+      ],
+      "candidate_ids": [
+        "kk_05_016",
+        "kk_48_018"
+      ],
+      "notes": [
+        "自動統合しない。人による確認が必要"
+      ]
+    },
+    {
+      "app_name": "金水従陽",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "金水從陽"
+      ],
+      "source_ids": [
+        "kk_06_001"
+      ],
+      "normalization": [
+        {
+          "original": "從",
+          "normalized": "従"
+        }
+      ]
+    },
+    {
+      "app_name": "火金侍月",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "火金侍月"
+      ],
+      "source_ids": [
+        "kk_06_002"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "五曜環陽",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "五曜環陽"
+      ],
+      "source_ids": [
+        "kk_06_003"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "四餘捧月",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "四餘捧月"
+      ],
+      "source_ids": [
+        "kk_06_004"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "五曜随陽",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "五曜隨陽"
+      ],
+      "source_ids": [
+        "kk_06_005"
+      ],
+      "normalization": [
+        {
+          "original": "隨",
+          "normalized": "随"
+        }
+      ]
+    },
+    {
+      "app_name": "五星随月",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "五星隨月"
+      ],
+      "source_ids": [
+        "kk_06_006"
+      ],
+      "normalization": [
+        {
+          "original": "隨",
+          "normalized": "随"
+        }
+      ]
+    },
+    {
+      "app_name": "三台合格",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "三台合格"
+      ],
+      "source_ids": [
+        "kk_06_008"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "五曜連珠",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "五曜連珠"
+      ],
+      "source_ids": [
+        "kk_06_009",
+        "kk_48_001"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "二星合壁",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "二星合壁"
+      ],
+      "source_ids": [
+        "kk_37_001",
+        "kk_48_002"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "衆曜拱南",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "眾曜拱南"
+      ],
+      "source_ids": [
+        "kk_06_011",
+        "kk_37_006",
+        "kk_48_010"
+      ],
+      "normalization": [
+        {
+          "original": "眾",
+          "normalized": "衆"
+        }
+      ]
+    },
+    {
+      "app_name": "群星朝北",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "群星朝北"
+      ],
+      "source_ids": [
+        "kk_06_012",
+        "kk_37_005",
+        "kk_48_009"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "居三隔三",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "居三隔三"
+      ],
+      "source_ids": [
+        "kk_06_013",
+        "kk_37_003",
+        "kk_48_008"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "守一空一",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "守一空一"
+      ],
+      "source_ids": [
+        "kk_06_014",
+        "kk_37_002",
+        "kk_48_007"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "文武両班",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "文武兩班"
+      ],
+      "source_ids": [
+        "kk_06_015",
+        "kk_48_005"
+      ],
+      "normalization": [
+        {
+          "original": "兩",
+          "normalized": "両"
+        }
+      ]
+    },
+    {
+      "app_name": "君臣慶会",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "君臣慶會"
+      ],
+      "source_ids": [
+        "kk_06_016",
+        "kk_48_006"
+      ],
+      "normalization": [
+        {
+          "original": "會",
+          "normalized": "会"
+        }
+      ]
+    },
+    {
+      "app_name": "載天覆地",
+      "class": "D",
+      "match_status": "app_only",
+      "possible_candidates_for_review": [
+        "戴天履地"
+      ],
+      "notes": [
+        "資料に同名・表記差の格局が見つからない。意味は作成しない",
+        "2字違いの類似名あり（参考。統合しない）"
+      ]
+    },
+    {
+      "app_name": "出乾入坤",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "出乾入坤"
+      ],
+      "source_ids": [
+        "kk_06_018"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "天地開名",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "天地開明"
+      ],
+      "candidate_ids": [
+        "kk_06_019",
+        "kk_48_011"
+      ],
+      "notes": [
+        "自動統合しない。人による確認が必要"
+      ]
+    },
+    {
+      "app_name": "山沢通気",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "山澤通氣"
+      ],
+      "source_ids": [
+        "kk_06_020",
+        "kk_37_007",
+        "kk_48_012"
+      ],
+      "normalization": [
+        {
+          "original": "澤",
+          "normalized": "沢"
+        },
+        {
+          "original": "氣",
+          "normalized": "気"
+        }
+      ]
+    },
+    {
+      "app_name": "風雷鼓舞",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "風雷鼓舞"
+      ],
+      "source_ids": [
+        "kk_06_022",
+        "kk_37_009",
+        "kk_48_014"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "火羅犯日",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "火羅犯日"
+      ],
+      "source_ids": [
+        "kk_07_001"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "土計掩月",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "土計掩月"
+      ],
+      "source_ids": [
+        "kk_07_002"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "四餘侵陽",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "四餘侵陽"
+      ],
+      "source_ids": [
+        "kk_07_003"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "五星失次",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "五星失次"
+      ],
+      "source_ids": [
+        "kk_07_004"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "木蔽陽光",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "木蔽陽光"
+      ],
+      "source_ids": [
+        "kk_07_005"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "月員火焔",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "月圓火焰"
+      ],
+      "candidate_ids": [
+        "kk_07_006"
+      ],
+      "notes": [
+        "自動統合しない。人による確認が必要"
+      ]
+    },
+    {
+      "app_name": "孛羅交戦",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "孛羅交戰"
+      ],
+      "source_ids": [
+        "kk_07_007"
+      ],
+      "normalization": [
+        {
+          "original": "戰",
+          "normalized": "戦"
+        }
+      ]
+    },
+    {
+      "app_name": "乾坤否塞",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "乾坤否塞"
+      ],
+      "source_ids": [
+        "kk_07_013"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "風雷相薄",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "風雷相薄"
+      ],
+      "source_ids": [
+        "kk_07_014",
+        "kk_37_010"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "山沢沈埋",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "山澤沉埋"
+      ],
+      "source_ids": [
+        "kk_07_016",
+        "kk_37_012"
+      ],
+      "normalization": [
+        {
+          "original": "澤",
+          "normalized": "沢"
+        },
+        {
+          "original": "沉",
+          "normalized": "沈"
+        }
+      ]
+    },
+    {
+      "app_name": "七政入垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "七政入垣"
+      ],
+      "source_ids": [
+        "kk_06_007"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "日月拱命",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "日月拱命"
+      ],
+      "source_ids": [
+        "kk_01_017"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "日月夾命",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "日月夾命"
+      ],
+      "source_ids": [
+        "kk_01_018"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "日月夾疾厄",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "日月夾疾厄"
+      ],
+      "source_ids": [
+        "kk_02_022"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "日月夾遷移",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "日月夾遷移"
+      ],
+      "source_ids": [
+        "kk_02_024"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "日月夾兄弟",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "日月夾兄弟"
+      ],
+      "source_ids": [
+        "kk_02_026"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "日月夾相貌",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "日月夾相貌"
+      ],
+      "source_ids": [
+        "kk_02_028"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "日月拱相貌",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "日月拱相貌"
+      ],
+      "source_ids": [
+        "kk_02_027"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "勾陳鎮殿",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "勾陳鎮殿"
+      ],
+      "source_ids": [
+        "kk_03_021"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "五星循環",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "五星循環"
+      ],
+      "source_ids": [
+        "kk_03_024"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "五星聚会",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "五星聚會"
+      ],
+      "source_ids": [
+        "kk_03_025"
+      ],
+      "normalization": [
+        {
+          "original": "會",
+          "normalized": "会"
+        }
+      ]
+    },
+    {
+      "app_name": "五星入廟",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "五星入廟"
+      ],
+      "source_ids": [
+        "kk_03_026"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "五星入垣",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "五星入廟",
+        "五星入旺",
+        "身星入垣",
+        "田星入垣",
+        "財星入垣",
+        "官星入垣"
+      ],
+      "candidate_ids": [
+        "kk_03_026",
+        "kk_03_027",
+        "kk_10_002",
+        "kk_12_001",
+        "kk_13_002",
+        "kk_14_002"
+      ],
+      "notes": [
+        "自動統合しない。人による確認が必要"
+      ]
+    },
+    {
+      "app_name": "身居帝旺",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "身居帝旺"
+      ],
+      "source_ids": [
+        "kk_10_016"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "命臨財帛",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "命臨財帛"
+      ],
+      "source_ids": [
+        "kk_11_003"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "命臨田宅",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "命臨田宅"
+      ],
+      "source_ids": [
+        "kk_11_004"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "命臨子位",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "命臨子位"
+      ],
+      "source_ids": [
+        "kk_11_005"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "命臨官禄",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "命臨官祿"
+      ],
+      "source_ids": [
+        "kk_11_007"
+      ],
+      "normalization": [
+        {
+          "original": "祿",
+          "normalized": "禄"
+        }
+      ]
+    },
+    {
+      "app_name": "命臨福徳",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "命臨福德"
+      ],
+      "source_ids": [
+        "kk_11_008"
+      ],
+      "normalization": [
+        {
+          "original": "德",
+          "normalized": "徳"
+        }
+      ]
+    },
+    {
+      "app_name": "金水相涵",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "金水相涵"
+      ],
+      "source_ids": [
+        "kk_03_018"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "金水相生",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "金水相涵"
+      ],
+      "candidate_ids": [
+        "kk_03_018"
+      ],
+      "notes": [
+        "自動統合しない。人による確認が必要"
+      ]
+    },
+    {
+      "app_name": "日月合壁",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "日月合璧"
+      ],
+      "candidate_ids": [
+        "kk_31_002"
+      ],
+      "notes": [
+        "自動統合しない。人による確認が必要"
+      ]
+    },
+    {
+      "app_name": "大月当斗",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "大月當斗"
+      ],
+      "source_ids": [
+        "kk_31_017"
+      ],
+      "normalization": [
+        {
+          "original": "當",
+          "normalized": "当"
+        }
+      ]
+    },
+    {
+      "app_name": "計居龍尾",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "計居龍尾"
+      ],
+      "source_ids": [
+        "kk_31_009"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "身居男女",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "身居男女"
+      ],
+      "source_ids": [
+        "kk_10_006"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "財星守児",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "財星守兒"
+      ],
+      "source_ids": [
+        "kk_13_005"
+      ],
+      "normalization": [
+        {
+          "original": "兒",
+          "normalized": "児"
+        }
+      ]
+    },
+    {
+      "app_name": "福主児宮",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "福守兒宮"
+      ],
+      "candidate_ids": [
+        "kk_15_008"
+      ],
+      "notes": [
+        "自動統合しない。人による確認が必要"
+      ]
+    },
+    {
+      "app_name": "命主乗旺",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "命主乘旺"
+      ],
+      "source_ids": [
+        "kk_11_009"
+      ],
+      "normalization": [
+        {
+          "original": "乘",
+          "normalized": "乗"
+        }
+      ]
+    },
+    {
+      "app_name": "命坐玉堂",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "命坐玉堂"
+      ],
+      "source_ids": [
+        "kk_11_010"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "命臨帝旺",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "命臨帝旺"
+      ],
+      "source_ids": [
+        "kk_11_012"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "命坐禄勲",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "命坐崇勳"
+      ],
+      "candidate_ids": [
+        "kk_11_014"
+      ],
+      "notes": [
+        "自動統合しない。人による確認が必要"
+      ]
+    },
+    {
+      "app_name": "命安馬地",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "命安馬地"
+      ],
+      "source_ids": [
+        "kk_11_015"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "田星入垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "田星入垣"
+      ],
+      "source_ids": [
+        "kk_12_001"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "田主守命",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "田主守命"
+      ],
+      "source_ids": [
+        "kk_12_002"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "田星財垣",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "田星入垣",
+        "田入財垣"
+      ],
+      "candidate_ids": [
+        "kk_12_001",
+        "kk_12_003"
+      ],
+      "notes": [
+        "自動統合しない。人による確認が必要"
+      ]
+    },
+    {
+      "app_name": "田居田位",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "田居田位"
+      ],
+      "source_ids": [
+        "kk_12_004"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "田居児位",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "田居兒位"
+      ],
+      "source_ids": [
+        "kk_12_006"
+      ],
+      "normalization": [
+        {
+          "original": "兒",
+          "normalized": "児"
+        }
+      ]
+    },
+    {
+      "app_name": "田入官禄",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "田入官祿"
+      ],
+      "source_ids": [
+        "kk_12_008"
+      ],
+      "normalization": [
+        {
+          "original": "祿",
+          "normalized": "禄"
+        }
+      ]
+    },
+    {
+      "app_name": "田入福宮",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "田入福宮"
+      ],
+      "source_ids": [
+        "kk_12_009"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "田星乗令",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "田星秉令"
+      ],
+      "candidate_ids": [
+        "kk_12_010"
+      ],
+      "notes": [
+        "自動統合しない。人による確認が必要"
+      ]
+    },
+    {
+      "app_name": "財星升殿",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "財星升殿"
+      ],
+      "source_ids": [
+        "kk_13_001"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "財星入垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "財星入垣"
+      ],
+      "source_ids": [
+        "kk_13_002"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "財入田垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "財入田垣"
+      ],
+      "source_ids": [
+        "kk_13_004"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "財見守児",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "財星守兒"
+      ],
+      "candidate_ids": [
+        "kk_13_005"
+      ],
+      "notes": [
+        "自動統合しない。人による確認が必要"
+      ]
+    },
+    {
+      "app_name": "財居官禄",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "財居官祿"
+      ],
+      "source_ids": [
+        "kk_13_007"
+      ],
+      "normalization": [
+        {
+          "original": "祿",
+          "normalized": "禄"
+        }
+      ]
+    },
+    {
+      "app_name": "財入福宮",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "財入福宮"
+      ],
+      "source_ids": [
+        "kk_13_008"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "財星秉令",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "財星秉令"
+      ],
+      "source_ids": [
+        "kk_13_009"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "官星升殿",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "官星升殿"
+      ],
+      "source_ids": [
+        "kk_14_001"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "官星入垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "官星入垣"
+      ],
+      "source_ids": [
+        "kk_14_002"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "禄守財宮",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "祿守財宮"
+      ],
+      "source_ids": [
+        "kk_14_004"
+      ],
+      "normalization": [
+        {
+          "original": "祿",
+          "normalized": "禄"
+        }
+      ]
+    },
+    {
+      "app_name": "禄守児宮",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "祿守兒宮"
+      ],
+      "source_ids": [
+        "kk_14_006"
+      ],
+      "normalization": [
+        {
+          "original": "祿",
+          "normalized": "禄"
+        },
+        {
+          "original": "兒",
+          "normalized": "児"
+        }
+      ]
+    },
+    {
+      "app_name": "禄居福位",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "祿居福位"
+      ],
+      "source_ids": [
+        "kk_14_008"
+      ],
+      "normalization": [
+        {
+          "original": "祿",
+          "normalized": "禄"
+        }
+      ]
+    },
+    {
+      "app_name": "官曜居官",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "官曜居宮"
+      ],
+      "candidate_ids": [
+        "kk_14_009"
+      ],
+      "notes": [
+        "自動統合しない。人による確認が必要"
+      ]
+    },
+    {
+      "app_name": "官星秉令",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "官星秉令"
+      ],
+      "source_ids": [
+        "kk_14_010"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "禄居斗杓",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "祿居斗杓"
+      ],
+      "source_ids": [
+        "kk_08_015"
+      ],
+      "normalization": [
+        {
+          "original": "祿",
+          "normalized": "禄"
+        }
+      ]
+    },
+    {
+      "app_name": "福星升殿",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "福星升殿"
+      ],
+      "source_ids": [
+        "kk_15_001"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "福星居垣",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "歲星居垣",
+        "鎮星居垣",
+        "辰星居垣",
+        "福主居垣",
+        "妻星居垣"
+      ],
+      "candidate_ids": [
+        "kk_03_001",
+        "kk_03_003",
+        "kk_03_005",
+        "kk_15_002",
+        "kk_16_002"
+      ],
+      "notes": [
+        "自動統合しない。人による確認が必要"
+      ]
+    },
+    {
+      "app_name": "福限秉令",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "福元秉令"
+      ],
+      "candidate_ids": [
+        "kk_15_003"
+      ],
+      "notes": [
+        "自動統合しない。人による確認が必要"
+      ]
+    },
+    {
+      "app_name": "財主逢空",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "財主逢空"
+      ],
+      "source_ids": [
+        "kk_21_006"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "財星坐耗",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "財星坐耗"
+      ],
+      "source_ids": [
+        "kk_21_007"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "財入兄弟",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "財入兄弟"
+      ],
+      "source_ids": [
+        "kk_21_008"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "財入奴宮",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "財入福宮",
+        "身入奴宮",
+        "田入奴宮",
+        "財入故宮",
+        "子入奴宮"
+      ],
+      "candidate_ids": [
+        "kk_13_008",
+        "kk_18_008",
+        "kk_20_009",
+        "kk_21_009",
+        "kk_25_008"
+      ],
+      "notes": [
+        "自動統合しない。人による確認が必要"
+      ]
+    },
+    {
+      "app_name": "財臨疾厄",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "財臨疾厄"
+      ],
+      "source_ids": [
+        "kk_21_010"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "財入遷移",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "財入遷移"
+      ],
+      "source_ids": [
+        "kk_21_011"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "財居相貌",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "財居相貌"
+      ],
+      "source_ids": [
+        "kk_21_012"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "劫空守財",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "劫空守財"
+      ],
+      "source_ids": [
+        "kk_21_013"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "耗破守財",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "耗破守財"
+      ],
+      "source_ids": [
+        "kk_21_014"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "禄主失次",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "祿主失次"
+      ],
+      "source_ids": [
+        "kk_22_001"
+      ],
+      "normalization": [
+        {
+          "original": "祿",
+          "normalized": "禄"
+        }
+      ]
+    },
+    {
+      "app_name": "禄主失垣",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "命主失垣",
+        "財主失垣",
+        "祿主失次",
+        "妻主失垣",
+        "嗣主失垣"
+      ],
+      "candidate_ids": [
+        "kk_19_002",
+        "kk_21_002",
+        "kk_22_001",
+        "kk_24_002",
+        "kk_25_002"
+      ],
+      "notes": [
+        "自動統合しない。人による確認が必要"
+      ]
+    },
+    {
+      "app_name": "禄主受尅",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "祿主受剋"
+      ],
+      "source_ids": [
+        "kk_22_003"
+      ],
+      "normalization": [
+        {
+          "original": "祿",
+          "normalized": "禄"
+        },
+        {
+          "original": "剋",
+          "normalized": "尅"
+        }
+      ]
+    },
+    {
+      "app_name": "官星失令",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "官星失令"
+      ],
+      "source_ids": [
+        "kk_22_004"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "禄主逢空",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "祿主逢空"
+      ],
+      "source_ids": [
+        "kk_22_005"
+      ],
+      "normalization": [
+        {
+          "original": "祿",
+          "normalized": "禄"
+        }
+      ]
+    },
+    {
+      "app_name": "官星泄気",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "官星泄氣"
+      ],
+      "source_ids": [
+        "kk_22_006"
+      ],
+      "normalization": [
+        {
+          "original": "氣",
+          "normalized": "気"
+        }
+      ]
+    },
+    {
+      "app_name": "宮禄尅命",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "官祿剋命"
+      ],
+      "candidate_ids": [
+        "kk_22_007"
+      ],
+      "notes": [
+        "自動統合しない。人による確認が必要"
+      ]
+    },
+    {
+      "app_name": "禄居閑極",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "祿居閑極"
+      ],
+      "source_ids": [
+        "kk_22_008"
+      ],
+      "normalization": [
+        {
+          "original": "祿",
+          "normalized": "禄"
+        }
+      ]
+    },
+    {
+      "app_name": "禄陥奴宮",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "祿陷奴宮"
+      ],
+      "source_ids": [
+        "kk_22_009"
+      ],
+      "normalization": [
+        {
+          "original": "祿",
+          "normalized": "禄"
+        },
+        {
+          "original": "陷",
+          "normalized": "陥"
+        }
+      ]
+    },
+    {
+      "app_name": "禄入疾厄",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "祿入疾厄"
+      ],
+      "source_ids": [
+        "kk_22_010"
+      ],
+      "normalization": [
+        {
+          "original": "祿",
+          "normalized": "禄"
+        }
+      ]
+    },
+    {
+      "app_name": "禄守遷移",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "祿守遷移"
+      ],
+      "source_ids": [
+        "kk_22_011"
+      ],
+      "normalization": [
+        {
+          "original": "祿",
+          "normalized": "禄"
+        }
+      ]
+    },
+    {
+      "app_name": "禄居相貌",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "祿居相貌"
+      ],
+      "source_ids": [
+        "kk_22_012"
+      ],
+      "normalization": [
+        {
+          "original": "祿",
+          "normalized": "禄"
+        }
+      ]
+    },
+    {
+      "app_name": "十位逢羅",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "十位逢羅"
+      ],
+      "source_ids": [
+        "kk_22_013"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "雄破禄宮",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "雄破祿宮"
+      ],
+      "source_ids": [
+        "kk_22_014"
+      ],
+      "normalization": [
+        {
+          "original": "祿",
+          "normalized": "禄"
+        }
+      ]
+    },
+    {
+      "app_name": "福星失経",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "身星失經",
+        "福主失經",
+        "福星失令",
+        "子星失經"
+      ],
+      "candidate_ids": [
+        "kk_18_001",
+        "kk_23_001",
+        "kk_23_004",
+        "kk_25_001"
+      ],
+      "notes": [
+        "自動統合しない。人による確認が必要"
+      ]
+    },
+    {
+      "app_name": "福元失垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "福元失垣"
+      ],
+      "source_ids": [
+        "kk_23_002"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "福主受尅",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "福主受剋"
+      ],
+      "source_ids": [
+        "kk_23_003"
+      ],
+      "normalization": [
+        {
+          "original": "剋",
+          "normalized": "尅"
+        }
+      ]
+    },
+    {
+      "app_name": "福主失令",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "命主失令",
+        "福主失經",
+        "福星失令"
+      ],
+      "candidate_ids": [
+        "kk_19_004",
+        "kk_23_001",
+        "kk_23_004"
+      ],
+      "notes": [
+        "自動統合しない。人による確認が必要"
+      ]
+    },
+    {
+      "app_name": "福主逢空",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "福主逢空"
+      ],
+      "source_ids": [
+        "kk_23_005"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "福元泄气",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "福元泄氣"
+      ],
+      "source_ids": [
+        "kk_23_006"
+      ],
+      "normalization": [
+        {
+          "original": "氣",
+          "normalized": "气"
+        }
+      ]
+    },
+    {
+      "app_name": "福入閑宮",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "福入閑宮"
+      ],
+      "source_ids": [
+        "kk_23_007"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "福閑奴宮",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "福陷奴宮"
+      ],
+      "candidate_ids": [
+        "kk_23_008"
+      ],
+      "notes": [
+        "自動統合しない。人による確認が必要"
+      ]
+    },
+    {
+      "app_name": "福居厄地",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "福居厄地"
+      ],
+      "source_ids": [
+        "kk_23_009"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "福居相貌",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "福居相貌"
+      ],
+      "source_ids": [
+        "kk_23_011"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "福宮坐刃",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "福宮坐刃"
+      ],
+      "source_ids": [
+        "kk_23_012"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "妻星失躔",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "妻星失躔"
+      ],
+      "source_ids": [
+        "kk_24_001"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "妻星失垣",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "妻星居垣",
+        "身星失垣",
+        "官星失垣",
+        "妻星失躔",
+        "妻主失垣"
+      ],
+      "candidate_ids": [
+        "kk_16_002",
+        "kk_18_002",
+        "kk_22_002",
+        "kk_24_001",
+        "kk_24_002"
+      ],
+      "notes": [
+        "自動統合しない。人による確認が必要"
+      ]
+    },
+    {
+      "app_name": "妻星被尅",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "妻星被剋"
+      ],
+      "source_ids": [
+        "kk_24_003"
+      ],
+      "normalization": [
+        {
+          "original": "剋",
+          "normalized": "尅"
+        }
+      ]
+    },
+    {
+      "app_name": "妻元泄气",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "妻元泄氣"
+      ],
+      "source_ids": [
+        "kk_24_005"
+      ],
+      "normalization": [
+        {
+          "original": "氣",
+          "normalized": "气"
+        }
+      ]
+    },
+    {
+      "app_name": "妻主逢空",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "妻主逢空"
+      ],
+      "source_ids": [
+        "kk_24_006"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "妻入閑宮",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "妻入閑宮"
+      ],
+      "source_ids": [
+        "kk_24_007"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "妻陥奴宮",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "妻陷奴宮"
+      ],
+      "source_ids": [
+        "kk_24_008"
+      ],
+      "normalization": [
+        {
+          "original": "陷",
+          "normalized": "陥"
+        }
+      ]
+    },
+    {
+      "app_name": "妻臨疾厄",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "妻臨疾厄"
+      ],
+      "source_ids": [
+        "kk_24_009"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "妻居遷移",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "妻居遷移"
+      ],
+      "source_ids": [
+        "kk_24_010"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "妻居貌位",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "妻居貌位"
+      ],
+      "source_ids": [
+        "kk_24_011"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "地雌戦室",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "地雌戰室"
+      ],
+      "source_ids": [
+        "kk_24_012"
+      ],
+      "normalization": [
+        {
+          "original": "戰",
+          "normalized": "戦"
+        }
+      ]
+    },
+    {
+      "app_name": "陽刃臨妻",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "陽刃臨妻"
+      ],
+      "source_ids": [
+        "kk_24_013"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "子星失経",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "子星失經"
+      ],
+      "source_ids": [
+        "kk_25_001"
+      ],
+      "normalization": [
+        {
+          "original": "經",
+          "normalized": "経"
+        }
+      ]
+    },
+    {
+      "app_name": "嗣主失垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "嗣主失垣"
+      ],
+      "source_ids": [
+        "kk_25_002"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "子星受尅",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "子星受剋"
+      ],
+      "source_ids": [
+        "kk_25_003"
+      ],
+      "normalization": [
+        {
+          "original": "剋",
+          "normalized": "尅"
+        }
+      ]
+    },
+    {
+      "app_name": "嗣星失令",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "財星失令",
+        "官星失令",
+        "福星失令",
+        "嗣星失位"
+      ],
+      "candidate_ids": [
+        "kk_21_005",
+        "kk_22_004",
+        "kk_23_004",
+        "kk_25_004"
+      ],
+      "notes": [
+        "自動統合しない。人による確認が必要"
+      ]
+    },
+    {
+      "app_name": "嗣星泄气",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "嗣星泄氣"
+      ],
+      "source_ids": [
+        "kk_25_005"
+      ],
+      "normalization": [
+        {
+          "original": "氣",
+          "normalized": "气"
+        }
+      ]
+    },
+    {
+      "app_name": "嗣星逢空",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "嗣星逢空"
+      ],
+      "source_ids": [
+        "kk_25_006"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "福主財宮",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "福守財宮"
+      ],
+      "candidate_ids": [
+        "kk_15_006"
+      ],
+      "notes": [
+        "自動統合しない。人による確認が必要"
+      ]
+    },
+    {
+      "app_name": "福居田宅",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "福居田宅"
+      ],
+      "source_ids": [
+        "kk_15_007"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "福星守福",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "福星守福"
+      ],
+      "source_ids": [
+        "kk_15_010"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "福入禄宮",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "福入祿宮"
+      ],
+      "source_ids": [
+        "kk_15_011"
+      ],
+      "normalization": [
+        {
+          "original": "祿",
+          "normalized": "禄"
+        }
+      ]
+    },
+    {
+      "app_name": "命臨卦気",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "命臨卦氣"
+      ],
+      "source_ids": [
+        "kk_11_013"
+      ],
+      "normalization": [
+        {
+          "original": "氣",
+          "normalized": "気"
+        }
+      ]
+    },
+    {
+      "app_name": "日躔月度",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "日躔月度"
+      ],
+      "source_ids": [
+        "kk_02_003"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "月躔日宿",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "月躔日宿"
+      ],
+      "source_ids": [
+        "kk_02_004"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "命財互垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "命財互垣"
+      ],
+      "source_ids": [
+        "kk_26_001"
+      ],
+      "normalization": [],
+      "engine_generation": "addMutual",
+      "added": "動的生成名の補完（37件）"
+    },
+    {
+      "app_name": "命田互垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "命田互垣"
+      ],
+      "source_ids": [
+        "kk_26_002"
+      ],
+      "normalization": [],
+      "engine_generation": "addMutual",
+      "added": "動的生成名の補完（37件）"
+    },
+    {
+      "app_name": "命嗣互垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "命嗣互垣"
+      ],
+      "source_ids": [
+        "kk_26_003"
+      ],
+      "normalization": [],
+      "engine_generation": "addMutual",
+      "added": "動的生成名の補完（37件）"
+    },
+    {
+      "app_name": "命妻互垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "命妻互垣"
+      ],
+      "source_ids": [
+        "kk_26_004"
+      ],
+      "normalization": [],
+      "engine_generation": "addMutual",
+      "added": "動的生成名の補完（37件）"
+    },
+    {
+      "app_name": "命官互垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "命官互垣"
+      ],
+      "source_ids": [
+        "kk_26_005"
+      ],
+      "normalization": [],
+      "engine_generation": "addMutual",
+      "added": "動的生成名の補完（37件）"
+    },
+    {
+      "app_name": "命福互垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "命福互垣"
+      ],
+      "source_ids": [
+        "kk_26_006"
+      ],
+      "normalization": [],
+      "engine_generation": "addMutual",
+      "added": "動的生成名の補完（37件）"
+    },
+    {
+      "app_name": "財嗣互垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "財嗣互垣"
+      ],
+      "source_ids": [
+        "kk_26_007"
+      ],
+      "normalization": [],
+      "engine_generation": "addMutual",
+      "added": "動的生成名の補完（37件）"
+    },
+    {
+      "app_name": "妻財互垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "妻財互垣"
+      ],
+      "source_ids": [
+        "kk_26_008"
+      ],
+      "normalization": [],
+      "engine_generation": "addMutual",
+      "added": "動的生成名の補完（37件）"
+    },
+    {
+      "app_name": "財禄互垣",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "財祿互垣"
+      ],
+      "source_ids": [
+        "kk_26_009"
+      ],
+      "normalization": [
+        {
+          "original": "祿",
+          "normalized": "禄"
+        }
+      ],
+      "engine_generation": "addMutual",
+      "added": "動的生成名の補完（37件）"
+    },
+    {
+      "app_name": "財福互垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "財福互垣"
+      ],
+      "source_ids": [
+        "kk_26_010"
+      ],
+      "normalization": [],
+      "engine_generation": "addMutual",
+      "added": "動的生成名の補完（37件）"
+    },
+    {
+      "app_name": "田財互垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "田財互垣"
+      ],
+      "source_ids": [
+        "kk_26_011"
+      ],
+      "normalization": [],
+      "engine_generation": "addMutual",
+      "added": "動的生成名の補完（37件）"
+    },
+    {
+      "app_name": "田嗣互垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "田嗣互垣"
+      ],
+      "source_ids": [
+        "kk_26_012"
+      ],
+      "normalization": [],
+      "engine_generation": "addMutual",
+      "added": "動的生成名の補完（37件）"
+    },
+    {
+      "app_name": "田妻互垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "田妻互垣"
+      ],
+      "source_ids": [
+        "kk_26_013"
+      ],
+      "normalization": [],
+      "engine_generation": "addMutual",
+      "added": "動的生成名の補完（37件）"
+    },
+    {
+      "app_name": "田禄互垣",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "田祿互垣"
+      ],
+      "source_ids": [
+        "kk_26_014"
+      ],
+      "normalization": [
+        {
+          "original": "祿",
+          "normalized": "禄"
+        }
+      ],
+      "engine_generation": "addMutual",
+      "added": "動的生成名の補完（37件）"
+    },
+    {
+      "app_name": "福田互垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "福田互垣"
+      ],
+      "source_ids": [
+        "kk_26_015"
+      ],
+      "normalization": [],
+      "engine_generation": "addMutual",
+      "added": "動的生成名の補完（37件）"
+    },
+    {
+      "app_name": "嗣禄互垣",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "嗣祿互垣"
+      ],
+      "source_ids": [
+        "kk_26_016"
+      ],
+      "normalization": [
+        {
+          "original": "祿",
+          "normalized": "禄"
+        }
+      ],
+      "engine_generation": "addMutual",
+      "added": "動的生成名の補完（37件）"
+    },
+    {
+      "app_name": "妻嗣互垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "妻嗣互垣"
+      ],
+      "source_ids": [
+        "kk_26_017"
+      ],
+      "normalization": [],
+      "engine_generation": "addMutual",
+      "added": "動的生成名の補完（37件）"
+    },
+    {
+      "app_name": "妻禄互垣",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "妻祿互垣"
+      ],
+      "source_ids": [
+        "kk_26_018"
+      ],
+      "normalization": [
+        {
+          "original": "祿",
+          "normalized": "禄"
+        }
+      ],
+      "engine_generation": "addMutual",
+      "added": "動的生成名の補完（37件）"
+    },
+    {
+      "app_name": "妻福互垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "妻福互垣"
+      ],
+      "source_ids": [
+        "kk_26_019"
+      ],
+      "normalization": [],
+      "engine_generation": "addMutual",
+      "added": "動的生成名の補完（37件）"
+    },
+    {
+      "app_name": "福嗣互垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "福嗣互垣"
+      ],
+      "source_ids": [
+        "kk_26_020"
+      ],
+      "normalization": [],
+      "engine_generation": "addMutual",
+      "added": "動的生成名の補完（37件）"
+    },
+    {
+      "app_name": "官福互垣",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "官福互垣"
+      ],
+      "source_ids": [
+        "kk_26_021"
+      ],
+      "normalization": [],
+      "engine_generation": "addMutual",
+      "added": "動的生成名の補完（37件）"
+    },
+    {
+      "app_name": "身居妻妾",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "身居妻妾"
+      ],
+      "source_ids": [
+        "kk_10_008"
+      ],
+      "normalization": [],
+      "engine_generation": "sex_switch",
+      "engine_condition": "身宮主が夫妻宮にある（ctx.sex === \"F\" なら就居夫位）",
+      "engine_line": 1094,
+      "added": "動的生成名の補完（37件）",
+      "sex_variant": "男性時の名称"
+    },
+    {
+      "app_name": "就居夫位",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "身居妻妾"
+      ],
+      "candidate_ids": [
+        "kk_10_008"
+      ],
+      "engine_generation": "sex_switch",
+      "engine_condition": "身宮主が夫妻宮にある（ctx.sex === \"F\" なら就居夫位）",
+      "engine_line": 1094,
+      "added": "動的生成名の補完（37件）",
+      "sex_variant": "女性時の名称",
+      "notes": [
+        "資料（原典全文）に同名なし。男性時の名称と同じ条件で生成される表示名だが、資料上の対応は明記されていないため自動統合しない"
+      ]
+    },
+    {
+      "app_name": "命臨妻位",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "命臨妻位"
+      ],
+      "source_ids": [
+        "kk_11_006"
+      ],
+      "normalization": [],
+      "engine_generation": "sex_switch",
+      "engine_condition": "命主が夫妻宮にある（ctx.sex === \"F\" なら命臨夫位）",
+      "engine_line": 2003,
+      "added": "動的生成名の補完（37件）",
+      "sex_variant": "男性時の名称"
+    },
+    {
+      "app_name": "命臨夫位",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "命臨妻位"
+      ],
+      "candidate_ids": [
+        "kk_11_006"
+      ],
+      "engine_generation": "sex_switch",
+      "engine_condition": "命主が夫妻宮にある（ctx.sex === \"F\" なら命臨夫位）",
+      "engine_line": 2003,
+      "added": "動的生成名の補完（37件）",
+      "sex_variant": "女性時の名称",
+      "notes": [
+        "資料（原典全文）に同名なし。男性時の名称と同じ条件で生成される表示名だが、資料上の対応は明記されていないため自動統合しない"
+      ]
+    },
+    {
+      "app_name": "田主妻宮",
+      "class": "M",
+      "match_status": "manual_confirmed",
+      "engine_generation": "sex_switch",
+      "engine_condition": "田宅主が夫妻宮にある（男命＝田主妻宮、女命＝田主夫宮）",
+      "engine_line": 2141,
+      "added": "動的生成名の補完（37件）",
+      "sex_variant": "男性時の名称",
+      "notes": [
+        "ユーザー指示（2026-10-01）により、エンジン名「田主妻宮」と資料名「田守妻宮」の対応を確認済みとする（表記差ではなく語が異なるため B とは区別）",
+        "エンジン側の重複ルール「田守妻宮」は削除済み"
+      ],
+      "source_names": [
+        "田守妻宮"
+      ],
+      "source_ids": [
+        "kk_12_007"
+      ],
+      "normalization": []
+    },
+    {
+      "app_name": "田主夫宮",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "田守妻宮"
+      ],
+      "candidate_ids": [
+        "kk_12_007"
+      ],
+      "engine_generation": "sex_switch",
+      "engine_condition": "田宅主が夫妻宮にある（男命＝田主妻宮、女命＝田主夫宮）",
+      "engine_line": 2141,
+      "added": "動的生成名の補完（37件）",
+      "sex_variant": "女性時の名称",
+      "notes": [
+        "資料（原典全文）に同名なし。男性時の名称と同じ条件で生成される表示名だが、資料上の対応は明記されていないため自動統合しない",
+        "名称は「田主」に統一（女命の正式名称）。資料上に対応名が明記されていないため manual_review のまま"
+      ]
+    },
+    {
+      "app_name": "嗣守妻宮",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "嗣守妻宮"
+      ],
+      "source_ids": [
+        "kk_17_007"
+      ],
+      "normalization": [],
+      "engine_generation": "sex_switch",
+      "engine_condition": "男女主が夫妻宮にある（ctx.sex === \"F\" なら嗣守夫宮）。2154行と2883行の2か所で同名を生成",
+      "engine_line": 2154,
+      "added": "動的生成名の補完（37件）",
+      "sex_variant": "男性時の名称"
+    },
+    {
+      "app_name": "嗣守夫宮",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "嗣守妻宮"
+      ],
+      "candidate_ids": [
+        "kk_17_007"
+      ],
+      "engine_generation": "sex_switch",
+      "engine_condition": "男女主が夫妻宮にある（ctx.sex === \"F\" なら嗣守夫宮）。2154行と2883行の2か所で同名を生成",
+      "engine_line": 2154,
+      "added": "動的生成名の補完（37件）",
+      "sex_variant": "女性時の名称",
+      "notes": [
+        "資料（原典全文）に同名なし。男性時の名称と同じ条件で生成される表示名だが、資料上の対応は明記されていないため自動統合しない"
+      ]
+    },
+    {
+      "app_name": "財主妻宮",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "財守妻宮"
+      ],
+      "candidate_ids": [
+        "kk_13_006"
+      ],
+      "engine_generation": "sex_switch",
+      "engine_condition": "財帛主が夫妻宮にある（ctx.sex === \"F\" なら財主夫宮）",
+      "engine_line": 2353,
+      "added": "動的生成名の補完（37件）",
+      "sex_variant": "男性時の名称",
+      "notes": [
+        "資料に同名なし。資料の候補とは語が異なる（主／守など）ため自動統合しない"
+      ]
+    },
+    {
+      "app_name": "財主夫宮",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "財守妻宮"
+      ],
+      "candidate_ids": [
+        "kk_13_006"
+      ],
+      "engine_generation": "sex_switch",
+      "engine_condition": "財帛主が夫妻宮にある（ctx.sex === \"F\" なら財主夫宮）",
+      "engine_line": 2353,
+      "added": "動的生成名の補完（37件）",
+      "sex_variant": "女性時の名称",
+      "notes": [
+        "資料（原典全文）に同名なし。男性時の名称と同じ条件で生成される表示名だが、資料上の対応は明記されていないため自動統合しない"
+      ]
+    },
+    {
+      "app_name": "禄守妻宮",
+      "class": "B",
+      "match_status": "notation_variant",
+      "source_names": [
+        "祿守妻宮"
+      ],
+      "source_ids": [
+        "kk_14_007"
+      ],
+      "normalization": [
+        {
+          "original": "祿",
+          "normalized": "禄"
+        }
+      ],
+      "engine_generation": "sex_switch",
+      "engine_condition": "官禄主が夫妻宮にある（ctx.sex === \"F\" なら禄守夫宮）",
+      "engine_line": 2424,
+      "added": "動的生成名の補完（37件）",
+      "sex_variant": "男性時の名称"
+    },
+    {
+      "app_name": "禄守夫宮",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "祿守妻宮"
+      ],
+      "candidate_ids": [
+        "kk_14_007"
+      ],
+      "engine_generation": "sex_switch",
+      "engine_condition": "官禄主が夫妻宮にある（ctx.sex === \"F\" なら禄守夫宮）",
+      "engine_line": 2424,
+      "added": "動的生成名の補完（37件）",
+      "sex_variant": "女性時の名称",
+      "notes": [
+        "資料（原典全文）に同名なし。男性時の名称と同じ条件で生成される表示名だが、資料上の対応は明記されていないため自動統合しない"
+      ]
+    },
+    {
+      "app_name": "福守妻妾",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "福守妻妾"
+      ],
+      "source_ids": [
+        "kk_15_009"
+      ],
+      "normalization": [],
+      "engine_generation": "sex_switch",
+      "engine_condition": "福徳主が夫妻宮にある（ctx.sex === \"F\" なら福守夫宮）",
+      "engine_line": 2859,
+      "added": "動的生成名の補完（37件）",
+      "sex_variant": "男性時の名称"
+    },
+    {
+      "app_name": "福守夫宮",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "福守妻妾"
+      ],
+      "candidate_ids": [
+        "kk_15_009"
+      ],
+      "engine_generation": "sex_switch",
+      "engine_condition": "福徳主が夫妻宮にある（ctx.sex === \"F\" なら福守夫宮）",
+      "engine_line": 2859,
+      "added": "動的生成名の補完（37件）",
+      "sex_variant": "女性時の名称",
+      "notes": [
+        "資料（原典全文）に同名なし。男性時の名称と同じ条件で生成される表示名だが、資料上の対応は明記されていないため自動統合しない"
+      ]
+    }
+  ],
+  "supplement_note": "2026-10-01：addMutual() と性別切替で生成される37件を補完。女性時の名称（〜夫宮・〜夫位）は資料に同名がないため C（manual_review）",
+  "retired_engine_names": [
+    {
+      "app_name": "田守妻宮",
+      "class": "A",
+      "match_status": "exact",
+      "source_names": [
+        "田守妻宮"
+      ],
+      "source_ids": [
+        "kk_12_007"
+      ],
+      "normalization": [],
+      "engine_generation": "sex_switch",
+      "engine_condition": "田宅主が夫妻宮にある（ctx.sex === \"F\" なら田守夫宮）。田主妻宮／田主夫宮と同じ条件",
+      "engine_line": 2282,
+      "added": "動的生成名の補完（37件）",
+      "sex_variant": "男性時の名称",
+      "retired": true,
+      "retired_reason": "エンジンの重複ルール（田主妻宮／田主夫宮と同一条件）を削除し、名称を「田主」に統一したため、エンジン名としては使用しない（2026-10-01）"
+    },
+    {
+      "app_name": "田守夫宮",
+      "class": "C",
+      "match_status": "manual_review",
+      "candidate_names": [
+        "田守妻宮"
+      ],
+      "candidate_ids": [
+        "kk_12_007"
+      ],
+      "engine_generation": "sex_switch",
+      "engine_condition": "田宅主が夫妻宮にある（ctx.sex === \"F\" なら田守夫宮）。田主妻宮／田主夫宮と同じ条件",
+      "engine_line": 2282,
+      "added": "動的生成名の補完（37件）",
+      "sex_variant": "女性時の名称",
+      "notes": [
+        "資料（原典全文）に同名なし。男性時の名称と同じ条件で生成される表示名だが、資料上の対応は明記されていないため自動統合しない"
+      ],
+      "retired": true,
+      "retired_reason": "エンジンの重複ルール（田主妻宮／田主夫宮と同一条件）を削除し、名称を「田主」に統一したため、エンジン名としては使用しない（2026-10-01）"
+    }
+  ],
+  "class_definitions": {
+    "A": "完全一致",
+    "B": "表記差のみ",
+    "M": "人間確認済みの対応（match_status: manual_confirmed。語が異なる対応をユーザーが確定）",
+    "C": "要人確認（manual_review）",
+    "D": "現行エンジンのみ（app_only）",
+    "E": "資料のみ（source_only）"
+  },
+  "tashu_note": "2026-10-01：田宅主が夫妻宮にある格局の名称を「田主」に統一（男命＝田主妻宮、女命＝田主夫宮）。田守妻宮／田守夫宮はエンジン名から外し retired_engine_names に記録"
+}
