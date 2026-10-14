@@ -56,7 +56,12 @@ export interface DomainSubtypes {
   traveler: "return";
   lostItem: "general";
   theft: "general";
-  litigation: "general";
+  /**
+   * Phase 5G: litigation（官に訴える訴訟・裁判）・dispute（当事者間の争い）・settlement（和解・争いの収束）。
+   * 古典の「訟」は官に訴える争いなので、官府・主客の輸贏の規則は litigation だけで読み、dispute は「凡占・諸占」として
+   * 書かれた規則だけで読む。拘禁・出獄・刑罰の種類は占的として扱わない。general は問いの種類が未指定（判断せず不足として返す）。
+   */
+  litigation: "general" | "litigation" | "dispute" | "settlement";
   illness: "general";
   pregnancy: "maintain";
   childbirth: "delivery";
@@ -148,6 +153,23 @@ export interface InterpretationContext<D extends InterpretationDomain = Interpre
    * 人物の Identity（subjectPersonId・counterpartyPersonId）とは別の属性で、古典の類神ではない。
    */
   tradeSide?: "buyer" | "seller";
+  /**
+   * 争いの当事者として見る人物の ID（Phase 5G。訴訟 DOMAIN で使う）。問う人（subjectPersonId）とは別に持つ。
+   * 問う人本人が当事者なら subjectPersonId と同じ ID を入れる。相手方は counterpartyPersonId（古典の主客に自動では割り当てない）。
+   */
+  litigantPersonId?: PersonContextId;
+  /**
+   * 当事者（litigantPersonId）の、古典の主客を決める立場（Phase 5G）。
+   *   『大六壬指南』占訟章「占訟日辰分主客（日為客，辰為主，先動為客後應為主）」、
+   *   『六壬心鏡』官訟門《入式》注「先論尊卑主客，以日干為尊為客，支神為卑為主。若外人論其先後，以日干為客，乃先起之人；支辰為主，乃後對之人」。
+   *   precedence（先後）: initiator＝先に動いた側（客・日）／respondent＝後で応じた側（主・辰）
+   *   rank（尊卑。『心鏡』だけ）: senior＝尊（客・日）／junior＝卑（主・辰）
+   * 先後と尊卑は別の原典方式として両方持てる（『指南』の規則は先後だけで読む）。両方あって客・主が食い違えば、一方を優先せず向きを決めない。
+   * 分からなければ省く（主客で向きが分かれる読みは向きを決めない）。現実の原告・被告（legalPosition）から自動では決めない。
+   */
+  litigationStanding?: { precedence?: "initiator" | "respondent"; rank?: "senior" | "junior" };
+  /** 当事者の現実の訴訟上の立場（Phase 5G）。要約に書くだけで、古典の主客（先後・尊卑）には対応させない */
+  legalPosition?: "plaintiff" | "defendant";
 }
 
 /** 類神の指定（天将か支） */
