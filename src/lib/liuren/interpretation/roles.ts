@@ -37,7 +37,12 @@ export type InterpretationDomain =
 
 /** DOMAIN ごとの小分類（同じ DOMAIN でも読み方が変わるものを分ける） */
 export interface DomainSubtypes {
-  wealth: "general";
+  /**
+   * Phase 5F: seekingWealth（求財。財を得られるか）・trading（売買・取引）。debtCollection（索債・債権回収）は
+   * 『指南』討債章の条件が確定できる個別規則だけを読む。lending・borrowing（貸借）・keeping（財物の保持）は
+   * 専用の規則が取得資料で確定できないので未対応（判断せず不足として返す）。general は問いの種類が未指定。
+   */
+  wealth: "general" | "seekingWealth" | "trading" | "debtCollection" | "lending" | "borrowing" | "keeping";
   work: "employment" | "jobChange" | "promotion" | "transfer" | "currentWork" | "resignation" | "independence";
   /** 文試（civil）・武試（military）は『六壬断案２』例54 で評価が分かれる（Phase 5A） */
   exam: "general" | "civil" | "military";
@@ -132,6 +137,17 @@ export interface InterpretationContext<D extends InterpretationDomain = Interpre
    * 問う人本人が病人なら subjectPersonId と同じ ID を入れる。
    */
   patientPersonId?: PersonContextId;
+  /**
+   * 財を求める人物の ID（Phase 5F。求財 DOMAIN で使う）。問う人（subjectPersonId）とは別に持つ。
+   * 財を求める人の本命・年命はこの人物の natalYear からだけ取る。問う人本人が求めるなら subjectPersonId と同じ ID を入れる。
+   */
+  wealthSeekerPersonId?: PersonContextId;
+  /**
+   * 問う人が取引のどちら側か（Phase 5F。売買 DOMAIN で使う）。『御定六壬直指』附占買賣「買貨時則為貨物，賣貨時則為主顧」のように
+   * 古典は買う場合と売る場合で発用の意味を分ける。分からなければ省く（推測しない。買う側・売る側で向きが分かれる読みは向きを決めない）。
+   * 人物の Identity（subjectPersonId・counterpartyPersonId）とは別の属性で、古典の類神ではない。
+   */
+  tradeSide?: "buyer" | "seller";
 }
 
 /** 類神の指定（天将か支） */
