@@ -504,13 +504,12 @@ function PersonalDayMarker({ personal }: { personal: PersonalTakujitsuResult | u
 // 色だけに頼らず、必ず記号と説明を並べる。神殺名は表示しない。
 // スマホ（900px未満）は2列のカード、PCは時間・記号・説明の一覧表にする。
 // ---------------------------------------------------------------------------
-const HOUR_SYMBOL_TONE: Readonly<Record<LuckyDayHourSymbol, "good" | "even" | "bad" | "special">> = {
+const HOUR_SYMBOL_TONE: Readonly<Record<LuckyDayHourSymbol, "good" | "even" | "bad">> = {
   "◎": "good",
   "○": "good",
   "△": "even",
   "▽": "bad",
   "▼": "bad",
-  "勿用": "special",
 };
 
 function HourlyFortuneSection({ hours }: { hours: LuckyDayHourFortune[] }) {
@@ -519,12 +518,14 @@ function HourlyFortuneSection({ hours }: { hours: LuckyDayHourFortune[] }) {
       <h3 className="ld-verdict-title ld-hours-heading">時間の吉凶</h3>
       <ul className="ld-hours-list">
         {hours.map((h) => (
-          <li key={h.hourBranch} className="ld-hours-item" data-tone={HOUR_SYMBOL_TONE[h.symbol]}>
+          <li
+            key={h.hourBranch}
+            className="ld-hours-item"
+            data-tone={HOUR_SYMBOL_TONE[h.symbol]}
+            data-muyo={h.isMuyo ? "true" : undefined}
+          >
             <span className="ld-hours-range">{h.range}</span>
-            <span
-              className={h.symbol === "勿用" ? "ld-hours-symbol ld-hours-symbol-text" : "ld-hours-symbol"}
-              aria-hidden="true"
-            >
+            <span className="ld-hours-symbol" aria-hidden="true">
               {h.symbol}
             </span>
             <span className="ld-hours-desc">
@@ -2839,12 +2840,6 @@ const CSS = `
   min-width: 1.2em;
   text-align: center;
 }
-.ld-hours-symbol-text {
-  font-size: 13px;
-  line-height: 1.3;
-  min-width: 0;
-  white-space: nowrap;
-}
 .ld-hours-desc {
   grid-area: desc;
   font-size: 12px;
@@ -2858,8 +2853,6 @@ const CSS = `
 .ld-hours-item[data-tone="bad"] { background: #fbf3f1; border-color: #ead2cc; }
 .ld-hours-item[data-tone="bad"] .ld-hours-symbol { color: #8a3b2b; }
 .ld-hours-item[data-tone="even"] .ld-hours-symbol { color: #55524b; }
-.ld-hours-item[data-tone="special"] { background: #f6f5ef; }
-.ld-hours-item[data-tone="special"] .ld-hours-symbol { color: #55524b; }
 .ld-hours-note {
   margin: 10px 0 0;
   font-size: 12px;
@@ -2907,7 +2900,6 @@ const CSS = `
   .ld-hours-item:first-child { border-top: none; }
   .ld-hours-range { font-size: 13px; }
   .ld-hours-symbol { font-size: 18px; }
-  .ld-hours-symbol-text { font-size: 14px; }
   .ld-hours-desc { font-size: 13px; }
 }
 

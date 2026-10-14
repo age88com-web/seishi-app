@@ -13,9 +13,10 @@
 //   記号の規則は docs/monthly-action-schedule-engine-mapping.md §9.2 の
 //   確定仕様のまま。点数化・重み付けはしない。
 //
-// 勿用の表示（人間側決定、2026-10-14）:
+// 勿用の表示（人間側決定、2026-10-14。記号は同日の再決定で「▼」）:
 //   一般向け /lucky-day では、勿用マス（hourSymbol() が「用いてもよい」を
-//   返すマス）を記号「勿用」・説明「使用を避ける時間」と表示する。
+//   返すマス）を記号「▼」・説明「使用を避ける時間」と表示する。
+//   通常の▼（凶神のみ）とは isMuyo で区別できるようにしておく。
 //   これは一般向けの表示文言だけの読み替えであり、時家720の原データ・
 //   神殺・吉凶判定・専門版 /takujitsu・月間行動予定（「用いてもよい」の
 //   まま）は変更しない。
@@ -33,7 +34,7 @@
 //   member.active をそのまま渡す（personalJudgment.ts と同じ方式）。
 //
 // 返す内容:
-//   時間帯・時支・記号・説明だけ。神殺名・件数は返さない
+//   時間帯・時支・記号・勿用かどうか・説明だけ。神殺名・件数は返さない
 //   （画面に常時表示しないため、クライアントへ渡す必要がない）。
 
 import { getJikaEntry } from "@/lib/takujitsu/jika";
@@ -41,12 +42,15 @@ import { classifyJikaTerm } from "@/lib/takujitsu/jika/hourClassification";
 import { hourSymbol } from "@/lib/takujitsu/monthly";
 import type { MonthlyHourSymbol } from "@/lib/takujitsu/monthly";
 
-/** 一般向けの表示記号。勿用マスだけ「勿用」と表示する（月間行動予定の「用いてもよい」に当たる）。 */
-export type LuckyDayHourSymbol = Exclude<MonthlyHourSymbol, "用いてもよい"> | "勿用";
+/** 一般向けの表示記号（5段階）。勿用マスも記号は「▼」で表示する。 */
+export type LuckyDayHourSymbol = Exclude<MonthlyHourSymbol, "用いてもよい">;
 
-/** 月間行動予定と同じ hourSymbol() の結果を、一般向けの表示記号へ読み替える（表示文言のみ）。 */
+/**
+ * 月間行動予定と同じ hourSymbol() の結果を、一般向けの表示記号へ読み替える（表示のみ）。
+ * 勿用（「用いてもよい」）は「▼」。勿用かどうかは LuckyDayHourFortune.isMuyo で別に持つ。
+ */
 export function toLuckyDayHourSymbol(symbol: MonthlyHourSymbol): LuckyDayHourSymbol {
-  return symbol === "用いてもよい" ? "勿用" : symbol;
+  return symbol === "用いてもよい" ? "▼" : symbol;
 }
 
 export interface LuckyDayHourFortune {
@@ -55,7 +59,12 @@ export interface LuckyDayHourFortune {
   /** 時支（子〜亥）。 */
   hourBranch: string;
   symbol: LuckyDayHourSymbol;
-  /** 一般向けの簡潔な説明（記号の定義を言い換えたもの）。 */
+  /**
+   * 勿用マスか（時家720の JikaEntry.isMuyo をそのまま写す）。
+   * 記号はどちらも「▼」になるため、通常の▼（凶神のみ）との区別はこの値で行う。
+   */
+  isMuyo: boolean;
+  /** 一般向けの簡潔な説明（記号の定義を言い換えたもの。勿用は「使用を避ける時間」）。 */
   description: string;
 }
 
@@ -78,7 +87,7 @@ export const LUCKY_DAY_HOUR_SLOTS: readonly { range: string; hourBranch: string 
 /**
  * 記号ごとの説明。§9.2 の条件（吉神・凶神の件数比較）を一般向けに
  * 言い換えただけで、新しい判定や解釈は加えない。
- * 勿用マスは人間側決定（2026-10-14）の表示文言「使用を避ける時間」。
+ * 勿用マスの説明は LUCKY_DAY_MUYO_DESCRIPTION（記号は▼でも説明は別）。
  */
 export const LUCKY_DAY_HOUR_DESCRIPTIONS: Readonly<Record<LuckyDayHourSymbol, string>> = {
   "◎": "吉の働きだけがある時間",
@@ -86,8 +95,10 @@ export const LUCKY_DAY_HOUR_DESCRIPTIONS: Readonly<Record<LuckyDayHourSymbol, st
   "△": "吉と凶の働きが同じ数の時間",
   "▽": "凶の働きが吉より多い時間",
   "▼": "凶の働きだけがある時間",
-  "勿用": "使用を避ける時間",
 };
+
+/** 勿用マスの説明（人間側決定、2026-10-14）。 */
+export const LUCKY_DAY_MUYO_DESCRIPTION = "使用を避ける時間";
 
 /**
  * 日干支（例 "甲子"）から12時辰の時間の吉凶を作る。
@@ -100,7 +111,8 @@ export function buildLuckyDayHourlyFortune(dayGanzhi: string): LuckyDayHourFortu
     const kichi = entry.normalizedTerms.filter((t) => classifyJikaTerm(t) === "吉").length;
     const kyo = entry.normalizedTerms.filter((t) => classifyJikaTerm(t) === "凶").length;
     const symbol = toLuckyDayHourSymbol(hourSymbol(kichi, kyo, entry.isMuyo));
-    return { range, hourBranch, symbol, description: LUCKY_DAY_HOUR_DESCRIPTIONS[symbol] };
+    const description = entry.isMuyo ? LUCKY_DAY_MUYO_DESCRIPTION : LUCKY_DAY_HOUR_DESCRIPTIONS[symbol];
+    return { range, hourBranch, symbol, isMuyo: entry.isMuyo, description };
   });
 }
 

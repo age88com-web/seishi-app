@@ -12,7 +12,8 @@
 //      時間記号と、2026年の全日で一致する（60日干支すべてを含む）。
 //   4. 720マス全体の記号分布が docs/monthly-action-schedule-engine-mapping.md
 //      §9.2 の記録（◎163・○258・△117・▽99・▼23・勿用60）と一致する。
-//      勿用は一般向け表示だけ「勿用／使用を避ける時間」（人間側決定 2026-10-14）。
+//      勿用は一般向け表示だけ「▼／使用を避ける時間」（人間側決定 2026-10-14）。
+//      表示記号は通常の▼と同じでも、isMuyo で区別できることを確認する。
 //      月間行動予定側は「用いてもよい」のまま変わっていないことも確認する。
 //   5. 日付境界: 日付Dの「23:00〜1:00」はDの日干支（前日23:00からDの子時）。
 //   6. 返す内容に神殺名・件数を含めない。
@@ -139,9 +140,14 @@ for (let month = 1; month <= 12; month++) {
       // 月間行動予定の1〜12行目（13行目は翌日の子時なので対象外）。
       for (let i = 0; i < 12; i++) {
         const m = day.hours[i];
-        // 勿用マスは月間行動予定「用いてもよい」⇔ /lucky-day「勿用」（表示文言だけの読み替え）。
-        const expected = m.symbol === "用いてもよい" ? "勿用" : m.symbol;
-        if (m.hourBranch !== mine[i].hourBranch || expected !== mine[i].symbol || m.dayGanzhi !== day.dayGanzhi) {
+        // 勿用マスは月間行動予定「用いてもよい」⇔ /lucky-day「▼」＋isMuyo（表示だけの読み替え）。
+        const expected = m.symbol === "用いてもよい" ? "▼" : m.symbol;
+        if (
+          m.hourBranch !== mine[i].hourBranch ||
+          expected !== mine[i].symbol ||
+          m.isMuyo !== mine[i].isMuyo ||
+          m.dayGanzhi !== day.dayGanzhi
+        ) {
           mismatches++;
           if (mismatches <= 5) {
             console.log(`  不一致 ${day.iso} ${m.hourBranch}: 月間=${m.symbol} / lucky-day=${mine[i].symbol}`);
@@ -158,25 +164,36 @@ check("月間行動予定の時間記号と全時辰で一致する", mismatches
 // ---------------------------------------------------------------------------
 // 4. 720マス全体の記号分布（§9.2 の記録と一致）
 // ---------------------------------------------------------------------------
+// 内部の区別（isMuyo）で数える: 勿用は "勿用"、それ以外は表示記号。
+const all720 = [...ganzhiSeen].flatMap((gz) => buildLuckyDayHourlyFortune(gz));
 const dist: Record<string, number> = {};
-for (const gz of ganzhiSeen) {
-  for (const h of buildLuckyDayHourlyFortune(gz)) dist[h.symbol] = (dist[h.symbol] ?? 0) + 1;
+for (const h of all720) {
+  const key = h.isMuyo ? "勿用" : h.symbol;
+  dist[key] = (dist[key] ?? 0) + 1;
 }
 const EXPECTED_DIST: Record<string, number> = { "◎": 163, "○": 258, "△": 117, "▽": 99, "▼": 23, "勿用": 60 };
 check(
-  "720マスの記号分布が §9.2 の記録と一致",
+  "720マスの分布（isMuyoで勿用を区別）が §9.2 の記録と一致",
   JSON.stringify(Object.keys(EXPECTED_DIST).map((k) => dist[k] ?? 0)) ===
     JSON.stringify(Object.values(EXPECTED_DIST)),
   JSON.stringify(dist),
 );
-check("勿用マスは新しい吉凶に変換せず「勿用」と表示（60マス）", dist["勿用"] === 60);
-check("「用いてもよい」は一般向けには出さない", dist["用いてもよい"] === undefined);
+check("表示記号は◎○△▽▼の5種類だけ", all720.every((h) => ["◎", "○", "△", "▽", "▼"].includes(h.symbol)));
+check("表示上の▼は83マス（凶神のみ23＋勿用60）", all720.filter((h) => h.symbol === "▼").length === 83);
+check("「用いてもよい」「勿用」を表示記号に出さない", all720.every((h) => h.symbol !== ("用いてもよい" as string) && h.symbol !== ("勿用" as string)));
 {
-  const muyo = [...ganzhiSeen].flatMap((gz) => buildLuckyDayHourlyFortune(gz)).filter((h) => h.symbol === "勿用");
-  check("勿用の説明はすべて「使用を避ける時間」", muyo.length === 60 && muyo.every((h) => h.description === "使用を避ける時間"));
+  const muyo = all720.filter((h) => h.isMuyo);
+  const plainBad = all720.filter((h) => h.symbol === "▼" && !h.isMuyo);
+  check("勿用マスは60（1日干支に1時辰）", muyo.length === 60);
+  check("勿用の表示は「▼ 使用を避ける時間」", muyo.every((h) => h.symbol === "▼" && h.description === "使用を避ける時間"));
+  check(
+    "通常の▼（凶神のみ）は従来の説明のまま（勿用と区別される）",
+    plainBad.length === 23 && plainBad.every((h) => h.description === "凶の働きだけがある時間"),
+  );
+  check("勿用以外のマスの説明に「使用を避ける時間」を使わない", all720.filter((h) => !h.isMuyo).every((h) => h.description !== "使用を避ける時間"));
   check(
     "説明文に「用いてもよい」を含めない",
-    [...ganzhiSeen].flatMap((gz) => buildLuckyDayHourlyFortune(gz)).every((h) => !h.description.includes("用いてもよい")),
+    all720.every((h) => !h.description.includes("用いてもよい")),
   );
   const monthlyMuyo = buildMonthlySchedule(2026, 1).weeks.flat().flatMap((d) => d.hours).filter((h) => h.isMuyo);
   check(
@@ -207,8 +224,10 @@ for (const iso of ["2026-01-01", "2026-02-28", "2026-03-01", "2026-12-31", today
 // 6. 神殺名・件数をクライアントへ渡さない
 // ---------------------------------------------------------------------------
 check(
-  "返す項目は range・hourBranch・symbol・description だけ",
-  sample.every((h) => JSON.stringify(Object.keys(h).sort()) === JSON.stringify(["description", "hourBranch", "range", "symbol"])),
+  "返す項目は range・hourBranch・symbol・isMuyo・description だけ",
+  sample.every(
+    (h) => JSON.stringify(Object.keys(h).sort()) === JSON.stringify(["description", "hourBranch", "isMuyo", "range", "symbol"]),
+  ),
 );
 
 // ---------------------------------------------------------------------------
