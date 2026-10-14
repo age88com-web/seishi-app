@@ -3,8 +3,10 @@
 // 秀山式内格力量判定法（監修確定 KD27。仕様 §39）。四柱推命の内格強弱の正式方式。
 // 画面の内格強弱・印刷・resolveEffectiveStrength・解釈入力はこの結果を使う。
 //
-//   季節: 五季の旺相休囚死（辰戌丑未は月全体を土旺）。係数 旺1.5・相1.25・休1.0・囚0.75・死0.5 を地支の基礎点にだけ掛ける
-//   地支: 月支5・他2。その支自身の五行（化した支は化後の五行）に1回だけ加える。蔵干は基礎点に足さない
+//   季節: 五季の旺相休囚死（辰戌丑未は月全体を土旺）。係数 旺1.5・相1.25・休1.0・囚0.75・死0.5 を地支の配分後の点にだけ掛ける
+//   地支: 月支5・他2。基礎点を蔵干（p114 の表）へ配分してから季節係数を掛ける（KD28）。
+//         3蔵干は本気60%・残り2干20%ずつ（中気・余気は区別しない）、2蔵干は本気70%・もう一方30%、1蔵干は100%。
+//         本気は地支自身と同じ五行の蔵干（mainQiStem）。化した支は化後の五行へ100%（蔵干配分しない）
 //   天干: 1本1.0（日干も数える）。季節係数は掛けない。通根で 根なし×1.0・1根×1.25・2根以上×1.5、
 //         月支に通根すれば2根相当（×1.5）。根＝天干と同じ五行の蔵干を持つ地支（自柱を含む。印は数えない）。
 //         化した地支も根は元の蔵干で見る（化後の五行を新しい蔵干とみなさない：KD27-U2）
@@ -19,9 +21,10 @@
 import { STEM_ELEMENT } from "../data";
 import { zokanOf } from "../zokan";
 import { detectRelations } from "../relations";
-import type { Element, PillarKey } from "../types";
+import type { Branch, Element, PillarKey, Stem } from "../types";
 import type {
   ElementForceBranch,
+  ElementForceShare,
   ElementForceResult,
   ElementForceStem,
   InnerJudgment,
@@ -30,7 +33,7 @@ import type {
   SeasonalState,
   StrengthAssessment,
 } from "./types";
-import { BRANCH_ELEMENT, ELEMENTS, inElementOf, monthPatternOf, slotsOf } from "./common";
+import { BRANCH_ELEMENT, ELEMENTS, inElementOf, mainQiStem, monthPatternOf, otherQiStems, slotsOf } from "./common";
 import { branchStates } from "./branchState";
 
 /** 月支 → 月令の五行（五季。辰戌丑未は月全体を土旺：KD27-1） */
@@ -56,6 +59,16 @@ const SEASONAL_COEFFICIENT: Record<SeasonalState, number> = { 旺: 1.5, 相: 1.2
 const STEM_BASE = 1.0;
 const BRANCH_BASE = 2.0;
 const MONTH_BRANCH_BASE = 5.0;
+
+/** 蔵干配分（KD28）。本気→残りの順。3蔵干の残り2干は中気・余気を区別せず同率 */
+export function zokanShares(branch: Branch): { stem: Stem; ratio: number }[] {
+  const main = mainQiStem(branch);
+  const others = otherQiStems(branch);
+  if (others.length === 0) return [{ stem: main, ratio: 1 }];
+  if (others.length === 1) return [{ stem: main, ratio: 0.7 }, { stem: others[0], ratio: 0.3 }];
+  if (others.length === 2) return [{ stem: main, ratio: 0.6 }, ...others.map((stem) => ({ stem, ratio: 0.2 }))];
+  throw new Error(`蔵干の数が想定外: ${branch}`);
+}
 
 const ROOT_MULTIPLIER: Record<RootLevel, number> = { none: 1.0, one: 1.25, twoOrMore: 1.5, month: 1.5 };
 
@@ -85,21 +98,28 @@ export function calculateElementForce(p: Pillars, referenceOnly: boolean, streng
     }),
   ) as ElementForceResult["seasonal"];
 
-  // 地支: 化した支（既存の確定ロジック）は化後の五行。六合・冲の減衰は使わない
+  // 地支: 基礎点を蔵干へ配分し、各蔵干の五行の季節係数を掛ける（KD28）。化した支（既存の確定ロジック）は化後の五行へ100%。
+  // 六合・冲の減衰は使わない
   const states = branchStates(p);
   const branches = states.map((st): ElementForceBranch => {
     const element = st.transformedTo ?? BRANCH_ELEMENT[st.branch];
     const base = st.pillar === "月" ? MONTH_BRANCH_BASE : BRANCH_BASE;
-    const { state, coefficient } = seasonal[element];
+    const share = (stem: Stem | null, el: Element, ratio: number): ElementForceShare => {
+      const points = base * ratio;
+      const { state, coefficient } = seasonal[el];
+      return { stem, element: el, ratio, points, seasonal: state, coefficient, force: points * coefficient };
+    };
+    const shares = st.transformedTo
+      ? [share(null, st.transformedTo, 1)]
+      : zokanShares(st.branch).map((z) => share(z.stem, STEM_ELEMENT[z.stem], z.ratio));
     return {
       pillar: st.pillar,
       branch: st.branch,
       element,
       originalElement: st.transformedTo && st.transformedTo !== BRANCH_ELEMENT[st.branch] ? BRANCH_ELEMENT[st.branch] : null,
       base,
-      seasonal: state,
-      coefficient,
-      force: base * coefficient,
+      shares,
+      force: shares.reduce((sum, x) => sum + x.force, 0),
     };
   });
 
@@ -114,7 +134,7 @@ export function calculateElementForce(p: Pillars, referenceOnly: boolean, streng
 
   const byElement = Object.fromEntries(
     ELEMENTS.map((e) => {
-      const branch = branches.filter((b) => b.element === e).reduce((sum, b) => sum + b.force, 0);
+      const branch = branches.flatMap((b) => b.shares).filter((x) => x.element === e).reduce((sum, x) => sum + x.force, 0);
       const stem = stems.filter((s) => s.element === e).reduce((sum, s) => sum + s.force, 0);
       return [e, { branch, stem, total: branch + stem }];
     }),

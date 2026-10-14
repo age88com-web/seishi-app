@@ -38,7 +38,7 @@ export { assessStrength, assessTouta, forceBalanceOf } from "./strength";
 export { assessHehua } from "./hehua";
 export { assessGaikaku } from "./gaikaku";
 export { branchStates, branchRelationsOf } from "./branchState";
-export { calculateElementForce, judgeSupportRatio } from "./elementForce";
+export { calculateElementForce, judgeSupportRatio, zokanShares } from "./elementForce";
 export {
   FINAL_PATTERN_OPTIONS,
   FINAL_STRENGTH_OPTIONS,

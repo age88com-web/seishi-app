@@ -19,6 +19,7 @@ import {
   assessStrength,
   buildInterpretationInput,
   judgeSupportRatio,
+  zokanShares,
   branchStates,
   EMPTY_DECISION,
   FINAL_PATTERN_OPTIONS,
@@ -122,7 +123,7 @@ for (const f of FIXTURES) {
   const b = FIXTURES.find((f) => f.name === "ベッカム")!;
   check("ベッカム: 資料の表記は身強・月刃格（KD15-2）", !b.expected.includes("身弱") && b.expected.includes("身強") && b.expected.includes("月刃格"), JSON.stringify(b.expected));
   const kb = assessKakkyoku(toPillars(b.pillars));
-  check("ベッカム: 点数は境界・月刃格で最終身強（KD27-7）", kb.elementForce.scoreJudgment === "境界" && kb.elementForce.monthPattern === "月刃格" && kb.elementForce.finalJudgment === "身強", "");
+  check("ベッカム: 点数は身弱・月刃格で最終身強（KD27-7・KD28）", kb.elementForce.scoreJudgment === "身弱" && kb.elementForce.monthPattern === "月刃格" && kb.elementForce.finalJudgment === "身強", "");
 }
 
 // 得地のみ（20%）は弱側 → 身弱候補
@@ -209,18 +210,47 @@ for (const f of FIXTURES) {
   check("行運補強: 原局とは別項目（未実装のため null）", [stemSup, inOnly, ngSup].every((h) => h.luckSupport === null), "");
 }
 
-// 地支の化（KD13・KD14。branchState.ts）: 半合は化五行、月支は半合では化さない
+// 地支の化（KD13・KD14。branchState.ts）: 半合（旺支を含む隣接の2支）は化五行。月支も半合なら化す（KD13-12。2026-10-14）
 {
   const st = (pillars: string, k: string) => branchStates(toPillars(pillars)).find((x) => x.pillar === k)!;
   const a = "丙辰 甲子 丁卯 庚午"; // 日支子・時支辰（隣接・旺支子）で半合 → 水
   check("半合: 日支子→水", st(a, "日").transformedTo === "水", JSON.stringify(st(a, "日")));
   check("半合: 時支辰→水", st(a, "時").transformedTo === "水", JSON.stringify(st(a, "時")));
-  const b = "丙寅 甲申 丙子 庚午"; // 月支子・日支申で半合、月支は化さない
-  check("月支は半合では化さない", st(b, "月").transformedTo === null, JSON.stringify(st(b, "月")));
+  const b = "丙寅 甲申 丙子 庚午"; // 月支子・日支申で半合（月支子は年支午と冲もあるが、冲より半合が優先）
+  check("月支も半合で化す（月支子→水）", st(b, "月").transformedTo === "水", JSON.stringify(st(b, "月")));
   check("月支と半合した日支申は化す（水）", st(b, "日").transformedTo === "水", JSON.stringify(st(b, "日")));
-  const t = "辛巳 乙亥 戊申 壬子"; // 貴乃花光司: 年支子・月支申の申子半合
+  const t = "辛巳 乙亥 戊申 壬子"; // 貴乃花光司: 年支子・月支申の申子半合（旺支子を含む・隣接）
   check("申子半合: 年支子は水（化）", st(t, "年").transformedTo === "水" && st(t, "年").relations.some((x) => x.startsWith("半合")), JSON.stringify(st(t, "年")));
-  check("申子半合: 月支申は化さない（月支は三合のみ）", st(t, "月").transformedTo === null && st(t, "月").relations.some((x) => x.startsWith("半合")), JSON.stringify(st(t, "月")));
+  check("申子半合: 月支申も水（化）", st(t, "月").transformedTo === "水" && st(t, "月").relations.some((x) => x.startsWith("半合")), JSON.stringify(st(t, "月")));
+  // 月支の半合: 通根は元の蔵干（月支申は水に化しても、蔵干庚があるので時干辛の根に数える）
+  const tk = assessKakkyoku(toPillars(t)).elementForce;
+  check("月支が半合で化しても根は元の蔵干（時干辛の根に月支申）", tk.stems.find((x) => x.pillar === "時")!.roots.includes("月"), JSON.stringify(tk.stems.find((x) => x.pillar === "時")));
+  check("月支が半合で化すと化後の五行へ100%（月支申 5点→水）", (() => { const m = tk.branches.find((x) => x.pillar === "月")!; return m.shares.length === 1 && m.shares[0].element === "水" && m.shares[0].points === 5; })(), "");
+  // 旺支を欠く2支（申辰・亥未・寅戌・巳丑）は隣接していても半合にしない（月支を含む）
+  for (const [pillars, label] of [["丙辰 甲申 丙午 庚午", "申辰"], ["丙未 甲亥 丙午 庚午", "亥未"], ["丙戌 甲寅 丙子 庚子", "寅戌"], ["丙丑 甲巳 丙午 庚午", "巳丑"], ["丙丑 甲戌 丙寅 庚子", "月支寅・日支戌"], ["丙午 甲丑 丙巳 庚子", "月支巳・日支丑"]] as const) {
+    const sts = branchStates(toPillars(pillars));
+    check(`旺支欠如: ${label} は半合にしない・化さない`, sts.every((x) => !x.relations.some((r) => r.startsWith("半合"))) && sts.filter((x) => ["日", "時", "月"].includes(x.pillar)).every((x) => x.transformedTo === null || x.relations.some((r) => /^(三合|三会|半会)/.test(r))), JSON.stringify(sts.map((x) => [x.pillar, x.branch, x.relations, x.transformedTo])));
+  }
+  // 半合は隣接のみ（年支申・日支子は月支を挟むので半合にしない）。三合は離れていても化す
+  const far = branchStates(toPillars("丙午 甲子 丙寅 庚申"));
+  check("半合は隣接のみ（年支申・日支子は化さない）", far.every((x) => x.transformedTo === null), JSON.stringify(far.map((x) => [x.pillar, x.transformedTo])));
+  const sanFar = branchStates(toPillars("丙辰 甲午 丙子 庚申")); // 申子辰（年・月・時）。日支午は子と冲
+  check("三合は離れていても化す（申子辰）", ["年", "月", "時"].every((k) => sanFar.find((x) => x.pillar === k)!.transformedTo === "水"), JSON.stringify(sanFar.map((x) => [x.pillar, x.transformedTo])));
+  // 月支で半合と半会が競合し化五行が複数なら、他の地支と同じく化さない（実例3: 月支丑は子丑の半会＝水・丑酉の半合＝金）
+  const j3 = branchStates(toPillars("戊辰 己酉 癸丑 壬子")).find((x) => x.pillar === "月")!;
+  check("月支の半合と半会が別五行で競合 → 化さない", j3.transformedTo === null && j3.notes.some((n) => n.includes("複数")), JSON.stringify(j3));
+  // 争合・双合（KD13-13）: 半合の2支のどちらかが命式内の別の支とも半合を作るなら化さない（隣接していない相手も数える）
+  const sano = branchStates(toPillars("甲戌 甲子 庚申 戊申")); // 佐野量子: 年支申・月支申・日支子 → 子を2つの申が取り合う
+  check("争合: 佐野量子 月支申・日支子は化さない", ["月", "日"].every((k) => { const x = sano.find((y) => y.pillar === k)!; return x.transformedTo === null && x.relations.some((r) => r.includes("争合")) && x.notes.some((n) => n.includes("争合")); }), JSON.stringify(sano));
+  const sanoK = assessKakkyoku(toPillars("甲戌 甲子 庚申 戊申")).elementForce;
+  check("争合: 佐野量子は化水前の力量で 32.8% 身弱", sanoK.supportRatioPercent.toFixed(1) === "32.8" && sanoK.finalJudgment === "身弱", `${sanoK.supportRatioPercent}`);
+  const taka = branchStates(toPillars(t)); // 貴乃花: 子と申は一対一（亥・巳は半合の相手にならない）
+  check("争合でない: 貴乃花 年支子・月支申は一対一の半合で化す", taka.every((x) => !x.relations.some((r) => r.includes("争合"))) && st(t, "年").transformedTo === "水" && st(t, "月").transformedTo === "水", "");
+  const both = branchStates(toPillars("丙寅 甲申 丙子 庚申")); // 年支申・月支子・日支申（両隣の申が子を取り合う）
+  check("争合: 両隣の申が月支子を取り合う → 3支とも化さない", both.filter((x) => x.pillar !== "時").every((x) => x.transformedTo === null), JSON.stringify(both.map((x) => [x.pillar, x.relations, x.transformedTo])));
+  // 半会だけの月支は化さない（現行のまま）: 月支子・日支丑の子丑半会
+  const hk = branchStates(toPillars("丙午 甲丑 丙子 庚午")).find((x) => x.pillar === "月")!;
+  check("月支は半会では化さない（現行のまま）", hk.transformedTo === null && hk.relations.some((r) => r.startsWith("半会")), JSON.stringify(hk));
   const r = assessKakkyoku(toPillars(t));
   check("貴乃花光司: 内格の経路", r.route === "naikaku", r.route);
 }
@@ -298,24 +328,25 @@ for (const f of FIXTURES) {
   check("UI: 外格候補ありでも内格補助を表示", htmlGai.includes("内格として見る場合"), "");
 }
 
-// 強弱表示の一本化と術者最終強弱（KD20・KD27）: 貴乃花光司（資料に身強・身弱の記載なし。秀山式は 39.2% で身弱）
+// 強弱表示の一本化と術者最終強弱（KD20・KD27）: 貴乃花光司（資料に身強・身弱の記載なし。秀山式は申子半合で月支も化水し 73.4% で身強）
 {
   const pillars = toPillars("辛巳 乙亥 戊申 壬子");
   const k = assessKakkyoku(pillars);
   check("格局候補欄に身強・身弱を出さない", !k.candidates.some((c) => (c.name === "身強" || c.name === "身弱") && c.uiVisible), "");
   check("三得類型は材料として残る", k.strength.classificationCandidates.includes("弱（得地のみ）"), k.strength.classificationCandidates.join("・"));
-  check("内格補助は秀山式（貴乃花 39.2% → 身弱）", k.elementForce.finalJudgment === "身弱" && k.elementForce.supportRatioPercent.toFixed(1) === "39.2", `${k.elementForce.supportRatioPercent}`);
+  check("内格補助は秀山式（貴乃花 73.4% → 身強）", k.elementForce.finalJudgment === "身強" && k.elementForce.supportRatioPercent.toFixed(1) === "73.4", `${k.elementForce.supportRatioPercent}`);
   const jobsK = assessKakkyoku(toPillars("辛卯 丙辰 戊寅 乙未")); // ジョブズ（三得は弱側・秀山式は身強）
   check("三得と内格補助が食い違ってもエラーにならない（KD20-4）", jobsK.strength.classificationCandidates.includes("弱（得地のみ）") && jobsK.elementForce.finalJudgment === "身強", "");
   const html = renderToStaticMarkup(createElement(KakkyokuView, { k, decision: EMPTY_DECISION, onDecisionChange: () => {} }));
   const kakuBox = html.slice(html.indexOf("格局候補（機械判定）"), html.indexOf("内格補助</h3>"));
   check("UI: 格局候補欄に身強・身弱が出ない", !/身強|身弱/.test(kakuBox), kakuBox.replace(/<[^>]+>/g, " ").slice(0, 120));
   check("UI: 三得・力量欄に三得では弱側", html.includes("三得では弱側"), "");
-  check("UI: 内格補助欄に秀山式の判定と扶助率", html.includes("内格補助：身弱") && html.includes("扶助率：39.2%"), "");
+  check("UI: 内格補助欄に秀山式の判定と扶助率", html.includes("内格補助：身強") && html.includes("扶助率：73.4%"), "");
+  check("UI: 内格補助欄に蔵干比率の注記", html.includes("地支力量は蔵干比率（本気60%・残り20%・20%／2蔵干は70%・30%）"), "");
   check("UI: 最終強弱の選択欄", html.includes("最終強弱") && FINAL_STRENGTH_OPTIONS.every((o) => html.includes(`>${o}</option>`)), "");
   // 優先順位: 術者最終強弱 ＞ 秀山式内格力量判定法（KD27）
   const none = resolveEffectiveStrength(k, EMPTY_DECISION);
-  check("最終強弱 未入力: 秀山式（elementForce）を採用", none.source === "elementForce" && none.value === "身弱", JSON.stringify(none));
+  check("最終強弱 未入力: 秀山式（elementForce）を採用", none.source === "elementForce" && none.value === "身強", JSON.stringify(none));
   const chosen = resolveEffectiveStrength(k, { ...EMPTY_DECISION, finalStrength: "身弱" });
   check("最終強弱 選択: 術者を優先", chosen.source === "practitioner" && chosen.value === "身弱", JSON.stringify(chosen));
   const hold = resolveEffectiveStrength(k, { ...EMPTY_DECISION, finalStrength: "保留" });
@@ -390,19 +421,28 @@ for (const f of FIXTURES) {
 
 // 秀山式内格力量判定法（KD27）。命例に合わせて係数を変えない（KD26-3）
 {
-  console.log("\n秀山式内格力量判定法（KD27）");
+  console.log("\n秀山式内格力量判定法（KD27・蔵干配分 KD28）");
   type El = "木" | "火" | "土" | "金" | "水";
-  // 期待値は KD27 の式（地支 月5・他2 × 旺相休囚死、天干 1 × 通根補正）を手で当てはめた値。[木, 火, 土, 金, 水]
+  // 期待値は KD27・KD28 の式（地支 月5・他2 を蔵干へ配分〔3蔵干 本気60・残り20・20／2蔵干 70・30／1蔵干 100、化した支は化後の五行へ100〕
+  // × 旺相休囚死、天干 1 × 通根補正）を手で当てはめた値。[木, 火, 土, 金, 水]
   const CASES: { name: string; pillars: string; forces: number[]; ratio: number; score: string; monthPattern: string | null; source: string }[] = [
-    { name: "松下幸之助", pillars: "丙辰 癸酉 乙亥 甲午", forces: [3, 2.25, 1.5, 2, 9], ratio: 62.0, score: "身強", monthPattern: "月刃格", source: "身強" },
-    { name: "シュワルツェネッガー", pillars: "戊寅 庚戌 丁未 丁亥", forces: [1.5, 3, 12, 1.25, 1], ratio: 70.7, score: "身強", monthPattern: "建禄格", source: "身強" },
-    { name: "ベッカム", pillars: "乙卯 戊申 庚辰 乙卯", forces: [6, 0, 9, 3.75, 0], ratio: 48.0, score: "境界", monthPattern: "月刃格", source: "身強" },
-    { name: "ジョブズ", pillars: "辛卯 丙辰 戊寅 乙未", forces: [15, 1.5, 2.5, 1, 0], ratio: 82.5, score: "身強", monthPattern: "建禄格", source: "身強" },
-    { name: "佐野量子", pillars: "甲戌 甲子 庚申 戊申", forces: [2, 0, 3.5, 12, 2.5], ratio: 22.5, score: "身弱", monthPattern: null, source: "身弱" },
-    { name: "千代の富士", pillars: "丙辰 癸巳 辛巳 乙未", forces: [1.5, 15, 2.5, 1.5, 1.25], ratio: 12.6, score: "身弱", monthPattern: null, source: "身弱" },
+    { name: "松下幸之助", pillars: "丙辰 癸酉 乙亥 甲午", forces: [5.375, 1.95, 1.35, 2, 7.35], ratio: 51.9, score: "境界", monthPattern: "月刃格", source: "身強" },
+    { name: "シュワルツェネッガー", pillars: "戊寅 庚戌 丁未 丁亥", forces: [2.1, 4.8, 8.4, 1.75, 0.7], ratio: 57.2, score: "身強", monthPattern: "建禄格", source: "身強" },
+    { name: "ベッカム", pillars: "乙卯 戊申 庚辰 乙卯", forces: [6.75, 0, 6.6, 2.75, 0.7], ratio: 39.3, score: "身弱", monthPattern: "月刃格", source: "身強" },
+    { name: "ジョブズ", pillars: "辛卯 丙辰 戊寅 乙未", forces: [12.6, 3.25, 2.6, 1, 0], ratio: 81.5, score: "身強", monthPattern: "建禄格", source: "身強" },
+    { name: "佐野量子", pillars: "甲戌 甲子 庚申 戊申", forces: [2, 0.3, 4.1, 8.4, 4.25], ratio: 32.8, score: "身弱", monthPattern: null, source: "身弱" },
+    { name: "千代の富士", pillars: "丙辰 癸巳 辛巳 乙未", forces: [1.9, 10.8, 3.25, 2.2, 1.55], ratio: 19.0, score: "身弱", monthPattern: null, source: "身弱" },
     { name: "松坂大輔", pillars: "己巳 己丑 乙酉 庚申", forces: [1, 0, 3, 18, 0], ratio: 13.6, score: "身弱", monthPattern: null, source: "身弱" },
-    { name: "長嶋一茂", pillars: "癸未 乙酉 己丑 乙巳", forces: [2.5, 0, 4.5, 11.25, 1.5], ratio: 20.3, score: "身弱", monthPattern: null, source: "身弱" },
-    { name: "藤原紀香", pillars: "庚午 甲申 甲午 辛亥", forces: [2.5, 10.5, 0, 3.5, 1.5], ratio: 22.2, score: "身弱", monthPattern: null, source: "身弱" },
+    { name: "長嶋一茂", pillars: "癸未 乙酉 己丑 乙巳", forces: [2.8, 0.4, 3.3, 11.25, 1.5], ratio: 22.3, score: "身弱", monthPattern: null, source: "身弱" },
+    { name: "藤原紀香", pillars: "庚午 甲申 甲午 辛亥", forces: [3.1, 7.35, 3.125, 3.1, 1.35], ratio: 24.7, score: "身弱", monthPattern: null, source: "身弱" },
+    // イチロー（D4。時柱は資料で癸巳と壬辰の2通り）
+    { name: "イチロー（時柱癸巳）", pillars: "癸巳 辛卯 壬戌 癸丑", forces: [1.5, 2.2, 6.9, 3.75, 3.95], ratio: 58.2, score: "身強", monthPattern: "建禄格", source: "身強" },
+    { name: "イチロー（時柱壬辰）", pillars: "壬辰 辛卯 壬戌 癸丑", forces: [3, 1, 6.3, 3.25, 4.7], ratio: 52.3, score: "境界", monthPattern: "建禄格", source: "身強" },
+    // 四柱推命実例解説テキスト.pptx の内格4例（左から時・日・月・年）
+    { name: "実例1", pillars: "丁巳 戊子 戊子 乙亥", forces: [1.25, 1.85, 2.8, 0.4, 13.5], ratio: 23.5, score: "身弱", monthPattern: null, source: "身弱" },
+    { name: "実例2", pillars: "辛卯 丙寅 丙子 己酉", forces: [5, 2.5, 1.25, 3.25, 7.5], ratio: 38.5, score: "身弱", monthPattern: null, source: "身弱" },
+    { name: "実例3", pillars: "戊辰 己酉 癸丑 壬子", forces: [0.3, 0, 9.3, 3.75, 4.7], ratio: 51.5, score: "境界", monthPattern: "月刃格", source: "身強" },
+    { name: "実例4", pillars: "壬寅 丁巳 壬申 己酉", forces: [0.6, 2.7, 3.3, 8.1, 4.25], ratio: 17.4, score: "身弱", monthPattern: null, source: "身弱" },
   ];
   const ELS: El[] = ["木", "火", "土", "金", "水"];
   const near = (a: number, b: number, eps = 1e-9) => Math.abs(a - b) < eps;
@@ -428,9 +468,10 @@ for (const f of FIXTURES) {
   check("KD27 判定: 45%超〜55%未満は境界", judgeSupportRatio(9.01, 20) === "境界" && judgeSupportRatio(10.99, 20) === "境界", "");
 
   const mats = assessKakkyoku(toPillars("丙辰 癸酉 乙亥 甲午")).elementForce; // 松下幸之助
-  // 同じ地支を天干の本数分だけ重複計上しない（木の天干2本でも、木の地支がなければ地支力量は0）
+  // 同じ地支を天干の本数分だけ重複計上しない（木の天干2本でも、木の地支力量は蔵干配分の分だけ）
   check("KD27 重複計上なし: 地支は各1回", mats.branches.length === 4 && near(ELS.reduce((a, el) => a + mats.byElement[el].branch, 0), mats.branches.reduce((a, b) => a + b.force, 0)), "");
-  check("KD27 重複計上なし: 木の天干2本でも木の地支力量は0", mats.byElement.木.branch === 0 && mats.stems.filter((x) => x.element === "木").length === 2, JSON.stringify(mats.byElement.木));
+  // 木の地支力量＝月支亥の甲（5×0.3×相1.25＝1.875）＋時支辰の乙（2×0.2×相1.25＝0.5）。天干の本数では増えない
+  check("KD27 重複計上なし: 木の天干2本でも木の地支力量は蔵干の分だけ", near(mats.byElement.木.branch, 2.375) && mats.stems.filter((x) => x.element === "木").length === 2, JSON.stringify(mats.byElement.木));
   // 月支に通根は2根相当（×1.5）。×1.25 の二重加点はしない
   const kui = mats.stems.find((x) => x.pillar === "日")!;
   check("KD27 通根: 月支に通根は ×1.5（二重加点なし）", kui.rootLevel === "month" && kui.multiplier === 1.5, JSON.stringify(kui));
@@ -438,7 +479,7 @@ for (const f of FIXTURES) {
   check("KD27 通根: 1根は ×1.25（自柱以外の年支午）", hei.rootLevel === "one" && hei.multiplier === 1.25 && hei.roots.join("") === "年", JSON.stringify(hei));
   // 六合・冲の減衰（旧 ×1/2）を使わない: 酉辰の六合でも日支酉は 2×休1.0＝2
   const yu = mats.branches.find((b) => b.pillar === "日")!;
-  check("KD27 六合: 減衰なし（酉辰の六合でも 2）", yu.force === 2, JSON.stringify(yu));
+  check("KD27 六合: 減衰なし（酉辰の六合でも 2）", near(yu.force, 2), JSON.stringify(yu));
   // 季節係数は天干に掛けない（天干の力は通根補正だけ）
   check("KD27 天干に季節係数を掛けない", mats.stems.every((x) => x.force === x.multiplier), JSON.stringify(mats.stems.map((x) => x.force)));
   // 化: 既存の確定ロジックで化した地支は化後の五行（ジョブズ 寅卯辰の三会で日支辰→木。月支寅は三合以外で化さない）
@@ -467,13 +508,31 @@ for (const f of FIXTURES) {
     }),
   );
   check("KD27 五季の旺相休囚死と係数（辰戌丑未は月全体を土旺）", seasonOk, "");
-  // 境界帯は補助判断材料を持つ（数値にはしない）
-  const beck = assessKakkyoku(toPillars("乙卯 戊申 庚辰 乙卯")).elementForce;
+  // 境界帯は補助判断材料を持つ（数値にはしない）。実例3（51.5%）
+  const border = assessKakkyoku(toPillars("戊辰 己酉 癸丑 壬子")).elementForce;
   check("KD27-U3 境界: 得令・得勢・得地・党多・会合・合冲を補助判断材料として保持",
-    beck.scoreJudgment === "境界" && ["得令", "得勢", "得地", "党多", "会合", "干合"].every((h) => beck.borderlineMaterials.some((x) => x.startsWith(h))),
-    beck.borderlineMaterials.join("／"));
-  console.log(`  境界の補助判断材料（ベッカム）: ${beck.borderlineMaterials.join("／")}`);
-  check("KD27 境界外は補助判断材料なし", mats.borderlineMaterials.length === 0, "");
+    border.scoreJudgment === "境界" && ["得令", "得勢", "得地", "党多", "会合", "干合"].every((h) => border.borderlineMaterials.some((x) => x.startsWith(h))),
+    border.borderlineMaterials.join("／"));
+  console.log(`  境界の補助判断材料（実例3）: ${border.borderlineMaterials.join("／")}`);
+  check("KD27 境界外は補助判断材料なし", jobs.scoreJudgment === "身強" && jobs.borderlineMaterials.length === 0, "");
+  // 蔵干配分（KD28）: 3蔵干 本気60・残り20・20（中気・余気を区別しない）／2蔵干 70・30／1蔵干 100。本気は地支と同じ五行
+  const shares = (b: string) => zokanShares(b as Branch).map((x) => `${x.stem}${x.ratio}`).join(" ");
+  check("KD28 3蔵干: 未は己0.6・丁0.2・乙0.2", shares("未") === "己0.6 丁0.2 乙0.2", shares("未"));
+  check("KD28 2蔵干: 亥は壬0.7・甲0.3／午は丁0.7・己0.3", shares("亥") === "壬0.7 甲0.3" && shares("午") === "丁0.7 己0.3", `${shares("亥")} / ${shares("午")}`);
+  check("KD28 1蔵干: 子は癸1", shares("子") === "癸1", shares("子"));
+  check("KD28 12支すべて配分の合計が1", ([..."子丑寅卯辰巳午未申酉戌亥"] as Branch[]).every((b) => near(zokanShares(b).reduce((a, x) => a + x.ratio, 0), 1)), "");
+  // シュワルツェネッガー: 月支未（5点）→ 己3・丁1・乙1、通常支寅（2点）→ 甲1.2・丙0.4・戊0.4（季節係数の前）
+  const schw = assessKakkyoku(toPillars("戊寅 庚戌 丁未 丁亥")).elementForce;
+  const pts = (k: string) => schw.branches.find((b) => b.pillar === k)!.shares.map((x) => `${x.stem}${+x.points.toFixed(3)}`).join(" ");
+  check("KD28 月支未5点: 己3・丁1・乙1", pts("月") === "己3 丁1 乙1", pts("月"));
+  check("KD28 通常支寅2点: 甲1.2・丙0.4・戊0.4", pts("時") === "甲1.2 丙0.4 戊0.4", pts("時"));
+  check("KD28 季節係数は配分後の各蔵干の五行で掛ける", schw.branches.every((b) => b.shares.every((x) => x.coefficient === schw.seasonal[x.element].coefficient && near(x.force, x.points * x.coefficient))), "");
+  // 化した支は蔵干配分せず化後の五行へ100%（ジョブズ 日支辰→木）
+  check("KD28 化した支は化後の五行へ100%", jd.shares.length === 1 && jd.shares[0].stem === null && jd.shares[0].element === "木" && jd.shares[0].ratio === 1, JSON.stringify(jd.shares));
+  // 荒川静香（D4）: 資料は身強だが秀山式は身弱（未解決の検証例。係数・閾値は合わせない）
+  const arakawa = assessKakkyoku(toPillars("壬辰 辛巳 庚子 辛酉")).elementForce;
+  console.log(`  参考 荒川静香（D4・資料は身強・未解決）: 扶助率${arakawa.supportRatioPercent.toFixed(1)}% 点数${arakawa.scoreJudgment} 格局${arakawa.monthPattern ?? "なし"} 最終${arakawa.finalJudgment}`);
+  check("荒川静香（未解決の検証例）: 43.1%・身弱のまま（資料に合わせない）", arakawa.supportRatioPercent.toFixed(1) === "43.1" && arakawa.finalJudgment === "身弱", "");
   // 時柱なし: 三柱で計算し参考判定
   const noHour = assessKakkyoku(toPillars("- 癸酉 乙亥 甲午")).elementForce;
   check("KD27 時柱なし: 地支3・天干3・referenceOnly", noHour.branches.length === 3 && noHour.stems.length === 3 && noHour.referenceOnly, "");

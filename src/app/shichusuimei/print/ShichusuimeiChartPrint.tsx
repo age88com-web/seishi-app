@@ -71,7 +71,7 @@ function Tags({ names }: { names: string[] }) {
 const num = (n: number) => (Number.isInteger(n) ? String(n) : n.toFixed(1));
 
 /**
- * 内格補助の点数表。値はすべて秀山式内格力量判定法 elementForce（五行力量・比劫＋印・食傷＋財＋官・扶助率・最終判定。KD27）のまま。
+ * 内格補助の点数表。値はすべて秀山式内格力量判定法 elementForce（五行力量・比劫＋印・食傷＋財＋官・扶助率・最終判定。KD27・蔵干配分 KD28）のまま。
  * 五行を比劫・印・食傷・財・官に当てるのは既存の五行の生剋表（GENERATES・CONTROLS）と、elementForce の比劫・印の五行による。
  */
 function InnerScoreTable({ inner }: { inner: ElementForceResult }) {
@@ -92,7 +92,9 @@ function InnerScoreTable({ inner }: { inner: ElementForceResult }) {
       </colgroup>
       <thead>
         <tr>
-          <th colSpan={4}>内格補助</th>
+          <th colSpan={4}>
+            内格補助<span className="kt-sub">　地支力量は蔵干比率（本気60%・残り20%・20%／2蔵干は70%・30%）</span>
+          </th>
         </tr>
       </thead>
       <tbody>

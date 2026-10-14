@@ -150,18 +150,33 @@ export type SeasonalState = "旺" | "相" | "休" | "囚" | "死";
 /** 天干の通根の段階（KD27-4）。month は月支に通根（2根相当） */
 export type RootLevel = "none" | "one" | "twoOrMore" | "month";
 
-/** 秀山式の地支1支の力量（KD27）。地支の五行に1回だけ加える */
+/** 地支の基礎点を蔵干へ配分した1件（KD28）。化した地支は化後の五行へ100%（stem は null） */
+export interface ElementForceShare {
+  stem: Stem | null;
+  element: Element;
+  /** 配分比率（3蔵干: 本気0.6・残り0.2・0.2／2蔵干: 本気0.7・もう一方0.3／1蔵干・化: 1） */
+  ratio: number;
+  /** 配分後の点（基礎点 × ratio） */
+  points: number;
+  seasonal: SeasonalState;
+  coefficient: number;
+  /** 季節補正後の力量（points × coefficient） */
+  force: number;
+}
+
+/** 秀山式の地支1支の力量（KD27・KD28）。基礎点を蔵干へ配分し、各蔵干の五行へ1回だけ加える */
 export interface ElementForceBranch {
   pillar: PillarKey;
   branch: Branch;
-  /** 力量を加える五行（化した地支は化後の五行） */
+  /** 地支の五行（化した地支は化後の五行） */
   element: Element;
   /** 化した場合だけ、もとの地支の五行 */
   originalElement: Element | null;
   /** 基礎点（月支5・他2） */
   base: number;
-  seasonal: SeasonalState;
-  coefficient: number;
+  /** 蔵干配分（化した地支は化後の五行1件） */
+  shares: ElementForceShare[];
+  /** 季節補正後の力量の合計 */
   force: number;
 }
 
@@ -186,7 +201,7 @@ export interface ElementForceResult {
   seasonal: Record<Element, { state: SeasonalState; coefficient: number }>;
   branches: ElementForceBranch[];
   stems: ElementForceStem[];
-  /** 五行ごとに命式全体で1回だけ集計（季節補正後の地支力量＋通根補正後の天干力量） */
+  /** 五行ごとに命式全体で1回だけ集計（蔵干配分・季節補正後の地支力量＋通根補正後の天干力量） */
   byElement: Record<Element, { branch: number; stem: number; total: number }>;
   supportingSide: { elements: Element[]; points: number };
   weakeningSide: { elements: Element[]; points: number };

@@ -138,6 +138,7 @@ export default function KakkyokuView({
           <div className="sc-muted">
             月令：{ef.monthBranch}（{ef.rulingElement}旺）
           </div>
+          <div className="sc-muted">地支力量は蔵干比率（本気60%・残り20%・20%／2蔵干は70%・30%）</div>
           {ef.borderlineMaterials.length > 0 && (
             <div>
               境界の補助判断材料：

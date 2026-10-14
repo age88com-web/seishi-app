@@ -81,6 +81,7 @@
 /* 内格補助の点数表（秀山式内格力量判定法 elementForce の値。左＝比劫・印、右＝食傷・財・官、合計、判定） */
 .kt-inner { width: 100%; margin-top: 2mm; font-size: 8.5pt; border: 1pt solid #000; }
 .kt-inner thead th { text-align: left; font-size: 9pt; font-weight: 700; padding: 0.8mm 1mm; border-bottom: 0.8pt solid #000; }
+.kt-inner thead .kt-sub { font-weight: 400; }
 .kt-inner tbody th { text-align: left; font-weight: 700; white-space: nowrap; padding: 0.7mm 1mm; }
 .kt-inner tbody td { text-align: right; padding: 0.7mm 1.5mm; }
 .kt-inner .kt-inner-sum th,
