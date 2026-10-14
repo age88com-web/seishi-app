@@ -126,6 +126,12 @@ export interface InterpretationContext<D extends InterpretationDomain = Interpre
    * 分からなければ省く（男女別の規則は判断せず不足として返す。類神を推測で置き換えない）。
    */
   subjectSide?: "male" | "female";
+  /**
+   * 病人（病気について占われる人物）の ID（Phase 5E。疾病 DOMAIN で使う）。問う人（subjectPersonId）とは別に持つ。
+   * 病人の本命・年命はこの人物の natalYear からだけ取る（問う人の本命を病人の本命として自動では使わない）。
+   * 問う人本人が病人なら subjectPersonId と同じ ID を入れる。
+   */
+  patientPersonId?: PersonContextId;
 }
 
 /** 類神の指定（天将か支） */
