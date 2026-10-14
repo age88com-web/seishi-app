@@ -43,6 +43,8 @@ import { buildDirectionWheelMarkers } from "./directionWheel";
 import type { DirectionMarker, DirectionWheelSlot } from "./directionWheel";
 import { computePersonalResultForDay, isValidLuckyDayBirthInput } from "./personalJudgment";
 import type { LuckyDayBirthInput } from "./personalJudgment";
+import { computeHourlyFortuneForDay } from "./hourlyFortune";
+import type { LuckyDayHourFortune } from "./hourlyFortune";
 import { getSupportStatus, submitSupportQuestion } from "./auth/wordpress";
 import type { SupportStatus } from "./auth/wordpress";
 import {
@@ -59,6 +61,7 @@ export type { LuckyDayBirthInput } from "./personalJudgment";
 export type { PersonalTakujitsuResult, PersonalAvoidReason, PersonalAvoidType } from "@/lib/takujitsu/personal";
 export type { SupportStatus } from "./auth/wordpress";
 export type { SupportQuestionContextInput } from "./support";
+export type { LuckyDayHourFortune, LuckyDayHourSymbol } from "./hourlyFortune";
 
 /**
  * クライアントから受け取った生年月日を検証する共通ヘルパー。
@@ -83,6 +86,13 @@ export type DayDetailActionResult =
        * 結果（status: "clear" | "avoid" | "undetermined"）をそのまま返す。
        */
       personal: PersonalTakujitsuResult | null;
+      /**
+       * 時間の吉凶（12時辰、ユーザー指示 2026-10-14追加）。
+       * null＝計算していない（未ログイン・無料会員）。有料会員のときだけ
+       * computeHourlyFortuneForDay()（既存の時家720表・分類・記号関数を
+       * 呼ぶだけ）の結果を返す。時間データ自体をクライアントへ渡さない。
+       */
+      hours: LuckyDayHourFortune[] | null;
     }
   | { ok: false; reason: "invalid_date" | "not_allowed" | "calc_error" };
 
@@ -105,6 +115,12 @@ export type DayDetailActionResult =
  *   場合は birth の値に関わらず必ず personal: null を返す（＝計算自体を
  *   行わない。クライアントが直接生年月日を送っても結果を取得できない）。
  *   通常の擇日判定（activities）には一切影響しない、完全に別レイヤーの値。
+ *
+ * 時間の吉凶（hours、ユーザー指示 2026-10-14追加）:
+ *   有料会員（member.active）の場合のみ computeHourlyFortuneForDay() で
+ *   12時辰の記号を計算する。未ログイン・無料会員は必ず hours: null
+ *   （計算自体を行わない）。日干支は data.calendar（12:00基準、月間行動
+ *   予定と同じ）から取り、子時はその日の子時（前日23:00〜当日1:00）になる。
  */
 export async function getDayDetailAction(
   dateIso: string,
@@ -131,15 +147,18 @@ export async function getDayDetailAction(
       timezone: "Asia/Tokyo",
     });
 
+    const dayGanzhi = `${data.calendar.dayStem}${data.calendar.dayBranch}`;
+
     let directionMarkers: DirectionMarkersBySlot | null = null;
     if (isDirectionAllowed(dateIso, today.iso, member.active)) {
-      const dayGanzhi = `${data.calendar.dayStem}${data.calendar.dayBranch}`;
       directionMarkers = buildDirectionWheelMarkers(calculateDailyDirections(dayGanzhi));
     }
 
     const personal = computePersonalResultForDay(member.active, sanitizeBirthInput(birth), data.calendar.dayBranch);
 
-    return { ok: true, data, directionMarkers, personal };
+    const hours = computeHourlyFortuneForDay(member.active, dayGanzhi);
+
+    return { ok: true, data, directionMarkers, personal, hours };
   } catch {
     return { ok: false, reason: "calc_error" };
   }

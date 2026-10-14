@@ -109,6 +109,7 @@ run_test_if_present() {
 
 run_test_if_present "tests/lucky_day_access_control.manual.ts"
 run_test_if_present "tests/lucky_day_member_auth.manual.ts" --conditions=react-server
+run_test_if_present "tests/lucky_day_hourly_fortune.manual.ts" --conditions=react-server
 
 log "[1/8] ローカル事前チェック OK"
 

@@ -100,6 +100,9 @@ import type { LuckyDayBirthInput, PersonalTakujitsuResult, PersonalResultByDate 
 // （src/lib/luckyDay/actions.ts の getSupportStatusAction/
 // submitSupportQuestionAction）。ここでは戻り値の型だけをimportする。
 import type { SupportStatus, SupportQuestionContextInput } from "@/lib/luckyDay/actions";
+// 時間の吉凶（ユーザー指示、2026-10-14）。型だけを import する
+// （計算・時家720表はServer Action側だけで使い、クライアントへは結果だけを渡す）。
+import type { LuckyDayHourFortune, LuckyDayHourSymbol } from "@/lib/luckyDay/actions";
 
 // ---------------------------------------------------------------------------
 // 既存 evaluateActivities() の evaluations には、その日その用事について
@@ -494,6 +497,66 @@ function PersonalDayMarker({ personal }: { personal: PersonalTakujitsuResult | u
 // 「ほか○件」展開）はコンポーネント内部の状態として自己完結させる
 // （「入力する日付だけを変える構造」というユーザー指示に対応）。
 // ---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
+// 時間の吉凶（有料会員向け、ユーザー指示 2026-10-14）。
+// hours は Server Action（getDayDetailAction）が有料会員のときだけ返す
+// 12時辰の結果をそのまま表示する（記号・説明はサーバー側で確定済み）。
+// 色だけに頼らず、必ず記号と説明を並べる。神殺名は表示しない。
+// スマホ（900px未満）は2列のカード、PCは時間・記号・説明の一覧表にする。
+// ---------------------------------------------------------------------------
+const HOUR_SYMBOL_TONE: Readonly<Record<LuckyDayHourSymbol, "good" | "even" | "bad" | "special">> = {
+  "◎": "good",
+  "○": "good",
+  "△": "even",
+  "▽": "bad",
+  "▼": "bad",
+  "勿用": "special",
+};
+
+function HourlyFortuneSection({ hours }: { hours: LuckyDayHourFortune[] }) {
+  return (
+    <div className="ld-hours-block">
+      <h3 className="ld-verdict-title ld-hours-heading">時間の吉凶</h3>
+      <ul className="ld-hours-list">
+        {hours.map((h) => (
+          <li key={h.hourBranch} className="ld-hours-item" data-tone={HOUR_SYMBOL_TONE[h.symbol]}>
+            <span className="ld-hours-range">{h.range}</span>
+            <span
+              className={h.symbol === "勿用" ? "ld-hours-symbol ld-hours-symbol-text" : "ld-hours-symbol"}
+              aria-hidden="true"
+            >
+              {h.symbol}
+            </span>
+            <span className="ld-hours-desc">
+              <span className="ld-visually-hidden">{`${h.symbol}：`}</span>
+              {h.description}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <p className="ld-hours-note">
+        23:00〜1:00 は、前日の23時から始まるこの日の最初の時間です。
+        記号は、その時間にある吉神と凶神の数を比べたものです。
+      </p>
+    </div>
+  );
+}
+
+/** 無料・未ログイン向けの簡潔な案内（時間の吉凶のデータはサーバーから受け取っていない）。 */
+function HourlyFortuneLockedNotice() {
+  return (
+    <div className="ld-hours-block">
+      <h3 className="ld-verdict-title ld-hours-heading">時間の吉凶</h3>
+      <div className="ld-hours-locked">
+        <p className="ld-hours-locked-text">1日12の時間帯ごとの吉凶は、有料会員向けの機能です。</p>
+        <a className="ld-upsell-link" href={MEMBER_SIGNUP_URL}>
+          会員プランを見る
+        </a>
+      </div>
+    </div>
+  );
+}
+
 function DayDetailCard({
   dateIso,
   onDateChange,
@@ -571,6 +634,8 @@ function DayDetailCard({
         directionMarkers: DirectionMarkersBySlot | null;
         /** null＝個人判定を行っていない（無料/未ログイン、または生年月日未入力）。 */
         personal: PersonalTakujitsuResult | null;
+        /** null＝時間の吉凶を受け取っていない（未ログイン・無料会員）。 */
+        hours: LuckyDayHourFortune[] | null;
       }
     | { status: "denied" }
     | { status: "error"; message: string };
@@ -583,7 +648,13 @@ function DayDetailCard({
       .then((res) => {
         if (cancelled) return;
         if (res.ok) {
-          setFetchState({ status: "ok", data: res.data, directionMarkers: res.directionMarkers, personal: res.personal });
+          setFetchState({
+            status: "ok",
+            data: res.data,
+            directionMarkers: res.directionMarkers,
+            personal: res.personal,
+            hours: res.hours,
+          });
         } else if (res.reason === "not_allowed") {
           setFetchState({ status: "denied" });
         } else {
@@ -601,6 +672,7 @@ function DayDetailCard({
   const data = fetchState.status === "ok" ? fetchState.data : null;
   const directionMarkers = fetchState.status === "ok" ? fetchState.directionMarkers : null;
   const personal = fetchState.status === "ok" ? fetchState.personal : null;
+  const hours = fetchState.status === "ok" ? fetchState.hours : null;
 
   const evalById = useMemo(() => {
     const map = new Map<string, ActivityEvaluation>();
@@ -724,6 +796,14 @@ function DayDetailCard({
               variant="signupOnly"
             />
           )}
+
+          {/*
+            時間の吉凶（ユーザー指示、2026-10-14追加）。吉凶方位の直後に置く。
+            hours は Server Action側で有料会員のときだけ計算される（null の
+            場合はデータ自体を受け取っていない）。表示の出し分けは isPaid では
+            なく hours の有無で行う（サーバーが返した事実だけを表示する）。
+          */}
+          {hours ? <HourlyFortuneSection hours={hours} /> : <HourlyFortuneLockedNotice />}
 
           {/*
             個人判定（ユーザー指示、2026-09-20追加）。通常の擇日判定
@@ -2710,6 +2790,125 @@ const CSS = `
 @media (min-width: 640px) {
   .ld-page { padding-top: 32px; }
   .ld-hero-title { font-size: 26px; }
+}
+
+/*
+  時間の吉凶（有料会員向け、ユーザー指示 2026-10-14）。
+  スマホは2列のカード、PC（900px以上）は時間・記号・説明の一覧表。
+  色は補助で、記号と説明を必ず併記する（色だけに頼らない）。
+*/
+.ld-hours-block {
+  margin: 18px 0;
+  padding-top: 14px;
+  border-top: 1px solid #ece8dd;
+}
+.ld-hours-heading { margin-bottom: 10px; }
+.ld-hours-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.ld-hours-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas: "range range" "symbol desc";
+  align-items: center;
+  column-gap: 8px;
+  row-gap: 4px;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid #e7e3d9;
+  border-radius: 10px;
+  background: #ffffff;
+}
+.ld-hours-range {
+  grid-area: range;
+  font-size: 12px;
+  font-weight: 700;
+  color: #55524b;
+  font-variant-numeric: tabular-nums;
+}
+.ld-hours-symbol {
+  grid-area: symbol;
+  font-size: 22px;
+  line-height: 1;
+  font-weight: 700;
+  min-width: 1.2em;
+  text-align: center;
+}
+.ld-hours-symbol-text {
+  font-size: 13px;
+  line-height: 1.3;
+  min-width: 0;
+  white-space: nowrap;
+}
+.ld-hours-desc {
+  grid-area: desc;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #55524b;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.ld-hours-item[data-tone="good"] { background: #f3f8f3; border-color: #cfe0cf; }
+.ld-hours-item[data-tone="good"] .ld-hours-symbol { color: #2f6b3a; }
+.ld-hours-item[data-tone="bad"] { background: #fbf3f1; border-color: #ead2cc; }
+.ld-hours-item[data-tone="bad"] .ld-hours-symbol { color: #8a3b2b; }
+.ld-hours-item[data-tone="even"] .ld-hours-symbol { color: #55524b; }
+.ld-hours-item[data-tone="special"] { background: #f6f5ef; }
+.ld-hours-item[data-tone="special"] .ld-hours-symbol { color: #55524b; }
+.ld-hours-note {
+  margin: 10px 0 0;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #8a8677;
+}
+.ld-hours-locked {
+  padding: 12px 14px;
+  border: 1px solid #e2ded2;
+  border-radius: 10px;
+  background: #fbfaf5;
+}
+.ld-hours-locked-text {
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: #263a33;
+}
+.ld-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+@media (min-width: 900px) {
+  .ld-hours-list {
+    grid-template-columns: 1fr;
+    gap: 0;
+    border: 1px solid #e7e3d9;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .ld-hours-item {
+    grid-template-columns: 7.5em 5.5em minmax(0, 1fr);
+    grid-template-areas: "range symbol desc";
+    padding: 7px 12px;
+    border: none;
+    border-radius: 0;
+    border-top: 1px solid #ece8dd;
+  }
+  .ld-hours-item:first-child { border-top: none; }
+  .ld-hours-range { font-size: 13px; }
+  .ld-hours-symbol { font-size: 18px; }
+  .ld-hours-symbol-text { font-size: 14px; }
+  .ld-hours-desc { font-size: 13px; }
 }
 
 /* PC: 十分な横幅がある画面のみ左右2カラム（スマホは縦一列のまま）。 */
