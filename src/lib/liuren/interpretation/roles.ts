@@ -54,7 +54,13 @@ export interface DomainSubtypes {
   marriage: "general" | "proposal" | "married" | "dating" | "reunion";
   travel: "departure";
   traveler: "return";
-  lostItem: "general";
+  /**
+   * Phase 5H: lostProperty（なくした物を探す。『御定六壬直指』遺失）・theft（盗難。『直指』盗賊・『大六壬指南』賊盗章・
+   * 『六壬心鏡』亡盗門の占盗賊）・recovery（失物・盗品が戻るか。lossCause で遺失か盗難かを指定し、その章の規則だけで読む）。
+   * 『直指』は遺失と盗賊を別の章にしているので、規則表も分ける。general は問いの種類が未指定（判断せず不足として返す）。
+   */
+  lostItem: "general" | "lostProperty" | "theft" | "recovery";
+  /** Phase 5H では使わない（盗難は lostItem の subtype theft で読む） */
   theft: "general";
   /**
    * Phase 5G: litigation（官に訴える訴訟・裁判）・dispute（当事者間の争い）・settlement（和解・争いの収束）。
@@ -170,6 +176,17 @@ export interface InterpretationContext<D extends InterpretationDomain = Interpre
   litigationStanding?: { precedence?: "initiator" | "respondent"; rank?: "senior" | "junior" };
   /** 当事者の現実の訴訟上の立場（Phase 5G）。要約に書くだけで、古典の主客（先後・尊卑）には対応させない */
   legalPosition?: "plaintiff" | "defendant";
+  /**
+   * なくした物・盗まれた物の所有者の ID（Phase 5H。失物 DOMAIN で使う）。問う人（subjectPersonId）とは別に持つ。
+   * 古典は日干を失主（所有者）とする（『直指』盗賊「以日干為失主」）。所有者本人が問うなら subjectPersonId と同じ ID を入れる。
+   * 盗人は人物として持たない（古典の玄武・盗神は盤上の類神で、実在の人物を推定しない）。
+   */
+  ownerPersonId?: PersonContextId;
+  /**
+   * 失った原因の指定（Phase 5H。recovery で使う）。misplaced＝置き忘れ・紛失（『直指』遺失の章で読む）、stolen＝盗難（盗賊の章で読む）。
+   * 分からなければ省く（recovery は判断せず不足として返す。lostProperty で遺失・盗難の兆候を読む）。
+   */
+  lossCause?: "misplaced" | "stolen";
 }
 
 /** 類神の指定（天将か支） */
