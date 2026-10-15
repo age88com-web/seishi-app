@@ -69,8 +69,13 @@ export interface DomainSubtypes {
    */
   litigation: "general" | "litigation" | "dispute" | "settlement";
   illness: "general";
-  pregnancy: "maintain";
-  childbirth: "delivery";
+  /**
+   * Phase 5I: conception（妊娠の兆候。来意として孕むと読む古典の形）・maintain（妊娠中の胎の経過）。
+   * 『大六壬指南』孕産章第八・『御定六壬直指』産孕・『六壬心鏡』巻五 産育門・『六壬大全』卷九 毕法賦で読む。general は未指定（判断せず不足を返す）。
+   */
+  pregnancy: "general" | "conception" | "maintain";
+  /** Phase 5I: delivery（出産の進行・難易と、母子の古典的象意）。general は未指定 */
+  childbirth: "general" | "delivery";
   missingPerson: "general";
   weather: "general";
 }
@@ -187,6 +192,11 @@ export interface InterpretationContext<D extends InterpretationDomain = Interpre
    * 分からなければ省く（recovery は判断せず不足として返す。lostProperty で遺失・盗難の兆候を読む）。
    */
   lossCause?: "misplaced" | "stolen";
+  /**
+   * 妊娠・出産について占われる本人の ID（Phase 5I。妊娠・出産 DOMAIN で使う）。問う人（subjectPersonId）とは別に持つ（代理の問い）。
+   * 胎児は人物として持たない（古典の胎神・日干・六合などは盤上の類神）。本人が問うなら subjectPersonId と同じ ID を入れる。
+   */
+  pregnantPersonId?: PersonContextId;
 }
 
 /** 類神の指定（天将か支） */
