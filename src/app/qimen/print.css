@@ -165,6 +165,12 @@
     font-weight: 700 !important;
     color: #000 !important;
   }
+  /* 中五宮からの寄宮干（括弧書き）。通常干より細字・小さめ。 */
+  .qm-print-doc .qm-st-lodged {
+    font-size: 8.5pt !important;
+    font-weight: 400 !important;
+    color: #000 !important;
+  }
   .qm-print-doc .qm-ss {
     font-size: 7.8pt !important;
     color: #000 !important;

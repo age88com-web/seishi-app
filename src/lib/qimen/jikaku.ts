@@ -55,6 +55,16 @@
 //   ・複数の吉格が同時成立した場合の優先順位はスライドに記載が無いため付けない。
 
 import type { QimenResult, PalaceSummary } from "./qimenEngine";
+import {
+  judgedPalaces,
+  stemPairs,
+  tianPanStems,
+  diPanStems,
+  roleStems,
+  BASIC_PAIR_POLICY,
+  XUNSHOU_ROLE_POLICY,
+} from "./stemAccess";
+import type { StemEntry } from "./stemAccess";
 import type { DiPanStem } from "./dipan";
 import type { BaMenName } from "./bamen";
 import type { BaShenName } from "./bashen";
@@ -64,6 +74,9 @@ const SANKICHIMON: readonly BaMenName[] = ["休門", "開門", "生門"];
 
 /** 三奇（スライド本文「天盤乙、丙、丁の三奇」）。 */
 const SANKI: readonly DiPanStem[] = ["乙", "丙", "丁"];
+
+/** 地假・神假・鬼假の天盤干（スライド本文「天盤丁、己、癸」）。 */
+const TEIKIKI: readonly DiPanStem[] = ["丁", "己", "癸"];
 
 /**
  * 宮番号 → 後天八卦。
@@ -128,12 +141,6 @@ export interface JikakuResult {
 
 // --- 宮ごとのアクセサ -------------------------------------------------------
 
-function tpStem(p: PalaceSummary | undefined): DiPanStem | undefined {
-  return p?.tianPanStem;
-}
-function dpStem(p: PalaceSummary | undefined): DiPanStem | undefined {
-  return p?.diPanStem;
-}
 function hasMen(p: PalaceSummary | undefined, men: BaMenName): boolean {
   return !!p && p.baMen.includes(men);
 }
@@ -145,10 +152,6 @@ function hasShen(p: PalaceSummary | undefined, shen: BaShenName): boolean {
 }
 function hasAnyShen(p: PalaceSummary | undefined, list: readonly BaShenName[]): boolean {
   return !!p && list.some((s) => p.baShen.includes(s));
-}
-function tpIsAny(p: PalaceSummary | undefined, list: readonly DiPanStem[]): boolean {
-  const s = tpStem(p);
-  return s !== undefined && list.includes(s);
 }
 
 // --- 段の可用性チェック ----------------------------------------------------
@@ -179,16 +182,70 @@ interface Rule {
   match: (input: JikakuInput) => number[];
 }
 
-/** 1〜9宮を走査し、述語が真の宮番号を返す。 */
-function scan(
+/**
+ * 三奇得使・三奇升殿の判定（中宮寄宮 Phase 3D・2026-10-16）。寄宮干も含めて判定する
+ * （stemAccess.ts の BASIC_PAIR_POLICY。凶格の pairScan と同じ方針）。
+ *   ・天盤寄宮干は芮禽同居宮、地盤寄宮干は坤二宮で参照する。中五宮は成立宮にしない。
+ *   ・天盤寄宮干×地盤寄宮干（どちらも中五宮の干）は判定しない。
+ */
+function pairScan(input: JikakuInput, tian: DiPanStem, di: readonly DiPanStem[]): number[] {
+  return judgedPalaces(BASIC_PAIR_POLICY).filter(
+    (palace) =>
+      stemPairs(input.palaces[palace], (t, d) => t === tian && di.includes(d), BASIC_PAIR_POLICY).length > 0,
+  );
+}
+/** 指定の宮の天盤干（通常干＋芮禽同居宮の寄宮干）に stem があれば、その宮を返す。 */
+function tianInPalace(input: JikakuInput, palace: number, stem: DiPanStem): number[] {
+  return judgedPalaces(BASIC_PAIR_POLICY).filter(
+    (p) => p === palace && tianPanStems(input.palaces[p], BASIC_PAIR_POLICY).some((e) => e.stem === stem),
+  );
+}
+
+/**
+ * 五遁（天遁・地遁・人遁・神遁・鬼遁）・三詐（真詐・重詐・休詐）の判定（中宮寄宮 Phase 3E・2026-10-16）、
+ * 四遁（風遁・雲遁・龍遁・虎遁）・五假（天假・地假・人假・神假・鬼假）の判定（Phase 3F・2026-10-16）。
+ * 天盤干は芮禽同居宮の寄宮干も含めて判定する（BASIC_PAIR_POLICY）。八門・八神・宮の条件は変えない。
+ *   ・stemScanWithDi: 地盤干を条件に含む格（天遁・地遁・雲遁・龍遁・虎遁）。地盤寄宮干（坤二宮）も参照し、
+ *     天盤寄宮干×地盤寄宮干（どちらも中五宮の干）は判定しない。
+ *   ・stemScanTianOnly: 地盤干を条件に含まない格（人遁・神遁・鬼遁・三詐・風遁・五假）。地盤寄宮干は参照しない。
+ *   ・中五宮は成立宮にしない。
+ */
+function stemScanWithDi(
   input: JikakuInput,
-  pred: (p: PalaceSummary | undefined, palace: number, input: JikakuInput) => boolean,
+  pred: (p: PalaceSummary | undefined, tian: DiPanStem, di: DiPanStem, palace: number) => boolean,
 ): number[] {
-  const out: number[] = [];
-  for (let palace = 1; palace <= 9; palace += 1) {
-    if (pred(input.palaces[palace], palace, input)) out.push(palace);
-  }
-  return out;
+  return judgedPalaces(BASIC_PAIR_POLICY).filter((palace) => {
+    const p = input.palaces[palace];
+    return stemPairs(p, (t, d) => pred(p, t, d, palace), BASIC_PAIR_POLICY).length > 0;
+  });
+}
+function stemScanTianOnly(
+  input: JikakuInput,
+  pred: (p: PalaceSummary | undefined, tian: DiPanStem, palace: number) => boolean,
+): number[] {
+  return judgedPalaces(BASIC_PAIR_POLICY).filter((palace) => {
+    const p = input.palaces[palace];
+    return tianPanStems(p, BASIC_PAIR_POLICY).some((e) => pred(p, e.stem, palace));
+  });
+}
+
+/**
+ * 旬首六儀を役割に使う格（青龍返首・飛鳥跌穴）の判定（中宮寄宮 Phase 3G・2026-10-16）。
+ * tianOf／diOf で宮の天盤干・地盤干の候補（通常干・寄宮干）を渡し、天盤寄宮干×地盤寄宮干は判定しない。
+ * 中五宮は成立宮にしない（XUNSHOU_ROLE_POLICY）。
+ */
+function roleScan(
+  input: JikakuInput,
+  tianOf: (p: PalaceSummary | undefined) => StemEntry[],
+  diOf: (p: PalaceSummary | undefined) => StemEntry[],
+  match: (tian: DiPanStem, di: DiPanStem) => boolean,
+): number[] {
+  return judgedPalaces(XUNSHOU_ROLE_POLICY).filter((palace) => {
+    const p = input.palaces[palace];
+    return tianOf(p).some((t) =>
+      diOf(p).some((d) => !(t.origin === "lodged" && d.origin === "lodged") && match(t.stem, d.stem)),
+    );
+  });
 }
 
 const S1 = "格局詳細（吉格） / Slide-3717";
@@ -205,8 +262,14 @@ const RULES: readonly Rule[] = [
     source: S1,
     needs: ["天盤"],
     // 「用事の時干支の六儀（旬首）となる天盤と地盤丙が同宮する」
+    // 天盤の旬首六儀は通常干のみ（天禽が帯同する寄宮干に旬首の役割を付けない）。地盤丙は坤二宮の寄宮干も含む。
     match: (input) =>
-      scan(input, (p) => tpStem(p) === input.liuyi && dpStem(p) === "丙"),
+      roleScan(
+        input,
+        (p) => roleStems(p, "tianPan", XUNSHOU_ROLE_POLICY),
+        (p) => diPanStems(p, XUNSHOU_ROLE_POLICY),
+        (t, d) => t === input.liuyi && d === "丙",
+      ),
   },
   {
     name: "飛鳥跌穴",
@@ -214,8 +277,14 @@ const RULES: readonly Rule[] = [
     source: S1,
     needs: ["天盤"],
     // 「天盤丙と用事の時干支の六儀（旬首）となる地盤が同宮」
+    // 天盤丙は芮禽同居宮の寄宮干も含む。地盤の旬首六儀は坤二宮の寄宮干も含む（講義案 p.22「辛(戊)」）。
     match: (input) =>
-      scan(input, (p) => tpStem(p) === "丙" && dpStem(p) === input.liuyi),
+      roleScan(
+        input,
+        (p) => tianPanStems(p, XUNSHOU_ROLE_POLICY),
+        (p) => roleStems(p, "diPan", XUNSHOU_ROLE_POLICY),
+        (t, d) => t === "丙" && d === input.liuyi,
+      ),
   },
   {
     name: "玉女守門",
@@ -226,9 +295,9 @@ const RULES: readonly Rule[] = [
     // 時干支と一致すること）の両方を満たすときに成立させる。
     match: (input) => {
       const zp = input.zhishiPalace;
-      if (zp === null) return [];
-      // 主条件: 値使門の宮に地盤丁
-      if (dpStem(input.palaces[zp]) !== "丁") return [];
+      if (zp === null || !judgedPalaces(XUNSHOU_ROLE_POLICY).includes(zp)) return [];
+      // 主条件: 値使門の宮に地盤丁（坤二宮の寄宮干も含む。中宮寄宮 Phase 3G）
+      if (!diPanStems(input.palaces[zp], XUNSHOU_ROLE_POLICY).some((e) => e.stem === "丁")) return [];
       // 旬条件: 旬首の干支 → 対応する用事の時干支に一致
       const expectedHour = GYOJO_SHUMON_XUN_TABLE[input.xunShou];
       if (expectedHour === undefined || expectedHour !== input.hourGanzhi) return [];
@@ -242,13 +311,7 @@ const RULES: readonly Rule[] = [
     needs: ["天盤", "八門"],
     // 「生門に天盤丙と地盤丁が同宮　または生門と天盤丙、地盤戊が同宮」
     match: (input) =>
-      scan(
-        input,
-        (p) =>
-          hasMen(p, "生門") &&
-          tpStem(p) === "丙" &&
-          (dpStem(p) === "丁" || dpStem(p) === "戊"),
-      ),
+      stemScanWithDi(input, (p, t, d) => hasMen(p, "生門") && t === "丙" && (d === "丁" || d === "戊")),
   },
   {
     name: "地遁",
@@ -257,10 +320,7 @@ const RULES: readonly Rule[] = [
     needs: ["天盤", "八門"],
     // 「開門と天盤乙と地盤己が同宮」
     match: (input) =>
-      scan(
-        input,
-        (p) => hasMen(p, "開門") && tpStem(p) === "乙" && dpStem(p) === "己",
-      ),
+      stemScanWithDi(input, (p, t, d) => hasMen(p, "開門") && t === "乙" && d === "己"),
   },
 
   // --- 格局詳細２（吉格） ---------------------------------------------
@@ -271,10 +331,7 @@ const RULES: readonly Rule[] = [
     needs: ["天盤", "八門", "八神"],
     // 「休門と天盤丁に太陰が同宮」
     match: (input) =>
-      scan(
-        input,
-        (p) => hasMen(p, "休門") && tpStem(p) === "丁" && hasShen(p, "太陰"),
-      ),
+      stemScanTianOnly(input, (p, t) => hasMen(p, "休門") && t === "丁" && hasShen(p, "太陰")),
   },
   {
     name: "神遁",
@@ -283,10 +340,7 @@ const RULES: readonly Rule[] = [
     needs: ["天盤", "八門", "八神"],
     // 「生門と天盤丙と九天が同宮」
     match: (input) =>
-      scan(
-        input,
-        (p) => hasMen(p, "生門") && tpStem(p) === "丙" && hasShen(p, "九天"),
-      ),
+      stemScanTianOnly(input, (p, t) => hasMen(p, "生門") && t === "丙" && hasShen(p, "九天")),
   },
   {
     name: "鬼遁",
@@ -295,12 +349,12 @@ const RULES: readonly Rule[] = [
     needs: ["天盤", "八門", "八神"],
     // 「杜門と天盤丁と九地が同宮、開門と天盤乙に九地、休門と天盤丁に九地」
     match: (input) =>
-      scan(
+      stemScanTianOnly(
         input,
-        (p) =>
-          (hasMen(p, "杜門") && tpStem(p) === "丁" && hasShen(p, "九地")) ||
-          (hasMen(p, "開門") && tpStem(p) === "乙" && hasShen(p, "九地")) ||
-          (hasMen(p, "休門") && tpStem(p) === "丁" && hasShen(p, "九地")),
+        (p, t) =>
+          (hasMen(p, "杜門") && t === "丁" && hasShen(p, "九地")) ||
+          (hasMen(p, "開門") && t === "乙" && hasShen(p, "九地")) ||
+          (hasMen(p, "休門") && t === "丁" && hasShen(p, "九地")),
       ),
   },
   {
@@ -310,11 +364,7 @@ const RULES: readonly Rule[] = [
     needs: ["天盤", "八門"],
     // 「休、開、生の三吉門と天盤乙が巽四宮に同宮」
     match: (input) =>
-      scan(
-        input,
-        (p, palace) =>
-          palace === 4 && hasAnyMen(p, SANKICHIMON) && tpStem(p) === "乙",
-      ),
+      stemScanTianOnly(input, (p, t, palace) => palace === 4 && hasAnyMen(p, SANKICHIMON) && t === "乙"),
   },
   {
     name: "雲遁",
@@ -323,11 +373,11 @@ const RULES: readonly Rule[] = [
     needs: ["天盤", "八門"],
     // 「休、開、生の三吉門と天盤乙地盤辛が同宮　または天盤乙と開門が坤二宮に同宮」
     match: (input) =>
-      scan(
+      stemScanWithDi(
         input,
-        (p, palace) =>
-          (hasAnyMen(p, SANKICHIMON) && tpStem(p) === "乙" && dpStem(p) === "辛") ||
-          (palace === 2 && tpStem(p) === "乙" && hasMen(p, "開門")),
+        (p, t, d, palace) =>
+          (hasAnyMen(p, SANKICHIMON) && t === "乙" && d === "辛") ||
+          (palace === 2 && t === "乙" && hasMen(p, "開門")),
       ),
   },
 
@@ -342,11 +392,11 @@ const RULES: readonly Rule[] = [
     //   条件A: 休/開/生門 ＋ 天盤乙 ＋ 地盤癸 が同宮（任意の宮）
     //   条件B: 休/開/生門 ＋ 天盤乙 が坎一宮(1)で同宮（地盤癸は不要）
     match: (input) =>
-      scan(
+      stemScanWithDi(
         input,
-        (p, palace) =>
-          (hasAnyMen(p, SANKICHIMON) && tpStem(p) === "乙" && dpStem(p) === "癸") ||
-          (palace === 1 && hasAnyMen(p, SANKICHIMON) && tpStem(p) === "乙"),
+        (p, t, d, palace) =>
+          (hasAnyMen(p, SANKICHIMON) && t === "乙" && d === "癸") ||
+          (palace === 1 && hasAnyMen(p, SANKICHIMON) && t === "乙"),
       ),
   },
   {
@@ -359,13 +409,11 @@ const RULES: readonly Rule[] = [
     //   条件A: 休門 or 生門 ＋ 天盤乙 ＋ 地盤辛 が同宮（任意の宮）
     //   条件B: 休門 ＋ 天盤乙 が艮八宮(8)で同宮（地盤辛は不要。条件Bは休門のみ）
     match: (input) =>
-      scan(
+      stemScanWithDi(
         input,
-        (p, palace) =>
-          ((hasMen(p, "休門") || hasMen(p, "生門")) &&
-            tpStem(p) === "乙" &&
-            dpStem(p) === "辛") ||
-          (palace === 8 && hasMen(p, "休門") && tpStem(p) === "乙"),
+        (p, t, d, palace) =>
+          ((hasMen(p, "休門") || hasMen(p, "生門")) && t === "乙" && d === "辛") ||
+          (palace === 8 && hasMen(p, "休門") && t === "乙"),
       ),
   },
   {
@@ -374,11 +422,7 @@ const RULES: readonly Rule[] = [
     source: S3,
     needs: ["天盤"],
     // 「天盤乙が地盤己（甲戌）或いは辛（甲午）と同宮」
-    match: (input) =>
-      scan(
-        input,
-        (p) => tpStem(p) === "乙" && (dpStem(p) === "己" || dpStem(p) === "辛"),
-      ),
+    match: (input) => pairScan(input, "乙", ["己", "辛"]),
   },
   {
     name: "丙奇得使",
@@ -386,11 +430,7 @@ const RULES: readonly Rule[] = [
     source: S3,
     needs: ["天盤"],
     // 「天盤丙が地盤戊（甲子）或いは庚（甲申）と同宮」
-    match: (input) =>
-      scan(
-        input,
-        (p) => tpStem(p) === "丙" && (dpStem(p) === "戊" || dpStem(p) === "庚"),
-      ),
+    match: (input) => pairScan(input, "丙", ["戊", "庚"]),
   },
   {
     name: "丁奇得使",
@@ -398,11 +438,7 @@ const RULES: readonly Rule[] = [
     source: S3,
     needs: ["天盤"],
     // 「天盤丁が地盤壬（甲辰）或いは癸（甲寅）と同宮」
-    match: (input) =>
-      scan(
-        input,
-        (p) => tpStem(p) === "丁" && (dpStem(p) === "壬" || dpStem(p) === "癸"),
-      ),
+    match: (input) => pairScan(input, "丁", ["壬", "癸"]),
   },
   {
     name: "乙奇升殿",
@@ -410,7 +446,7 @@ const RULES: readonly Rule[] = [
     source: S3,
     needs: ["天盤"],
     // 「天盤乙が震三宮に入宮」
-    match: (input) => scan(input, (p, palace) => palace === 3 && tpStem(p) === "乙"),
+    match: (input) => tianInPalace(input, 3, "乙"),
   },
 
   // --- 格局詳細４（吉格） ---------------------------------------------
@@ -420,7 +456,7 @@ const RULES: readonly Rule[] = [
     source: S4,
     needs: ["天盤"],
     // 「天盤丙が離九宮に入宮」
-    match: (input) => scan(input, (p, palace) => palace === 9 && tpStem(p) === "丙"),
+    match: (input) => tianInPalace(input, 9, "丙"),
   },
   {
     name: "丁奇升殿",
@@ -428,7 +464,7 @@ const RULES: readonly Rule[] = [
     source: S4,
     needs: ["天盤"],
     // 「天盤丁が兌七宮に入宮」
-    match: (input) => scan(input, (p, palace) => palace === 7 && tpStem(p) === "丁"),
+    match: (input) => tianInPalace(input, 7, "丁"),
   },
   {
     name: "真詐",
@@ -437,10 +473,9 @@ const RULES: readonly Rule[] = [
     needs: ["天盤", "八門", "八神"],
     // 「開、休、生の三吉門と天盤乙、丙、丁の三奇が太陰の宮に同宮」
     match: (input) =>
-      scan(
+      stemScanTianOnly(
         input,
-        (p) =>
-          hasAnyMen(p, SANKICHIMON) && tpIsAny(p, SANKI) && hasShen(p, "太陰"),
+        (p, t) => hasAnyMen(p, SANKICHIMON) && SANKI.includes(t) && hasShen(p, "太陰"),
       ),
   },
   {
@@ -450,10 +485,9 @@ const RULES: readonly Rule[] = [
     needs: ["天盤", "八門", "八神"],
     // 「開、休、生の三吉門と天盤乙、丙、丁の三奇が九地の宮に同宮」
     match: (input) =>
-      scan(
+      stemScanTianOnly(
         input,
-        (p) =>
-          hasAnyMen(p, SANKICHIMON) && tpIsAny(p, SANKI) && hasShen(p, "九地"),
+        (p, t) => hasAnyMen(p, SANKICHIMON) && SANKI.includes(t) && hasShen(p, "九地"),
       ),
   },
   {
@@ -463,10 +497,9 @@ const RULES: readonly Rule[] = [
     needs: ["天盤", "八門", "八神"],
     // 「開、休、生の三吉門と天盤乙、丙、丁の三奇が六合の宮に同宮」
     match: (input) =>
-      scan(
+      stemScanTianOnly(
         input,
-        (p) =>
-          hasAnyMen(p, SANKICHIMON) && tpIsAny(p, SANKI) && hasShen(p, "六合"),
+        (p, t) => hasAnyMen(p, SANKICHIMON) && SANKI.includes(t) && hasShen(p, "六合"),
       ),
   },
 
@@ -478,10 +511,7 @@ const RULES: readonly Rule[] = [
     needs: ["天盤", "八門", "八神"],
     // 「景門と天盤乙、丙、丁の三奇が九天と同宮」
     match: (input) =>
-      scan(
-        input,
-        (p) => hasMen(p, "景門") && tpIsAny(p, SANKI) && hasShen(p, "九天"),
-      ),
+      stemScanTianOnly(input, (p, t) => hasMen(p, "景門") && SANKI.includes(t) && hasShen(p, "九天")),
   },
   {
     name: "地假",
@@ -490,12 +520,9 @@ const RULES: readonly Rule[] = [
     needs: ["天盤", "八門", "八神"],
     // 「杜門と天盤丁、己、癸が九地、太陰或いは六合の宮に同宮」
     match: (input) =>
-      scan(
+      stemScanTianOnly(
         input,
-        (p) =>
-          hasMen(p, "杜門") &&
-          tpIsAny(p, ["丁", "己", "癸"]) &&
-          hasAnyShen(p, ["九地", "太陰", "六合"]),
+        (p, t) => hasMen(p, "杜門") && TEIKIKI.includes(t) && hasAnyShen(p, ["九地", "太陰", "六合"]),
       ),
   },
   {
@@ -505,10 +532,7 @@ const RULES: readonly Rule[] = [
     needs: ["天盤", "八門", "八神"],
     // 「驚門と天盤壬が九天の宮に同宮」
     match: (input) =>
-      scan(
-        input,
-        (p) => hasMen(p, "驚門") && tpStem(p) === "壬" && hasShen(p, "九天"),
-      ),
+      stemScanTianOnly(input, (p, t) => hasMen(p, "驚門") && t === "壬" && hasShen(p, "九天")),
   },
   {
     name: "神假",
@@ -517,12 +541,9 @@ const RULES: readonly Rule[] = [
     needs: ["天盤", "八門", "八神"],
     // 「傷門と天盤丁、己、癸が九地或いは六合と同宮」
     match: (input) =>
-      scan(
+      stemScanTianOnly(
         input,
-        (p) =>
-          hasMen(p, "傷門") &&
-          tpIsAny(p, ["丁", "己", "癸"]) &&
-          hasAnyShen(p, ["九地", "六合"]),
+        (p, t) => hasMen(p, "傷門") && TEIKIKI.includes(t) && hasAnyShen(p, ["九地", "六合"]),
       ),
   },
   {
@@ -532,13 +553,7 @@ const RULES: readonly Rule[] = [
     needs: ["天盤", "八門", "八神"],
     // 「死門と天盤丁、己、癸が九地と同宮」
     match: (input) =>
-      scan(
-        input,
-        (p) =>
-          hasMen(p, "死門") &&
-          tpIsAny(p, ["丁", "己", "癸"]) &&
-          hasShen(p, "九地"),
-      ),
+      stemScanTianOnly(input, (p, t) => hasMen(p, "死門") && TEIKIKI.includes(t) && hasShen(p, "九地")),
   },
 ];
 

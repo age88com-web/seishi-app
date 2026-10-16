@@ -12,7 +12,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { calculate, resolveKokuoForPalace } from "@/lib/qimen";
-import type { QimenResult, KokuoEntry } from "@/lib/qimen";
+import type { QimenResult, KokuoEntry, LodgedStem } from "@/lib/qimen";
 import {
   lookupBaMenMeaning,
   BAMEN_WANGSHUAI,
@@ -486,10 +486,45 @@ function KakuList({ result, palace }: { result: QimenResult; palace: number }) {
   );
 }
 
+// 干の表示。中五宮から寄宮した干があれば、通常干の後ろに括弧書きで併記する
+// （講義案N.pdf p.22 例1 の坤二宮「辛(戊)」と同じ表記）。
+//   地盤: 坤二宮に中五宮の地盤干（講義案 p.10・p.22）。
+//   天盤: 天芮・天禽の同居宮に、天禽が帯同する中五宮の干（講義案 p.24・1080.pdf）。
+// 寄宮干は通常干と区別できるよう、細字・小さめで括弧に入れる。
+function StemText({
+  stem,
+  lodged,
+  layer,
+}: {
+  stem: string | undefined;
+  lodged: LodgedStem | undefined;
+  layer: "天盤" | "地盤";
+}) {
+  return (
+    <span style={S.stem} className="qm-st">
+      {stem ?? "—"}
+      {lodged && (
+        <span
+          style={S.stemLodged}
+          className="qm-st-lodged"
+          title={
+            layer === "地盤"
+              ? `中五宮から寄宮した地盤干（${lodged.stem}）`
+              : `天禽が帯同する中五宮の干（${lodged.stem}）`
+          }
+        >
+          ({lodged.stem})
+        </span>
+      )}
+    </span>
+  );
+}
+
 // ==== 九宮盤（講義資料「排盤の完成」p.34 と同じレイアウト・変更禁止） ====
 //   宮名（左上）／ 八門（中央）／ 天盤干（左）・九星（右）／ 地盤干（左）・八神（右）
 //   中宮は地盤干のみ中央表示。色分けなし（講義資料はモノクロ）。
 //   ↑ この6要素の配置は不変。下部の空き部分にだけ格局名（青=吉/赤=凶）を追加する。
+//   天盤干・地盤干の位置に、寄宮干を括弧書きで併記する（StemText。配置は変えない）。
 function PalaceCell({
   n,
   result,
@@ -518,11 +553,11 @@ function PalaceCell({
         <>
           <div style={S.men} className="qm-mn">{p.baMen.join("・") || "—"}</div>
           <div style={S.dataRow} className="qm-dr">
-            <span style={S.stem} className="qm-st">{p.tianPanStem ?? "—"}</span>
+            <StemText stem={p.tianPanStem} lodged={p.tianPanLodged} layer="天盤" />
             <span style={S.starShen} className="qm-ss">{p.jiuXing.join("・") || "—"}</span>
           </div>
           <div style={S.dataRow} className="qm-dr">
-            <span style={S.stem} className="qm-st">{p.diPanStem ?? "—"}</span>
+            <StemText stem={p.diPanStem} lodged={p.diPanLodged} layer="地盤" />
             <span style={S.starShen} className="qm-ss">{p.baShen.join("・") || "—"}</span>
           </div>
         </>
@@ -866,6 +901,8 @@ const S: Record<string, React.CSSProperties> = {
   men: { textAlign: "center", fontSize: 17, fontWeight: 700, color: "#222", margin: "10px 0 12px" },
   dataRow: { display: "flex", justifyContent: "space-between", alignItems: "baseline", fontSize: 15, marginTop: 4 },
   stem: { fontWeight: 700, fontSize: 17, color: "#222" },
+  // 中五宮からの寄宮干（括弧書き・細字・小さめで通常干と区別）
+  stemLodged: { fontWeight: 400, fontSize: 13, color: "#222", marginLeft: 1 },
   starShen: { fontSize: 14, color: "#222" },
   centerBody: { display: "flex", alignItems: "center", justifyContent: "center", flex: 1 },
 

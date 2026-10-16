@@ -8,7 +8,7 @@
 // jikaku.ts と別ファイルにした理由:
 //   ・凶格は 吉格 と入力集合が異なる。歳格/月格/日格/悖格/五不遇時/時干入墓 は
 //     年干・月干・日干・時干支を、伏吟格/反吟格 は陰陽遁と九星・八門・八神の定位を、
-//     伏宮格/飛宮格/符勃格/飛悖格 は値符の宮を必要とする。
+//     符勃格/飛悖格 は値符の宮を、伏宮格/飛宮格 は旬首六儀を必要とする。
 //     KyokakuInput にこれらを持たせると JikakuInput と別物になる。
 //   ・jikaku.ts は既に確定済みの吉格判定であり、凶格追加のために触りたくない。
 //   吉格・凶格を一括で扱いたい場合は、両モジュールを呼ぶ薄いラッパを別途用意する想定。
@@ -26,8 +26,11 @@
 //     ・格局詳細（凶格７）Index/Slide-4286（三奇受刑・六儀撃刑）
 //     ・格局詳細（凶格８）Index/Slide-4333（伏吟格・反吟格・天網四張）
 //     ・格局詳細（凶格９）Index/Slide-4380（地網遮蔽・門迫・宮迫）
-//   docs/qimen-spec/12_格局（凶格）.md は補助資料。低解像度由来の誤り（例:「大格＝天盤庚が
-//   地盤癸」「艮六宮」「五不遇時の対応表」等）を含むため採用しない。
+//   docs/qimen-spec/12_格局（凶格）.md は補助資料。低解像度由来の誤り（例:「艮六宮」
+//   「五不遇時の対応表」等）を含むため採用しない。
+//   ただし大格は、講義案Nの「天盤庚が地盤丙」（太白入熒と同条件）を訂正し、剋應（庚×癸の注記
+//   「大格：天盤庚儀が地盤癸に臨んで加わる」）・1080.pdf・旧仕様書の「天盤庚が地盤癸」を採用する
+//   （中宮寄宮 Phase 3J-2・2026-10-16・ユーザー承認）。
 //
 // 各スライド本文の該当箇所（デコード原文、条件部分のみ）:
 //   青龍逃走  天盤乙が地盤辛と同宮
@@ -36,7 +39,7 @@
 //   騰蛇夭矯  天盤癸が地丁と同宮
 //   熒入太白  天盤丙が地盤庚と同宮
 //   太白入熒  天盤庚が地盤丙と同宮
-//   大格      天盤庚が地盤丙と同宮
+//   大格      天盤庚が地盤丙と同宮 → 天盤庚が地盤癸と同宮に訂正（Phase 3J-2）
 //   上格      天盤庚が地盤壬と同宮
 //   刑格      天盤庚が地盤己と同宮
 //   奇格      天盤庚が地盤乙、丙、丁と同宮
@@ -54,11 +57,12 @@
 //             戊戌時:天盤戊が乾六宮 / 己丑時:天盤己が艮八宮 / 丁丑時:天盤丁が艮八宮
 //   伏干格(日干格) 天盤の庚が地盤の日干に臨んで加わる
 //   飛干格    天盤の日干が地盤の庚儀に臨んで加わる
-//   伏宮格天乙格   天盤の庚が地盤の値符に臨む
-//   飛宮格天乙太白 天盤の値符が地盤の庚に臨む
+//   伏宮格天乙格   天盤の庚が地盤の値符に臨む（地盤の値符＝地盤の旬首六儀。講義案 p.32・Phase 3J-2）
+//   飛宮格天乙太白 天盤の値符が地盤の庚に臨む（天盤の値符＝天盤の旬首六儀。Phase 3J-2）
 //   戦格      天盤庚と地盤庚の同宮
-//   符勃格    天盤丙が地盤値符と同宮
-//   飛悖格    天盤値符が地盤丙奇と同宮
+//   符勃格    天盤丙が地盤値符と同宮 → 天盤丙が値符の九星と同宮（Phase 3L。凶格例.pdf 192〜193頁）
+//   飛悖格    天盤値符が地盤丙奇と同宮 → 地盤丙が値符の九星と同宮（Phase 3L。凶格例.pdf 194頁）
+//             （旧仕様の「旬首が甲申の時のみ」は凶格例.pdf の実例（甲戌旬・甲辰旬）と矛盾するため撤廃）
 //   乙奇入墓  天盤乙奇が坤二宮或いは乾六宮に臨む
 //   丙奇入墓  天盤丙が乾六宮に臨む
 //   丁奇入墓  天盤丁が艮宮（艮八宮）に臨む
@@ -82,7 +86,7 @@
 //   意図的に維持している。1080.pdf基準へ再度合わせないこと）。
 //
 // 推測しない範囲（TODO 参照）:
-//   ・条件が本文どおり一致する別名格（太白入熒／大格、奇格の地盤丙、三奇受刑／各奇入墓 等）は
+//   ・条件が本文どおり一致する別名格（奇格の地盤丙、三奇受刑／各奇入墓 等）は
 //     スライドの記載どおり別々の格として保持し、統合はしない。
 //   ・六儀撃刑・時格の (甲子)(甲申)… や 六儀撃刑の旬注記は本文に判定規則が無いため実装しない。
 //   ・天網四張の高格／低格（低格＝坎1・坤2・震3・巽4宮、高格＝中5・乾6・兌7・艮8・離9宮）は
@@ -91,6 +95,17 @@
 //   ・複数格が同時成立した場合の優先順位、吉格との相殺はスライドに記載が無いため付けない。
 
 import type { QimenResult, PalaceSummary } from "./qimenEngine";
+import {
+  judgedPalaces,
+  stemPairs,
+  tianPanStems,
+  diPanStems,
+  roleStems,
+  BASIC_PAIR_POLICY,
+  FUGONG_POLICY,
+  KAKU_SCAN_POLICY,
+  XUNSHOU_ROLE_POLICY,
+} from "./stemAccess";
 import type { Dun } from "./dingju";
 import type { DiPanStem } from "./dipan";
 import type { BaMenName } from "./bamen";
@@ -245,6 +260,10 @@ export interface KyokakuInput {
   hourGanzhi: string;
   /** 値符（九星値符＝八神直符、通常は同一宮）の宮。九星・八神とも未算出なら null。 */
   zhifuPalace: number | null;
+  /** 用事の時干支の旬首（例: "甲申"）。xunShou.xunShou をそのまま渡す（現在は判定に使っていない。符勃格・飛悖格の甲申旬限定は Phase 3L で撤廃）。 */
+  xunShou: string;
+  /** 用事の時干支の旬首六儀（例: "庚"）。xunShou.liuyi をそのまま渡す（伏宮格・飛宮格の値符用）。 */
+  liuyi: DiPanStem;
 }
 
 export interface KyokakuMatch {
@@ -338,15 +357,49 @@ interface Rule {
   detail?: (input: KyokakuInput, palaces: number[]) => string | undefined;
 }
 
+/**
+ * 判定対象の宮を走査し、述語が真の宮番号を返す。
+ * 中五宮は独立した成立宮にしない（講義案 p.10「中五は無位で坤二に寄宮する」。
+ * stemAccess.ts の KAKU_SCAN_POLICY）。中五宮の干のデータ自体は削除しない。
+ */
 function scan(
   input: KyokakuInput,
   pred: (p: PalaceSummary | undefined, palace: number, input: KyokakuInput) => boolean,
 ): number[] {
-  const out: number[] = [];
-  for (let palace = 1; palace <= 9; palace += 1) {
-    if (pred(input.palaces[palace], palace, input)) out.push(palace);
-  }
-  return out;
+  return judgedPalaces(KAKU_SCAN_POLICY).filter((palace) => pred(input.palaces[palace], palace, input));
+}
+
+/**
+ * 天盤干×地盤干の組み合わせだけで成立する格局の判定。寄宮干も含めて判定する
+ * （stemAccess.ts の BASIC_PAIR_POLICY）。適用する格局:
+ *   ・中宮寄宮 Phase 3A（2026-10-16）: 青龍逃走・白虎猖狂・朱雀投江・騰蛇夭矯・熒入太白・太白入熒
+ *   ・中宮寄宮 Phase 3B（2026-10-16）: 刑格
+ *   ・中宮寄宮 Phase 3C（2026-10-16）: 上格・奇格・戦格
+ *   ・通常天盤干×通常地盤干／通常天盤干×地盤寄宮干（坤二宮）／天盤寄宮干（芮禽宮）×通常地盤干
+ *   ・天盤寄宮干×地盤寄宮干（どちらも中五宮の干）は判定しない。中五宮は成立宮にしない。
+ *     戦格（庚×庚）でも、中五宮の庚どうしを坤二宮・芮禽宮へ移して成立させることはない。
+ * di に複数の干を渡した場合は、そのいずれかと同宮すれば成立（奇格の地盤乙・丙・丁）。
+ */
+function pairScan(input: KyokakuInput, tian: DiPanStem, di: DiPanStem | readonly DiPanStem[]): number[] {
+  const dis: readonly DiPanStem[] = typeof di === "string" ? [di] : di;
+  return judgedPalaces(BASIC_PAIR_POLICY).filter(
+    (palace) =>
+      stemPairs(input.palaces[palace], (t, d) => t === tian && dis.includes(d), BASIC_PAIR_POLICY).length > 0,
+  );
+}
+
+/**
+ * 天盤干と宮だけで成立する格局の判定（中宮寄宮 Phase 3I・2026-10-16）。適用する格局:
+ *   乙奇入墓・丙奇入墓・丁奇入墓・三奇受刑・六儀撃刑。
+ *   年・月・日・時悖格（Phase 4C）も、天盤丙の側だけこの関数で寄宮干を含め、地盤の用事の干は通常干で見る。
+ *   ・天盤干は芮禽同居宮の寄宮干（天禽が帯同する中五宮の干）も含める（BASIC_PAIR_POLICY の天盤側）。
+ *   ・地盤干は条件に含まないため、地盤寄宮干は参照しない。
+ *   ・宮番号・刑・入墓の条件は講義案Nのまま変えない。中五宮は成立宮にしない。
+ */
+function tianScan(input: KyokakuInput, pred: (tian: DiPanStem, palace: number) => boolean): number[] {
+  return judgedPalaces(BASIC_PAIR_POLICY).filter((palace) =>
+    tianPanStems(input.palaces[palace], BASIC_PAIR_POLICY).some((e) => pred(e.stem, palace)),
+  );
 }
 
 const S1 = "格局詳細（凶格１） / Slide-3952";
@@ -366,7 +419,7 @@ const RULES: readonly Rule[] = [
     meaning: "挙兵すれば主客ともに傷つく。商売では破財、百事の凶となる。",
     source: S1,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === "乙" && dp(p) === "辛"),
+    match: (i) => pairScan(i, "乙", "辛"),
   },
   {
     name: "白虎猖狂",
@@ -374,7 +427,7 @@ const RULES: readonly Rule[] = [
       "挙事（武装発起・暴動）すれば主客ともに傷つく驚恐のことがあり、遠行では災禍が多い、婚姻・修造は大凶",
     source: S1,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === "辛" && dp(p) === "乙"),
+    match: (i) => pairScan(i, "辛", "乙"),
   },
   {
     name: "朱雀投江",
@@ -382,7 +435,7 @@ const RULES: readonly Rule[] = [
       "文書に関係、音信が途絶え訴訟や口舌、或いは驚恐の怪異、奸謀や詭詐（偽り、嘘）、百事に凶",
     source: S1,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === "丁" && dp(p) === "癸"),
+    match: (i) => pairScan(i, "丁", "癸"),
   },
   {
     name: "騰蛇夭矯",
@@ -390,7 +443,7 @@ const RULES: readonly Rule[] = [
       "百事に不利、いらぬことに驚き心理は安寧できず、文書（訴状）や訴訟がある。",
     source: S1,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === "癸" && dp(p) === "丁"),
+    match: (i) => pairScan(i, "癸", "丁"),
   },
 
   // --- 凶格２ -------------------------------------------------------
@@ -399,14 +452,14 @@ const RULES: readonly Rule[] = [
     meaning: "退避するのが良い。進撃は最悪",
     source: S2,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === "丙" && dp(p) === "庚"),
+    match: (i) => pairScan(i, "丙", "庚"),
   },
   {
     name: "太白入熒",
     meaning: "客を利して主に不利。盗賊や強盗を防ぎ、固守するのが吉。",
     source: S2,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === "庚" && dp(p) === "丙"),
+    match: (i) => pairScan(i, "庚", "丙"),
   },
   {
     name: "大格",
@@ -414,15 +467,17 @@ const RULES: readonly Rule[] = [
       "百事が凶。求人は失敗し、商売は破財、出行して車は破れ馬は死ぬ。ただ犯罪者を逮捕するのに良い",
     source: S2,
     needs: ["天盤"],
-    // 本文どおり「天盤庚が地盤丙」。太白入熒 と条件が一致する（TODO 参照）。
-    match: (i) => scan(i, (p) => tp(p) === "庚" && dp(p) === "丙"),
+    // 「天盤庚が地盤癸」（講義案Nの「地盤丙」を訂正。剋應の注記・1080.pdf・旧仕様書。Phase 3J-2）。
+    // 寄宮干を含めて判定（BASIC_PAIR_POLICY）。寄宮干どうしは除外・中五宮は成立宮にしない。
+    match: (i) => pairScan(i, "庚", "癸"),
   },
   {
     name: "上格",
     meaning: "出行すれば道に迷い、求謀は得られず、破財や疾病。",
     source: S2,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === "庚" && dp(p) === "壬"),
+    // 1080.pdf では同じ条件（天盤庚＋地盤壬）を「小格」と表記する。名称は講義案Nのまま。
+    match: (i) => pairScan(i, "庚", "壬"),
   },
 
   // --- 凶格３ -------------------------------------------------------
@@ -431,15 +486,14 @@ const RULES: readonly Rule[] = [
     meaning: "訴訟、受刑、商売の破財、出行しては病気になる",
     source: S3,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === "庚" && dp(p) === "己"),
+    match: (i) => pairScan(i, "庚", "己"),
   },
   {
     name: "奇格",
     meaning: "出行、用兵は全て大凶。",
     source: S3,
     needs: ["天盤"],
-    match: (i) =>
-      scan(i, (p) => tp(p) === "庚" && (dp(p) === "乙" || dp(p) === "丙" || dp(p) === "丁")),
+    match: (i) => pairScan(i, "庚", ["乙", "丙", "丁"]),
   },
   {
     name: "歳格",
@@ -479,33 +533,38 @@ const RULES: readonly Rule[] = [
   },
 
   // --- 凶格４ -------------------------------------------------------
+  // 年・月・日・時悖格（中宮寄宮 Phase 4C・2026-10-16）: 天盤丙は芮禽同居宮の天盤寄宮干（天禽が帯同する
+  // 中五宮の干）も含める（tianScan）。地盤の用事の干は通常干のみ（坤二宮の地盤寄宮干は使わない）。
+  // 根拠: 凶格例.pdf 190〜191頁『景祐遁甲符應經』原註の時悖格の例（陽遁七局丁未時、中五宮の六丙が天芮・天禽に
+  // 帯同して巽四宮の地盤丁に臨む）。地盤寄宮干を用事の干とする例は資料に無く、1080.pdf「時勃」も付けない。
+  // 甲の年・月・日・時干は従来どおり地盤に無いため成立しない（甲を旬首六儀・戊とみなす扱いは原典未確定で採らない）。
   {
     name: "年悖格",
     meaning: "大凶で、些細なことでもまた災禍の発端になる",
     source: S4,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === "丙" && dp(p) === i.yearStem),
+    match: (i) => tianScan(i, (t, palace) => t === "丙" && dp(i.palaces[palace]) === i.yearStem),
   },
   {
     name: "月悖格",
     meaning: "大凶で、些細なことでもまた災禍の発端になる",
     source: S4,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === "丙" && dp(p) === i.monthStem),
+    match: (i) => tianScan(i, (t, palace) => t === "丙" && dp(i.palaces[palace]) === i.monthStem),
   },
   {
     name: "日悖格",
     meaning: "大凶で、些細なことでもまた災禍の発端になる",
     source: S4,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === "丙" && dp(p) === i.dayStem),
+    match: (i) => tianScan(i, (t, palace) => t === "丙" && dp(i.palaces[palace]) === i.dayStem),
   },
   {
     name: "時悖格",
     meaning: "大凶で、些細なことでもまた災禍の発端になる",
     source: S4,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === "丙" && dp(p) === i.hourStem),
+    match: (i) => tianScan(i, (t, palace) => t === "丙" && dp(i.palaces[palace]) === i.hourStem),
   },
   {
     name: "五不遇時",
@@ -553,35 +612,39 @@ const RULES: readonly Rule[] = [
     meaning:
       "大凶となり、主客はみな不利である。求人しても得られず、人を待っても来ない。出行しては路上で盜賊に遭遇する。または車は壊れ馬は死ぬ。百事が思うように行かない。",
     source: S5,
-    needs: ["天盤", "値符"],
-    // 「天盤の庚が地盤の値符に臨む」＝ 値符の宮の天盤干が庚。
+    needs: ["天盤"],
+    // 「天盤の庚が地盤の値符に臨む」＝ 天盤庚が地盤の旬首六儀と同宮（Phase 3J-2）。
+    // 天盤庚は芮禽同居宮の寄宮干も、地盤の旬首六儀は坤二宮の寄宮干も含める。
+    // この格に限り寄宮干どうしの組み合わせも成立させる（FUGONG_POLICY）。中五宮は成立宮にしない。
     match: (i) =>
-      i.zhifuPalace !== null && tp(i.palaces[i.zhifuPalace]) === "庚"
-        ? [i.zhifuPalace]
-        : [],
+      judgedPalaces(FUGONG_POLICY).filter(
+        (palace) =>
+          stemPairs(i.palaces[palace], (t, d) => t === "庚" && d === i.liuyi, FUGONG_POLICY).length > 0,
+      ),
   },
   {
     name: "飛宮格天乙太白",
     meaning: "作戦は失敗し敗れ去る。大将は生け捕りにされ、商売したら破財する",
     source: S5,
-    needs: ["天盤", "値符"],
-    // 「天盤の値符が地盤の庚に臨む」＝ 値符の宮の地盤干が庚。
-    // 追加資料（値符例2・例3）により、中5宮の地盤庚は坤二宮へ寄宮して判定することが
-    // 確定したため、値符が坤二宮にある場合は中5宮の地盤干も庚か確認する
-    // （地盤の配置ロジック自体は変更せず、本ルールの判定内でのみ寄宮を考慮する）。
-    match: (i) => {
-      if (i.zhifuPalace === null) return [];
-      const direct = dp(i.palaces[i.zhifuPalace]) === "庚";
-      const centerYuji = i.zhifuPalace === 2 && dp(i.palaces[5]) === "庚";
-      return direct || centerYuji ? [i.zhifuPalace] : [];
-    },
+    needs: ["天盤"],
+    // 「天盤の値符が地盤の庚に臨む」＝ 天盤の旬首六儀が地盤庚と同宮（Phase 3J-2）。
+    // 天盤の旬首六儀は通常干のみ（天禽が帯同する寄宮干に旬首の役割を付けない）。
+    // 地盤庚は坤二宮の寄宮干も含める（XUNSHOU_ROLE_POLICY）。中五宮は成立宮にしない。
+    match: (i) =>
+      judgedPalaces(XUNSHOU_ROLE_POLICY).filter((palace) => {
+        const p = i.palaces[palace];
+        return (
+          roleStems(p, "tianPan", XUNSHOU_ROLE_POLICY).some((t) => t.stem === i.liuyi) &&
+          diPanStems(p, XUNSHOU_ROLE_POLICY).some((d) => d.stem === "庚")
+        );
+      }),
   },
   {
     name: "戦格",
     meaning: "突然の災いや事故、命の危険、行き詰まり、損失",
     source: S5,
     needs: ["天盤"],
-    match: (i) => scan(i, (p) => tp(p) === "庚" && dp(p) === "庚"),
+    match: (i) => pairScan(i, "庚", "庚"),
   },
 
   // --- 凶格６ -------------------------------------------------------
@@ -590,22 +653,29 @@ const RULES: readonly Rule[] = [
     meaning: "主に投降、悖逆（正しい道に背く）、大凶である。",
     source: S6,
     needs: ["天盤", "値符"],
-    // 「天盤丙が地盤値符と同宮」＝ 値符の宮の天盤干が丙。
-    match: (i) =>
-      i.zhifuPalace !== null && tp(i.palaces[i.zhifuPalace]) === "丙"
-        ? [i.zhifuPalace]
-        : [],
+    // 「天盤丙が値符の九星と同宮」（中宮寄宮 Phase 3L・2026-10-16。凶格例.pdf 192〜193頁の陰遁三局丙子時）。
+    // 値符の宮は九星値符の宮（値符が天禽なら天芮と同居する宮）。天盤丙は芮禽同居宮の
+    // 天盤寄宮干（天禽が帯同する中五宮の干）も含める。中五宮は成立宮にしない。旬の限定なし。
+    match: (i) => {
+      const zp = i.zhifuPalace;
+      if (zp === null || !judgedPalaces(BASIC_PAIR_POLICY).includes(zp)) return [];
+      return tianPanStems(i.palaces[zp], BASIC_PAIR_POLICY).some((e) => e.stem === "丙") ? [zp] : [];
+    },
   },
   {
     name: "飛悖格",
     meaning: "主に投降、悖逆、大凶",
     source: S6,
     needs: ["天盤", "値符"],
-    // 「天盤値符が地盤丙奇と同宮」＝ 値符の宮の地盤干が丙。
-    match: (i) =>
-      i.zhifuPalace !== null && dp(i.palaces[i.zhifuPalace]) === "丙"
-        ? [i.zhifuPalace]
-        : [],
+    // 「地盤丙が値符の九星と同宮」（中宮寄宮 Phase 3L・2026-10-16。凶格例.pdf 194頁の陽遁一局丙午時）。
+    // 値符の宮は九星値符の宮（値符が天禽なら天芮と同居する宮）。地盤丙は坤二宮の
+    // 地盤寄宮干（中五宮の地盤干）も含める。中五宮は成立宮にしない。旬の限定なし。
+    // 旬首六儀の干の役割は使わない（青龍返首・飛鳥跌穴の Phase 3G の扱いとは独立）。
+    match: (i) => {
+      const zp = i.zhifuPalace;
+      if (zp === null || !judgedPalaces(BASIC_PAIR_POLICY).includes(zp)) return [];
+      return diPanStems(i.palaces[zp], BASIC_PAIR_POLICY).some((e) => e.stem === "丙") ? [zp] : [];
+    },
   },
   {
     name: "乙奇入墓",
@@ -613,7 +683,7 @@ const RULES: readonly Rule[] = [
       "百事に宜しからざる。謀事は尽き果て吉を不吉にする。凶を凶とはせず。無力の象意。",
     source: S6,
     needs: ["天盤"],
-    match: (i) => scan(i, (p, palace) => tp(p) === "乙" && (palace === 2 || palace === 6)),
+    match: (i) => tianScan(i, (t, palace) => t === "乙" && (palace === 2 || palace === 6)),
   },
   {
     name: "丙奇入墓",
@@ -621,7 +691,7 @@ const RULES: readonly Rule[] = [
       "百事に宜しからざる。謀事は尽き果て吉を不吉にする。凶を凶とはせず。無力の象意。",
     source: S6,
     needs: ["天盤"],
-    match: (i) => scan(i, (p, palace) => tp(p) === "丙" && palace === 6),
+    match: (i) => tianScan(i, (t, palace) => t === "丙" && palace === 6),
   },
   {
     name: "丁奇入墓",
@@ -629,7 +699,7 @@ const RULES: readonly Rule[] = [
       "百事に宜しからざる。謀事は尽き果て吉を不吉にする。凶を凶とはせず。無力の象意。",
     source: S6,
     needs: ["天盤"],
-    match: (i) => scan(i, (p, palace) => tp(p) === "丁" && palace === 8),
+    match: (i) => tianScan(i, (t, palace) => t === "丁" && palace === 8),
   },
 
   // --- 凶格７ -------------------------------------------------------
@@ -639,12 +709,12 @@ const RULES: readonly Rule[] = [
     source: S7,
     needs: ["天盤"],
     match: (i) =>
-      scan(
+      tianScan(
         i,
-        (p, palace) =>
-          (tp(p) === "乙" && (palace === 6 || palace === 2)) ||
-          (tp(p) === "丙" && palace === 6) ||
-          (tp(p) === "丁" && palace === 8),
+        (t, palace) =>
+          (t === "乙" && (palace === 6 || palace === 2)) ||
+          (t === "丙" && palace === 6) ||
+          (t === "丁" && palace === 8),
       ),
   },
   {
@@ -653,11 +723,7 @@ const RULES: readonly Rule[] = [
       "極凶である。動けば必ず災や傷を負う。もし天網四張格に遭えば、必ず逮捕され投獄される災いの象意",
     source: S7,
     needs: ["天盤"],
-    match: (i) =>
-      scan(i, (p, palace) => {
-        const s = tp(p);
-        return s !== undefined && SIX_YI_XING[s] === palace;
-      }),
+    match: (i) => tianScan(i, (t, palace) => SIX_YI_XING[t] === palace),
     detail: (i, palaces) => {
       const label: Record<string, string> = {
         "戊": "戊儀撃刑",
@@ -667,10 +733,12 @@ const RULES: readonly Rule[] = [
         "壬": "壬儀撃刑",
         "癸": "癸儀撃刑",
       };
-      const hit = palaces
-        .map((pl) => tp(i.palaces[pl]))
-        .filter((s): s is DiPanStem => s !== undefined)
-        .map((s) => label[s]);
+      // 寄宮干で成立した宮では、条件を満たした干（通常干または寄宮干）だけを表示する。
+      const hit = palaces.flatMap((pl) =>
+        tianPanStems(i.palaces[pl], BASIC_PAIR_POLICY)
+          .filter((e) => SIX_YI_XING[e.stem] === pl)
+          .map((e) => label[e.stem]),
+      );
       return hit.length > 0 ? Array.from(new Set(hit)).join("・") : undefined;
     },
   },
@@ -840,6 +908,8 @@ export function resolveKyokakuFromQimen(qimen: QimenResult): KyokakuResult {
     hourStem: qimen.calendar.hourStem,
     hourGanzhi: `${qimen.calendar.hourStem}${qimen.calendar.hourBranch}`,
     zhifuPalace: qimen.jiuXing?.zhifu.palace ?? qimen.baShen?.zhifu.palace ?? null,
+    xunShou: qimen.xunShou.xunShou,
+    liuyi: qimen.xunShou.liuyi as DiPanStem,
   });
 }
 

@@ -7,7 +7,14 @@
 // runQimenSearch()（＝ qimenEngine.calculate() を2時間刻みで繰り返し呼ぶだけの層）
 // を呼び出して結果を一覧表示するだけの UI。
 //
-// 結果クリック時は /qimen へ ?date=&time= を付けて遷移する（/qimen 側で自動入力）。
+// 結果の「盤を開く」で /qimen へ ?date=&time= を付けて遷移する（/qimen 側で自動入力）。
+//
+// Phase 4A（2026-10-16・実務鑑定用の検索・比較機能）:
+//   ・方位指定（八方位・複数選択）。検索結果の絞り込みだけで、格局の成立条件には影響しない。
+//   ・結果は日時順。成立宮ごとに方位・八門・九星・八神・天盤干・地盤干（寄宮干を含む）・
+//     その宮の吉格・凶格・盤全体の凶格を要約表示し、詳細展開で剋應と婚姻に関する参考情報を出す。
+//   ・成立宮単位で比較候補を選び、比較表を表示・A4印刷（ブラウザのPDF保存）できる。
+//   表示する値は candidateInfo.ts が既存の計算結果・剋應・象意データから並べたものだけ。
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -20,6 +27,14 @@ import { QIMEN_SEARCH_PRESETS, resolvePreset } from "@/lib/qimenSearch/datePrese
 import type { QimenSearchPresetId } from "@/lib/qimenSearch/datePresets";
 import { PURPOSE_EVALUATIONS, resolveKakuAliases } from "@/lib/qimenPurpose";
 import { PALACE_TRIGRAM } from "@/lib/qimen";
+import { DIRECTION_PALACES, PALACE_DIRECTION, PALACE_NAME } from "@/lib/qimenSearch/candidateInfo";
+import {
+  CandidateDetailView,
+  CompareTable,
+  PalaceSummaryBlock,
+  candidateKey,
+} from "./CandidateViews";
+import type { CompareCandidate } from "./CandidateViews";
 import "./print.css";
 
 type SearchMode = "kaku" | "purpose";
@@ -36,7 +51,10 @@ interface SavedSearchState {
   searchMode: SearchMode;
   selectedPurpose: string;
   selected: string[];
-  excludeAllKyokaku: boolean;
+  /** 方位指定（宮番号）。Phase 4A。旧版の保存状態には無い */
+  directions?: number[];
+  /** 比較候補。Phase 4A。旧版の保存状態には無い */
+  compare?: CompareCandidate[];
   hits: QimenSearchHit[] | null;
   scrollY: number;
 }
@@ -50,10 +68,21 @@ function saveSearchState(state: SavedSearchState) {
   }
 }
 
+// 旧版で保存した検索状態には excludeAllKyokaku（凶格除外。2026-10-16 撤廃）が残っている
+// ことがある。設定値としては読み込まない（凶格除外が再び有効になることはない）。
+// ただし true の状態で保存された検索結果は凶格除外後の一覧なので、検索条件だけを復元し、
+// 結果は復元しない（再検索すると通常検索の結果になる）。
 function loadSearchState(): SavedSearchState | null {
   try {
     const raw = sessionStorage.getItem(SEARCH_STATE_KEY);
-    return raw ? (JSON.parse(raw) as SavedSearchState) : null;
+    if (!raw) return null;
+    const saved = JSON.parse(raw) as SavedSearchState & { excludeAllKyokaku?: unknown };
+    if (saved.excludeAllKyokaku === true) return { ...saved, hits: null, scrollY: 0 };
+    // Phase 4A より前に保存した結果は成立宮の要約を持たないため、結果は復元しない（条件だけ復元）。
+    if (saved.hits && saved.hits.some((h) => !Array.isArray(h.palaceSummaries))) {
+      return { ...saved, hits: null, scrollY: 0 };
+    }
+    return saved;
   } catch {
     return null;
   }
@@ -161,7 +190,10 @@ export default function QimenSearchPage() {
   const [searchMode, setSearchMode] = useState<SearchMode>("kaku");
   const [selectedPurpose, setSelectedPurpose] = useState<string>(PURPOSE_EVALUATIONS[0]?.purpose ?? "");
   const [selected, setSelected] = useState<Set<string>>(new Set());
-  const [excludeAllKyokaku, setExcludeAllKyokaku] = useState(true);
+  const [directions, setDirections] = useState<Set<number>>(new Set());
+  const [compare, setCompare] = useState<CompareCandidate[]>([]);
+  const [expanded, setExpanded] = useState<Set<string>>(new Set());
+  const [showMarriage, setShowMarriage] = useState(false);
 
   const [running, setRunning] = useState(false);
   const [progress, setProgress] = useState<{ scanned: number; total: number } | null>(null);
@@ -184,7 +216,8 @@ export default function QimenSearchPage() {
     setSearchMode(saved.searchMode);
     setSelectedPurpose(saved.selectedPurpose);
     setSelected(new Set(saved.selected));
-    setExcludeAllKyokaku(saved.excludeAllKyokaku);
+    setDirections(new Set(saved.directions ?? []));
+    setCompare(saved.compare ?? []);
     setHits(saved.hits);
     pendingScrollY.current = saved.scrollY;
 
@@ -249,11 +282,16 @@ export default function QimenSearchPage() {
       setErrorMsg("すべて成立（AND）は格局を2つ以上選択してください");
       return;
     }
+    if (matchMode === "TWO_PLUS" && new Set(selectedFormats.map(formatKey)).size < 2) {
+      setErrorMsg("二つ以上成立は、同じ宮で2種類以上の成立を探す条件のため、格局を2つ以上選択してください");
+      return;
+    }
 
     const controller = new AbortController();
     abortRef.current = controller;
     setRunning(true);
     setHits(null);
+    setExpanded(new Set());
     setProgress({ scanned: 0, total: estimatedSlots });
 
     const result = await runQimenSearch(
@@ -262,7 +300,7 @@ export default function QimenSearchPage() {
         endDate,
         formats: selectedFormats,
         matchMode,
-        excludeAllKyokaku,
+        directionPalaces: Array.from(directions).sort((a, b) => a - b),
       },
       (p) => setProgress({ scanned: p.scanned, total: p.total }),
       controller.signal,
@@ -276,6 +314,50 @@ export default function QimenSearchPage() {
     abortRef.current?.abort();
   }
 
+  function toggleDirection(p: number) {
+    setDirections((prev) => {
+      const next = new Set(prev);
+      if (next.has(p)) next.delete(p);
+      else next.add(p);
+      return next;
+    });
+  }
+
+  function toggleExpanded(key: string) {
+    setExpanded((prev) => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
+  }
+
+  function toggleCompare(hit: QimenSearchHit, palace: number) {
+    const key = candidateKey(hit, palace);
+    setCompare((prev) =>
+      prev.some((c) => c.key === key)
+        ? prev.filter((c) => c.key !== key)
+        : [...prev, { key, year: hit.year, month: hit.month, day: hit.day, hour: hit.hour, minute: hit.minute, timezone: hit.timezone, palace }],
+    );
+  }
+
+  // 比較表だけを印刷する（印刷中だけ html に data-qms-print="compare" を付け、print.css で切り替える）。
+  function printCompare() {
+    const root = document.documentElement;
+    root.dataset.qmsPrint = "compare";
+    const clear = () => {
+      delete root.dataset.qmsPrint;
+      window.removeEventListener("afterprint", clear);
+    };
+    window.addEventListener("afterprint", clear);
+    window.print();
+  }
+
+  const sortedCompare = useMemo(
+    () => [...compare].sort((a, b) => (a.key < b.key ? -1 : a.key > b.key ? 1 : 0)),
+    [compare],
+  );
+
   function onResultClick(hit: QimenSearchHit) {
     // 盤画面から「← 検索結果に戻る」で戻れるよう、検索条件・検索結果・
     // 現在のスクロール位置を保存してから遷移する（?restore=1 で読み戻す）。
@@ -286,7 +368,8 @@ export default function QimenSearchPage() {
       searchMode,
       selectedPurpose,
       selected: Array.from(selected),
-      excludeAllKyokaku,
+      directions: Array.from(directions),
+      compare,
       hits,
       scrollY: window.scrollY,
     });
@@ -346,6 +429,15 @@ export default function QimenSearchPage() {
               <input
                 type="radio"
                 name="matchMode"
+                checked={matchMode === "TWO_PLUS"}
+                onChange={() => setMatchMode("TWO_PLUS")}
+              />
+              二つ以上成立（同じ宮）
+            </label>
+            <label style={S.radioLabel}>
+              <input
+                type="radio"
+                name="matchMode"
                 checked={matchMode === "AND"}
                 onChange={() => setMatchMode("AND")}
               />
@@ -391,6 +483,23 @@ export default function QimenSearchPage() {
           <div style={S.field}>
             検索間隔
             <div style={S.staticValue}>2時間ごと（固定）／対象スロット数: 約{estimatedSlots}件</div>
+          </div>
+        </section>
+
+        <section style={S.formatSection}>
+          <h2 style={S.h2}>方位（複数選択可・未選択なら八方位すべて）</h2>
+          <div style={S.directionRow}>
+            {DIRECTION_PALACES.map((p) => (
+              <label key={p} style={S.checkboxLabel}>
+                <input type="checkbox" checked={directions.has(p)} onChange={() => toggleDirection(p)} />
+                {PALACE_NAME[p]}・{PALACE_DIRECTION[p]}
+              </label>
+            ))}
+            {directions.size > 0 && (
+              <button type="button" style={S.btn} onClick={() => setDirections(new Set())}>
+                方位指定を解除
+              </button>
+            )}
           </div>
         </section>
 
@@ -448,20 +557,6 @@ export default function QimenSearchPage() {
           </section>
         )}
 
-        <section style={S.formatSection}>
-          <h2 style={S.h2}>除外する凶格</h2>
-          <div style={S.formatList}>
-            <label style={S.checkboxLabel}>
-              <input
-                type="checkbox"
-                checked={excludeAllKyokaku}
-                onChange={() => setExcludeAllKyokaku((prev) => !prev)}
-              />
-              すべての凶格を除外
-            </label>
-          </div>
-        </section>
-
         {errorMsg && <div style={S.error}>{errorMsg}</div>}
 
         <section style={S.actions}>
@@ -481,6 +576,34 @@ export default function QimenSearchPage() {
           )}
         </section>
 
+        <section style={S.formatSection}>
+          <label style={S.checkboxLabel}>
+            <input type="checkbox" checked={showMarriage} onChange={() => setShowMarriage((v) => !v)} />
+            婚姻に関する参考情報を表示する（八門・九星・八神・格局・剋應のうち「婚」「嫁娶」「縁談」を含む資料の記述。適否の判定ではありません）
+          </label>
+        </section>
+
+        {compare.length > 0 && (
+          <section style={S.compareSection}>
+            <div style={S.resultHeadRow}>
+              <h2 style={S.h2}>候補の比較（{compare.length}件）</h2>
+              <button type="button" style={S.btn} onClick={printCompare}>
+                比較表を印刷
+              </button>
+              <button type="button" style={S.btn} onClick={() => setCompare([])}>
+                すべて外す
+              </button>
+            </div>
+            <div style={S.compareScroll}>
+              <CompareTable
+                candidates={sortedCompare}
+                showMarriage={showMarriage}
+                onRemove={(key) => setCompare((prev) => prev.filter((c) => c.key !== key))}
+              />
+            </div>
+          </section>
+        )}
+
         {hits && (
           <section>
             <div style={S.resultHeadRow}>
@@ -499,18 +622,41 @@ export default function QimenSearchPage() {
                   // 「凶格なし」＝成立した吉格と同一宮に、盤に実在する凶格が
                   // 1件も無いこと（検索条件に凶格を選んだかどうかは無関係）。
                   const clean = hasCleanJikaku(hit);
+                  const hitKey = candidateKey(hit, 0);
+                  const isOpen = expanded.has(hitKey);
                   return (
-                    <div key={i} style={S.hitCard} onClick={() => onResultClick(hit)}>
+                    <div key={i} style={S.hitCard}>
                       <div style={S.hitHead}>
                         <span style={S.hitDateTime}>{hitDateTime(hit)}</span>
                         <span style={clean ? S.noKyokakuTag : S.kyokakuTag}>
                           凶格{clean ? "なし" : "あり"}
                         </span>
+                        <button type="button" style={S.linkBtn} onClick={() => onResultClick(hit)}>
+                          盤を開く
+                        </button>
                       </div>
                       <div style={S.hitKakuList}>
                         成立した格局：
                         <KakuMatchesText matches={hit.matches} />
                       </div>
+                      {hit.palaceSummaries.map((ps) => (
+                        <PalaceSummaryBlock
+                          key={ps.palace}
+                          s={ps}
+                          checked={compare.some((c) => c.key === candidateKey(hit, ps.palace))}
+                          onToggleCompare={() => toggleCompare(hit, ps.palace)}
+                        />
+                      ))}
+                      {hit.boardWideKyokaku.length > 0 && (
+                        <div style={S.boardWide}>盤全体の凶格：{hit.boardWideKyokaku.join("・")}</div>
+                      )}
+                      <button type="button" style={S.linkBtn} onClick={() => toggleExpanded(hitKey)}>
+                        {isOpen ? "詳細を閉じる" : "詳細（剋應など）を表示"}
+                      </button>
+                      {isOpen &&
+                        hit.palaceSummaries.map((ps) => (
+                          <CandidateDetailView key={ps.palace} hit={hit} palace={ps.palace} showMarriage={showMarriage} />
+                        ))}
                     </div>
                   );
                 })}
@@ -554,6 +700,17 @@ export default function QimenSearchPage() {
           )}
         </ul>
       </div>
+
+      {/* ---- 印刷専用: 候補の比較表（「比較表を印刷」のときだけ出す）。 ---- */}
+      <div className="qms-print-compare">
+        <h1>奇門遁甲 候補日時の比較</h1>
+        <div className="qms-period">
+          検索期間：{startDate.replaceAll("-", "/")} ～ {endDate.replaceAll("-", "/")}
+          {directions.size > 0 &&
+            ` ／ 方位：${Array.from(directions).sort((a, b) => a - b).map((p) => `${PALACE_NAME[p]}・${PALACE_DIRECTION[p]}`).join("、")}`}
+        </div>
+        {compare.length > 0 && <CompareTable candidates={sortedCompare} showMarriage={showMarriage} forPrint />}
+      </div>
     </>
   );
 }
@@ -590,8 +747,13 @@ const S: Record<string, React.CSSProperties> = {
   // PC: カード幅を保ったまま auto-fit で 3〜5列程度に自動折り返し。
   // スマホ等の狭い画面では、1カード分の幅も確保できず自然に1列（必要幅次第で2列）になる
   // （メディアクエリを使わず minmax の下限だけで両方満たす）。
-  hitList: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))", gap: 12 },
-  hitCard: { border: "1px solid #ddd", borderRadius: 6, padding: "10px 14px", cursor: "pointer", display: "flex", flexDirection: "column", gap: 6 },
+  hitList: { display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 320px), 1fr))", gap: 12 },
+  hitCard: { border: "1px solid #ddd", borderRadius: 6, padding: "10px 14px", display: "flex", flexDirection: "column", gap: 6 },
+  linkBtn: { fontSize: 12, padding: "2px 10px", border: "1px solid #999", borderRadius: 4, background: "#fff", cursor: "pointer", alignSelf: "flex-start" },
+  boardWide: { fontSize: 12, color: "#b42318" },
+  directionRow: { display: "flex", flexWrap: "wrap", gap: "6px 16px", alignItems: "center" },
+  compareSection: { marginBottom: 20 },
+  compareScroll: { overflowX: "auto" },
   hitHead: { display: "flex", alignItems: "baseline", flexWrap: "wrap", gap: 8 },
   hitDateTime: { fontSize: 14, fontWeight: 600 },
   kyokakuTag: { fontSize: 12, color: "#b42318", fontWeight: 600 },

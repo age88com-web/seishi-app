@@ -3,13 +3,16 @@
  * /qimen/search の印刷レイアウト専用スタイル。
  *   - 画面表示は一切変更しない（.qms-print-doc は画面では display:none）。
  *   - 印刷時は「検索格局」「検索期間」「検索結果一覧」の3点だけを出し、
- *     操作UI（検索方法・OR/AND・凶格除外・スロット数・進捗・各種ボタン・
+ *     操作UI（検索方法・OR/AND・スロット数・進捗・各種ボタン・
  *     チェックボックス・上部ナビ・戻るリンク等）はすべて隠す。
  *   - 検索結果はカード枠（border/box-shadow/背景色）を持たない単純な一覧にする。
+ *   - Phase 4A（2026-10-16）: 「比較表を印刷」のときだけ（html[data-qms-print="compare"]）、
+ *     検索結果一覧の代わりに候補の比較表（.qms-print-compare）を A4 横で出す。
  */
 
 /* 画面では印刷用ドキュメントを出さない */
-.qms-print-doc {
+.qms-print-doc,
+.qms-print-compare {
   display: none;
 }
 
@@ -93,4 +96,68 @@
   .qms-palace {
     white-space: nowrap;
   }
+
+  /* ---- 比較表の印刷（Phase 4A）。「比較表を印刷」の間だけ html に data-qms-print="compare" が付く。 ---- */
+  html[data-qms-print="compare"] .qms-print-doc {
+    display: none !important;
+  }
+  html[data-qms-print="compare"] .qms-print-compare {
+    display: block !important;
+    page: qms-compare;
+    color: #000;
+    background: #fff;
+    font-size: 8.5pt;
+    line-height: 1.4;
+  }
+  .qms-print-compare h1 {
+    font-size: 13pt;
+    margin: 0 0 2mm;
+  }
+  .qms-print-compare .qms-period {
+    margin-bottom: 3mm;
+  }
+  .qms-print-compare .qms-compare-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .qms-print-compare .qms-compare-table th,
+  .qms-print-compare .qms-compare-table td {
+    border: 0.5pt solid #000;
+    padding: 1mm 1.2mm;
+    vertical-align: top;
+    text-align: left;
+  }
+  .qms-print-compare .qms-compare-table tr {
+    break-inside: avoid;
+  }
+  /* 日時〜地盤干（1〜7列目）は短い語なので折り返さない */
+  .qms-print-compare .qms-compare-table th:nth-child(-n + 7),
+  .qms-print-compare .qms-compare-table td:nth-child(-n + 7) {
+    white-space: nowrap;
+  }
+  .qms-print-compare .qms-compare-subtitle {
+    font-weight: 700;
+    margin: 4mm 0 1.5mm;
+    border-bottom: 1px solid #000;
+  }
+  .qms-print-compare .qms-compare-marriage-item {
+    break-inside: avoid;
+    margin-bottom: 2mm;
+  }
+  .qms-print-compare ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .qms-print-compare mark {
+    background: none;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+}
+
+/* 比較表は横長のため A4 横で印刷する（名前付きページ。印刷時だけ有効）。 */
+@page qms-compare {
+  size: A4 landscape;
+  margin: 12mm;
 }

@@ -17,39 +17,31 @@
 //   - 長期間の検索でも UI をブロックしないよう、一定件数ごとに
 //     イベントループへ制御を返し、onProgress で途中経過を通知する。
 //   - AbortSignal で途中キャンセルできる。
-//   - matchMode "OR"/"AND" の分岐は、1スロット分の成立格局（matched）を
+//   - matchMode "OR"/"AND"/"TWO_PLUS"（二つ以上成立・同じ宮）の分岐は、1スロット分の成立格局（matched）を
 //     先に集めてから判定する共通処理にまとめてあり、格局判定ロジック自体には
 //     触れない（result.jikaku.matches / result.kyokaku.matches を読むだけ）。
-//   - sortMode は将来の追加を見越して union 型にしてあるが、今回は "score" 固定
-//     （■第3段階を見越す）。
-//   - 凶格除外（「すべての凶格を除外」）: 盤内に凶格が1件でもあれば日時全体を
-//     落とすのではなく、選択した吉格候補ごとに「同じ宮に凶格が成立しているか」
-//     だけを見て、その吉格候補だけを個別に除外する（1スロットごとに）:
-//       1. calculate()
-//       2. collectMatchedFormats() で選択した格局のうち成立したものを集める
-//       3. excludeAllKyokaku が true なら、matched のうち category==="jikaku"
-//          の候補について、成立宮の中から result.kyokaku.matches と同宮の
-//          ものを除いた「残り宮」を求め、残り宮が無くなった候補は matched
-//          から取り除く（盤全体成立=palaces=[]の凶格が1件でもあれば、その
-//          スロットの吉格候補は全宮とも除外扱いにする）。category==="kyokaku"
-//          の候補（凶格そのものを検索条件に選んだ場合）はこの除外の対象外。
-//       4. 除外後の matched で、従来どおり formats を OR/AND 判定
-//     個々の凶格名は問わない＝固定リストを持たず、kyokaku.ts の判定結果を
-//     そのまま使う（将来ルールが追加されても自動的に対象になる）。
-//     同宮判定のロジックは、既存の吉格日時検索UI（qimen/search/page.tsx の
-//     hasCleanJikaku）で使っていたものと同じ考え方を検索エンジン側に集約した
-//     もので、重複した別ロジックは作っていない。
-//     凶格の成立判定ロジックは既存の kyokaku.ts の結果をそのまま使い、
-//     ここでは一切再計算しない。
+//   - 並び順は既定で日時順（sortMode "datetime"。Phase 4A・2026-10-16）。旧既定の "score"
+//     （成立格局数の多い順）は互換のため残すが、検索画面からは使わない。
+//   - 方位指定（criteria.directionPalaces。Phase 4A）は結果の絞り込みだけを行う。成立宮のうち
+//     指定した宮だけを残し、残らない格局は matched から外してから OR/AND を判定する。
+//     格局の成立判定そのものには触れない。
+//   - 各ヒットに、成立宮ごとの要約（candidateInfo.ts の buildPalaceSummary）と
+//     盤全体の凶格を持たせる。吉格・凶格は検索条件に関係なく全件を載せ、どちらも削除しない。
+//   - 凶格除外（「すべての凶格を除外」）は 2026-10-16 に撤廃した。吉格と凶格が同じ宮に
+//     成立していても吉格の成立結果をそのまま返す（同宮の解釈は後段の解釈処理で行う）。
+//     criteria に旧項目 excludeAllKyokaku が残っていても参照しない。
+//     各ヒットには、その日時の盤に成立した凶格の全件（allKyokakuMatches）を従来どおり持たせる。
 
 import { calculate } from "@/lib/qimen";
 import type { QimenResult } from "@/lib/qimen";
+import { buildPalaceSummary, boardWideKyokaku } from "./candidateInfo";
 import {
   formatKey,
   type QimenFormatMatch,
   type QimenFormatOption,
   type QimenSearchCriteria,
   type QimenSearchHit,
+  type QimenSearchMatchMode,
   type QimenSearchProgress,
   type QimenSearchSortMode,
 } from "./types";
@@ -132,32 +124,38 @@ function collectMatchedFormats(
 }
 
 /**
- * 「すべての凶格を除外」＝吉格候補ごとの同宮除外。
- * matched のうち category==="jikaku" の候補について、その成立宮から
- * result.kyokaku.matches と同宮のものを取り除いた「残り宮」を求める。
- * 残り宮が1つも無くなった候補（＝どの成立宮も凶格と同宮）は matched から
- * 除く。盤全体成立の凶格（palaces=[]。五不遇時・伏吟格・反吟格など）が
- * 1件でもあれば、そのスロットの吉格候補は全宮とも凶格と同宮しているものと
- * 扱い、残り宮を必ず空にする。category==="kyokaku" の候補（凶格そのものを
- * 検索条件に選んだ場合）は対象外でそのまま残す。
+ * 方位指定による絞り込み。成立宮のうち指定した宮だけを残し、残らない格局は除く。
+ * 指定が無ければ（未指定・空配列）そのまま返す。
  */
-function applySamePalaceKyokakuFilter(
-  matched: QimenFormatMatch[],
-  result: QimenResult,
-): QimenFormatMatch[] {
-  const allKyokaku = result.kyokaku.matches;
-  const boardWideExists = allKyokaku.some((m) => m.palaces.length === 0);
-  const kyokakuPalaces = new Set(allKyokaku.flatMap((m) => m.palaces));
-
+function filterByDirection(matched: QimenFormatMatch[], directionPalaces: number[] | undefined): QimenFormatMatch[] {
+  if (!directionPalaces || directionPalaces.length === 0) return matched;
+  const allowed = new Set(directionPalaces);
   const out: QimenFormatMatch[] = [];
   for (const m of matched) {
-    if (m.category !== "jikaku") {
-      out.push(m);
-      continue;
+    const palaces = m.palaces.filter((p) => allowed.has(p));
+    if (palaces.length > 0) out.push({ ...m, palaces });
+  }
+  return out;
+}
+
+/**
+ * 「二つ以上成立」（matchMode "TWO_PLUS"）の絞り込み。選択した格局のうち異なる2種類以上が
+ * 同じ宮で成立している宮だけを残し、残らない格局は除く。同じ格局（category:name）は1種類と数える。
+ * matched は選択した格局だけを集めたものなので、選択していない格局は数に入らない。
+ */
+function filterSamePalaceTwoPlus(matched: QimenFormatMatch[]): QimenFormatMatch[] {
+  const kinds = new Map<number, Set<string>>();
+  for (const m of matched) {
+    for (const p of m.palaces) {
+      if (!kinds.has(p)) kinds.set(p, new Set());
+      kinds.get(p)!.add(formatKey(m));
     }
-    if (boardWideExists) continue;
-    const remaining = m.palaces.filter((p) => !kyokakuPalaces.has(p));
-    if (remaining.length > 0) out.push({ ...m, palaces: remaining });
+  }
+  const ok = new Set([...kinds].filter(([, k]) => k.size >= 2).map(([p]) => p));
+  const out: QimenFormatMatch[] = [];
+  for (const m of matched) {
+    const palaces = m.palaces.filter((p) => ok.has(p));
+    if (palaces.length > 0) out.push({ ...m, palaces });
   }
   return out;
 }
@@ -167,11 +165,12 @@ function applySamePalaceKyokakuFilter(
  *   OR  … matched が 1 件以上あれば採用。
  *   AND … 選択した格局が「全て」matched に含まれていれば採用
  *         （成立宮は格局ごとに異なってよい＝ここでは名前の一致だけを見る）。
+ *   TWO_PLUS … filterSamePalaceTwoPlus で絞り込んだ後に 1 件以上残っていれば採用。
  */
 function isHit(
   matched: QimenFormatMatch[],
   formats: QimenFormatOption[],
-  matchMode: "OR" | "AND",
+  matchMode: QimenSearchMatchMode,
 ): boolean {
   if (matchMode === "AND") {
     const matchedKeys = new Set(matched.map((m) => formatKey(m)));
@@ -194,8 +193,9 @@ function compareByDateTime(a: QimenSearchHit, b: QimenSearchHit): number {
  */
 function sortHits(hits: QimenSearchHit[], sortMode: QimenSearchSortMode): QimenSearchHit[] {
   switch (sortMode) {
+    case "datetime":
+      return [...hits].sort(compareByDateTime);
     case "score":
-    default:
       // 成立格局数の多い順 → 日時の早い順
       return [...hits].sort((a, b) => {
         const scoreDiff = b.matches.length - a.matches.length;
@@ -213,7 +213,7 @@ function yieldToEventLoop(): Promise<void> {
  * 吉格日時検索を実行する。
  *
  * 指定期間の各2時間ごとに calculate() を呼び出し、選択された格局
- * （複数選択可、matchMode="OR"|"AND"）が成立する日時だけを抽出して返す。
+ * （複数選択可、matchMode="OR"|"AND"|"TWO_PLUS"）が成立する日時だけを抽出して返す。
  * onProgress が渡されていれば、チャンクごとに途中経過を通知する。
  * signal.aborted が true になった時点で処理を打ち切る（打ち切り時点までの
  * ヒットを返す）。
@@ -226,8 +226,7 @@ export async function runQimenSearch(
 ): Promise<QimenSearchHit[]> {
   const timezone = criteria.timezone ?? "Asia/Tokyo";
   const matchMode = criteria.matchMode ?? "OR";
-  const sortMode = criteria.sortMode ?? "score";
-  const excludeAllKyokaku = criteria.excludeAllKyokaku ?? false;
+  const sortMode = criteria.sortMode ?? "datetime";
   const slots = enumerateSlots(criteria);
   const total = slots.length;
   const hits: QimenSearchHit[] = [];
@@ -251,10 +250,8 @@ export async function runQimenSearch(
         timezone,
       });
 
-      let matched = collectMatchedFormats(result, criteria.formats);
-      if (excludeAllKyokaku) {
-        matched = applySamePalaceKyokakuFilter(matched, result);
-      }
+      const directed = filterByDirection(collectMatchedFormats(result, criteria.formats), criteria.directionPalaces);
+      const matched = matchMode === "TWO_PLUS" ? filterSamePalaceTwoPlus(directed) : directed;
       if (isHit(matched, criteria.formats, matchMode)) {
         hits.push({
           year: slot.year,
@@ -273,6 +270,10 @@ export async function runQimenSearch(
             name: m.name,
             palaces: m.palaces,
           })),
+          palaceSummaries: [...new Set(matched.flatMap((m) => m.palaces))]
+            .sort((a, b) => a - b)
+            .map((p) => buildPalaceSummary(result, p)),
+          boardWideKyokaku: boardWideKyokaku(result),
         });
       }
     } catch {

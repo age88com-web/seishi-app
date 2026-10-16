@@ -11,6 +11,8 @@
 //     ・用途／成立宮／陽遁陰遁／局／優先順位（将来予定）
 //   を追加していく前提のフィールド構成にしている。既存フィールドの意味は変えない。
 
+import type { PalaceSummaryInfo } from "./candidateInfo";
+
 /** 格局の種別。吉格＝jikaku.ts、凶格＝kyokaku.ts の判定結果に対応する。 */
 export type QimenFormatCategory = "jikaku" | "kyokaku";
 
@@ -30,15 +32,18 @@ export function formatKey(f: QimenFormatOption): string {
  *   "OR"  … 選択した格局のどれか1つでも成立していればヒット（第1段階）。
  *   "AND" … 選択した格局が全て、同じ日時の盤で成立していればヒット
  *           （成立宮は格局ごとに異なってよい）（第2段階）。
+ *   "TWO_PLUS" … 二つ以上成立（2026-10-16）。選択した格局のうち異なる2種類以上が、同じ日時の
+ *           同じ宮で成立していればヒット。別々の宮に1格ずつの成立は対象外。同じ格局は1種類と数え、
+ *           選択していない格局は数えない。結果の成立宮は、この条件を満たした宮だけになる。
  */
-export type QimenSearchMatchMode = "OR" | "AND";
+export type QimenSearchMatchMode = "OR" | "AND" | "TWO_PLUS";
 
 /**
- * 結果の並び順。今回は "score" 固定。将来 sortMode を増やせるよう
- * union 型として持つ（■第3段階を見越す）。
- *   "score" … 成立格局数の多い順 → 日時の早い順。
+ * 結果の並び順。
+ *   "datetime" … 日時の早い順（既定。Phase 4A・2026-10-16 から。格局の成立数による順位付けはしない）。
+ *   "score"    … 成立格局数の多い順 → 日時の早い順（旧既定。互換のため残す）。
  */
-export type QimenSearchSortMode = "score";
+export type QimenSearchSortMode = "datetime" | "score";
 
 /** 検索条件。 */
 export interface QimenSearchCriteria {
@@ -58,15 +63,16 @@ export interface QimenSearchCriteria {
   formats: QimenFormatOption[];
   /** 複数格局の組み合わせ方。未指定時は "OR"。 */
   matchMode?: QimenSearchMatchMode;
-  /** 結果の並び順。未指定時は "score"（今回は実質これのみ実装）。 */
+  /** 結果の並び順。未指定時は "datetime"（日時順）。 */
   sortMode?: QimenSearchSortMode;
   /**
-   * true のとき、result.kyokaku.matches が1件以上ある日時を候補から除外する
-   * （吉格のOR/AND判定より先に行う）。個々の凶格名は問わない
-   * （kyokaku.ts の判定結果が1件でもあれば除外＝名前の固定リストを持たない）。
-   * 未指定時は除外なし。
+   * 方位指定（宮番号の配列。八方位＝1・2・3・4・6・7・8・9）。Phase 4A・2026-10-16。
+   * 検索結果の絞り込み条件で、格局の成立条件には影響しない。成立宮のうち指定した宮だけを残し、
+   * 残る宮が無い格局は成立していないものとして扱う（その後で OR/AND を判定する）。
+   * 未指定・空配列なら八方位すべてが対象（従来どおり）。
    */
-  excludeAllKyokaku?: boolean;
+  directionPalaces?: number[];
+  // 旧項目 excludeAllKyokaku（凶格除外）は 2026-10-16 に撤廃した。検索エンジンは参照しない。
 }
 
 /** 1 日時で成立した 1 格局分。 */
@@ -100,6 +106,13 @@ export interface QimenSearchHit {
    * 同一宮判定には自然に加算されない。
    */
   allKyokakuMatches: QimenFormatMatch[];
+  /**
+   * 成立宮（方位指定で残った宮。matches の palaces の和集合・昇順）ごとの要約
+   * （方位・八門・九星・八神・天盤干・地盤干（寄宮干を含む）・その宮の吉格・凶格）。Phase 4A。
+   */
+  palaceSummaries: PalaceSummaryInfo[];
+  /** 盤全体で成立した凶格（伏吟格・反吟格・五不遇時など。detail を括弧で併記）。Phase 4A。 */
+  boardWideKyokaku: string[];
 }
 
 /** runQimenSearch の途中経過・完了通知。 */

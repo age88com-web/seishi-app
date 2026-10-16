@@ -65,12 +65,25 @@ import type { JikakuResult } from "./jikaku";
 import { resolveKyokakuFromQimen } from "./kyokaku";
 import type { KyokakuResult } from "./kyokaku";
 
+import { resolveCenterLodging, lodgedStemsAt } from "./stemAccess";
+import type { CenterLodging, LodgedStem } from "./stemAccess";
+
 export interface PalaceSummary {
   diPanStem?: DiPanStem;
   tianPanStem?: DiPanStem;
   jiuXing: JiuXingStar[];
   baMen: BaMenName[];
   baShen: BaShenName[];
+  /**
+   * 地盤の寄宮干（坤二宮のみ）＝中五宮の地盤干。diPanStem は変更しない。
+   * 追加のみの項目で、現在の格局判定は参照しない（stemAccess.ts 参照）。
+   */
+  diPanLodged?: LodgedStem;
+  /**
+   * 天盤の寄宮干（天禽・天芮が同居する宮のみ）＝天禽が帯同する中五宮の干。
+   * tianPanStem は変更しない。追加のみの項目で、現在の格局判定は参照しない。
+   */
+  tianPanLodged?: LodgedStem;
 }
 
 export interface QimenResult {
@@ -89,6 +102,8 @@ export interface QimenResult {
   baShenError: string | null;
   /** 九宮(1〜9)ごとに、地盤・天盤・九星・八門・八神をまとめた最終的な式盤。 */
   palaces: Record<number, PalaceSummary>;
+  /** 中宮寄宮の情報（中五宮の干の寄宮先）。追加のみの項目。 */
+  centerLodging: CenterLodging;
   /** 吉格判定（jikaku.ts）。天盤・八門・八神が未算出の格は unavailable に載る。 */
   jikaku: JikakuResult;
   /** 凶格判定（kyokaku.ts）。同上。 */
@@ -152,7 +167,11 @@ export function calculate(input: CalendarInput): QimenResult {
     resolveBaShen({ diPan, dun: dingju.dun, hourStem, liuyi }),
   );
 
-  // 9. 九宮ごとに重ね合わせる（未算出の段は空として扱う）
+  // 9. 中宮寄宮の情報（既存の排盤結果を読むだけ。配置計算は変更しない）
+  const centerLodging = resolveCenterLodging({ diPan, tianPan, jiuXing });
+
+  // 10. 九宮ごとに重ね合わせる（未算出の段は空として扱う）。
+  //     寄宮干は既存の干を上書きせず、該当する宮にだけ別項目として付ける。
   const palaces: Record<number, PalaceSummary> = {};
   for (let palace = 1; palace <= 9; palace += 1) {
     palaces[palace] = {
@@ -161,12 +180,14 @@ export function calculate(input: CalendarInput): QimenResult {
       jiuXing: jiuXing?.jiuXing[palace] ?? [],
       baMen: baMen?.baMen[palace] ?? [],
       baShen: baShen?.baShen[palace] ?? [],
+      ...lodgedStemsAt(centerLodging, palace),
     };
   }
 
-  // 10. 格局（吉格・凶格）: 排盤まで組み立てた QimenResult を jikaku.ts / kyokaku.ts の
+  // 11. 格局（吉格・凶格）: 排盤まで組み立てた QimenResult を jikaku.ts / kyokaku.ts の
   //     *FromQimen ラッパに渡して判定する。両ラッパは QimenResult の
-  //     palaces / xunShou / baMen / baShen / jiuXing / calendar / dingju のみ参照する。
+  //     palaces / xunShou / baMen / baShen / jiuXing / calendar / dingju のみ参照する
+  //     （寄宮干 diPanLodged / tianPanLodged は参照しない）。
   const base: Omit<QimenResult, "jikaku" | "kyokaku"> = {
     calendar,
     dingju,
@@ -181,6 +202,7 @@ export function calculate(input: CalendarInput): QimenResult {
     baShen,
     baShenError,
     palaces,
+    centerLodging,
   };
 
   const jikaku = resolveJikakuFromQimen(base as QimenResult);
