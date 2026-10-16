@@ -14,6 +14,7 @@
 
 import type { Branch, HeavenlyGeneral } from "../types";
 import type { ComparisonPosition, InterpretationFacts, NatalYearState, StandingPathActualization, TaiSuiState } from "./types";
+import type { XingNianInput } from "./xingNian";
 
 // ---- CONTEXT（問う内容） ----
 
@@ -131,6 +132,11 @@ export interface InterpretationContext<D extends InterpretationDomain = Interpre
   counterpartyPersonId?: PersonContextId;
   /** 太歳（Phase 4L-1。時間側の FACT）。人物（persons）には入れない。年・暦の値はここに持たない */
   taiSui?: TaiSuiState;
+  /**
+   * 行年の入力（Phase 5O。xingNian.ts の XingNianInput を人物 ID ごとに並べる）。persons の人物には入れない（InterpretationPerson は変えない）。
+   * 性別・数え年を明示した人物だけ入れる。どの人物の行年を使うかは DOMAIN の規則が決める（問う人の行年を他の人物に代用しない）
+   */
+  xingNianInputs?: readonly XingNianInput[];
   /**
    * 外出中の人物（行人）の ID（Phase 5C。行人 DOMAIN で使う）。問う人（subjectPersonId）とは別に持つ。
    * 行人の本命・年命はこの人物の natalYear から取る。

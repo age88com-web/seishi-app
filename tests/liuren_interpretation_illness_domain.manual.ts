@@ -203,7 +203,7 @@ for (let i = 0; i < 60; i++) for (let o = 0; o < 12; o++) {
   const P = { id: "P", natalYear: natalYearStateOf(STEMS[(i + o) % 10] as Stem, nb) };
   const ctxs: InterpretationContext[] = [];
   for (const goal of goals) for (const m of [0, 1, 2]) ctxs.push({ domain: "illness", goal,
-    ...(m >= 1 ? { persons: [P, { id: "Q" }], patientPersonId: "P", subjectPersonId: m === 1 ? "P" : "Q" } : {}),
+    ...(m >= 1 ? { persons: [P, { id: "Q" }], patientPersonId: "P", subjectPersonId: m === 1 ? "P" : "Q", xingNianInputs: [{ personId: "P", sex: "male" as const, reckonedAge: ((i * 7 + o * 5) % 72) + 1 }] } : {}),
     ...(m === 2 ? { targetSymbol: { kind: "general", general: "天后" } } : {}) });
   for (const ctx of ctxs) for (const mb of [month, null]) {
     try {

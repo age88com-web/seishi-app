@@ -38,6 +38,8 @@ import type { DomainCitation, DomainDirection, DomainEvidenceItem, DomainMissing
 import { resolveContextBranch } from "./contextBranch";
 import { dayVirtueOf, daySalaryOf, yimaOf } from "./markers";
 import { monthlySpiritSummaryLines, spiritFact } from "./monthlySpiritReadings";
+import { XING_NIAN_REASON_TEXT, resolveXingNianPlacement } from "./xingNianPlacement";
+import type { XingNianPlacement } from "./xingNianPlacement";
 import { relationBetween } from "./relations";
 import type { InterpretationContext } from "./roles";
 import { elementTombOf, growthStageOfStem, rulingElementOfMonth, seasonalStrengthOf } from "./states";
@@ -49,6 +51,8 @@ interface Input extends DomainBoardInput {
   patientNatal: Branch | null;
   /** 類神の天盤支（targetSymbol。なければ null） */
   symbol: { label: string; branch: Branch } | null;
+  /** 病人（patientPersonId）の行年の位置（Phase 5O。求められなければ null） */
+  xingNian?: XingNianPlacement | null;
 }
 type Rule = DomainRule<Input>;
 const TRANSMISSIONS: readonly TransmissionPosition[] = ["initial", "middle", "final"];
@@ -89,6 +93,8 @@ const seasonal = (i: Input, e: Element): SeasonalStrength | null => (i.month ? s
 const strong = (s: SeasonalStrength | null) => s === "旺" || s === "相";
 /** 日干を剋す五行（官鬼の五行） */
 const ghostElement = (i: Input): Element => (Object.keys(ELEMENT_CONTROLS) as Element[]).find((e) => ELEMENT_CONTROLS[e] === STEM_ELEMENT[dayStem(i)])!;
+/** 三合局の墓（寅午戌＝戌・申子辰＝辰・巳酉丑＝丑・亥卯未＝未） */
+const TRIAD_TOMB: Record<Branch, Branch> = { 寅: "戌", 午: "戌", 戌: "戌", 申: "辰", 子: "辰", 辰: "辰", 巳: "丑", 酉: "丑", 丑: "丑", 亥: "未", 卯: "未", 未: "未" };
 /** 季節（月支から）→ 浴盆の支（『心鏡』注「浴盆，春辰夏未秋戌冬丑」） */
 const BATH: Record<Branch, Branch> = { 寅: "辰", 卯: "辰", 辰: "辰", 巳: "未", 午: "未", 未: "未", 申: "戌", 酉: "戌", 戌: "戌", 亥: "丑", 子: "丑", 丑: "丑" };
 const ORGAN: Record<Element, string> = { 水: "腎", 火: "心", 木: "肝", 金: "肺", 土: "脾胃" };
@@ -304,6 +310,32 @@ const ILLNESS_RULES: readonly Rule[] = [
         ? { detected: `干上 ${b} が日干 ${dayStem(i)} の官鬼で墓、しかも生気（月支 ${sp.monthBranch}）`, evidence: [ev(spiritFact("shengQi"), sp.branch), ev("lesson1.upper", `${b}（官鬼・墓）`)] } : null;
     },
     assess: recovery("古典の読み（「變凶為吉。病者生」）で、回復の保証ではない"),
+  },
+  // ===== 行年（Phase 5O。病人＝patientPersonId の行年だけを使う） =====
+  {
+    id: "illness.xingNianIntoTriadTomb", when: { domain: "illness" },
+    reading: { axis: "obstruction", topic: "natal", key: "xingNianIntoTriadTomb", label: "病人の行年が三合の墓に加わる（行年入墓。治りにくい）", level: "direct",
+      citations: [XJ("原文", "行年三合梦魂惊"), XJ("注", "凡人年在午，或在寅，若胜光功曹加戌，谓之三合行年入墓，皆主难痊之象")] },
+    // 「加戌」なので、行年の支を天盤として、それが加わる地盤（skyEarth）が行年の三合局の墓かを見る。墓の支そのものの行年（戌加戌など）は原文の例にないので読まない
+    conditions: (i) => {
+      const x = i.xingNian;
+      if (!x) return null;
+      const tomb = TRIAD_TOMB[x.branch];
+      return x.branch !== tomb && x.skyEarth === tomb ? { detected: `病人の行年 ${x.branch}（数え${x.state.reckonedAge}）が三合の墓 ${tomb} に加わる`, evidence: [ev("xingNian.skyEarth", `${x.branch}加${tomb}`)] } : null;
+    },
+    assess: illness("古典の象意で、治る・治らないの医学的な予測ではない"),
+  },
+  {
+    id: "illness.tigerOvercomesXingNian", when: { domain: "illness" },
+    reading: { axis: "obstruction", topic: "tiger", key: "tigerOvercomesXingNian", label: "白虎の乗神が旺相で、病人の行年を剋す（古典は重く読む）", level: "direct",
+      citations: [XJ("原文", "白虎所乘兼旺相，逢克行年必命倾")] },
+    // 「克行年」なので、行年の支そのものを剋すかを見る（『入式』の「克行年上神」とは別の句）
+    conditions: (i) => {
+      const x = i.xingNian, b = tiger(i), s = seasonal(i, el(b));
+      return x && s && strong(s) && overcomes(b, x.branch)
+        ? { detected: `白虎の乗神 ${b} が月令に${s}で、病人の行年 ${x.branch} を剋す`, evidence: [ev("tiger", b), ev("xingNian", x.branch)] } : null;
+    },
+    assess: illness("古典の象意で、病状や予後の医学的な判定ではない"),
   },
   {
     id: "illness.tombToGrowth", when: { domain: "illness" },
@@ -558,7 +590,8 @@ export function evaluateIllnessDomain(facts: InterpretationFacts, context: Inter
   if (context.goal && context.goal !== "recover") own.push({ key: "goal", detail: `goal（${context.goal}）は向きに使わない。疾病の読みは、古典が回復の方向に読むか病勢の方向に読むかで示す` });
   own.push(
     { key: "shensha", detail: "天医・地医・喪門・弔客などの神煞を使う規則は未対応（浴盆は Phase 5E から読む。病符は Phase 5M で FACT にしたが、『指南』疾病章の病符の句は見る条件が書かれていないので読まない）" },
-    { key: "xingNian", detail: "行年・病日（初めて病んだ日）を使う規則は未対応" },
+    { key: "sickDay", detail: "病日（初めて病んだ日）を使う規則は未対応" },
+    { key: "xingNianUnresolved", detail: "行年の句のうち、『入式』「行年上見墓神為行年入墓」（墓神が誰の墓か）、白虎・月の神煞と行年を組む句（神煞の組合せ）、『大全』墓門開格「並人行年」（位置）は確定しないので読まない。醫神（男女の行年）は医療の処置なので扱わない" },
     { key: "timing", detail: "回復や悪化の時期（愈期・凶期）は扱わない" },
     { key: "medical", detail: "古典の医・薬などの処置・避病の方角・祭祀、鬼祟、症状の細目は扱わない" },
     { key: "xuanOnTomb", detail: "『指南』の収魂（玄乘日墓）は保留。原典の例（占験六）は戊日の墓を辰とするが、エンジンの土の墓は戌（確定仕様）で、土日以外ではエンジンの天将の配置上この形が出ない" },
@@ -567,7 +600,9 @@ export function evaluateIllnessDomain(facts: InterpretationFacts, context: Inter
   if (STEM_ELEMENT[facts.basic.dayStem] === "土") own.push({ key: "earthStageSystem", detail: "土日。『指南』は土の長生・墓を辰・申の系統で見る（占験六・占験八）が、エンジンは土の墓＝戌（確定仕様）なので、『指南』を出典とする墓・長生の規則（自墓伝生）は判断しない" });
   const seated = TRANSMISSIONS.filter((p) => !input.comparison.path[p].isVoid && input.comparison.path[p].isSeatedOnVoid);
   if (seated.length) own.push({ key: "seatedOnVoid", detail: `${seated.map((p) => LABEL[p]).join("・")}が坐空。疾病の資料には坐空を空亡に当てる根拠がないので読まない（保留）` });
-  const full: Input = { ...input, month: monthBranch ?? null, patientNatal, symbol };
+  const xr = resolveXingNianPlacement(facts, context, context.patientPersonId);
+  if (xr.status === "unresolved") own.push({ key: "xingNian", detail: `病人の行年は求めない（${XING_NIAN_REASON_TEXT[xr.reason]}）ので、行年の読みは判断しない。問う人の行年は使わない` });
+  const full: Input = { ...input, month: monthBranch ?? null, patientNatal, symbol, xingNian: xr.status === "resolved" ? xr.placement : null };
   const readings = evaluateDomainRules(ILLNESS_RULES, full, "illness", context.subtype, context.goal);
   const r = summarizeDomainReadings("illness", context.subtype, context.goal, readings, own, subject, lead);
   return wrap({ ...r, summary: [r.summary, ...monthlySpiritSummaryLines(readings, input.monthlySpirits, monthBranch, ILLNESS_SPIRIT_UNRESOLVED)].join("\n") });

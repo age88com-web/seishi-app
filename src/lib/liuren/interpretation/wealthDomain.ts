@@ -37,6 +37,8 @@ import { resolveContextBranch } from "./contextBranch";
 import { heavenlyGeneralIntrinsicAttributesOf } from "./heavenlyGeneralAttributes";
 import { initialOriginOf } from "./initialTransmissionOrigin";
 import { monthlySpiritSummaryLines, spiritFact, spiritPositionText } from "./monthlySpiritReadings";
+import { XING_NIAN_REASON_TEXT, resolveXingNianPlacement } from "./xingNianPlacement";
+import type { XingNianPlacement } from "./xingNianPlacement";
 import { relationBetween, threeHarmonyOf } from "./relations";
 import type { InterpretationContext } from "./roles";
 import { rulingElementOfMonth, seasonalStrengthOf } from "./states";
@@ -50,6 +52,8 @@ interface Input extends DomainBoardInput {
   symbol: { label: string; branch: Branch } | null;
   /** 問う人が取引のどちら側か（なければ null） */
   side: "buyer" | "seller" | null;
+  /** 財を求める人（wealthSeekerPersonId）の行年の位置（Phase 5O。求められなければ null） */
+  xingNian?: XingNianPlacement | null;
 }
 type Rule = DomainRule<Input>;
 const TRANSMISSIONS: readonly TransmissionPosition[] = ["initial", "middle", "final"];
@@ -360,6 +364,29 @@ const WEALTH_RULES: readonly Rule[] = [
       return (i.side === "seller") === dear ? { direction: "favoring", note: dear ? "売る側に宜しい" : "買う側に宜しい" } : { direction: "hindering", note: dear ? "物が貴く、買う側には宜しくない" : "物が賤く、売る側には宜しくない" };
     },
   },
+  // ===== 行年（Phase 5O。『心鏡』商賈門「占宜往何方求財」の句。財を求める人＝wealthSeekerPersonId の行年だけを使う） =====
+  {
+    id: "wealth.xingNianUpperOvercomesDragon", when: { domain: "wealth", subtypes: TRADE },
+    reading: { axis: "opportunity", topic: "profit", key: "xingNianUpperOvercomesDragon", label: "財を求める人の行年上神が青龍の乗神を剋す（財を獲る）", level: "direct",
+      citations: [XJ("原文", "行年先看青龙旺，所主求财当遂成"), XJ("注", "要行年上神制青龙，主获财也")] },
+    // 「行年上神」なので、地盤の行年の上に加わる天盤の支（upper）を見る。「反此者無利」は「反」が何を指すか確定しないので読まない
+    conditions: (i) => {
+      const x = i.xingNian, d = riding(i, "青龍");
+      return x && overcomes(x.upper, d) ? { detected: `財を求める人の行年 ${x.branch} の上神 ${x.upper} が青龍の乗神 ${d} を剋す`, evidence: [ev("xingNian.upper", x.upper), ev("青龍", d)] } : null;
+    },
+    assess: fav("古典の読みで、金額・利益を保証しない"),
+  },
+  {
+    id: "wealth.taiSuiUpperOvercomesXingNian", when: { domain: "wealth", subtypes: TRADE },
+    reading: { axis: "obstruction", topic: "profit", key: "taiSuiUpperOvercomesXingNian", label: "太歳の上神が財を求める人の行年を剋す（行年の畏れるところ）", level: "direct",
+      citations: [XJ("原文", "太岁上神年所畏"), XJ("注", "太岁上神克行年")] },
+    // 「克行年」なので、行年の支そのものを剋すかを見る
+    conditions: (i) => {
+      const x = i.xingNian, t = i.taiSuiHeavenOn;
+      return x && t && overcomes(t, x.branch) ? { detected: `太歳 ${i.taiSuiBranch} の上神 ${t} が財を求める人の行年 ${x.branch} を剋す`, evidence: [ev("taiSui.heavenOn", t), ev("xingNian", x.branch)] } : null;
+    },
+    assess: hin(),
+  },
   {
     // Phase 5L（月建の神煞）。『指南』買賣章の句なので売買だけで読む。対句「常乘財印」に合わせ「青龍が生気に乗る」と読む
     id: "wealth.dragonOnShengQi", when: { domain: "wealth", subtypes: TRADE },
@@ -567,7 +594,7 @@ export function evaluateWealthDomain(facts: InterpretationFacts, context: Interp
     if (!symbol) own.push({ key: "targetSymbol", detail: "物の類神（targetSymbol）が指定されていないので、『心鏡』商賈門の類神の読みは判断しない（類神は自動では決めない。『直指』の「發用為物」は別の規則として読む）" });
     if (!context.tradeSide) own.push({ key: "tradeSide", detail: "問う人が買う側か売る側か（tradeSide）がないので、物の貴賤・積貨・買う物の読みは向きを決めない" });
     own.push(
-      { key: "xingNian", detail: "行年・太歳上神を使う読み（『心鏡』）は未対応" },
+      { key: "xingNianUnresolved", detail: "『心鏡』商賈門の「反此者無利」（何の反対か）と、假借門「月將加行年」（起課と別の盤）は読まない" },
       { key: "movementPartial", detail: "『指南』買賣章の「傳進當行間退止」は進茹・退間だけを読む部分実装。「傳進」に進間が入るか、「間退」が退間だけか（間伝・退茹を含むか）は資料で確定しないので、進間・退茹は読まない。後句「有防生計為財多」も読まない" },
       { key: "unresolvedPhrases", detail: "意味や位置が資料で確定しない句（交車・末助三般遞生・互相生旺・財墓並關・兩貴拱・自旺傳死墓・干吉支傷・支吉干傷など）は保留" },
     );
@@ -578,7 +605,10 @@ export function evaluateWealthDomain(facts: InterpretationFacts, context: Interp
   );
   const seated = TRANSMISSIONS.filter((p) => !input.comparison.path[p].isVoid && input.comparison.path[p].isSeatedOnVoid);
   if (seated.length) own.push({ key: "seatedOnVoid", detail: `${seated.map((p) => LABEL[p]).join("・")}が坐空。財物の資料には坐空を空亡に当てる根拠がないので読まない（保留）` });
-  const full: Input = { ...input, month: monthBranch ?? null, seekerNatal, symbol, side: context.tradeSide ?? null };
+  const xr = resolveXingNianPlacement(facts, context, context.wealthSeekerPersonId);
+  if (sub === "trading" && xr.status === "unresolved") own.push({ key: "xingNian", detail: `財を求める人の行年は求めない（${XING_NIAN_REASON_TEXT[xr.reason]}）ので、『心鏡』商賈門の行年の読みは判断しない。問う人の行年は使わない` });
+  if (sub === "trading" && xr.status === "resolved" && !context.taiSui) own.push({ key: "taiSuiForXingNian", detail: "太歳がないので「太歳上神克行年」は判断しない" });
+  const full: Input = { ...input, month: monthBranch ?? null, seekerNatal, symbol, side: context.tradeSide ?? null, xingNian: xr.status === "resolved" ? xr.placement : null };
   const readings = evaluateDomainRules(WEALTH_RULES, full, "wealth", sub, context.goal);
   const r = summarizeDomainReadings("wealth", context.subtype, context.goal, readings, own, subject);
   return wrap({ ...r, summary: [r.summary, ...monthlySpiritSummaryLines(readings, input.monthlySpirits, monthBranch, WEALTH_SPIRIT_UNRESOLVED)].join("\n") });

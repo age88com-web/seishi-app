@@ -19,6 +19,7 @@ import type { Branch, Stem } from "../src/lib/liuren";
 import { STEMS, BRANCHES } from "../src/lib/eto";
 import { buildInterpretationFacts } from "../src/lib/liuren/interpretation/facts";
 import { natalYearStateOf } from "../src/lib/liuren/interpretation/natalYear";
+import { taiSuiStateOf } from "../src/lib/liuren/interpretation/taiSui";
 import { WEALTH_DOMAIN_RULES, evaluateWealthDomain, seekerRelationOf } from "../src/lib/liuren/interpretation/wealthDomain";
 import { evaluateCareerDomain } from "../src/lib/liuren/interpretation/careerDomain";
 import type { DomainResult } from "../src/lib/liuren/interpretation/domainResult";
@@ -236,7 +237,7 @@ for (let i = 0; i < 60; i++) for (let o = 0; o < 12; o++) {
   const P = { id: "P", natalYear: natalYearStateOf(BRANCHES.indexOf(nb) % 2 === 0 ? "甲" : "乙", nb) };
   const ctxs: InterpretationContext[] = [];
   for (const subtype of SUBS) for (const m of [0, 1, 2]) ctxs.push({ domain: "wealth", subtype,
-    ...(m >= 1 ? { persons: [P, { id: "Q" }], wealthSeekerPersonId: "P", subjectPersonId: m === 1 ? "P" : "Q", tradeSide: m === 1 ? "buyer" : "seller" } : {}),
+    ...(m >= 1 ? { persons: [P, { id: "Q" }], wealthSeekerPersonId: "P", subjectPersonId: m === 1 ? "P" : "Q", tradeSide: m === 1 ? "buyer" : "seller", xingNianInputs: [{ personId: "P", sex: "male" as const, reckonedAge: ((i * 7 + o * 5) % 72) + 1 }], taiSui: taiSuiStateOf(BRANCHES[(i + o * 7) % 12] as Branch) } : {}),
     ...(m >= 1 ? { targetSymbol: { kind: "branch", branch: BRANCHES[(i + 2 * o + m) % 12] as Branch } } : {}) });
   for (const ctx of ctxs) for (const mb of [month, null]) {
     try {

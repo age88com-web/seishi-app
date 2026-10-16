@@ -26,6 +26,9 @@ import { evaluateDomainRules, summarizeDomainReadings } from "./domainResult";
 import type { DomainCitation, DomainDirection, DomainEvidenceItem, DomainMissingFact, DomainResult, DomainRule } from "./domainResult";
 import { heavenlyGeneralIntrinsicAttributesOf } from "./heavenlyGeneralAttributes";
 import { monthlySpiritSummaryLines, spiritFact } from "./monthlySpiritReadings";
+import { XING_NIAN_REASON_TEXT, resolveXingNianPlacement } from "./xingNianPlacement";
+import type { XingNianPlacement } from "./xingNianPlacement";
+import { initialOriginOf } from "./initialTransmissionOrigin";
 import { branchElement, movementFactsOf } from "./movementFacts";
 import type { MovementFacts } from "./movementFacts";
 import { relationBetween, threeHarmonyOf } from "./relations";
@@ -40,6 +43,8 @@ interface Input extends DomainBoardInput {
   travelerNatal: Branch | null;
   /** 類神の天盤支（指定がなければ null） */
   symbol: { label: string; branch: Branch } | null;
+  /** 行人（travelerPersonId）の行年の位置（Phase 5O。求められなければ null） */
+  xingNian?: XingNianPlacement | null;
 }
 type Rule = DomainRule<Input>;
 const TRANSMISSIONS: readonly TransmissionPosition[] = ["initial", "middle", "final"];
@@ -58,6 +63,7 @@ const path = (i: Input, p: TransmissionPosition) => i.comparison.path[p];
 const overcomes = (a: Branch, b: Branch) => relationBetween(a, b).relations.includes("overcomes");
 /** 返吟の剛日は空でも妨げない（『指南』「返吟四絶人必至（剛日…），雖見天中亦不羈」） */
 const fanyinYang = (i: Input) => i.m.method === "返吟" && i.m.isYangDay;
+const MENG_B: readonly Branch[] = ["寅", "巳", "申", "亥"], ZHONG_B: readonly Branch[] = ["子", "卯", "午", "酉"];
 /** 二馬（驛馬・天馬）。天馬は月支がなければ入れない（推測しない） */
 interface Horse { name: "驛馬" | "天馬"; fact: string; branch: Branch; isVoid: boolean; atStemUpper: boolean; atSiteUpper: boolean; transmissions: readonly TransmissionPosition[]; general: HeavenlyGeneral }
 const horses = (i: Input): Horse[] => {
@@ -473,6 +479,34 @@ const TRAVELER_RULES: readonly Rule[] = [
     },
     assess: notReturns,
   },
+  // ===== 行年（Phase 5O。行人＝travelerPersonId の行年だけを使う） =====
+  {
+    id: "traveler.xingNianSkyEarth", when: { domain: "traveler" },
+    reading: { axis: "trajectory", topic: "safety", key: "xingNianSkyEarth", label: "行人の行年が加わる地盤が孟（他郷で吉）／仲（災い）／季（凶）", level: "direct",
+      citations: [ZN(ZN_X, "原文", "行年加孟他乡吉，加仲为灾临季凶"), XJ("注", "又看行年临孟，则生")] },
+    // 「加」なので、行年の支を天盤として、それが加わる地盤（skyEarth）を見る
+    conditions: (i) => {
+      const x = i.xingNian;
+      if (!x) return null;
+      const c = MENG_B.includes(x.skyEarth) ? "孟" : ZHONG_B.includes(x.skyEarth) ? "仲" : "季";
+      return { detected: `行人の行年 ${x.branch}（数え${x.state.reckonedAge}）が地盤 ${x.skyEarth}（${c}）に加わる（${c === "孟" ? "古典は他郷で吉とする" : c === "仲" ? "古典は災いとする" : "古典は凶とする"}）`, evidence: [ev("xingNian.skyEarth", `${x.branch}加${x.skyEarth}`)] };
+    },
+    assess: (i) => (MENG_B.includes(i.xingNian!.skyEarth) ? { direction: "favoring", note: "道中・他郷での安否の古典の読みで、問いの目的によらない" } : harm()),
+  },
+  {
+    id: "traveler.xingNianUpperInTransmissions", when: { domain: "traveler" },
+    reading: { axis: "actualization", topic: "return", key: "xingNianUpperInTransmissions", label: "行人の行年上神が支上の二課から発用、または三伝に入る（必ず来る）", level: "direct",
+      citations: [XJ("注", "又看行年上所得之神，若在支上二课发用，或入三传者，必来之象")] },
+    // 「行年上所得之神」なので、地盤の行年の上に加わる天盤の支（upper）を見る
+    conditions: (i) => {
+      const x = i.xingNian;
+      if (!x || !x.upperTransmissions.length) return null;
+      // 「入三傳」は発用元によらず成立する。「支上二課發用」は発用元が一つの課に決まる（uniqueLesson・ruleLesson）ときだけ添え、初伝の支から推測しない
+      const o = initialOriginOf(i.facts), fromBranch = x.upperTransmissions.includes("initial") && !!o && (o.kind === "uniqueLesson" || o.kind === "ruleLesson") && o.lesson >= 3;
+      return { detected: `行人の行年 ${x.branch} の上神 ${x.upper} が${x.upperTransmissions.map((p) => LABEL[p]).join("・")}にある${fromBranch ? "（支上の二課から発用）" : ""}`, evidence: [ev("xingNian.upper", x.upper)] };
+    },
+    assess: returns,
+  },
   // ===== 道中の災い（safety） =====
   {
     id: "traveler.xuanwuYimaOnStem", when: { domain: "traveler" },
@@ -524,12 +558,14 @@ export function evaluateTravelerDomain(facts: InterpretationFacts, context: Inte
   const travelerNatal = travelerNatalOf(context, own);
   const symbol = symbolOf(facts, context, own);
   own.push(
-    { key: "xingNian", detail: "行年は規則が未確定なので、行年を使う読み（『指南』「行年加孟他郷吉」など）は未対応" },
     { key: "timing", detail: "帰期（到着の日・月。天罡・遊神・戯神・子午上神・将軍など）は未対応" },
     { key: "youShen", detail: "遊神・戯神は資料の表が食い違う（冬＝辰／戌）ので未対応" },
   );
   if (!input.monthlySpirits) own.push({ key: "tianMa", detail: "月支がないので天馬は求めない（二馬は驛馬だけで見る）" });
-  const full: Input = { ...input, m: movementFactsOf(input), travelerNatal, symbol };
+  const xr = resolveXingNianPlacement(facts, context, context.travelerPersonId);
+  if (xr.status === "unresolved") own.push({ key: "xingNian", detail: `行人の行年は求めない（${XING_NIAN_REASON_TEXT[xr.reason]}）ので、行年の読み（『指南』「行年加孟他郷吉」・『心鏡』「行年上所得之神…必來」）は判断しない。問う人の行年は使わない` });
+  own.push({ key: "xingNianUnresolved", detail: "行年の句のうち、所在・方角・道里（『心鏡』「以行年臨處為所往之方」）は方針で出さず、「天干行年遇陷空」（陷空の定義）・「行年囚死，又被方上神刑克」（方上神の位置）は見る位置が確定しないので読まない。『指南』「年臨三四來期速，日之二課到時遲」（割注「行人行年居辰二課」）は、行年の支が三・四課の上神か下神か、天盤の行年が加わる位置かが確定しないので読まない" });
+  const full: Input = { ...input, m: movementFactsOf(input), travelerNatal, symbol, xingNian: xr.status === "resolved" ? xr.placement : null };
   const readings = evaluateDomainRules(TRAVELER_RULES, full, "traveler", context.subtype, context.goal)
     .map((r) => (STEM_PERSPECTIVE[r.key] ? { ...r, detected: `${r.detected}${PERSPECTIVE_TEXT[STEM_PERSPECTIVE[r.key]]}` } : r));
   const seated = (["initial", "middle"] as const).filter((p) => !input.comparison.path[p].isVoid && input.comparison.path[p].isSeatedOnVoid);

@@ -283,7 +283,7 @@ for (let i = 0; i < 60; i++) for (let o = 0; o < 12; o++) {
   const factsBefore = JSON.stringify(facts);
   const month = BRANCHES[(i + o) % 12] as Branch;
   for (const goal of goals) {
-    const tctx: InterpretationContext = { domain: "traveler", subtype: "return", goal, persons: [person("T", STEMS[(i + 3) % 10] as Stem, BRANCHES[(i + 3) % 12] as Branch)], travelerPersonId: "T", targetSymbol: { kind: "general", general: "天后" } };
+    const tctx: InterpretationContext = { domain: "traveler", subtype: "return", goal, persons: [person("T", STEMS[(i + 3) % 10] as Stem, BRANCHES[(i + 3) % 12] as Branch)], travelerPersonId: "T", xingNianInputs: [{ personId: "T", sex: "male" as const, reckonedAge: ((i * 7 + o * 5) % 72) + 1 }], targetSymbol: { kind: "general", general: "天后" } };
     const vctx: InterpretationContext = { domain: "travel", subtype: "departure", goal, persons: [person("A", STEMS[(i + 5) % 10] as Stem, BRANCHES[(i + 5) % 12] as Branch)], subjectPersonId: "A" };
     try {
       const a = evaluateTravelerDomain(facts, tctx, month), b = evaluateTravelDomain(facts, vctx, month);

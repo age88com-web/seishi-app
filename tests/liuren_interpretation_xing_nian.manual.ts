@@ -134,8 +134,9 @@ const lines: string[] = [];
 // ---- 6. DOMAIN との分離 ----
 {
   const dir = "src/lib/liuren/interpretation";
+  // Phase 5O から: xingNian.ts を import するのは roles.ts（入力の型）と xingNianPlacement.ts（盤上の位置）だけ。DOMAIN は xingNianPlacement を使う
   const users = readdirSync(dir).filter((x) => x.endsWith(".ts") && x !== "xingNian.ts" && /from "\.\/xingNian"/.test(readFileSync(`${dir}/${x}`, "utf8")));
-  check("xingNian.ts は DOMAIN・IdentityLink・既存 FACT から import されない（接続は Phase 5O 以降。既存の不足キー xingNian は別）", users.length === 0, users.join(","));
+  check("xingNian.ts を import するのは roles.ts（入力の型）と xingNianPlacement.ts だけ（IdentityLink・既存 FACT は使わない）", users.sort().join(",") === "roles.ts,xingNianPlacement.ts", users.join(","));
 }
 
 // ---- 5. 人物ごとの入力（XingNianInput） ----
