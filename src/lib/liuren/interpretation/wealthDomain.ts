@@ -23,7 +23,7 @@
 //   売る側・買う側で意味が逆になる読みは tradeSide で向きを決め、なければ向きを決めない（読みそのものは変えない）。
 //   空亡は旬空だけ。坐空は資料に根拠がないので保留（不足に出す）。金額・利益率・回収額・成立日は出さない。
 //
-//   扱わないもの（不足・保留として出す）: 行年・太歳上神を使う規則（『心鏡』）、求財の方角、神煞（生気・劫煞・丁馬など）、
+//   扱わないもの（不足・保留として出す）: 行年・太歳上神を使う規則（『心鏡』）、求財の方角、神煞（劫煞・丁馬など。生気は Phase 5L で売買の「生氣青龍」だけ読む）、
 //   意味や位置が資料で確定しない句（交車十法・還魂・避難・塞户度門・貴坐生合・日上辰上の「背馳」と「將吉」・
 //   「自旺傳死墓」・「干吉支傷」・「財歸財庫」・「空手求財」・討債の主客など）、土の墓の方式が違う『指南』の「墓」。
 
@@ -36,6 +36,7 @@ import type { DomainCitation, DomainDirection, DomainEvidenceItem, DomainMissing
 import { resolveContextBranch } from "./contextBranch";
 import { heavenlyGeneralIntrinsicAttributesOf } from "./heavenlyGeneralAttributes";
 import { initialOriginOf } from "./initialTransmissionOrigin";
+import { monthlySpiritSummaryLines, spiritFact, spiritPositionText } from "./monthlySpiritReadings";
 import { relationBetween, threeHarmonyOf } from "./relations";
 import type { InterpretationContext } from "./roles";
 import { rulingElementOfMonth, seasonalStrengthOf } from "./states";
@@ -360,6 +361,17 @@ const WEALTH_RULES: readonly Rule[] = [
     },
   },
   {
+    // Phase 5L（月建の神煞）。『指南』買賣章の句なので売買だけで読む。対句「常乘財印」に合わせ「青龍が生気に乗る」と読む
+    id: "wealth.dragonOnShengQi", when: { domain: "wealth", subtypes: TRADE },
+    reading: { axis: "opportunity", topic: "profit", key: "dragonOnShengQi", label: "青龍が生気に乗る（財が重なる）", level: "combined",
+      citations: [ZN("原文", "生气青龙财叠叠，常乘财印喜盈盈", "買賣章第十七")] },
+    conditions: (i) => {
+      const sp = i.monthlySpirits?.shengQi;
+      return sp && sp.general === "青龍" ? { detected: `青龍が生気 ${sp.branch}（月支 ${sp.monthBranch}）に乗る（位置: ${spiritPositionText(sp)}）`, evidence: [ev(spiritFact("shengQi"), sp.branch), ev("heavenlyGeneral", "青龍")] } : null;
+    },
+    assess: fav("原文は青龍の位置を指定しない（盤上のどこでも読む）。金額・利益率は出さない"),
+  },
+  {
     id: "wealth.tradeStockpile", when: { domain: "wealth", subtypes: TRADE },
     reading: { axis: "opportunity", topic: "profit", key: "tradeStockpile", label: "発用（物）が無気で、中伝・末伝が相生（貨を積んで利がある）", level: "direct",
       citations: [ZZ("发用无气，中末相生，宜积货有利", "財物 附占買賣")] },
@@ -568,8 +580,11 @@ export function evaluateWealthDomain(facts: InterpretationFacts, context: Interp
   if (seated.length) own.push({ key: "seatedOnVoid", detail: `${seated.map((p) => LABEL[p]).join("・")}が坐空。財物の資料には坐空を空亡に当てる根拠がないので読まない（保留）` });
   const full: Input = { ...input, month: monthBranch ?? null, seekerNatal, symbol, side: context.tradeSide ?? null };
   const readings = evaluateDomainRules(WEALTH_RULES, full, "wealth", sub, context.goal);
-  return wrap(summarizeDomainReadings("wealth", context.subtype, context.goal, readings, own, subject));
+  const r = summarizeDomainReadings("wealth", context.subtype, context.goal, readings, own, subject);
+  return wrap({ ...r, summary: [r.summary, ...monthlySpiritSummaryLines(readings, input.monthlySpirits, monthBranch, WEALTH_SPIRIT_UNRESOLVED)].join("\n") });
 }
+/** 求財・売買で神煞を使うが判断しない句（Phase 5L） */
+const WEALTH_SPIRIT_UNRESOLVED = ["『直指』謀望「劫煞發用者速」は劫煞の起例が取得資料にないので読まない"];
 
 /** 監査用: ルールの一覧 */
 export const WEALTH_DOMAIN_RULES: readonly Pick<Rule, "id" | "when" | "reading">[] = WEALTH_RULES.map(({ id, when, reading }) => ({ id, when, reading }));

@@ -7,7 +7,10 @@
 //   読みは topic で分ける: relation（行人と家）・return（帰還の動き）・movement（いまの動きの段階）・obstacle（帰還の妨げ）・safety（道中の災い）。
 //   ルールは『大六壬指南』行人章第十一・『御定六壬直指』行人・『六壬心鏡』行人門・『六壬大全』逆十二格の原文と注に条件が書かれたものだけ。
 //   発用・驛馬・進茹退茹だけで帰還を決めない（資料が条件を組み合わせている場合はその組合せのまま）。
-//   帰期（到着の日・月）、行年、遊神・戯神、天馬は扱わない（不足として出す）。
+//   帰期（到着の日・月）、行年、遊神・戯神は扱わない（不足として出す）。
+//   二馬（Phase 5L）: 原文が「二馬」という句（『入式』「二馬入傳…馬若臨支」・『直指』「二馬臨支」「虎乘二馬」「二馬空亡」）は、
+//     驛馬（markers・日支基準）と天馬（monthlySpirits・月建基準。『大六壬指南』仕宦章 割注「二馬者…驛馬…天馬」）を別々に見て、
+//     当たった馬を detected に分けて書く。驛馬だけをいう句（郇注「凡驛馬在傳」・「罡乘日馬」）に天馬は加えない。月支がなければ天馬は見ない。
 //
 //   資料どうしの食い違い（実装しない）:
 //     - 末伝が日干の墓: 『直指』は「歸者」、『心鏡』注「一云…末傳空亡墓絶者，不來」→ 向きが逆なので読まない
@@ -22,11 +25,13 @@ import type { DomainBoardInput } from "./domainBoardInput";
 import { evaluateDomainRules, summarizeDomainReadings } from "./domainResult";
 import type { DomainCitation, DomainDirection, DomainEvidenceItem, DomainMissingFact, DomainResult, DomainRule } from "./domainResult";
 import { heavenlyGeneralIntrinsicAttributesOf } from "./heavenlyGeneralAttributes";
+import { monthlySpiritSummaryLines, spiritFact } from "./monthlySpiritReadings";
 import { branchElement, movementFactsOf } from "./movementFacts";
 import type { MovementFacts } from "./movementFacts";
 import { relationBetween, threeHarmonyOf } from "./relations";
 import type { InterpretationContext, InterpretationGoal } from "./roles";
 import { elementTombOf } from "./states";
+import type { HeavenlyGeneral } from "../types";
 import type { InterpretationFacts, TransmissionPosition } from "./types";
 
 interface Input extends DomainBoardInput {
@@ -53,6 +58,19 @@ const path = (i: Input, p: TransmissionPosition) => i.comparison.path[p];
 const overcomes = (a: Branch, b: Branch) => relationBetween(a, b).relations.includes("overcomes");
 /** 返吟の剛日は空でも妨げない（『指南』「返吟四絶人必至（剛日…），雖見天中亦不羈」） */
 const fanyinYang = (i: Input) => i.m.method === "返吟" && i.m.isYangDay;
+/** 二馬（驛馬・天馬）。天馬は月支がなければ入れない（推測しない） */
+interface Horse { name: "驛馬" | "天馬"; fact: string; branch: Branch; isVoid: boolean; atStemUpper: boolean; atSiteUpper: boolean; transmissions: readonly TransmissionPosition[]; general: HeavenlyGeneral }
+const horses = (i: Input): Horse[] => {
+  const y = i.m.yima, tm = i.monthlySpirits?.tianMa;
+  return [
+    { name: "驛馬", fact: "yima", branch: y.branch, isVoid: y.isVoid, atStemUpper: y.atStemUpper, atSiteUpper: y.atSiteUpper, transmissions: y.transmissions, general: y.general },
+    ...(tm ? [{ name: "天馬" as const, fact: spiritFact("tianMa"), branch: tm.branch, isVoid: tm.isVoid, atStemUpper: tm.lessons.some((l) => l.index === 1),
+      atSiteUpper: tm.lessons.some((l) => l.index === 3), transmissions: (tm.transmissions ?? []).map((x) => x.position), general: tm.general }] : []),
+  ];
+};
+/** 当たった馬の detected・evidence（馬ごとに分けて書く） */
+const horseHit = (hs: Horse[], text: (h: Horse) => string) =>
+  hs.length ? { detected: hs.map(text).join("・"), evidence: hs.map((h) => ev(h.fact, `${h.name} ${h.branch}`)) } : null;
 /** 丁馬（旬丁・驛馬）が三伝にある */
 const dingMaInTransmissions = (i: Input) => i.m.xunDing.transmissions.length > 0 || i.m.yima.transmissions.length > 0;
 
@@ -324,24 +342,25 @@ const TRAVELER_RULES: readonly Rule[] = [
   },
   {
     id: "traveler.yimaInTransit", when: { domain: "traveler" },
-    reading: { axis: "trajectory", topic: "movement", key: "yimaInTransit", label: "驛馬が三伝・干上にある（途中を行く）", level: "direct",
+    reading: { axis: "trajectory", topic: "movement", key: "yimaInTransit", label: "二馬（驛馬・天馬）が三伝・干上にある（途中を行く）", level: "direct",
       citations: [XJ("注", "《入式》…若二马入传，或临日干，则在中途行"), XJ("注", "凡驿马在传，主在中途行")] },
-    conditions: (i) => i.m.yima.transmissions.length || i.m.yima.atStemUpper
-      ? { detected: `驛馬 ${i.m.yima.branch} が${[...i.m.yima.transmissions.map((p) => LABEL[p]), ...(i.m.yima.atStemUpper ? ["干上"] : [])].join("・")}にある（天馬は未対応）`, evidence: [ev("yima", i.m.yima.branch)] } : null,
+    // 驛馬は『入式』・郇注の両方、天馬は『入式』の「二馬」だけによる
+    conditions: (i) => horseHit(horses(i).filter((h) => h.transmissions.length || h.atStemUpper),
+      (h) => `${h.name} ${h.branch} が${[...h.transmissions.map((p) => LABEL[p]), ...(h.atStemUpper ? ["干上"] : [])].join("・")}にある${h.name === "天馬" ? "（『入式』の「二馬」による）" : ""}`),
     assess: neutral("移動の途中にあることを示すだけで、帰着は決めない"),
   },
   {
     id: "traveler.yimaAtSite", when: { domain: "traveler" },
-    reading: { axis: "actualization", topic: "return", key: "yimaAtSite", label: "驛馬が支に臨む（到る）", level: "direct",
+    reading: { axis: "actualization", topic: "return", key: "yimaAtSite", label: "二馬（驛馬・天馬）が支に臨む（到る）", level: "direct",
       citations: [XJ("注", "《入式》…马若临支则到"), ZZ("或二马临支…此皆归者也")] },
-    conditions: (i) => i.m.yima.atSiteUpper ? { detected: `驛馬 ${i.m.yima.branch} が支上にある（天馬は未対応）`, evidence: [ev("yima", "支上")] } : null,
+    conditions: (i) => horseHit(horses(i).filter((h) => h.atSiteUpper), (h) => `${h.name} ${h.branch} が支上にある`),
     assess: returns,
   },
   {
     id: "traveler.tigerOnYima", when: { domain: "traveler" },
-    reading: { axis: "trajectory", topic: "return", key: "tigerOnYima", label: "白虎が驛馬に乗る（帰る）", level: "direct",
+    reading: { axis: "trajectory", topic: "return", key: "tigerOnYima", label: "白虎が二馬（驛馬・天馬）に乗る（帰る）", level: "direct",
       citations: [ZZ("或虎乘二马，此皆归者也")] },
-    conditions: (i) => i.m.yima.general === "白虎" ? { detected: `驛馬 ${i.m.yima.branch} に白虎が乗る（天馬は未対応）`, evidence: [ev("heavenlyGeneral", "白虎")] } : null,
+    conditions: (i) => horseHit(horses(i).filter((h) => h.general === "白虎"), (h) => `${h.name} ${h.branch} に白虎が乗る`),
     assess: returns,
   },
   {
@@ -412,9 +431,10 @@ const TRAVELER_RULES: readonly Rule[] = [
   },
   {
     id: "traveler.yimaVoid", when: { domain: "traveler" },
-    reading: { axis: "obstruction", topic: "obstacle", key: "yimaVoid", label: "驛馬が空（帰らない）", level: "direct",
+    reading: { axis: "obstruction", topic: "obstacle", key: "yimaVoid", label: "二馬（驛馬・天馬）が空（帰らない）", level: "direct",
       citations: [ZZ("二马空亡…皆以不归断之")] },
-    conditions: (i) => i.m.yima.isVoid ? { detected: `驛馬 ${i.m.yima.branch} が旬空（天馬は未対応）`, evidence: [ev("yima.isVoid", "旬空")] } : null,
+    // 空は旬空だけ（坐空は読まない）。二馬の一方だけが空でも、空の馬を書いて読む（驛馬だけのときの読みと同じ扱い）
+    conditions: (i) => horseHit(horses(i).filter((h) => h.isVoid), (h) => `${h.name} ${h.branch} が旬空`),
     assess: voidBlocks,
   },
   {
@@ -504,18 +524,20 @@ export function evaluateTravelerDomain(facts: InterpretationFacts, context: Inte
   const travelerNatal = travelerNatalOf(context, own);
   const symbol = symbolOf(facts, context, own);
   own.push(
-    { key: "tianMa", detail: "天馬は規則が資料で確認できないので、二馬は驛馬だけで見る" },
     { key: "xingNian", detail: "行年は規則が未確定なので、行年を使う読み（『指南』「行年加孟他郷吉」など）は未対応" },
     { key: "timing", detail: "帰期（到着の日・月。天罡・遊神・戯神・子午上神・将軍など）は未対応" },
     { key: "youShen", detail: "遊神・戯神は資料の表が食い違う（冬＝辰／戌）ので未対応" },
   );
+  if (!input.monthlySpirits) own.push({ key: "tianMa", detail: "月支がないので天馬は求めない（二馬は驛馬だけで見る）" });
   const full: Input = { ...input, m: movementFactsOf(input), travelerNatal, symbol };
   const readings = evaluateDomainRules(TRAVELER_RULES, full, "traveler", context.subtype, context.goal)
     .map((r) => (STEM_PERSPECTIVE[r.key] ? { ...r, detected: `${r.detected}${PERSPECTIVE_TEXT[STEM_PERSPECTIVE[r.key]]}` } : r));
   const seated = (["initial", "middle"] as const).filter((p) => !input.comparison.path[p].isVoid && input.comparison.path[p].isSeatedOnVoid);
   if (seated.length) own.push({ key: "seatedOnVoid", detail: `${seated.map((p) => `${LABEL[p]} ${input.comparison.path[p].branch}`).join("・")}が坐空。古典の「空陷」の「陷」に坐空を当てる根拠が不十分なので、初伝・中伝の坐空は読まない（保留）` });
-  return summarizeDomainReadings("traveler", context.subtype, context.goal, readings, own, subject, lead);
+  const r = summarizeDomainReadings("traveler", context.subtype, context.goal, readings, own, subject, lead);
+  return { ...r, summary: [r.summary, ...monthlySpiritSummaryLines(readings, input.monthlySpirits, monthBranch, TRAVELER_SPIRIT_UNRESOLVED)].join("\n") };
 }
+const TRAVELER_SPIRIT_UNRESOLVED = ["驛馬だけをいう句（郇注「凡驛馬在傳」・「罡乘日馬」）には天馬を加えない", "『直指』「天罡二馬之墓」「馬臨長生入墓」は Phase 5C から規則にしていない（今回の対象外）"];
 
 /** 監査用: ルールの一覧 */
 export const TRAVELER_DOMAIN_RULES: readonly Pick<Rule, "id" | "when" | "reading">[] = TRAVELER_RULES.map(({ id, when, reading }) => ({ id, when, reading }));

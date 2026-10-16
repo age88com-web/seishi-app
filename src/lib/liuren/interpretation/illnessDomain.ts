@@ -37,6 +37,7 @@ import { evaluateDomainRules, summarizeDomainReadings } from "./domainResult";
 import type { DomainCitation, DomainDirection, DomainEvidenceItem, DomainMissingFact, DomainResult, DomainRule } from "./domainResult";
 import { resolveContextBranch } from "./contextBranch";
 import { dayVirtueOf, daySalaryOf, yimaOf } from "./markers";
+import { monthlySpiritSummaryLines, spiritFact } from "./monthlySpiritReadings";
 import { relationBetween } from "./relations";
 import type { InterpretationContext } from "./roles";
 import { elementTombOf, growthStageOfStem, rulingElementOfMonth, seasonalStrengthOf } from "./states";
@@ -292,6 +293,18 @@ const ILLNESS_RULES: readonly Rule[] = [
     },
     assess: illness(),
   },
+  // ===== 月建の神煞（Phase 5L） =====
+  {
+    id: "illness.ghostTombOnStemShengQi", when: { domain: "illness" },
+    reading: { axis: "support", topic: "tomb", key: "ghostTombOnStemShengQi", label: "鬼墓（日鬼で日干の墓）が日に臨んで生気となる（凶を変じて吉）", level: "direct",
+      citations: [DQ("或鬼墓临日作生气，或自墓传生，或鬼墓有克制冲破，变凶为吉。病者生"), DQ("如壬申日丑时午将，壬日属水，以辰为墓，又为日鬼加日，发用为鬼墓")] },
+    conditions: (i) => {
+      const sp = i.monthlySpirits?.shengQi, b = stemUpper(i);
+      return sp && b === sp.branch && overcomes(b, dayStem(i)) && growthStageOfStem(dayStem(i), b) === "墓"
+        ? { detected: `干上 ${b} が日干 ${dayStem(i)} の官鬼で墓、しかも生気（月支 ${sp.monthBranch}）`, evidence: [ev(spiritFact("shengQi"), sp.branch), ev("lesson1.upper", `${b}（官鬼・墓）`)] } : null;
+    },
+    assess: recovery("古典の読み（「變凶為吉。病者生」）で、回復の保証ではない"),
+  },
   {
     id: "illness.tombToGrowth", when: { domain: "illness" },
     reading: { axis: "trajectory", topic: "course", key: "tombToGrowth", label: "墓から長生へ伝わる（危うくても安らぐ）／長生から墓へ伝わる（憂いが多い）", level: "combined",
@@ -544,7 +557,7 @@ export function evaluateIllnessDomain(facts: InterpretationFacts, context: Inter
   if (!monthBranch) own.push({ key: "monthBranch", detail: "月支がないので、旺相を使う読み（日干の旺相・鬼墓の無気・貴人が虎を制す）と浴盆は判断しない" });
   if (context.goal && context.goal !== "recover") own.push({ key: "goal", detail: `goal（${context.goal}）は向きに使わない。疾病の読みは、古典が回復の方向に読むか病勢の方向に読むかで示す` });
   own.push(
-    { key: "shensha", detail: "資料に定義のない神煞（生気・天医・地医・喪門・弔客・病符など）を使う規則は未対応" },
+    { key: "shensha", detail: "生気以外の神煞（天医・地医・喪門・弔客・病符・浴盆など）を使う規則は未対応" },
     { key: "xingNian", detail: "行年・病日（初めて病んだ日）を使う規則は未対応" },
     { key: "timing", detail: "回復や悪化の時期（愈期・凶期）は扱わない" },
     { key: "medical", detail: "古典の医・薬などの処置・避病の方角・祭祀、鬼祟、症状の細目は扱わない" },
@@ -556,8 +569,16 @@ export function evaluateIllnessDomain(facts: InterpretationFacts, context: Inter
   if (seated.length) own.push({ key: "seatedOnVoid", detail: `${seated.map((p) => LABEL[p]).join("・")}が坐空。疾病の資料には坐空を空亡に当てる根拠がないので読まない（保留）` });
   const full: Input = { ...input, month: monthBranch ?? null, patientNatal, symbol };
   const readings = evaluateDomainRules(ILLNESS_RULES, full, "illness", context.subtype, context.goal);
-  return wrap(summarizeDomainReadings("illness", context.subtype, context.goal, readings, own, subject, lead));
+  const r = summarizeDomainReadings("illness", context.subtype, context.goal, readings, own, subject, lead);
+  return wrap({ ...r, summary: [r.summary, ...monthlySpiritSummaryLines(readings, input.monthlySpirits, monthBranch, ILLNESS_SPIRIT_UNRESOLVED)].join("\n") });
 }
+/** 疾病で神煞を使うが判断しない句（Phase 5L） */
+const ILLNESS_SPIRIT_UNRESOLVED = [
+  "『指南』「沉疴之際看生龍（龍乘生氣）」は沈痾（重い・久しい病）のときに看るという条件で、問いの入力からその場合を区別できないので読まない",
+  // 要約に「死」の字を出さない（Phase 5E の方針）ので、句は引かずに内容で書く
+  "『直指』の年命と墓にかかわる吉凶の句（年命が墓に入り四課に生気がある、など）は「年命」が本命だけか行年と本命か、「入墓」が何に入るのかが確定しないので読まない",
+  "『直指』の白虎と月の神煞を組む凶の句は、『心鏡』の起例が要る神煞を Phase 5M で扱うまで読まない",
+];
 
 /** 監査用: ルールの一覧 */
 export const ILLNESS_DOMAIN_RULES: readonly Pick<Rule, "id" | "when" | "reading">[] = ILLNESS_RULES.map(({ id, when, reading }) => ({ id, when, reading }));

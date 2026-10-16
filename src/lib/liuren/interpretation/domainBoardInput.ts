@@ -4,6 +4,7 @@
 //   DOMAIN 判断が共通に使う盤の入力（干上と三伝の比較・三伝が通り過ぎる支・昼夜貴人支・日干の寄宮・
 //   本人の本命と IdentityLink・太歳の IdentityLink と上の支）を、既存の FACT から組み立てる。新しい計算はしない。
 //   本命・太歳がないときは null や空にして、不足として返す（判断は止めない）。
+//   Phase 5L: 月建の神煞（monthlySpirits.ts）の位置も渡す。月支がなければ null（推測しない）。各 DOMAIN は必要な規則だけで参照する。
 
 import type { Branch } from "../types";
 import { anchorResolutionContextOf } from "./anchorResolver";
@@ -14,6 +15,8 @@ import { dayNightNobleBranchPairStateOf } from "./dayNightNobleBranchPair";
 import type { DomainMissingFact } from "./domainResult";
 import { collectIdentityLinks } from "./identityLink";
 import type { IdentityLink } from "./identityLink";
+import { monthlySpiritsOf } from "./monthlySpirits";
+import type { MonthlySpiritsState } from "./monthlySpirits";
 import type { ContextBranchSource, InterpretationContext } from "./roles";
 import { transmissionPassageOf } from "./transmissionPassage";
 import type { TransmissionPassage } from "./transmissionPassage";
@@ -35,6 +38,8 @@ export interface DomainBoardInput {
   taiSuiBranch: Branch | null;
   taiSuiLinks: readonly IdentityLink[];
   taiSuiHeavenOn: Branch | null;
+  /** 月建の神煞・第1群の位置（Phase 5L。月支がなければ null） */
+  monthlySpirits: MonthlySpiritsState | null;
 }
 
 /** 盤の入力を組み立てる。三伝が未確定なら input は null */
@@ -71,6 +76,7 @@ export function buildDomainBoardInput(
       lodgingBranch: facts.lessons[0].lowerBranch,
       subjectNatalBranch, subjectLinks,
       taiSuiBranch: context.taiSui?.branch ?? null, taiSuiLinks, taiSuiHeavenOn,
+      monthlySpirits: monthlySpiritsOf(facts, monthBranch),
     },
     missing,
   };

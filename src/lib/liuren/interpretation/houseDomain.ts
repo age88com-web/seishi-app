@@ -25,6 +25,7 @@ import { buildDomainBoardInput } from "./domainBoardInput";
 import type { DomainBoardInput } from "./domainBoardInput";
 import { derivedBranchDayStemStateOf } from "./derivedBranchDayStem";
 import { evaluateDomainRules, summarizeDomainReadings } from "./domainResult";
+import { monthlySpiritSummaryLines, spiritFact, spiritPositionText } from "./monthlySpiritReadings";
 import type { DomainCitation, DomainDirection, DomainEvidenceItem, DomainResult, DomainRule } from "./domainResult";
 import { relationBetween, threeHarmonyOf } from "./relations";
 import type { InterpretationContext, InterpretationGoal } from "./roles";
@@ -38,6 +39,7 @@ const LABEL: Record<TransmissionPosition, string> = { initial: "初伝", middle:
 
 const D1 = (locator: string, layer: "原文" | "訳注", quote: string): DomainCitation => ({ source: "『六壬断案』", locator, layer, quote });
 const D2 = (locator: string, layer: "原文" | "訳注", quote: string): DomainCitation => ({ source: "『六壬断案２』", locator, layer, quote });
+const ZN = (layer: "原文" | "注", quote: string): DomainCitation => ({ source: "『大六壬指南』", locator: "陽宅章第三", layer, quote });
 const KOZA = (locator: string, quote: string): DomainCitation => ({ source: "『六壬神課講座』", locator, layer: "講座", quote });
 const P67 = KOZA("p67", "六壬家宅占の基本は、日干を住んでいる人、特に世帯主、日支を家とする。それらの表象はそれぞれ一課、三課とする。一課と日支、三課と日干、および発用と日干支の関係をみるのがよい");
 const ev = (fact: string, detail: string): DomainEvidenceItem => ({ fact, detail });
@@ -327,6 +329,30 @@ const HOUSE_RULES: readonly Rule[] = [
       ? { detected: `宅上 ${siteUpper(i).branch} に玄武が乗り、その陰神（四課上神）${path(i, "initial").branch} が初伝`, evidence: [ev("heavenlyGeneral", `玄武 ${siteUpper(i).branch}`), ev("initial", `四課上神 ${path(i, "initial").branch}`)] } : null,
     assess: hindering,
   },
+  // ===== 月建の神煞（Phase 5L。『大六壬指南』陽宅章） =====
+  {
+    id: "house.dragonOnShengQi", when: { domain: "house" },
+    reading: { axis: "support", topic: "house", key: "dragonOnShengQi", label: "青龍が生気に乗る（家が日に昌える）", level: "direct",
+      citations: [ZN("原文", "虎入宅凶蛇冲吉，龙乘生气家日昌")] },
+    // 原文は位置を指定しない（「虎入宅」と違い宅上に限らない）。位置は detected に書くだけで条件にしない
+    conditions: (i) => {
+      const sp = i.monthlySpirits?.shengQi;
+      return sp && sp.general === "青龍" ? { detected: `青龍が生気 ${sp.branch}（月支 ${sp.monthBranch}）に乗る（位置: ${spiritPositionText(sp)}）`, evidence: [ev(spiritFact("shengQi"), sp.branch), ev("heavenlyGeneral", "青龍")] } : null;
+    },
+    assess: (_, subtype, goal) => wantsToLeave(subtype, goal)
+      ? neutral("家を離れたい問いでの読みは資料にない") : { direction: "favoring", note: "原文は青龍の位置を指定しない（盤上のどこでも読む）" },
+  },
+  {
+    id: "house.taichangSiQiOnSite", when: { domain: "house" },
+    reading: { axis: "obstruction", topic: "family", key: "taichangSiQiOnSite", label: "宅上（支上）に太常が死気に乗って臨む（孝服）", level: "direct",
+      citations: [ZN("原文", "支乘常死孝服招"), ZN("注", "太常乘死气临支主有孝服")] },
+    conditions: (i) => {
+      const sp = i.monthlySpirits?.siQi;
+      return sp && siteUpper(i).branch === sp.branch && sp.general === "太常"
+        ? { detected: `宅上（支上）${sp.branch} が死気（月支 ${sp.monthBranch}）で、太常が乗る`, evidence: [ev(spiritFact("siQi"), sp.branch), ev("lesson3.upper", sp.branch), ev("heavenlyGeneral", "太常")] } : null;
+    },
+    assess: () => ({ direction: "hindering", note: "古典の象意（孝服＝喪に服す）で、家族の死亡を予測しない" }),
+  },
   {
     id: "house.wealthVaultEmpty", when: { domain: "house" },
     reading: { axis: "actualization", topic: "wealth", key: "wealthVaultEmpty", label: "財庫が三伝で空（財はもはやない）", level: "direct",
@@ -350,8 +376,15 @@ export function evaluateHouseDomain(facts: InterpretationFacts, context: Interpr
   missing.push({ key: "xingNian", detail: "行年は規則が未確定なので、行年を使う読み（例32「行年上には破敗」など）は未対応" });
   missing.push({ key: "timing", detail: "時期（応期・年数）の読みは未対応" });
   const readings = evaluateDomainRules(HOUSE_RULES, input, "house", context.subtype, context.goal);
-  return summarizeDomainReadings("house", context.subtype, context.goal, readings, missing, subject, lead);
+  const r = summarizeDomainReadings("house", context.subtype, context.goal, readings, missing, subject, lead);
+  return { ...r, summary: [r.summary, ...monthlySpiritSummaryLines(readings, input.monthlySpirits, monthBranch, HOUSE_SPIRIT_UNRESOLVED)].join("\n") };
 }
+/** 家宅で神煞を使うが判断しない句（Phase 5L） */
+const HOUSE_SPIRIT_UNRESOLVED = [
+  "『直指』宅舍「日辰傳命，大綱要有生氣旺氣」は生気と旺気の両方が要るのか一方か、見る位置（日辰そのものか上神か）が確定しないので読まない",
+  "『大全』血厭克宅格「天后乘血支，血忌作月厭臨支克支」は句読（天后が乗るのが血支か血忌か、月厭が必須か）が確定しないので読まない",
+  "『指南』「血忌支厭煞入宅」は「支厭」「入宅」の位置が確定しないので読まない",
+];
 
 /** 監査用: ルールの一覧 */
 export const HOUSE_DOMAIN_RULES: readonly Pick<Rule, "id" | "when" | "reading">[] = HOUSE_RULES.map(({ id, when, reading }) => ({ id, when, reading }));

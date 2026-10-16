@@ -18,6 +18,7 @@ import type { Branch } from "../types";
 import { buildDomainBoardInput } from "./domainBoardInput";
 import type { DomainBoardInput } from "./domainBoardInput";
 import { evaluateDomainRules, summarizeDomainReadings } from "./domainResult";
+import { monthlySpiritSummaryLines } from "./monthlySpiritReadings";
 import type { DomainCitation, DomainDirection, DomainEvidenceItem, DomainResult, DomainRule } from "./domainResult";
 import { daySalaryOf } from "./markers";
 import { movementFactsOf } from "./movementFacts";
@@ -310,7 +311,7 @@ export function evaluateTravelDomain(facts: InterpretationFacts, context: Interp
   if (!input) return summarizeDomainReadings("travel", context.subtype, context.goal, [], missing, subject, lead);
   if (!monthBranch) missing.push({ key: "monthBranch", detail: "月支がないので、旺相休囚の読み（『直指』「日上旺相／休囚」・『指南』「初傳旺相末傳否」）は省略" });
   missing.push(
-    { key: "tianMa", detail: "天馬は規則が資料で確認できないので、馬は驛馬だけで見る" },
+    { key: "tianMa", detail: "天馬の起例は『心鏡』で確認できた（Phase 5K）が、出行の『直指』の「馬」（馬值空亡・馬帶青龍など）が二馬か驛馬かは原文で確定しないので、馬は驛馬だけで見る" },
     { key: "xingNian", detail: "行年は規則が未確定なので未対応" },
     { key: "shensha", detail: "往亡・天車・飛廉・劫煞などの神煞は表が資料にないので未対応" },
     { key: "route", detail: "水路・陸路の選び方（「干吉宜行陸路，支吉宜行水路」）と天気は未対応" },
@@ -320,8 +321,11 @@ export function evaluateTravelDomain(facts: InterpretationFacts, context: Interp
     missing.push({ key: "seatedOnVoid", detail: "坐空の位置がある。出行の資料には坐空を「空」「空陷」に当てる根拠がないので、坐空は読まない（保留）" });
   const full: Input = { ...input, m: movementFactsOf(input) };
   const readings = evaluateDomainRules(TRAVEL_RULES, full, "travel", context.subtype, context.goal);
-  return summarizeDomainReadings("travel", context.subtype, context.goal, readings, missing, subject, lead);
+  const r = summarizeDomainReadings("travel", context.subtype, context.goal, readings, missing, subject, lead);
+  return { ...r, summary: [r.summary, ...monthlySpiritSummaryLines(readings, input.monthlySpirits, monthBranch, TRAVEL_SPIRIT_UNRESOLVED)].join("\n") };
 }
+/** 出行で神煞を使うが判断しない句（Phase 5L） */
+const TRAVEL_SPIRIT_UNRESOLVED = ["『直指』「年命天馬、驛馬，或丁神臨日發用…必行也」は「年命天馬、驛馬」が「臨日發用」にかかるか（年命の上の馬か）が句読で確定しないので読まない"];
 
 /** 監査用: ルールの一覧 */
 export const TRAVEL_DOMAIN_RULES: readonly Pick<Rule, "id" | "when" | "reading">[] = TRAVEL_RULES.map(({ id, when, reading }) => ({ id, when, reading }));

@@ -197,11 +197,14 @@ const EXAMPLES: Ex[] = [
   check("三伝が未確定なら transmissions は null（四課上神は返す）", tsNull !== null && tsNull.transmissions === null && Array.isArray(tsNull.lessons));
 }
 
-// ---- 7. DOMAIN は今回の神煞を参照しない ----
+// ---- 7. 参照の経路（Phase 5L から DOMAIN が使う） ----
 {
   const dir = "src/lib/liuren/interpretation";
-  const users = readdirSync(dir).filter((x) => x.endsWith(".ts") && x !== "monthlySpirits.ts" && readFileSync(`${dir}/${x}`, "utf8").includes("monthlySpirits"));
-  check("DOMAIN・既存 FACT は monthlySpirits を参照しない（規則の解放は Phase 5L）", users.length === 0, users.join(","));
+  const importers = readdirSync(dir).filter((x) => x.endsWith(".ts") && x !== "monthlySpirits.ts" && /from "\.\/monthlySpirits"/.test(readFileSync(`${dir}/${x}`, "utf8")));
+  check("monthlySpirits.ts を import するのは domainBoardInput（盤の入力）と monthlySpiritReadings（要約）だけで、DOMAIN は盤の入力の monthlySpirits を参照する",
+    importers.sort().join(",") === "domainBoardInput.ts,monthlySpiritReadings.ts", importers.join(","));
+  const factUsers = readdirSync(dir).filter((x) => x.endsWith(".ts") && !/Domain\.ts$|^domainBoardInput\.ts$|^monthlySpirit/.test(x) && readFileSync(`${dir}/${x}`, "utf8").includes("monthlySpirits"));
+  check("DOMAIN 以外の既存 FACT は月建の神煞を参照しない", factUsers.length === 0, factUsers.join(","));
 }
 
 console.log("十二月支の対応（寅月＝正月から）:");

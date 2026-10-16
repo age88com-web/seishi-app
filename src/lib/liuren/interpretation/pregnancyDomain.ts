@@ -16,7 +16,11 @@
 //     子孫があるだけで妊娠とはしない。
 //
 //   人物: 妊娠・出産する本人は context.pregnantPersonId で問う人と別に持つ（代理の問い）。胎児は人物として持たない。
-//   行年・本命・神煞（生氣・死氣・月厭・血支血忌・天喜など）を使う規則は未対応。
+//   月建の神煞（Phase 5L。monthlySpirits.ts）: 『大全』卷九の胎財生気・胎財死気・忧母格・生養神二血法だけを読む。
+//     これらの格は日干（胎神・養神）と月で決まり、原文が盤上の位置を指定しないものは位置を条件にしない（忧母格は「天后乘」）。
+//     忧子格「六合三月占加申」は、忧母格の「乘」と違い「加」なので、六合の乗神か地盤かが確定しない（保留）。
+//     月厭煞「申加母年命上」は、同じ節が「夫妻之行年本命」と行年・本命を分けて書くので、「母年命」が本命だけか行年を含むかが確定しない（保留）。
+//   行年と、上記以外の神煞（生神・天獄・劫煞など）を使う規則は未対応。
 //
 //   向き: 胎の経過・出産の進行・母子は、古典が順調・安と読むものを favoring、損・難・凶と読むものを hindering とする。
 //   妊娠の兆候・男女・月が足りない・出産が近い等は向きを決めない。goal で読みも向きも変えない。
@@ -32,6 +36,7 @@ import { initialOriginOf } from "./initialTransmissionOrigin";
 import { relationBetween, threeHarmonyOf } from "./relations";
 import type { InterpretationContext } from "./roles";
 import { growthStageOf } from "./states";
+import { monthlySpiritSummaryLines, spiritFact } from "./monthlySpiritReadings";
 import type { InterpretationFacts, StructuralRelation, TransmissionPosition } from "./types";
 
 type Input = DomainBoardInput;
@@ -396,6 +401,58 @@ const PREGNANCY_RULES: readonly Rule[] = [
     assess: hin("『心鏡』注は干上・支上が相手の干支を傷つける形で母子を分ける（傷の位置の定義が違うので併記する）。古典の象意で、母子の医学的な状態を示さない"),
   },
 
+  // ===================== 月建の神煞（Phase 5L。『大全』卷九 毕法賦） =====================
+  {
+    id: "pregnancy.taiCaiShengQi", when: { domain: "pregnancy", subtypes: CON },
+    reading: { axis: "opportunity", topic: "sign", key: "taiCaiShengQi", label: "日干の胎神が妻財で、月の生気（胎財生気格）", level: "direct",
+      citations: [DQ("胎财生气妻怀孕"), DQ("谓日干之胎神，作日之妻财，又逢月内之生气者，如占妻必孕也"), DQ("五壬日，七月占皆同")] },
+    // 原文は日と月で決まる格（「五壬日，七月占皆同」）で、盤上の位置を条件にしない
+    conditions: (i) => {
+      const a = dayTai(i), sp = i.monthlySpirits?.shengQi;
+      return a && sp && sp.branch === a && overcomes(dayStem(i), a)
+        ? { detected: `日干 ${dayStem(i)} の胎神 ${a} が妻財で、月（月支 ${sp.monthBranch}）の生気`, evidence: [ev("tai", a), ev(spiritFact("shengQi"), sp.branch)] } : null;
+    },
+    assess: SIGN,
+  },
+  {
+    id: "pregnancy.taiSiQi", when: { domain: "pregnancy", subtypes: MAI },
+    reading: { axis: "obstruction", topic: "fetus", key: "taiSiQi", label: "胎神が月の死気（胎財死気。孕は育たないとする）", level: "direct",
+      citations: [DQ("胎财死气损胎推"), DQ("但凡胎神作月内之死气，妇孕不育")] },
+    conditions: (i) => {
+      const a = dayTai(i), sp = i.monthlySpirits?.siQi;
+      return a && sp && sp.branch === a
+        ? { detected: `日干 ${dayStem(i)} の胎神 ${a}（${overcomes(dayStem(i), a) ? "胎財" : "胎鬼"}）が月（月支 ${sp.monthBranch}）の死気`, evidence: [ev("tai", a), ev(spiritFact("siQi"), sp.branch)] } : null;
+    },
+    assess: hin("古典の象意で、流産の予測ではない"),
+  },
+  {
+    id: "pregnancy.motherWorryTianhou", when: { domain: "pregnancy", subtypes: DEL },
+    reading: { axis: "obstruction", topic: "motherChild", key: "motherWorryTianhou", label: "天后（母）が月の死気（土）に乗り剋される（忧母格）", level: "direct",
+      citations: [DQ("忧母格"), DQ("已上者，乃月内死气克天后也。如至产期，必忧母凶")] },
+    conditions: (i) => {
+      const q = riding(i, "天后"), sp = i.monthlySpirits?.siQi;
+      return sp && q === sp.branch && el(q) === "土"
+        ? { detected: `天后が月（月支 ${sp.monthBranch}）の死気 ${q}（土）に乗る（死気が天后〔水〕を剋す）`, evidence: [ev(spiritFact("siQi"), q), ev("天后", q)] } : null;
+    },
+    assess: hin("古典の象意で、母体の医学的な状態を示さない"),
+  },
+  {
+    id: "pregnancy.twoBloodMaintain", when: { domain: "pregnancy", subtypes: MAI },
+    reading: { axis: "obstruction", topic: "fetus", key: "twoBloodMaintain", label: "血支・血忌が養神（胎神を剋す）か胎神に並ぶ（生養神二血法。孕を占えば損とする）", level: "direct",
+      citations: [DQ("生养神二血法：如丙丁戊已日，胎神在子，养神在丑。如在正月占，言血支、血忌皆在丑，并养神而克胎神，如占产，生速；如或占孕，有损无疑"),
+        DQ("如在十二月占，言血支、血忌皆在子作胎神，如占产，亦生速；如占孕，亦防损"), DQ("已上血忌作空亡，或坐空乡，占孕占产，亦无防也")] },
+    conditions: (i) => twoBlood(i),
+    assess: (i) => (twoBloodVoid(i) ? { direction: "neutral", note: "血忌が旬空か坐空なので、古典は妨げないとする" } : { direction: "hindering", note: "古典の象意で、流産の予測ではない" }),
+  },
+  {
+    id: "pregnancy.twoBloodDelivery", when: { domain: "pregnancy", subtypes: DEL },
+    reading: { axis: "trajectory", topic: "progress", key: "twoBloodDelivery", label: "血支・血忌が養神（胎神を剋す）か胎神に並ぶ（生養神二血法。産を占えば生まれるのが速い）", level: "direct",
+      citations: [DQ("生养神二血法：如丙丁戊已日，胎神在子，养神在丑。如在正月占，言血支、血忌皆在丑，并养神而克胎神，如占产，生速；如或占孕，有损无疑"),
+        DQ("如在十二月占，言血支、血忌皆在子作胎神，如占产，亦生速；如占孕，亦防损"), DQ("已上血忌作空亡，或坐空乡，占孕占产，亦无防也")] },
+    conditions: (i) => twoBlood(i),
+    assess: (i) => (twoBloodVoid(i) ? { direction: "neutral", note: "血忌が旬空か坐空なので、古典は妨げないとする（速いとする読みも向きを決めない）" } : { direction: "favoring", note: "古典の象意で、出産の時期の予測・安全の保証ではない" }),
+  },
+
   // ===================== 胎児の男女（吉凶と別。maintain・delivery） =====================
   {
     id: "pregnancy.sexStemUpper", when: { domain: "pregnancy", subtypes: MD },
@@ -454,6 +511,21 @@ const PREGNANCY_RULES: readonly Rule[] = [
     assess: SEX,
   },
 ];
+
+/** 生養神二血法: 血支・血忌が同じ支で、それが養神（胎神を剋す）か胎神 */
+function twoBlood(i: Input) {
+  const a = dayTai(i), z = i.monthlySpirits?.xueZhi, j = i.monthlySpirits?.xueJi;
+  if (!a || !z || !j || z.branch !== j.branch) return null;
+  const yang = BRANCHES.find((b) => growthStageOf(STEM_ELEMENT[dayStem(i)], b) === "養")!;
+  const where = z.branch === a ? "胎神" : z.branch === yang && overcomes(yang, a) ? "養神（胎神を剋す）" : null;
+  return where ? { detected: `血支・血忌がともに ${z.branch}（月支 ${z.monthBranch}）で、日干 ${dayStem(i)} の${where}${twoBloodVoid(i) ? "。血忌が旬空か坐空" : ""}`,
+    evidence: [ev(spiritFact("xueZhi"), z.branch), ev(spiritFact("xueJi"), j.branch), ev("tai", a)] } : null;
+}
+/** 『大全』「血忌作空亡，或坐空郷…亦無防」: 原文が坐空を明示するので、旬空と坐空（地盤が旬空）の両方で見る */
+function twoBloodVoid(i: Input): boolean {
+  const j = i.monthlySpirits?.xueJi;
+  return !!j && (j.isVoid || isVoid(i, j.earthUnder));
+}
 
 /** 『心鏡』注の母（支）・子（干）を害する形 */
 function harmTo(i: Input, who: "mother" | "child"): string[] {
@@ -531,18 +603,28 @@ export function evaluatePregnancyDomain(facts: InterpretationFacts, context: Int
   if (!input) return wrap(summarizeDomainReadings(context.domain, context.subtype, context.goal, [], missing, SUBJECT[sub]));
   if (!dayTai(input)) own.push({ key: "taiEarth", detail: "戊己日は胎神が子か午か資料で二説ある（『大全』「或有用午為胎神者也，不可不知」）ので、胎神の規則は判断しない" });
   if (context.goal) own.push({ key: "goal", detail: `goal（${context.goal}）は妊娠・出産の向きに使わない（目的で古典の読みを変えない）` });
-  own.push({ key: "shenSha", detail: "神煞（生氣・死氣・月厭・血支血忌・天喜・天狱など）と行年・本命を使う規則（胎財生氣・忧子・忧母・小產法・夫妻の年命が胎神を冲剋など）は未対応" });
+  own.push({ key: "shenSha", detail: "生神・天狱・劫煞などの神煞と、行年を使う規則（『心鏡』の婦の行年など）、忧子格（「加申」が乗神か地盤か未確定）、『心鏡』「或見生神，血支血忌天喜則易生」（生神は Phase 5M）、『直指』「占孕要看生氣」・『指南』「蛇夾月厭」（見る位置が未確定）、月厭煞（「母年命」が本命だけか行年を含むか未確定）、小產法・夫妻の年命が胎神を冲剋は未対応" });
   if (sub === "conception" && !taiOf(el(dayBranch(input)))) own.push({ key: "taiEarthBranch", detail: "日支が土なので日支の胎神が資料の二説（子・午）で決まらず、互胎格は判断しない" });
-  if (sub === "conception") own.push({ key: "conceptionScope", detail: "妊娠の兆候は『大全』の互胎格・腹胎格だけで読む（『直指』「占孕要看生氣」の生氣は神煞で未対応）。子孫があるだけでは妊娠としない" });
+  if (sub === "conception") own.push({ key: "conceptionScope", detail: "妊娠の兆候は『大全』の互胎格・腹胎格・胎財生気格だけで読む（『直指』「占孕要看生氣」は見る位置が書かれていないので読まない）。子孫があるだけでは妊娠としない" });
   if (sub !== "conception") own.push(
     { key: "unresolved", detail: "意味や見る位置が資料で確定しない句（伏吟無丁・天后六合不可臨凶處・純陰課・胎乘鬼死・胎加生方・兩儀夾傳・恋胎五等・干支交車の双生・陰陽不備の男女・『大全』の胎受克絶格（日干で吉凶が分かれる）・胎神坐長生・夾定三傳・三玄胎）は保留" },
     { key: "noTiming", detail: "受胎の時期・産期（胜光所臨・冲胎・生養之下）・陣痛や出産の時刻、双胎の判断、私妊の象意は出さない" },
   );
   if (sub === "delivery") own.push({ key: "presentation", detail: "胎位（頭先・足先。『直指』「傳順貴順頭先出」・『指南』「卯戌相加」）は三伝の順逆の定義が確定せず、医学的な判定と誤認されやすいので出さない" });
   // 規則表は妊娠・出産で1つ（when.domain は "pregnancy"）。妊娠・出産のどちらの規則かは占的（subtype）で分ける
+  if (!input.monthlySpirits) own.push({ key: "monthBranch", detail: "月支がないので、月建の神煞（生気・死気・血支・血忌）を使う格は判断しない" });
   const readings = evaluateDomainRules(PREGNANCY_RULES, input, "pregnancy", sub, context.goal);
-  return wrap(summarizeDomainReadings(context.domain, context.subtype, context.goal, readings, own, SUBJECT[sub]));
+  const r = summarizeDomainReadings(context.domain, context.subtype, context.goal, readings, own, SUBJECT[sub]);
+  return wrap({ ...r, summary: [r.summary, ...monthlySpiritSummaryLines(readings, input.monthlySpirits, monthBranch, PREGNANCY_SPIRIT_UNRESOLVED[sub])].join("\n") });
 }
+
+/** 妊娠・出産で神煞を使うが判断しない句（Phase 5L） */
+const PREGNANCY_SPIRIT_UNRESOLVED: Record<Sub, readonly string[]> = {
+  conception: ["『直指』「占孕要看生氣」は見る位置が書かれていないので読まない", "戊己日は胎神が子・午の二説で決まらないので、胎神を使う格は判断しない"],
+  maintain: ["『指南』「蛇夾月厭」は「夾」の位置が確定しないので読まない", "戊己日は胎神が子・午の二説で決まらないので、胎神を使う格は判断しない"],
+  delivery: ["忧子格「六合三月占加申」は「加」が六合の乗神か地盤かが確定しないので読まない",
+    "月厭煞「申加母年命上」は、同じ節が「夫妻之行年本命」と行年・本命を分けて書くので、「母年命」が本命だけか行年を含むかが確定せず読まない", "『心鏡』「或見生神，血支血忌天喜則易生」は生神（『心鏡』の起例）を Phase 5M で扱うまで読まない", "戊己日は胎神が子・午の二説で決まらないので、胎神を使う格は判断しない"],
+};
 
 /** 監査用: ルールの一覧 */
 export const PREGNANCY_DOMAIN_RULES: readonly Pick<Rule, "id" | "when" | "reading">[] = PREGNANCY_RULES.map(({ id, when, reading }) => ({ id, when, reading }));

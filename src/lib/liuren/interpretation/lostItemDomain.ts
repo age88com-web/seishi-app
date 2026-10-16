@@ -34,6 +34,7 @@ import { buildDomainBoardInput } from "./domainBoardInput";
 import type { DomainBoardInput } from "./domainBoardInput";
 import { evaluateDomainRules, summarizeDomainReadings } from "./domainResult";
 import type { DomainCitation, DomainDirection, DomainEvidenceItem, DomainMissingFact, DomainReading, DomainResult, DomainRule } from "./domainResult";
+import { monthlySpiritSummaryLines } from "./monthlySpiritReadings";
 import { relationBetween } from "./relations";
 import type { InterpretationContext } from "./roles";
 import { growthStageOf } from "./states";
@@ -539,8 +540,14 @@ export function evaluateLostItemDomain(facts: InterpretationFacts, context: Inte
   if (symbol && el(symbol.branch) === "土" && sub !== "theft") own.push({ key: "earthGrowth", detail: "類神が土なので、長生に坐すかは判断しない（土の長生の方式が資料で分かれる）" });
   const full: Input = { ...input, month: monthBranch ?? null, symbol };
   const readings = evaluateDomainRules(LOST_ITEM_RULES, full, "lostItem", sub, context.goal);
-  return wrap(summarizeDomainReadings("lostItem", context.subtype, context.goal, readings, own, subject));
+  const r = summarizeDomainReadings("lostItem", context.subtype, context.goal, readings, own, subject);
+  return wrap({ ...r, summary: [r.summary, ...monthlySpiritSummaryLines(readings, input.monthlySpirits, monthBranch, LOST_ITEM_SPIRIT_UNRESOLVED)].join("\n") });
 }
+/** 失物・盗難で神煞を使うが判断しない句（Phase 5L） */
+const LOST_ITEM_SPIRIT_UNRESOLVED = [
+  "『指南』賊盗章「鬼乘生氣去來頻」は鬼（官鬼）を課伝で見るのか位置が書かれず、日と月だけで決まってしまうので読まない",
+  "『直指』遺失「若遇子寅巳酉及血支死氣之類，則為人屠宰矣」は六畜の類神が何に「遇」うのか（乗るのか加わるのか）が確定しないので読まない",
+];
 
 /** 類神・三伝の坐空（旬空でないのに地盤が旬空） */
 function i0SeatedVoid(input: DomainBoardInput, symbol: Input["symbol"]): string {
