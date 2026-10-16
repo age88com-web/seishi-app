@@ -25,7 +25,8 @@ import { buildDomainBoardInput } from "./domainBoardInput";
 import type { DomainBoardInput } from "./domainBoardInput";
 import { derivedBranchDayStemStateOf } from "./derivedBranchDayStem";
 import { evaluateDomainRules, summarizeDomainReadings } from "./domainResult";
-import { monthlySpiritSummaryLines, spiritFact, spiritPositionText } from "./monthlySpiritReadings";
+import { monthlySpiritSummaryLines, secondarySpiritFact, secondarySpiritSummaryLines, spiritFact, spiritPositionText } from "./monthlySpiritReadings";
+import { initialOriginOf } from "./initialTransmissionOrigin";
 import type { DomainCitation, DomainDirection, DomainEvidenceItem, DomainResult, DomainRule } from "./domainResult";
 import { relationBetween, threeHarmonyOf } from "./relations";
 import type { InterpretationContext, InterpretationGoal } from "./roles";
@@ -40,6 +41,8 @@ const LABEL: Record<TransmissionPosition, string> = { initial: "初伝", middle:
 const D1 = (locator: string, layer: "原文" | "訳注", quote: string): DomainCitation => ({ source: "『六壬断案』", locator, layer, quote });
 const D2 = (locator: string, layer: "原文" | "訳注", quote: string): DomainCitation => ({ source: "『六壬断案２』", locator, layer, quote });
 const ZN = (layer: "原文" | "注", quote: string): DomainCitation => ({ source: "『大六壬指南』", locator: "陽宅章第三", layer, quote });
+const DQ = (locator: string, quote: string): DomainCitation => ({ source: "『六壬大全』", locator, layer: "原文", quote });
+const ZZ = (quote: string): DomainCitation => ({ source: "『御定六壬直指』", locator: "毕法賦", layer: "原文", quote });
 const KOZA = (locator: string, quote: string): DomainCitation => ({ source: "『六壬神課講座』", locator, layer: "講座", quote });
 const P67 = KOZA("p67", "六壬家宅占の基本は、日干を住んでいる人、特に世帯主、日支を家とする。それらの表象はそれぞれ一課、三課とする。一課と日支、三課と日干、および発用と日干支の関係をみるのがよい");
 const ev = (fact: string, detail: string): DomainEvidenceItem => ({ fact, detail });
@@ -353,6 +356,39 @@ const HOUSE_RULES: readonly Rule[] = [
     },
     assess: () => ({ direction: "hindering", note: "古典の象意（孝服＝喪に服す）で、家族の死亡を予測しない" }),
   },
+  // ===== 太歳・第2群の神煞（Phase 5M。『六壬大全』卷十 毕法賦・『御定六壬直指』毕法賦・『大六壬指南』陽宅章） =====
+  {
+    id: "house.bingFuOnSite", when: { domain: "house" },
+    reading: { axis: "obstruction", topic: "family", key: "bingFuOnSite", label: "病符（前年の太歳）が宅上（支）に臨んで支を剋す（全家の患い）", level: "direct",
+      citations: [DQ("卷十 毕法赋", "病符克宅全家患"), DQ("卷十 毕法赋", "若病符临支又克支者，乃主合家病患，更乘天鬼，定遭时疫而无疑也。病符乘白虎而临支，克支尤凶"),
+        ZZ("若临支又克支者，主合家患病。更乘天鬼，定遭时疫"), ZN("原文", "旧岁更来天鬼煞，克支灾疫一家中")] },
+    conditions: (i) => {
+      const b = i.secondarySpirits.bingFu;
+      if (!b || siteUpper(i).branch !== b.branch || !relationBetween(b.branch, i.facts.basic.dayBranch).relations.includes("overcomes")) return null;
+      const g = i.secondarySpirits.tianGui, extra: string[] = [];
+      if (g && g.branch === b.branch) extra.push(`天鬼（月支 ${g.basisBranch}）とも同じ支（『大全』『直指』は時疫、『指南』は災疫とする）`);
+      if (b.general === "白虎") extra.push("白虎が乗る（『大全』は尤も凶とする）");
+      return { detected: `病符 ${b.branch}（太歳 ${b.basisBranch} の前年）が宅上（支上）にあり、日支 ${i.facts.basic.dayBranch} を剋す${extra.length ? `。${extra.join("。")}` : ""}`,
+        evidence: [ev(secondarySpiritFact("bingFu"), b.branch), ev("lesson3.upper", b.branch), ...(g && g.branch === b.branch ? [ev(secondarySpiritFact("tianGui"), g.branch)] : [])] };
+    },
+    assess: () => ({ direction: "hindering", note: "古典の象意で、家族の健康状態や病気を予測しない" }),
+  },
+  {
+    id: "house.stemTombGuanShenPerson", when: { domain: "house" },
+    reading: { axis: "obstruction", topic: "person", key: "stemTombGuanShenPerson", label: "日干の墓が季の関神となって干の二課から発用（干墓并関。人が衰える）", level: "direct",
+      citations: [DQ("卷十 毕法赋", "干墓并关，人宅废。谓日干之墓作四季之关神发用者是也。宜分干支发用。如日干之两课上作发用者，主人衰。如支辰之两课上作发用者，主宅废"),
+        ZZ("干墓并关人宅废。谓日之墓作四季之关神发用者，如日干之两课上发用者，必主人衰；支辰之两课上发用者，必主宅废")] },
+    conditions: (i) => stemTombGuan(i, "stem"),
+    assess: () => ({ direction: "hindering", note: "古典の象意で、人の健康状態を予測しない" }),
+  },
+  {
+    id: "house.stemTombGuanShenHouse", when: { domain: "house" },
+    reading: { axis: "obstruction", topic: "house", key: "stemTombGuanShenHouse", label: "日干の墓が季の関神となって支の二課から発用（干墓并関。宅が廃れる）", level: "direct",
+      citations: [DQ("卷十 毕法赋", "干墓并关，人宅废。谓日干之墓作四季之关神发用者是也。宜分干支发用。如日干之两课上作发用者，主人衰。如支辰之两课上作发用者，主宅废"),
+        ZZ("干墓并关人宅废。谓日之墓作四季之关神发用者，如日干之两课上发用者，必主人衰；支辰之两课上发用者，必主宅废")] },
+    conditions: (i) => stemTombGuan(i, "branch"),
+    assess: (_, subtype, goal) => wantsToLeave(subtype, goal) ? neutral("家を離れたい問いでの読みは資料にない") : hindering(),
+  },
   {
     id: "house.wealthVaultEmpty", when: { domain: "house" },
     reading: { axis: "actualization", topic: "wealth", key: "wealthVaultEmpty", label: "財庫が三伝で空（財はもはやない）", level: "direct",
@@ -366,6 +402,25 @@ const HOUSE_RULES: readonly Rule[] = [
   },
 ];
 
+/** 干墓并関の形（初伝が日干の墓で、季の関神。土日は墓の方式が資料で分かれるので読まない） */
+const stemTombGuanShape = (i: Input) => {
+  const g = i.secondarySpirits.guanShen, init = path(i, "initial");
+  return g && STEM_ELEMENT[i.facts.basic.dayStem] !== "土" && init.branch === g.branch && init.growthStage === "墓" ? g : null;
+};
+/**
+ * 干墓并関: 発用元の課が干の二課（一・二課）か支の二課（三・四課）か。発用元は起課エンジンが持つ initialOrigin だけで決め、
+ * 一つの課に決まるもの（uniqueLesson・ruleLesson）だけを読む。同じ上神の課が複数ある（ambiguousLessons）・課から取らない（derived）
+ * ときは、候補が同じ側にあっても干側・支側を出さず不足にする（初伝の支から発用元を推測しない）。
+ */
+function stemTombGuan(i: Input, side: "stem" | "branch") {
+  const g = stemTombGuanShape(i), o = initialOriginOf(i.facts);
+  if (!g || !o || (o.kind !== "uniqueLesson" && o.kind !== "ruleLesson")) return null;
+  if (side === "stem" ? o.lesson > 2 : o.lesson < 3) return null;
+  const init = path(i, "initial");
+  return { detected: `初伝 ${init.branch} が日干 ${i.facts.basic.dayStem} の墓で、季の関神（月支 ${g.basisBranch}）。第${o.lesson}課（${side === "stem" ? "干" : "支"}の二課）から発用`,
+    evidence: [ev(secondarySpiritFact("guanShen"), g.branch), ev("initial.growthStage", "墓"), ev("origin", `${o.kind}:${o.lesson}`)] };
+}
+
 /** 家宅の DOMAIN 判断 */
 export function evaluateHouseDomain(facts: InterpretationFacts, context: InterpretationContext, monthBranch?: Branch | null): DomainResult {
   if (context.domain !== "house") throw new Error(`家宅以外の DOMAIN です: ${context.domain}`);
@@ -376,9 +431,22 @@ export function evaluateHouseDomain(facts: InterpretationFacts, context: Interpr
   missing.push({ key: "xingNian", detail: "行年は規則が未確定なので、行年を使う読み（例32「行年上には破敗」など）は未対応" });
   missing.push({ key: "timing", detail: "時期（応期・年数）の読みは未対応" });
   const readings = evaluateDomainRules(HOUSE_RULES, input, "house", context.subtype, context.goal);
+  const origin = initialOriginOf(facts);
+  if (stemTombGuanShape(input) && origin && origin.kind !== "uniqueLesson" && origin.kind !== "ruleLesson")
+    missing.push({ key: "stemTombGuanOrigin", detail: `初伝が日干の墓で関神だが、発用元が一つの課に決まらない（${origin.kind === "ambiguousLessons" ? `第${origin.lessons.join("・")}課が同じ上神` : `${origin.method}で課から取らない`}）ので、干墓并関の人衰・宅廃は判断しない` });
   const r = summarizeDomainReadings("house", context.subtype, context.goal, readings, missing, subject, lead);
-  return { ...r, summary: [r.summary, ...monthlySpiritSummaryLines(readings, input.monthlySpirits, monthBranch, HOUSE_SPIRIT_UNRESOLVED)].join("\n") };
+  const basesMissing = [...(input.secondarySpirits.bingFu ? [] : ["太歳がないので病符は求めない"]), ...(monthBranch ? [] : ["月支がないので天鬼・関神は求めない"])];
+  return { ...r, summary: [r.summary, ...monthlySpiritSummaryLines(readings, input.monthlySpirits, monthBranch, HOUSE_SPIRIT_UNRESOLVED),
+    ...secondarySpiritSummaryLines(readings, input.secondarySpirits, basesMissing, HOUSE_SECONDARY_UNRESOLVED)].join("\n") };
 }
+/** 家宅で太歳・第2群の神煞を使うが判断しない句（Phase 5M） */
+const HOUSE_SECONDARY_UNRESOLVED = [
+  "病符が月の生気のとき、『大全』は「尤主合家病」、『直指』は「雖病無妨」と食い違うので、生気・死気との組合せは読まない",
+  "『大全』「宜成合舊事格」（病符が宅を生ずる等）は家宅の占的の規則でないので読まない",
+  "『指南』「三四遇官災訟起，若逢歲破少安寧」は歳破を見る位置が確定しないので読まない",
+  "『大全』鬼墓課「干墓臨支…為關神尤甚」は、干墓臨支そのものの規則を家宅でまだ読まないので読まない",
+  "土日は墓の方式が資料で分かれるので、干墓并関は判断しない。発用元が一つの課に決まらないときも判断しない",
+];
 /** 家宅で神煞を使うが判断しない句（Phase 5L） */
 const HOUSE_SPIRIT_UNRESOLVED = [
   "『直指』宅舍「日辰傳命，大綱要有生氣旺氣」は生気と旺気の両方が要るのか一方か、見る位置（日辰そのものか上神か）が確定しないので読まない",

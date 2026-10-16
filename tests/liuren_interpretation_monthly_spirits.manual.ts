@@ -203,7 +203,7 @@ const EXAMPLES: Ex[] = [
   const importers = readdirSync(dir).filter((x) => x.endsWith(".ts") && x !== "monthlySpirits.ts" && /from "\.\/monthlySpirits"/.test(readFileSync(`${dir}/${x}`, "utf8")));
   check("monthlySpirits.ts を import するのは domainBoardInput（盤の入力）と monthlySpiritReadings（要約）だけで、DOMAIN は盤の入力の monthlySpirits を参照する",
     importers.sort().join(",") === "domainBoardInput.ts,monthlySpiritReadings.ts", importers.join(","));
-  const factUsers = readdirSync(dir).filter((x) => x.endsWith(".ts") && !/Domain\.ts$|^domainBoardInput\.ts$|^monthlySpirit/.test(x) && readFileSync(`${dir}/${x}`, "utf8").includes("monthlySpirits"));
+  const factUsers = readdirSync(dir).filter((x) => x.endsWith(".ts") && !/Domain\.ts$|^domainBoardInput\.ts$|^monthlySpirit/.test(x) && readFileSync(`${dir}/${x}`, "utf8").replace(/\/\/.*$/gm, "").replace(/\/\*\*[\s\S]*?\*\//g, "").includes("monthlySpirits"));
   check("DOMAIN 以外の既存 FACT は月建の神煞を参照しない", factUsers.length === 0, factUsers.join(","));
 }
 

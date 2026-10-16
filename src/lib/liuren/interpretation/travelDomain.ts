@@ -313,7 +313,7 @@ export function evaluateTravelDomain(facts: InterpretationFacts, context: Interp
   missing.push(
     { key: "tianMa", detail: "天馬の起例は『心鏡』で確認できた（Phase 5K）が、出行の『直指』の「馬」（馬值空亡・馬帶青龍など）が二馬か驛馬かは原文で確定しないので、馬は驛馬だけで見る" },
     { key: "xingNian", detail: "行年は規則が未確定なので未対応" },
-    { key: "shensha", detail: "往亡・天車・飛廉・劫煞などの神煞は表が資料にないので未対応" },
+    { key: "shensha", detail: "往亡・天車・飛廉・劫煞などの神煞は未対応（往亡は『心鏡』に表があるが『直指』「身帶往亡煞」の見る位置が確定しない。天車は『心鏡』の表と『直指』毕法賦「天車煞即關神」が食い違う。飛廉・劫煞は起例が資料にない）" },
     { key: "route", detail: "水路・陸路の選び方（「干吉宜行陸路，支吉宜行水路」）と天気は未対応" },
   );
   const seated = (["initial", "middle", "final"] as const).filter((p) => !input.comparison.path[p].isVoid && input.comparison.path[p].isSeatedOnVoid);

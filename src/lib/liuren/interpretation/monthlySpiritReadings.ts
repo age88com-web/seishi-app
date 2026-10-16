@@ -10,6 +10,8 @@ import type { Branch } from "../types";
 import type { DomainReading } from "./domainResult";
 import { MONTHLY_SPIRIT_DEFINITIONS } from "./monthlySpirits";
 import type { MonthlySpiritKind, MonthlySpiritsState } from "./monthlySpirits";
+import { SECONDARY_SPIRIT_DEFINITIONS } from "./secondarySpirits";
+import type { SecondarySpiritKind, SecondarySpiritsState } from "./secondarySpirits";
 
 const PREFIX = "monthlySpirit.";
 
@@ -43,6 +45,28 @@ export function monthlySpiritSummaryLines(
 
 const LESSON_LABEL: Record<1 | 2 | 3 | 4, string> = { 1: "干上", 2: "二課上神", 3: "支上", 4: "四課上神" };
 const TRANSMISSION_LABEL = { initial: "初伝", middle: "中伝", final: "末伝" } as const;
+
+// ---- Phase 5M: 太歳・第2群の神煞（secondarySpirits.ts）を使った読みの段 ----
+const SECONDARY_PREFIX = "secondarySpirit.";
+/** evidence に書く fact 名（例: "secondarySpirit.bingFu"） */
+export const secondarySpiritFact = (kind: SecondarySpiritKind) => `${SECONDARY_PREFIX}${kind}`;
+
+/** 要約に加える行（太歳・第2群の神煞）。basesMissing は基準（太歳・月支）がなくて判断しない神煞の説明 */
+export function secondarySpiritSummaryLines(readings: readonly DomainReading[], spirits: SecondarySpiritsState, basesMissing: readonly string[], unresolved: readonly string[]): string[] {
+  const rs = readings.filter((r) => r.evidence.some((e) => e.fact.startsWith(SECONDARY_PREFIX)));
+  const used = [...new Set(rs.flatMap((r) => r.evidence.filter((e) => e.fact.startsWith(SECONDARY_PREFIX)).map((e) => e.fact.slice(SECONDARY_PREFIX.length) as SecondarySpiritKind)))];
+  const list = (d: DomainReading["direction"]) => rs.filter((r) => r.direction === d).map((r) => r.detected);
+  const conflicts = [...new Set(rs.flatMap((r) => (r.direction === "neutral" ? [] : readings.filter((x) => x !== r && x.topic === r.topic && x.direction !== "neutral" && x.direction !== r.direction)
+    .map(() => `「${r.label}」と同じ段階の他の読みが逆向き`))))];
+  return [
+    `太歳・第2群の神煞による読み${used.length ? `（${used.map((k) => `${SECONDARY_SPIRIT_DEFINITIONS[k].name} ${spirits[k]!.branch}`).join("・")}）` : ""}:`,
+    `・神煞が示す象意: ${rs.length ? list("neutral").join("。") || "なし" : "なし（この盤では太歳・第2群の神煞を使う規則が成立しない。吉凶を示すものではない）"}`,
+    `・実現を助ける条件: ${list("favoring").join("。") || "なし"}`,
+    `・実現を妨げる条件: ${list("hindering").join("。") || "なし"}`,
+    `・判断が相反する事項: ${conflicts.length ? `${conflicts.join("・")}（相殺しない）` : "なし"}`,
+    `・判断できない事項: ${[...basesMissing, ...unresolved].join("・") || "なし"}`,
+  ];
+}
 
 /** 神煞の支が課伝のどこにあるか（どこにもなければ「課伝の外」）。位置の説明だけで判断はしない */
 export function spiritPositionText(p: MonthlySpiritsState[MonthlySpiritKind]): string {
