@@ -24,8 +24,8 @@
 //            『心鏡』の六儀卦（初伝に限る）と同じとは確かめられないので、婚姻の規則には使わない
 //     家宅 … 『大六壬指南』陽宅章「羅網來乘身宅上」は羅網を定義しないので、『大全』の羅網格と同じとは確かめられない。家宅の規則には使わない
 
-import { BRANCHES } from "../constants";
 import type { Branch } from "../types";
+import { lessonFormSpiritBranchOf } from "./lessonFormSpirits";
 import { detectClassicalPatterns } from "./patterns";
 import type { InterpretationFacts } from "./types";
 
@@ -54,20 +54,16 @@ export interface LessonFormFact {
   notes: readonly string[];
 }
 
-const next = (b: Branch): Branch => BRANCHES[(BRANCHES.indexOf(b) + 1) % 12] as Branch;
-const oppose = (b: Branch): Branch => BRANCHES[(BRANCHES.indexOf(b) + 6) % 12] as Branch;
-/** 支儀（『心鏡』注の表: 子日午・丑日巳・寅日辰・卯日卯・辰日寅・巳日丑・午日未・未日申・申日酉・酉日戌・戌日亥・亥日子） */
-const ZHI_YI: Record<Branch, Branch> = { 子: "午", 丑: "巳", 寅: "辰", 卯: "卯", 辰: "寅", 巳: "丑", 午: "未", 未: "申", 申: "酉", 酉: "戌", 戌: "亥", 亥: "子" };
+// 神煞そのもの（旬儀・支儀・天羅・地網の二説）の算法と原典は lessonFormSpirits.ts（Phase 5Q）に置き、ここではその支を使って成立だけを見る。
 
 /** 旬儀（旬首の支）と支儀 */
 export function liuYiBranchesOf(facts: InterpretationFacts): { xunYi: Branch; zhiYi: Branch } {
-  return { xunYi: facts.xun.xunHead.slice(1) as Branch, zhiYi: ZHI_YI[facts.basic.dayBranch] };
+  return { xunYi: lessonFormSpiritBranchOf("xunYi", facts), zhiYi: lessonFormSpiritBranchOf("zhiYi", facts) };
 }
 
 /** 天羅（日干の寄宮の前一辰）と地網の二説 */
 export function tianLuoDiWangOf(facts: InterpretationFacts): { tianLuo: Branch; diWangXinJing: Branch; diWangDaQuan: Branch } {
-  const lodging = facts.lessons[0].lowerBranch;
-  return { tianLuo: next(lodging), diWangXinJing: oppose(next(lodging)), diWangDaQuan: next(facts.basic.dayBranch) };
+  return { tianLuo: lessonFormSpiritBranchOf("tianLuo", facts), diWangXinJing: lessonFormSpiritBranchOf("diWangXinJing", facts), diWangDaQuan: lessonFormSpiritBranchOf("diWangDaQuan", facts) };
 }
 
 const XJ3 = (layer: "原文" | "注", quote: string): LessonFormSource => ({ source: "『六壬心鏡』", locator: "巻三", layer, quote });
