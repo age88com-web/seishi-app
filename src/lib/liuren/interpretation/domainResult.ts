@@ -109,7 +109,8 @@ export function evaluateDomainRules<I>(
   return out;
 }
 
-const AXIS_LABEL: Record<DomainAxis, string> = {
+/** 判断軸の表示名（Phase 5S: 総合解釈の文章化でも使う） */
+export const AXIS_LABEL: Record<DomainAxis, string> = {
   relation: "関係", opportunity: "機会", support: "後押し", obstruction: "妨げ", actualization: "実現性", trajectory: "流れ", timing: "時期",
 };
 

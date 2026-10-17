@@ -611,3 +611,34 @@ FACT: `src/lib/liuren/interpretation/xingNian.ts`。人物 ID つきの入力 `X
 - 判断内容の同一性を示す項目は読みの key だけ。別の規則が同じ判断を示すことを規則表で宣言する仕組みがないので、実盤の補強は 0 件。
 - 条件関係を明示する項目が規則にないので、確定した conditional は 0 件（候補だけ）。
 - 複数の DOMAIN・subtype を一つの占断にまとめる（例：求財と売買）ことは扱っていない。
+
+## 追記：Phase 5S（総合解釈の文章化）
+
+### 既存の文章生成の監査
+- 既存の文章は `summarizeDomainReadings`（`DomainResult.summary`）だけ。軸の表示名 `AXIS_LABEL` を export して再利用した（値・要約文は変えていない）。
+- 各 DOMAIN の `subject`（例：「試験」）は `DomainResult` に残らないので、占的の表示は DOMAIN 名（roles.ts の説明どおり）と subtype・goal の識別子にした。
+- topic・subtype・goal には表示名の表がない。訳語は作らず、識別子のまま表示する。
+
+### 文章化（`src/lib/liuren/interpretation/synthesisNarrative.ts`）
+- `narrateDomainSynthesis(result, synthesis, context?)` が、節（見出し）と段落の構造を返す。
+  - 節の順：問いと判断対象 → 判断の全体像 → 判断軸ごとの説明 → 判断間の関係 → 情報不足と判断の限界 → 原典と根拠
+  - 段落が持つもの：本文、種類、判断軸、topic、向き、読みの位置、規則 ID、根拠 FACT、出典、不足の key、確実性（ruleReading・confirmed・structure・notDeterminable・input）、推論レベル
+  - 読みごとの明細（`readings`）：規則 ID・key・軸・topic・向き・推論レベル・根拠 FACT・出典を読み1件ずつ持つ。同じ文章をまとめた段落でも、どの読みがどの根拠・出典を持つかを失わない（段落全体の topic・向きは、読みがそろうときだけ付ける）
+- 生成 AI の作文は使わない。決まった型の文だけを使う。
+- 読みの文：label・detected・directionNote をそのまま引用する。同じ軸で同じ detected の読みが複数あれば、検出文は1回だけ書き、読み・論点・向き・規則 ID は残す。
+- 関係の文：Phase 5R の関係と根拠の共有状態を、次の型どおりに書く。
+  - 同じ論点の別の読み：補強とはしない
+  - 同じ論点の追い風と妨げ（別の軸どうしの組）：相殺しない。同じ軸どうしの逆向きは対立として別に書く
+  - 同じ軸の逆向き：決めない。出典の書が重ならない場合だけ「〜の規則は」と書名で書き分ける
+  - 条件関係の候補：確定していないと書く
+  - 同じ FACT：独立した根拠として数えない
+  - 同じ FACT の可能性：確かめられないと書く
+  - 判断不能
+- 不足の文：`DomainResult.missing` の detail をそのまま書く。新しい入力は求めない。
+- 根拠の数を信頼度や強さにしない。点数・吉凶・成否の結論・応期の文は作らない。該当がない節は作らない。
+
+### 残る課題
+- topic・subtype・goal の表示名（規則の意味を確かめて付ける）。
+- 仕事・試験の規則に topic がない（関係はすべて判断不能と書く）。
+- 判断軸・論点が多い盤では、同じ論点の並びの段落が長くなる。表示の詳細度は UI 接続で決める。
+- UI への接続、複数の DOMAIN・subtype をまとめた説明は未実装。
