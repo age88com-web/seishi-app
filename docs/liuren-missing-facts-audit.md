@@ -578,3 +578,36 @@ FACT: `src/lib/liuren/interpretation/xingNian.ts`。人物 ID つきの入力 `X
 
 ### DOMAIN への影響
 なし。婚姻の六儀・家宅の羅網は保留のまま。新しいファイルを使うのは課体（`lessonForms.ts`）だけで、DOMAIN 規則は追加していない。
+
+## 追記：Phase 5R（総合解釈の基盤）
+
+### 既存の統合機能の監査
+- `interpretLiuRen`・`InterpretationResult` は既存コードにない。DOMAIN の結果は各 DOMAIN の評価関数（`evaluate〇〇Domain`）が返す `DomainResult` だけ。
+- `DomainResult` がすでに持つもの：読み（ruleId・軸・topic・検出・根拠 FACT・向き・推論レベル・出典）、`byAxis`、`overview`（追い風・妨げ・向きなし・両方あるか）、不足（`missing`）、要約文。
+- 同じ論点の逆向きの検出は、月建神煞の要約（`monthlySpiritReadings.ts`、Phase 5L）に「同じ topic で向きが逆」としてだけある。
+- 規則の topic は 10 DOMAIN の規則一覧（`〇〇_DOMAIN_RULES`）374 規則のうち 338 規則にある。仕事・試験の 36 規則には topic がない。
+- 根拠 FACT の名前（`evidence.fact`）は DOMAIN ごとに付け方が違う（共通の名前の表はない）。
+
+### 総合層（`src/lib/liuren/interpretation/domainSynthesis.ts`）
+- 入口：`evaluateLiurenDomain`（DOMAIN 名から既存の評価関数を呼ぶだけ）と `synthesizeDomainResult`（`DomainResult` → `DomainSynthesis`）。規則は判定し直さず、読み・向き・文は変えない。
+- 2つの読みの関係（どの組も次の1つに入る。既存の型で確かめられないものは断定しない）：
+  - reinforcing：判断内容が同じと確かめられる（読みの key が同じ・別の規則）・同じ topic・同じ向き。現在の規則表では同じ key の規則は排他の DOMAIN・subtype にしかないので、実盤では出ない
+  - conflicting：同じ topic・同じ軸で向きが逆。出典の書が重ならなければ `disjointSources`（両方残す）
+  - coexisting：topic が違う／同じ topic・別の軸で追い風と妨げ／同じ topic・同じ向きで判断内容が違う（`sameDirectionOnTopic`。補強とは断定しない）／同じ topic の機会と実現性（`conditionCandidate`。条件関係の候補）
+  - conditional：一方が他方の成立・実現の条件になると明示されたときだけ。既存の型にその項目がないので、現在は出さない
+  - undetermined：topic がない読みを含む／同じ topic で向きを決めない読みを含む
+- 補助情報：関係の確かさ（`basis`：readingKey・structure・notDeterminable）、論点の対応（`targetAlignment`）、根拠の共有状態（`evidenceSharing`）、条件関係の候補、出典の書の重なり。読みごとの人物の対応は既存の読みに記録がない（`participantAlignment: notRecordedInReadings`）。
+- 根拠 FACT の同一性（evidence の項目の組ごと）：
+  - sameReference：fact と detail が同じで、fact の名前が盤上の一つの位置（initial・middle・final・lesson1〔standing を含む〕・lesson3・divinationBranch とその属性）、一つの値（dayStem・dayBranch・lodgingBranch・taiSui・method・transmissions・tianGang.earth）、一つの神煞（monthlySpirit.〜・secondarySpirit.〜）を指す
+  - possiblySame：fact と detail が同じだが、名前が位置・人物・対象を特定しない（例：sixRelation｜子孫、tiger｜申）
+  - distinctPosition：両方の名前が盤上の位置を指し、位置が違う（同じ支でも別の FACT。互いに独立とまでは言わない）
+  - unknown：それ以外（名前が違うだけでは独立と断定しない。同じ位置の別の属性も含む）
+- 根拠の群：同じ論点・同じ向きの読みを sameReference だけでつなぐ。possiblySame の組は別に記録し、群どうしがすべて位置違いと確かめられたときだけ `groupsDistinctByPosition`。
+- 吉凶の点数・一つの結論・新しい文は作らない。三伝の進退は `directionEvidence` の既存の値を添えるだけ。応期は扱わない。
+
+### 残る課題
+- 仕事・試験の 36 規則に topic がないので、関係はすべて undetermined になる。topic を付けるのは規則の意味を確かめたうえで別の Phase とする（既存の DOMAIN の出力を変えないため、今回は付けない）。
+- FACT の識別子は DOMAIN ごとに付け方が違う（`initial` の detail が支だけのものと「寅 坐空」のものがある、位置を detail に書く `dayXunVoid` など）。全面的な標準化はしておらず、同一性は名前で位置が決まる範囲だけで判定する。
+- 判断内容の同一性を示す項目は読みの key だけ。別の規則が同じ判断を示すことを規則表で宣言する仕組みがないので、実盤の補強は 0 件。
+- 条件関係を明示する項目が規則にないので、確定した conditional は 0 件（候補だけ）。
+- 複数の DOMAIN・subtype を一つの占断にまとめる（例：求財と売買）ことは扱っていない。
