@@ -29,6 +29,39 @@
 .lr-warn { font-size: 12px; color: #8a6d00; background: #fdf4e0; border: 1px solid #e6d3a3; padding: 4px 8px; border-radius: 4px; margin: 6px 0; }
 .lr-error { background: #fdecec; border: 1px solid #e0b4b4; color: #a33; padding: 6px 10px; border-radius: 4px; font-size: 13px; }
 
+/* 総合解釈（Phase 5T）: 盤の下に出す。表を使わず見出しと文を縦に並べる。印刷には出さない（課式の印刷レイアウトを変えない） */
+.lr-question { display: flex; flex-wrap: wrap; gap: 12px; margin: 18px 0 8px; }
+.lr-synth { margin: 8px 0 24px; padding: 14px 16px; border: 1px solid #d8d2c4; border-radius: 6px; background: #fbfaf6; font-size: 14px; line-height: 1.8; max-width: 860px; }
+.lr-synth-h2 { font-size: 17px; margin: 0 0 6px; }
+.lr-synth-facts { margin: 0 0 6px; }
+.lr-synth-fact { display: flex; flex-wrap: wrap; gap: 0 10px; }
+.lr-synth-fact dt { color: #6b6355; min-width: 5.5em; }
+.lr-synth-fact dd { margin: 0; flex: 1 1 14em; }
+.lr-synth-note { font-size: 12.5px; color: #6b6355; margin: 4px 0 10px; }
+.lr-synth-sec { margin: 14px 0; }
+.lr-synth-sec h3 { font-size: 15px; margin: 0 0 6px; padding-bottom: 3px; border-bottom: 1px solid #e3dccd; }
+.lr-synth-lead { margin: 0 0 6px; }
+.lr-synth-list { list-style: none; margin: 0; padding: 0; }
+.lr-synth-item { margin: 0 0 8px; padding: 6px 10px; border-left: 3px solid #d8cdb5; background: #fff; }
+.lr-synth-sentence { margin: 0; overflow-wrap: anywhere; }
+.lr-synth-tags { margin: 2px 0 0; font-size: 12.5px; color: #6b6355; }
+.lr-synth-detail { margin-top: 16px; }
+.lr-synth-detail summary { cursor: pointer; font-weight: 600; font-size: 14px; }
+.lr-synth-card { margin: 0 0 10px; padding: 8px 10px; border: 1px solid #e3dccd; border-radius: 4px; background: #fff; }
+.lr-synth-card h4 { font-size: 14px; margin: 0 0 4px; }
+.lr-synth-kv { margin: 0; font-size: 13px; }
+.lr-synth-kv > div { display: grid; grid-template-columns: 11em minmax(0, 1fr); gap: 0 10px; padding: 2px 0; border-top: 1px dotted #ece6d8; }
+.lr-synth-kv > div:first-child { border-top: none; }
+.lr-synth-kv dt { color: #6b6355; }
+.lr-synth-kv dd { margin: 0; overflow-wrap: anywhere; }
+.lr-synth-quote { display: block; color: #4a4336; }
+.lr-synth-code { font-family: ui-monospace, Menlo, monospace; font-size: 12px; }
+@media (max-width: 640px) {
+  .lr-synth { padding: 12px 10px; font-size: 14.5px; }
+  .lr-synth-kv > div { grid-template-columns: minmax(0, 1fr); }
+  .lr-synth-kv dt { font-size: 12px; }
+}
+
 /* ---- 入力 ---- */
 .lr-mode { display: flex; gap: 6px; margin-bottom: 10px; flex-wrap: wrap; }
 .lr-tab { font-size: 12px; padding: 4px 10px; border: 1px solid #ccc; border-radius: 4px; background: #fff; color: #555; cursor: pointer; }
@@ -176,6 +209,7 @@
     color: #000;
   }
   .lr-head, .lr-mode, .lr-inputs, .lr-override, .lr-print-btn, .lr-error, .lr-warn { display: none !important; }
+  .lr-question, .lr-synth { display: none !important; }
   .lr-print-title { display: block; font-size: 13.5pt; font-weight: 700; margin: 0 0 3.6mm; }
   .lr-chart { width: 100%; max-width: 100%; break-inside: avoid; page-break-inside: avoid; }
 

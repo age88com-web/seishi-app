@@ -12,6 +12,9 @@
 //   日干支を直接指定（講座例題の再現用）: 日干支・占時・月将を直接入れる。
 //     年月日を経由しないので、暦変換と起課ロジックを切り分けて確認できる。
 //
+// 総合解釈（Phase 5T・第1段階）: 占的を選ぶと、盤の下に総合解釈を出す（synthesisAdapter.ts → LiurenSynthesisView.tsx）。
+//   占的は行人だけ。盤と同じ計算結果（chart）から作り、盤や入力が変われば作り直す（古い解釈は残らない）。
+//
 // URL で初期値を渡せる（検証用）:
 //   /liuren?day=丙戌&shi=酉&jiang=子     … 日干支を直接指定
 //   /liuren?date=1994-10-09&time=12:00   … 日時入力（shi / jiang を付けると手動指定）
@@ -23,6 +26,9 @@ import type { Branch, LiurenChart, Stem } from "@/lib/liuren";
 import { STEMS, BRANCHES } from "@/lib/eto";
 import LiurenChartView from "./LiurenChartView";
 import type { InfoRow } from "./LiurenChartView";
+import LiurenSynthesisView from "./LiurenSynthesisView";
+import { buildLiurenSynthesisView } from "./synthesisAdapter";
+import type { LiurenQuestion, LiurenQuestionId, LiurenSynthesisView as SynthesisView, TravelerGoalChoice } from "./synthesisAdapter";
 import "./liuren.css";
 
 const SIXTY: readonly string[] = Array.from({ length: 60 }, (_, i) => `${STEMS[i % 10]}${BRANCHES[i % 12]}`);
@@ -42,7 +48,8 @@ function isBranch(x: string | null): x is Branch {
 }
 
 type Mode = "datetime" | "direct";
-type Computed = { chart: LiurenChart; info: InfoRow[] } | { error: string };
+/** monthBranch: 日時入力のときの暦の月支（月令）。日干支の直接指定では null */
+type Computed = { chart: LiurenChart; info: InfoRow[]; monthBranch: Branch | null } | { error: string };
 
 type FormState = {
   mode: Mode;
@@ -107,6 +114,7 @@ export default function LiurenPage() {
         });
         return {
           chart,
+          monthBranch: null,
           info: orderInfo(
             { label: "日時", value: "—" },
             { label: "日干支", value: directDay },
@@ -127,6 +135,7 @@ export default function LiurenPage() {
       const c = r.calendar;
       return {
         chart: r.chart,
+        monthBranch: isBranch(c.monthBranch) ? c.monthBranch : null,
         info: orderInfo(
           { label: "日時", value: `${y}/${mo}/${d} ${pad(h)}:${pad(mi)}（日本時間）` },
           { label: "年月日干支", value: `${c.yearStem}${c.yearBranch}年 ${c.monthStem}${c.monthBranch}月 ${c.dayStem}${c.dayBranch}日` },
@@ -139,6 +148,17 @@ export default function LiurenPage() {
       return { error: e instanceof Error ? e.message : String(e) };
     }
   }, [mode, date, time, shiOverride, jiangOverride, directDay, directShi, directJiang]);
+
+  // 総合解釈: 盤（computed）と問いだけから作る（盤・問いが変われば作り直す）
+  const [question, setQuestion] = useState<LiurenQuestion>({ id: "", goal: "return" });
+  const synthesis = useMemo<SynthesisView | { error: string } | null>(() => {
+    if (!computed || !("chart" in computed)) return null;
+    try {
+      return buildLiurenSynthesisView(computed.chart, computed.monthBranch, question);
+    } catch (e) {
+      return { error: e instanceof Error ? e.message : String(e) };
+    }
+  }, [computed, question]);
 
   return (
     <>
@@ -220,6 +240,27 @@ export default function LiurenPage() {
 
         {computed && "error" in computed && <p className="lr-error">計算できませんでした：{computed.error}</p>}
         {computed && "chart" in computed && <LiurenChartView chart={computed.chart} info={computed.info} />}
+
+        <section className="lr-question" aria-label="占的">
+          <label className="lr-field">
+            占的（総合解釈）
+            <select value={question.id} onChange={(e) => setQuestion((q) => ({ ...q, id: e.target.value as LiurenQuestionId }))} className="lr-input" data-testid="liuren-question">
+              <option value="">表示しない</option>
+              <option value="traveler">行人（外出中の人が帰るか）</option>
+            </select>
+          </label>
+          {question.id === "traveler" && (
+            <label className="lr-field">
+              問いの目的
+              <select value={question.goal} onChange={(e) => setQuestion((q) => ({ ...q, goal: e.target.value as TravelerGoalChoice }))} className="lr-input" data-testid="liuren-goal">
+                <option value="return">帰ることを望む</option>
+                <option value="avoid">帰ることを望まない</option>
+              </select>
+            </label>
+          )}
+        </section>
+        {synthesis && "error" in synthesis && <p className="lr-error">総合解釈を作れませんでした：{synthesis.error}</p>}
+        {synthesis && "narrative" in synthesis && <LiurenSynthesisView view={synthesis} />}
       </main>
     </>
   );

@@ -642,3 +642,44 @@ FACT: `src/lib/liuren/interpretation/xingNian.ts`。人物 ID つきの入力 `X
 - 仕事・試験の規則に topic がない（関係はすべて判断不能と書く）。
 - 判断軸・論点が多い盤では、同じ論点の並びの段落が長くなる。表示の詳細度は UI 接続で決める。
 - UI への接続、複数の DOMAIN・subtype をまとめた説明は未実装。
+
+## 追記：Phase 5T（総合解釈の UI 接続・第1段階）
+
+### 既存 UI の調査
+- 六壬神課のページ（`src/app/liuren/page.tsx`）は、日時入力または日干支の直接指定で起課し、`LiurenChartView` で課式（基本情報・三伝・四課・天地盤）を表示するだけ。
+  - 占的の選択、人物の入力、解釈の表示、DOMAIN との接続は、どれもない。
+  - 保存・復元の機能もない。初期値の URL パラメータ（day・shi・jiang・date・time）と印刷はある。
+- 日時入力では暦の月支（`calendar.monthBranch`）が得られる。日干支の直接指定では月支がない。
+
+### 接続（行人だけ）
+- 盤の下に「占的（総合解釈）」の選択（表示しない／行人）と、行人のときだけ「問いの目的」（帰ることを望む＝return／望まない＝avoid）を追加した。
+  - 既存の入力欄・盤の表示部品は変えていない。
+- データの流れ：`chart` → `buildInterpretationFacts` → `synthesizeLiurenInterpretation`（既存の行人 DOMAIN）→ `narrateDomainSynthesis` → `LiurenSynthesisView`
+  - 処理は `src/app/liuren/synthesisAdapter.ts` に置いた。盤・問いが変われば作り直す（状態を持たない）。
+- Context は `{ domain: traveler, subtype: return, goal }` だけ。次のものは画面に入力がないので渡さない（DOMAIN が不足として返す）。
+  - 人物（問う人・行人）、本命、太歳、行年、類神
+  - 問う人と行人を同じ人物として扱わない。年齢・行年は推測しない。
+- 表示（`synthesisDisplay.ts` で振り分け、`LiurenSynthesisView.tsx` で描画。表は使わず縦に並べる。印刷には出さない）：
+  - 通常表示：内部識別子（英字）を出さない。見出しは次のとおり。読みがない見出しは出さない
+    - 帰還についての判断：促す読みと妨げる読みの有無だけを書く。成否は断定せず、応期は扱わない
+    - 帰還を促す要素／帰還を妨げる要素：topic relation・return・obstacle の読みを、帰還に対する向きで分ける
+      - goal return では DOMAIN の向きのまま
+      - goal avoid では、DOMAIN が「帰ることを望まない問いでは逆向き」と注記した読みだけ戻し、目的から見た向きを見出しの下に添える
+      - 注記のない読みは「その他の読み」に置く
+    - 帰還についての参考（向きを決めない読み）
+    - 現在の移動状況（topic movement）
+    - 道中の安全（topic safety）
+    - 読みが分かれている点（DomainSynthesis の対立。両方を名指しし、どちらとも決めない）
+    - 判断に必要な追加情報（`DomainResult.missing` の文。括弧書きの英字の識別子と「人物 ID」の ID だけを除く）
+  - 文の型：「盤では、{detected}。古典では「{label}」と読みます。{directionNote}」。読みの文は言い換えない。同じ見出しで同じ detected の読みは、盤の配置を一度だけ書く
+  - 詳細表示（`<details>`）：読みごとに、盤の配置・規則の補足・向き・出典（書名・所在・原文）・推論レベル・確実性・規則 ID・判断軸・論点・内部 FACT を縦に並べる。判断間の関係（Phase 5S の文）と、不足の内部キーも出す
+- 表示名（UI 層 `synthesisAdapter.ts` だけ）：
+  - 行人の topic 5種：travelerDomain.ts 冒頭の説明と規則の label で確かめた
+  - subtype return、goal return・avoid
+  - 通常表示は日本語だけ。「表示名（識別子）」の形は詳細表示の技術情報だけ
+- 月支：日時入力では暦の月支、日干支の直接指定では月支なし。入力方法を切り替えるとそのつど作り直す（実画面で確認）
+
+### 残る課題
+- 人物（行人・問う人）・本命・太歳・行年・類神の入力欄がない（行人 DOMAIN の多くの読みが不足のまま）。
+- 他の 9 DOMAIN は未接続。topic・subtype・goal の表示名は DOMAIN ごとに規則の意味を確かめて付ける。
+- 「重要な情報不足」を選ぶ基準がないので、通常表示に不足をすべて出している。
