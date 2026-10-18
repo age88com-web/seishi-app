@@ -16,6 +16,7 @@
 //   道中の安全 … topic safety
 //   読みが分かれている点 … DomainSynthesis の対立（同じ論点・同じ軸で逆向き）。どちらとも決めない
 //   判断に必要な追加情報 … DomainResult.missing（括弧書きの英字の識別子だけを除く）
+//   入力の要約（Phase 5U）… synthesisAdapter が personInputs.inputSummary で作った日本語の要約を、問いの情報に並べる
 // 文は「盤では、{detected}。古典では「{label}」と読みます。{directionNote}」の型で、読みの文を言い換えない。
 // 同じ見出しの中で detected が同じ読みは、盤の配置を一度だけ書く。
 
@@ -143,6 +144,7 @@ export function buildSynthesisDisplay(v: LiurenSynthesisView): SynthesisDisplay 
     { label: "占的", value: DOMAIN_LABEL[d] },
     ...(v.synthesis.goal && GOAL_LABEL[d]?.[v.synthesis.goal] ? [{ label: "問いの目的", value: GOAL_LABEL[d][v.synthesis.goal] }] : []),
     { label: "月支", value: v.monthBranch ? `${v.monthBranch}（日時の暦から）` : "なし（日干支を直接指定したため。月の神煞を使う読みは行いません）" },
+    ...(v.inputs ?? []),
   ];
   const sections: DisplaySection[] = d === "traveler" ? travelerSections(v) : [{ id: "other", heading: "成立した読み", items: itemsOf(R, (r) => DIRECTION_JA[r.direction]) }];
   if (!R.length) sections.splice(0, sections.length, { id: "overall", heading: "判断", lead: "この盤では、規則で成立した読みはありません。", items: [] });

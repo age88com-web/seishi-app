@@ -14,6 +14,8 @@
 //
 // 総合解釈（Phase 5T・第1段階）: 占的を選ぶと、盤の下に総合解釈を出す（synthesisAdapter.ts → LiurenSynthesisView.tsx）。
 //   占的は行人だけ。盤と同じ計算結果（chart）から作り、盤や入力が変われば作り直す（古い解釈は残らない）。
+//   Phase 5U: 占的ごとの追加情報（LiurenQuestionInputs）。占的を変えると追加情報は空に戻す（別の占的の人物情報が混ざらない）。
+//     盤を変えても追加情報は残す。数え年を入力したときと日時入力の西暦年が変わったら、確認を促す文だけを出す（数え年は変えない）。
 //
 // URL で初期値を渡せる（検証用）:
 //   /liuren?day=丙戌&shi=酉&jiang=子     … 日干支を直接指定
@@ -26,7 +28,10 @@ import type { Branch, LiurenChart, Stem } from "@/lib/liuren";
 import { STEMS, BRANCHES } from "@/lib/eto";
 import LiurenChartView from "./LiurenChartView";
 import type { InfoRow } from "./LiurenChartView";
+import LiurenQuestionInputs from "./LiurenQuestionInputs";
 import LiurenSynthesisView from "./LiurenSynthesisView";
+import { EMPTY_INPUTS, reckonedAgeYearNotice } from "./personInputs";
+import type { QuestionInputs } from "./personInputs";
 import { buildLiurenSynthesisView } from "./synthesisAdapter";
 import type { LiurenQuestion, LiurenQuestionId, LiurenSynthesisView as SynthesisView, TravelerGoalChoice } from "./synthesisAdapter";
 import "./liuren.css";
@@ -151,14 +156,28 @@ export default function LiurenPage() {
 
   // 総合解釈: 盤（computed）と問いだけから作る（盤・問いが変われば作り直す）
   const [question, setQuestion] = useState<LiurenQuestion>({ id: "", goal: "return" });
+  const [inputs, setInputs] = useState<QuestionInputs>(EMPTY_INPUTS);
+  /** 数え年を入力したときの日時入力の西暦年（日干支の直接指定なら null） */
+  const [ageYear, setAgeYear] = useState<number | null>(null);
+  const formYear = mode === "datetime" && Number.isInteger(Number(date.split("-")[0])) && date ? Number(date.split("-")[0]) : null;
+  const changeQuestionId = (id: LiurenQuestionId) => {
+    setQuestion((q) => ({ ...q, id }));
+    setInputs(EMPTY_INPUTS);
+    setAgeYear(null);
+  };
+  const changeInputs = (next: QuestionInputs) => {
+    if ((next.persons.traveler?.reckonedAge ?? "") !== (inputs.persons.traveler?.reckonedAge ?? "")) setAgeYear(formYear);
+    setInputs(next);
+  };
+  const ageNotice = reckonedAgeYearNotice(ageYear, formYear, inputs.persons.traveler?.reckonedAge ?? "");
   const synthesis = useMemo<SynthesisView | { error: string } | null>(() => {
     if (!computed || !("chart" in computed)) return null;
     try {
-      return buildLiurenSynthesisView(computed.chart, computed.monthBranch, question);
+      return buildLiurenSynthesisView(computed.chart, computed.monthBranch, question, inputs);
     } catch (e) {
       return { error: e instanceof Error ? e.message : String(e) };
     }
-  }, [computed, question]);
+  }, [computed, question, inputs]);
 
   return (
     <>
@@ -244,7 +263,7 @@ export default function LiurenPage() {
         <section className="lr-question" aria-label="占的">
           <label className="lr-field">
             占的（総合解釈）
-            <select value={question.id} onChange={(e) => setQuestion((q) => ({ ...q, id: e.target.value as LiurenQuestionId }))} className="lr-input" data-testid="liuren-question">
+            <select value={question.id} onChange={(e) => changeQuestionId(e.target.value as LiurenQuestionId)} className="lr-input" data-testid="liuren-question">
               <option value="">表示しない</option>
               <option value="traveler">行人（外出中の人が帰るか）</option>
             </select>
@@ -259,6 +278,10 @@ export default function LiurenPage() {
             </label>
           )}
         </section>
+        {question.id === "traveler" && (
+          <LiurenQuestionInputs domain="traveler" value={inputs} onChange={changeInputs} ageNotice={ageNotice}
+            warnings={synthesis && "warnings" in synthesis ? synthesis.warnings : []} />
+        )}
         {synthesis && "error" in synthesis && <p className="lr-error">総合解釈を作れませんでした：{synthesis.error}</p>}
         {synthesis && "narrative" in synthesis && <LiurenSynthesisView view={synthesis} />}
       </main>

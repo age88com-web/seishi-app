@@ -135,7 +135,7 @@ const REVERSED = "帰ることを望まない問いでは逆向き";
 {
   const empty = summarizeDomainReadings("traveler", "return", "return", [], [{ key: "transmissions", detail: "三伝が未確定なので判断できない" }], "行人");
   const s = synthesizeDomainResult(empty);
-  const v: View = { context: contextOf(T)!, monthBranch: null, result: empty, synthesis: s, narrative: narrateDomainSynthesis(empty, s) };
+  const v: View = { context: contextOf(T)!, monthBranch: null, result: empty, synthesis: s, narrative: narrateDomainSynthesis(empty, s), warnings: [], inputs: [] };
   let h = "", err = "";
   try { h = html(v); } catch (e) { err = String(e); }
   check("8: 読みが0件（人工の DomainResult）でもエラーにならず、「成立した読みはありません」と不足だけを出す",
@@ -187,7 +187,7 @@ const REVERSED = "帰ることを望まない問いでは逆向き";
   check("12: 画面で選べる占的は行人だけ（他の占的の表示を加えない）", [...qSelect.matchAll(/<option value="(\w*)">/g)].map((m) => m[1]).join() === ",traveler");
   check("11: 盤の表示部品（LiurenChartView）は総合解釈を参照しない", !readFileSync("src/app/liuren/LiurenChartView.tsx", "utf8").includes("Synthesis"));
   const css = readFileSync("src/app/liuren/liuren.css", "utf8");
-  check("印刷: 総合解釈と占的の選択は印刷に出さない（課式の印刷レイアウトを変えない）", /\.lr-question, \.lr-synth \{ display: none !important; \}/.test(css));
+  check("印刷: 総合解釈・占的の選択・追加情報の入力は印刷に出さない（課式の印刷レイアウトを変えない）", /\.lr-question, \.lr-extra, \.lr-synth \{ display: none !important; \}/.test(css));
   let ok = true;
   for (let i = 0; i < 60; i++) for (let o = 0; o < 12; o += 4) {
     const chart = chartOf(`${STEMS[i % 10]}${BRANCHES[i % 12]}`, BRANCHES[o]);

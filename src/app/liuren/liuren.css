@@ -31,6 +31,17 @@
 
 /* 総合解釈（Phase 5T）: 盤の下に出す。表を使わず見出しと文を縦に並べる。印刷には出さない（課式の印刷レイアウトを変えない） */
 .lr-question { display: flex; flex-wrap: wrap; gap: 12px; margin: 18px 0 8px; }
+/* 追加情報の入力（Phase 5U） */
+.lr-extra { margin: 0 0 10px; padding: 10px 14px 8px; border: 1px solid #d8d2c4; border-radius: 6px; max-width: 860px; }
+.lr-extra legend { font-weight: 600; font-size: 13.5px; padding: 0 4px; }
+.lr-extra-note { font-size: 12px; color: #6b6355; margin: 4px 0; }
+.lr-extra-check { display: flex; align-items: center; gap: 6px; font-size: 13.5px; margin: 6px 0; }
+.lr-extra-grid { display: flex; flex-wrap: wrap; gap: 10px 14px; margin: 6px 0; }
+.lr-extra-age { width: 7em; }
+@media (max-width: 640px) {
+  .lr-extra-grid { flex-direction: column; }
+  .lr-extra-grid .lr-input { width: 100%; }
+}
 .lr-synth { margin: 8px 0 24px; padding: 14px 16px; border: 1px solid #d8d2c4; border-radius: 6px; background: #fbfaf6; font-size: 14px; line-height: 1.8; max-width: 860px; }
 .lr-synth-h2 { font-size: 17px; margin: 0 0 6px; }
 .lr-synth-facts { margin: 0 0 6px; }
@@ -209,7 +220,7 @@
     color: #000;
   }
   .lr-head, .lr-mode, .lr-inputs, .lr-override, .lr-print-btn, .lr-error, .lr-warn { display: none !important; }
-  .lr-question, .lr-synth { display: none !important; }
+  .lr-question, .lr-extra, .lr-synth { display: none !important; }
   .lr-print-title { display: block; font-size: 13.5pt; font-weight: 700; margin: 0 0 3.6mm; }
   .lr-chart { width: 100%; max-width: 100%; break-inside: avoid; page-break-inside: avoid; }
 
