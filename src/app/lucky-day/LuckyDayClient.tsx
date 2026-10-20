@@ -83,6 +83,8 @@ import type { LuckyDayPurpose, LuckyDayActivityGroup, DirectionWheelSlot, Direct
 // 型のみのimport（コンパイル時に消去されるため、server-only の実体は
 // Client Componentのバンドルには一切含まれない）。
 import type { TakujitsuMemberStatus } from "@/lib/luckyDay/auth/member";
+// 講座案内の表示判定（ID 2・3だけ、2026-10-20追加）。表示判定のみの純関数。
+import { LUCKY_DAY_COURSE_URL, shouldShowCourseInvitation } from "@/lib/luckyDay/courseInvitation";
 // 吉凶方位（directionMarkers）は Server Action（getDayDetailAction）側で
 // 許可判定込みで計算・返却される。ここでは戻り値の型だけをimportする
 // （calculateDailyDirections・buildDirectionWheelMarkersはクライアントでは
@@ -951,6 +953,29 @@ function MemberStatusBar({ memberStatus }: { memberStatus: TakujitsuMemberStatus
 }
 
 // ---------------------------------------------------------------------------
+// 擇日入門通信講座の案内（ユーザー指示、2026-10-20）。
+// 月額（ID 2）・年額（ID 3）会員だけに、会員状態表示の直下へ控えめに出す。
+// 講座会員（ID 4・5）・無料会員・未ログインには出さない
+// （判定は shouldShowCourseInvitation()、src/lib/luckyDay/courseInvitation.ts）。
+// ---------------------------------------------------------------------------
+function CourseInvitation() {
+  return (
+    <aside className="ld-course-invite" aria-label="擇日入門通信講座のご案内">
+      <p className="ld-course-invite-title">通書を使って擇日を学んでみませんか？</p>
+      <p className="ld-course-invite-text">
+        擇日の仕組みをより深く理解したい方のために、台湾の通書を使って学ぶ「擇日入門通信講座」をご用意しています。
+      </p>
+      <p className="ld-course-invite-text">
+        十二建除・二十八宿・神殺などの意味を学び、自分で日取りを選ぶための基礎を身につけます。
+      </p>
+      <a className="ld-course-invite-link" href={LUCKY_DAY_COURSE_URL}>
+        擇日入門通信講座の詳細を見る
+      </a>
+    </aside>
+  );
+}
+
+// ---------------------------------------------------------------------------
 // 生年月日専用カレンダー入力（ユーザー指示、2026-09-20。標準
 // <input type="date"> はSafariで年の直接選択がしづらく、数十年前まで
 // 遡る生年月日入力には不向きなため、軽量な自前カレンダーUIに変更する）。
@@ -1595,6 +1620,8 @@ export default function LuckyDayClient({
 
       <MemberStatusBar memberStatus={memberStatus} />
 
+      {shouldShowCourseInvitation(memberStatus) && <CourseInvitation />}
+
       {/*
         「生年月日から個人の忌日を除外」ブロックは有料会員（isPaid、
         levelId∈{2,3,4,5}）にだけ表示する（ユーザー指示、2026-09-20。ID 4・5は2026-10-09追加）。
@@ -1987,6 +2014,32 @@ const CSS = `
   cursor: pointer;
 }
 .ld-member-logout-btn:hover { color: #263a33; }
+
+/* 擇日入門通信講座の案内（ID 2・3だけ、2026-10-20）。操作の邪魔にならない控えめな枠。 */
+.ld-course-invite {
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  border: 1px solid #e3dfd2;
+  border-radius: 10px;
+  background: #faf8f2;
+  font-size: 13px;
+  color: #55524b;
+}
+.ld-course-invite-title {
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #263a33;
+}
+.ld-course-invite-text { margin: 0 0 4px; line-height: 1.7; }
+.ld-course-invite-link {
+  display: inline-block;
+  margin-top: 4px;
+  color: #3a5568;
+  font-weight: 700;
+  text-decoration: underline;
+}
+.ld-course-invite-link:hover { color: #263a33; }
 
 /*
   スマホ専用タブ（「今日の吉凶」⇔「目的から吉日を探す」）。
