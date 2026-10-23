@@ -14,6 +14,7 @@
 //     ・26）四離・四絶                                    p.30
 //     ・30）八節日                                        p.31
 //     ・31）土王用事（土用）                              p.31
+//       （期間の判定は doyo.ts。2026-10-24 正式仕様で太陽黄経基準の期間判定に変更）
 //   要約・補完・推測はしていない。
 //
 // 章全体の確認について（依頼どおり、候補4項目を決め打ちせず確認した）:
@@ -85,8 +86,13 @@
 //     記述も無い。そのため、項目18の四撃〜五虚と本グループの土王用事を
 //     ロジック上で結びつけることはせず（推測になるため）、項目18側の
 //     「土旺が重なると更に忌む」は解除条件と同様、記録のみに留める。
-//   ・31）土王用事（土用）自体は本文に明確な判定式（四立の18日前）が
+//   ・31）土王用事（土用）自体は本文に判定式（四立の18日前）が
 //     あるため、独立した凶神として実装する。
+//   ・2026-10-24 正式仕様（人間側決定）により、土王用事は「四立の18日前の
+//     1日」ではなく、土用入り（太陽黄経297°・27°・117°・207°）から次の四立
+//     （315°・45°・135°・225°）までの期間として判定する（doyo.ts）。
+//     日単位では土用入り日・四立日（土用明け日）も、一部が土用なので成立する。
+//     土用間日は導入しない。No.13a「土旺」とは引き続き結び付けない。
 //
 // 検証区分:
 //   docs/source/擇日実例.pdf の吉凶神煞一覧表は「月令＋日辰（60干支）」
@@ -99,12 +105,13 @@
 import { calculate as calculateCalendar, DEFAULT_TIMEZONE } from "@/lib/calendar";
 import type { CalendarInput } from "@/lib/calendar";
 import type { ShinsatsuResult } from "../types";
+import { resolveDoyoDayStatus } from "./doyo";
 
 const MS_PER_DAY = 86_400_000;
 
 /** 二至二分（四離の基準となる4つの中気）。 */
 const NIJI_NIBUN: readonly string[] = ["冬至", "夏至", "春分", "秋分"];
-/** 四立（四絶・八節日・土王用事の基準となる4つの節）。 */
+/** 四立（四絶・八節日の基準となる4つの節）。 */
 const SHI_RITSU: readonly string[] = ["立春", "立夏", "立秋", "立冬"];
 
 /**
@@ -240,10 +247,11 @@ export function resolveKyoushinGroup5(input: CalendarInput): ShinsatsuResult {
     kyojin.push("八節日");
   }
 
-  // 31）土王用事（土用）：四立の「18日前」＝18日後（+18日）が
-  // 四立の節入り日であるかで判定する。
-  const plus18Term = solarTermStartingOn(input, 18);
-  if (plus18Term !== undefined && SHI_RITSU.includes(plus18Term)) {
+  // 31）土王用事（土用）：土用入りから次の四立までの期間（太陽黄経基準）。
+  // 時刻を指定しない日単位判定のため、その日の一部でも土用期間に入っていれば
+  // （土用入り日・土用中・土用明け日）成立する。八節日のように節入り暦日を
+  // 新しい節側へ寄せる扱いはしない（doyo.ts を参照）。
+  if (resolveDoyoDayStatus(input).kind !== "土用外") {
     kyojin.push("土王用事");
   }
 

@@ -36,6 +36,10 @@
 //     resolveKyoushinGroup5() として公開し、calculateShinsatsu /
 //     calculateTakujitsu からのみ結果を合算する
 //     （resolveAllShinsatsu の入力・他グループには一切影響しない）。
+//   ・shinsatsu/doyo.ts            … 土王用事（土用）の期間（土用入り〜次の
+//     四立、太陽黄経基準）。kyoushinGroup5.ts が使う。土用入り・四立の
+//     時刻を持つ DoyoPeriod（時刻指定用）と、日単位の区分（土用外・土用入り日・
+//     土用中・土用明け日）を公開する。
 //   ・shinsatsu/kyoushinGroup6.ts  … 凶神1〜53番の全件棚卸しで回収した
 //     残りの日家凶神（満日・厭對・上朔・月忌日・長星短星・揚公忌・
 //     横天朱雀・四不詳・上兀・下兀・受死日・伏斷日・埋兒凶宿・周堂殺・
@@ -88,6 +92,8 @@ export { resolveKyoushinGroup2 } from "./shinsatsu/kyoushinGroup2";
 export { resolveKyoushinGroup3 } from "./shinsatsu/kyoushinGroup3";
 export { resolveKyoushinGroup4 } from "./shinsatsu/kyoushinGroup4";
 export { resolveKyoushinGroup5 } from "./shinsatsu/kyoushinGroup5";
+export { resolveDoyoPeriodAt, resolveDoyoAt, resolveDoyoDayStatus } from "./shinsatsu/doyo";
+export type { DoyoPeriod, DoyoSeason, DoyoDayKind, DoyoDayStatus } from "./shinsatsu/doyo";
 export { resolveKyoushinGroup6 } from "./shinsatsu/kyoushinGroup6";
 
 // 神殺とは別の独立モジュール（神殺モジュールへは組み込まない）。
