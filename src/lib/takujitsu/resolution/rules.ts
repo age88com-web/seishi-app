@@ -296,6 +296,21 @@ export const RESOLUTION_RULES: readonly ResolutionRule[] = [
   // ==== pending: true（徳合・赦願・六合とは別の曖昧さが残るため保留を維持） ====
 
   {
+    id: "24",
+    targets: ["無禄"],
+    requires: [anyOf(DEHE_GROUP)],
+    combine: "any",
+    kind: "reduce",
+    pending: false,
+    page: "擇日テキスト.pdf 凶神24）無禄／神殺象意.pdf〔無祿日〕（2026-10-24 監修判断）",
+    note:
+      "無禄：「諸事宜しからず」だが凶意は弱く、解除能力を持つ吉神（徳合）が重なれば解除できる。" +
+      "ただし用事の祭祀・解除（除霊など）は解除しない（reduce）。残存する2件はActivityProfile（無禄）の" +
+      "reducedStillUnfavorableActivityIdsで表現する。解除吉神は神殺象意「與天月德併…歲德會合，" +
+      "不以無禄論」に沿い、既存の徳合（天徳・天徳合・月徳・月徳合・歳徳・歳徳合）とした。" +
+      "擇日テキストと神殺象意で祭祀・解除の扱いが逆方向のため、監修判断を正式採用した。",
+  },
+  {
     id: "7",
     targets: ["血支"],
     requires: [anyOf(["歳徳", "歳徳合", "月徳", "月徳合"]), anyOf(SHAGAN_GROUP)],

@@ -376,8 +376,12 @@ export const ACTIVITY_PROFILES: ActivityProfile[] = [
   { sourceType: "kyojin", sourceName: "觸水龍", favorableActivityIds: [], unfavorableActivityIds: ["乗船渡水", "取魚"] },
   { sourceType: "kyojin", sourceName: "八専", favorableActivityIds: [], unfavorableActivityIds: ["出軍", "嫁娶"] },
   { sourceType: "kyojin", sourceName: "九空", favorableActivityIds: [], unfavorableActivityIds: ["進人口", "修倉庫", "開市", "立券交易", "納財", "開倉庫", "出貨財"] },
-  { sourceType: "kyojin", sourceName: "九焦", favorableActivityIds: [], unfavorableActivityIds: [], notes: "" },
-  { sourceType: "kyojin", sourceName: "無禄", favorableActivityIds: [], unfavorableActivityIds: ["乗船渡水", "築堤防", "鋳造", "栽種", "祭祀", "解除"] },
+  // 九扻（九焦）：擇日テキスト凶神23）「忌：乗船渡水、修堤防、鋳造、種植」（修堤防＝築堤防、種植＝栽種）。
+  // 2026-10-24 監修判断。旧実装はこの4件を次項の無禄に取り違えて登録していた。
+  { sourceType: "kyojin", sourceName: "九焦", favorableActivityIds: [], unfavorableActivityIds: ["乗船渡水", "築堤防", "鋳造", "栽種"] },
+  // 無禄：「諸事宜しからず」＝全用事に凶。徳合が重なれば解除（resolution No.24、reduce）、
+  // ただし用事の祭祀・解除は解除しない（2026-10-24 監修判断）。
+  { sourceType: "kyojin", sourceName: "無禄", favorableActivityIds: [], negativeMode: "all_except", unfavorableActivityIds: [], exceptionActivityIds: [], reducedStillUnfavorableActivityIds: ["祭祀", "解除"] },
   { sourceType: "kyojin", sourceName: "上朔", favorableActivityIds: [], negativeMode: "all_except", unfavorableActivityIds: [], exceptionActivityIds: ["伐木", "修飾垣墻", "剃頭", "平治道塗", "掃舎宇", "整手足甲", "沐浴", "破屋壊垣", "祭祀", "補垣塞穴"], notes: "" },
   { sourceType: "kyojin", sourceName: "四離", favorableActivityIds: [], negativeMode: "all_except", unfavorableActivityIds: [], exceptionActivityIds: ["伐木", "修飾垣墻", "剃頭", "平治道塗", "掃舎宇", "整手足甲", "沐浴", "破屋壊垣", "祭祀", "補垣塞穴"], notes: "" },
   { sourceType: "kyojin", sourceName: "四絶", favorableActivityIds: [], negativeMode: "all_except", unfavorableActivityIds: [], exceptionActivityIds: ["伐木", "修飾垣墻", "剃頭", "平治道塗", "掃舎宇", "整手足甲", "沐浴", "破屋壊垣", "祭祀", "補垣塞穴"], notes: "" },
