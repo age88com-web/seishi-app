@@ -126,6 +126,28 @@ const BAOGUANG: Record<string, string> = { 寅:"巳", 卯:"未", 辰:"酉", 巳:
 const YUTANG: Record<string, string> = { 寅:"未", 卯:"酉", 辰:"亥", 巳:"丑", 午:"卯", 未:"巳", 申:"未", 酉:"酉", 戌:"亥", 亥:"丑", 子:"卯", 丑:"巳" };
 const SIMING: Record<string, string> = { 寅:"戌", 卯:"子", 辰:"寅", 巳:"辰", 午:"午", 未:"申", 申:"戌", 酉:"子", 戌:"寅", 亥:"辰", 子:"午", 丑:"申" };
 
+/**
+ * ［区分A］p.28の十二神表のうち凶の6項目（天刑・朱雀・白虎・天牢・元武・勾陳＝六黒道）。
+ * 擇日実例.pdf 720行と完全一致（2026-10-24 確認）。凶神として resolveBlackRoad で返す。
+ */
+const BLACK_ROAD_OFFSETS: readonly [string, number][] = [
+  ["天刑", 2], ["朱雀", 3], ["白虎", 6], ["天牢", 8], ["元武", 9], ["勾陳", 11],
+];
+const BRANCH_ORDER = "子丑寅卯辰巳午未申酉戌亥";
+
+/**
+ * 六黒道（p.28）。十二神は青龍から 青龍・明堂・天刑・朱雀・金匱・寶光・白虎・玉堂・天牢・元武・司命・勾陳 の
+ * 順に連続する地支へ並ぶため、青龍の地支からの距離で判定する（表の値そのものを再現する）。
+ * resolveKichijinGroup4（擇日実例.pdf 照合対象）とは分け、resolveAllShinsatsu からだけ合算する（2026-10-24）。
+ */
+export function resolveBlackRoad(input: ShinsatsuInput): ShinsatsuResult {
+  const ql = QINGLONG[input.monthBranch];
+  if (ql === undefined) return { kichijin: [], kyojin: [] };
+  const diff = (BRANCH_ORDER.indexOf(input.dayBranch) - BRANCH_ORDER.indexOf(ql) + 12) % 12;
+  const hit = BLACK_ROAD_OFFSETS.find(([, off]) => off === diff);
+  return { kichijin: [], kyojin: hit ? [hit[0]] : [] };
+}
+
 /** ［区分A］解神（p.16）。月令2ヶ月ごとのグループ→地支（正二月/三四月/五六月/七八月/九十月/十一十二月）。 */
 const JIESHEN: Record<string, string> = { 寅:"申", 卯:"申", 辰:"戌", 巳:"戌", 午:"子", 未:"子", 申:"寅", 酉:"寅", 戌:"辰", 亥:"辰", 子:"午", 丑:"午" };
 

@@ -88,6 +88,9 @@ export const LUCKY_DAY_PURPOSES_BY_CATEGORY: Readonly<Record<string, readonly Lu
 
   "life-marriage": [
     purpose("life-marriage", "結婚式を挙げる", "結婚姻"),
+    // 嫁娶（嫁入り・嫁取り）は結婚姻と別の用事のため、周堂殺・横天朱雀など嫁娶だけを忌む神殺が一般向けにも
+    // 出るよう目的に加える（エンジンは変えない。表示名は activityDisplay の既存ラベル。2026-10-24 監修判断）。
+    purpose("life-marriage", "結婚（嫁入り・嫁取り）する", "嫁娶"),
     purpose("life-marriage", "婚約・結納をする", "納采"),
     purpose("life-marriage", "結婚・婚約・結納", "結婚納采"),
     purpose("life-marriage", "新婚生活の寝床を整える", "安床"),

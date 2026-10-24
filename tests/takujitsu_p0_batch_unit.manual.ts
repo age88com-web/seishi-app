@@ -117,7 +117,8 @@ const t0 = () => prof("kyojin", "天乙絶気");
 
 // P0-6 四方耗
 {
-  check("P0-6 四方耗の忌6件", same(prof("kyojin", "四方耗").unfavorableActivityIds, ["出行", "開市", "立券交易", "納財", "造倉庫", "造船"]));
+  // 判定時は立券交易→交易の展開（2026-10-24 監修判断）で交易が加わる
+  check("P0-6 四方耗の忌6件（判定時は＋交易）", same(prof("kyojin", "四方耗").unfavorableActivityIds, ["出行", "開市", "立券交易", "納財", "造倉庫", "造船", "交易"]));
   const r = day(2026, 11, 11);
   check("P0-6 2026-11-11 は四方耗", r.shinsatsu.kyojin.includes("四方耗"));
   for (const id of ["出行", "開市", "立券交易", "納財"]) check(`P0-6 2026-11-11 ${id} に四方耗の忌`, hasNeg(r, id, "四方耗"));
@@ -151,8 +152,8 @@ const t0 = () => prof("kyojin", "天乙絶気");
 // P0-10 八節日
 {
   check("P0-10 八節日（全体）の忌は嫁娶だけ", same(prof("kyojin", "八節日").unfavorableActivityIds, ["嫁娶"]));
-  check("P0-10 八節日（二至二分）の忌12件", same(prof("kyojin", "八節日（二至二分）").unfavorableActivityIds,
-    ["上官赴任", "會親友", "出行", "進人口", "結婚姻", "納采", "移徒", "入宅", "開市", "立券交易", "畋獵", "取魚"]));
+  check("P0-10 八節日（二至二分）の忌12件（判定時は＋交易）", same(prof("kyojin", "八節日（二至二分）").unfavorableActivityIds,
+    ["上官赴任", "會親友", "出行", "進人口", "結婚姻", "納采", "移徒", "入宅", "開市", "立券交易", "畋獵", "取魚", "交易"]));
   check("P0-10 八節日（冬至）の忌は伐木", same(prof("kyojin", "八節日（冬至）").unfavorableActivityIds, ["伐木"]));
   const rule20 = RESOLUTION_RULES.find((r) => r.id === "20");
   check("P0-10 解除ルールNo.20（尚忌）は3種すべてが対象", !!rule20 && same(rule20.targets, ["八節日", "八節日（二至二分）", "八節日（冬至）"]));

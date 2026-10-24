@@ -50,16 +50,23 @@ function day(month: number, d: number) {
   check("1. 判定時の土王用事の忌は28件", used.unfavorableActivityIds.length === 28, String(used.unfavorableActivityIds.length));
   for (const id of ALL_DOYO) check(`1. 判定時の土王用事は ${id} を忌とする`, used.unfavorableActivityIds.includes(id));
   for (const id of NOT_DOYO) check(`1. 判定時の土王用事は ${id} を忌としない`, !used.unfavorableActivityIds.includes(id));
-  check("1. 展開の登録はすべて土王用事の忌", ACTIVITY_TERM_EXPANSIONS.every((e) => e.sourceType === "kyojin" && e.sourceName === "土王用事" && e.polarity === "unfavorable"));
-  // 他の神殺へ波及しない：展開の無い神殺は、判定時も原典転記と同じ
-  for (const p of ACTIVITY_PROFILES.filter((x) => x.sourceName !== "土王用事")) {
+  check("1. 土王用事の展開はすべて忌", ACTIVITY_TERM_EXPANSIONS.filter((e) => e.sourceName === "土王用事").every((e) => e.sourceType === "kyojin" && e.polarity === "unfavorable"));
+  // 他の神殺へ波及しない：土地展開（起基定硬など）は土王用事と土府系（土符・地嚢・小時。2026-10-24 監修判断）
+  // だけ。それ以外は原典転記に「修造動土→修造・動土」「堅柱上樑→上梁」「立券交易→交易」の分割だけが加わる
+  const LAND_GODS = ["土符", "地嚢", "小時"];
+  const LAND_ONLY = [...PREVIOUS_EXPANSION, ...REQUIRED_10, ...ADDED_FROM_INVENTORY, ...ADDED_FROM_PENDING].filter((id) => id !== "修造" && id !== "動土");
+  for (const p of ACTIVITY_PROFILES.filter((x) => x.sourceName !== "土王用事" && !LAND_GODS.includes(x.sourceName))) {
     const u = getActivityProfile(p.sourceType, p.sourceName)!;
-    if (JSON.stringify(u.unfavorableActivityIds) !== JSON.stringify(p.unfavorableActivityIds) ||
-        JSON.stringify(u.favorableActivityIds) !== JSON.stringify(p.favorableActivityIds)) {
-      check(`1. ${p.sourceType}:${p.sourceName} は展開の影響を受けない`, false);
-    }
+    const allowed = (orig: string[], used: string[]) =>
+      used.filter((id) => !orig.includes(id)).every((id) =>
+        ((id === "修造" || id === "動土") && orig.includes("修造動土")) ||
+        (id === "上梁" && orig.includes("堅柱上樑")) ||
+        (id === "交易" && orig.includes("立券交易")));
+    const ok = allowed(p.unfavorableActivityIds, u.unfavorableActivityIds) && allowed(p.favorableActivityIds, u.favorableActivityIds) &&
+      LAND_ONLY.every((id) => p.unfavorableActivityIds.includes(id) || !u.unfavorableActivityIds.includes(id));
+    if (!ok) check(`1. ${p.sourceType}:${p.sourceName} に土王用事の土地展開が波及していない`, false);
   }
-  check("1. 土王用事以外の全プロファイルは判定時も原典転記と同じ", true);
+  check("1. 土王用事・土府系以外の全プロファイルに土地展開は波及しない", true);
 }
 
 // 2. 「徳合・赦願があわさると尚忌む」（resolution No.21）は従来どおり増悪
@@ -102,8 +109,9 @@ for (const [m, d] of [[10, 19], [11, 8], [12, 1]] as const) {
   // 他の神殺へ波及しない：原典で造畜柵を扱うプロファイルは判定時も原典どおり
   const others = ACTIVITY_PROFILES.filter((p) => p.sourceName !== "土王用事" &&
     (p.unfavorableActivityIds.includes("造畜柵") || p.favorableActivityIds.includes("造畜柵")));
-  check("4b. 造畜柵の展開は土王用事以外のプロファイルに加わらない",
-    ACTIVITY_PROFILES.filter((p) => p.sourceName !== "土王用事").every((p) => {
+  // 土府系（土符・地嚢・小時）は 2026-10-24 監修判断で土王用事と同じ土地展開を持つため除く
+  check("4b. 造畜柵の展開は土王用事・土府系以外のプロファイルに加わらない",
+    ACTIVITY_PROFILES.filter((p) => !["土王用事", "土符", "地嚢", "小時"].includes(p.sourceName)).every((p) => {
       const u = getActivityProfile(p.sourceType, p.sourceName)!;
       return u.unfavorableActivityIds.includes("造畜柵") === p.unfavorableActivityIds.includes("造畜柵") &&
         u.favorableActivityIds.includes("造畜柵") === p.favorableActivityIds.includes("造畜柵");

@@ -161,6 +161,8 @@ export interface ActivityProfile {
    * 與吉神併，則從所宜，與凶神併，則從所忌」。原文に明記された5神
    * （青龍・明堂・寶光・玉堂・司命）だけに true を立てる。金匱は原文の
    * 列挙に含まれないため立てない（docs/takujitsu_liuhuangdao_composite_analysis.md 2章）。
+   * 2026-10-24：六黒道の凶神6神（天刑・朱雀・白虎・天牢・元武・勾陳）にも立てる
+   * （神殺象意「六黒道日，與凶神併則從所忌，與吉神併則從所宜」、監修判断）。
    *
    * true の場合、evaluateActivities() の第2パスで、同日に成立している
    * 他の吉神（kichijin）・凶神（kyojin）由来の有効な宜/忌を、この神殺
@@ -170,7 +172,7 @@ export interface ActivityProfile {
    * 他のCOMPOSITE型神を再帰的に追従することもない。
    *
    * このフラグは追加機能であり、favorableActivityIds／unfavorableActivityIds
-   * （既存LIST型データ。5神も金匱も「家族会議」「遠行」を保持する）を
+   * （既存LIST型データ。2026-10-24 以降、六黄道・六黒道は固有の宜忌を持たない）を
    * 置換しない。第1パスでは他の吉神と同様にLIST型として評価される。
    */
   composite?: boolean;

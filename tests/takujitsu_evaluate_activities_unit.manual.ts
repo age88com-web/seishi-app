@@ -905,10 +905,19 @@ for (const id of SEI_ACTIVITIES) {
     const ev = result.evaluations.find((e) => e.activityId === id);
     check(`L. 土王用事のみ → ${id} は bad`, ev?.verdict === "bad" && ev.negativeSources.some((s) => s.sourceName === "土王用事"));
   }
-  // 土王用事以外の神殺には展開しない（例：土符の修造・動土は変化なし）
+  // 2026-10-24（全神殺監査 P1-5）：修造動土 → 修造・動土の分割は原典語「修造動土」を持つ神殺にも登録。
+  // 建築・土地を動かす行為全般への展開は土王用事だけ。
   const dofu = getActivityProfile("kyojin", "土符")!;
-  check("L. 土符には展開しない（修造・動土は忌に入らない）", !dofu.unfavorableActivityIds.includes("修造") && !dofu.unfavorableActivityIds.includes("動土"));
-  check("L. 展開表の登録はすべて土王用事", ACTIVITY_TERM_EXPANSIONS.length > 0 && ACTIVITY_TERM_EXPANSIONS.every((e) => e.sourceType === "kyojin" && e.sourceName === "土王用事"));
+  check("L. 土符は修造動土の分割で修造・動土も忌", dofu.unfavorableActivityIds.includes("修造") && dofu.unfavorableActivityIds.includes("動土"));
+  // 同日の監修判断で、土地展開は土符・地嚢・小時にも登録し、堅柱上樑→上梁・立券交易→交易を一方向に展開した。
+  const LAND_GODS = ["土王用事", "土符", "地嚢", "小時"];
+  check("L. 土府系以外の展開は「修造動土→修造・動土」「堅柱上樑→上梁」「立券交易→交易」だけ",
+    ACTIVITY_TERM_EXPANSIONS.filter((e) => !LAND_GODS.includes(e.sourceName)).every((e) =>
+      (e.sourceTerm === "修造動土" && JSON.stringify(e.expandedActivityIds) === JSON.stringify(["修造", "動土"])) ||
+      (e.sourceTerm === "堅柱上樑" && JSON.stringify(e.expandedActivityIds) === JSON.stringify(["上梁"])) ||
+      (e.sourceTerm === "立券交易" && JSON.stringify(e.expandedActivityIds) === JSON.stringify(["交易"]))));
+  check("L. 上梁・交易への展開は忌側だけ",
+    ACTIVITY_TERM_EXPANSIONS.filter((e) => e.sourceTerm === "堅柱上樑" || e.sourceTerm === "立券交易").every((e) => e.polarity === "unfavorable"));
 }
 
 // M. 実日付：2026-10-23・10-24（秋土用中）は4用事とも吉に残らない
@@ -932,9 +941,13 @@ for (const day of [23, 24]) {
 // N. 長星・短星の忌7件（2026-10-24、神殺象意〔長星〕〔短星〕。擇日テキストの4件はその部分集合）
 {
   const SEVEN = ["進人口", "裁衣", "経絡", "開市", "立券交易", "納財", "納畜"];
+  // 判定時は 2026-10-24 監修判断の「立券交易の忌を交易へ」の展開で交易が加わる（原典転記は7件のまま）
+  const JUDGED = [...SEVEN, "交易"];
   for (const name of ["長星", "短星"]) {
     const p = getActivityProfile("kyojin", name)!;
-    check(`N. ${name} の忌は7件`, p.unfavorableActivityIds.length === 7 && SEVEN.every((id) => p.unfavorableActivityIds.includes(id)));
+    const rawP = ACTIVITY_PROFILES.find((x) => x.sourceType === "kyojin" && x.sourceName === name)!;
+    check(`N. ${name} の原典の忌は7件`, rawP.unfavorableActivityIds.length === 7 && SEVEN.every((id) => rawP.unfavorableActivityIds.includes(id)));
+    check(`N. ${name} の判定時の忌は7件＋交易`, p.unfavorableActivityIds.length === 8 && JUDGED.every((id) => p.unfavorableActivityIds.includes(id)));
     check(`N. ${name} の宜は0件`, p.favorableActivityIds.length === 0);
     const result = evaluateActivities({ resolution: resolution([], [entry(name, "active")]), buildingDay: JIANCHU_JIAN });
     for (const id of SEVEN) {
@@ -942,7 +955,7 @@ for (const day of [23, 24]) {
       check(`N. ${name}のみ → ${id} は bad`, ev?.verdict === "bad" && ev.negativeSources.some((s) => s.sourceName === name));
     }
     const spread = result.evaluations.filter((e) => e.negativeSources.some((s) => s.sourceName === name)).map((e) => e.activityId);
-    check(`N. ${name} の忌は7件以外へ広がらない`, spread.length === 7 && spread.every((id) => SEVEN.includes(id)));
+    check(`N. ${name} の忌は7件＋交易以外へ広がらない`, spread.length === 8 && spread.every((id) => JUDGED.includes(id)));
   }
   // 実日付（現在の農暦月方式）：2026-02-23＝農暦1/7 長星、2026-09-28＝農暦8/18 短星
   for (const [label, d, name] of [["2026-02-23", 23, "長星"], ["2026-09-28", 28, "短星"]] as const) {
@@ -955,7 +968,7 @@ for (const day of [23, 24]) {
       check(`N. ${label} ${id} に ${name} の忌が付く`, ev !== undefined && ev.negativeSources.some((s) => s.sourceName === name));
     }
     const spread = result.evaluations.filter((e) => e.negativeSources.some((s) => s.sourceName === name)).map((e) => e.activityId);
-    check(`N. ${label} ${name} の忌は7件以外へ広がらない`, spread.every((id) => SEVEN.includes(id)));
+    check(`N. ${label} ${name} の忌は7件＋交易以外へ広がらない`, spread.every((id) => JUDGED.includes(id)));
   }
 }
 

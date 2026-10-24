@@ -61,9 +61,9 @@ import { calculate as calculateCalendar } from "@/lib/calendar";
 import type { CalendarInput, CalendarResult } from "@/lib/calendar";
 
 import { resolveKichijin } from "./shinsatsu/kichijin";
-import { resolveKichijinGroup2 } from "./shinsatsu/kichijinGroup2";
+import { resolveKichijinGroup2, resolveDoyoMucang } from "./shinsatsu/kichijinGroup2";
 import { resolveKichijinGroup3, resolveWuheSubtypes } from "./shinsatsu/kichijinGroup3";
-import { resolveKichijinGroup4 } from "./shinsatsu/kichijinGroup4";
+import { resolveKichijinGroup4, resolveBlackRoad } from "./shinsatsu/kichijinGroup4";
 import { resolveKichijinGroup5 } from "./shinsatsu/kichijinGroup5";
 import { resolveKichijinGroup6 } from "./shinsatsu/kichijinGroup6";
 import { resolveKyoushinGroup1 } from "./shinsatsu/kyoushinGroup1";
@@ -82,9 +82,9 @@ import type { ResolvedShinsatsuResult } from "./resolution";
 
 export type { ShinsatsuInput, ShinsatsuResult } from "./types";
 export { resolveKichijin } from "./shinsatsu/kichijin";
-export { resolveKichijinGroup2 } from "./shinsatsu/kichijinGroup2";
+export { resolveKichijinGroup2, resolveDoyoMucang } from "./shinsatsu/kichijinGroup2";
 export { resolveKichijinGroup3, resolveWuheSubtypes } from "./shinsatsu/kichijinGroup3";
-export { resolveKichijinGroup4 } from "./shinsatsu/kichijinGroup4";
+export { resolveKichijinGroup4, resolveBlackRoad } from "./shinsatsu/kichijinGroup4";
 export { resolveKichijinGroup5 } from "./shinsatsu/kichijinGroup5";
 export { resolveKichijinGroup6 } from "./shinsatsu/kichijinGroup6";
 export { resolveKyoushinGroup1 } from "./shinsatsu/kyoushinGroup1";
@@ -143,6 +143,7 @@ export function resolveAllShinsatsu(input: ShinsatsuInput): ShinsatsuResult {
   const g3 = resolveKichijinGroup3(input);
   const g3w = resolveWuheSubtypes(input);
   const g4 = resolveKichijinGroup4(input);
+  const g4b = resolveBlackRoad(input);
   const g5 = resolveKichijinGroup5(input);
   const g6 = resolveKichijinGroup6(input);
   const ky1 = resolveKyoushinGroup1(input);
@@ -153,7 +154,7 @@ export function resolveAllShinsatsu(input: ShinsatsuInput): ShinsatsuResult {
   return {
     kichijin: [...g1.kichijin, ...g2.kichijin, ...g3.kichijin, ...g3w.kichijin, ...g4.kichijin, ...g5.kichijin, ...g6.kichijin],
     kyojin: [
-      ...g1.kyojin, ...g2.kyojin, ...g3.kyojin, ...g4.kyojin, ...g5.kyojin, ...g6.kyojin,
+      ...g1.kyojin, ...g2.kyojin, ...g3.kyojin, ...g4.kyojin, ...g4b.kyojin, ...g5.kyojin, ...g6.kyojin,
       ...ky1.kyojin, ...ky2.kyojin, ...ky3.kyojin, ...ky4.kyojin, ...ky6.kyojin,
     ],
   };
@@ -186,8 +187,10 @@ export function calculateShinsatsu(input: CalendarInput): ShinsatsuResult {
     lodge28: calendar.lodge28,
   });
   const ky5 = resolveKyoushinGroup5(input);
+  // 母倉の季月「巳午」は土王用事の成立日だけ（kichijinGroup2.ts resolveDoyoMucang）。
+  const doyoMucang = resolveDoyoMucang(calendar, ky5.kyojin.includes("土王用事"));
   return {
-    kichijin: base.kichijin,
+    kichijin: [...base.kichijin, ...doyoMucang.kichijin],
     kyojin: [...base.kyojin, ...ky5.kyojin],
   };
 }
@@ -248,8 +251,10 @@ export function calculateTakujitsu(input: CalendarInput, calendar?: CalendarResu
   // 凶神第5グループ（四離・四絶・八節日・土王用事・氣往亡）は節気の
   // 節入り日時を基準とするため CalendarInput をそのまま渡す（calculateShinsatsu と同じ理由）。
   const ky5 = resolveKyoushinGroup5(input);
+  // 母倉の季月「巳午」は土王用事の成立日だけ（kichijinGroup2.ts resolveDoyoMucang）。
+  const doyoMucang = resolveDoyoMucang(cal, ky5.kyojin.includes("土王用事"));
   const shinsatsu: ShinsatsuResult = {
-    kichijin: shinsatsuBase.kichijin,
+    kichijin: [...shinsatsuBase.kichijin, ...doyoMucang.kichijin],
     kyojin: [...shinsatsuBase.kyojin, ...ky5.kyojin],
   };
 

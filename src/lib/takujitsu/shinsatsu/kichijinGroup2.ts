@@ -48,21 +48,41 @@ function seasonIndexOf(monthBranch: string): number {
   return SEASON_GROUPS.findIndex((group) => group.includes(monthBranch));
 }
 
-/** 母倉（p.7）。月令ごとに複数の地支があり得るため配列で持つ。 */
+/**
+ * 母倉（p.7）。月令ごとに複数の地支があり得るため配列で持つ。
+ * 季月（辰未戌丑）の「巳午」は、本文「土王用事つまり土用の後は必ず巳午となる」・擇日実例の季月見出し
+ * 「土王用事後…巳午日添母倉」（実例の季月表では巳午日40行すべてに母倉が無い）に従い、月全体ではなく
+ * 土王用事の成立日だけに加える（resolveDoyoMucang。2026-10-24）。
+ */
 const MUCANG: Record<string, readonly string[]> = {
   寅: ["亥", "子"],
   卯: ["亥", "子"],
-  辰: ["亥", "子", "巳", "午"],
+  辰: ["亥", "子"],
   巳: ["寅", "卯"],
   午: ["寅", "卯"],
-  未: ["寅", "卯", "巳", "午"],
+  未: ["寅", "卯"],
   申: ["辰", "戌", "丑", "未"],
   酉: ["辰", "戌", "丑", "未"],
-  戌: ["辰", "戌", "丑", "未", "巳", "午"],
+  戌: ["辰", "戌", "丑", "未"],
   亥: ["申", "酉"],
   子: ["申", "酉"],
-  丑: ["申", "酉", "巳", "午"],
+  丑: ["申", "酉"],
 };
+
+/** 季月（土王用事が入る月）。 */
+const JI_MONTHS: readonly string[] = ["辰", "未", "戌", "丑"];
+
+/**
+ * 母倉の季月「巳午」（p.7）。季月で、その日に土王用事が成立していれば、巳・午の日を母倉とする。
+ * 土王用事の成立は凶神第5グループ（doyo.ts の日単位判定）の結果を呼び出し側が渡す。
+ */
+export function resolveDoyoMucang(
+  input: Pick<ShinsatsuInput, "monthBranch" | "dayBranch">,
+  isDoyoDay: boolean,
+): ShinsatsuResult {
+  const hit = isDoyoDay && JI_MONTHS.includes(input.monthBranch) && (input.dayBranch === "巳" || input.dayBranch === "午");
+  return { kichijin: hit ? ["母倉"] : [], kyojin: [] };
+}
 
 /** 四相（p.8）。季節区分ごとに天干2つ。春=丙丁、夏=戊己、秋=壬癸、冬=甲乙。 */
 const SIXIANG_BY_SEASON: readonly (readonly string[])[] = [

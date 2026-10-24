@@ -438,16 +438,22 @@ export function evaluateActivities(input: EvaluateActivitiesInput): ActivityEval
   //     1件に集約する。verdictは件数ではなく有無で決まるため判定は不変）。
   // -------------------------------------------------------------------------
   const pass1: RawContribution[] = all.slice();
-  const compositeGods = input.resolution.kichijin.filter((e) => {
-    const p = getActivityProfile("kichijin", e.name);
-    return p?.composite === true;
-  });
+  // 2026-10-24：六黒道の6神（天刑・朱雀・白虎・天牢・元武・勾陳。凶神）も同じ仕組み
+  // （神殺象意「六黒道日，與凶神併則從所忌，與吉神併則從所宜」）。
+  const compositeGods: { type: "kichijin" | "kyojin"; name: string }[] = [
+    ...input.resolution.kichijin
+      .filter((e) => getActivityProfile("kichijin", e.name)?.composite === true)
+      .map((e) => ({ type: "kichijin" as const, name: e.name })),
+    ...input.resolution.kyojin
+      .filter((e) => getActivityProfile("kyojin", e.name)?.composite === true)
+      .map((e) => ({ type: "kyojin" as const, name: e.name })),
+  ];
   for (const god of compositeGods) {
     // このCOMPOSITE型神が第1パスで既に積んでいる(用事|宜忌)キー（LIST型
     // 「家族会議・遠行」等）。二重加点を避けるための除外集合。
     const already = new Set<string>();
     for (const c of pass1) {
-      if (c.source.sourceType === "kichijin" && c.source.sourceName === god.name) {
+      if (c.source.sourceType === god.type && c.source.sourceName === god.name) {
         already.add(`${c.activityId} ${c.favorable}`);
       }
     }
@@ -457,8 +463,8 @@ export function evaluateActivities(input: EvaluateActivitiesInput): ActivityEval
       const isKyojinNegative = c.source.sourceType === "kyojin" && !c.favorable;
       if (!isKichijinPositive && !isKyojinNegative) continue;
       // 参照元が別のCOMPOSITE型神なら追従しない（再帰コピー防止）。
-      if (c.source.sourceType === "kichijin") {
-        const refProfile = getActivityProfile("kichijin", c.source.sourceName);
+      if (c.source.sourceType === "kichijin" || c.source.sourceType === "kyojin") {
+        const refProfile = getActivityProfile(c.source.sourceType, c.source.sourceName);
         if (refProfile?.composite) continue;
       }
       const key = `${c.activityId} ${c.favorable}`;
@@ -468,7 +474,7 @@ export function evaluateActivities(input: EvaluateActivitiesInput): ActivityEval
         activityId: c.activityId,
         favorable: c.favorable,
         source: {
-          sourceType: "kichijin",
+          sourceType: god.type,
           sourceName: god.name,
           note: c.favorable
             ? `吉神「${c.source.sourceName}」の宜に従う`

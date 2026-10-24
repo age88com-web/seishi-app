@@ -305,7 +305,8 @@ export const ACTIVITY_PROFILES: ActivityProfile[] = [
   { sourceType: "kichijin", sourceName: "人民合", favorableActivityIds: ["結婚姻"], unfavorableActivityIds: [] },
   { sourceType: "kichijin", sourceName: "金石合", favorableActivityIds: ["寿器"], unfavorableActivityIds: [] },
   { sourceType: "kichijin", sourceName: "江河合", favorableActivityIds: ["乗船渡水", "移徒"], unfavorableActivityIds: [] },
-  { sourceType: "kichijin", sourceName: "寶日", favorableActivityIds: ["栽種"], unfavorableActivityIds: [] },
+  // 寶日：擇日テキスト18）「牧畜などによい…ペットを飼い始める、植物を植え始める」（2026-10-24 牧養・納畜を追加）。
+  { sourceType: "kichijin", sourceName: "寶日", favorableActivityIds: ["栽種", "牧養", "納畜"], unfavorableActivityIds: [] },
   { sourceType: "kichijin", sourceName: "義日", favorableActivityIds: [], unfavorableActivityIds: [], notes: "" },
   { sourceType: "kichijin", sourceName: "専日", favorableActivityIds: [], unfavorableActivityIds: [], notes: "" },
   { sourceType: "kichijin", sourceName: "鳴吠", favorableActivityIds: ["安葬", "破土"], unfavorableActivityIds: [] },
@@ -319,8 +320,10 @@ export const ACTIVITY_PROFILES: ActivityProfile[] = [
   { sourceType: "kichijin", sourceName: "聖心", favorableActivityIds: ["上表彰", "祈福", "祭祀"], unfavorableActivityIds: [] },
   { sourceType: "kichijin", sourceName: "益後", favorableActivityIds: ["嫁娶", "求嗣", "祈福", "祭祀", "修造"], unfavorableActivityIds: [] },
   { sourceType: "kichijin", sourceName: "續世", favorableActivityIds: ["求嗣", "祈福", "祭祀", "結婚姻", "親睦"], unfavorableActivityIds: [] },
-  { sourceType: "kichijin", sourceName: "五富", favorableActivityIds: [], unfavorableActivityIds: [], notes: "" },
-  { sourceType: "kichijin", sourceName: "天倉", favorableActivityIds: ["納財", "牧養"], unfavorableActivityIds: [] },
+  // 五富：神殺象意「宜經絡、醞釀、開市、立券交易、納財、開倉庫出貨財、栽種、牧養納畜」（2026-10-24）。
+  { sourceType: "kichijin", sourceName: "五富", favorableActivityIds: ["経絡", "醞釀", "開市", "立券交易", "納財", "開倉庫", "出貨財", "栽種", "牧養", "納畜"], unfavorableActivityIds: [] },
+  // 天倉：擇日テキスト22）「倉庫の修繕、納財、牧養」＋神殺象意「宜進人口、納財、納畜」（2026-10-24）。
+  { sourceType: "kichijin", sourceName: "天倉", favorableActivityIds: ["納財", "牧養", "修倉庫", "進人口", "納畜"], unfavorableActivityIds: [] },
   { sourceType: "kichijin", sourceName: "陽徳", favorableActivityIds: ["上官赴任", "交易", "結婚姻", "臨政親民", "開市"], unfavorableActivityIds: [] },
   { sourceType: "kichijin", sourceName: "陰徳", favorableActivityIds: ["上官赴任", "臨政親民"], unfavorableActivityIds: [] },
   { sourceType: "kichijin", sourceName: "不將", favorableActivityIds: ["嫁娶", "結婚姻"], unfavorableActivityIds: [] },
@@ -346,8 +349,9 @@ export const ACTIVITY_PROFILES: ActivityProfile[] = [
   { sourceType: "kichijin", sourceName: "枝德", favorableActivityIds: ["修造", "築垣"], unfavorableActivityIds: [] },
   { sourceType: "kichijin", sourceName: "天醫", favorableActivityIds: ["求醫療病"], unfavorableActivityIds: [] },
   { sourceType: "kichijin", sourceName: "天喜", favorableActivityIds: ["求醫療病"], unfavorableActivityIds: [] },
-  { sourceType: "kichijin", sourceName: "生氣", favorableActivityIds: ["開道", "溝渠", "修造", "養育"], unfavorableActivityIds: ["伐木", "取魚"] },
-  { sourceType: "kichijin", sourceName: "時陽", favorableActivityIds: ["開道", "溝渠", "修造", "養育"], unfavorableActivityIds: ["伐木", "取魚"] },
+  // 生氣・時陽：擇日テキスト37）「開道、溝渠、修造、養育（家畜）、種まき」の種まき＝栽種を追加（2026-10-24）。
+  { sourceType: "kichijin", sourceName: "生氣", favorableActivityIds: ["開道", "溝渠", "修造", "養育", "栽種"], unfavorableActivityIds: ["伐木", "取魚"] },
+  { sourceType: "kichijin", sourceName: "時陽", favorableActivityIds: ["開道", "溝渠", "修造", "養育", "栽種"], unfavorableActivityIds: ["伐木", "取魚"] },
   { sourceType: "kichijin", sourceName: "兵吉", favorableActivityIds: ["出兵", "出陣"], unfavorableActivityIds: [] },
   { sourceType: "kichijin", sourceName: "天瑞", favorableActivityIds: ["上官赴任", "祝賀"], unfavorableActivityIds: [] },
   { sourceType: "kichijin", sourceName: "天福", favorableActivityIds: ["入宅", "上官赴任"], unfavorableActivityIds: [] },
@@ -357,10 +361,23 @@ export const ACTIVITY_PROFILES: ActivityProfile[] = [
   { sourceType: "kichijin", sourceName: "天貴", favorableActivityIds: [], unfavorableActivityIds: [], notes: "" },
   { sourceType: "kichijin", sourceName: "催官", favorableActivityIds: [], unfavorableActivityIds: [], notes: "" },
   { sourceType: "kichijin", sourceName: "季分", favorableActivityIds: ["嫁娶"], unfavorableActivityIds: [] },
-  { sourceType: "kyojin", sourceName: "小時", favorableActivityIds: [], unfavorableActivityIds: ["伐木", "修倉庫", "修置産室", "修造動土", "出貨財", "剃頭", "啓攢", "堅柱上樑", "安葬", "整手足甲", "栽種", "求嗣", "求醫療病", "破土", "破屋壊垣", "祈福", "築堤防", "納采", "結婚姻", "解除", "開倉庫"], reducedStillUnfavorableActivityIds: ["修造動土", "伐木"], notes: "" },
+  // 小時（月建・土府）：神殺象意「又爲土府，專忌修造動土、築隄防、開渠穿井、安碓磑、修補垣牆、平治道塗」の不足4件と、
+  // 擇日テキスト4）「定日・月破・土府、死神…これらの日に修造・動土・増改築・家を建てたりすると…」の建築を追加（2026-10-24）。
+  // 徳合などで軽減された後も残るのは象意「止忌動土」の動土（修造動土・伐木は従来どおり）。
+  // 六黒道（天刑・朱雀・白虎・天牢・元武・勾陳）：擇日テキスト28）の凶6項目。固有の宜忌は持たず、神殺象意
+  // 「六黒道日，與凶神併則從所忌，與吉神併則從所宜」に従い、六黄道と同じ COMPOSITE とする（2026-10-24 監修判断）。
+  { sourceType: "kyojin", sourceName: "天刑", favorableActivityIds: [], unfavorableActivityIds: [], composite: true },
+  { sourceType: "kyojin", sourceName: "朱雀", favorableActivityIds: [], unfavorableActivityIds: [], composite: true },
+  { sourceType: "kyojin", sourceName: "白虎", favorableActivityIds: [], unfavorableActivityIds: [], composite: true },
+  { sourceType: "kyojin", sourceName: "天牢", favorableActivityIds: [], unfavorableActivityIds: [], composite: true },
+  { sourceType: "kyojin", sourceName: "元武", favorableActivityIds: [], unfavorableActivityIds: [], composite: true },
+  { sourceType: "kyojin", sourceName: "勾陳", favorableActivityIds: [], unfavorableActivityIds: [], composite: true },
+  { sourceType: "kyojin", sourceName: "小時", favorableActivityIds: [], unfavorableActivityIds: ["伐木", "修倉庫", "修置産室", "修造動土", "出貨財", "剃頭", "啓攢", "堅柱上樑", "安葬", "整手足甲", "栽種", "求嗣", "求醫療病", "破土", "破屋壊垣", "祈福", "築堤防", "納采", "結婚姻", "解除", "開倉庫", "開渠穿井", "安碓磑", "修補垣牆", "平治道塗", "建築"], reducedStillUnfavorableActivityIds: ["修造動土", "伐木", "動土"], notes: "" },
   { sourceType: "kyojin", sourceName: "月破", favorableActivityIds: [], negativeMode: "all_except", unfavorableActivityIds: [], exceptionActivityIds: ["入学求師", "取魚", "平治道塗", "捕捉", "掃舎宇", "求醫療病", "沐浴", "畋獵", "破屋壊垣", "祭祀", "解除"], notes: "" },
   { sourceType: "kyojin", sourceName: "死神", favorableActivityIds: [], negativeMode: "all_except", unfavorableActivityIds: [], exceptionActivityIds: ["伐木", "修飾垣墻", "入学求師", "剃頭", "取魚", "安碓磑", "平治道塗", "捕捉", "掃舎宇", "整手足甲", "沐浴", "畋獵", "破屋壊垣", "祭祀", "補垣塞穴"], notes: "" },
-  { sourceType: "kyojin", sourceName: "死気", favorableActivityIds: [], unfavorableActivityIds: ["修置産室", "出征", "栽種", "求醫療病", "解除"] },
+  // 死気（定日）：擇日テキスト4）「…これらの日に修造・動土・増改築・家を建てたりすると…常識となっている」の修造・動土・
+  // 修造動土・建築と、「その他祝い事全般」のうち資料が祝い事と明示する5件（天乙絶気と同じ基準）を追加（2026-10-24）。
+  { sourceType: "kyojin", sourceName: "死気", favorableActivityIds: [], unfavorableActivityIds: ["修置産室", "出征", "栽種", "求醫療病", "解除", "修造", "動土", "修造動土", "建築", "祝賀", "寿器", "上官赴任", "入学求師", "冠帶"] },
   { sourceType: "kyojin", sourceName: "血支", favorableActivityIds: [], unfavorableActivityIds: ["上官赴任", "修置産室", "修造動土", "出庫", "出貨財", "堅柱上樑", "嫁娶", "安床", "宴會", "求醫療病", "祭祀", "納采", "結婚姻", "進人口", "鍼灸", "開倉庫", "開市", "開渠穿井", "移徒"] },
   { sourceType: "kyojin", sourceName: "劫殺", favorableActivityIds: [], negativeMode: "all_except", unfavorableActivityIds: [], exceptionActivityIds: ["伐木", "入学求師", "取魚", "平治道塗", "捕捉", "掃舎宇", "沐浴", "畋獵", "祭祀"], notes: "" },
   { sourceType: "kyojin", sourceName: "災殺", favorableActivityIds: [], negativeMode: "all_except", unfavorableActivityIds: [], exceptionActivityIds: ["伐木", "入学求師", "取魚", "平治道塗", "捕捉", "掃舎宇", "沐浴", "畋獵", "祭祀"], notes: "" },
@@ -373,7 +390,8 @@ export const ACTIVITY_PROFILES: ActivityProfile[] = [
   { sourceType: "kyojin", sourceName: "天賊", favorableActivityIds: [], unfavorableActivityIds: ["修倉庫", "出貨財", "遠行", "開倉庫"] },
   { sourceType: "kyojin", sourceName: "兵禁", favorableActivityIds: [], unfavorableActivityIds: [], notes: "" },
   { sourceType: "kyojin", sourceName: "大煞", favorableActivityIds: [], unfavorableActivityIds: [], notes: "" },
-  { sourceType: "kyojin", sourceName: "土符", favorableActivityIds: [], unfavorableActivityIds: ["修倉庫", "修置産室", "修補垣牆", "修造動土", "安碓磑", "平治道塗", "建築", "栽種", "破土", "破屋壊垣", "築堤防", "補垣塞穴", "開渠穿井"] },
+  // 土符：擇日テキスト15）「最も忌むのは破土、井戸掘り・開渠・補垣」の井戸掘り＝開井を追加（2026-10-24）。
+  { sourceType: "kyojin", sourceName: "土符", favorableActivityIds: [], unfavorableActivityIds: ["修倉庫", "修置産室", "修補垣牆", "修造動土", "安碓磑", "平治道塗", "建築", "栽種", "破土", "破屋壊垣", "築堤防", "補垣塞穴", "開渠穿井", "開井"] },
   { sourceType: "kyojin", sourceName: "地嚢", favorableActivityIds: [], unfavorableActivityIds: ["修倉庫", "修置産室", "修補垣牆", "修造動土", "安碓磑", "平治道塗", "栽種", "破土", "破屋壊垣", "築堤防", "開渠穿井"], notes: "" },
   { sourceType: "kyojin", sourceName: "四撃", favorableActivityIds: [], unfavorableActivityIds: ["出陣", "防備"] },
   { sourceType: "kyojin", sourceName: "四耗", favorableActivityIds: [], unfavorableActivityIds: ["修倉庫", "出師", "出貨財", "放債負", "會親友", "立券交易", "納財", "開倉庫", "開市"] },
@@ -388,7 +406,8 @@ export const ACTIVITY_PROFILES: ActivityProfile[] = [
   { sourceType: "kyojin", sourceName: "五墓", favorableActivityIds: [], unfavorableActivityIds: ["上官赴任", "上梁", "修置産室", "修造", "修造動土", "冠笄", "啓墳", "啓攢", "堅柱上樑", "嫁娶", "安床", "安葬", "搬入", "栽種", "求醫療病", "牧養", "破土", "立券交易", "納畜", "納采", "結婚姻", "解除", "進人口", "開市", "移徒"] },
   { sourceType: "kyojin", sourceName: "八風", favorableActivityIds: [], unfavorableActivityIds: [], notes: "" },
   { sourceType: "kyojin", sourceName: "觸水龍", favorableActivityIds: [], unfavorableActivityIds: ["乗船渡水", "取魚"] },
-  { sourceType: "kyojin", sourceName: "八専", favorableActivityIds: [], unfavorableActivityIds: ["出軍", "嫁娶"] },
+  // 八専：擇日テキスト21）「忌：出軍、嫁娶」＋神殺象意「忌結婚納采、嫁娶」（結婚納采＝結婚姻・納采、既存の転記方針）（2026-10-24）。
+  { sourceType: "kyojin", sourceName: "八専", favorableActivityIds: [], unfavorableActivityIds: ["出軍", "嫁娶", "結婚姻", "納采"] },
   { sourceType: "kyojin", sourceName: "九空", favorableActivityIds: [], unfavorableActivityIds: ["進人口", "修倉庫", "開市", "立券交易", "納財", "開倉庫", "出貨財"] },
   // 九扻（九焦）：擇日テキスト凶神23）「忌：乗船渡水、修堤防、鋳造、種植」（修堤防＝築堤防、種植＝栽種）。
   // 2026-10-24 監修判断。旧実装はこの4件を次項の無禄に取り違えて登録していた。
