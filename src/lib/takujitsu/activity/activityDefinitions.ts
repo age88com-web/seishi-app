@@ -299,6 +299,9 @@ export const ACTIVITY_DEFINITIONS: ActivityDefinition[] = [
   { id: "合壽木", canonicalName: "合壽木", modernName: "ごうじゅぼく", description: "自分の棺を作る日。あまり使わない方が良い。", youjibinranNo: 89, modernLabel: "生前に自分の棺を作ること" },
   { id: "造船", canonicalName: "造船", modernName: "ぞうせん", description: "船を造り始める日", youjibinranNo: 73, modernLabel: "船を造り始めること" },
   { id: "避宅出火", canonicalName: "避宅出火", modernLabel: "家からの出火を避けること" },
+  // 2026-10-24 監修判断で新規追加（擇日テキスト48）大空亡・小空亡「忌：製寿衣、寿具」／17）五合「金石合 寿器 お祝い・祝いの品を届ける」）。
+  { id: "寿具", canonicalName: "寿具", modernLabel: "葬儀の用具（寿具）を作ること" },
+  { id: "寿器", canonicalName: "寿器", modernLabel: "お祝いの品（寿器）を届けること" },
 ];
 
 export const ACTIVITY_BY_ID: Record<string, ActivityDefinition> = Object.fromEntries(

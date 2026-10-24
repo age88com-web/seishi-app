@@ -111,15 +111,16 @@ for (const [m, d] of [[10, 19], [11, 8], [12, 1]] as const) {
 }
 
 // 5. 一般向け /lucky-day：土用中の「適したこと」に土工事系が残らない
+//    10/24 は女宿（剃頭以外すべて忌、2026-10-24 監修判断）で吉の用事が無いため、同じ土用中の 11/03 で確認する。
 {
-  const r = day(10, 24);
+  const r = day(11, 3);
   const good = r.activities.evaluations.filter((e) => e.verdict === "good").map((e) => e.activityId);
   const { kept } = splitDoyoRecommendedIds(good, isDoyoDayFromKyojin(r.shinsatsu.kyojin));
-  check("5. 10/24 の「適したこと」に土王用事の忌の用事が1件も残らない", kept.every((id) => !ALL_DOYO.includes(id)),
+  check("5. 11/03 の「適したこと」に土王用事の忌の用事が1件も残らない", kept.every((id) => !ALL_DOYO.includes(id)),
     kept.filter((id) => ALL_DOYO.includes(id)).join("・"));
-  check("5. 10/24 造畜柵は「適したこと」に残らない", !kept.includes("造畜柵"));
-  for (const id of ["移徒", "入宅", "搬入", "伐木", "安吟"]) {
-    check(`5. 10/24 ${id} は「適したこと」に残る`, kept.includes(id));
+  check("5. 11/03 造畜柵は「適したこと」に残らない", !kept.includes("造畜柵"));
+  for (const id of ["移徒", "入宅", "搬入", "安吟"]) {
+    check(`5. 11/03 ${id} は「適したこと」に残る`, kept.includes(id));
   }
 }
 

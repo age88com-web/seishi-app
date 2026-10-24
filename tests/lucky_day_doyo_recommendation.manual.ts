@@ -55,33 +55,38 @@ function goodIds(r: ReturnType<typeof day>): string[] {
   check("1. 注意文は「一部」と書く", LUCKY_DAY_DOYO_NOTICE === "土用期間中のため、建築・工事関係の一部はおすすめから除外しています。");
 }
 
-// 2. 2026-10-24（秋土用中）の「適したこと」
+// 2. 2026-11-03（秋土用中）の「適したこと」
+//    2026-10-24 は女宿（剃頭以外すべて忌、2026-10-24 監修判断）で吉の用事が無いため、
+//    同じ土用中で吉の用事がある 11/03（觜宿）を見本日にした。
 {
-  const r = day(10, 24);
-  check("2. 10/24 は土用にかかる日", isDoyoDayFromKyojin(r.shinsatsu.kyojin));
+  const tenTwentyFour = day(10, 24);
+  check("2. 10/24 は女宿で吉の用事が無い（剃頭以外すべて忌）", tenTwentyFour.shuku28?.lodge === "女" && goodIds(tenTwentyFour).length === 0);
+  const r = day(11, 3);
+  check("2. 11/03 は土用にかかる日", isDoyoDayFromKyojin(r.shinsatsu.kyojin));
   const good = goodIds(r);
   const { kept, excluded } = splitDoyoRecommendedIds(good, true);
-  check("2. 10/24 は除外が1件以上ある（注意文を出す）", excluded.length > 0, String(excluded.length));
-  check("2. 10/24 の「適したこと」に対象用事が1件も残らない", kept.every((id) => !isDoyoRecommendationExcluded(id)));
+  check("2. 11/03 は除外が1件以上ある（注意文を出す）", excluded.length > 0, String(excluded.length));
+  check("2. 11/03 の「適したこと」に対象用事が1件も残らない", kept.every((id) => !isDoyoRecommendationExcluded(id)));
   // 作灶・上梁・安門はエンジン上は吉のまま（表示フィルターだけで外す）。
   // 起基定硬・修宅日・作厠は 2026-10-24 の土王用事の実務展開で、エンジン上も土王用事の忌になった。
   for (const id of ["作灶", "上梁", "安門"]) {
-    check(`2. 10/24 ${id} はエンジン上は吉のまま（判定は変えない）`, good.includes(id));
+    check(`2. 11/03 ${id} はエンジン上は吉のまま（判定は変えない）`, good.includes(id));
   }
   for (const id of ["起基定硬", "修宅日", "作厠"]) {
     const ev = r.activities.evaluations.find((e) => e.activityId === id);
-    check(`2. 10/24 ${id} はエンジン上も土王用事の忌（吉ではない）`, !good.includes(id) && ev?.negativeSources.some((s) => s.sourceName === "土王用事") === true);
+    check(`2. 11/03 ${id} はエンジン上も土王用事の忌（吉ではない）`, !good.includes(id) && ev?.negativeSources.some((s) => s.sourceName === "土王用事") === true);
   }
   for (const id of ["作灶", "起基定硬", "上梁", "安門", "修宅日", "作厠"]) {
-    check(`2. 10/24 ${id} は「適したこと」に残らない`, !kept.includes(id));
+    check(`2. 11/03 ${id} は「適したこと」に残らない`, !kept.includes(id));
   }
-  for (const id of ["移徒", "入宅", "搬入", "伐木", "安吟"]) {
-    check(`2. 10/24 ${id} は吉で、土用推薦フィルターでは除外されない`, good.includes(id) && kept.includes(id));
+  // 伐木は 11/03 に吉ではないため、ここでは確認しない（対象外であることは 1. で確認済み）
+  for (const id of ["移徒", "入宅", "搬入", "安吟"]) {
+    check(`2. 11/03 ${id} は吉で、土用推薦フィルターでは除外されない`, good.includes(id) && kept.includes(id));
   }
   // 凶へ移さない：除外した用事の verdict はエンジンのまま good
   check("2. 除外した用事のエンジン判定はすべて good のまま",
     excluded.every((id) => r.activities.evaluations.find((e) => e.activityId === id)?.verdict === "good"));
-  console.log(`  10/24 推薦除外（エンジン上は吉）: ${excluded.length}件 ${excluded.join("・")}`);
+  console.log(`  11/03 推薦除外（エンジン上は吉）: ${excluded.length}件 ${excluded.join("・")}`);
 }
 
 // 3. 土用でない日は除外しない

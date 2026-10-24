@@ -174,6 +174,8 @@ export const ACTIVITY_GROUP_BY_ID: Readonly<Record<string, LuckyDayActivityGroup
   "製寿衣": "葬儀・墓・供養",
   "斎醮": "葬儀・墓・供養",
   "合壽木": "葬儀・墓・供養",
+  "寿具": "葬儀・墓・供養",
+  "寿器": "人付き合い・祝い",
 
   // その他・特殊用途 (9)
   "冠帶": "その他・特殊用途",

@@ -83,3 +83,25 @@ export function resolveKichijinGroup3(input: ShinsatsuInput): ShinsatsuResult {
 
   return { kichijin, kyojin: [] };
 }
+
+/**
+ * 五合の5種（p.10）。干支ごとに宜が異なる（天地合＝祈福・日月合＝開光・人民合＝婚姻・
+ * 金石合＝寿器・江河合＝行船（移徒））ため、五合の日に種類名を別に返す（2026-10-24）。
+ */
+const WUHE_SUBTYPE_BY_GANZHI: Record<string, string> = {
+  甲寅: "天地合", 乙卯: "天地合",
+  丙寅: "日月合", 丁卯: "日月合",
+  戊寅: "人民合", 己卯: "人民合",
+  庚寅: "金石合", 辛卯: "金石合",
+  壬寅: "江河合", 癸卯: "江河合",
+};
+
+/**
+ * 五合の種類（天地合・日月合・人民合・金石合・江河合）を判定する。
+ * resolveKichijinGroup3（擇日実例.pdf 照合対象。実例の表記は「五合」のみ）とは分け、
+ * resolveAllShinsatsu からだけ合算する。
+ */
+export function resolveWuheSubtypes(input: ShinsatsuInput): ShinsatsuResult {
+  const subtype = WUHE_SUBTYPE_BY_GANZHI[`${input.dayStem}${input.dayBranch}`];
+  return { kichijin: subtype ? [subtype] : [], kyojin: [] };
+}

@@ -242,7 +242,7 @@ check("4. どちらもなし → neutral", computeVerdict(0, 0) === "neutral");
       entry("月厭", "active"),
       entry("瘟入", "active"),
       entry("瘟出", "active"),
-      entry("八節日", "active"),
+      entry("八節日（二至二分）", "active"), // 2026-10-24：移徒の忌は二至二分の日だけ
       entry("横天朱雀", "active"),
     ], // いずれも忌=移徒 を含む（5件）
   );
@@ -369,38 +369,29 @@ check("4. どちらもなし → neutral", computeVerdict(0, 0) === "neutral");
 // docs/takujitsu_liuhuangdao_composite_analysis.md
 // -----------------------------------------------------------------------
 
-// D. 青龍単独 → 家族会議・遠行はpositive／その他にCOMPOSITE由来の宜忌を出さない
+// D. 青龍単独 → 青龍由来の宜忌は生成されない（2026-10-24：六黄道に固有の宜は無い。
+//    家族会議・遠行は擇日テキスト27）天馬の宜で、旧実装は六黄道に取り違えていた）
 {
   const r = resolution([entry("青龍", "active")], []);
   const result = evaluateActivities({ resolution: r, buildingDay: JIANCHU_JIAN });
-  const kaigi = result.evaluations.find((e) => e.activityId === "家族会議");
-  const enkou = result.evaluations.find((e) => e.activityId === "遠行");
-  check("D. 青龍単独：家族会議はpositive（LIST型維持）", kaigi?.verdict === "good" && kaigi.positiveSources.some((s) => s.sourceName === "青龍"));
-  check("D. 青龍単独：遠行はpositive（LIST型維持）", enkou?.verdict === "good" && enkou.positiveSources.some((s) => s.sourceName === "青龍"));
-  const seiryuElsewhere = result.evaluations.filter(
-    (e) => e.activityId !== "家族会議" && e.activityId !== "遠行" &&
-      [...e.positiveSources, ...e.negativeSources].some((s) => s.sourceName === "青龍"),
+  const seiryu = result.evaluations.filter(
+    (e) => [...e.positiveSources, ...e.negativeSources].some((s) => s.sourceName === "青龍"),
   );
-  check("D. 青龍単独：家族会議・遠行以外に青龍由来の宜忌は生成されない", seiryuElsewhere.length === 0);
+  check("D. 青龍単独：青龍由来の宜忌は生成されない", seiryu.length === 0);
 }
 
-// E. 金匱単独 → 家族会議・遠行はpositive／その他は生成しない
+// E. 金匱単独 → 金匱由来の宜忌は生成されない
 {
   const r = resolution([entry("金匱", "active")], []);
   const result = evaluateActivities({ resolution: r, buildingDay: JIANCHU_JIAN });
-  const kaigi = result.evaluations.find((e) => e.activityId === "家族会議");
-  const enkou = result.evaluations.find((e) => e.activityId === "遠行");
-  check("E. 金匱単独：家族会議はpositive", kaigi?.verdict === "good" && kaigi.positiveSources.some((s) => s.sourceName === "金匱"));
-  check("E. 金匱単独：遠行はpositive", enkou?.verdict === "good" && enkou.positiveSources.some((s) => s.sourceName === "金匱"));
-  const kinkiElsewhere = result.evaluations.filter(
-    (e) => e.activityId !== "家族会議" && e.activityId !== "遠行" &&
-      [...e.positiveSources, ...e.negativeSources].some((s) => s.sourceName === "金匱"),
+  const kinki = result.evaluations.filter(
+    (e) => [...e.positiveSources, ...e.negativeSources].some((s) => s.sourceName === "金匱"),
   );
-  check("E. 金匱単独：家族会議・遠行以外に金匱由来の宜忌は生成されない", kinkiElsewhere.length === 0);
+  check("E. 金匱単独：金匱由来の宜忌は生成されない", kinki.length === 0);
 }
 
 // F. 金匱＋三合 → 金匱は三合の宜を追従しない（COMPOSITE化していない）。
-//    ただし家族会議・遠行は金匱自身のLIST型宜として残る。
+//    金匱自身の宜は無い（2026-10-24）。
 {
   const r = resolution([entry("金匱", "active"), entry("三合", "active")], []);
   const result = evaluateActivities({ resolution: r, buildingDay: JIANCHU_JIAN });
@@ -408,18 +399,24 @@ check("4. どちらもなし → neutral", computeVerdict(0, 0) === "neutral");
   check("F. 金匱＋三合：裁衣のpositiveSourcesに三合は入る", !!saii && saii.positiveSources.some((s) => s.sourceName === "三合"));
   check("F. 金匱＋三合：裁衣のpositiveSourcesに金匱は入らない（追従しない）", !!saii && !saii.positiveSources.some((s) => s.sourceName === "金匱"));
   const kaigi = result.evaluations.find((e) => e.activityId === "家族会議");
-  check("F. 金匱＋三合：家族会議は金匱のLIST型宜として残る", kaigi?.positiveSources.some((s) => s.sourceName === "金匱") === true);
+  check("F. 金匱＋三合：家族会議に金匱の宜は無い", kaigi === undefined || !kaigi.positiveSources.some((s) => s.sourceName === "金匱"));
 }
 
-// L. 家族会議・遠行 → 六黄道6神すべてで既存positiveが維持されている
+// L. 家族会議・遠行 → 天馬の宜（擇日テキスト27）。六黄道6神は単独では宜を出さない（2026-10-24）
 {
   for (const name of ["青龍", "明堂", "金匱", "寶光", "玉堂", "司命"]) {
     const r = resolution([entry(name, "active")], []);
     const result = evaluateActivities({ resolution: r, buildingDay: JIANCHU_JIAN });
     const kaigi = result.evaluations.find((e) => e.activityId === "家族会議");
     const enkou = result.evaluations.find((e) => e.activityId === "遠行");
-    check(`L. ${name}：家族会議がpositive維持`, kaigi?.verdict === "good" && kaigi.positiveSources.some((s) => s.sourceName === name));
-    check(`L. ${name}：遠行がpositive維持`, enkou?.verdict === "good" && enkou.positiveSources.some((s) => s.sourceName === name));
+    check(`L. ${name}単独：家族会議の宜は無い`, kaigi === undefined);
+    check(`L. ${name}単独：遠行の宜は無い`, enkou === undefined);
+  }
+  const r = resolution([entry("天馬", "active")], []);
+  const result = evaluateActivities({ resolution: r, buildingDay: JIANCHU_JIAN });
+  for (const id of ["家族会議", "遠行"]) {
+    const ev = result.evaluations.find((e) => e.activityId === id);
+    check(`L. 天馬：${id}がpositive`, ev?.verdict === "good" && ev.positiveSources.some((s) => s.sourceName === "天馬"));
   }
 }
 
@@ -501,10 +498,10 @@ check("4. どちらもなし → neutral", computeVerdict(0, 0) === "neutral");
 
 // M. COMPOSITE同士を再帰的にコピーしない（青龍＋明堂）
 {
-  const r = resolution([entry("青龍", "active"), entry("明堂", "active"), entry("三合", "active")], []);
+  const r = resolution([entry("青龍", "active"), entry("明堂", "active"), entry("三合", "active"), entry("天馬", "active")], []);
   const result = evaluateActivities({ resolution: r, buildingDay: JIANCHU_JIAN });
   const kaigi = result.evaluations.find((e) => e.activityId === "家族会議");
-  // 家族会議は青龍・明堂それぞれのLIST型として1件ずつ（互いに追従して増えない）
+  // 家族会議（天馬の宜）を青龍・明堂がそれぞれ1件ずつ追従する（互いに追従して増えない）
   check("M. 家族会議のpositiveSourcesは青龍1件・明堂1件のみ（COMPOSITE再帰なし）",
     (kaigi?.positiveSources.filter((s) => s.sourceName === "青龍").length ?? 0) === 1 &&
     (kaigi?.positiveSources.filter((s) => s.sourceName === "明堂").length ?? 0) === 1);
@@ -583,16 +580,16 @@ for (const deity of ["天徳", "天徳合", "月徳", "月徳合", "天赦", "�
 
 // J. 月破＋天徳＋青龍 → 天徳positive抑制／青龍は天徳positiveを追従しない
 {
-  const r = resolution([entry("天徳", "active"), entry("青龍", "active")], [entry("月破", "active")]);
+  const r = resolution([entry("天徳", "active"), entry("青龍", "active"), entry("天馬", "active")], [entry("月破", "active")]);
   const result = evaluateActivities({ resolution: r, buildingDay: JIANCHU_JIAN });
   const kekkon = result.evaluations.find((e) => e.activityId === "臨官");
   check("J. 月破＋天徳＋青龍：臨官に天徳positiveが残らない", !kekkon || !kekkon.positiveSources.some((s) => s.sourceName === "天徳"));
   check("J. 月破＋天徳＋青龍：臨官に青龍positiveが残らない（抑制済みを復活させない）",
     !kekkon || !kekkon.positiveSources.some((s) => s.sourceName === "青龍"));
   check("J. 月破＋天徳＋青龍：臨官はbad", kekkon?.verdict === "bad");
-  // 青龍のLIST宜（家族会議）は残る（青龍はGEPPO_DEITY_SETでない）
+  // 天馬の宜（家族会議）を青龍が追従した分は残る（天馬・青龍はGEPPO_DEITY_SETでない）
   const kaigi = result.evaluations.find((e) => e.activityId === "家族会議");
-  check("J. 月破＋天徳＋青龍：青龍の家族会議positiveは残る", kaigi?.positiveSources.some((s) => s.sourceName === "青龍") === true);
+  check("J. 月破＋天徳＋青龍＋天馬：青龍の家族会議positive（天馬の追従）は残る", kaigi?.positiveSources.some((s) => s.sourceName === "青龍") === true);
 }
 
 // K. 月破＋三合＋青龍 → 三合positive維持／青龍は三合positiveへ追従

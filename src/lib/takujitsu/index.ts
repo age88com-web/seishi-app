@@ -62,7 +62,7 @@ import type { CalendarInput, CalendarResult } from "@/lib/calendar";
 
 import { resolveKichijin } from "./shinsatsu/kichijin";
 import { resolveKichijinGroup2 } from "./shinsatsu/kichijinGroup2";
-import { resolveKichijinGroup3 } from "./shinsatsu/kichijinGroup3";
+import { resolveKichijinGroup3, resolveWuheSubtypes } from "./shinsatsu/kichijinGroup3";
 import { resolveKichijinGroup4 } from "./shinsatsu/kichijinGroup4";
 import { resolveKichijinGroup5 } from "./shinsatsu/kichijinGroup5";
 import { resolveKichijinGroup6 } from "./shinsatsu/kichijinGroup6";
@@ -83,7 +83,7 @@ import type { ResolvedShinsatsuResult } from "./resolution";
 export type { ShinsatsuInput, ShinsatsuResult } from "./types";
 export { resolveKichijin } from "./shinsatsu/kichijin";
 export { resolveKichijinGroup2 } from "./shinsatsu/kichijinGroup2";
-export { resolveKichijinGroup3 } from "./shinsatsu/kichijinGroup3";
+export { resolveKichijinGroup3, resolveWuheSubtypes } from "./shinsatsu/kichijinGroup3";
 export { resolveKichijinGroup4 } from "./shinsatsu/kichijinGroup4";
 export { resolveKichijinGroup5 } from "./shinsatsu/kichijinGroup5";
 export { resolveKichijinGroup6 } from "./shinsatsu/kichijinGroup6";
@@ -141,6 +141,7 @@ export function resolveAllShinsatsu(input: ShinsatsuInput): ShinsatsuResult {
   const g1 = resolveKichijin(input);
   const g2 = resolveKichijinGroup2(input);
   const g3 = resolveKichijinGroup3(input);
+  const g3w = resolveWuheSubtypes(input);
   const g4 = resolveKichijinGroup4(input);
   const g5 = resolveKichijinGroup5(input);
   const g6 = resolveKichijinGroup6(input);
@@ -150,7 +151,7 @@ export function resolveAllShinsatsu(input: ShinsatsuInput): ShinsatsuResult {
   const ky4 = resolveKyoushinGroup4(input);
   const ky6 = resolveKyoushinGroup6(input);
   return {
-    kichijin: [...g1.kichijin, ...g2.kichijin, ...g3.kichijin, ...g4.kichijin, ...g5.kichijin, ...g6.kichijin],
+    kichijin: [...g1.kichijin, ...g2.kichijin, ...g3.kichijin, ...g3w.kichijin, ...g4.kichijin, ...g5.kichijin, ...g6.kichijin],
     kyojin: [
       ...g1.kyojin, ...g2.kyojin, ...g3.kyojin, ...g4.kyojin, ...g5.kyojin, ...g6.kyojin,
       ...ky1.kyojin, ...ky2.kyojin, ...ky3.kyojin, ...ky4.kyojin, ...ky6.kyojin,

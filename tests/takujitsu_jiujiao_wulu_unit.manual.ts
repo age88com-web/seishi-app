@@ -165,9 +165,9 @@ function wuluNegativeIds(evaluations: { activityId: string; negativeSources: { s
 
 // 6. 他の神殺へ波及しない
 {
-  const others = ACTIVITY_PROFILES.filter((p) => p.negativeMode === "all_except").map((p) => p.sourceName).sort();
+  const others = ACTIVITY_PROFILES.filter((p) => p.sourceType === "kyojin" && p.negativeMode === "all_except").map((p) => p.sourceName).sort();
   const expected = ["月破", "死神", "劫殺", "災殺", "月殺", "月刑", "月厭", "四廢", "上朔", "四離", "四絶", "無禄"].sort();
-  check("6. 餘事皆忌型は既存11神＋無禄だけ", JSON.stringify(others) === JSON.stringify(expected), others.join("・"));
+  check("6. 凶神の餘事皆忌型は既存11神＋無禄だけ", JSON.stringify(others) === JSON.stringify(expected), others.join("・"));
   const withStill = ACTIVITY_PROFILES.filter((p) => (p.reducedStillUnfavorableActivityIds ?? []).length > 0).map((p) => p.sourceName).sort();
   check("6. 解除後の残存忌を持つのは小時と無禄だけ", JSON.stringify(withStill) === JSON.stringify(["小時", "無禄"].sort()), withStill.join("・"));
 }

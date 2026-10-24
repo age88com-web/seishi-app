@@ -245,6 +245,10 @@ export function resolveKyoushinGroup5(input: CalendarInput): ShinsatsuResult {
   const todayTerm = solarTermStartingOn(input, 0);
   if (todayTerm !== undefined && (NIJI_NIBUN.includes(todayTerm) || SHI_RITSU.includes(todayTerm))) {
     kyojin.push("八節日");
+    // 本文は忌を「八節日（全体）／二至二分／冬至」に分けて書くため、日の種類を別名で積む
+    // （ActivityProfile も3つに分けている。2026-10-24）。
+    if (NIJI_NIBUN.includes(todayTerm)) kyojin.push("八節日（二至二分）");
+    if (todayTerm === "冬至") kyojin.push("八節日（冬至）");
   }
 
   // 31）土王用事（土用）：土用入りから次の四立までの期間（太陽黄経基準）。

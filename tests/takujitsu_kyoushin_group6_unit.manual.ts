@@ -89,11 +89,16 @@ check("短星：九月lunarDay=16（該当・複数値の1つ目）", { ...BASE,
 check("短星：九月lunarDay=17（該当・複数値の2つ目）", { ...BASE, lunarMonth: 9, lunarDay: 17 }, ["短星"]);
 check("短星：九月lunarDay=15（非該当）", { ...BASE, lunarMonth: 9, lunarDay: 15 }, [], ["短星"]);
 
-// ---- 35）揚公忌（lunarMonthごと。七月は2値） ----
-check("揚公忌：正月lunarDay=13（該当）", { ...BASE, lunarMonth: 1, lunarDay: 13 }, ["揚公忌"]);
-check("揚公忌：七月lunarDay=1（該当・複数値の1つ目）", { ...BASE, lunarMonth: 7, lunarDay: 1 }, ["揚公忌"]);
-check("揚公忌：七月lunarDay=29（該当・複数値の2つ目）", { ...BASE, lunarMonth: 7, lunarDay: 29 }, ["揚公忌"]);
-check("揚公忌：七月lunarDay=15（非該当）", { ...BASE, lunarMonth: 7, lunarDay: 15 }, [], ["揚公忌"]);
+// ---- 35）揚公忌：本文「気にしなくて良い」により判定しない（2026-10-24 監修判断） ----
+check("揚公忌：旧該当日（正月lunarDay=13）でも判定しない", { ...BASE, lunarMonth: 1, lunarDay: 13 }, [], ["揚公忌"]);
+check("揚公忌：旧該当日（七月lunarDay=29）でも判定しない", { ...BASE, lunarMonth: 7, lunarDay: 29 }, [], ["揚公忌"]);
+
+// ---- 37）探病忌日（固定6干支、2026-10-24 監修判断） ----
+for (const [s, b] of [["庚", "午"], ["壬", "午"], ["己", "卯"], ["壬", "寅"], ["甲", "寅"], ["乙", "卯"]]) {
+  check(`探病忌日：${s}${b}（該当）`, { ...BASE, dayStem: s, dayBranch: b }, ["探病忌日"]);
+}
+check("探病忌日：甲子（非該当）", { ...BASE, dayStem: "甲", dayBranch: "子" }, [], ["探病忌日"]);
+check("探病忌日：丙午（非該当）", { ...BASE, dayStem: "丙", dayBranch: "午" }, [], ["探病忌日"]);
 
 // ---- 50）四方耗（monthBranch三合トリオ＋lunarDay） ----
 check("四方耗：寅午戌月lunarDay=2（該当）", { ...BASE, monthBranch: "午", lunarDay: 2 }, ["四方耗"]);

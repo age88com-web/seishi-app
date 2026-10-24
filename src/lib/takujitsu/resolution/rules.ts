@@ -247,7 +247,8 @@ export const RESOLUTION_RULES: readonly ResolutionRule[] = [
   },
   {
     id: "20",
-    targets: ["八節日"],
+    // 八節日の二至二分・冬至の忌も同じ30）の項に属するため対象に含める（2026-10-24）。
+    targets: ["八節日", "八節日（二至二分）", "八節日（冬至）"],
     requires: [anyOf(DEHE_GROUP), anyOf(SHAGAN_GROUP)],
     combine: "all",
     kind: "aggravate",

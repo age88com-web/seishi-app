@@ -17,7 +17,8 @@
 //   ・25）上朔                    p.29
 //   ・27）月忌日                  p.30
 //   ・29）長星・短星              p.34
-//   ・35）揚公忌                  p.36
+//   ・35）揚公忌                  p.36（2026-10-24 監修判断で判定から外した）
+//   ・37）探病忌日                p.36-37（2026-10-24 監修判断で追加）
 //   ・36）横天朱雀                p.36
 //   ・38）四不詳                  p.37
 //   ・39）上兀（留紳）・下兀（赤口） p.37-38
@@ -45,7 +46,7 @@
 //     ＋lunarDay: 冰消瓦解
 //   ・yearBranch8グループ（戌亥/酉/未申/午/辰巳/卯/丑寅/子）＋lunarMonth
 //     ＋lunarDay: 天空・地空
-//   ・lunarMonthのみ＋lunarDay: 長星・短星・揚公忌・冰消瓦碎・大空亡・
+//   ・lunarMonthのみ＋lunarDay: 長星・短星・冰消瓦碎・大空亡・
 //     小空亡・天乙絶気
 //   ・lunarDayのみ（月に無関係）: 月忌日・横天朱雀・四不詳・周堂殺・龍禁
 //   ・dayBranch＋二十八宿(lodge28): 伏斷日
@@ -244,12 +245,13 @@ const TANSEI_BY_MONTH: readonly (readonly number[])[] = [
 ];
 
 /**
- * ［区分B］35）揚公忌（p.36）。lunarMonthごとに固定の暦日番号
- * （七月のみ1・29の2値）。
+ * 35）揚公忌（p.36）は本文が「非常に迷信的要素が強いため気にしなくて良い」と明記するため
+ * 判定しない（2026-10-24 監修判断。旧実装はこの文を37）探病忌日のものと取り違えていた）。
+ *
+ * ［区分B］37）探病忌日（p.36-37）。固定6干支。本文「神仙がどこかに行っている6日間で、
+ * 治療などうまくいかない日」（2026-10-24 監修判断で実装）。
  */
-const YOUKOUKI_BY_MONTH: readonly (readonly number[])[] = [
-  [13], [11], [9], [7], [5], [3], [1, 29], [27], [25], [23], [21], [19],
-];
+const TANBYOUKIBI_GANZHI: readonly string[] = ["庚午", "壬午", "己卯", "壬寅", "甲寅", "乙卯"];
 
 /**
  * ［区分B］42）冰消瓦解（p.39）。yearBranchの六冲グループ（子午/丑未/
@@ -446,6 +448,7 @@ export function resolveKyoushinGroup6(input: ShinsatsuInput): ShinsatsuResult {
   // 25）上朔（yearStem固定表）
   const { dayStem } = input;
   if (JOSAKU_BY_YEARSTEM[yearStem] === `${dayStem}${dayBranch}`) kyojin.push("上朔");
+  if (TANBYOUKIBI_GANZHI.includes(`${dayStem}${dayBranch}`)) kyojin.push("探病忌日");
 
   // lunarDayのみで決まる項目
   if (lunarDay !== undefined) {
@@ -462,7 +465,6 @@ export function resolveKyoushinGroup6(input: ShinsatsuInput): ShinsatsuResult {
     if (mi >= 0 && mi < 12) {
       if (CHOUSEI_BY_MONTH[mi].includes(lunarDay)) kyojin.push("長星");
       if (TANSEI_BY_MONTH[mi].includes(lunarDay)) kyojin.push("短星");
-      if (YOUKOUKI_BY_MONTH[mi].includes(lunarDay)) kyojin.push("揚公忌");
       if (HYOUSHOUGASAI_BY_MONTH[mi] === lunarDay) kyojin.push("冰消瓦碎");
       if (DAIKUUBOU_BY_MONTH[mi].includes(lunarDay)) kyojin.push("大空亡");
       if (SHOUKUUBOU_BY_MONTH[mi].includes(lunarDay)) kyojin.push("小空亡");

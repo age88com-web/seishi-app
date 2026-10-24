@@ -151,7 +151,8 @@ for (const [label, from, to, expect] of [
   // docs/takujitsu_activity_definitions_numbers_review.md）。
   // 2026-09-11現行95再監査フェーズ: docs/takujitsu_missing_activity_reaudit.md
   // でユーザー承認されたA判定14件を追加し95→109。
-  check("8. ActivityDefinition 総数 = 109", ACTIVITY_DEFINITIONS.length === 109);
+  // 2026-10-24 監修判断で寿具（葬祭・墓）・寿器（生活）を新設し109→111。
+  check("8. ActivityDefinition 総数 = 111", ACTIVITY_DEFINITIONS.length === 111);
   check("8. 12語は ActivityDefinition に存在しない", EXCLUDED.every((id) => !ACTIVITY_BY_ID[id] && !ACTIVITY_DEFINITIONS.some((d) => d.id === id)));
 
   // 用途一覧（evaluateActivities）に一年通じて1度も出ない
@@ -174,13 +175,13 @@ for (const [label, from, to, expect] of [
   // 造倉庫・苫蓋・放水・修宅日〉／婚姻・縁組+1〈合帳〉／葬祭・墓+1〈合壽木〉／
   // その他+2〈造船・避宅出火〉）
   const catTotal = Object.values(CATEGORY_COUNTS).reduce((a, b) => a + b, 0);
-  check("8. カテゴリ件数の合計 = 109", catTotal === 109);
+  check("8. カテゴリ件数の合計 = 111", catTotal === 111);
   check("8. その他 = 14", CATEGORY_COUNTS["その他"] === 14);
-  check("8. 生活 = 8", CATEGORY_COUNTS["生活"] === 8);
+  check("8. 生活 = 9", CATEGORY_COUNTS["生活"] === 9);
   check("8. 祭祀・祈願 = 6", CATEGORY_COUNTS["祭祀・祈願"] === 6);
   check("8. 建築・工事 = 30", CATEGORY_COUNTS["建築・工事"] === 30);
   check("8. 婚姻・縁組 = 6", CATEGORY_COUNTS["婚姻・縁組"] === 6);
-  check("8. 葬祭・墓 = 7", CATEGORY_COUNTS["葬祭・墓"] === 7);
+  check("8. 葬祭・墓 = 8", CATEGORY_COUNTS["葬祭・墓"] === 8);
   // 新規14件のカテゴリーが原典上の用途に基づき正しく割り当てられていること
   const newCategoryAssignments: [string, string][] = [
     ["安香", "祭祀・祈願"],

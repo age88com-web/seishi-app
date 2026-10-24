@@ -83,7 +83,8 @@ function check(label: string, cond: boolean) {
 // 2026-09-11追記7（現行95再監査フェーズ）: docs/takujitsu_missing_activity_reaudit.md
 // でユーザーが承認したA判定14件（安香・起基定硬・安門・安吟・作灶・造倉庫・
 // 苫蓋・放水・造船・合帳・斎醮・合壽木・避宅出火・修宅日）を正式採用し95→109件。
-check(`総件数 = 109 (実際: ${ACTIVITY_DEFINITIONS.length})`, ACTIVITY_DEFINITIONS.length === 109);
+// 2026-10-24 監修判断で寿具・寿器を新設し109→111件。
+check(`総件数 = 111 (実際: ${ACTIVITY_DEFINITIONS.length})`, ACTIVITY_DEFINITIONS.length === 111);
 
 // 2. id重複が無いこと
 const idSet = new Set(ACTIVITY_DEFINITIONS.map((d) => d.id));
@@ -109,7 +110,8 @@ for (const d of withModern) {
 //    修宅日）は用事便覧に対応が無い（起基定硬は用事便覧側表記「起基定礎」と
 //    1字差のため非対応）ため59→62
 const withoutModern = ACTIVITY_DEFINITIONS.filter((d) => d.youjibinranNo === undefined);
-check(`用事便覧非対応 = 62件 (実際: ${withoutModern.length})`, withoutModern.length === 62);
+// 2026-10-24：新設の寿具・寿器も用事便覧に対応が無いため62→64。
+check(`用事便覧非対応 = 64件 (実際: ${withoutModern.length})`, withoutModern.length === 64);
 for (const d of withoutModern) {
   check(`${d.canonicalName}: modernName未設定`, d.modernName === undefined);
   check(`${d.canonicalName}: description未設定`, d.description === undefined);
@@ -168,7 +170,7 @@ check("求醫療病が独立エントリとして存在", ACTIVITY_BY_ID["求醫
 check("竪柱上梁（用事便覧側の表記）は今回未統合のため辞書に存在しない", ACTIVITY_BY_ID["竪柱上梁"] === undefined);
 
 // 9. 720実例検証フェーズ（2026-09-11）で削除した51件のうち、今回も削除済みの
-//    ままである49件（放水・安香を除く）が辞書に存在しないこと
+//    ままである47件（放水・安香・寿具・寿器を除く）が辞書に存在しないこと
 //    （神殺=吉神凶神の宜忌に一切存在せず、かつ擇日象意720件で十二建除固有の
 //    宜として必要と確認された8件の例外にも該当しない＝教材的説明語・言い換え。
 //    docs/takujitsu_activity_source_layer_validation.md参照）
@@ -179,7 +181,7 @@ check("竪柱上梁（用事便覧側の表記）は今回未統合のため辞�
 // 一度A判定されながら反映漏れだったことが判明し復活。同2.1章）。
 const removed720 = [
   "お祝い", "エステ", "上司とあう", "出財貨", "出貸財", "利益大", "土痕", "城の修復",
-  "寿具", "寿器", "建造", "弔い合戦", "征討", "政治の打ち合わせ", "正直な行い",
+  "建造", "弔い合戦", "征討", "政治の打ち合わせ", "正直な行い",
   "祈求", "祈神", "福願関係全般", "穿井導泉", "結婚嫁娶", "計画を練る", "試験", "贈り物",
   "迎親", "造舎", "造葬", "連絡や便りへの返信",
   "かまど作り", "不動産の取得", "乗馬", "出産後の退院", "壁塗り", "帰宅", "手斧始め",
@@ -187,7 +189,9 @@ const removed720 = [
   "財を求める", "財産の収蔵", "門の設置", "集金", "風水の造作", "養子を取る",
   "養子を迎える", "養蚕", "髪すき", "魚釣り",
 ];
-check(`720実例検証フェーズの削除対象件数 = 49 (実際: ${removed720.length})`, removed720.length === 49);
+// 2026-10-24：寿具・寿器は監修判断（大空亡・小空亡の忌「寿具」、金石合の宜「寿器」）で再追加したため除外。
+check(`720実例検証フェーズの削除対象件数 = 47 (実際: ${removed720.length})`, removed720.length === 47);
+check("寿具・寿器は 2026-10-24 監修判断で再追加され辞書に存在する", ACTIVITY_BY_ID["寿具"] !== undefined && ACTIVITY_BY_ID["寿器"] !== undefined);
 for (const id of removed720) {
   check(`${id} は削除済みで辞書に存在しない`, ACTIVITY_BY_ID[id] === undefined);
 }
@@ -267,9 +271,9 @@ for (const id of categoryChangedIds) {
 //     docs/takujitsu_activity_modern_label_review.md 参照。
 // 17. 現行95再監査フェーズ（2026-09-11）: 95→109。新規14件にもmodernLabelを
 //     全件設定済み（docs/takujitsu_missing_activity_reaudit.md参照）。
-check(`総件数 = 109件（現行95再監査フェーズで95→109）（実際: ${ACTIVITY_DEFINITIONS.length}）`, ACTIVITY_DEFINITIONS.length === 109);
+check(`総件数 = 111件（現行95再監査フェーズで95→109、2026-10-24 寿具・寿器で→111）（実際: ${ACTIVITY_DEFINITIONS.length}）`, ACTIVITY_DEFINITIONS.length === 111);
 const withModernLabel = ACTIVITY_DEFINITIONS.filter((d) => d.modernLabel !== undefined);
-check(`modernLabel = 109/109件（全件確定） (実際: ${withModernLabel.length})`, withModernLabel.length === 109);
+check(`modernLabel = 111/111件（全件確定） (実際: ${withModernLabel.length})`, withModernLabel.length === 111);
 for (const d of ACTIVITY_DEFINITIONS) {
   check(`${d.id}: modernLabelは空文字でない`, !!d.modernLabel && d.modernLabel.trim().length > 0);
   check(`${d.id}: idとcanonicalNameは変更されていない`, d.id === d.canonicalName);
