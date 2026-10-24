@@ -37,8 +37,16 @@
 //   アナリティクス系スクリプトに推奨している値。
 //   gtag('config', ...) 呼び出しにより、ページビュー・参照元
 //   （document.referrer）・ユーザー数はgtag.js標準の自動計測機能で
-//   GA4へ送信される。ここでは独自の送信コード・独自イベント
-//   （吉日検索・会員クリック・決済完了等）は一切追加していない。
+//   GA4へ送信される。
+//
+// GA4 の補強（ユーザー指示、2026-10-20）:
+//   初期化スクリプトは src/lib/luckyDay/analytics.ts の buildGa4InitScript()。
+//   page_location からパスと utm_* 等以外のクエリを除き、cookie_domain・
+//   cookie_flags を fengshui.jp 側の設定にそろえる（_ga Cookie を共有して
+//   本サイトとセッションを継続する）。page_view は config の1回だけ。
+//   4種類のカスタムイベント（takujitsu_app_open・takujitsu_date_search・
+//   takujitsu_plan_click・takujitsu_course_click）は LuckyDayClient.tsx から
+//   sendTakujitsuEvent() で送る（イベント名のみ、パラメータなし）。
 //
 // Microsoft Clarity について（2026-09-23追加）:
 //   fengshui.jp（WordPress）側と同じ Clarity プロジェクト
@@ -53,8 +61,8 @@
 
 import type { Metadata } from "next";
 import Script from "next/script";
+import { buildGa4InitScript, GA4_MEASUREMENT_ID } from "@/lib/luckyDay/analytics";
 
-const GA4_MEASUREMENT_ID = "G-QJTBLF194P";
 const CLARITY_PROJECT_ID = "t0b0tddop1";
 
 export const metadata: Metadata = {
@@ -69,12 +77,7 @@ export default function LuckyDayLayout({ children }: { children: React.ReactNode
         strategy="afterInteractive"
       />
       <Script id="ga4-init" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${GA4_MEASUREMENT_ID}');
-        `}
+        {buildGa4InitScript()}
       </Script>
       <Script id="clarity-init" strategy="afterInteractive">
         {`

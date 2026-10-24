@@ -85,6 +85,8 @@ import type { LuckyDayPurpose, LuckyDayActivityGroup, DirectionWheelSlot, Direct
 import type { TakujitsuMemberStatus } from "@/lib/luckyDay/auth/member";
 // 講座案内の表示判定（ID 2・3だけ、2026-10-20追加）。表示判定のみの純関数。
 import { LUCKY_DAY_COURSE_URL, shouldShowCourseInvitation } from "@/lib/luckyDay/courseInvitation";
+// GA4カスタムイベント（2026-10-20追加）。イベント名だけを送る（個人情報・検索条件は送らない）。
+import { sendTakujitsuEvent } from "@/lib/luckyDay/analytics";
 import {
   LUCKY_DAY_DOYO_NOTICE,
   isDoyoDayFromKyojin,
@@ -339,7 +341,7 @@ function PaywallNotice({
     return (
       <div className="ld-paywall">
         <p className="ld-paywall-text">{message}</p>
-        <a className="ld-paywall-link" href={MEMBER_SIGNUP_URL}>
+        <a className="ld-paywall-link" href={MEMBER_SIGNUP_URL} onClick={() => sendTakujitsuEvent("takujitsu_plan_click")}>
           新規会員登録・プランを見る
         </a>
       </div>
@@ -353,7 +355,12 @@ function PaywallNotice({
         <li>月額 980円（税込）</li>
         <li>年額 8,800円（税込）</li>
       </ul>
-      <a className="ld-paywall-link" href={MEMBER_LOGIN_URL}>
+      <a
+        className="ld-paywall-link"
+        href={MEMBER_LOGIN_URL}
+        // 「会員プランを確認する」（ログイン済み無料会員）のときだけプランへのリンクとして計測する
+        onClick={memberStatus.authenticated ? () => sendTakujitsuEvent("takujitsu_plan_click") : undefined}
+      >
         {memberStatus.authenticated ? "会員プランを確認する" : "会員ログイン"}
       </a>
     </div>
@@ -563,7 +570,7 @@ function HourlyFortuneLockedNotice() {
       <h3 className="ld-verdict-title ld-hours-heading">時間の吉凶</h3>
       <div className="ld-hours-locked">
         <p className="ld-hours-locked-text">1日12の時間帯ごとの吉凶は、有料会員向けの機能です。</p>
-        <a className="ld-upsell-link" href={MEMBER_SIGNUP_URL}>
+        <a className="ld-upsell-link" href={MEMBER_SIGNUP_URL} onClick={() => sendTakujitsuEvent("takujitsu_plan_click")}>
           会員プランを見る
         </a>
       </div>
@@ -951,7 +958,7 @@ function MemberStatusBar({ memberStatus }: { memberStatus: TakujitsuMemberStatus
         <a className="ld-member-link" href={MEMBER_LOGIN_URL}>
           会員ログイン
         </a>
-        <a className="ld-member-signup-link" href={MEMBER_SIGNUP_URL}>
+        <a className="ld-member-signup-link" href={MEMBER_SIGNUP_URL} onClick={() => sendTakujitsuEvent("takujitsu_plan_click")}>
           新規会員登録・プランを見る
         </a>
       </div>
@@ -976,21 +983,19 @@ function MemberStatusBar({ memberStatus }: { memberStatus: TakujitsuMemberStatus
 
 // ---------------------------------------------------------------------------
 // 擇日入門通信講座の案内（ユーザー指示、2026-10-20）。
-// 月額（ID 2）・年額（ID 3）会員だけに、会員状態表示の直下へ控えめに出す。
+// 月額（ID 2）・年額（ID 3）会員だけに、控えめに出す（2026-10-20 配置再修正）。
+//   PC（900px以上）: 右側「目的から吉日を探す」パネル内の一番下（placement="pc"）。
+//   スマホ: ページ全体の最下部（placement="sp"）。
+//   両方を描画し、CSS（.ld-course-invite-pc / -sp）で画面幅に応じて片方だけを表示する。
 // 講座会員（ID 4・5）・無料会員・未ログインには出さない
 // （判定は shouldShowCourseInvitation()、src/lib/luckyDay/courseInvitation.ts）。
 // ---------------------------------------------------------------------------
-function CourseInvitation() {
+function CourseInvitation({ placement }: { placement: "pc" | "sp" }) {
   return (
-    <aside className="ld-course-invite" aria-label="擇日入門通信講座のご案内">
+    <aside className={`ld-course-invite ld-course-invite-${placement}`} aria-label="擇日入門通信講座のご案内">
       <p className="ld-course-invite-title">通書を使って擇日を学んでみませんか？</p>
-      <p className="ld-course-invite-text">
-        擇日の仕組みをより深く理解したい方のために、台湾の通書を使って学ぶ「擇日入門通信講座」をご用意しています。
-      </p>
-      <p className="ld-course-invite-text">
-        十二建除・二十八宿・神殺などの意味を学び、自分で日取りを選ぶための基礎を身につけます。
-      </p>
-      <a className="ld-course-invite-link" href={LUCKY_DAY_COURSE_URL}>
+      <p className="ld-course-invite-text">台湾の通書を教材に、十二建除・二十八宿・神殺などを学ぶ通信講座です。</p>
+      <a className="ld-course-invite-link" href={LUCKY_DAY_COURSE_URL} onClick={() => sendTakujitsuEvent("takujitsu_course_click")}>
         擇日入門通信講座の詳細を見る
       </a>
     </aside>
@@ -1411,6 +1416,9 @@ function SupportQuestionCard({
 }
 
 // ---------------------------------------------------------------------------
+/** takujitsu_app_open を送信済みか（ページ読み込みごとに false から始まる）。 */
+let appOpenSent = false;
+
 export default function LuckyDayClient({
   memberStatus,
   devModeActive = false,
@@ -1428,6 +1436,13 @@ export default function LuckyDayClient({
   devModeActive?: boolean;
 }) {
   const today = useMemo(() => getTodayInTokyo(), []);
+
+  // GA4: アプリの表示（ページ読み込み1回につき1回だけ。再描画・開発時の二重マウントでは送らない）。
+  useEffect(() => {
+    if (appOpenSent) return;
+    appOpenSent = true;
+    sendTakujitsuEvent("takujitsu_app_open");
+  }, []);
 
   // 「今日の吉凶」（PC・スマホとも常時1つだけ表示。初期値は今日。任意日にも変更可能）。
   const [leftDateIso, setLeftDateIso] = useState(() => today.iso);
@@ -1574,6 +1589,8 @@ export default function LuckyDayClient({
       return;
     }
 
+    // GA4: 目的を指定した検索を実行したとき（入力チェック通過後）だけ送る。検索条件は送らない。
+    sendTakujitsuEvent("takujitsu_date_search");
     setSearchLoading(true);
     try {
       // timezone: Asia/Tokyo。baseHour/baseMinuteは指定せず、既存の
@@ -1651,8 +1668,6 @@ export default function LuckyDayClient({
       </header>
 
       <MemberStatusBar memberStatus={memberStatus} />
-
-      {shouldShowCourseInvitation(memberStatus) && <CourseInvitation />}
 
       {/*
         「生年月日から個人の忌日を除外」ブロックは有料会員（isPaid、
@@ -1929,6 +1944,9 @@ export default function LuckyDayClient({
                 </>
               )}
             </div>
+
+            {/* 講座案内（PC）。検索・検索結果・日の詳細のどの表示でも、右側パネルの一番下。 */}
+            {shouldShowCourseInvitation(memberStatus) && <CourseInvitation placement="pc" />}
           </section>
         </div>
       </div>
@@ -1952,6 +1970,9 @@ export default function LuckyDayClient({
         だけに表示し、有料会員には表示しない。
       */}
       {!isPaid && <TakujitsuAdvisoryNotice />}
+
+      {/* 講座案内（スマホ）。どちらのタブを表示していても、ページ全体の最下部。 */}
+      {shouldShowCourseInvitation(memberStatus) && <CourseInvitation placement="sp" />}
     </main>
   );
 }
@@ -2052,8 +2073,8 @@ const CSS = `
 
 /* 擇日入門通信講座の案内（ID 2・3だけ、2026-10-20）。操作の邪魔にならない控えめな枠。 */
 .ld-course-invite {
-  margin: 0 0 16px;
-  padding: 12px 14px;
+  margin: 0 0 12px;
+  padding: 8px 14px;
   border: 1px solid #e3dfd2;
   border-radius: 10px;
   background: #faf8f2;
@@ -2061,20 +2082,27 @@ const CSS = `
   color: #55524b;
 }
 .ld-course-invite-title {
-  margin: 0 0 6px;
+  margin: 0 0 2px;
   font-size: 14px;
   font-weight: 700;
   color: #263a33;
 }
-.ld-course-invite-text { margin: 0 0 4px; line-height: 1.7; }
+.ld-course-invite-text { margin: 0; line-height: 1.6; }
 .ld-course-invite-link {
   display: inline-block;
-  margin-top: 4px;
+  margin-top: 2px;
   color: #3a5568;
   font-weight: 700;
   text-decoration: underline;
 }
 .ld-course-invite-link:hover { color: #263a33; }
+/* 配置（2026-10-20）: スマホはページ最下部（-sp）、PCは右側パネルの一番下（-pc）だけを表示する。 */
+.ld-course-invite-pc { display: none; }
+.ld-course-invite-sp { margin: 16px 0 0; }
+@media (min-width: 900px) {
+  .ld-course-invite-pc { display: block; margin: 20px 0 0; }
+  .ld-course-invite-sp { display: none; }
+}
 
 /*
   スマホ専用タブ（「今日の吉凶」⇔「目的から吉日を探す」）。
