@@ -19,7 +19,7 @@
 //   npx tsx tests/takujitsu_resolution_unit.manual.ts
 
 import { resolve } from "../src/lib/takujitsu/resolution";
-import type { ResolvedShinsatsuEntry } from "../src/lib/takujitsu/resolution";
+import type { ResolvedShinsatsuEntry, ResolutionRule } from "../src/lib/takujitsu/resolution";
 import type { ShinsatsuResult } from "../src/lib/takujitsu";
 
 let pass = 0;
@@ -92,19 +92,24 @@ console.log("根拠: docs/takujitsu_resolution_rules.md（本文の解除・増�
 
 // ---- 5. pendingルール → rawを変更せず、statusにも効力を反映しない ----
 {
-  // 九空（ルールNo.19、第2実装フェーズ後も pending のまま＝「月建」条件が
-  // 未確定のため）は「六合・月建・徳合がくれば解除」。徳合(天徳)を
-  // 満たしても、pending中は効力を発生させない。
+  // 2026-10-24 の監修判断で No.7（血支）・No.19（九空）も確定し、実ルールに pending は無くなった。
+  // pending の仕組みは、テスト用の pending ルールを resolve() に直接渡して検証する。
+  const PENDING_RULE: ResolutionRule = {
+    id: "T-pending", targets: ["九空"], requires: [{ names: ["天徳"], mode: "any" }],
+    combine: "any", kind: "cancel", pending: true, page: "test",
+  };
   const input = raw(["天徳"], ["九空"]);
   const beforeKichijin = [...input.kichijin];
   const beforeKyojin = [...input.kyojin];
-  const result = resolve(input);
+  const result = resolve(input, [PENDING_RULE]);
   const entry = findEntry(result.kyojin, "九空");
-  check("5. pendingルール(九空)は条件成立でもactiveのまま", entry?.status, "active");
+  check("5. pendingルールは条件成立でもactiveのまま", entry?.status, "active");
   checkTrue(
     "5. pendingルールの該当はappliedRulesに記録される（pending:true）",
-    entry?.appliedRules?.some((r) => r.ruleId === "19" && r.pending === true) ?? false,
+    entry?.appliedRules?.some((r) => r.ruleId === "T-pending" && r.pending === true) ?? false,
   );
+  // 実ルール No.19（九空）は確定済み：徳合で解除される
+  check("5. 実ルールNo.19：九空＋天徳 → cancelled", findEntry(resolve(raw(["天徳"], ["九空"])).kyojin, "九空")?.status, "cancelled");
   checkTrue("5. raw.kichijinが変更されていない", JSON.stringify(input.kichijin) === JSON.stringify(beforeKichijin));
   checkTrue("5. raw.kyojinが変更されていない", JSON.stringify(input.kyojin) === JSON.stringify(beforeKyojin));
 }

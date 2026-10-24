@@ -357,10 +357,13 @@ check("4. どちらもなし → neutral", computeVerdict(0, 0) === "neutral");
   const result = evaluateActivities({ resolution: r, buildingDay: JIANCHU_JIAN });
   const ev = result.evaluations.find((e) => e.activityId === "出軍");
   check("No.10: reduced状態では原典の忌（出軍等）は反映しない", ev === undefined);
-  check("No.10: unresolvedRestrictionsに生テキストが保持される", result.unresolvedRestrictions.length === 1);
-  check("No.10: unresolvedRestrictionsのsourceNameが大時", result.unresolvedRestrictions[0]?.sourceName === "大時");
-  check("No.10: unresolvedRestrictionsのdescriptionが原文と一致", result.unresolvedRestrictions[0]?.description === reason);
-  check("No.10: resolutionStatus=reducedが保持される", result.unresolvedRestrictions[0]?.resolutionStatus === "reduced");
+  // 2026-10-24 監修判断：「攻めであるビジネスは凶」を開市・立券交易・交易の残存忌として用事へ対応させた
+  // （reducedStillUnfavorableActivityIds）。生テキストの unresolvedRestrictions は使わなくなった。
+  for (const id of ["開市", "立券交易", "交易"]) {
+    const e = result.evaluations.find((x) => x.activityId === id);
+    check(`No.10: reduced でも ${id} は大時の忌が残る`, e?.negativeSources.some((s) => s.sourceName === "大時" && s.resolutionStatus === "reduced") === true);
+  }
+  check("No.10: unresolvedRestrictionsは使わない（用事へ対応済み）", result.unresolvedRestrictions.length === 0);
 }
 
 // -----------------------------------------------------------------------

@@ -102,9 +102,11 @@ const JIANCHU_KEN = resolveJianchu({ monthBranch: "寅", dayBranch: "寅" });
   const ids = ["修造", "動土", "修造動土", "建築", "祝賀", "寿器", "上官赴任", "入学求師", "冠帶"];
   check("P1-2 死気に建築系4件と祝い事5件", includesAll(raw("kyojin", "死気").unfavorableActivityIds, ids));
   for (const id of ["結婚姻", "嫁娶", "納采", "宴會"]) check(`P1-2 死気に ${id} は加えていない`, !raw("kyojin", "死気").unfavorableActivityIds.includes(id));
-  const r = day(11, 13);
-  check("P1-2 2026-11-13 は死気（定日）", r.shinsatsu.kyojin.includes("死気") && r.buildingDay.name === "定");
-  for (const id of ids) check(`P1-2 2026-11-13 ${id} に死気の忌`, hasNeg(r, id, "死気"));
+  // 2026-11-13 は歳徳合で死気が軽減される（P2 監修判断 No.25）ため、徳合の無い 11/25 で確認する
+  const r = day(11, 25);
+  check("P1-2 2026-11-25 は死気（定日）・徳合なし", r.shinsatsu.kyojin.includes("死気") && r.buildingDay.name === "定" &&
+    r.resolution.kyojin.find((e) => e.name === "死気")?.status === "active");
+  for (const id of ids) check(`P1-2 2026-11-25 ${id} に死気の忌`, hasNeg(r, id, "死気"));
 }
 
 // P1-3 母倉の季月「巳午」

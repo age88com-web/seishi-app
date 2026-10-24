@@ -377,7 +377,8 @@ export const ACTIVITY_PROFILES: ActivityProfile[] = [
   { sourceType: "kyojin", sourceName: "死神", favorableActivityIds: [], negativeMode: "all_except", unfavorableActivityIds: [], exceptionActivityIds: ["伐木", "修飾垣墻", "入学求師", "剃頭", "取魚", "安碓磑", "平治道塗", "捕捉", "掃舎宇", "整手足甲", "沐浴", "畋獵", "破屋壊垣", "祭祀", "補垣塞穴"], notes: "" },
   // 死気（定日）：擇日テキスト4）「…これらの日に修造・動土・増改築・家を建てたりすると…常識となっている」の修造・動土・
   // 修造動土・建築と、「その他祝い事全般」のうち資料が祝い事と明示する5件（天乙絶気と同じ基準）を追加（2026-10-24）。
-  { sourceType: "kyojin", sourceName: "死気", favorableActivityIds: [], unfavorableActivityIds: ["修置産室", "出征", "栽種", "求醫療病", "解除", "修造", "動土", "修造動土", "建築", "祝賀", "寿器", "上官赴任", "入学求師", "冠帶"] },
+  // 死気は徳合で軽減され、求醫療病だけ残る（resolution No.25、神殺象意。2026-10-24 監修判断）。
+  { sourceType: "kyojin", sourceName: "死気", favorableActivityIds: [], unfavorableActivityIds: ["修置産室", "出征", "栽種", "求醫療病", "解除", "修造", "動土", "修造動土", "建築", "祝賀", "寿器", "上官赴任", "入学求師", "冠帶"], reducedStillUnfavorableActivityIds: ["求醫療病"] },
   { sourceType: "kyojin", sourceName: "血支", favorableActivityIds: [], unfavorableActivityIds: ["上官赴任", "修置産室", "修造動土", "出庫", "出貨財", "堅柱上樑", "嫁娶", "安床", "宴會", "求醫療病", "祭祀", "納采", "結婚姻", "進人口", "鍼灸", "開倉庫", "開市", "開渠穿井", "移徒"] },
   { sourceType: "kyojin", sourceName: "劫殺", favorableActivityIds: [], negativeMode: "all_except", unfavorableActivityIds: [], exceptionActivityIds: ["伐木", "入学求師", "取魚", "平治道塗", "捕捉", "掃舎宇", "沐浴", "畋獵", "祭祀"], notes: "" },
   { sourceType: "kyojin", sourceName: "災殺", favorableActivityIds: [], negativeMode: "all_except", unfavorableActivityIds: [], exceptionActivityIds: ["伐木", "入学求師", "取魚", "平治道塗", "捕捉", "掃舎宇", "沐浴", "畋獵", "祭祀"], notes: "" },
@@ -385,8 +386,9 @@ export const ACTIVITY_PROFILES: ActivityProfile[] = [
   { sourceType: "kyojin", sourceName: "月厭", favorableActivityIds: ["祈福"], negativeMode: "all_except", unfavorableActivityIds: [], exceptionActivityIds: ["入学求師", "取魚", "捕捉", "掃舎宇", "沐浴", "畋獵", "祭祀"], notes: "" },
   { sourceType: "kyojin", sourceName: "厭對", favorableActivityIds: [], unfavorableActivityIds: ["乗船渡水", "取魚", "嫁娶"] },
   { sourceType: "kyojin", sourceName: "月刑", favorableActivityIds: [], negativeMode: "all_except", unfavorableActivityIds: [], exceptionActivityIds: ["伐木", "入学求師", "取魚", "平治道塗", "捕捉", "掃舎宇", "沐浴", "畋獵", "祭祀"], notes: "" },
-  { sourceType: "kyojin", sourceName: "大時", favorableActivityIds: [], unfavorableActivityIds: ["上官赴任", "修倉庫", "修置産室", "修造動土", "出貨財", "出軍", "取魚", "堅柱上樑", "修造", "嫁娶", "安床", "會親友", "栽種", "求嗣", "求醫療病", "牧養", "祈福", "立券交易", "築堤防", "納畜", "納財", "納采", "結婚姻", "臨官", "解除", "進人口", "遠行", "開倉庫", "開市", "移徒"] },
-  { sourceType: "kyojin", sourceName: "天吏", favorableActivityIds: [], unfavorableActivityIds: ["上官赴任", "修倉庫", "修置産室", "修造動土", "出貨財", "出軍", "取魚", "堅柱上樑", "修造", "嫁娶", "安床", "會親友", "栽種", "求嗣", "求醫療病", "牧養", "祈福", "立券交易", "築堤防", "納畜", "納財", "納采", "結婚姻", "臨官", "解除", "進人口", "遠行", "開倉庫", "開市", "移徒"] },
+  // 大時・天吏は徳合・天赦で軽減されても「攻めであるビジネスは凶」（本文11））として開市・立券交易・交易を残す（2026-10-24 監修判断）。
+  { sourceType: "kyojin", sourceName: "大時", favorableActivityIds: [], unfavorableActivityIds: ["上官赴任", "修倉庫", "修置産室", "修造動土", "出貨財", "出軍", "取魚", "堅柱上樑", "修造", "嫁娶", "安床", "會親友", "栽種", "求嗣", "求醫療病", "牧養", "祈福", "立券交易", "築堤防", "納畜", "納財", "納采", "結婚姻", "臨官", "解除", "進人口", "遠行", "開倉庫", "開市", "移徒"], reducedStillUnfavorableActivityIds: ["開市", "立券交易", "交易"] },
+  { sourceType: "kyojin", sourceName: "天吏", favorableActivityIds: [], unfavorableActivityIds: ["上官赴任", "修倉庫", "修置産室", "修造動土", "出貨財", "出軍", "取魚", "堅柱上樑", "修造", "嫁娶", "安床", "會親友", "栽種", "求嗣", "求醫療病", "牧養", "祈福", "立券交易", "築堤防", "納畜", "納財", "納采", "結婚姻", "臨官", "解除", "進人口", "遠行", "開倉庫", "開市", "移徒"], reducedStillUnfavorableActivityIds: ["開市", "立券交易", "交易"] },
   { sourceType: "kyojin", sourceName: "天賊", favorableActivityIds: [], unfavorableActivityIds: ["修倉庫", "出貨財", "遠行", "開倉庫"] },
   { sourceType: "kyojin", sourceName: "兵禁", favorableActivityIds: [], unfavorableActivityIds: [], notes: "" },
   { sourceType: "kyojin", sourceName: "大煞", favorableActivityIds: [], unfavorableActivityIds: [], notes: "" },

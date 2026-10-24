@@ -199,7 +199,8 @@ export const RESOLUTION_RULES: readonly ResolutionRule[] = [
   },
   {
     id: "12",
-    targets: ["土符"],
+    // 2026-10-24 監修判断：本文15）「土符・地嚢」の項の記述・神殺象意〔土符〕〔地囊〕「猶忌」のため地嚢にも適用。
+    targets: ["土符", "地嚢"],
     requires: [anyOf(DEHE_GROUP), anyOf(SHAGAN_GROUP)],
     combine: "all",
     kind: "aggravate",
@@ -211,7 +212,8 @@ export const RESOLUTION_RULES: readonly ResolutionRule[] = [
   },
   {
     id: "14",
-    targets: ["氣往亡"],
+    // 2026-10-24 監修判断：本文17）往亡の項（氣往亡の定義を含む）の記述のため往亡にも適用。
+    targets: ["氣往亡", "往亡"],
     requires: [anyOf(DEHE_GROUP), anyOf(SHAGAN_GROUP)],
     combine: "any",
     kind: "aggravate",
@@ -317,24 +319,58 @@ export const RESOLUTION_RULES: readonly ResolutionRule[] = [
     requires: [anyOf(["歳徳", "歳徳合", "月徳", "月徳合"]), anyOf(SHAGAN_GROUP)],
     combine: "any",
     kind: "cancel",
-    pending: true,
+    pending: false,
     page: "p.20",
     note:
-      "閉日（血支）：「歳徳・(歳徳)合、月徳・(月徳)合、赦願など」。文末の「など」が非網羅的で" +
-      "範囲を確定できないため保留（徳合・赦願・六合の定義確定とは別の理由）。",
+      "閉日（血支）：「歳徳・(歳徳)合、月徳・(月徳)合、赦願など」。2026-10-24 監修判断で、列挙された" +
+      "歳徳・歳徳合・月徳・月徳合・赦願（天赦・天願）のいずれかで解除とした（「など」は広げない）。",
   },
   {
     id: "19",
     targets: ["九空"],
-    requires: [anyOf(["六合", ...DEHE_GROUP])],
+    requires: [anyOf(["六合", "小時", ...DEHE_GROUP])],
     combine: "any",
     kind: "cancel",
-    pending: true,
+    pending: false,
     page: "p.28",
     note:
-      "九空：「六合・月建（地支の蔵干が合となるため冲が解除）・徳合がくれば解除」。" +
-      "六合・徳合の部分は確定しているが、「月建」条件の意味が未確定のため本ルール全体を保留する" +
-      "（月建条件はrequiresに含めていない＝未確定分は反映していない。徳合・赦願・六合の定義確定" +
-      "とは別の理由）。",
+      "九空：「六合・月建（地支の蔵干が合となるため冲が解除）・徳合がくれば解除」。2026-10-24 監修判断で、" +
+      "月建は凶神「月建（小時）」の成立と読み、六合・小時・徳合のいずれかで解除とした。",
+  },
+  {
+    id: "15",
+    targets: ["五墓"],
+    requires: [anyOf(["月徳"])],
+    combine: "any",
+    kind: "cancel",
+    pending: false,
+    page: "p.26",
+    note:
+      "五墓：「午月と子月に月徳に遭えば忌まない」（2026-10-24 監修判断で本文を採用）。五墓の日に月徳が" +
+      "重なるのは午月（丙戌）と子月（壬辰）だけのため、月徳の成立だけで本文の条件と同じになる。",
+  },
+  {
+    id: "25",
+    targets: ["死気"],
+    requires: [anyOf(DEHE_GROUP)],
+    combine: "any",
+    kind: "reduce",
+    pending: false,
+    page: "神殺象意.pdf〔死氣〕",
+    note:
+      "死気：神殺象意「與德合併，止忌求醫療病，餘不忌」（2026-10-24 監修判断）。徳合が重なれば" +
+      "求醫療病だけ忌が残る（ActivityProfile の reducedStillUnfavorableActivityIds）。",
+  },
+  {
+    id: "26",
+    targets: ["八専"],
+    requires: [anyOf(["天願"])],
+    combine: "any",
+    kind: "cancel",
+    pending: false,
+    page: "神殺象意.pdf〔八專〕",
+    note:
+      "八専：神殺象意「與德合併，猶忌；與天願併，則不忌」（2026-10-24 監修判断）。天願が重なれば解除" +
+      "（徳合では解除しない）。",
   },
 ];
