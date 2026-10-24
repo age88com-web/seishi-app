@@ -18,6 +18,7 @@ import type { ResolvedShinsatsuEntry, ResolvedShinsatsuResult } from "../src/lib
 import type { JianchuResult } from "../src/lib/takujitsu/jianchu";
 import type { Shuku28Info } from "../src/lib/takujitsu/shuku28";
 import { calculateTakujitsu } from "../src/lib/takujitsu";
+import { ACTIVITY_PROFILES, getActivityProfile, ACTIVITY_TERM_EXPANSIONS } from "../src/lib/takujitsu/activity";
 
 let pass = 0;
 let fail = 0;
@@ -877,6 +878,39 @@ for (const id of SEI_ACTIVITIES) {
   for (const oldId of ["婚姻", "結婚", "結納"]) {
     check(`L. 成：旧id ${oldId} は削除済みで評価に出ない`,
       result.evaluations.find((e) => e.activityId === oldId) === undefined);
+  }
+}
+
+// L. 土王用事：原典の「修造動土」の忌を修造・動土・建築へ展開（2026-10-24、activityTermExpansions.ts）
+{
+  const raw = ACTIVITY_PROFILES.find((p) => p.sourceType === "kyojin" && p.sourceName === "土王用事")!;
+  check("L. ACTIVITY_PROFILES（原典転記）の土王用事は修造動土のみで修造・動土・建築を含まない",
+    raw.unfavorableActivityIds.includes("修造動土") && !["修造", "動土", "建築"].some((id) => raw.unfavorableActivityIds.includes(id)));
+  const used = getActivityProfile("kyojin", "土王用事")!;
+  for (const id of ["修造動土", "修造", "動土", "建築"]) {
+    check(`L. 判定用プロファイルの土王用事は ${id} を忌とする`, used.unfavorableActivityIds.includes(id));
+  }
+  check("L. 展開しても既存の忌15件はそのまま", raw.unfavorableActivityIds.every((id) => used.unfavorableActivityIds.includes(id)) && used.unfavorableActivityIds.length === raw.unfavorableActivityIds.length + 3);
+
+  const r = resolution([], [entry("土王用事", "active")]);
+  const result = evaluateActivities({ resolution: r, buildingDay: JIANCHU_JIAN });
+  for (const id of ["修造動土", "修造", "動土", "建築"]) {
+    const ev = result.evaluations.find((e) => e.activityId === id);
+    check(`L. 土王用事のみ → ${id} は bad`, ev?.verdict === "bad" && ev.negativeSources.some((s) => s.sourceName === "土王用事"));
+  }
+  // 土王用事以外の神殺には展開しない（例：土符の修造・動土は変化なし）
+  const dofu = getActivityProfile("kyojin", "土符")!;
+  check("L. 土符には展開しない（修造・動土は忌に入らない）", !dofu.unfavorableActivityIds.includes("修造") && !dofu.unfavorableActivityIds.includes("動土"));
+  check("L. 展開表の登録は土王用事の1件のみ", ACTIVITY_TERM_EXPANSIONS.length === 1 && ACTIVITY_TERM_EXPANSIONS[0].sourceName === "土王用事");
+}
+
+// M. 実日付：2026-10-23・10-24（秋土用中）は4用事とも吉に残らない
+for (const day of [23, 24]) {
+  const tk = calculateTakujitsu({ year: 2026, month: 10, day, hour: 12, minute: 0, timezone: "Asia/Tokyo" });
+  const result = evaluateActivities({ resolution: tk.resolution, buildingDay: tk.buildingDay, shuku28: tk.shuku28 });
+  for (const id of ["修造動土", "修造", "動土", "建築"]) {
+    const ev = result.evaluations.find((e) => e.activityId === id);
+    check(`M. 2026-10-${day} ${id} は吉でなく、土王用事が忌に入る`, ev !== undefined && ev.verdict !== "good" && ev.negativeSources.some((s) => s.sourceName === "土王用事"));
   }
 }
 

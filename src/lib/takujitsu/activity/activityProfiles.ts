@@ -174,6 +174,7 @@
 //   （jianchu「危」のActivityProfileには「作灶」を追加していない）。
 
 import type { ActivityProfile } from "./types";
+import { applyTermExpansions } from "./activityTermExpansions";
 
 const SOLAR_TERMS_SOUKOU_TO_RISSHUN = ["霜降", "立冬", "小雪", "大雪", "冬至", "小寒", "大寒"];
 const SOLAR_TERMS_USUI_TO_RIKKA = ["雨水", "啓蟄", "春分", "清明", "穀雨"];
@@ -393,8 +394,11 @@ export const ACTIVITY_PROFILES: ActivityProfile[] = [
   { sourceType: "kyojin", sourceName: "龍禁", favorableActivityIds: [], unfavorableActivityIds: ["乗船渡水"] },
 ];
 
+// 判定に使うプロファイルは、原典の一続きの用事語（修造動土など）を分割用事へ
+// 展開する対応表（activityTermExpansions.ts）を適用したもの。ACTIVITY_PROFILES
+// 自体は原典の転記のまま変更しない。
 const PROFILE_INDEX: Map<string, ActivityProfile> = new Map(
-  ACTIVITY_PROFILES.map((p) => [`${p.sourceType}:${p.sourceName}`, p]),
+  ACTIVITY_PROFILES.map((p) => [`${p.sourceType}:${p.sourceName}`, applyTermExpansions(p)]),
 );
 
 export function getActivityProfile(

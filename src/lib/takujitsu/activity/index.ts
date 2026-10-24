@@ -21,6 +21,8 @@ export type {
   ActivityEvaluationResult,
 } from "./types";
 export { ACTIVITY_PROFILES, getActivityProfile } from "./activityProfiles";
+export { ACTIVITY_TERM_EXPANSIONS, applyTermExpansions } from "./activityTermExpansions";
+export type { ActivityTermExpansion } from "./activityTermExpansions";
 export { evaluateActivities, computeVerdict } from "./evaluateActivities";
 export type { EvaluateActivitiesInput } from "./evaluateActivities";
 
