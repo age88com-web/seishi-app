@@ -469,13 +469,17 @@ check("4. どちらもなし → neutral", computeVerdict(0, 0) === "neutral");
 }
 
 // J. 青龍＋吉神positive＋凶神negativeが同じ用事 → mixed（双方保持）
+// 2026-10-24: 裁衣は土王用事の忌ではない（長星・短星の忌の取り違えを修正）ため、
+// 三合の宜と土王用事の忌が重なる「修倉庫」で検証する。
 {
-  const r = resolution([entry("青龍", "active"), entry("三合", "active")], [entry("土王用事", "active")]); // 裁衣: 三合=宜, 土王用事=忌
+  const r = resolution([entry("青龍", "active"), entry("三合", "active")], [entry("土王用事", "active")]); // 修倉庫: 三合=宜, 土王用事=忌
   const result = evaluateActivities({ resolution: r, buildingDay: JIANCHU_JIAN });
-  const ev = result.evaluations.find((e) => e.activityId === "裁衣");
-  check("J. 裁衣のverdict=mixed（原典にない優先順位を作らない）", ev?.verdict === "mixed");
-  check("J. 裁衣のpositiveSourcesに青龍（三合追従）", ev?.positiveSources.some((s) => s.sourceName === "青龍") === true);
-  check("J. 裁衣のnegativeSourcesに青龍（土王用事追従）", ev?.negativeSources.some((s) => s.sourceName === "青龍") === true);
+  const ev = result.evaluations.find((e) => e.activityId === "修倉庫");
+  check("J. 修倉庫のverdict=mixed（原典にない優先順位を作らない）", ev?.verdict === "mixed");
+  check("J. 修倉庫のpositiveSourcesに青龍（三合追従）", ev?.positiveSources.some((s) => s.sourceName === "青龍") === true);
+  check("J. 修倉庫のnegativeSourcesに青龍（土王用事追従）", ev?.negativeSources.some((s) => s.sourceName === "青龍") === true);
+  const saii = result.evaluations.find((e) => e.activityId === "裁衣");
+  check("J. 裁衣は土王用事の忌ではない（三合の宜だけ → good）", saii?.verdict === "good" && !saii.negativeSources.some((s) => s.sourceName === "土王用事"));
 }
 
 // K. 十二建除・二十八宿はCOMPOSITEの参照対象外
@@ -890,7 +894,11 @@ for (const id of SEI_ACTIVITIES) {
   for (const id of ["修造動土", "修造", "動土", "建築"]) {
     check(`L. 判定用プロファイルの土王用事は ${id} を忌とする`, used.unfavorableActivityIds.includes(id));
   }
-  check("L. 展開しても既存の忌15件はそのまま", raw.unfavorableActivityIds.every((id) => used.unfavorableActivityIds.includes(id)) && used.unfavorableActivityIds.length === raw.unfavorableActivityIds.length + 3);
+  check("L. 原典の土王用事の忌は11件", raw.unfavorableActivityIds.length === 11 &&
+    ["築堤防", "修造動土", "修倉庫", "修置産室", "開渠穿井", "安碓磑", "修飾垣墻", "平治道塗", "破屋壊垣", "栽種", "破土"].every((id) => raw.unfavorableActivityIds.includes(id)));
+  check("L. 長星・短星の忌の取り違え4件（開市・納財・立券交易・裁衣）は含まない",
+    !["開市", "納財", "立券交易", "裁衣"].some((id) => used.unfavorableActivityIds.includes(id)));
+  check("L. 判定時の土王用事の忌は原典11件＋展開3件＝14件", raw.unfavorableActivityIds.every((id) => used.unfavorableActivityIds.includes(id)) && used.unfavorableActivityIds.length === 14);
 
   const r = resolution([], [entry("土王用事", "active")]);
   const result = evaluateActivities({ resolution: r, buildingDay: JIANCHU_JIAN });
@@ -911,6 +919,14 @@ for (const day of [23, 24]) {
   for (const id of ["修造動土", "修造", "動土", "建築"]) {
     const ev = result.evaluations.find((e) => e.activityId === id);
     check(`M. 2026-10-${day} ${id} は吉でなく、土王用事が忌に入る`, ev !== undefined && ev.verdict !== "good" && ev.negativeSources.some((s) => s.sourceName === "土王用事"));
+  }
+  for (const id of ["築堤防", "修倉庫", "破土"]) {
+    const ev = result.evaluations.find((e) => e.activityId === id);
+    check(`M. 2026-10-${day} ${id} には土王用事の忌が付く`, ev !== undefined && ev.negativeSources.some((s) => s.sourceName === "土王用事"));
+  }
+  for (const id of ["開市", "納財", "立券交易", "裁衣"]) {
+    const ev = result.evaluations.find((e) => e.activityId === id);
+    check(`M. 2026-10-${day} ${id} には土王用事の忌が付かない`, ev === undefined || !ev.negativeSources.some((s) => s.sourceName === "土王用事"));
   }
 }
 

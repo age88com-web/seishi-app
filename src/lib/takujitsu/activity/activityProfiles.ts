@@ -172,6 +172,17 @@
 //   「き」。上記「かまど作り」の記載がある方）は全くの別概念。「作灶」の
 //   宜は**二十八宿の危宿**に属し、十二建除の危日には一切帰属しない
 //   （jianchu「危」のActivityProfileには「作灶」を追加していない）。
+//
+// 2026-10-24追記（土王用事の誤登録の修正。ユーザー確認・正式採用）:
+//   kyojin「土王用事」unfavorableActivityIdsから「開市」「納財」「立券交易」
+//   「裁衣」の4件を削除した。これは`docs/source/擇日テキスト.pdf`の同じ見開き
+//   （印字p.33-34）にある「29）長星、短星」の表横の「忌：開市、納財、立券交易、
+//   裁衣」を、31）土王用事の「（別記）」と取り違えて登録したもの
+//   （神殺象意.pdf〔長星〕〔短星〕も「忌進人口、裁衣、經絡、開市、立券交易、
+//   納財、納畜」で、〔土王用事〕には4件とも無い）。土王用事の忌は原文どおり
+//   11件（築堤防・修造動土・修倉庫・修置産室・開渠穿井・安碓磑・修飾垣墻・
+//   平治道塗・破屋壊垣・栽種・破土）。長星・短星への移し替えはしていない
+//   （神殺象意の7件と再照合のうえ別途実装する）。
 
 import type { ActivityProfile } from "./types";
 import { applyTermExpansions } from "./activityTermExpansions";
@@ -368,7 +379,7 @@ export const ACTIVITY_PROFILES: ActivityProfile[] = [
   { sourceType: "kyojin", sourceName: "遊禍", favorableActivityIds: [], unfavorableActivityIds: ["求嗣", "求醫療病", "祈福", "解除"], notes: "" },
   { sourceType: "kyojin", sourceName: "月忌日", favorableActivityIds: [], unfavorableActivityIds: ["祭祀", "宴會", "沐浴", "整容", "剃頭", "整手足甲", "求醫療病", "補垣塞穴", "掃舎宇", "平治道塗", "破屋壊垣"] },
   { sourceType: "kyojin", sourceName: "八節日", favorableActivityIds: [], unfavorableActivityIds: ["嫁娶", "上官赴任", "會親友", "出行", "進人口", "結婚姻", "納采", "移徒", "入宅", "開市", "立券交易", "畋獵", "取魚", "伐木"] },
-  { sourceType: "kyojin", sourceName: "土王用事", favorableActivityIds: [], unfavorableActivityIds: ["築堤防", "修造動土", "修倉庫", "修置産室", "開渠穿井", "安碓磑", "修飾垣墻", "平治道塗", "破屋壊垣", "栽種", "破土", "開市", "納財", "立券交易", "裁衣"] },
+  { sourceType: "kyojin", sourceName: "土王用事", favorableActivityIds: [], unfavorableActivityIds: ["築堤防", "修造動土", "修倉庫", "修置産室", "開渠穿井", "安碓磑", "修飾垣墻", "平治道塗", "破屋壊垣", "栽種", "破土"] },
   { sourceType: "kyojin", sourceName: "横天朱雀", favorableActivityIds: [], unfavorableActivityIds: ["嫁娶", "上梁", "安葬", "移徒"] },
   { sourceType: "kyojin", sourceName: "四不詳", favorableActivityIds: [], unfavorableActivityIds: ["上官赴任", "開市", "交易"] },
   { sourceType: "kyojin", sourceName: "上兀", favorableActivityIds: [], unfavorableActivityIds: ["上官赴任", "入学求師", "乗船渡水"] },
