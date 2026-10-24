@@ -898,7 +898,9 @@ for (const id of SEI_ACTIVITIES) {
     ["築堤防", "修造動土", "修倉庫", "修置産室", "開渠穿井", "安碓磑", "修飾垣墻", "平治道塗", "破屋壊垣", "栽種", "破土"].every((id) => raw.unfavorableActivityIds.includes(id)));
   check("L. 長星・短星の忌の取り違え4件（開市・納財・立券交易・裁衣）は含まない",
     !["開市", "納財", "立券交易", "裁衣"].some((id) => used.unfavorableActivityIds.includes(id)));
-  check("L. 判定時の土王用事の忌は原典11件＋展開3件＝14件", raw.unfavorableActivityIds.every((id) => used.unfavorableActivityIds.includes(id)) && used.unfavorableActivityIds.length === 14);
+  // 2026-10-24: 土王用事の実務展開（土地を動かす行為）を追加し、判定時は原典11件＋展開17件＝28件
+  // （詳細は tests/takujitsu_doyo_expansion_unit.manual.ts）。
+  check("L. 判定時の土王用事の忌は原典11件＋展開17件＝28件", raw.unfavorableActivityIds.every((id) => used.unfavorableActivityIds.includes(id)) && used.unfavorableActivityIds.length === 28);
 
   const r = resolution([], [entry("土王用事", "active")]);
   const result = evaluateActivities({ resolution: r, buildingDay: JIANCHU_JIAN });
@@ -909,7 +911,7 @@ for (const id of SEI_ACTIVITIES) {
   // 土王用事以外の神殺には展開しない（例：土符の修造・動土は変化なし）
   const dofu = getActivityProfile("kyojin", "土符")!;
   check("L. 土符には展開しない（修造・動土は忌に入らない）", !dofu.unfavorableActivityIds.includes("修造") && !dofu.unfavorableActivityIds.includes("動土"));
-  check("L. 展開表の登録は土王用事の1件のみ", ACTIVITY_TERM_EXPANSIONS.length === 1 && ACTIVITY_TERM_EXPANSIONS[0].sourceName === "土王用事");
+  check("L. 展開表の登録はすべて土王用事", ACTIVITY_TERM_EXPANSIONS.length > 0 && ACTIVITY_TERM_EXPANSIONS.every((e) => e.sourceType === "kyojin" && e.sourceName === "土王用事"));
 }
 
 // M. 実日付：2026-10-23・10-24（秋土用中）は4用事とも吉に残らない

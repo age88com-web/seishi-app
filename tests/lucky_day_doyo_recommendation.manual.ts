@@ -63,8 +63,16 @@ function goodIds(r: ReturnType<typeof day>): string[] {
   const { kept, excluded } = splitDoyoRecommendedIds(good, true);
   check("2. 10/24 は除外が1件以上ある（注意文を出す）", excluded.length > 0, String(excluded.length));
   check("2. 10/24 の「適したこと」に対象用事が1件も残らない", kept.every((id) => !isDoyoRecommendationExcluded(id)));
-  for (const id of ["作灶", "起基定硬", "上梁", "安門", "修宅日", "作厠"]) {
+  // 作灶・上梁・安門はエンジン上は吉のまま（表示フィルターだけで外す）。
+  // 起基定硬・修宅日・作厠は 2026-10-24 の土王用事の実務展開で、エンジン上も土王用事の忌になった。
+  for (const id of ["作灶", "上梁", "安門"]) {
     check(`2. 10/24 ${id} はエンジン上は吉のまま（判定は変えない）`, good.includes(id));
+  }
+  for (const id of ["起基定硬", "修宅日", "作厠"]) {
+    const ev = r.activities.evaluations.find((e) => e.activityId === id);
+    check(`2. 10/24 ${id} はエンジン上も土王用事の忌（吉ではない）`, !good.includes(id) && ev?.negativeSources.some((s) => s.sourceName === "土王用事") === true);
+  }
+  for (const id of ["作灶", "起基定硬", "上梁", "安門", "修宅日", "作厠"]) {
     check(`2. 10/24 ${id} は「適したこと」に残らない`, !kept.includes(id));
   }
   for (const id of ["移徒", "入宅", "搬入", "伐木", "安吟"]) {
