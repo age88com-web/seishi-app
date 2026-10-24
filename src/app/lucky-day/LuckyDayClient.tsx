@@ -85,6 +85,12 @@ import type { LuckyDayPurpose, LuckyDayActivityGroup, DirectionWheelSlot, Direct
 import type { TakujitsuMemberStatus } from "@/lib/luckyDay/auth/member";
 // 講座案内の表示判定（ID 2・3だけ、2026-10-20追加）。表示判定のみの純関数。
 import { LUCKY_DAY_COURSE_URL, shouldShowCourseInvitation } from "@/lib/luckyDay/courseInvitation";
+import {
+  LUCKY_DAY_DOYO_NOTICE,
+  isDoyoDayFromKyojin,
+  splitDoyoRecommendedDays,
+  splitDoyoRecommendedIds,
+} from "@/lib/luckyDay/doyoRecommendation";
 // 吉凶方位（directionMarkers）は Server Action（getDayDetailAction）側で
 // 許可判定込みで計算・返却される。ここでは戻り値の型だけをimportする
 // （calculateDailyDirections・buildDirectionWheelMarkersはクライアントでは
@@ -168,6 +174,7 @@ function VerdictSection({
   expanded,
   onToggleExpand,
   grouped,
+  notice,
 }: {
   verdict: ActivityVerdict;
   /** 件数表示・truncate判定用の対象id一覧。 */
@@ -181,6 +188,8 @@ function VerdictSection({
    * （「109活動をすべて見る」時のみ使用。truncateはしない）。
    */
   grouped?: GroupedVerdict;
+  /** 見出しの直下に出す注意文（土用中の推薦除外が1件以上あったときだけ渡す）。 */
+  notice?: string;
 }) {
   if (grouped) {
     return (
@@ -188,6 +197,7 @@ function VerdictSection({
         <h3 className="ld-verdict-title">
           {LUCKY_DAY_VERDICT_LABELS[verdict]}（{ids.length}件）
         </h3>
+        {notice && <p className="ld-doyo-note">{notice}</p>}
         {grouped.length === 0 ? (
           <p className="ld-verdict-empty">該当する項目はありません</p>
         ) : (
@@ -214,6 +224,7 @@ function VerdictSection({
   return (
     <div className="ld-verdict-block" data-verdict={verdict}>
       <h3 className="ld-verdict-title">{LUCKY_DAY_VERDICT_LABELS[verdict]}</h3>
+      {notice && <p className="ld-doyo-note">{notice}</p>}
       {ids.length === 0 ? (
         <p className="ld-verdict-empty">該当する項目はありません</p>
       ) : (
@@ -683,18 +694,28 @@ function DayDetailCard({
     return map;
   }, [data]);
 
-  const primaryGroups = useMemo(
-    () => buildVerdictGroups(LUCKY_DAY_PRIMARY_ACTIVITY_IDS, evalById),
-    [evalById],
-  );
-  const allGroupedByVerdict = useMemo(
-    () => buildGroupedVerdictGroups(ACTIVITY_DEFINITIONS.map((d) => d.id), evalById),
-    [evalById],
-  );
-  const allFlatCounts = useMemo(
-    () => buildVerdictGroups(ACTIVITY_DEFINITIONS.map((d) => d.id), evalById),
-    [evalById],
-  );
+  // 一般向けの土用推薦除外（doyoRecommendation.ts、2026-10-24）。土用にかかる日
+  // （その日の凶神に土王用事がある日）は、建築・工事系の対象用事を「適したこと」から
+  // 外す。凶へは移さず、元の判定（evalById）はそのまま。
+  const isDoyoDay = isDoyoDayFromKyojin(data?.shinsatsu.kyojin ?? []);
+  const primaryGroups = useMemo(() => {
+    const groups = buildVerdictGroups(LUCKY_DAY_PRIMARY_ACTIVITY_IDS, evalById);
+    const { kept, excluded } = splitDoyoRecommendedIds(groups.good, isDoyoDay);
+    return { groups: { ...groups, good: kept }, doyoExcludedCount: excluded.length };
+  }, [evalById, isDoyoDay]);
+  const allGroupedByVerdict = useMemo(() => {
+    const grouped = buildGroupedVerdictGroups(ACTIVITY_DEFINITIONS.map((d) => d.id), evalById);
+    const good = grouped.good
+      .map(({ group, ids }) => ({ group, ids: splitDoyoRecommendedIds(ids, isDoyoDay).kept }))
+      .filter(({ ids }) => ids.length > 0);
+    return { ...grouped, good };
+  }, [evalById, isDoyoDay]);
+  const allFlatCounts = useMemo(() => {
+    const groups = buildVerdictGroups(ACTIVITY_DEFINITIONS.map((d) => d.id), evalById);
+    const { kept, excluded } = splitDoyoRecommendedIds(groups.good, isDoyoDay);
+    return { groups: { ...groups, good: kept }, doyoExcludedCount: excluded.length };
+  }, [evalById, isDoyoDay]);
+  const doyoExcludedCount = showAll ? allFlatCounts.doyoExcludedCount : primaryGroups.doyoExcludedCount;
 
   const dateParts = parseIsoDate(dateIso);
   const dateLabel = `${dateParts.year}年${dateParts.month}月${dateParts.day}日（${WEEKDAY_JA_SHORT[weekdayOfIso(dateIso)]}）`;
@@ -822,11 +843,12 @@ function DayDetailCard({
             <VerdictSection
               key={v}
               verdict={v}
-              ids={showAll ? allFlatCounts[v] : primaryGroups[v]}
+              ids={showAll ? allFlatCounts.groups[v] : primaryGroups.groups[v]}
               truncatable={!showAll}
               expanded={expandedVerdicts[v]}
               onToggleExpand={() => toggleVerdictExpand(v)}
               grouped={showAll ? allGroupedByVerdict[v] : undefined}
+              notice={v === "good" && doyoExcludedCount > 0 ? LUCKY_DAY_DOYO_NOTICE : undefined}
             />
           ))}
 
@@ -1454,6 +1476,8 @@ export default function LuckyDayClient({
     denied: boolean;
     /** null＝個人判定を行っていない（無料/未ログイン、または生年月日未入力）。 */
     personalByDate: PersonalResultByDate | null;
+    /** 検索期間のうち土用にかかる日（"YYYY-MM-DD"）。一般向けの土用推薦除外だけに使う。 */
+    doyoDates?: string[];
   }>({
     data: null,
     error: null,
@@ -1564,7 +1588,7 @@ export default function LuckyDayClient({
         birth: birthInput ?? undefined,
       });
       if (res.ok) {
-        setSearchResult({ data: res.data, error: null, denied: false, personalByDate: res.personalByDate });
+        setSearchResult({ data: res.data, error: null, denied: false, personalByDate: res.personalByDate, doyoDates: res.doyoDates });
       } else if (res.reason === "not_allowed") {
         setSearchResult({ data: null, error: null, denied: true, personalByDate: null });
       } else {
@@ -1580,13 +1604,21 @@ export default function LuckyDayClient({
   // ⑤結果: good/neutral/mixed/bad を統合せず、別々の配列のまま分類する
   // （既存 TakujitsuSearchDay.verdict をそのまま読むだけ。日ごとの
   // フォールバック ?? "neutral" は searchTakujitsuDays() 側で既に適用済み）。
-  const searchResultGroups = useMemo(() => {
+  // 一般向けの土用推薦除外（doyoRecommendation.ts）：対象用事の検索では、土用にかかる日を
+  // 「適した日」から外し、外した日数だけを表示する（凶へは移さない）。
+  const { searchResultGroups, searchDoyoExcludedCount } = useMemo(() => {
     const groups: Record<ActivityVerdict, TakujitsuSearchDay[]> = { good: [], neutral: [], mixed: [], bad: [] };
     for (const d of searchResult.data?.days ?? []) {
       groups[d.verdict].push(d);
     }
-    return groups;
-  }, [searchResult.data]);
+    if (!searchResult.data) return { searchResultGroups: groups, searchDoyoExcludedCount: 0 };
+    const { kept, excludedCount } = splitDoyoRecommendedDays(
+      groups.good,
+      searchResult.data.activityId,
+      new Set(searchResult.doyoDates ?? []),
+    );
+    return { searchResultGroups: { ...groups, good: kept }, searchDoyoExcludedCount: excludedCount };
+  }, [searchResult.data, searchResult.doyoDates]);
 
   // 検索結果の日付／カードをクリック → 指定日詳細（DayDetailCard）へ。
   // カテゴリー・具体的目的・期間・検索結果はすべて上の state に残ったまま
@@ -1861,6 +1893,9 @@ export default function LuckyDayClient({
                           <h4 className="ld-result-verdict-title">
                             {LUCKY_DAY_SEARCH_VERDICT_LABELS[v]}（{searchResultGroups[v].length}件）
                           </h4>
+                          {v === "good" && searchDoyoExcludedCount > 0 && (
+                            <p className="ld-doyo-note">土用期間のためおすすめ対象外：{searchDoyoExcludedCount}日</p>
+                          )}
                           {searchResultGroups[v].length === 0 ? (
                             <p className="ld-verdict-empty">該当する日はありません</p>
                           ) : (
@@ -2332,6 +2367,11 @@ const CSS = `
   font-size: 14px;
 }
 .ld-verdict-list li { margin-bottom: 2px; }
+.ld-doyo-note {
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: #6b5a2e;
+}
 .ld-verdict-empty {
   margin: 0;
   font-size: 13px;

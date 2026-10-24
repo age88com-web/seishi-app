@@ -32,7 +32,7 @@
 //   （＝不要な方位データをクライアントへ渡さない）。
 //   dailyDirections.ts・calculateTakujitsuFull() 自体は一切変更しない。
 
-import { calculateTakujitsuFull, searchTakujitsuDays } from "@/lib/takujitsu";
+import { calculateTakujitsuFull, resolveDoyoDayStatus, searchTakujitsuDays } from "@/lib/takujitsu";
 import type { TakujitsuFullResult, TakujitsuSearchResult } from "@/lib/takujitsu";
 import { calculateDailyDirections } from "@/lib/takujitsu/dailyDirections";
 import type { PersonalTakujitsuResult } from "@/lib/takujitsu/personal";
@@ -187,6 +187,12 @@ export type SearchDaysActionResult =
        * とは統合しない、完全に別レイヤーの値。
        */
       personalByDate: PersonalResultByDate | null;
+      /**
+       * 検索期間のうち土用にかかる日（土用入り日・土用中・土用明け日）の "YYYY-MM-DD"。
+       * 一般向けの土用推薦除外（doyoRecommendation.ts）だけが使う表示用の付加情報で、
+       * data（既存の擇日判定）は変更しない。
+       */
+      doyoDates: string[];
     }
   | { ok: false; reason: "invalid_input" | "not_allowed" | "search_error"; message?: string };
 
@@ -248,7 +254,15 @@ export async function searchDaysAction(params: SearchDaysActionParams): Promise<
       }
     }
 
-    return { ok: true, data, personalByDate };
+    const doyoDates: string[] = [];
+    for (const d of data.days) {
+      const status = resolveDoyoDayStatus({ year: d.year, month: d.month, day: d.day, hour: 12, minute: 0, timezone: "Asia/Tokyo" });
+      if (status.kind !== "土用外") {
+        doyoDates.push(`${String(d.year).padStart(4, "0")}-${String(d.month).padStart(2, "0")}-${String(d.day).padStart(2, "0")}`);
+      }
+    }
+
+    return { ok: true, data, personalByDate, doyoDates };
   } catch (e) {
     return { ok: false, reason: "search_error", message: e instanceof Error ? e.message : String(e) };
   }
