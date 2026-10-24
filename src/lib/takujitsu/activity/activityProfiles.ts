@@ -183,6 +183,14 @@
 //   11件（築堤防・修造動土・修倉庫・修置産室・開渠穿井・安碓磑・修飾垣墻・
 //   平治道塗・破屋壊垣・栽種・破土）。長星・短星への移し替えはしていない
 //   （神殺象意の7件と再照合のうえ別途実装する）。
+//
+// 2026-10-24追記2（長星・短星の忌。ユーザー確認・正式採用）:
+//   kyojin「長星」「短星」unfavorableActivityIdsに、神殺象意.pdf（萬年通書）
+//   「〔長星〕〔短星〕忌進人口、裁衣、經絡、開市、立券交易、納財、納畜」の7件を
+//   両方へ同じく登録した（經絡＝既存id「経絡」）。擇日テキスト.pdf 29）長星、短星
+//   （印字p.33-34）の「忌：開市、納財、立券交易、裁衣」はこの7件の部分集合。
+//   判定日（kyoushinGroup6.ts）は変更していない。月区分は農暦月を暫定採用し、
+//   節月の可能性は未確定事項として保留（docs/takujitsu_decisions.md）。
 
 import type { ActivityProfile } from "./types";
 import { applyTermExpansions } from "./activityTermExpansions";
@@ -398,8 +406,8 @@ export const ACTIVITY_PROFILES: ActivityProfile[] = [
   { sourceType: "kyojin", sourceName: "小空亡", favorableActivityIds: [], unfavorableActivityIds: [], notes: "" },
   { sourceType: "kyojin", sourceName: "天乙絶気", favorableActivityIds: ["埋坑", "作厠", "安碓磑"], unfavorableActivityIds: ["製寿衣"], notes: "" },
   { sourceType: "kyojin", sourceName: "四方耗", favorableActivityIds: [], unfavorableActivityIds: ["造倉庫", "造船"], notes: "" },
-  { sourceType: "kyojin", sourceName: "長星", favorableActivityIds: [], unfavorableActivityIds: [], notes: "" },
-  { sourceType: "kyojin", sourceName: "短星", favorableActivityIds: [], unfavorableActivityIds: [], notes: "" },
+  { sourceType: "kyojin", sourceName: "長星", favorableActivityIds: [], unfavorableActivityIds: ["進人口", "裁衣", "経絡", "開市", "立券交易", "納財", "納畜"], notes: "" },
+  { sourceType: "kyojin", sourceName: "短星", favorableActivityIds: [], unfavorableActivityIds: ["進人口", "裁衣", "経絡", "開市", "立券交易", "納財", "納畜"], notes: "" },
   { sourceType: "kyojin", sourceName: "揚公忌", favorableActivityIds: [], unfavorableActivityIds: [], notes: "" },
   { sourceType: "kyojin", sourceName: "刀砧日", favorableActivityIds: [], unfavorableActivityIds: ["伐木", "牧養", "納畜", "造畜柵"] },
   { sourceType: "kyojin", sourceName: "龍禁", favorableActivityIds: [], unfavorableActivityIds: ["乗船渡水"] },

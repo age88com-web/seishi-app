@@ -930,6 +930,36 @@ for (const day of [23, 24]) {
   }
 }
 
+// N. 長星・短星の忌7件（2026-10-24、神殺象意〔長星〕〔短星〕。擇日テキストの4件はその部分集合）
+{
+  const SEVEN = ["進人口", "裁衣", "経絡", "開市", "立券交易", "納財", "納畜"];
+  for (const name of ["長星", "短星"]) {
+    const p = getActivityProfile("kyojin", name)!;
+    check(`N. ${name} の忌は7件`, p.unfavorableActivityIds.length === 7 && SEVEN.every((id) => p.unfavorableActivityIds.includes(id)));
+    check(`N. ${name} の宜は0件`, p.favorableActivityIds.length === 0);
+    const result = evaluateActivities({ resolution: resolution([], [entry(name, "active")]), buildingDay: JIANCHU_JIAN });
+    for (const id of SEVEN) {
+      const ev = result.evaluations.find((e) => e.activityId === id);
+      check(`N. ${name}のみ → ${id} は bad`, ev?.verdict === "bad" && ev.negativeSources.some((s) => s.sourceName === name));
+    }
+    const spread = result.evaluations.filter((e) => e.negativeSources.some((s) => s.sourceName === name)).map((e) => e.activityId);
+    check(`N. ${name} の忌は7件以外へ広がらない`, spread.length === 7 && spread.every((id) => SEVEN.includes(id)));
+  }
+  // 実日付（現在の農暦月方式）：2026-02-23＝農暦1/7 長星、2026-09-28＝農暦8/18 短星
+  for (const [label, d, name] of [["2026-02-23", 23, "長星"], ["2026-09-28", 28, "短星"]] as const) {
+    const month = label === "2026-02-23" ? 2 : 9;
+    const tk = calculateTakujitsu({ year: 2026, month, day: d, hour: 12, minute: 0, timezone: "Asia/Tokyo" });
+    check(`N. ${label} は ${name} が成立`, tk.shinsatsu.kyojin.includes(name));
+    const result = evaluateActivities({ resolution: tk.resolution, buildingDay: tk.buildingDay, shuku28: tk.shuku28 });
+    for (const id of SEVEN) {
+      const ev = result.evaluations.find((e) => e.activityId === id);
+      check(`N. ${label} ${id} に ${name} の忌が付く`, ev !== undefined && ev.negativeSources.some((s) => s.sourceName === name));
+    }
+    const spread = result.evaluations.filter((e) => e.negativeSources.some((s) => s.sourceName === name)).map((e) => e.activityId);
+    check(`N. ${label} ${name} の忌は7件以外へ広がらない`, spread.every((id) => SEVEN.includes(id)));
+  }
+}
+
 console.log("[区分B] ロジック単体テスト（用途判定engine 第1フェーズ evaluateActivities）");
 console.log("根拠: docs/takujitsu_activity_rules.md ＋ docs/takujitsu_resolution_rules.md\n");
 console.log(`完全一致: ${pass} / ${pass + fail}`);
