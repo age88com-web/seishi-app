@@ -280,9 +280,12 @@ export const ACTIVITY_PROFILES: ActivityProfile[] = [
   { sourceType: "kichijin", sourceName: "天徳", positiveMode: "all_except", favorableActivityIds: [], positiveExceptionActivityIds: ["取魚", "畋獵"], unfavorableActivityIds: [], notes: "" },
   { sourceType: "kichijin", sourceName: "月徳", positiveMode: "all_except", favorableActivityIds: [], positiveExceptionActivityIds: ["取魚", "畋獵"], unfavorableActivityIds: [], notes: "" },
   { sourceType: "kichijin", sourceName: "天徳合", positiveMode: "all_except", favorableActivityIds: [], positiveExceptionActivityIds: ["取魚", "畋獵"], unfavorableActivityIds: [], notes: "" },
-  { sourceType: "kichijin", sourceName: "月徳合", positiveMode: "all_except", favorableActivityIds: [], positiveExceptionActivityIds: ["取魚", "畋獵"], unfavorableActivityIds: [], notes: "" },
-  { sourceType: "kichijin", sourceName: "歳徳", favorableActivityIds: ["修造", "動土", "嫁娶"], unfavorableActivityIds: [] },
-  { sourceType: "kichijin", sourceName: "歳徳合", favorableActivityIds: ["修造", "動土", "嫁娶"], unfavorableActivityIds: [] },
+  // 月徳合：擇日テキスト「結婚式や造宅は忌むため…やめた方が良い」により、結婚系・造作系を宜から外して忌とする（監修決定 P3 Q1＝C、2026-10-25）。
+  { sourceType: "kichijin", sourceName: "月徳合", positiveMode: "all_except", favorableActivityIds: [], positiveExceptionActivityIds: ["取魚", "畋獵", "結婚姻", "嫁娶", "納采", "結婚納采", "修造", "修造動土", "建築"], unfavorableActivityIds: ["結婚姻", "嫁娶", "納采", "結婚納采", "修造", "修造動土", "建築"], notes: "" },
+  // 歳徳・歳徳合：擇日テキスト5）「百事大吉」により ALL型（例外なし）とする（監修決定 P3 Q2＝B、2026-10-25）。
+  // 本文が挙げる修造・動土・嫁娶・解除（「この日に解除するのも良い」）はすべて ALL型に含まれる。
+  { sourceType: "kichijin", sourceName: "歳徳", positiveMode: "all_except", favorableActivityIds: [], positiveExceptionActivityIds: [], unfavorableActivityIds: [] },
+  { sourceType: "kichijin", sourceName: "歳徳合", positiveMode: "all_except", favorableActivityIds: [], positiveExceptionActivityIds: [], unfavorableActivityIds: [] },
   { sourceType: "kichijin", sourceName: "天赦", positiveMode: "all_except", favorableActivityIds: [], positiveExceptionActivityIds: ["取魚", "畋獵"], unfavorableActivityIds: [], notes: "" },
   { sourceType: "kichijin", sourceName: "月恩", favorableActivityIds: ["上官赴任", "修造", "修造動土", "出貨財", "動土", "堅柱上樑", "結婚姻", "栽種", "求嗣", "牧養", "祈福", "祭祀", "移徒", "納財", "納采", "解除", "開倉庫"], unfavorableActivityIds: [] },
   { sourceType: "kichijin", sourceName: "母倉", favorableActivityIds: ["栽種", "牧養", "納畜", "納財"], unfavorableActivityIds: [] },

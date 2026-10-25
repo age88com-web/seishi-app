@@ -107,7 +107,8 @@ export interface ActivityProfile {
   /**
    * 宜の記述方式。既定は"list"。"all_except"は神殺象意.pdfが「諸事皆宜、
    * 惟忌〜」と明記する6吉神（天徳・月徳・天徳合・月徳合・天赦・天願）
-   * だけに使う（docs/takujitsu_except_resolution_final.md 5章）。
+   * と、監修決定で「百事大吉」を ALL型とした歳徳・歳徳合（P3 Q2、2026-10-25）
+   * に使う（docs/takujitsu_except_resolution_final.md 5章）。
    */
   positiveMode?: ActivityPolarityMode;
   /** 宜とする用事のActivityDefinition id配列（positiveMode==="list"のとき使用。本文に明記が無ければ空配列）。 */
