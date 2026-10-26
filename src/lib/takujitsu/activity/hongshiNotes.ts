@@ -17,6 +17,13 @@
 //   ・推測による追加は禁止。docs/takujitsu_hongshi_activity_mapping.md §3で
 //     「表示可能」と確認した32件のみを登録する（COMPOUND／NO_MATCH・未実装神殺・
 //     絶対禁止（「用いてはいけない」「大凶」）の記述は対象外）。
+//   ・2026-10-26：五離の実装に伴い、結婚納采×五離を監修決定で追加した（33件）。
+//   ・2026-10-26 監修決定：洪氏錦嚢にのみ用事別の注意・可否があり、擇日テキスト・神殺象意・
+//     協紀辨方書の基本RULEに該当忌がないものは、データには保持するが画面表示しない。
+//     基本判定上その神殺が実際にその用事を忌む場合だけ注記を表示する（getHongshiNotesFor の
+//     条件3）。該当：天賊×動土・天賊×堅柱上樑・天賊×蓋屋・天賊×開市・天賊×結婚納采・
+//     天賊×安床・刀砧日×安床（基本RULEの忌は天賊＝修倉庫・出貨財・遠行・開倉庫、
+//     刀砧日＝伐木・牧養・納畜・造畜柵）。
 //
 // 出典: docs/source/擇日テキスト.pdf 印字ページ47〜64「洪氏錦嚢 解説」章。
 
@@ -76,6 +83,9 @@ export const HONGSHI_NOTES: HongshiNote[] = [
   { activityId: "結婚納采", unfavorableGod: "大時", conditionText: "用いて良い", sourcePage: "印字p.62", sourceText: "「月厭」「大時」「大吏」「五墓」「五離」「八専日」用いて良い。" },
   { activityId: "結婚納采", unfavorableGod: "天吏", conditionText: "用いて良い", sourcePage: "印字p.62", sourceText: "「月厭」「大時」「大吏」「五墓」「五離」「八専日」用いて良い。" },
   { activityId: "結婚納采", unfavorableGod: "五墓", conditionText: "用いて良い", sourcePage: "印字p.62", sourceText: "「月厭」「大時」「大吏」「五墓」「五離」「八専日」用いて良い。" },
+  // 五離：2026-10-26 の五離実装に伴い、洪氏錦嚢の source-specific な補足・異説として追加（監修決定）。
+  // 五離の基本RULE（activityProfiles.ts）や解除条件（resolution/rules.ts No.28）には反映しない。
+  { activityId: "結婚納采", unfavorableGod: "五離", conditionText: "用いて良い", sourcePage: "印字p.62", sourceText: "「月厭」「大時」「大吏」「五墓」「五離」「八専日」用いて良い。" },
 
   // --- 安床（安床忌例） ---
   { activityId: "安床", unfavorableGod: "天賊", conditionText: "吉神に抑えられれば良い", sourcePage: "印字p.64", sourceText: "「天賊」吉神に抑えられれば良い。" },
@@ -83,10 +93,27 @@ export const HONGSHI_NOTES: HongshiNote[] = [
 ];
 
 /**
+ * 洪氏注記の検索だけで使う語彙対応（2026-10-26 監修決定）。洪氏錦嚢の用事語
+ * 「結婚納采」は、内部 activity では「結婚姻」「納采」に分かれて登録されている
+ * （神殺象意の「結婚納采」を既存 profile が結婚姻・納采として転記しているため）。
+ * 洪氏の注記をそのどちらを見ているときにも引けるようにするための対応で、
+ * ActivityDefinition・ActivityProfile・resolution には一切使わない。
+ */
+export const HONGSHI_ACTIVITY_ALIASES: Readonly<Record<string, readonly string[]>> = {
+  結婚納采: ["結婚姻", "納采"],
+};
+
+/** 洪氏注記の用事語（note.activityId）が、表示中の activityId に当たるか。 */
+function hongshiActivityMatches(noteActivityId: string, activityId: string): boolean {
+  return noteActivityId === activityId || (HONGSHI_ACTIVITY_ALIASES[noteActivityId]?.includes(activityId) ?? false);
+}
+
+/**
  * ある ActivityEvaluation（1用事・1日分の判定結果）に対して表示すべき洪氏錦嚢の
  * 補足を返す。以下をすべて満たす場合のみ返す（1件でも欠ければ空配列）。
  *   1. その用事が「吉凶混在」（positiveSources・negativeSourcesの両方が1件以上）
- *   2. HONGSHI_NOTESにそのactivityIdの登録がある
+ *   2. HONGSHI_NOTESにそのactivityIdの登録がある（HONGSHI_ACTIVITY_ALIASES で
+ *      「結婚納采」は「結婚姻」「納采」にも当てる）
  *   3. その日実際に成立している凶神（negativeSources[].sourceName）が
  *      unfavorableGodと一致する
  * 「吉神にあえば」等の条件を満たしたかどうかはここでも判定しない
@@ -102,6 +129,6 @@ export function getHongshiNotesFor(evaluation: {
   }
   const activeGods = new Set(evaluation.negativeSources.map((s) => s.sourceName));
   return HONGSHI_NOTES.filter(
-    (note) => note.activityId === evaluation.activityId && activeGods.has(note.unfavorableGod),
+    (note) => hongshiActivityMatches(note.activityId, evaluation.activityId) && activeGods.has(note.unfavorableGod),
   );
 }

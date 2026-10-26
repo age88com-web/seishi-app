@@ -26,5 +26,5 @@ export type { ActivityTermExpansion } from "./activityTermExpansions";
 export { evaluateActivities, computeVerdict } from "./evaluateActivities";
 export type { EvaluateActivitiesInput } from "./evaluateActivities";
 
-export { HONGSHI_NOTES, getHongshiNotesFor } from "./hongshiNotes";
+export { HONGSHI_NOTES, HONGSHI_ACTIVITY_ALIASES, getHongshiNotesFor } from "./hongshiNotes";
 export type { HongshiNote } from "./hongshiNotes";

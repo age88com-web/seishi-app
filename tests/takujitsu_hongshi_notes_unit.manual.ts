@@ -28,7 +28,7 @@ function check(label: string, cond: boolean) {
   }
 }
 
-// 実装済みkyojin名ロスター（src/lib/takujitsu/shinsatsu/*.tsのkyojin.push(...)全66種と
+// 実装済みkyojin名ロスター（src/lib/takujitsu/shinsatsu/*.tsのkyojin.push(...)全66種（2026-10-26 に6種追加）と
 // 完全一致するもののみ。docs/takujitsu_hongshi_activity_mapping.md §2の突合結果と同じ
 // 基準で、表記ゆれ・別体系神殺名は含めない）。
 const IMPLEMENTED_KYOJIN = new Set([
@@ -39,10 +39,12 @@ const IMPLEMENTED_KYOJIN = new Set([
   "小時", "小空亡", "小耗", "往亡", "揚公忌", "月刑", "月厭", "月害", "月忌日", "月殺",
   "月破", "横天朱雀", "歸忌", "死気", "死神", "氣往亡", "災殺", "無禄", "瘟入", "瘟出",
   "短星", "血支", "觸水龍", "遊禍", "長星", "龍禁",
+  // 2026-10-26 未解決神殺の監修決定で追加（kyoushinGroup7.ts）
+  "天狗", "復日", "重日", "五離", "天罡", "河魁",
 ]);
 
-// 1. 件数 = 32件（docs/takujitsu_hongshi_activity_mapping.md §3で確認した件数）
-check(`HONGSHI_NOTES件数 = 32 (実際: ${HONGSHI_NOTES.length})`, HONGSHI_NOTES.length === 32);
+// 1. 件数 = 33件（docs/takujitsu_hongshi_activity_mapping.md §3で確認した32件＋2026-10-26 の結婚納采×五離）
+check(`HONGSHI_NOTES件数 = 33 (実際: ${HONGSHI_NOTES.length})`, HONGSHI_NOTES.length === 33);
 
 // 2. 全件のactivityIdが現行95 ActivityDefinition内に存在すること
 for (const note of HONGSHI_NOTES) {
@@ -75,7 +77,7 @@ const expectedCounts: [string, number][] = [
   ["蓋屋", 1],
   ["開市", 13],
   ["上官赴任", 5],
-  ["結婚納采", 9],
+  ["結婚納采", 10], // 2026-10-26 結婚納采×五離を追加
   ["安床", 2],
 ];
 for (const [id, n] of expectedCounts) {

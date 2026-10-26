@@ -24,6 +24,7 @@ import { calculateTakujitsuFull, searchTakujitsuDays, TAKUJITSU_SEARCH_MAX_DAYS 
 import type { TakujitsuFullResult, TakujitsuSearchResult, TakujitsuSearchDay } from "@/lib/takujitsu";
 import { ACTIVITY_BY_ID, ACTIVITY_DEFINITIONS, getHongshiNotesFor } from "@/lib/takujitsu/activity";
 import type {
+  HongshiNote,
   ActivityEvaluation,
   ActivitySource,
   ActivitySuppression,
@@ -1004,6 +1005,9 @@ function SearchView({ timezone, onOpenDay }: { timezone: string; onOpenDay: (iso
                           {d.evaluation && d.evaluation.negativeSources.length > 0 && (
                             <SourceBlock title="忌（避けるべきとする根拠）" tone="bad" sources={d.evaluation.negativeSources} />
                           )}
+                          {d.evaluation && (
+                            <HongshiNoteBlock notes={getHongshiNotesFor(d.evaluation)} activityId={d.evaluation.activityId} />
+                          )}
                           {!d.evaluation && (
                             <p className="tj-note">この用途について、この日に言及する神殺・十二建除・二十八宿はありません（中立）。</p>
                           )}
@@ -1120,16 +1124,7 @@ function VerdictBlock({
                       {ev.negativeSources.length > 0 && (
                         <SourceBlock title="忌（避けるべきとする根拠）" tone="bad" sources={ev.negativeSources} />
                       )}
-                      {hongshiNotes.length > 0 && (
-                        <div className="tj-hongshi">
-                          <div className="tj-hongshi-h">洪氏錦嚢による補足</div>
-                          {hongshiNotes.map((note, i) => (
-                            <p key={i} className="tj-hongshi-item">
-                              洪氏錦嚢では「{note.unfavorableGod}」について、{note.conditionText}とされています。
-                            </p>
-                          ))}
-                        </div>
-                      )}
+                      <HongshiNoteBlock notes={hongshiNotes} activityId={ev.activityId} />
                       {ev.positiveSources.length === 0 && ev.negativeSources.length === 0 && (
                         <p className="tj-note">
                           この用途に言及する神殺・十二建除・二十八宿はありません（中立）。
@@ -1168,6 +1163,26 @@ function VerdictBlock({
 }
 
 // ---------------------------------------------------------------------------
+/**
+ * 洪氏錦嚢の補足・異説（表示専用）。基本の吉凶判定・解除には使わない。
+ * 洪氏の用事語が表示中の用事と違う場合（結婚納采→結婚姻・納采）は洪氏側の用事語も示す。
+ */
+function HongshiNoteBlock({ notes, activityId }: { notes: HongshiNote[]; activityId: string }) {
+  if (notes.length === 0) return null;
+  return (
+    <div className="tj-hongshi">
+      <div className="tj-hongshi-h">洪氏錦嚢による補足・異説（基本の吉凶判定は変わりません）</div>
+      {notes.map((note, i) => (
+        <p key={i} className="tj-hongshi-item">
+          洪氏錦嚢{note.activityId !== activityId ? `（用事「${note.activityId}」）` : ""}では
+          「{note.unfavorableGod}」について「{note.conditionText}」とする別判断があります。
+          <span className="tj-hongshi-src">原文（{note.sourcePage}）：{note.sourceText}</span>
+        </p>
+      ))}
+    </div>
+  );
+}
+
 function Kv({ k, v }: { k: string; v: string }) {
   return (
     <div className="tj-kv">
@@ -1396,6 +1411,7 @@ const CSS = `
 .tj-hongshi-h { font-weight: 700; font-size: 11.5px; color: #8a6d00; margin-bottom: 4px; }
 .tj-hongshi-item { margin: 0 0 4px; font-size: 12px; line-height: 1.5; color: #5a4a1e; word-break: break-word; }
 .tj-hongshi-item:last-child { margin-bottom: 0; }
+.tj-hongshi-src { display: block; font-size: 11px; color: #8a7a52; }
 .tj-vmore { margin-top: 10px; font-size: 12px; padding: 5px 14px; border: 1px solid #ccc; border-radius: 4px; background: #fff; cursor: pointer; }
 .tj-vmore:hover { border-color: #999; }
 

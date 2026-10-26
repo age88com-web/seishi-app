@@ -6,13 +6,15 @@
 //   ・Q2＝B 歳徳・歳徳合：「百事大吉」で ALL型（例外なし。解除も宜）。
 //     ただし同日の凶神の忌・尚忌（増悪）は消さない
 //   制日・伐日は別スレッドで監修者が定義済みのため、このテストでは定義・profile・宜忌に依存しない。
-//   ・Q4＝A 顕星・曲星・傅星は保留（未実装）
+//   ・Q4＝A 顕星・曲星・傅星は保留（→ 2026-10-26 の監修決定 Q5＝B で実装。検査は
+//     tests/takujitsu_unresolved_shinsatsu_unit.manual.ts へ移した）
 //   ・Q5＝A 嫁娶を「今日の吉凶」の主要用事に追加（64件）
 //   ・Q6＝A 十二建除・二十八宿の削除済み言い回しは移さない（変更なし）
 //   ・接続確認：成立する神殺と profile の対応、resolution ルールの対象名・条件名、
 //     一般向け（/lucky-day）の表示グループ・ラベル・目的の activityId
-//   未実装神殺（復日・重日・五離・天罡・河魁など）は資料不足のため実装していない
-//   （成立しないことを確認する）。
+//   未実装神殺（満日〔天狗以外〕・血忌・天恩・月空）は成立しないことを確認する。
+//   復日・重日・五離・天罡・河魁・天狗・除神・顕星・曲星・傅星は 2026-10-26 の監修決定で
+//   実装した（tests/takujitsu_unresolved_shinsatsu_unit.manual.ts）。
 //
 // 実行:
 //   npx tsx tests/takujitsu_p3_batch_unit.manual.ts
@@ -82,8 +84,7 @@ for (const n of ["歳徳", "歳徳合"]) {
   check("Q1 月徳（月徳合ではない）は変更なし（嫁娶は宜）", posIds(["月徳"], "月徳").includes("嫁娶"));
 }
 
-// 3. Q4 顕星・曲星・傅星は保留、Q6 十二建除・二十八宿の言い回しは移さない
-for (const n of ["顕星", "曲星", "傅星"]) check(`Q4 ${n} の profile なし`, !ACTIVITY_PROFILES.some((p) => p.sourceName === n));
+// 3. Q6 十二建除・二十八宿の言い回しは移さない（Q4 の顕星・曲星・傅星は 2026-10-26 に実装済み）
 check("Q6 満の profile は削除済み言い回し（養子・集金・宴会）を持たない",
   !ACTIVITY_PROFILES.some((p) => p.sourceType === "jianchu" && p.sourceName === "満" && p.favorableActivityIds.some((a) => ["進人口", "納財", "宴會"].includes(a))));
 
@@ -112,7 +113,7 @@ check("成立する吉神はすべて profile あり", kNoProf.length === 0, kNo
 // 制日・伐日は別スレッドの確定仕様に任せ、ここでは対象外とする
 check("成立する凶神（制日・伐日を除く）はすべて profile あり",
   yNoProf.filter((n) => n !== "制日" && n !== "伐日").length === 0, yNoProf.join("・"));
-for (const n of ["復日", "重日", "五離", "天罡", "河魁", "満日", "天狗", "血忌", "顕星", "曲星", "傅星", "天恩", "月空"]) {
+for (const n of ["満日", "血忌", "天恩", "月空"]) {
   check(`${n} は未実装（成立しない）`, !emittedK.has(n) && !emittedY.has(n));
 }
 const dupProfiles = ACTIVITY_PROFILES.map((p) => `${p.sourceType}:${p.sourceName}`).filter((x, i, a) => a.indexOf(x) !== i);

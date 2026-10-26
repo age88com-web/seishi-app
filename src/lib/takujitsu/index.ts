@@ -46,6 +46,10 @@
 //     天空・地空・大空亡・小空亡・天乙絶気・四方耗・刀砧日・龍禁・
 //     冰消瓦解・冰消瓦砕）。ShinsatsuInput（lunarDay・lodge28 を追加）で
 //     判定できるため resolveAllShinsatsu に混ぜる。
+//   ・shinsatsu/kichijinGroup7.ts  … 吉神第7グループ（顕星・曲星・傅星・除神）。
+//   ・shinsatsu/kyoushinGroup7.ts  … 凶神第7グループ（天狗・復日・重日・五離・天罡・河魁）。
+//     いずれも未解決神殺の資料研究フェーズの監修決定（2026-10-26）で追加し、
+//     resolveAllShinsatsu に混ぜる。
 //   CalendarEngine 経由のエントリポイント（calculateShinsatsu）だけは
 //   全グループを合算した結果を返す。
 //
@@ -66,12 +70,14 @@ import { resolveKichijinGroup3, resolveWuheSubtypes } from "./shinsatsu/kichijin
 import { resolveKichijinGroup4, resolveBlackRoad } from "./shinsatsu/kichijinGroup4";
 import { resolveKichijinGroup5 } from "./shinsatsu/kichijinGroup5";
 import { resolveKichijinGroup6 } from "./shinsatsu/kichijinGroup6";
+import { resolveKichijinGroup7 } from "./shinsatsu/kichijinGroup7";
 import { resolveKyoushinGroup1 } from "./shinsatsu/kyoushinGroup1";
 import { resolveKyoushinGroup2 } from "./shinsatsu/kyoushinGroup2";
 import { resolveKyoushinGroup3 } from "./shinsatsu/kyoushinGroup3";
 import { resolveKyoushinGroup4 } from "./shinsatsu/kyoushinGroup4";
 import { resolveKyoushinGroup5 } from "./shinsatsu/kyoushinGroup5";
 import { resolveKyoushinGroup6 } from "./shinsatsu/kyoushinGroup6";
+import { resolveKyoushinGroup7 } from "./shinsatsu/kyoushinGroup7";
 import type { ShinsatsuInput, ShinsatsuResult } from "./types";
 import { resolveJianchu } from "./jianchu";
 import type { JianchuResult } from "./jianchu";
@@ -87,6 +93,7 @@ export { resolveKichijinGroup3, resolveWuheSubtypes } from "./shinsatsu/kichijin
 export { resolveKichijinGroup4, resolveBlackRoad } from "./shinsatsu/kichijinGroup4";
 export { resolveKichijinGroup5 } from "./shinsatsu/kichijinGroup5";
 export { resolveKichijinGroup6 } from "./shinsatsu/kichijinGroup6";
+export { resolveKichijinGroup7 } from "./shinsatsu/kichijinGroup7";
 export { resolveKyoushinGroup1 } from "./shinsatsu/kyoushinGroup1";
 export { resolveKyoushinGroup2 } from "./shinsatsu/kyoushinGroup2";
 export { resolveKyoushinGroup3 } from "./shinsatsu/kyoushinGroup3";
@@ -95,6 +102,7 @@ export { resolveKyoushinGroup5 } from "./shinsatsu/kyoushinGroup5";
 export { resolveDoyoPeriodAt, resolveDoyoAt, resolveDoyoDayStatus } from "./shinsatsu/doyo";
 export type { DoyoPeriod, DoyoSeason, DoyoDayKind, DoyoDayStatus } from "./shinsatsu/doyo";
 export { resolveKyoushinGroup6 } from "./shinsatsu/kyoushinGroup6";
+export { resolveKyoushinGroup7 } from "./shinsatsu/kyoushinGroup7";
 
 // 神殺とは別の独立モジュール（神殺モジュールへは組み込まない）。
 export { resolveJianchu, JIANCHU_NAMES, JIANCHU_READINGS, JIANCHU_MEANINGS } from "./jianchu";
@@ -132,8 +140,8 @@ export type {
 } from "./full";
 
 /**
- * 実装済みの全グループを合算して判定する（吉神第1〜第6グループ・
- * 凶神第1〜第4グループ・凶神第6グループ）。凶神第5グループ（節気型）は
+ * 実装済みの全グループを合算して判定する（吉神第1〜第7グループ・
+ * 凶神第1〜第4グループ・凶神第6〜第7グループ）。凶神第5グループ（節気型）は
  * CalendarInput が必要なため、calculateShinsatsu / calculateTakujitsu が
  * 別途 resolveKyoushinGroup5 を呼んで合算する（本関数の対象外）。
  */
@@ -146,16 +154,18 @@ export function resolveAllShinsatsu(input: ShinsatsuInput): ShinsatsuResult {
   const g4b = resolveBlackRoad(input);
   const g5 = resolveKichijinGroup5(input);
   const g6 = resolveKichijinGroup6(input);
+  const g7 = resolveKichijinGroup7(input);
   const ky1 = resolveKyoushinGroup1(input);
   const ky2 = resolveKyoushinGroup2(input);
   const ky3 = resolveKyoushinGroup3(input);
   const ky4 = resolveKyoushinGroup4(input);
   const ky6 = resolveKyoushinGroup6(input);
+  const ky7 = resolveKyoushinGroup7(input);
   return {
-    kichijin: [...g1.kichijin, ...g2.kichijin, ...g3.kichijin, ...g3w.kichijin, ...g4.kichijin, ...g5.kichijin, ...g6.kichijin],
+    kichijin: [...g1.kichijin, ...g2.kichijin, ...g3.kichijin, ...g3w.kichijin, ...g4.kichijin, ...g5.kichijin, ...g6.kichijin, ...g7.kichijin],
     kyojin: [
       ...g1.kyojin, ...g2.kyojin, ...g3.kyojin, ...g4.kyojin, ...g4b.kyojin, ...g5.kyojin, ...g6.kyojin,
-      ...ky1.kyojin, ...ky2.kyojin, ...ky3.kyojin, ...ky4.kyojin, ...ky6.kyojin,
+      ...ky1.kyojin, ...ky2.kyojin, ...ky3.kyojin, ...ky4.kyojin, ...ky6.kyojin, ...ky7.kyojin,
     ],
   };
 }

@@ -498,6 +498,14 @@ export const ACTIVITY_TERM_EXPANSIONS: readonly ActivityTermExpansion[] = [
     expandedActivityIds: ["交易"],
     basis: "立券交易の忌を交易（売買・取引）にも適用する（2026-10-24 監修判断）。",
   },
+  {
+    sourceType: "kyojin",
+    sourceName: "五離",
+    polarity: "unfavorable",
+    sourceTerm: "立券交易",
+    expandedActivityIds: ["交易"],
+    basis: "立券交易の忌を交易（売買・取引）にも適用する（2026-10-24 監修判断を、2026-10-26 追加の五離にも同じく適用）。",
+  },
 ];
 
 /**

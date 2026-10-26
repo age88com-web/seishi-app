@@ -364,6 +364,13 @@ export const ACTIVITY_PROFILES: ActivityProfile[] = [
   { sourceType: "kichijin", sourceName: "天貴", favorableActivityIds: [], unfavorableActivityIds: [], notes: "" },
   { sourceType: "kichijin", sourceName: "催官", favorableActivityIds: [], unfavorableActivityIds: [], notes: "" },
   { sourceType: "kichijin", sourceName: "季分", favorableActivityIds: ["嫁娶"], unfavorableActivityIds: [] },
+  // 顕星・曲星・傅星：擇日テキスト（43）p.19「造葬、修造、上官、試験、嫁娶、その他百事に良い」を
+  // ALL型（例外なし）とする（未解決神殺の資料研究フェーズ 監修決定 Q5＝B、2026-10-26）。成立条件は kichijinGroup7.ts。
+  { sourceType: "kichijin", sourceName: "顕星", positiveMode: "all_except", favorableActivityIds: [], positiveExceptionActivityIds: [], unfavorableActivityIds: [] },
+  { sourceType: "kichijin", sourceName: "曲星", positiveMode: "all_except", favorableActivityIds: [], positiveExceptionActivityIds: [], unfavorableActivityIds: [] },
+  { sourceType: "kichijin", sourceName: "傅星", positiveMode: "all_except", favorableActivityIds: [], positiveExceptionActivityIds: [], unfavorableActivityIds: [] },
+  // 除神：神殺象意〔解神〕〔除神〕「宜解除、沐浴、剃頭、整手足甲、求醫療病、掃舍宇（義同除日）」（2026-10-26 Q1＝A）。
+  { sourceType: "kichijin", sourceName: "除神", favorableActivityIds: ["剃頭", "掃舎宇", "整手足甲", "求醫療病", "沐浴", "解除"], unfavorableActivityIds: [] },
   // 小時（月建・土府）：神殺象意「又爲土府，專忌修造動土、築隄防、開渠穿井、安碓磑、修補垣牆、平治道塗」の不足4件と、
   // 擇日テキスト4）「定日・月破・土府、死神…これらの日に修造・動土・増改築・家を建てたりすると…」の建築を追加（2026-10-24）。
   // 徳合などで軽減された後も残るのは象意「止忌動土」の動土（修造動土・伐木は従来どおり）。
@@ -413,6 +420,19 @@ export const ACTIVITY_PROFILES: ActivityProfile[] = [
   { sourceType: "kyojin", sourceName: "觸水龍", favorableActivityIds: [], unfavorableActivityIds: ["乗船渡水", "取魚"] },
   // 八専：擇日テキスト21）「忌：出軍、嫁娶」＋神殺象意「忌結婚納采、嫁娶」（結婚納采＝結婚姻・納采、既存の転記方針）（2026-10-24）。
   { sourceType: "kyojin", sourceName: "八専", favorableActivityIds: [], unfavorableActivityIds: ["出軍", "嫁娶", "結婚姻", "納采"] },
+  // 以下6件は未解決神殺の資料研究フェーズの監修決定（2026-10-26）で追加した。成立条件は kyoushinGroup7.ts。
+  // 宜忌は内部資料（神殺象意・擇日テキスト）に明記されたものだけで、協紀辨方書だけにある宜忌は入れない。
+  // 天狗：神殺象意「申月又爲天狗，忌祭祀」、擇日テキスト5）「忌：祭祀、祈神・祈求・福願関係全般」（Q2＝A）。
+  // 「祈神・祈求・福願関係全般」→祈福の対応は 2026-10-26 の監修決定で正式採用。
+  { sourceType: "kyojin", sourceName: "天狗", favorableActivityIds: [], unfavorableActivityIds: ["祭祀", "祈福"] },
+  // 復日・重日：神殺象意〔復日〕〔重日〕「忌破土、安葬、啓攢」。
+  { sourceType: "kyojin", sourceName: "復日", favorableActivityIds: [], unfavorableActivityIds: ["破土", "安葬", "啓攢"] },
+  { sourceType: "kyojin", sourceName: "重日", favorableActivityIds: [], unfavorableActivityIds: ["破土", "安葬", "啓攢"] },
+  // 五離：神殺象意〔五離〕「忌宴會、結婚納采、嫁娶、立券交易」（結婚納采は既存どおり結婚姻・納采として転記）。
+  { sourceType: "kyojin", sourceName: "五離", favorableActivityIds: [], unfavorableActivityIds: ["宴會", "嫁娶", "立券交易", "納采", "結婚姻"] },
+  // 天罡・河魁：神殺象意〔自縊〕〔絇絞〕「自縊如同絇絞（天罡、河魁），俱忌嫁娶」。
+  { sourceType: "kyojin", sourceName: "天罡", favorableActivityIds: [], unfavorableActivityIds: ["嫁娶"] },
+  { sourceType: "kyojin", sourceName: "河魁", favorableActivityIds: [], unfavorableActivityIds: ["嫁娶"] },
   { sourceType: "kyojin", sourceName: "九空", favorableActivityIds: [], unfavorableActivityIds: ["進人口", "修倉庫", "開市", "立券交易", "納財", "開倉庫", "出貨財"] },
   // 九扻（九焦）：擇日テキスト凶神23）「忌：乗船渡水、修堤防、鋳造、種植」（修堤防＝築堤防、種植＝栽種）。
   // 2026-10-24 監修判断。旧実装はこの4件を次項の無禄に取り違えて登録していた。
