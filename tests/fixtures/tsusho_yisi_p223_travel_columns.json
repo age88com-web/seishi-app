@@ -1,0 +1,2186 @@
+{
+ "_meta": {
+  "purpose": "信發堂『乙巳年通書』p.223「出國旅行觀光吉日課」の紙面掲載列を基準にした検証用fixture（海外旅行・観光の吉日研究用）。productionでは使用しない。",
+  "source": "ユーザー提供画像 IMG_1448.JPG（~/Downloads、1498×2112）。2026-10-27 に段ごとに拡大して1回だけ転記した（再転記しない）",
+  "layout": "5段。各段は右から左へ列が並ぶ。各列＝旧暦月・旧暦日・日干支・紙面の数字（1〜6または「密」）・時刻と補足（例：卯午進＝卯・午・進、辰巳午＝辰・巳・午、巳明星）。○X月令 の見出しで節月を区切る。色の区別による分類はこの頁には無い（ほぼ全列が朱色）",
+  "method": "西暦日は既存 CalendarEngine（12:00 JST）の旧暦月・閏月・旧暦日・日干支の4項目がすべて一致する日に一意に対応させ、掲載順が日付順であることも確認した（日干支だけで対応させていない）。月令見出しの区切りもエンジンの月支と一致（寒露当日の節前・節後の2列のみ例外で、紙面どおり）",
+  "printedFieldsMeaning": "紙面の数字・時刻欄の意味は紙面に凡例がなく未確定。時刻欄は文字列のまま保存",
+  "counts": {
+   "columns": 127,
+   "distinctDates": 126,
+   "confirmed": 126,
+   "confirmedDateOnly": 1,
+   "unresolvedDates": 0
+  },
+  "period": {
+   "first": "2025-02-06",
+   "last": "2026-02-13"
+  },
+  "date": "2026-10-27"
+ },
+ "columns": [
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 1
+   },
+   "printedLunar": {
+    "month": "正月",
+    "day": "初九",
+    "leap": false
+   },
+   "ganzhi": "丙午",
+   "date": "2025-02-06",
+   "sectionMonthBranch": "寅",
+   "printedNumber": "4",
+   "printedHours": "卯午進",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 2
+   },
+   "printedLunar": {
+    "month": "正月",
+    "day": "初十",
+    "leap": false
+   },
+   "ganzhi": "丁未",
+   "date": "2025-02-07",
+   "sectionMonthBranch": "寅",
+   "printedNumber": "5",
+   "printedHours": "辰巳午",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 3
+   },
+   "printedLunar": {
+    "month": "正月",
+    "day": "十八",
+    "leap": false
+   },
+   "ganzhi": "乙卯",
+   "date": "2025-02-15",
+   "sectionMonthBranch": "寅",
+   "printedNumber": "6",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 4
+   },
+   "printedLunar": {
+    "month": "正月",
+    "day": "十九",
+    "leap": false
+   },
+   "ganzhi": "丙辰",
+   "date": "2025-02-16",
+   "sectionMonthBranch": "寅",
+   "printedNumber": "密",
+   "printedHours": "卯午進",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 5
+   },
+   "printedLunar": {
+    "month": "正月",
+    "day": "廿一",
+    "leap": false
+   },
+   "ganzhi": "戊午",
+   "date": "2025-02-18",
+   "sectionMonthBranch": "寅",
+   "printedNumber": "2",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 6
+   },
+   "printedLunar": {
+    "month": "正月",
+    "day": "廿七",
+    "leap": false
+   },
+   "ganzhi": "甲子",
+   "date": "2025-02-24",
+   "sectionMonthBranch": "寅",
+   "printedNumber": "1",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 7
+   },
+   "printedLunar": {
+    "month": "正月",
+    "day": "三十",
+    "leap": false
+   },
+   "ganzhi": "丁卯",
+   "date": "2025-02-27",
+   "sectionMonthBranch": "寅",
+   "printedNumber": "4",
+   "printedHours": "辰巳午",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 8
+   },
+   "printedLunar": {
+    "month": "二月",
+    "day": "初四",
+    "leap": false
+   },
+   "ganzhi": "辛未",
+   "date": "2025-03-03",
+   "sectionMonthBranch": "寅",
+   "printedNumber": "1",
+   "printedHours": "卯午進",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 9
+   },
+   "printedLunar": {
+    "month": "二月",
+    "day": "初六",
+    "leap": false
+   },
+   "ganzhi": "癸酉",
+   "date": "2025-03-05",
+   "sectionMonthBranch": "寅",
+   "printedNumber": "3",
+   "printedHours": "辰巳午",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 10
+   },
+   "printedLunar": {
+    "month": "二月",
+    "day": "初七",
+    "leap": false
+   },
+   "ganzhi": "甲戌",
+   "date": "2025-03-06",
+   "sectionMonthBranch": "卯",
+   "printedNumber": "4",
+   "printedHours": "卯巳午",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 11
+   },
+   "printedLunar": {
+    "month": "二月",
+    "day": "初八",
+    "leap": false
+   },
+   "ganzhi": "乙亥",
+   "date": "2025-03-07",
+   "sectionMonthBranch": "卯",
+   "printedNumber": "5",
+   "printedHours": "卯辰時",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 12
+   },
+   "printedLunar": {
+    "month": "二月",
+    "day": "初十",
+    "leap": false
+   },
+   "ganzhi": "丁丑",
+   "date": "2025-03-09",
+   "sectionMonthBranch": "卯",
+   "printedNumber": "密",
+   "printedHours": "辰巳午",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 13
+   },
+   "printedLunar": {
+    "month": "二月",
+    "day": "十二",
+    "leap": false
+   },
+   "ganzhi": "己卯",
+   "date": "2025-03-11",
+   "sectionMonthBranch": "卯",
+   "printedNumber": "2",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 14
+   },
+   "printedLunar": {
+    "month": "二月",
+    "day": "十六",
+    "leap": false
+   },
+   "ganzhi": "癸未",
+   "date": "2025-03-15",
+   "sectionMonthBranch": "卯",
+   "printedNumber": "6",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 15
+   },
+   "printedLunar": {
+    "month": "二月",
+    "day": "十七",
+    "leap": false
+   },
+   "ganzhi": "甲申",
+   "date": "2025-03-16",
+   "sectionMonthBranch": "卯",
+   "printedNumber": "密",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 16
+   },
+   "printedLunar": {
+    "month": "二月",
+    "day": "廿二",
+    "leap": false
+   },
+   "ganzhi": "己丑",
+   "date": "2025-03-21",
+   "sectionMonthBranch": "卯",
+   "printedNumber": "5",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 17
+   },
+   "printedLunar": {
+    "month": "二月",
+    "day": "廿四",
+    "leap": false
+   },
+   "ganzhi": "辛卯",
+   "date": "2025-03-23",
+   "sectionMonthBranch": "卯",
+   "printedNumber": "密",
+   "printedHours": "卯午進",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 18
+   },
+   "printedLunar": {
+    "month": "二月",
+    "day": "廿八",
+    "leap": false
+   },
+   "ganzhi": "乙未",
+   "date": "2025-03-27",
+   "sectionMonthBranch": "卯",
+   "printedNumber": "4",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 19
+   },
+   "printedLunar": {
+    "month": "三月",
+    "day": "初二",
+    "leap": false
+   },
+   "ganzhi": "戊戌",
+   "date": "2025-03-30",
+   "sectionMonthBranch": "卯",
+   "printedNumber": "密",
+   "printedHours": "卯巳午",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 20
+   },
+   "printedLunar": {
+    "month": "三月",
+    "day": "初三",
+    "leap": false
+   },
+   "ganzhi": "己亥",
+   "date": "2025-03-31",
+   "sectionMonthBranch": "卯",
+   "printedNumber": "1",
+   "printedHours": "卯辰午",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 21
+   },
+   "printedLunar": {
+    "month": "三月",
+    "day": "初七",
+    "leap": false
+   },
+   "ganzhi": "癸卯",
+   "date": "2025-04-04",
+   "sectionMonthBranch": "卯",
+   "printedNumber": "5",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 22
+   },
+   "printedLunar": {
+    "month": "三月",
+    "day": "初八",
+    "leap": false
+   },
+   "ganzhi": "甲辰",
+   "date": "2025-04-05",
+   "sectionMonthBranch": "辰",
+   "printedNumber": "6",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 23
+   },
+   "printedLunar": {
+    "month": "三月",
+    "day": "初十",
+    "leap": false
+   },
+   "ganzhi": "丙午",
+   "date": "2025-04-07",
+   "sectionMonthBranch": "辰",
+   "printedNumber": "1",
+   "printedHours": "卯午進",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 24
+   },
+   "printedLunar": {
+    "month": "三月",
+    "day": "十八",
+    "leap": false
+   },
+   "ganzhi": "甲寅",
+   "date": "2025-04-15",
+   "sectionMonthBranch": "辰",
+   "printedNumber": "2",
+   "printedHours": "巳明星",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 25
+   },
+   "printedLunar": {
+    "month": "三月",
+    "day": "二十",
+    "leap": false
+   },
+   "ganzhi": "丙辰",
+   "date": "2025-04-17",
+   "sectionMonthBranch": "辰",
+   "printedNumber": "4",
+   "printedHours": "卯午進",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 1
+   },
+   "printedLunar": {
+    "month": "三月",
+    "day": "廿二",
+    "leap": false
+   },
+   "ganzhi": "戊午",
+   "date": "2025-04-19",
+   "sectionMonthBranch": "辰",
+   "printedNumber": "6",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 2
+   },
+   "printedLunar": {
+    "month": "三月",
+    "day": "三十",
+    "leap": false
+   },
+   "ganzhi": "丙寅",
+   "date": "2025-04-27",
+   "sectionMonthBranch": "辰",
+   "printedNumber": "密",
+   "printedHours": "卯午進",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 3
+   },
+   "printedLunar": {
+    "month": "四月",
+    "day": "初一",
+    "leap": false
+   },
+   "ganzhi": "丁卯",
+   "date": "2025-04-28",
+   "sectionMonthBranch": "辰",
+   "printedNumber": "1",
+   "printedHours": "辰巳午",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 4
+   },
+   "printedLunar": {
+    "month": "四月",
+    "day": "初四",
+    "leap": false
+   },
+   "ganzhi": "庚午",
+   "date": "2025-05-01",
+   "sectionMonthBranch": "辰",
+   "printedNumber": "4",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 5
+   },
+   "printedLunar": {
+    "month": "四月",
+    "day": "初十",
+    "leap": false
+   },
+   "ganzhi": "丙子",
+   "date": "2025-05-07",
+   "sectionMonthBranch": "巳",
+   "printedNumber": "3",
+   "printedHours": "卯時吉",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 6
+   },
+   "printedLunar": {
+    "month": "四月",
+    "day": "十三",
+    "leap": false
+   },
+   "ganzhi": "己卯",
+   "date": "2025-05-10",
+   "sectionMonthBranch": "巳",
+   "printedNumber": "6",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 7
+   },
+   "printedLunar": {
+    "month": "四月",
+    "day": "十六",
+    "leap": false
+   },
+   "ganzhi": "壬午",
+   "date": "2025-05-13",
+   "sectionMonthBranch": "巳",
+   "printedNumber": "2",
+   "printedHours": "辰巳午",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 8
+   },
+   "printedLunar": {
+    "month": "四月",
+    "day": "十九",
+    "leap": false
+   },
+   "ganzhi": "乙酉",
+   "date": "2025-05-16",
+   "sectionMonthBranch": "巳",
+   "printedNumber": "5",
+   "printedHours": "辰巳時",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 9
+   },
+   "printedLunar": {
+    "month": "四月",
+    "day": "廿二",
+    "leap": false
+   },
+   "ganzhi": "戊子",
+   "date": "2025-05-19",
+   "sectionMonthBranch": "巳",
+   "printedNumber": "1",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 10
+   },
+   "printedLunar": {
+    "month": "四月",
+    "day": "廿四",
+    "leap": false
+   },
+   "ganzhi": "庚寅",
+   "date": "2025-05-21",
+   "sectionMonthBranch": "巳",
+   "printedNumber": "3",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 11
+   },
+   "printedLunar": {
+    "month": "四月",
+    "day": "廿五",
+    "leap": false
+   },
+   "ganzhi": "辛卯",
+   "date": "2025-05-22",
+   "sectionMonthBranch": "巳",
+   "printedNumber": "4",
+   "printedHours": "卯午進",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 12
+   },
+   "printedLunar": {
+    "month": "四月",
+    "day": "廿八",
+    "leap": false
+   },
+   "ganzhi": "甲午",
+   "date": "2025-05-25",
+   "sectionMonthBranch": "巳",
+   "printedNumber": "密",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 13
+   },
+   "printedLunar": {
+    "month": "五月",
+    "day": "初一",
+    "leap": false
+   },
+   "ganzhi": "丙申",
+   "date": "2025-05-27",
+   "sectionMonthBranch": "巳",
+   "printedNumber": "2",
+   "printedHours": "卯午進",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 14
+   },
+   "printedLunar": {
+    "month": "五月",
+    "day": "初八",
+    "leap": false
+   },
+   "ganzhi": "癸卯",
+   "date": "2025-06-03",
+   "sectionMonthBranch": "巳",
+   "printedNumber": "2",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 15
+   },
+   "printedLunar": {
+    "month": "五月",
+    "day": "初九",
+    "leap": false
+   },
+   "ganzhi": "甲辰",
+   "date": "2025-06-04",
+   "sectionMonthBranch": "巳",
+   "printedNumber": "3",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 16
+   },
+   "printedLunar": {
+    "month": "五月",
+    "day": "十二",
+    "leap": false
+   },
+   "ganzhi": "丁未",
+   "date": "2025-06-07",
+   "sectionMonthBranch": "午",
+   "printedNumber": "6",
+   "printedHours": "辰巳午",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 17
+   },
+   "printedLunar": {
+    "month": "五月",
+    "day": "十三",
+    "leap": false
+   },
+   "ganzhi": "戊申",
+   "date": "2025-06-08",
+   "sectionMonthBranch": "午",
+   "printedNumber": "密",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 18
+   },
+   "printedLunar": {
+    "month": "五月",
+    "day": "十五",
+    "leap": false
+   },
+   "ganzhi": "庚戌",
+   "date": "2025-06-10",
+   "sectionMonthBranch": "午",
+   "printedNumber": "2",
+   "printedHours": "卯巳時",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 19
+   },
+   "printedLunar": {
+    "month": "五月",
+    "day": "十六",
+    "leap": false
+   },
+   "ganzhi": "辛亥",
+   "date": "2025-06-11",
+   "sectionMonthBranch": "午",
+   "printedNumber": "3",
+   "printedHours": "卯午進",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 20
+   },
+   "printedLunar": {
+    "month": "五月",
+    "day": "廿一",
+    "leap": false
+   },
+   "ganzhi": "丙辰",
+   "date": "2025-06-16",
+   "sectionMonthBranch": "午",
+   "printedNumber": "1",
+   "printedHours": "卯午進",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 21
+   },
+   "printedLunar": {
+    "month": "五月",
+    "day": "廿四",
+    "leap": false
+   },
+   "ganzhi": "己未",
+   "date": "2025-06-19",
+   "sectionMonthBranch": "午",
+   "printedNumber": "4",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 22
+   },
+   "printedLunar": {
+    "month": "五月",
+    "day": "廿七",
+    "leap": false
+   },
+   "ganzhi": "壬戌",
+   "date": "2025-06-22",
+   "sectionMonthBranch": "午",
+   "printedNumber": "密",
+   "printedHours": "巳午時",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 23
+   },
+   "printedLunar": {
+    "month": "六月",
+    "day": "初一",
+    "leap": false
+   },
+   "ganzhi": "乙丑",
+   "date": "2025-06-25",
+   "sectionMonthBranch": "午",
+   "printedNumber": "3",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 24
+   },
+   "printedLunar": {
+    "month": "六月",
+    "day": "初四",
+    "leap": false
+   },
+   "ganzhi": "戊辰",
+   "date": "2025-06-28",
+   "sectionMonthBranch": "午",
+   "printedNumber": "6",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 25
+   },
+   "printedLunar": {
+    "month": "六月",
+    "day": "初六",
+    "leap": false
+   },
+   "ganzhi": "庚午",
+   "date": "2025-06-30",
+   "sectionMonthBranch": "午",
+   "printedNumber": "1",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 26
+   },
+   "printedLunar": {
+    "month": "六月",
+    "day": "初七",
+    "leap": false
+   },
+   "ganzhi": "辛未",
+   "date": "2025-07-01",
+   "sectionMonthBranch": "午",
+   "printedNumber": "2",
+   "printedHours": "卯午進",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 1
+   },
+   "printedLunar": {
+    "month": "六月",
+    "day": "初八",
+    "leap": false
+   },
+   "ganzhi": "壬申",
+   "date": "2025-07-02",
+   "sectionMonthBranch": "午",
+   "printedNumber": "3",
+   "printedHours": "辰巳午",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 2
+   },
+   "printedLunar": {
+    "month": "六月",
+    "day": "初十",
+    "leap": false
+   },
+   "ganzhi": "甲戌",
+   "date": "2025-07-04",
+   "sectionMonthBranch": "午",
+   "printedNumber": "5",
+   "printedHours": "卯巳午",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 3
+   },
+   "printedLunar": {
+    "month": "六月",
+    "day": "十一",
+    "leap": false
+   },
+   "ganzhi": "乙亥",
+   "date": "2025-07-05",
+   "sectionMonthBranch": "午",
+   "printedNumber": "6",
+   "printedHours": "卯辰時",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 4
+   },
+   "printedLunar": {
+    "month": "六月",
+    "day": "十五",
+    "leap": false
+   },
+   "ganzhi": "己卯",
+   "date": "2025-07-09",
+   "sectionMonthBranch": "未",
+   "printedNumber": "3",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 5
+   },
+   "printedLunar": {
+    "month": "六月",
+    "day": "十九",
+    "leap": false
+   },
+   "ganzhi": "癸未",
+   "date": "2025-07-13",
+   "sectionMonthBranch": "未",
+   "printedNumber": "密",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 6
+   },
+   "printedLunar": {
+    "month": "六月",
+    "day": "二十",
+    "leap": false
+   },
+   "ganzhi": "甲申",
+   "date": "2025-07-14",
+   "sectionMonthBranch": "未",
+   "printedNumber": "1",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 7
+   },
+   "printedLunar": {
+    "month": "六月",
+    "day": "廿一",
+    "leap": false
+   },
+   "ganzhi": "乙酉",
+   "date": "2025-07-15",
+   "sectionMonthBranch": "未",
+   "printedNumber": "2",
+   "printedHours": "辰巳時",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 8
+   },
+   "printedLunar": {
+    "month": "六月",
+    "day": "廿六",
+    "leap": false
+   },
+   "ganzhi": "庚寅",
+   "date": "2025-07-20",
+   "sectionMonthBranch": "未",
+   "printedNumber": "密",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 9
+   },
+   "printedLunar": {
+    "month": "六月",
+    "day": "廿七",
+    "leap": false
+   },
+   "ganzhi": "辛卯",
+   "date": "2025-07-21",
+   "sectionMonthBranch": "未",
+   "printedNumber": "1",
+   "printedHours": "卯午進",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 10
+   },
+   "printedLunar": {
+    "month": "閏六月",
+    "day": "初一",
+    "leap": true
+   },
+   "ganzhi": "乙未",
+   "date": "2025-07-25",
+   "sectionMonthBranch": "未",
+   "printedNumber": "5",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 11
+   },
+   "printedLunar": {
+    "month": "閏六月",
+    "day": "初八",
+    "leap": true
+   },
+   "ganzhi": "壬寅",
+   "date": "2025-08-01",
+   "sectionMonthBranch": "未",
+   "printedNumber": "5",
+   "printedHours": "辰巳午",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 12
+   },
+   "printedLunar": {
+    "month": "閏六月",
+    "day": "初九",
+    "leap": true
+   },
+   "ganzhi": "癸卯",
+   "date": "2025-08-02",
+   "sectionMonthBranch": "未",
+   "printedNumber": "6",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 13
+   },
+   "printedLunar": {
+    "month": "閏六月",
+    "day": "初十",
+    "leap": true
+   },
+   "ganzhi": "甲辰",
+   "date": "2025-08-03",
+   "sectionMonthBranch": "未",
+   "printedNumber": "密",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 14
+   },
+   "printedLunar": {
+    "month": "閏六月",
+    "day": "十八",
+    "leap": true
+   },
+   "ganzhi": "壬子",
+   "date": "2025-08-11",
+   "sectionMonthBranch": "申",
+   "printedNumber": "1",
+   "printedHours": "辰巳時",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 15
+   },
+   "printedLunar": {
+    "month": "閏六月",
+    "day": "廿六",
+    "leap": true
+   },
+   "ganzhi": "庚申",
+   "date": "2025-08-19",
+   "sectionMonthBranch": "申",
+   "printedNumber": "2",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 16
+   },
+   "printedLunar": {
+    "month": "閏六月",
+    "day": "廿八",
+    "leap": true
+   },
+   "ganzhi": "壬戌",
+   "date": "2025-08-21",
+   "sectionMonthBranch": "申",
+   "printedNumber": "4",
+   "printedHours": "巳午明",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 17
+   },
+   "printedLunar": {
+    "month": "七月",
+    "day": "初一",
+    "leap": false
+   },
+   "ganzhi": "甲子",
+   "date": "2025-08-23",
+   "sectionMonthBranch": "申",
+   "printedNumber": "6",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 18
+   },
+   "printedLunar": {
+    "month": "七月",
+    "day": "初七",
+    "leap": false
+   },
+   "ganzhi": "庚午",
+   "date": "2025-08-29",
+   "sectionMonthBranch": "申",
+   "printedNumber": "5",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 19
+   },
+   "printedLunar": {
+    "month": "七月",
+    "day": "初八",
+    "leap": false
+   },
+   "ganzhi": "辛未",
+   "date": "2025-08-30",
+   "sectionMonthBranch": "申",
+   "printedNumber": "6",
+   "printedHours": "卯午進",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 20
+   },
+   "printedLunar": {
+    "month": "七月",
+    "day": "十三",
+    "leap": false
+   },
+   "ganzhi": "丙子",
+   "date": "2025-09-04",
+   "sectionMonthBranch": "申",
+   "printedNumber": "4",
+   "printedHours": "卯時吉",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 21
+   },
+   "printedLunar": {
+    "month": "七月",
+    "day": "廿一",
+    "leap": false
+   },
+   "ganzhi": "甲申",
+   "date": "2025-09-12",
+   "sectionMonthBranch": "酉",
+   "printedNumber": "5",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 22
+   },
+   "printedLunar": {
+    "month": "七月",
+    "day": "廿二",
+    "leap": false
+   },
+   "ganzhi": "乙酉",
+   "date": "2025-09-13",
+   "sectionMonthBranch": "酉",
+   "printedNumber": "6",
+   "printedHours": "辰巳時",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 23
+   },
+   "printedLunar": {
+    "month": "七月",
+    "day": "廿四",
+    "leap": false
+   },
+   "ganzhi": "丁亥",
+   "date": "2025-09-15",
+   "sectionMonthBranch": "酉",
+   "printedNumber": "1",
+   "printedHours": "辰午時",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 24
+   },
+   "printedLunar": {
+    "month": "七月",
+    "day": "廿六",
+    "leap": false
+   },
+   "ganzhi": "己丑",
+   "date": "2025-09-17",
+   "sectionMonthBranch": "酉",
+   "printedNumber": "3",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 25
+   },
+   "printedLunar": {
+    "month": "七月",
+    "day": "廿九",
+    "leap": false
+   },
+   "ganzhi": "壬辰",
+   "date": "2025-09-20",
+   "sectionMonthBranch": "酉",
+   "printedNumber": "6",
+   "printedHours": "辰巳午",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 1
+   },
+   "printedLunar": {
+    "month": "八月",
+    "day": "初四",
+    "leap": false
+   },
+   "ganzhi": "丁酉",
+   "date": "2025-09-25",
+   "sectionMonthBranch": "酉",
+   "printedNumber": "4",
+   "printedHours": "辰巳午",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 2
+   },
+   "printedLunar": {
+    "month": "八月",
+    "day": "初六",
+    "leap": false
+   },
+   "ganzhi": "己亥",
+   "date": "2025-09-27",
+   "sectionMonthBranch": "酉",
+   "printedNumber": "6",
+   "printedHours": "卯辰午",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 3
+   },
+   "printedLunar": {
+    "month": "八月",
+    "day": "初八",
+    "leap": false
+   },
+   "ganzhi": "辛丑",
+   "date": "2025-09-29",
+   "sectionMonthBranch": "酉",
+   "printedNumber": "1",
+   "printedHours": "卯午時",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 4
+   },
+   "printedLunar": {
+    "month": "八月",
+    "day": "十一",
+    "leap": false
+   },
+   "ganzhi": "甲辰",
+   "date": "2025-10-02",
+   "sectionMonthBranch": "酉",
+   "printedNumber": "4",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 5
+   },
+   "printedLunar": {
+    "month": "八月",
+    "day": "十五",
+    "leap": false
+   },
+   "ganzhi": "戊申",
+   "date": "2025-10-06",
+   "sectionMonthBranch": "酉",
+   "printedNumber": "1",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 6
+   },
+   "printedLunar": {
+    "month": "八月",
+    "day": "十六",
+    "leap": false
+   },
+   "ganzhi": "己酉",
+   "date": "2025-10-07",
+   "sectionMonthBranch": "酉",
+   "printedNumber": "2",
+   "printedHours": "辰巳午",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 7
+   },
+   "printedLunar": {
+    "month": "八月",
+    "day": "十七",
+    "leap": false
+   },
+   "ganzhi": "庚戌",
+   "date": "2025-10-08",
+   "sectionMonthBranch": "酉",
+   "printedNumber": "3",
+   "printedHours": "卯節前",
+   "status": "CONFIRMED",
+   "note": "寒露当日。紙面は節前（酉月令）・節後（戌月令）の2列に分けて掲載"
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 8
+   },
+   "printedLunar": {
+    "month": "八月",
+    "day": "十七",
+    "leap": false
+   },
+   "ganzhi": "庚戌",
+   "date": "2025-10-08",
+   "sectionMonthBranch": "戌",
+   "printedNumber": "3",
+   "printedHours": "巳節後",
+   "status": "CONFIRMED",
+   "note": "寒露当日。紙面は節前（酉月令）・節後（戌月令）の2列に分けて掲載"
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 9
+   },
+   "printedLunar": {
+    "month": "八月",
+    "day": "十八",
+    "leap": false
+   },
+   "ganzhi": "辛亥",
+   "date": "2025-10-09",
+   "sectionMonthBranch": "戌",
+   "printedNumber": "4",
+   "printedHours": "卯午進",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 10
+   },
+   "printedLunar": {
+    "month": "八月",
+    "day": "廿五",
+    "leap": false
+   },
+   "ganzhi": "戊午",
+   "date": "2025-10-16",
+   "sectionMonthBranch": "戌",
+   "printedNumber": "4",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 11
+   },
+   "printedLunar": {
+    "month": "八月",
+    "day": "廿七",
+    "leap": false
+   },
+   "ganzhi": "庚申",
+   "date": "2025-10-18",
+   "sectionMonthBranch": "戌",
+   "printedNumber": "6",
+   "printedHours": "巳明星",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 12
+   },
+   "printedLunar": {
+    "month": "八月",
+    "day": "廿八",
+    "leap": false
+   },
+   "ganzhi": "辛酉",
+   "date": "2025-10-19",
+   "sectionMonthBranch": "戌",
+   "printedNumber": "密",
+   "printedHours": "午時進",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 13
+   },
+   "printedLunar": {
+    "month": "八月",
+    "day": "廿九",
+    "leap": false
+   },
+   "ganzhi": "壬戌",
+   "date": "2025-10-20",
+   "sectionMonthBranch": "戌",
+   "printedNumber": "1",
+   "printedHours": "巳午時",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 14
+   },
+   "printedLunar": {
+    "month": "九月",
+    "day": "初一",
+    "leap": false
+   },
+   "ganzhi": "癸亥",
+   "date": "2025-10-21",
+   "sectionMonthBranch": "戌",
+   "printedNumber": "2",
+   "printedHours": "卯辰午",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 15
+   },
+   "printedLunar": {
+    "month": "九月",
+    "day": "初八",
+    "leap": false
+   },
+   "ganzhi": "庚午",
+   "date": "2025-10-28",
+   "sectionMonthBranch": "戌",
+   "printedNumber": "2",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 16
+   },
+   "printedLunar": {
+    "month": "九月",
+    "day": "初十",
+    "leap": false
+   },
+   "ganzhi": "壬申",
+   "date": "2025-10-30",
+   "sectionMonthBranch": "戌",
+   "printedNumber": "4",
+   "printedHours": "巳午明",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 17
+   },
+   "printedLunar": {
+    "month": "九月",
+    "day": "十一",
+    "leap": false
+   },
+   "ganzhi": "癸酉",
+   "date": "2025-10-31",
+   "sectionMonthBranch": "戌",
+   "printedNumber": "5",
+   "printedHours": "辰巳午",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 18
+   },
+   "printedLunar": {
+    "month": "九月",
+    "day": "十二",
+    "leap": false
+   },
+   "ganzhi": "甲戌",
+   "date": "2025-11-01",
+   "sectionMonthBranch": "戌",
+   "printedNumber": "6",
+   "printedHours": "卯巳午",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 19
+   },
+   "printedLunar": {
+    "month": "九月",
+    "day": "十三",
+    "leap": false
+   },
+   "ganzhi": "乙亥",
+   "date": "2025-11-02",
+   "sectionMonthBranch": "戌",
+   "printedNumber": "密",
+   "printedHours": "卯進辰",
+   "status": "CONFIRMED",
+   "note": "時刻欄は紙面どおり「卯・進・辰」の順（他列の「卯午進」型と順序が異なるが、そのまま転記）"
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 20
+   },
+   "printedLunar": {
+    "month": "九月",
+    "day": "二十",
+    "leap": false
+   },
+   "ganzhi": "壬午",
+   "date": "2025-11-09",
+   "sectionMonthBranch": "亥",
+   "printedNumber": "密",
+   "printedHours": "辰巳午",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 21
+   },
+   "printedLunar": {
+    "month": "九月",
+    "day": "廿六",
+    "leap": false
+   },
+   "ganzhi": "戊子",
+   "date": "2025-11-15",
+   "sectionMonthBranch": "亥",
+   "printedNumber": "6",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 22
+   },
+   "printedLunar": {
+    "month": "九月",
+    "day": "廿八",
+    "leap": false
+   },
+   "ganzhi": "庚寅",
+   "date": "2025-11-17",
+   "sectionMonthBranch": "亥",
+   "printedNumber": "1",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 23
+   },
+   "printedLunar": {
+    "month": "九月",
+    "day": "廿九",
+    "leap": false
+   },
+   "ganzhi": "辛卯",
+   "date": "2025-11-18",
+   "sectionMonthBranch": "亥",
+   "printedNumber": "2",
+   "printedHours": "卯午進",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 24
+   },
+   "printedLunar": {
+    "month": "十月",
+    "day": "初二",
+    "leap": false
+   },
+   "ganzhi": "甲午",
+   "date": "2025-11-21",
+   "sectionMonthBranch": "亥",
+   "printedNumber": "5",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 25
+   },
+   "printedLunar": {
+    "month": "十月",
+    "day": "初七",
+    "leap": false
+   },
+   "ganzhi": "己亥",
+   "date": "2025-11-26",
+   "sectionMonthBranch": "亥",
+   "printedNumber": "3",
+   "printedHours": "卯辰午",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 26
+   },
+   "printedLunar": {
+    "month": "十月",
+    "day": "初八",
+    "leap": false
+   },
+   "ganzhi": "庚子",
+   "date": "2025-11-27",
+   "sectionMonthBranch": "亥",
+   "printedNumber": "4",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 1
+   },
+   "printedLunar": {
+    "month": "十月",
+    "day": "初十",
+    "leap": false
+   },
+   "ganzhi": "壬寅",
+   "date": "2025-11-29",
+   "sectionMonthBranch": "亥",
+   "printedNumber": null,
+   "printedHours": null,
+   "status": "CONFIRMED_DATE_ONLY",
+   "note": "紙面右端が写真で隠れ、数字（6に見える）と時刻・補足が判読不能。旧暦月日・日干支は判読でき西暦日は確定"
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 2
+   },
+   "printedLunar": {
+    "month": "十月",
+    "day": "十一",
+    "leap": false
+   },
+   "ganzhi": "癸卯",
+   "date": "2025-11-30",
+   "sectionMonthBranch": "亥",
+   "printedNumber": "密",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 3
+   },
+   "printedLunar": {
+    "month": "十月",
+    "day": "十二",
+    "leap": false
+   },
+   "ganzhi": "甲辰",
+   "date": "2025-12-01",
+   "sectionMonthBranch": "亥",
+   "printedNumber": "1",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 4
+   },
+   "printedLunar": {
+    "month": "十月",
+    "day": "十七",
+    "leap": false
+   },
+   "ganzhi": "己酉",
+   "date": "2025-12-06",
+   "sectionMonthBranch": "亥",
+   "printedNumber": "6",
+   "printedHours": "辰巳午",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 5
+   },
+   "printedLunar": {
+    "month": "十月",
+    "day": "廿一",
+    "leap": false
+   },
+   "ganzhi": "癸丑",
+   "date": "2025-12-10",
+   "sectionMonthBranch": "子",
+   "printedNumber": "3",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 6
+   },
+   "printedLunar": {
+    "month": "十月",
+    "day": "廿四",
+    "leap": false
+   },
+   "ganzhi": "丙辰",
+   "date": "2025-12-13",
+   "sectionMonthBranch": "子",
+   "printedNumber": "6",
+   "printedHours": "卯午進",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 7
+   },
+   "printedLunar": {
+    "month": "十月",
+    "day": "廿八",
+    "leap": false
+   },
+   "ganzhi": "庚申",
+   "date": "2025-12-17",
+   "sectionMonthBranch": "子",
+   "printedNumber": "3",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 8
+   },
+   "printedLunar": {
+    "month": "十一月",
+    "day": "初三",
+    "leap": false
+   },
+   "ganzhi": "乙丑",
+   "date": "2025-12-22",
+   "sectionMonthBranch": "子",
+   "printedNumber": "1",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 9
+   },
+   "printedLunar": {
+    "month": "十一月",
+    "day": "初六",
+    "leap": false
+   },
+   "ganzhi": "戊辰",
+   "date": "2025-12-25",
+   "sectionMonthBranch": "子",
+   "printedNumber": "4",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 10
+   },
+   "printedLunar": {
+    "month": "十一月",
+    "day": "初九",
+    "leap": false
+   },
+   "ganzhi": "辛未",
+   "date": "2025-12-28",
+   "sectionMonthBranch": "子",
+   "printedNumber": "密",
+   "printedHours": "卯午進",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 11
+   },
+   "printedLunar": {
+    "month": "十一月",
+    "day": "初十",
+    "leap": false
+   },
+   "ganzhi": "壬申",
+   "date": "2025-12-29",
+   "sectionMonthBranch": "子",
+   "printedNumber": "1",
+   "printedHours": "辰巳午",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 12
+   },
+   "printedLunar": {
+    "month": "十一月",
+    "day": "十三",
+    "leap": false
+   },
+   "ganzhi": "乙亥",
+   "date": "2026-01-01",
+   "sectionMonthBranch": "子",
+   "printedNumber": "4",
+   "printedHours": "卯辰時",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 13
+   },
+   "printedLunar": {
+    "month": "十一月",
+    "day": "十五",
+    "leap": false
+   },
+   "ganzhi": "丁丑",
+   "date": "2026-01-03",
+   "sectionMonthBranch": "子",
+   "printedNumber": "6",
+   "printedHours": "辰巳午",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 14
+   },
+   "printedLunar": {
+    "month": "十一月",
+    "day": "二十",
+    "leap": false
+   },
+   "ganzhi": "壬午",
+   "date": "2026-01-08",
+   "sectionMonthBranch": "丑",
+   "printedNumber": "4",
+   "printedHours": "辰巳午",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 15
+   },
+   "printedLunar": {
+    "month": "十一月",
+    "day": "廿二",
+    "leap": false
+   },
+   "ganzhi": "甲申",
+   "date": "2026-01-10",
+   "sectionMonthBranch": "丑",
+   "printedNumber": "6",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 16
+   },
+   "printedLunar": {
+    "month": "十一月",
+    "day": "廿五",
+    "leap": false
+   },
+   "ganzhi": "丁亥",
+   "date": "2026-01-13",
+   "sectionMonthBranch": "丑",
+   "printedNumber": "2",
+   "printedHours": "午明星",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 17
+   },
+   "printedLunar": {
+    "month": "十一月",
+    "day": "廿八",
+    "leap": false
+   },
+   "ganzhi": "庚寅",
+   "date": "2026-01-16",
+   "sectionMonthBranch": "丑",
+   "printedNumber": "5",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 18
+   },
+   "printedLunar": {
+    "month": "十一月",
+    "day": "廿九",
+    "leap": false
+   },
+   "ganzhi": "辛卯",
+   "date": "2026-01-17",
+   "sectionMonthBranch": "丑",
+   "printedNumber": "6",
+   "printedHours": "卯午時",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 19
+   },
+   "printedLunar": {
+    "month": "十二月",
+    "day": "初二",
+    "leap": false
+   },
+   "ganzhi": "甲午",
+   "date": "2026-01-20",
+   "sectionMonthBranch": "丑",
+   "printedNumber": "2",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 20
+   },
+   "printedLunar": {
+    "month": "十二月",
+    "day": "初四",
+    "leap": false
+   },
+   "ganzhi": "丙申",
+   "date": "2026-01-22",
+   "sectionMonthBranch": "丑",
+   "printedNumber": "4",
+   "printedHours": "卯午進",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 21
+   },
+   "printedLunar": {
+    "month": "十二月",
+    "day": "十一",
+    "leap": false
+   },
+   "ganzhi": "癸卯",
+   "date": "2026-01-29",
+   "sectionMonthBranch": "丑",
+   "printedNumber": "4",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 22
+   },
+   "printedLunar": {
+    "month": "十二月",
+    "day": "十七",
+    "leap": false
+   },
+   "ganzhi": "己酉",
+   "date": "2026-02-04",
+   "sectionMonthBranch": "寅",
+   "printedNumber": "3",
+   "printedHours": "辰巳午",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 23
+   },
+   "printedLunar": {
+    "month": "十二月",
+    "day": "十九",
+    "leap": false
+   },
+   "ganzhi": "辛亥",
+   "date": "2026-02-06",
+   "sectionMonthBranch": "寅",
+   "printedNumber": "5",
+   "printedHours": "卯午進",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 24
+   },
+   "printedLunar": {
+    "month": "十二月",
+    "day": "廿四",
+    "leap": false
+   },
+   "ganzhi": "丙辰",
+   "date": "2026-02-11",
+   "sectionMonthBranch": "寅",
+   "printedNumber": "3",
+   "printedHours": "卯午進",
+   "status": "CONFIRMED"
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 25
+   },
+   "printedLunar": {
+    "month": "十二月",
+    "day": "廿六",
+    "leap": false
+   },
+   "ganzhi": "戊午",
+   "date": "2026-02-13",
+   "sectionMonthBranch": "寅",
+   "printedNumber": "5",
+   "printedHours": "卯辰巳",
+   "status": "CONFIRMED"
+  }
+ ]
+}

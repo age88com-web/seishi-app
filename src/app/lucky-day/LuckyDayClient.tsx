@@ -113,6 +113,8 @@ import type { SupportStatus, SupportQuestionContextInput } from "@/lib/luckyDay/
 // 時間の吉凶（ユーザー指示、2026-10-14）。型だけを import する
 // （計算・時家720表はServer Action側だけで使い、クライアントへは結果だけを渡す）。
 import type { LuckyDayHourFortune, LuckyDayHourSymbol } from "@/lib/luckyDay/actions";
+import Link from "next/link";
+import { LUCKY_DAY_PURPOSE_CALENDARS } from "@/lib/luckyDay/purposeCalendars";
 
 // ---------------------------------------------------------------------------
 // 既存 evaluateActivities() の evaluations には、その日その用事について
@@ -316,7 +318,7 @@ const MEMBER_LOGIN_URL = "https://fengshui.jp/?takujitsu_app_login=1";
 // 決済機能はNext.js側に実装せず、WordPress側の既存プランページへ誘導するだけ。
 const MEMBER_SIGNUP_URL = "https://fengshui.jp/membership-levels";
 
-function PaywallNotice({
+export function PaywallNotice({
   memberStatus,
   message = "この機能は有料会員でご利用いただけます。",
   variant = "full",
@@ -951,7 +953,7 @@ function TakujitsuAdvisoryNotice() {
 // 実際の無料/有料の機能制限は DayDetailCard・「目的から吉日を探す」側
 // （Server Action経由）で行う。ここは表示のみ。
 // ---------------------------------------------------------------------------
-function MemberStatusBar({ memberStatus }: { memberStatus: TakujitsuMemberStatus }) {
+export function MemberStatusBar({ memberStatus }: { memberStatus: TakujitsuMemberStatus }) {
   if (!memberStatus.authenticated) {
     return (
       <div className="ld-member-status">
@@ -1167,15 +1169,21 @@ function BirthCalendarPicker({
 // ユーザー指示）。既存のPaywallNotice（価格・会員ログイン導線）をそのまま
 // 再利用し、新しい価格表示・導線は作らない。
 // ---------------------------------------------------------------------------
-function PersonalBirthInputCard({
+export function PersonalBirthInputCard({
   memberStatus,
   birthIso,
   onChangeBirthIso,
+  title = "生年月日から個人の忌日を除外",
+  allowClear = false,
 }: {
   memberStatus: TakujitsuMemberStatus;
   /** "YYYY-MM-DD"、または未入力を表す空文字。 */
   birthIso: string;
   onChangeBirthIso: (v: string) => void;
+  /** 見出し（/lucky-day/travel では「個人の忌日を除外する」）。 */
+  title?: string;
+  /** true のとき、選択済みの生年月日の横に「解除」を出す（/lucky-day/travel で使用）。 */
+  allowClear?: boolean;
 }) {
   const isPaid = memberStatus.active;
   // 生年月日なので未来日は選択不可（ユーザー指示、2026-09-20）。
@@ -1197,7 +1205,7 @@ function PersonalBirthInputCard({
 
   return (
     <section className="ld-card ld-personal-input-card">
-      <h2 className="ld-section-title">生年月日から個人の忌日を除外</h2>
+      <h2 className="ld-section-title">{title}</h2>
       <p className="ld-personal-input-desc">
         生年月日をもとに、一般的には使用できる日でも、本人にとって避けたほうがよい日を確認できます。
       </p>
@@ -1213,6 +1221,11 @@ function PersonalBirthInputCard({
                   <button type="button" className="ld-link-btn ld-link-btn-small" onClick={() => setIsOpen(true)}>
                     変更
                   </button>
+                  {allowClear && (
+                    <button type="button" className="ld-link-btn ld-link-btn-small" onClick={() => onChangeBirthIso("")}>
+                      解除
+                    </button>
+                  )}
                 </>
               ) : (
                 <button type="button" className="ld-link-btn" onClick={() => setIsOpen(true)}>
@@ -1447,11 +1460,6 @@ export default function LuckyDayClient({
   // 「今日の吉凶」（PC・スマホとも常時1つだけ表示。初期値は今日。任意日にも変更可能）。
   const [leftDateIso, setLeftDateIso] = useState(() => today.iso);
 
-  // スマホ（900px未満）専用のタブ状態。「今日の吉凶」／「目的から吉日を
-  // 探す」のどちらを表示するか。PC（900px以上）ではCSS側で両方を常時
-  // 表示するため、この状態は参照されない（2カラムのまま変更なし）。
-  const [mobileTab, setMobileTab] = useState<"today" | "purpose">("today");
-
   // 目的検索結果から開いた指定日詳細（非nullの間は目的検索UIの代わりに
   // これを表示する。DayDetailCardは通常画面では左に1つだけ表示し、
   // ここでは検索結果を開いている間だけ一時的に表示する＝同時に2つ
@@ -1640,17 +1648,13 @@ export default function LuckyDayClient({
   // 検索結果の日付／カードをクリック → 指定日詳細（DayDetailCard）へ。
   // カテゴリー・具体的目的・期間・検索結果はすべて上の state に残ったまま
   // なので、「← 吉日検索の結果に戻る」で再検索せずに戻れる。
-  // スマホで「今日の吉凶」タブを見ている状態から検索結果を開く、という
-  // 状況は起こり得ない（検索結果自体が「目的から吉日を探す」タブの中に
-  // しかない）が、念のため「目的から吉日を探す」タブへ切り替えておく。
   function openResultDayDetail(d: TakujitsuSearchDay) {
     setResultDetailIso(formatIso(d.year, d.month, d.day));
-    setMobileTab("purpose");
   }
 
   return (
     <main className="ld-page">
-      <style>{CSS}</style>
+      <style>{LUCKY_DAY_CSS}</style>
 
       {/*
         開発専用オーバーライドの表示（ユーザー指示、2026-09-20）。
@@ -1669,66 +1673,48 @@ export default function LuckyDayClient({
 
       <MemberStatusBar memberStatus={memberStatus} />
 
-      {/*
-        「生年月日から個人の忌日を除外」ブロックは有料会員（isPaid、
-        levelId∈{2,3,4,5}）にだけ表示する（ユーザー指示、2026-09-20。ID 4・5は2026-10-09追加）。
-        無料/未ログインでは見出し・説明文・価格案内・会員ログイン
-        ボタンを含めブロック自体を一切描画しない（PersonalBirthInputCard
-        自体をマウントしない）。ページ上部から「今日の吉凶」「目的から
-        吉日を探す」へ自然につながるようにするための表示条件変更のみで、
-        右上の会員ログイン・新規会員登録導線（MemberStatusBar）は
-        無料/未ログインでも従来どおり表示され続ける。
-        isPaid は memberStatus.active（既存の唯一の有料判定、devPaidMember
-        オーバーライド適用時も含む）をそのまま使う。
-      */}
-      {isPaid && (
-        <PersonalBirthInputCard memberStatus={memberStatus} birthIso={birthIso} onChangeBirthIso={setBirthIso} />
-      )}
-
-      {/*
-        スマホ（900px未満）専用タブ。「今日の吉凶」⇔「目的から吉日を探す」の
-        切替をページ最上部（導入文の直後・DayDetailCardより前）に置き、
-        長くスクロールしなくても目的検索へ切り替えられるようにする。
-        PC（900px以上）ではCSSで非表示にする（2カラム構成は変更しない）。
-      */}
-      <div className="ld-mobile-tabs">
-        <button
-          type="button"
-          className={`ld-mobile-tab${mobileTab === "today" ? " is-active" : ""}`}
-          onClick={() => setMobileTab("today")}
-        >
-          今日の吉凶
-        </button>
-        <button
-          type="button"
-          className={`ld-mobile-tab${mobileTab === "purpose" ? " is-active" : ""}`}
-          onClick={() => setMobileTab("purpose")}
-        >
-          目的から吉日を探す
-        </button>
-      </div>
-
       <div className="ld-layout">
         {/*
-          今日の吉凶（PC・スマホとも常時1つだけ表示する主機能）。
-          DayDetailCardは通常画面ではここに1つだけ置く（右側に複製しない）。
-          スマホでは ld-mobile-tabs の選択に応じて ld-mobile-hidden で
-          表示/非表示を切り替える（display:noneだけで、アンマウントはしない
-          ＝内部state・日付選択は保持される）。PCでは常に表示する。
+          左カラム：目的別の吉日カレンダーへのボタン → 今日の吉凶。
+          ボタンは purposeCalendars.ts の一覧から作る（未実装の用事のボタンは置かない）。
         */}
-        <div className={`ld-col-left${mobileTab === "today" ? "" : " ld-mobile-hidden"}`}>
+        <div className="ld-col-left">
+          <nav className="ld-calendar-links" aria-label="目的別の吉日カレンダー">
+            {LUCKY_DAY_PURPOSE_CALENDARS.map((c) => (
+              <Link key={c.href} href={c.href} className="ld-calendar-link">
+                {c.label}
+              </Link>
+            ))}
+          </nav>
+
           <section className="ld-card">
             <DayDetailCard dateIso={leftDateIso} onDateChange={setLeftDateIso} memberStatus={memberStatus} birth={birthInput} />
           </section>
         </div>
 
         {/*
-          目的から吉日を探す。
-          スマホでは ld-mobile-tabs の選択に応じて表示/非表示（上と同様、
-          display:noneのみでstateは保持される）。PCでは常に表示する
-          （旧・開閉スイッチは廃止。今回のユーザー指示により削除）。
+          右カラム：生年月日から個人の忌日を除外（有料会員のみ）→ 目的から吉日を探す。
+          スマホでは左カラムの下に縦に並ぶ（新車ボタン → 今日の吉凶 → 個人の忌日 → 目的から吉日を探す）。
+          生年月日（birthIso/birthInput）はページ全体で1つの state のままで、
+          「今日の吉凶」「目的から吉日を探す」の両方に渡す。
         */}
-        <div className={`ld-col-right${mobileTab === "purpose" ? "" : " ld-mobile-hidden"}`}>
+        <div className="ld-col-right">
+          {/*
+            「生年月日から個人の忌日を除外」ブロックは有料会員（isPaid、
+            levelId∈{2,3,4,5}）にだけ表示する（ユーザー指示、2026-09-20。ID 4・5は2026-10-09追加）。
+            無料/未ログインでは見出し・説明文・価格案内・会員ログイン
+            ボタンを含めブロック自体を一切描画しない（PersonalBirthInputCard
+            自体をマウントしない）。ページ上部から「今日の吉凶」「目的から
+            吉日を探す」へ自然につながるようにするための表示条件変更のみで、
+            右上の会員ログイン・新規会員登録導線（MemberStatusBar）は
+            無料/未ログインでも従来どおり表示され続ける。
+            isPaid は memberStatus.active（既存の唯一の有料判定、devPaidMember
+            オーバーライド適用時も含む）をそのまま使う。
+          */}
+          {isPaid && (
+            <PersonalBirthInputCard memberStatus={memberStatus} birthIso={birthIso} onChangeBirthIso={setBirthIso} />
+          )}
+
           <section className="ld-card ld-purpose-panel">
             <h2 className="ld-section-title">目的から吉日を探す</h2>
 
@@ -1945,7 +1931,7 @@ export default function LuckyDayClient({
               )}
             </div>
 
-            {/* 講座案内（PC）。検索・検索結果・日の詳細のどの表示でも、右側パネルの一番下。 */}
+            {/* 講座案内（PC）。検索・検索結果・日の詳細のどの表示でも、「目的から吉日を探す」パネルの一番下。 */}
             {shouldShowCourseInvitation(memberStatus) && <CourseInvitation placement="pc" />}
           </section>
         </div>
@@ -1983,7 +1969,7 @@ export default function LuckyDayClient({
 // 吉凶は色だけに依存せず、必ず文字ラベルを併記する。
 // PC（min-width: 900px）では左右2カラム。スマホは縦一列・横スクロール無し。）
 // ---------------------------------------------------------------------------
-const CSS = `
+export const LUCKY_DAY_CSS = `
 .ld-page {
   max-width: 640px;
   margin: 0 auto;
@@ -2096,45 +2082,13 @@ const CSS = `
   text-decoration: underline;
 }
 .ld-course-invite-link:hover { color: #263a33; }
-/* 配置（2026-10-20）: スマホはページ最下部（-sp）、PCは右側パネルの一番下（-pc）だけを表示する。 */
+/* 配置（2026-10-20）: スマホはページ最下部（-sp）、PCは「目的から吉日を探す」パネルの一番下（-pc）だけを表示する。 */
 .ld-course-invite-pc { display: none; }
 .ld-course-invite-sp { margin: 16px 0 0; }
 @media (min-width: 900px) {
   .ld-course-invite-pc { display: block; margin: 20px 0 0; }
   .ld-course-invite-sp { display: none; }
 }
-
-/*
-  スマホ専用タブ（「今日の吉凶」⇔「目的から吉日を探す」）。
-  2つとも同じ幅（flex:1）で横並びにし、選択中のタブは塗りつぶしで
-  明確に区別する。900px以上（PC）ではCSSで非表示にする。
-*/
-.ld-mobile-tabs {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 20px;
-}
-.ld-mobile-tab {
-  flex: 1 1 0;
-  min-width: 0;
-  appearance: none;
-  background: #f1efe6;
-  border: 1px solid #d9d4c4;
-  border-radius: 8px;
-  padding: 12px 8px;
-  font-size: 14px;
-  font-weight: 700;
-  color: #6a675e;
-  cursor: pointer;
-  text-align: center;
-}
-.ld-mobile-tab:hover { background: #e9e5d7; }
-.ld-mobile-tab.is-active {
-  background: #263a33;
-  border-color: #263a33;
-  color: #ffffff;
-}
-.ld-mobile-tab.is-active:hover { background: #1c2c27; }
 
 .ld-layout {
   display: block;
@@ -2143,10 +2097,6 @@ const CSS = `
 .ld-col-left, .ld-col-right {
   min-width: 0;
 }
-/* スマホでは選択されていない側を非表示にする（displayのみ。
-   コンポーネントはアンマウントしないため内部state・検索結果は保持される）。
-   PCでは @media (min-width: 900px) で常時表示に戻す。 */
-.ld-mobile-hidden { display: none; }
 
 .ld-card {
   background: #ffffff;
@@ -2165,6 +2115,28 @@ const CSS = `
   border-left: 4px solid #7a8f7c;
   padding-left: 10px;
 }
+
+/* 目的別の吉日カレンダーへのボタン（2026-10-26）。左カラム最上部。増えたら折り返して並ぶ。 */
+.ld-calendar-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 16px;
+}
+.ld-calendar-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 16px;
+  border: 1px solid #d9d4c4;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #263a33;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.ld-calendar-link:hover { background: #f4f2e9; border-color: #c9c3b0; }
 
 /* 「具体的な目的を選ぶ」「検索期間を選ぶ」などの操作ステップ見出し。
    カテゴリー名（ld-cat-group-title、小さく控えめ）とは明確に区別する。 */
@@ -3027,15 +2999,14 @@ const CSS = `
 /* PC: 十分な横幅がある画面のみ左右2カラム（スマホは縦一列のまま）。 */
 @media (min-width: 900px) {
   .ld-page { max-width: 1120px; }
-  /* PCではスマホ専用タブを出さず、2カラムを常時両方表示する（変更しない）。 */
-  .ld-mobile-tabs { display: none; }
-  .ld-mobile-hidden { display: block; }
+  /* 左＝新車ボタン・今日の吉凶、右＝個人の忌日・目的から吉日を探す（幅は同程度）。 */
   .ld-layout {
     display: grid;
-    grid-template-columns: minmax(380px, 1fr) minmax(420px, 1.1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 24px;
     align-items: start;
   }
+  .ld-col-right { display: flex; flex-direction: column; gap: 20px; }
   .ld-col-left .ld-card, .ld-col-right .ld-card { margin-bottom: 0; }
 }
 `;

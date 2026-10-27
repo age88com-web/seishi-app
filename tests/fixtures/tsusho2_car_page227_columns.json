@@ -1,0 +1,2408 @@
+{
+ "_meta": {
+  "purpose": "通書2 p.227「購買新車及交車吉課」の紙面掲載列を基準にした検証用fixture（掲載日と赤黒分類）。productionでは使用しない。旧 tests/fixtures/tsusho2_1080_car_wip.json と tsusho2_car_color_wip.json は変更しない。",
+  "legend": "red＝買車及交車（紙面「日時印紅字買車及交車」）／black＝即交車吉日（「日時印黒字即交車吉日」）",
+  "method": "紙面の127列（段・右からの列番号・旧暦月日・日干支・色）は 2026-10-25 に読み取ったものを使用（PDFの再転記はしていない）。西暦日は既存 CalendarEngine（12:00 JST）の旧暦月・閏月・旧暦日・日干支と紙面の掲載順で決定し、127列すべて一致。日干支だけで60日前後に対応させる方法は使っていない。",
+  "lunar_month_check": "紙面の月ラベル（閏六月を含む）と CalendarEngine（12:00 JST）の旧暦月は127列すべて一致（差異なし）。ただし旧fixtureの lunarMonth/lunarDay は19行で CalendarEngine（12:00 JST）と異なる（例：No.36 2025-05-27 は旧fixture 4/30、エンジン・紙面とも五月初一。閏六月の行を七月としている等）。",
+  "counts": {
+   "columns": 127,
+   "distinctDates": 126,
+   "redColumns": 73,
+   "blackColumns": 54,
+   "matchedOldRows": 98,
+   "repairedOldRows": 18,
+   "newDatesOnPage": 10,
+   "oldRowsNotOnPage": 4,
+   "unresolved": 0
+  },
+  "date": "2026-10-25"
+ },
+ "columns": [
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 1
+   },
+   "printedLunar": {
+    "month": "正月",
+    "day": 9
+   },
+   "ganzhi": "丙午",
+   "date": "2025-02-06",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    1
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 2
+   },
+   "printedLunar": {
+    "month": "正月",
+    "day": 10
+   },
+   "ganzhi": "丁未",
+   "date": "2025-02-07",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    2
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 3
+   },
+   "printedLunar": {
+    "month": "正月",
+    "day": 18
+   },
+   "ganzhi": "乙卯",
+   "date": "2025-02-15",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    3
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 4
+   },
+   "printedLunar": {
+    "month": "正月",
+    "day": 19
+   },
+   "ganzhi": "丙辰",
+   "date": "2025-02-16",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    4
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 5
+   },
+   "printedLunar": {
+    "month": "正月",
+    "day": 21
+   },
+   "ganzhi": "戊午",
+   "date": "2025-02-18",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    5
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 6
+   },
+   "printedLunar": {
+    "month": "正月",
+    "day": 27
+   },
+   "ganzhi": "甲子",
+   "date": "2025-02-24",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    6
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 7
+   },
+   "printedLunar": {
+    "month": "正月",
+    "day": 30
+   },
+   "ganzhi": "丁卯",
+   "date": "2025-02-27",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    7
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 8
+   },
+   "printedLunar": {
+    "month": "二月",
+    "day": 4
+   },
+   "ganzhi": "辛未",
+   "date": "2025-03-03",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    8
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 9
+   },
+   "printedLunar": {
+    "month": "二月",
+    "day": 6
+   },
+   "ganzhi": "癸酉",
+   "date": "2025-03-05",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    9
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 10
+   },
+   "printedLunar": {
+    "month": "二月",
+    "day": 7
+   },
+   "ganzhi": "甲戌",
+   "date": "2025-03-06",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    10
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 11
+   },
+   "printedLunar": {
+    "month": "二月",
+    "day": 8
+   },
+   "ganzhi": "乙亥",
+   "date": "2025-03-07",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    11
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 12
+   },
+   "printedLunar": {
+    "month": "二月",
+    "day": 10
+   },
+   "ganzhi": "丁丑",
+   "date": "2025-03-09",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    12
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 13
+   },
+   "printedLunar": {
+    "month": "二月",
+    "day": 12
+   },
+   "ganzhi": "己卯",
+   "date": "2025-03-11",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    13
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 14
+   },
+   "printedLunar": {
+    "month": "二月",
+    "day": 16
+   },
+   "ganzhi": "癸未",
+   "date": "2025-03-15",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    14
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 15
+   },
+   "printedLunar": {
+    "month": "二月",
+    "day": 17
+   },
+   "ganzhi": "甲申",
+   "date": "2025-03-16",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    15
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 16
+   },
+   "printedLunar": {
+    "month": "二月",
+    "day": 22
+   },
+   "ganzhi": "己丑",
+   "date": "2025-03-21",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    16
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 17
+   },
+   "printedLunar": {
+    "month": "二月",
+    "day": 24
+   },
+   "ganzhi": "辛卯",
+   "date": "2025-03-23",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    17
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 18
+   },
+   "printedLunar": {
+    "month": "二月",
+    "day": 28
+   },
+   "ganzhi": "乙未",
+   "date": "2025-03-27",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    18
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 19
+   },
+   "printedLunar": {
+    "month": "三月",
+    "day": 2
+   },
+   "ganzhi": "戊戌",
+   "date": "2025-03-30",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    19
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 20
+   },
+   "printedLunar": {
+    "month": "三月",
+    "day": 3
+   },
+   "ganzhi": "己亥",
+   "date": "2025-03-31",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    20
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 21
+   },
+   "printedLunar": {
+    "month": "三月",
+    "day": 7
+   },
+   "ganzhi": "癸卯",
+   "date": "2025-04-04",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    21
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 22
+   },
+   "printedLunar": {
+    "month": "三月",
+    "day": 8
+   },
+   "ganzhi": "甲辰",
+   "date": "2025-04-05",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    22
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 23
+   },
+   "printedLunar": {
+    "month": "三月",
+    "day": 10
+   },
+   "ganzhi": "丙午",
+   "date": "2025-04-07",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    23
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 24
+   },
+   "printedLunar": {
+    "month": "三月",
+    "day": 18
+   },
+   "ganzhi": "甲寅",
+   "date": "2025-04-15",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    24
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 1,
+    "columnFromRight": 25
+   },
+   "printedLunar": {
+    "month": "三月",
+    "day": 20
+   },
+   "ganzhi": "丙辰",
+   "date": "2025-04-17",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    25
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 1
+   },
+   "printedLunar": {
+    "month": "三月",
+    "day": 22
+   },
+   "ganzhi": "戊午",
+   "date": "2025-04-19",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [],
+   "correction": {
+    "type": "MISSING_IN_OLD_FIXTURE",
+    "reason": "紙面に掲載があるが旧fixtureに無かった（60日ずれの対応候補も無し）"
+   }
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 2
+   },
+   "printedLunar": {
+    "month": "三月",
+    "day": 30
+   },
+   "ganzhi": "丙寅",
+   "date": "2025-04-27",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [],
+   "correction": {
+    "type": "MISSING_IN_OLD_FIXTURE",
+    "reason": "紙面に掲載があるが旧fixtureに無かった（60日ずれの対応候補も無し）"
+   }
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 3
+   },
+   "printedLunar": {
+    "month": "四月",
+    "day": 1
+   },
+   "ganzhi": "丁卯",
+   "date": "2025-04-28",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    26
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 4
+   },
+   "printedLunar": {
+    "month": "四月",
+    "day": 4
+   },
+   "ganzhi": "庚午",
+   "date": "2025-05-01",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    27
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 5
+   },
+   "printedLunar": {
+    "month": "四月",
+    "day": 10
+   },
+   "ganzhi": "丙子",
+   "date": "2025-05-07",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    28
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 6
+   },
+   "printedLunar": {
+    "month": "四月",
+    "day": 13
+   },
+   "ganzhi": "己卯",
+   "date": "2025-05-10",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    29
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 7
+   },
+   "printedLunar": {
+    "month": "四月",
+    "day": 16
+   },
+   "ganzhi": "壬午",
+   "date": "2025-05-13",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    30
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 8
+   },
+   "printedLunar": {
+    "month": "四月",
+    "day": 19
+   },
+   "ganzhi": "乙酉",
+   "date": "2025-05-16",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    31
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 9
+   },
+   "printedLunar": {
+    "month": "四月",
+    "day": 22
+   },
+   "ganzhi": "戊子",
+   "date": "2025-05-19",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    32
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 10
+   },
+   "printedLunar": {
+    "month": "四月",
+    "day": 24
+   },
+   "ganzhi": "庚寅",
+   "date": "2025-05-21",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    33
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 11
+   },
+   "printedLunar": {
+    "month": "四月",
+    "day": 25
+   },
+   "ganzhi": "辛卯",
+   "date": "2025-05-22",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    34
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 12
+   },
+   "printedLunar": {
+    "month": "四月",
+    "day": 28
+   },
+   "ganzhi": "甲午",
+   "date": "2025-05-25",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    35
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 13
+   },
+   "printedLunar": {
+    "month": "五月",
+    "day": 1
+   },
+   "ganzhi": "丙申",
+   "date": "2025-05-27",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    36
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 14
+   },
+   "printedLunar": {
+    "month": "五月",
+    "day": 8
+   },
+   "ganzhi": "癸卯",
+   "date": "2025-06-03",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    37
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 15
+   },
+   "printedLunar": {
+    "month": "五月",
+    "day": 9
+   },
+   "ganzhi": "甲辰",
+   "date": "2025-06-04",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    38
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 16
+   },
+   "printedLunar": {
+    "month": "五月",
+    "day": 12
+   },
+   "ganzhi": "丁未",
+   "date": "2025-06-07",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    39
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 17
+   },
+   "printedLunar": {
+    "month": "五月",
+    "day": 13
+   },
+   "ganzhi": "戊申",
+   "date": "2025-06-08",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    40
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 18
+   },
+   "printedLunar": {
+    "month": "五月",
+    "day": 15
+   },
+   "ganzhi": "庚戌",
+   "date": "2025-06-10",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    41
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 19
+   },
+   "printedLunar": {
+    "month": "五月",
+    "day": 16
+   },
+   "ganzhi": "辛亥",
+   "date": "2025-06-11",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    42
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 20
+   },
+   "printedLunar": {
+    "month": "五月",
+    "day": 21
+   },
+   "ganzhi": "丙辰",
+   "date": "2025-06-16",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    43
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 21
+   },
+   "printedLunar": {
+    "month": "五月",
+    "day": 24
+   },
+   "ganzhi": "己未",
+   "date": "2025-06-19",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    44
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 22
+   },
+   "printedLunar": {
+    "month": "五月",
+    "day": 27
+   },
+   "ganzhi": "壬戌",
+   "date": "2025-06-22",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    45
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 23
+   },
+   "printedLunar": {
+    "month": "六月",
+    "day": 1
+   },
+   "ganzhi": "乙丑",
+   "date": "2025-06-25",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    46
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 24
+   },
+   "printedLunar": {
+    "month": "六月",
+    "day": 4
+   },
+   "ganzhi": "戊辰",
+   "date": "2025-06-28",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    47
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 25
+   },
+   "printedLunar": {
+    "month": "六月",
+    "day": 6
+   },
+   "ganzhi": "庚午",
+   "date": "2025-06-30",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    48
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 2,
+    "columnFromRight": 26
+   },
+   "printedLunar": {
+    "month": "六月",
+    "day": 7
+   },
+   "ganzhi": "辛未",
+   "date": "2025-07-01",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    49
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 1
+   },
+   "printedLunar": {
+    "month": "六月",
+    "day": 8
+   },
+   "ganzhi": "壬申",
+   "date": "2025-07-02",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [],
+   "correction": {
+    "type": "MISSING_IN_OLD_FIXTURE",
+    "reason": "紙面に掲載があるが旧fixtureに無かった（60日ずれの対応候補も無し）。旧No.78（2025-08-31 壬申）は60日前のこの列ではなく、No.78〜81の一連の対応から60日後の九月初十に対応"
+   }
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 2
+   },
+   "printedLunar": {
+    "month": "六月",
+    "day": 10
+   },
+   "ganzhi": "甲戌",
+   "date": "2025-07-04",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    50
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 3
+   },
+   "printedLunar": {
+    "month": "六月",
+    "day": 11
+   },
+   "ganzhi": "乙亥",
+   "date": "2025-07-05",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    51
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 4
+   },
+   "printedLunar": {
+    "month": "六月",
+    "day": 15
+   },
+   "ganzhi": "己卯",
+   "date": "2025-07-09",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    52
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 5
+   },
+   "printedLunar": {
+    "month": "六月",
+    "day": 19
+   },
+   "ganzhi": "癸未",
+   "date": "2025-07-13",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    53
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 6
+   },
+   "printedLunar": {
+    "month": "六月",
+    "day": 20
+   },
+   "ganzhi": "甲申",
+   "date": "2025-07-14",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    54
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 7
+   },
+   "printedLunar": {
+    "month": "六月",
+    "day": 21
+   },
+   "ganzhi": "乙酉",
+   "date": "2025-07-15",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    55
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 8
+   },
+   "printedLunar": {
+    "month": "六月",
+    "day": 26
+   },
+   "ganzhi": "庚寅",
+   "date": "2025-07-20",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    57
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 9
+   },
+   "printedLunar": {
+    "month": "六月",
+    "day": 27
+   },
+   "ganzhi": "辛卯",
+   "date": "2025-07-21",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    58
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 10
+   },
+   "printedLunar": {
+    "month": "閏六月",
+    "day": 1
+   },
+   "ganzhi": "乙未",
+   "date": "2025-07-25",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    59
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 11
+   },
+   "printedLunar": {
+    "month": "閏六月",
+    "day": 8
+   },
+   "ganzhi": "壬寅",
+   "date": "2025-08-01",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    63
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 12
+   },
+   "printedLunar": {
+    "month": "閏六月",
+    "day": 9
+   },
+   "ganzhi": "癸卯",
+   "date": "2025-08-02",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    64
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 13
+   },
+   "printedLunar": {
+    "month": "閏六月",
+    "day": 10
+   },
+   "ganzhi": "甲辰",
+   "date": "2025-08-03",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    65
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 14
+   },
+   "printedLunar": {
+    "month": "閏六月",
+    "day": 18
+   },
+   "ganzhi": "壬子",
+   "date": "2025-08-11",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    69
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 15
+   },
+   "printedLunar": {
+    "month": "閏六月",
+    "day": 26
+   },
+   "ganzhi": "庚申",
+   "date": "2025-08-19",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    71
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 16
+   },
+   "printedLunar": {
+    "month": "閏六月",
+    "day": 28
+   },
+   "ganzhi": "壬戌",
+   "date": "2025-08-21",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    73
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 17
+   },
+   "printedLunar": {
+    "month": "七月",
+    "day": 1
+   },
+   "ganzhi": "甲子",
+   "date": "2025-08-23",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    75
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 18
+   },
+   "printedLunar": {
+    "month": "七月",
+    "day": 7
+   },
+   "ganzhi": "庚午",
+   "date": "2025-08-29",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    76
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 19
+   },
+   "printedLunar": {
+    "month": "七月",
+    "day": 8
+   },
+   "ganzhi": "辛未",
+   "date": "2025-08-30",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    77
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 20
+   },
+   "printedLunar": {
+    "month": "七月",
+    "day": 13
+   },
+   "ganzhi": "丙子",
+   "date": "2025-09-04",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [],
+   "correction": {
+    "type": "MISSING_IN_OLD_FIXTURE",
+    "reason": "紙面に掲載があるが旧fixtureに無かった（60日ずれの対応候補も無し）"
+   }
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 21
+   },
+   "printedLunar": {
+    "month": "七月",
+    "day": 21
+   },
+   "ganzhi": "甲申",
+   "date": "2025-09-12",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    85
+   ],
+   "correction": {
+    "type": "DATE_SHIFTED_60_DAYS",
+    "reason": "旧fixture No.85（2025-11-11）は同じ日干支の60日後の日付に誤って対応付けられていた。紙面の旧暦月日・掲載順ではこの日付"
+   }
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 22
+   },
+   "printedLunar": {
+    "month": "七月",
+    "day": 22
+   },
+   "ganzhi": "乙酉",
+   "date": "2025-09-13",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    86
+   ],
+   "correction": {
+    "type": "DATE_SHIFTED_60_DAYS",
+    "reason": "旧fixture No.86（2025-11-12）は同じ日干支の60日後の日付に誤って対応付けられていた。紙面の旧暦月日・掲載順ではこの日付"
+   }
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 23
+   },
+   "printedLunar": {
+    "month": "七月",
+    "day": 24
+   },
+   "ganzhi": "丁亥",
+   "date": "2025-09-15",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    87
+   ],
+   "correction": {
+    "type": "DATE_SHIFTED_60_DAYS",
+    "reason": "旧fixture No.87（2025-11-14）は同じ日干支の60日後の日付に誤って対応付けられていた。紙面の旧暦月日・掲載順ではこの日付"
+   }
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 24
+   },
+   "printedLunar": {
+    "month": "七月",
+    "day": 26
+   },
+   "ganzhi": "己丑",
+   "date": "2025-09-17",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    89
+   ],
+   "correction": {
+    "type": "DATE_SHIFTED_60_DAYS",
+    "reason": "旧fixture No.89（2025-11-16）は同じ日干支の60日後の日付に誤って対応付けられていた。紙面の旧暦月日・掲載順ではこの日付",
+    "note": "旧No.56（2025-07-19 己丑）もこの列の60日前に当たるが、No.85〜92の一連の60日後ずれと旧暦日の差が一貫する No.89 に対応させた。No.56 は紙面に対応列なし"
+   }
+  },
+  {
+   "position": {
+    "band": 3,
+    "columnFromRight": 25
+   },
+   "printedLunar": {
+    "month": "七月",
+    "day": 29
+   },
+   "ganzhi": "壬辰",
+   "date": "2025-09-20",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    92
+   ],
+   "correction": {
+    "type": "DATE_SHIFTED_60_DAYS",
+    "reason": "旧fixture No.92（2025-11-19）は同じ日干支の60日後の日付に誤って対応付けられていた。紙面の旧暦月日・掲載順ではこの日付"
+   }
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 1
+   },
+   "printedLunar": {
+    "month": "八月",
+    "day": 4
+   },
+   "ganzhi": "丁酉",
+   "date": "2025-09-25",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    60
+   ],
+   "correction": {
+    "type": "DATE_SHIFTED_60_DAYS",
+    "reason": "旧fixture No.60（2025-07-27）は同じ日干支の60日前の日付に誤って対応付けられていた。紙面の旧暦月日・掲載順ではこの日付"
+   }
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 2
+   },
+   "printedLunar": {
+    "month": "八月",
+    "day": 6
+   },
+   "ganzhi": "己亥",
+   "date": "2025-09-27",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    61
+   ],
+   "correction": {
+    "type": "DATE_SHIFTED_60_DAYS",
+    "reason": "旧fixture No.61（2025-07-29）は同じ日干支の60日前の日付に誤って対応付けられていた。紙面の旧暦月日・掲載順ではこの日付"
+   }
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 3
+   },
+   "printedLunar": {
+    "month": "八月",
+    "day": 8
+   },
+   "ganzhi": "辛丑",
+   "date": "2025-09-29",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    62
+   ],
+   "correction": {
+    "type": "DATE_SHIFTED_60_DAYS",
+    "reason": "旧fixture No.62（2025-07-31）は同じ日干支の60日前の日付に誤って対応付けられていた。紙面の旧暦月日・掲載順ではこの日付"
+   }
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 4
+   },
+   "printedLunar": {
+    "month": "八月",
+    "day": 11
+   },
+   "ganzhi": "甲辰",
+   "date": "2025-10-02",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [],
+   "correction": {
+    "type": "MISSING_IN_OLD_FIXTURE",
+    "reason": "紙面に掲載があるが旧fixtureに無かった（60日ずれの対応候補も無し）"
+   }
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 5
+   },
+   "printedLunar": {
+    "month": "八月",
+    "day": 15
+   },
+   "ganzhi": "戊申",
+   "date": "2025-10-06",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    66
+   ],
+   "correction": {
+    "type": "DATE_SHIFTED_60_DAYS",
+    "reason": "旧fixture No.66（2025-08-07）は同じ日干支の60日前の日付に誤って対応付けられていた。紙面の旧暦月日・掲載順ではこの日付"
+   }
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 6
+   },
+   "printedLunar": {
+    "month": "八月",
+    "day": 16
+   },
+   "ganzhi": "己酉",
+   "date": "2025-10-07",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [],
+   "correction": {
+    "type": "MISSING_IN_OLD_FIXTURE",
+    "reason": "紙面に掲載があるが旧fixtureに無かった（60日ずれの対応候補も無し）"
+   }
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 7
+   },
+   "printedLunar": {
+    "month": "八月",
+    "day": 17
+   },
+   "ganzhi": "庚戌",
+   "date": "2025-10-08",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    67
+   ],
+   "correction": {
+    "type": "DATE_SHIFTED_60_DAYS",
+    "reason": "旧fixture No.67（2025-08-09）は同じ日干支の60日前の日付に誤って対応付けられていた。紙面の旧暦月日・掲載順ではこの日付"
+   },
+   "note": "寒露の同日2列（節前＝赤・節後＝黒）。日付単位の集計では1日として扱う"
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 8
+   },
+   "printedLunar": {
+    "month": "八月",
+    "day": 17
+   },
+   "ganzhi": "庚戌",
+   "date": "2025-10-08",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    67
+   ],
+   "correction": {
+    "type": "DATE_SHIFTED_60_DAYS",
+    "reason": "旧fixture No.67（2025-08-09）は同じ日干支の60日前の日付に誤って対応付けられていた。紙面の旧暦月日・掲載順ではこの日付"
+   },
+   "note": "寒露の同日2列（節前＝赤・節後＝黒）。日付単位の集計では1日として扱う"
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 9
+   },
+   "printedLunar": {
+    "month": "八月",
+    "day": 18
+   },
+   "ganzhi": "辛亥",
+   "date": "2025-10-09",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    68
+   ],
+   "correction": {
+    "type": "DATE_SHIFTED_60_DAYS",
+    "reason": "旧fixture No.68（2025-08-10）は同じ日干支の60日前の日付に誤って対応付けられていた。紙面の旧暦月日・掲載順ではこの日付"
+   }
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 10
+   },
+   "printedLunar": {
+    "month": "八月",
+    "day": 25
+   },
+   "ganzhi": "戊午",
+   "date": "2025-10-16",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    70
+   ],
+   "correction": {
+    "type": "DATE_SHIFTED_60_DAYS",
+    "reason": "旧fixture No.70（2025-08-17）は同じ日干支の60日前の日付に誤って対応付けられていた。紙面の旧暦月日・掲載順ではこの日付"
+   }
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 11
+   },
+   "printedLunar": {
+    "month": "八月",
+    "day": 27
+   },
+   "ganzhi": "庚申",
+   "date": "2025-10-18",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [],
+   "correction": {
+    "type": "MISSING_IN_OLD_FIXTURE",
+    "reason": "紙面に掲載があるが旧fixtureに無かった（60日ずれの対応候補も無し）"
+   }
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 12
+   },
+   "printedLunar": {
+    "month": "八月",
+    "day": 28
+   },
+   "ganzhi": "辛酉",
+   "date": "2025-10-19",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    72
+   ],
+   "correction": {
+    "type": "DATE_SHIFTED_60_DAYS",
+    "reason": "旧fixture No.72（2025-08-20）は同じ日干支の60日前の日付に誤って対応付けられていた。紙面の旧暦月日・掲載順ではこの日付"
+   }
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 13
+   },
+   "printedLunar": {
+    "month": "八月",
+    "day": 29
+   },
+   "ganzhi": "壬戌",
+   "date": "2025-10-20",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [],
+   "correction": {
+    "type": "MISSING_IN_OLD_FIXTURE",
+    "reason": "紙面に掲載があるが旧fixtureに無かった（60日ずれの対応候補も無し）"
+   }
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 14
+   },
+   "printedLunar": {
+    "month": "九月",
+    "day": 1
+   },
+   "ganzhi": "癸亥",
+   "date": "2025-10-21",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    74
+   ],
+   "correction": {
+    "type": "DATE_SHIFTED_60_DAYS",
+    "reason": "旧fixture No.74（2025-08-22）は同じ日干支の60日前の日付に誤って対応付けられていた。紙面の旧暦月日・掲載順ではこの日付"
+   }
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 15
+   },
+   "printedLunar": {
+    "month": "九月",
+    "day": 8
+   },
+   "ganzhi": "庚午",
+   "date": "2025-10-28",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [],
+   "correction": {
+    "type": "MISSING_IN_OLD_FIXTURE",
+    "reason": "紙面に掲載があるが旧fixtureに無かった（60日ずれの対応候補も無し）"
+   }
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 16
+   },
+   "printedLunar": {
+    "month": "九月",
+    "day": 10
+   },
+   "ganzhi": "壬申",
+   "date": "2025-10-30",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    78
+   ],
+   "correction": {
+    "type": "DATE_SHIFTED_60_DAYS",
+    "reason": "旧fixture No.78（2025-08-31）は同じ日干支の60日前の日付に誤って対応付けられていた。紙面の旧暦月日・掲載順ではこの日付"
+   }
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 17
+   },
+   "printedLunar": {
+    "month": "九月",
+    "day": 11
+   },
+   "ganzhi": "癸酉",
+   "date": "2025-10-31",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    79
+   ],
+   "correction": {
+    "type": "DATE_SHIFTED_60_DAYS",
+    "reason": "旧fixture No.79（2025-09-01）は同じ日干支の60日前の日付に誤って対応付けられていた。紙面の旧暦月日・掲載順ではこの日付"
+   }
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 18
+   },
+   "printedLunar": {
+    "month": "九月",
+    "day": 12
+   },
+   "ganzhi": "甲戌",
+   "date": "2025-11-01",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    80
+   ],
+   "correction": {
+    "type": "DATE_SHIFTED_60_DAYS",
+    "reason": "旧fixture No.80（2025-09-02）は同じ日干支の60日前の日付に誤って対応付けられていた。紙面の旧暦月日・掲載順ではこの日付"
+   }
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 19
+   },
+   "printedLunar": {
+    "month": "九月",
+    "day": 13
+   },
+   "ganzhi": "乙亥",
+   "date": "2025-11-02",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    81
+   ],
+   "correction": {
+    "type": "DATE_SHIFTED_60_DAYS",
+    "reason": "旧fixture No.81（2025-09-03）は同じ日干支の60日前の日付に誤って対応付けられていた。紙面の旧暦月日・掲載順ではこの日付"
+   }
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 20
+   },
+   "printedLunar": {
+    "month": "九月",
+    "day": 20
+   },
+   "ganzhi": "壬午",
+   "date": "2025-11-09",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    84
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 21
+   },
+   "printedLunar": {
+    "month": "九月",
+    "day": 26
+   },
+   "ganzhi": "戊子",
+   "date": "2025-11-15",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    88
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 22
+   },
+   "printedLunar": {
+    "month": "九月",
+    "day": 28
+   },
+   "ganzhi": "庚寅",
+   "date": "2025-11-17",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    90
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 23
+   },
+   "printedLunar": {
+    "month": "九月",
+    "day": 29
+   },
+   "ganzhi": "辛卯",
+   "date": "2025-11-18",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    91
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 24
+   },
+   "printedLunar": {
+    "month": "十月",
+    "day": 2
+   },
+   "ganzhi": "甲午",
+   "date": "2025-11-21",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    93
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 25
+   },
+   "printedLunar": {
+    "month": "十月",
+    "day": 7
+   },
+   "ganzhi": "己亥",
+   "date": "2025-11-26",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    95
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 4,
+    "columnFromRight": 26
+   },
+   "printedLunar": {
+    "month": "十月",
+    "day": 8
+   },
+   "ganzhi": "庚子",
+   "date": "2025-11-27",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    96
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 1
+   },
+   "printedLunar": {
+    "month": "十月",
+    "day": 10
+   },
+   "ganzhi": "壬寅",
+   "date": "2025-11-29",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    97
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 2
+   },
+   "printedLunar": {
+    "month": "十月",
+    "day": 11
+   },
+   "ganzhi": "癸卯",
+   "date": "2025-11-30",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    98
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 3
+   },
+   "printedLunar": {
+    "month": "十月",
+    "day": 12
+   },
+   "ganzhi": "甲辰",
+   "date": "2025-12-01",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    99
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 4
+   },
+   "printedLunar": {
+    "month": "十月",
+    "day": 17
+   },
+   "ganzhi": "己酉",
+   "date": "2025-12-06",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    100
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 5
+   },
+   "printedLunar": {
+    "month": "十月",
+    "day": 21
+   },
+   "ganzhi": "癸丑",
+   "date": "2025-12-10",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    101
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 6
+   },
+   "printedLunar": {
+    "month": "十月",
+    "day": 24
+   },
+   "ganzhi": "丙辰",
+   "date": "2025-12-13",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [],
+   "correction": {
+    "type": "MISSING_IN_OLD_FIXTURE",
+    "reason": "紙面に掲載があるが旧fixtureに無かった（60日ずれの対応候補も無し）"
+   }
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 7
+   },
+   "printedLunar": {
+    "month": "十月",
+    "day": 28
+   },
+   "ganzhi": "庚申",
+   "date": "2025-12-17",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    102
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 8
+   },
+   "printedLunar": {
+    "month": "十一月",
+    "day": 3
+   },
+   "ganzhi": "乙丑",
+   "date": "2025-12-22",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    103
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 9
+   },
+   "printedLunar": {
+    "month": "十一月",
+    "day": 6
+   },
+   "ganzhi": "戊辰",
+   "date": "2025-12-25",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    104
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 10
+   },
+   "printedLunar": {
+    "month": "十一月",
+    "day": 9
+   },
+   "ganzhi": "辛未",
+   "date": "2025-12-28",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    105
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 11
+   },
+   "printedLunar": {
+    "month": "十一月",
+    "day": 10
+   },
+   "ganzhi": "壬申",
+   "date": "2025-12-29",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    106
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 12
+   },
+   "printedLunar": {
+    "month": "十一月",
+    "day": 13
+   },
+   "ganzhi": "乙亥",
+   "date": "2026-01-01",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    107
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 13
+   },
+   "printedLunar": {
+    "month": "十一月",
+    "day": 15
+   },
+   "ganzhi": "丁丑",
+   "date": "2026-01-03",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    108
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 14
+   },
+   "printedLunar": {
+    "month": "十一月",
+    "day": 20
+   },
+   "ganzhi": "壬午",
+   "date": "2026-01-08",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    109
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 15
+   },
+   "printedLunar": {
+    "month": "十一月",
+    "day": 22
+   },
+   "ganzhi": "甲申",
+   "date": "2026-01-10",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    110
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 16
+   },
+   "printedLunar": {
+    "month": "十一月",
+    "day": 25
+   },
+   "ganzhi": "丁亥",
+   "date": "2026-01-13",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    111
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 17
+   },
+   "printedLunar": {
+    "month": "十一月",
+    "day": 28
+   },
+   "ganzhi": "庚寅",
+   "date": "2026-01-16",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    112
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 18
+   },
+   "printedLunar": {
+    "month": "十一月",
+    "day": 29
+   },
+   "ganzhi": "辛卯",
+   "date": "2026-01-17",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    113
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 19
+   },
+   "printedLunar": {
+    "month": "十二月",
+    "day": 2
+   },
+   "ganzhi": "甲午",
+   "date": "2026-01-20",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    114
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 20
+   },
+   "printedLunar": {
+    "month": "十二月",
+    "day": 4
+   },
+   "ganzhi": "丙申",
+   "date": "2026-01-22",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    115
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 21
+   },
+   "printedLunar": {
+    "month": "十二月",
+    "day": 11
+   },
+   "ganzhi": "癸卯",
+   "date": "2026-01-29",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    116
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 22
+   },
+   "printedLunar": {
+    "month": "十二月",
+    "day": 17
+   },
+   "ganzhi": "己酉",
+   "date": "2026-02-04",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    117
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 23
+   },
+   "printedLunar": {
+    "month": "十二月",
+    "day": 19
+   },
+   "ganzhi": "辛亥",
+   "date": "2026-02-06",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    118
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 24
+   },
+   "printedLunar": {
+    "month": "十二月",
+    "day": 24
+   },
+   "ganzhi": "丙辰",
+   "date": "2026-02-11",
+   "color": "black",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    119
+   ],
+   "correction": null
+  },
+  {
+   "position": {
+    "band": 5,
+    "columnFromRight": 25
+   },
+   "printedLunar": {
+    "month": "十二月",
+    "day": 26
+   },
+   "ganzhi": "戊午",
+   "date": "2026-02-13",
+   "color": "red",
+   "status": "CONFIRMED",
+   "oldFixtureRows": [
+    120
+   ],
+   "correction": null
+  }
+ ],
+ "oldFixtureRowsNotOnPage": [
+  {
+   "oldFixtureRow": 56,
+   "date": "2025-07-19",
+   "ganzhi": "己丑",
+   "status": "NOT_ON_PAGE",
+   "reason": "紙面に対応列なし。同じ日干支の列（2025-09-17）が60日後にあり、旧fixtureの別の行がすでにその列に対応しているため、重複して登録された行と判断"
+  },
+  {
+   "oldFixtureRow": 82,
+   "date": "2025-09-07",
+   "ganzhi": "己卯",
+   "status": "NOT_ON_PAGE",
+   "reason": "紙面に対応列なし。同じ日干支の列（2025-07-09）が60日前にあり、旧fixtureの別の行がすでにその列に対応しているため、重複して登録された行と判断"
+  },
+  {
+   "oldFixtureRow": 83,
+   "date": "2025-09-11",
+   "ganzhi": "癸未",
+   "status": "NOT_ON_PAGE",
+   "reason": "紙面に対応列なし。同じ日干支の列（2025-07-13）が60日前にあり、旧fixtureの別の行がすでにその列に対応しているため、重複して登録された行と判断"
+  },
+  {
+   "oldFixtureRow": 94,
+   "date": "2025-11-23",
+   "ganzhi": "丙申",
+   "status": "NOT_ON_PAGE",
+   "reason": "紙面に対応列なし。同じ日干支の列（2026-01-22）が60日後にあり、旧fixtureの別の行がすでにその列に対応しているため、重複して登録された行と判断"
+  }
+ ]
+}
