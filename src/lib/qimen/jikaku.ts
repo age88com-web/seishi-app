@@ -63,6 +63,8 @@ import {
   roleStems,
   BASIC_PAIR_POLICY,
   XUNSHOU_ROLE_POLICY,
+  isCenterSelfPair,
+  withoutQinCompanion,
 } from "./stemAccess";
 import type { StemEntry } from "./stemAccess";
 import type { DiPanStem } from "./dipan";
@@ -126,6 +128,11 @@ export interface JikakuMatch {
   name: string;
   /** 成立した宮の番号（1〜9）。宮ごとに別々に成立した場合は複数入る。昇順。 */
   palaces: number[];
+  /**
+   * palaces のうち、天禽帯同干（格局判定専用・表示しない）を使ったときだけ成立する宮（昇順）。
+   * 天盤の通常干だけで成立する宮は含まない。該当が無ければ項目自体を持たない。
+   */
+  qinCompanionPalaces?: number[];
   /** 講義スライドに記載された象意・宜しい事柄（原文ママ）。 */
   meaning: string;
   /** 典拠スライド。 */
@@ -185,8 +192,8 @@ interface Rule {
 /**
  * 三奇得使・三奇升殿の判定（中宮寄宮 Phase 3D・2026-10-16）。寄宮干も含めて判定する
  * （stemAccess.ts の BASIC_PAIR_POLICY。凶格の pairScan と同じ方針）。
- *   ・天盤寄宮干は芮禽同居宮、地盤寄宮干は坤二宮で参照する。中五宮は成立宮にしない。
- *   ・天盤寄宮干×地盤寄宮干（どちらも中五宮の干）は判定しない。
+ *   ・天禽帯同干は芮禽同居宮、地盤寄宮干は坤二宮で参照する。中五宮は成立宮にしない。
+ *   ・天禽帯同干×地盤寄宮干（どちらも中五宮の干）は判定しない。
  */
 function pairScan(input: JikakuInput, tian: DiPanStem, di: readonly DiPanStem[]): number[] {
   return judgedPalaces(BASIC_PAIR_POLICY).filter(
@@ -194,7 +201,7 @@ function pairScan(input: JikakuInput, tian: DiPanStem, di: readonly DiPanStem[])
       stemPairs(input.palaces[palace], (t, d) => t === tian && di.includes(d), BASIC_PAIR_POLICY).length > 0,
   );
 }
-/** 指定の宮の天盤干（通常干＋芮禽同居宮の寄宮干）に stem があれば、その宮を返す。 */
+/** 指定の宮の天盤干（通常干＋芮禽同居宮の天禽帯同干）に stem があれば、その宮を返す。 */
 function tianInPalace(input: JikakuInput, palace: number, stem: DiPanStem): number[] {
   return judgedPalaces(BASIC_PAIR_POLICY).filter(
     (p) => p === palace && tianPanStems(input.palaces[p], BASIC_PAIR_POLICY).some((e) => e.stem === stem),
@@ -204,9 +211,9 @@ function tianInPalace(input: JikakuInput, palace: number, stem: DiPanStem): numb
 /**
  * 五遁（天遁・地遁・人遁・神遁・鬼遁）・三詐（真詐・重詐・休詐）の判定（中宮寄宮 Phase 3E・2026-10-16）、
  * 四遁（風遁・雲遁・龍遁・虎遁）・五假（天假・地假・人假・神假・鬼假）の判定（Phase 3F・2026-10-16）。
- * 天盤干は芮禽同居宮の寄宮干も含めて判定する（BASIC_PAIR_POLICY）。八門・八神・宮の条件は変えない。
+ * 天盤干は芮禽同居宮の天禽帯同干も含めて判定する（BASIC_PAIR_POLICY）。八門・八神・宮の条件は変えない。
  *   ・stemScanWithDi: 地盤干を条件に含む格（天遁・地遁・雲遁・龍遁・虎遁）。地盤寄宮干（坤二宮）も参照し、
- *     天盤寄宮干×地盤寄宮干（どちらも中五宮の干）は判定しない。
+ *     天禽帯同干×地盤寄宮干（どちらも中五宮の干）は判定しない。
  *   ・stemScanTianOnly: 地盤干を条件に含まない格（人遁・神遁・鬼遁・三詐・風遁・五假）。地盤寄宮干は参照しない。
  *   ・中五宮は成立宮にしない。
  */
@@ -231,7 +238,7 @@ function stemScanTianOnly(
 
 /**
  * 旬首六儀を役割に使う格（青龍返首・飛鳥跌穴）の判定（中宮寄宮 Phase 3G・2026-10-16）。
- * tianOf／diOf で宮の天盤干・地盤干の候補（通常干・寄宮干）を渡し、天盤寄宮干×地盤寄宮干は判定しない。
+ * tianOf／diOf で宮の天盤干・地盤干の候補（通常干・寄宮干）を渡し、天禽帯同干×地盤寄宮干は判定しない。
  * 中五宮は成立宮にしない（XUNSHOU_ROLE_POLICY）。
  */
 function roleScan(
@@ -243,7 +250,7 @@ function roleScan(
   return judgedPalaces(XUNSHOU_ROLE_POLICY).filter((palace) => {
     const p = input.palaces[palace];
     return tianOf(p).some((t) =>
-      diOf(p).some((d) => !(t.origin === "lodged" && d.origin === "lodged") && match(t.stem, d.stem)),
+      diOf(p).some((d) => !isCenterSelfPair(t, d) && match(t.stem, d.stem)),
     );
   });
 }
@@ -262,7 +269,7 @@ const RULES: readonly Rule[] = [
     source: S1,
     needs: ["天盤"],
     // 「用事の時干支の六儀（旬首）となる天盤と地盤丙が同宮する」
-    // 天盤の旬首六儀は通常干のみ（天禽が帯同する寄宮干に旬首の役割を付けない）。地盤丙は坤二宮の寄宮干も含む。
+    // 天盤の旬首六儀は通常干のみ（天禽帯同干に旬首の役割を付けない）。地盤丙は坤二宮の寄宮干も含む。
     match: (input) =>
       roleScan(
         input,
@@ -277,7 +284,7 @@ const RULES: readonly Rule[] = [
     source: S1,
     needs: ["天盤"],
     // 「天盤丙と用事の時干支の六儀（旬首）となる地盤が同宮」
-    // 天盤丙は芮禽同居宮の寄宮干も含む。地盤の旬首六儀は坤二宮の寄宮干も含む（講義案 p.22「辛(戊)」）。
+    // 天盤丙は芮禽同居宮の天禽帯同干も含む。地盤の旬首六儀は坤二宮の寄宮干も含む（講義案 p.22「辛(戊)」）。
     match: (input) =>
       roleScan(
         input,
@@ -564,6 +571,9 @@ const RULES: readonly Rule[] = [
 export function resolveJikaku(input: JikakuInput): JikakuResult {
   const unavailable = new Set<Segment>();
   const matches: JikakuMatch[] = [];
+  // 天禽帯同干を除いた盤（通常干による成立と区別するため）
+  const hasQin = Object.values(input.palaces).some((p) => p.qinCompanion);
+  const nativeInput: JikakuInput = hasQin ? { ...input, palaces: withoutQinCompanion(input.palaces) } : input;
 
   for (const rule of RULES) {
     const missing = rule.needs.filter((seg) => !segmentAvailable(seg, input));
@@ -574,9 +584,12 @@ export function resolveJikaku(input: JikakuInput): JikakuResult {
 
     const palaces = Array.from(new Set(rule.match(input))).sort((a, b) => a - b);
     if (palaces.length > 0) {
+      const nativePalaces = hasQin ? new Set(rule.match(nativeInput)) : null;
+      const qinOnly = nativePalaces ? palaces.filter((p) => !nativePalaces.has(p)) : [];
       matches.push({
         name: rule.name,
         palaces,
+        ...(qinOnly.length > 0 ? { qinCompanionPalaces: qinOnly } : {}),
         meaning: rule.meaning,
         source: rule.source,
       });

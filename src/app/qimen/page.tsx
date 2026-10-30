@@ -423,7 +423,13 @@ function PrintDoc({
             <PalaceDetailRows result={result} palace={selectedPalace} />
           </section>
 
-          {/* 2ページ目以降: 剋應本文。該当なしの系統は省略。 */}
+          {/* 2ページ目以降: 分析資料（画面の宮詳細と同じ判断材料・定型説明・単独象意を全文）。 */}
+          <section className="pd-analysis">
+            <h2>分析資料（{PALACE_LABEL[selectedPalace] ?? `宮${selectedPalace}`}）</h2>
+            <PalaceAnalysis result={result} palace={selectedPalace} />
+          </section>
+
+          {/* 続けて剋應本文（5系統の全文）。該当なしの系統は省略。 */}
           <section className="pd-kokuo">
             <h2>剋應（{PALACE_LABEL[selectedPalace] ?? `宮${selectedPalace}`}）</h2>
             <PalaceKokuo result={result} palace={selectedPalace} hideEmpty />
@@ -489,16 +495,14 @@ function KakuList({ result, palace }: { result: QimenResult; palace: number }) {
 // 干の表示。中五宮から寄宮した干があれば、通常干の後ろに括弧書きで併記する
 // （講義案N.pdf p.22 例1 の坤二宮「辛(戊)」と同じ表記）。
 //   地盤: 坤二宮に中五宮の地盤干（講義案 p.10・p.22）。
-//   天盤: 天芮・天禽の同居宮に、天禽が帯同する中五宮の干（講義案 p.24・1080.pdf）。
+//   天盤: 寄宮干は存在しない（2026-10-30 監修者仕様。地盤の寄宮干を天盤へ引き継がない）ので括弧は付かない。
 // 寄宮干は通常干と区別できるよう、細字・小さめで括弧に入れる。
 function StemText({
   stem,
   lodged,
-  layer,
 }: {
   stem: string | undefined;
-  lodged: LodgedStem | undefined;
-  layer: "天盤" | "地盤";
+  lodged?: LodgedStem;
 }) {
   return (
     <span style={S.stem} className="qm-st">
@@ -507,11 +511,7 @@ function StemText({
         <span
           style={S.stemLodged}
           className="qm-st-lodged"
-          title={
-            layer === "地盤"
-              ? `中五宮から寄宮した地盤干（${lodged.stem}）`
-              : `天禽が帯同する中五宮の干（${lodged.stem}）`
-          }
+          title={`中五宮から寄宮した地盤干（${lodged.stem}）`}
         >
           ({lodged.stem})
         </span>
@@ -524,7 +524,7 @@ function StemText({
 //   宮名（左上）／ 八門（中央）／ 天盤干（左）・九星（右）／ 地盤干（左）・八神（右）
 //   中宮は地盤干のみ中央表示。色分けなし（講義資料はモノクロ）。
 //   ↑ この6要素の配置は不変。下部の空き部分にだけ格局名（青=吉/赤=凶）を追加する。
-//   天盤干・地盤干の位置に、寄宮干を括弧書きで併記する（StemText。配置は変えない）。
+//   地盤干の位置に、寄宮干を括弧書きで併記する（StemText。配置は変えない。天盤に寄宮干は無い）。
 function PalaceCell({
   n,
   result,
@@ -553,11 +553,11 @@ function PalaceCell({
         <>
           <div style={S.men} className="qm-mn">{p.baMen.join("・") || "—"}</div>
           <div style={S.dataRow} className="qm-dr">
-            <StemText stem={p.tianPanStem} lodged={p.tianPanLodged} layer="天盤" />
+            <StemText stem={p.tianPanStem} />
             <span style={S.starShen} className="qm-ss">{p.jiuXing.join("・") || "—"}</span>
           </div>
           <div style={S.dataRow} className="qm-dr">
-            <StemText stem={p.diPanStem} lodged={p.diPanLodged} layer="地盤" />
+            <StemText stem={p.diPanStem} lodged={p.diPanLodged} />
             <span style={S.starShen} className="qm-ss">{p.baShen.join("・") || "—"}</span>
           </div>
         </>
@@ -817,11 +817,24 @@ function sanQiLiuYiCards(result: QimenResult, palace: number): MeaningCardData[]
 //   格局の象意カードと剋應5系統（PalaceKokuo）は「成立している判断材料」と内容が重複するため画面の宮詳細には出さない。
 //   格局の象意カード用の表示関数（kakuCards）は未使用になったため削除した（意味DB lookupMeaning 自体は変更なし）。
 //   PalaceKokuo は印刷用 PrintDoc で引き続き使用する。
+//   判断材料・単独象意は PalaceAnalysis にまとめ、印刷用 PrintDoc でも全文を出す（2026-10-17）。
 function PalaceDetail({ result, palace }: { result: QimenResult; palace: number }) {
   return (
     <div>
       <PalaceDetailRows result={result} palace={palace} />
 
+      <PalaceAnalysis result={result} palace={palace} />
+
+      {/* 用神・判断は未実装のため非表示（実装後にここへ再追加する）。 */}
+    </div>
+  );
+}
+
+// 宮詳細の分析資料（成立している判断材料 → この宮の判断材料について → 単独象意）。
+//   画面の宮詳細（PalaceDetail）と印刷（PrintDoc）で同じものを出す（印刷で省略しないため共通化）。
+function PalaceAnalysis({ result, palace }: { result: QimenResult; palace: number }) {
+  return (
+    <>
       <JudgmentPanel result={result} palace={palace} />
 
       <div style={S.detailSubTitle} className="qm-subtitle">単独象意</div>
@@ -829,9 +842,7 @@ function PalaceDetail({ result, palace }: { result: QimenResult; palace: number 
       <MeaningSection label="九星" cards={jiuXingCards(result, palace)} />
       <MeaningSection label="八神" cards={baShenCards(result, palace)} />
       <MeaningSection label="三奇・六儀" cards={sanQiLiuYiCards(result, palace)} />
-
-      {/* 用神・判断は未実装のため非表示（実装後にここへ再追加する）。 */}
-    </div>
+    </>
   );
 }
 

@@ -63,7 +63,7 @@ import {
   judgedPalaces,
 } from "../src/lib/qimen";
 import type { PalaceSummary, QimenResult } from "../src/lib/qimen";
-import { resolveCenterLodging, lodgedStemsAt, BASIC_PAIR_POLICY, XUNSHOU_ROLE_POLICY } from "../src/lib/qimen/stemAccess";
+import { resolveCenterLodging, lodgedStemsAt, resolveQinCompanion, qinCompanionAt, BASIC_PAIR_POLICY, XUNSHOU_ROLE_POLICY } from "../src/lib/qimen/stemAccess";
 import { resolveKyokaku } from "../src/lib/qimen/kyokaku";
 import { resolveJikaku } from "../src/lib/qimen/jikaku";
 import type { Stem, Branch } from "../src/lib/eto";
@@ -164,25 +164,26 @@ for (const c of charts) {
   const liuyi = xs.liuyi as typeof diPan[number];
   const tianPan = resolveTianPan({ diPan, hourStem: c.hourStem as Stem, liuyi });
   const jiuXing = resolveJiuXing({ diPan, liuyi, hourStem: c.hourStem as Stem });
-  const lod = resolveCenterLodging({ diPan, tianPan, jiuXing });
+  const lod = resolveCenterLodging({ diPan });
+  const qin = resolveQinCompanion({ diPan, jiuXing });
   // 1080.pdf: 天禽の天盤干（fixture は tianpan["5"] に転記）と、天禽が置かれた宮
   const pdfQin = Object.keys(c.jiuxing).map(Number).find((p) => p !== 5 && c.jiuxing[String(p)].includes("天禽"));
   check(`${c.title} 地盤寄宮干`, lod.diPan.stem === c.dipan["5"] && lod.diPan.toPalace === 2, JSON.stringify(lod.diPan));
   check(
     `${c.title} 天盤寄宮干・寄宮先`,
-    lod.tianPan !== null && lod.tianPan.stem === c.tianpan["5"] && lod.tianPan.toPalace === pdfQin,
-    `${JSON.stringify(lod.tianPan)} 1080.pdf 禽=${c.tianpan["5"]}@${pdfQin}`,
+    qin !== null && qin.stem === c.tianpan["5"] && qin.palace === pdfQin,
+    `${JSON.stringify(qin)} 1080.pdf 禽=${c.tianpan["5"]}@${pdfQin}`,
   );
   // 寄宮干が付く宮はちょうど1宮ずつ・中五宮には付かない
   const dCount = [1, 2, 3, 4, 5, 6, 7, 8, 9].filter((p) => lodgedStemsAt(lod, p).diPanLodged).length;
-  const tCount = [1, 2, 3, 4, 5, 6, 7, 8, 9].filter((p) => lodgedStemsAt(lod, p).tianPanLodged).length;
-  check(`${c.title} 寄宮干の宮数`, dCount === 1 && tCount === 1 && !lodgedStemsAt(lod, 5).diPanLodged && !lodgedStemsAt(lod, 5).tianPanLodged);
+  const tCount = [1, 2, 3, 4, 5, 6, 7, 8, 9].filter((p) => qinCompanionAt(qin, p).qinCompanion).length;
+  check(`${c.title} 寄宮干の宮数`, dCount === 1 && tCount === 1 && !lodgedStemsAt(lod, 5).diPanLodged && !qinCompanionAt(qin, 5).qinCompanion);
   n1080 += 1;
 
   // 5) 寄宮対応格局: 1080.pdf の盤から直接求めた成立宮と一致
   const palaces: Record<number, PalaceSummary> = {};
   for (let p = 1; p <= 9; p += 1) {
-    palaces[p] = { diPanStem: diPan[p], tianPanStem: tianPan[p], jiuXing: jiuXing.jiuXing[p], baMen: c.bamen[String(p)] ? [c.bamen[String(p)]] : [], baShen: c.bashen[String(p)] ? [c.bashen[String(p)]] : [], ...lodgedStemsAt(lod, p) } as PalaceSummary;
+    palaces[p] = { diPanStem: diPan[p], tianPanStem: tianPan[p], jiuXing: jiuXing.jiuXing[p], baMen: c.bamen[String(p)] ? [c.bamen[String(p)]] : [], baShen: c.bashen[String(p)] ? [c.bashen[String(p)]] : [], ...lodgedStemsAt(lod, p), ...qinCompanionAt(qin, p) } as PalaceSummary;
   }
   const ky = resolveKyokaku({
     palaces, dun: c.dun, yearStem: "", monthStem: "", dayStem: "", hourStem: c.hourStem,
@@ -210,7 +211,7 @@ for (const c of charts) {
     }
     if (c.dun === "陽遁" && c.ju === 6 && hz0 === "辛未" && name === "乙奇升殿") {
       seenEx.add(name);
-      check("陽遁6局辛未 震三宮 乙奇升殿（天盤寄宮乙）", got.includes(3) && lod.tianPan?.toPalace === 3 && lod.tianPan.stem === "乙" && tianPan[3] !== "乙");
+      check("陽遁6局辛未 震三宮 乙奇升殿（天盤寄宮乙）", got.includes(3) && qin?.palace === 3 && qin.stem === "乙" && tianPan[3] !== "乙");
     }
   }
   // 11) 青龍返首・飛鳥跌穴・玉女守門（1080.pdf の盤から直接求める）
@@ -242,13 +243,13 @@ for (const c of charts) {
     }
     if (c.dun === "陽遁" && c.ju === 7 && hz2 === "乙丑") {
       seenEx.add("飛鳥跌穴1");
-      check("陽遁7局乙丑 兌七宮 飛鳥跌穴（天盤寄宮丙×地盤戊）", got("飛鳥跌穴").includes(7) && lod.tianPan?.toPalace === 7 && lod.tianPan.stem === "丙" && diPan[7] === liuyi);
+      check("陽遁7局乙丑 兌七宮 飛鳥跌穴（天盤寄宮丙×地盤戊）", got("飛鳥跌穴").includes(7) && qin?.palace === 7 && qin.stem === "丙" && diPan[7] === liuyi);
     }
     if (c.dun === "陽遁" && c.ju === 1 && hz2 === "丙午") {
       seenEx.add("飛鳥跌穴2");
       check("陽遁1局丙午 坤二宮 飛鳥跌穴（天盤丙×地盤寄宮の旬首六儀壬）", got("飛鳥跌穴").includes(2) && tianPan[2] === "丙" && lod.diPan.stem === liuyi && diPan[5] === liuyi);
       // 旬首六儀が中五宮: 天禽が帯同する壬（艮八宮）×地盤丙でも青龍返首にしない
-      check("陽遁1局丙午 艮八宮 青龍返首なし（天禽帯同の旬首六儀は役割に使わない）", lod.tianPan?.toPalace === 8 && diPan[8] === "丙" && !got("青龍返首").includes(8));
+      check("陽遁1局丙午 艮八宮 青龍返首なし（天禽帯同の旬首六儀は役割に使わない）", qin?.palace === 8 && diPan[8] === "丙" && !got("青龍返首").includes(8));
     }
     if (c.dun === "陽遁" && c.ju === 8 && hz2 === "庚午") {
       seenEx.add("玉女守門");
@@ -267,7 +268,7 @@ for (const c of charts) {
     const hz1 = c.hourStem + c.hourBranch;
     if (c.dun === "陰遁" && c.ju === 3 && hz1 === "丙戌" && name === "天遁") {
       seenEx.add(name);
-      check("陰遁3局丙戌 震三宮 天遁（生門・天盤寄宮丙×地盤戊）", got.includes(3) && lod.tianPan?.toPalace === 3 && lod.tianPan.stem === "丙" && tianPan[3] !== "丙" && diPan[3] === "戊" && c.bamen["3"] === "生門");
+      check("陰遁3局丙戌 震三宮 天遁（生門・天盤寄宮丙×地盤戊）", got.includes(3) && qin?.palace === 3 && qin.stem === "丙" && tianPan[3] !== "丙" && diPan[3] === "戊" && c.bamen["3"] === "生門");
     }
     if (c.dun === "陰遁" && c.ju === 6 && hz1 === "丙申" && name === "地遁") {
       seenEx.add(name);
@@ -279,11 +280,11 @@ for (const c of charts) {
     }
     if (c.dun === "陰遁" && c.ju === 4 && hz1 === "辛亥" && name === "虎遁") {
       seenEx.add(name);
-      check("陰遁4局辛亥 艮八宮 虎遁（休門・天盤寄宮乙）", got.includes(8) && lod.tianPan?.toPalace === 8 && lod.tianPan.stem === "乙" && tianPan[8] !== "乙" && c.bamen["8"] === "休門");
+      check("陰遁4局辛亥 艮八宮 虎遁（休門・天盤寄宮乙）", got.includes(8) && qin?.palace === 8 && qin.stem === "乙" && tianPan[8] !== "乙" && c.bamen["8"] === "休門");
     }
     if (c.dun === "陰遁" && c.ju === 2 && hz1 === "丙子" && name === "休詐") {
       seenEx.add(name);
-      check("陰遁2局丙子 坎一宮 休詐（開門・天盤寄宮丁・六合）", got.includes(1) && lod.tianPan?.toPalace === 1 && lod.tianPan.stem === "丁" && c.bashen["1"] === "六合");
+      check("陰遁2局丙子 坎一宮 休詐（開門・天盤寄宮丁・六合）", got.includes(1) && qin?.palace === 1 && qin.stem === "丁" && c.bashen["1"] === "六合");
     }
   }
   // 15) 年・月・日・時悖格（1080.pdf の盤から直接求める。年・月・日干は十干すべてで確認）
@@ -306,7 +307,8 @@ for (const c of charts) {
     }
     if (c.dun === "陽遁" && c.ju === 7 && c.hourStem + c.hourBranch === "丁未") {
       seenEx.add("時悖格");
-      check("凶格例.pdf 190〜191頁 陽遁7局丁未 巽四宮 時悖格（天禽帯同の天盤丙×地盤丁）", JSON.stringify(got) === "[4]" && tianPan[4] !== "丙" && lod.tianPan?.toPalace === 4 && lod.tianPan.stem === "丙" && diPan[4] === "丁");
+      check("凶格例.pdf 190〜191頁 陽遁7局丁未 巽四宮 時悖格（天禽帯同の天盤丙×地盤丁）", JSON.stringify(got) === "[4]" && tianPan[4] !== "丙" && qin?.palace === 4 && qin.stem === "丙" && diPan[4] === "丁"
+        && JSON.stringify(ky.matches.find((m) => m.name === "時悖格")?.qinCompanionPalaces) === "[4]");
     }
   }
   // 14) 値符の九星の宮で判定する凶格（1080.pdf の盤から直接求める。凶格例.pdf 192〜194頁）
@@ -331,7 +333,8 @@ for (const c of charts) {
     const fei = ky.matches.find((m) => m.name === "飛悖格")?.palaces ?? [];
     if (c.dun === "陰遁" && c.ju === 3 && hz === "丙子") {
       seenEx.add("符勃格");
-      check("凶格例.pdf 193頁 陰遁3局丙子 坤二宮 符悖格（値符天芮・天禽帯同の天盤丙）", JSON.stringify(fu) === "[2]" && xs.xunShou === "甲戌" && jiuXing.zhifu.star === "天芮" && tianPan[2] !== "丙" && lod.tianPan?.toPalace === 2 && lod.tianPan.stem === "丙");
+      check("凶格例.pdf 193頁 陰遁3局丙子 坤二宮 符悖格（値符天芮・天禽帯同の天盤丙）", JSON.stringify(fu) === "[2]" && xs.xunShou === "甲戌" && jiuXing.zhifu.star === "天芮" && tianPan[2] !== "丙" && qin?.palace === 2 && qin.stem === "丙"
+        && JSON.stringify(ky.matches.find((m) => m.name === "符勃格")?.qinCompanionPalaces) === "[2]");
     }
     if (c.dun === "陽遁" && c.ju === 1 && hz === "丙午") {
       seenEx.add("飛悖格");
@@ -360,15 +363,15 @@ for (const c of charts) {
     const fei = ky.matches.find((m) => m.name === "飛宮格天乙太白")?.palaces ?? [];
     const da = ky.matches.find((m) => m.name === "大格")?.palaces ?? [];
     if (c.dun === "陽遁" && c.ju === 3 && hz === "甲申")
-      ex("伏宮格1", "陽遁3局甲申 坤二宮 伏宮格（天盤寄宮庚×地盤寄宮庚＝旬首六儀）", fu.includes(2) && tianPan[2] !== "庚" && diPan[2] !== "庚" && lod.tianPan?.toPalace === 2 && lod.tianPan.stem === "庚" && lod.diPan.stem === "庚");
+      ex("伏宮格1", "陽遁3局甲申 坤二宮 伏宮格（天盤寄宮庚×地盤寄宮庚＝旬首六儀）", fu.includes(2) && tianPan[2] !== "庚" && diPan[2] !== "庚" && qin?.palace === 2 && qin.stem === "庚" && lod.diPan.stem === "庚");
     if (c.dun === "陽遁" && c.ju === 1 && hz === "戊申")
       ex("伏宮格2", "陽遁1局戊申 坤二宮 伏宮格（天盤庚×地盤寄宮の旬首六儀）", fu.includes(2) && tianPan[2] === "庚" && lod.diPan.stem === ly && diPan[2] !== ly);
     if (c.dun === "陽遁" && c.ju === 3 && hz === "乙丑")
       ex("飛宮格1", "陽遁3局乙丑 坤二宮 飛宮格（天盤の旬首六儀×地盤寄宮庚）", fei.includes(2) && tianPan[2] === ly && lod.diPan.stem === "庚" && diPan[2] !== "庚");
     if (c.dun === "陽遁" && c.ju === 1 && hz === "庚戌")
-      ex("飛宮格2", "陽遁1局庚戌 震三宮 飛宮格なし（天禽帯同の旬首六儀には役割を付けない）", !fei.includes(3) && lod.tianPan?.toPalace === 3 && lod.tianPan.stem === ly && diPan[3] === "庚");
+      ex("飛宮格2", "陽遁1局庚戌 震三宮 飛宮格なし（天禽帯同の旬首六儀には役割を付けない）", !fei.includes(3) && qin?.palace === 3 && qin.stem === ly && diPan[3] === "庚");
     if (c.dun === "陽遁" && c.ju === 3 && hz === "壬申")
-      ex("大格1", "陽遁3局壬申 艮八宮 大格（天盤寄宮庚×地盤癸）", da.includes(8) && lod.tianPan?.toPalace === 8 && lod.tianPan.stem === "庚" && diPan[8] === "癸");
+      ex("大格1", "陽遁3局壬申 艮八宮 大格（天盤寄宮庚×地盤癸）", da.includes(8) && qin?.palace === 8 && qin.stem === "庚" && diPan[8] === "癸");
     if (c.dun === "陽遁" && c.ju === 9 && hz === "甲子")
       ex("大格2", "陽遁9局甲子 坤二宮 大格（天盤庚×地盤寄宮癸）", da.includes(2) && tianPan[2] === "庚" && lod.diPan.stem === "癸" && diPan[2] !== "癸");
   }
@@ -384,15 +387,15 @@ for (const c of charts) {
     const ex = (key: string, label: string, ok: boolean) => { seenEx.add(key); check(label, ok); };
     const hz = c.hourStem + c.hourBranch;
     if (c.dun === "陽遁" && c.ju === 1 && hz === "丁卯" && name === "六儀撃刑")
-      ex("六儀撃刑", "陽遁1局丁卯 巽四宮 壬儀撃刑（天盤己＋寄宮壬）", got.includes(4) && tianPan[4] === "己" && lod.tianPan?.toPalace === 4 && lod.tianPan.stem === "壬" && m?.detail === "壬儀撃刑");
+      ex("六儀撃刑", "陽遁1局丁卯 巽四宮 壬儀撃刑（天盤己＋寄宮壬）", got.includes(4) && tianPan[4] === "己" && qin?.palace === 4 && qin.stem === "壬" && m?.detail === "壬儀撃刑");
     if (c.dun === "陽遁" && c.ju === 6 && hz === "甲子" && name === "乙奇入墓")
-      ex("乙奇入墓1", "陽遁6局甲子 坤二宮 乙奇入墓（天盤癸＋寄宮乙）", got.includes(2) && tianPan[2] === "癸" && lod.tianPan?.toPalace === 2 && lod.tianPan.stem === "乙");
+      ex("乙奇入墓1", "陽遁6局甲子 坤二宮 乙奇入墓（天盤癸＋寄宮乙）", got.includes(2) && tianPan[2] === "癸" && qin?.palace === 2 && qin.stem === "乙");
     if (c.dun === "陽遁" && c.ju === 6 && hz === "庚午" && name === "乙奇入墓")
-      ex("乙奇入墓2", "陽遁6局庚午 乾六宮 乙奇入墓（天盤癸＋寄宮乙）", got.includes(6) && tianPan[6] === "癸" && lod.tianPan?.toPalace === 6 && lod.tianPan.stem === "乙");
+      ex("乙奇入墓2", "陽遁6局庚午 乾六宮 乙奇入墓（天盤癸＋寄宮乙）", got.includes(6) && tianPan[6] === "癸" && qin?.palace === 6 && qin.stem === "乙");
     if (c.dun === "陽遁" && c.ju === 7 && hz === "辛未" && name === "丙奇入墓")
-      ex("丙奇入墓", "陽遁7局辛未 乾六宮 丙奇入墓（天盤壬＋寄宮丙）", got.includes(6) && tianPan[6] === "壬" && lod.tianPan?.toPalace === 6 && lod.tianPan.stem === "丙");
+      ex("丙奇入墓", "陽遁7局辛未 乾六宮 丙奇入墓（天盤壬＋寄宮丙）", got.includes(6) && tianPan[6] === "壬" && qin?.palace === 6 && qin.stem === "丙");
     if (c.dun === "陽遁" && c.ju === 8 && hz === "丁卯" && name === "丁奇入墓")
-      ex("丁奇入墓", "陽遁8局丁卯 艮八宮 丁奇入墓（天盤辛＋寄宮丁）", got.includes(8) && tianPan[8] === "辛" && lod.tianPan?.toPalace === 8 && lod.tianPan.stem === "丁");
+      ex("丁奇入墓", "陽遁8局丁卯 艮八宮 丁奇入墓（天盤辛＋寄宮丁）", got.includes(8) && tianPan[8] === "辛" && qin?.palace === 8 && qin.stem === "丁");
   }
   for (const [name, t, d] of SIX) {
     const expected = [1, 2, 3, 4, 6, 7, 8, 9].filter((p) => {
@@ -411,8 +414,8 @@ for (const c of charts) {
     const ex = (key: string, label: string, ok: boolean) => { seenEx.add(key); check(label, ok); };
     const hz = c.hourStem + c.hourBranch;
     if (c.dun === "陽遁" && c.ju === 1 && hz === "辛未" && name === "上格") ex("上格1", "陽遁1局辛未 坤二宮 上格（天盤庚×地盤寄宮壬）", got.includes(2) && tianPan[2] === "庚" && lod.diPan.stem === "壬");
-    if (c.dun === "陽遁" && c.ju === 3 && hz === "己巳" && name === "上格") ex("上格2", "陽遁3局己巳 兌七宮 上格（天盤寄宮庚×地盤壬）", got.includes(7) && lod.tianPan?.toPalace === 7 && lod.tianPan.stem === "庚" && diPan[7] === "壬");
-    if (c.dun === "陽遁" && c.ju === 3 && hz === "甲子" && name === "奇格") ex("奇格1", "陽遁3局甲子 坤二宮 奇格（天盤寄宮庚×地盤乙）", got.includes(2) && lod.tianPan?.toPalace === 2 && lod.tianPan.stem === "庚" && diPan[2] === "乙");
+    if (c.dun === "陽遁" && c.ju === 3 && hz === "己巳" && name === "上格") ex("上格2", "陽遁3局己巳 兌七宮 上格（天盤寄宮庚×地盤壬）", got.includes(7) && qin?.palace === 7 && qin.stem === "庚" && diPan[7] === "壬");
+    if (c.dun === "陽遁" && c.ju === 3 && hz === "甲子" && name === "奇格") ex("奇格1", "陽遁3局甲子 坤二宮 奇格（天盤寄宮庚×地盤乙）", got.includes(2) && qin?.palace === 2 && qin.stem === "庚" && diPan[2] === "乙");
     if (c.dun === "陽遁" && c.ju === 6 && hz === "丙寅" && name === "奇格") ex("奇格2", "陽遁6局丙寅 坤二宮 奇格（天盤庚×地盤寄宮）", got.includes(2) && tianPan[2] === "庚" && ["乙", "丙", "丁"].includes(lod.diPan.stem));
     if (c.title === "陽遁三局甲己日辛未時" && name === "熒入太白") {
       seenEx.add(name);
@@ -420,7 +423,7 @@ for (const c of charts) {
     }
     if (c.dun === "陽遁" && c.ju === 3 && c.hourStem + c.hourBranch === "丙寅" && name === "刑格") {
       seenEx.add("刑格1");
-      check("陽遁3局丙寅 巽四宮 刑格（天盤寄宮庚×地盤己）", got.includes(4) && lod.tianPan?.toPalace === 4 && lod.tianPan.stem === "庚" && diPan[4] === "己");
+      check("陽遁3局丙寅 巽四宮 刑格（天盤寄宮庚×地盤己）", got.includes(4) && qin?.palace === 4 && qin.stem === "庚" && diPan[4] === "己");
     }
     if (c.dun === "陽遁" && c.ju === 4 && c.hourStem + c.hourBranch === "壬申" && name === "刑格") {
       seenEx.add("刑格2");
@@ -428,7 +431,7 @@ for (const c of charts) {
     }
     if (c.title === "陽遁三局甲己日乙丑時" && name === "太白入熒") {
       seenEx.add(name);
-      check("陽遁3局乙丑 坎一宮 太白入熒（天盤寄宮庚×地盤丙）", got.includes(1) && lod.tianPan?.toPalace === 1 && lod.tianPan.stem === "庚" && diPan[1] === "丙");
+      check("陽遁3局乙丑 坎一宮 太白入熒（天盤寄宮庚×地盤丙）", got.includes(1) && qin?.palace === 1 && qin.stem === "庚" && diPan[1] === "丙");
     }
   }
 }
@@ -481,14 +484,14 @@ function lectureBoard(dun: "陽遁" | "陰遁", ju: number, hs: Stem, hb: Branch
   const liuyi = resolveXunShou({ hourStem: hs, hourBranch: hb }).liuyi as typeof diPan[number];
   const tianPan = resolveTianPan({ diPan, hourStem: hs, liuyi });
   const jiuXing = resolveJiuXing({ diPan, liuyi, hourStem: hs });
-  return { diPan, tianPan, lod: resolveCenterLodging({ diPan, tianPan, jiuXing }) };
+  return { diPan, tianPan, lod: resolveCenterLodging({ diPan }) };
 }
 {
   // 例1 己巳 陰五局 旬首戊: 坤二宮の地盤「辛(戊)」・時干の巽四宮に天盤「辛」
   const b = lectureBoard("陰遁", 5, "己", "巳");
   check("p.22 例1 坤二宮の地盤 辛(戊)", b.diPan[2] === "辛" && lodgedStemsAt(b.lod, 2).diPanLodged?.stem === "戊");
   check("p.22 例1 巽四宮の天盤 辛（通常干は上書きしない）", b.tianPan[4] === "辛");
-  check("p.22 例1 中五宮の元データ 戊", b.diPan[5] === "戊" && b.tianPan[5] === "戊");
+  check("p.22 例1 中五宮の地盤 戊・天盤の中宮に干なし", b.diPan[5] === "戊" && b.tianPan[5] === undefined);
   // 例2 辛巳 陰八局 旬首己: 時干中宮のため坤二宮に六儀己（天盤）
   const b2 = lectureBoard("陰遁", 8, "辛", "巳");
   check("p.23 例2 坤二宮の天盤 己", b2.tianPan[2] === "己" && b2.diPan[2] === "丁");
@@ -499,7 +502,7 @@ function lectureBoard(dun: "陽遁" | "陰遁", ju: number, hs: Stem, hb: Branch
 function stripLodging(r: QimenResult): QimenResult {
   const palaces: Record<number, PalaceSummary> = {};
   for (let p = 1; p <= 9; p += 1) {
-    const { diPanLodged: _d, tianPanLodged: _t, ...rest } = r.palaces[p];
+    const { diPanLodged: _d, qinCompanion: _q, ...rest } = r.palaces[p];
     palaces[p] = rest;
   }
   return { ...r, palaces };
@@ -523,11 +526,17 @@ for (let t = Date.UTC(2026, 3, 1); t <= Date.UTC(2026, 8, 30); t += 86400000) {
     }
     // 寄宮項目は該当する宮にだけ
     const dP = [1, 2, 3, 4, 5, 6, 7, 8, 9].filter((p) => r.palaces[p].diPanLodged);
-    const tP = [1, 2, 3, 4, 5, 6, 7, 8, 9].filter((p) => r.palaces[p].tianPanLodged);
+    const tP = [1, 2, 3, 4, 5, 6, 7, 8, 9].filter((p) => r.palaces[p].qinCompanion);
     const qin = [1, 2, 3, 4, 6, 7, 8, 9].find((p) => r.palaces[p].jiuXing.includes("天禽"));
     check(`${label} 地盤寄宮は坤二宮だけ`, dP.length === 1 && dP[0] === 2 && r.palaces[2].diPanLodged?.stem === r.diPan[5]);
-    check(`${label} 天盤寄宮は芮禽宮だけ`, tP.length === 1 && tP[0] === qin && r.palaces[qin!].tianPanLodged?.stem === r.tianPan?.[5]);
-    check(`${label} centerLodging`, r.centerLodging.diPan.toPalace === 2 && r.centerLodging.tianPan?.toPalace === qin);
+    check(`${label} 天禽帯同干は芮禽宮だけ（値＝中五宮の地盤干・格局判定専用）`, tP.length === 1 && tP[0] === qin && r.palaces[qin!].qinCompanion?.stem === r.diPan[5]
+      && r.palaces[qin!].qinCompanion?.use === "格局判定専用" && r.qinCompanion?.palace === qin);
+    check(`${label} 天盤に寄宮干・中宮干なし`, [1, 2, 3, 4, 5, 6, 7, 8, 9].every((p) => !("tianPanLodged" in r.palaces[p])) && r.tianPan?.[5] === undefined && r.palaces[5].tianPanStem === undefined);
+    check(`${label} centerLodging`, r.centerLodging.diPan.toPalace === 2 && !("tianPan" in r.centerLodging));
+    // 天禽帯同干だけで成立した宮は qinCompanionPalaces に入り、通常干で成立する宮は入らない
+    for (const m of [...r.jikaku.matches, ...r.kyokaku.matches]) {
+      for (const p of m.qinCompanionPalaces ?? []) check(`${label} ${m.name} 宮${p} 天禽帯同干による成立`, p === qin && m.palaces.includes(p));
+    }
     // 寄宮項目を参照するのは凶格の寄宮対応格局だけ（取り除いて再判定すると、他は同じ・寄宮対応格局は部分集合）
     const s = stripLodging(r);
     const sj = resolveJikakuFromQimen(s);
@@ -549,8 +558,10 @@ for (let t = Date.UTC(2026, 3, 1); t <= Date.UTC(2026, 8, 30); t += 86400000) {
     // 検証盤
     if (key === "陽遁3局丙戌") {
       seenBing = true;
-      check(`${label} 坎一宮 天盤 乙＋寄宮 庚`, r.palaces[1].tianPanStem === "乙" && r.palaces[1].tianPanLodged?.stem === "庚"
+      check(`${label} 坎一宮 天盤 乙＋天禽帯同干 庚（判定専用）`, r.palaces[1].tianPanStem === "乙" && r.palaces[1].qinCompanion?.stem === "庚"
         && r.palaces[1].jiuXing.includes("天芮") && r.palaces[1].jiuXing.includes("天禽"));
+      // 1080.pdf の「太白入熒」（禽の庚×地盤丙）が天禽帯同干による成立として識別される
+      check(`${label} 坎一宮 太白入熒は天禽帯同干による成立`, JSON.stringify(r.kyokaku.matches.find((m) => m.name === "太白入熒")?.qinCompanionPalaces) === "[1]");
     }
     if (key === "陽遁3局戊子") {
       seenWuzi = true;
@@ -569,7 +580,7 @@ const lodgedBoth = P({
   diPanStem: "乙",
   tianPanStem: "乙",
   diPanLodged: { stem: "庚", fromPalace: 5, kind: "地盤中五寄坤" },
-  tianPanLodged: { stem: "庚", fromPalace: 5, kind: "天盤天禽帯同" },
+  qinCompanion: { stem: "庚", fromPalace: 5, palace: 2, use: "格局判定専用" },
 });
 const stems = (xs: { stem: string; origin: string }[]) => xs.map((x) => `${x.stem}:${x.origin}`).join(",");
 // 既定値＝現在の動作
@@ -579,8 +590,8 @@ check("既定: 天盤は通常干のみ", stems(tianPanStems(lodgedBoth)) === "�
 check("既定: 地盤は通常干のみ", stems(diPanStems(lodgedBoth)) === "乙:native");
 check("既定: 中五宮も判定", judgedPalaces().join() === "1,2,3,4,5,6,7,8,9");
 // 通常干と寄宮干の区別
-const withL = makeStemPolicy({ tianPan: "withLodged", diPan: "withLodged" });
-check("寄宮込み: 天盤", stems(tianPanStems(lodgedBoth, withL)) === "乙:native,庚:lodged");
+const withL = makeStemPolicy({ tianPan: "withQinCompanion", diPan: "withLodged" });
+check("天禽帯同干込み: 天盤", stems(tianPanStems(lodgedBoth, withL)) === "乙:native,庚:qinCompanion");
 check("寄宮込み: 地盤", stems(diPanStems(lodgedBoth, withL)) === "乙:native,庚:lodged");
 check("寄宮干の無い宮", stems(tianPanStems(P({ tianPanStem: "丙", diPanStem: "丁" }), withL)) === "丙:native");
 check("未定義の宮", tianPanStems(undefined, withL).length === 0);
@@ -590,22 +601,34 @@ const pal: Record<number, PalaceSummary> = {};
 for (let p = 1; p <= 9; p += 1) pal[p] = P({ tianPanStem: "庚", diPanStem: p === 5 ? "庚" : "乙" });
 check("scanPalaces 既定は中五宮を含む", scanPalaces(pal, (p) => p?.tianPanStem === "庚" && p.diPanStem === "庚").join() === "5");
 check("scanPalaces skip は中五宮を除く", scanPalaces(pal, (p) => p?.tianPanStem === "庚" && p.diPanStem === "庚", makeStemPolicy({ centerPalace: "skip" })).length === 0);
-// 自己組み合わせ（天盤寄宮干×地盤寄宮干）
+// 自己組み合わせ（天禽帯同干×地盤寄宮干）
 const gengGeng = (t: string, d: string) => t === "庚" && d === "庚";
 check("自己組み合わせ deny で除外", stemPairs(lodgedBoth, gengGeng, withL).length === 0);
-check("自己組み合わせ allow で成立", stemPairs(lodgedBoth, gengGeng, makeStemPolicy({ tianPan: "withLodged", diPan: "withLodged", lodgedSelfPair: "allow" })).length === 1);
+check("自己組み合わせ allow で成立", stemPairs(lodgedBoth, gengGeng, makeStemPolicy({ tianPan: "withQinCompanion", diPan: "withLodged", lodgedSelfPair: "allow" })).length === 1);
 const pairs = stemPairs(lodgedBoth, (t, d) => t === "庚" && d === "乙", withL);
-check("寄宮干×通常干は成立し由来が残る", pairs.length === 1 && pairs[0].tian.origin === "lodged" && pairs[0].di.origin === "native");
+check("天禽帯同干×通常干は成立し由来が残る", pairs.length === 1 && pairs[0].tian.origin === "qinCompanion" && pairs[0].di.origin === "native");
 check("既定方針では寄宮干の組み合わせなし", stemPairs(lodgedBoth, (t, d) => t === "庚" && d === "乙").length === 0);
-check("BASIC_PAIR_POLICY の値", JSON.stringify(BASIC_PAIR_POLICY) === JSON.stringify({ tianPan: "withLodged", diPan: "withLodged", centerPalace: "skip", lodgedSelfPair: "deny", roleUsesLodged: false }));
-check("XUNSHOU_ROLE_POLICY の値", JSON.stringify(XUNSHOU_ROLE_POLICY) === JSON.stringify({ tianPan: "withLodged", diPan: "withLodged", centerPalace: "skip", lodgedSelfPair: "deny", roleUsesLodged: { tianPan: false, diPan: true } }));
+check("BASIC_PAIR_POLICY の値", JSON.stringify(BASIC_PAIR_POLICY) === JSON.stringify({ tianPan: "withQinCompanion", diPan: "withLodged", centerPalace: "skip", lodgedSelfPair: "deny", roleUsesLodged: false }));
+check("XUNSHOU_ROLE_POLICY の値", JSON.stringify(XUNSHOU_ROLE_POLICY) === JSON.stringify({ tianPan: "withQinCompanion", diPan: "withLodged", centerPalace: "skip", lodgedSelfPair: "deny", roleUsesLodged: { tianPan: false, diPan: true } }));
 check("役割: 層別指定で天盤は通常干のみ", stems(roleStems(lodgedBoth, "tianPan", XUNSHOU_ROLE_POLICY)) === "乙:native");
 check("役割: 層別指定で地盤は寄宮干も", stems(roleStems(lodgedBoth, "diPan", XUNSHOU_ROLE_POLICY)) === "乙:native,庚:lodged");
 check("BASIC_PAIR_POLICY は自己組み合わせを除く", stemPairs(lodgedBoth, gengGeng, BASIC_PAIR_POLICY).length === 0);
 // 役割（値符・旬首六儀）
 check("役割: roleUsesLodged=false は通常干のみ", stems(roleStems(lodgedBoth, "tianPan", withL)) === "乙:native");
-check("役割: roleUsesLodged=true は寄宮干も", stems(roleStems(lodgedBoth, "tianPan", makeStemPolicy({ tianPan: "withLodged", roleUsesLodged: true }))) === "乙:native,庚:lodged");
+check("役割: roleUsesLodged=true は天禽帯同干も", stems(roleStems(lodgedBoth, "tianPan", makeStemPolicy({ tianPan: "withQinCompanion", roleUsesLodged: true }))) === "乙:native,庚:qinCompanion");
 check("役割: 層の方針が native なら寄宮干は使わない", stems(roleStems(lodgedBoth, "diPan", makeStemPolicy({ roleUsesLodged: true }))) === "乙:native");
+
+// ---- 5) 天禽帯同干を表示・剋應に使わない（ソース走査）--------------------------------
+{
+  const root = join(here, "..");
+  const files = [
+    "src/app/qimen/page.tsx", "src/app/qimen/search/CandidateViews.tsx", "src/lib/qimenSearch/candidateInfo.ts",
+    "src/lib/qimen/kokuo/index.ts", "src/lib/qimenMaterials/palaceMaterials.ts", "src/lib/qimenAiMaterials/serialize.ts",
+  ];
+  for (const f of files) check(`${f} は天禽帯同干を参照しない`, !readFileSync(join(root, f), "utf8").includes("qinCompanion"));
+  check("盤面・検索候補に天盤の括弧表示（天盤寄宮）なし", !readFileSync(join(root, "src/app/qimen/page.tsx"), "utf8").includes("tianPanLodged")
+    && !readFileSync(join(root, "src/lib/qimenSearch/candidateInfo.ts"), "utf8").includes("tianPanLodged"));
+}
 
 if (failed > 0) {
   console.log(`\n${failed} 件 FAIL`);

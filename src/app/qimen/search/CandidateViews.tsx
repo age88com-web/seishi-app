@@ -82,7 +82,7 @@ export function PalaceSummaryBlock({
         八門 {join(s.baMen)}／九星 {join(s.jiuXing)}／八神 {join(s.baShen)}
       </div>
       <div style={V.line}>
-        天盤 {stemLabel(s.tianPanStem, s.tianPanLodged)}／地盤 {stemLabel(s.diPanStem, s.diPanLodged)}
+        天盤 {stemLabel(s.tianPanStem, null)}／地盤 {stemLabel(s.diPanStem, s.diPanLodged)}
       </div>
       <div style={V.line}>
         <span style={V.ji}>吉格</span> {join(s.jikaku)}
@@ -204,7 +204,7 @@ export function CompareTable({
                   <td style={forPrint ? undefined : V.td}>{join(d.baMen)}</td>
                   <td style={forPrint ? undefined : V.td}>{join(d.jiuXing)}</td>
                   <td style={forPrint ? undefined : V.td}>{join(d.baShen)}</td>
-                  <td style={forPrint ? undefined : V.td}>{stemLabel(d.tianPanStem, d.tianPanLodged)}</td>
+                  <td style={forPrint ? undefined : V.td}>{stemLabel(d.tianPanStem, null)}</td>
                   <td style={forPrint ? undefined : V.td}>{stemLabel(d.diPanStem, d.diPanLodged)}</td>
                   <td style={forPrint ? undefined : V.td}>{join(d.jikaku)}</td>
                   <td style={forPrint ? undefined : V.td}>{join(d.kyokaku)}</td>

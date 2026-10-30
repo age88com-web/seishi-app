@@ -5,7 +5,17 @@
  *   - 印刷時のみ、操作系UIを隠し、A4縦の鑑定書レイアウトを出す。
  *   - 1ページ目 = タイトル / 基本情報 / 定局 / 九宮盤 / 値符・値使・直符 /
  *     吉格・凶格 / 選択宮の基本詳細（宮名〜凶格）まで。
- *   - 剋應本文は 2ページ目の先頭から。
+ *   - 2ページ目の先頭から、選択宮の分析資料（成立している判断材料・この宮の判断材料について・
+ *     単独象意。画面の宮詳細と同じもの）を全文、続けて剋應本文（5系統）を出す。
+ *
+ * Safari（WebKit）で PDF 保存すると分析資料の文章が消える件の対策（2026-10-17）:
+ *   - 1ページに収まらない要素に break-inside: avoid を付けると、WebKit では収まらない部分が
+ *     描画されないことがあるため、本文のまとまり（.qm-kokuo-entry）には付けない。
+ *     見出しの直後で改ページしないよう、見出し側に break-after: avoid だけを付ける。
+ *   - 画面用の font-family（system-ui）が印刷にも継承され、PDF に macOS の非公開システムフォント
+ *     （.HiraKakuInterface・.SFNS の可変フォント）が埋め込まれていた。印刷文書ではヒラギノ等の
+ *     通常のフォントを明示する。
+ *   - box-decoration-break: clone（WebKit はブロック要素で非対応）は使わない。
  *   - page.tsx のインラインstyleに勝つ必要がある箇所は !important を使う。
  */
 
@@ -48,10 +58,9 @@
     padding-top: 8mm;
     padding-bottom: 8mm;
     box-sizing: border-box;
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
     color: #000;
     background: #fff;
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif !important;
     font-size: 9pt;
     line-height: 1.3;
     -webkit-print-color-adjust: exact !important;
@@ -206,12 +215,39 @@
     break-before: auto;
   }
 
-  /* ---- 剋應は 2ページ目の先頭から ---- */
+  /* ---- 分析資料は 2ページ目の先頭から、剋應はその後に続けて改ページして出す ---- */
+  .pd-analysis,
   .pd-kokuo {
     break-before: page;
   }
+  .pd-analysis > h2,
   .pd-kokuo > h2 {
     margin-top: 0 !important;
+    break-after: avoid;
+  }
+  /* 分析資料は画面用のインライン色（灰色）を印刷では黒にする */
+  .pd-analysis,
+  .pd-analysis * {
+    color: #000 !important;
+  }
+  .qm-print-doc .pd-analysis .qm-subtitle {
+    margin-top: 2mm !important;
+    border-top: 1px solid #000 !important;
+    font-size: 9.5pt !important;
+    break-after: avoid;
+  }
+  .qm-print-doc .pd-analysis p {
+    font-size: 9pt !important;
+    line-height: 1.5 !important;
+    margin: 0 0 1.2mm !important;
+  }
+  .qm-print-doc .pd-analysis ul {
+    margin: 0.5mm 0 0 !important;
+    padding-left: 5mm !important;
+  }
+  .qm-print-doc .pd-analysis li {
+    font-size: 9pt !important;
+    line-height: 1.45 !important;
   }
 
   /* 剋應の 1 系統ブロック */
@@ -225,10 +261,15 @@
     color: #000 !important;
     margin-bottom: 0.8mm !important;
   }
-  /* 剋應の 1 エントリ（見出し＋本文）は可能な限り分断しない */
+  /* 剋應・判断材料の 1 エントリ。長い本文や関連資料を含むと1ページを超えることがあるため、
+     break-inside: avoid は付けない（WebKit では収まらない部分が描画されないことがある）。
+     見出し（.qm-kokuo-label / .qm-kokuo-meta）の直後でだけ改ページしないようにする。 */
   .qm-print-doc .qm-kokuo-entry {
-    break-inside: avoid;
     margin-bottom: 2mm !important;
+  }
+  .qm-print-doc .qm-kokuo-label,
+  .qm-print-doc .qm-kokuo-meta {
+    break-after: avoid;
   }
   .qm-print-doc .qm-kokuo-meta {
     font-size: 9pt !important;

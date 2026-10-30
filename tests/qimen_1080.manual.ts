@@ -14,7 +14,10 @@
 //   dipan.ts  … 地盤（9宮）
 //   xunshou.ts … 旬首（1080.pdf に明示欄が無いため、時干支から60干支の旬の先頭
 //                として算出した期待値と照合する）
-//   tianpan.ts … 天盤（9宮）
+//   tianpan.ts … 天盤（外周8宮）。天盤の中宮(5)に干が無いこと（2026-10-30 監修者仕様「天盤には地盤由来の
+//                寄宮干は存在しない」）。
+//   stemAccess.ts … 天禽帯同干（格局判定専用・表示しない。2026-10-30 監修者決定）。1080.pdf が芮禽同居宮に
+//                併記する「禽」の干（fixture の tianpan["5"]）と、値・宮（天禽の宮）の両方を照合する。
 //   jiuxing.ts … 九星（9宮、集合比較）＋ 値符（星・宮）
 //   bamen.ts  … 八門（外周8宮）＋ 値使（門・宮）
 //   bashen.ts … 八神（外周8宮）
@@ -41,6 +44,7 @@ import { resolveTianPan } from "../src/lib/qimen/tianpan";
 import { resolveJiuXing } from "../src/lib/qimen/jiuxing";
 import { resolveBaMen } from "../src/lib/qimen/bamen";
 import { resolveBaShen } from "../src/lib/qimen/bashen";
+import { resolveQinCompanion } from "../src/lib/qimen/stemAccess";
 import type { DiPanResult, DiPanStem } from "../src/lib/qimen/dipan";
 import type { Dun } from "../src/lib/qimen/dingju";
 import type { Stem, Branch } from "../src/lib/eto";
@@ -157,11 +161,13 @@ function runChart(c: Chart): boolean {
   // 天盤
   try {
     const tp = resolveTianPan({ diPan, hourStem, liuyi });
-    for (const p of ALL9) {
+    for (const p of OUTER) {
       const exp = c.tianpan[String(p)];
       const act = tp[p];
       if (exp !== act) add(`天盤[${p}]`, exp, String(act));
     }
+    // 天盤に地盤由来の寄宮干（中五宮の地盤干）を置かない。
+    if (tp[5] !== undefined) add("天盤[5]", "(干なし)", String(tp[5]));
   } catch (e) {
     add("天盤", `全宮=${fmtMap(c.tianpan as unknown as Record<number, unknown>, ALL9)}`, `例外: ${(e as Error).message}`);
   }
@@ -176,6 +182,12 @@ function runChart(c: Chart): boolean {
     }
     if (jx.zhifu.star !== c.zhifuStar || jx.zhifu.palace !== c.zhifuPalace) {
       add("値符", `${c.zhifuStar}@${c.zhifuPalace}`, `${jx.zhifu.star}@${jx.zhifu.palace}`);
+    }
+    // 天禽帯同干（格局判定専用）: 1080.pdf の「禽」の干・天禽の宮と一致
+    const qin = resolveQinCompanion({ diPan, jiuXing: jx });
+    const pdfQin = OUTER.find((p) => (c.jiuxing[String(p)] ?? []).includes("天禽"));
+    if (!qin || qin.stem !== c.tianpan["5"] || qin.palace !== pdfQin) {
+      add("天禽帯同干", `${c.tianpan["5"]}@${pdfQin}`, qin ? `${qin.stem}@${qin.palace}` : "null");
     }
   } catch (e) {
     add("九星", "(値あり)", `例外: ${(e as Error).message}`);
@@ -218,7 +230,7 @@ function runChart(c: Chart): boolean {
 // --- 実行 -------------------------------------------------------------
 
 console.log(`検証データ: tests/fixtures/qimen1080.json（1080.pdf からの機械転記・検証専用）`);
-console.log(`照合: 地盤 / 旬首 / 天盤 / 九星 / 八門 / 八神（+ 値符・値使）\n`);
+console.log(`照合: 地盤 / 旬首 / 天盤 / 九星 / 天禽帯同干 / 八門 / 八神（+ 値符・値使）\n`);
 
 if (charts.length !== 1080) {
   console.error(`FAIL: fixture の局数が ${charts.length}（1080 のはず）`);

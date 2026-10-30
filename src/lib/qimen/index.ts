@@ -17,7 +17,7 @@ export type {
   PalaceSummary,
 } from "./qimenEngine";
 
-// 中宮寄宮: 寄宮情報と、通常干・寄宮干を区別して取り出す参照関数（格局判定には未適用）。
+// 中宮寄宮: 地盤の寄宮情報・天禽帯同干（格局判定専用）と、通常干・寄宮干・天禽帯同干を区別して取り出す参照関数。
 export {
   CURRENT_POLICY,
   makeStemPolicy,
@@ -32,6 +32,7 @@ export type {
   CenterLodging,
   LodgedStem,
   LodgingKind,
+  QinCompanionStem,
   StemEntry,
   StemOrigin,
   StemPair,

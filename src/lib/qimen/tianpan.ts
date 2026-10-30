@@ -20,7 +20,7 @@
 //     ・直符（旬首六儀の定位九星）を「地盤の時干の宮」へ動かす
 //     ・洛書外周8宮のリング [巽4→離9→坤2→兌7→乾6→坎1→艮8→震3] 上を
 //       直符の移動歩数(delta)だけ、地盤の各外周干を一斉に回す
-//     ・中宮(5)は回転に含めない。中宮の地盤干（天禽が帯同する干）は据え置き
+//     ・中宮(5)は回転に含めない。天盤の中宮(5)には干を置かない（下記）
 //   p.20・p.21・p.22・p.25 の完成図4例すべてで、この規則が図と一致することを
 //   確認済み（旧実装の mod9 巡回シフトはいずれの図とも一致しなかった）。
 //
@@ -30,6 +30,14 @@
 //   ・旬首の宮と時干の宮がともに中宮  → 上記2規則を両方適用（定位・移動先とも坤2、
 //     delta＝0、天盤＝地盤）。docs/source/1080.pdf の該当12件で確認済み。
 //   いずれも jiuxing.ts の例外処理と同一。
+//
+// 天盤に地盤由来の寄宮干を置かない（監修者の正式仕様・2026-10-30）:
+//   「中五宮の干は地盤において寄宮する。しかし、地盤で寄宮した干を天盤に引き継いではならない。
+//    天盤には、地盤由来の寄宮干は存在しない。」
+//   旧実装は中宮の地盤干を result[5] に写し（天禽が帯同する干）、stemAccess.ts がそれを
+//   芮禽同居宮の天盤寄宮干にしていた。result[5] は回転で得た干ではなく地盤中五宮の干の写しなので、
+//   天盤の結果には含めない。天盤の干は外周8宮の回転結果だけ（天盤本来の干）。
+//   1080.pdf は芮禽同居宮に「禽」の干（＝中五宮の地盤干）を併記するが、この点は上記仕様を優先する。
 //
 // 時干＝甲（遁甲）の扱い:
 //   地盤に甲は無い。p.20「六甲の隠れている六儀」より、時干が甲のときは甲は
@@ -49,6 +57,7 @@ export interface TianPanInput {
   liuyi: DiPanStem;
 }
 
+/** 外周8宮（1〜4・6〜9）の天盤干。中宮(5)のキーは持たない。 */
 export type TianPanResult = Record<number, DiPanStem>;
 
 /** 洛書九宮の外周8宮を時計回りにたどった順（jiuxing.ts の RING の再掲。中宮5は含まない）。 */
@@ -93,7 +102,11 @@ export function resolveTianPan(input: TianPanInput): TianPanResult {
 
   // 遁甲: 時干が甲のとき、甲は liuyi の宮に隠遁しており、回転量は 0。天盤 = 地盤。
   if (hourStem === "甲") {
-    return { ...diPan };
+    const result: TianPanResult = {};
+    for (const palace of OUTER) {
+      if (diPan[palace] !== undefined) result[palace] = diPan[palace];
+    }
+    return result;
   }
 
   // ③ 地盤で hourStem が存在する宮を取得
@@ -125,10 +138,7 @@ export function resolveTianPan(input: TianPanInput): TianPanResult {
     if (stem === undefined) continue;
     result[RING[mod8(ringIndexOf(palace) + delta)]] = stem;
   }
-  // 中宮の地盤干（天禽が帯同する干）は回転させず据え置く。
-  if (diPan[5] !== undefined) {
-    result[5] = diPan[5];
-  }
+  // 中宮(5)には天盤干を置かない（地盤中五宮の干を天盤へ引き継がない）。
 
   return result;
 }

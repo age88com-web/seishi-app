@@ -65,8 +65,8 @@ import type { JikakuResult } from "./jikaku";
 import { resolveKyokakuFromQimen } from "./kyokaku";
 import type { KyokakuResult } from "./kyokaku";
 
-import { resolveCenterLodging, lodgedStemsAt } from "./stemAccess";
-import type { CenterLodging, LodgedStem } from "./stemAccess";
+import { resolveCenterLodging, lodgedStemsAt, resolveQinCompanion, qinCompanionAt } from "./stemAccess";
+import type { CenterLodging, LodgedStem, QinCompanionStem } from "./stemAccess";
 
 export interface PalaceSummary {
   diPanStem?: DiPanStem;
@@ -80,10 +80,11 @@ export interface PalaceSummary {
    */
   diPanLodged?: LodgedStem;
   /**
-   * 天盤の寄宮干（天禽・天芮が同居する宮のみ）＝天禽が帯同する中五宮の干。
-   * tianPanStem は変更しない。追加のみの項目で、現在の格局判定は参照しない。
+   * 天禽帯同干（天禽・天芮が配置された宮のみ）＝天禽・天芮に伴って運行する中五宮の地盤干。
+   * 格局判定専用（stemAccess.ts）。天盤の通常干 tianPanStem とは別物で、盤面・宮詳細・検索候補・
+   * 比較・印刷には表示しない。剋應にも使わない（2026-10-30 監修者の正式決定）。
    */
-  tianPanLodged?: LodgedStem;
+  qinCompanion?: QinCompanionStem;
 }
 
 export interface QimenResult {
@@ -102,8 +103,10 @@ export interface QimenResult {
   baShenError: string | null;
   /** 九宮(1〜9)ごとに、地盤・天盤・九星・八門・八神をまとめた最終的な式盤。 */
   palaces: Record<number, PalaceSummary>;
-  /** 中宮寄宮の情報（中五宮の干の寄宮先）。追加のみの項目。 */
+  /** 中宮寄宮の情報（中五宮の地盤干の寄宮先＝坤二宮）。天盤の寄宮は無い。 */
   centerLodging: CenterLodging;
+  /** 天禽帯同干（格局判定専用・表示しない）。九星が未算出なら null。 */
+  qinCompanion: QinCompanionStem | null;
   /** 吉格判定（jikaku.ts）。天盤・八門・八神が未算出の格は unavailable に載る。 */
   jikaku: JikakuResult;
   /** 凶格判定（kyokaku.ts）。同上。 */
@@ -168,7 +171,9 @@ export function calculate(input: CalendarInput): QimenResult {
   );
 
   // 9. 中宮寄宮の情報（既存の排盤結果を読むだけ。配置計算は変更しない）
-  const centerLodging = resolveCenterLodging({ diPan, tianPan, jiuXing });
+  const centerLodging = resolveCenterLodging({ diPan });
+  //    天禽帯同干（格局判定専用。天盤の通常干とは別に持ち、表示しない）
+  const qinCompanion = resolveQinCompanion({ diPan, jiuXing });
 
   // 10. 九宮ごとに重ね合わせる（未算出の段は空として扱う）。
   //     寄宮干は既存の干を上書きせず、該当する宮にだけ別項目として付ける。
@@ -180,14 +185,16 @@ export function calculate(input: CalendarInput): QimenResult {
       jiuXing: jiuXing?.jiuXing[palace] ?? [],
       baMen: baMen?.baMen[palace] ?? [],
       baShen: baShen?.baShen[palace] ?? [],
+      // 天盤の中宮(5)は干を持たない（tianpan.ts。天盤には地盤由来の寄宮干が存在しない）。
       ...lodgedStemsAt(centerLodging, palace),
+      ...qinCompanionAt(qinCompanion, palace),
     };
   }
 
   // 11. 格局（吉格・凶格）: 排盤まで組み立てた QimenResult を jikaku.ts / kyokaku.ts の
   //     *FromQimen ラッパに渡して判定する。両ラッパは QimenResult の
   //     palaces / xunShou / baMen / baShen / jiuXing / calendar / dingju のみ参照する
-  //     （寄宮干 diPanLodged / tianPanLodged は参照しない）。
+  //     （地盤寄宮干 diPanLodged・天禽帯同干 qinCompanion は stemAccess.ts の方針に従って参照する）。
   const base: Omit<QimenResult, "jikaku" | "kyokaku"> = {
     calendar,
     dingju,
@@ -203,6 +210,7 @@ export function calculate(input: CalendarInput): QimenResult {
     baShenError,
     palaces,
     centerLodging,
+    qinCompanion,
   };
 
   const jikaku = resolveJikakuFromQimen(base as QimenResult);

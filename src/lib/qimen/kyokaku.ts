@@ -105,6 +105,7 @@ import {
   FUGONG_POLICY,
   KAKU_SCAN_POLICY,
   XUNSHOU_ROLE_POLICY,
+  withoutQinCompanion,
 } from "./stemAccess";
 import type { Dun } from "./dingju";
 import type { DiPanStem } from "./dipan";
@@ -271,6 +272,11 @@ export interface KyokakuMatch {
   name: string;
   /** 成立した宮の番号（1〜9）。盤全体で成立する格（伏吟格・反吟格）は空配列。昇順。 */
   palaces: number[];
+  /**
+   * palaces のうち、天禽帯同干（格局判定専用・表示しない）を使ったときだけ成立する宮（昇順）。
+   * 天盤の通常干だけで成立する宮は含まない。該当が無ければ項目自体を持たない。
+   */
+  qinCompanionPalaces?: number[];
   /** 下位分類など（例: 六儀撃刑の「戊儀撃刑」、伏吟格の「九星伏吟・八門伏吟」）。 */
   detail?: string;
   /** 講義スライドに記載された象意・凶となる事柄（原文ママ）。 */
@@ -375,8 +381,8 @@ function scan(
  *   ・中宮寄宮 Phase 3A（2026-10-16）: 青龍逃走・白虎猖狂・朱雀投江・騰蛇夭矯・熒入太白・太白入熒
  *   ・中宮寄宮 Phase 3B（2026-10-16）: 刑格
  *   ・中宮寄宮 Phase 3C（2026-10-16）: 上格・奇格・戦格
- *   ・通常天盤干×通常地盤干／通常天盤干×地盤寄宮干（坤二宮）／天盤寄宮干（芮禽宮）×通常地盤干
- *   ・天盤寄宮干×地盤寄宮干（どちらも中五宮の干）は判定しない。中五宮は成立宮にしない。
+ *   ・通常天盤干×通常地盤干／通常天盤干×地盤寄宮干（坤二宮）／天禽帯同干（芮禽宮）×通常地盤干
+ *   ・天禽帯同干×地盤寄宮干（どちらも中五宮の干）は判定しない。中五宮は成立宮にしない。
  *     戦格（庚×庚）でも、中五宮の庚どうしを坤二宮・芮禽宮へ移して成立させることはない。
  * di に複数の干を渡した場合は、そのいずれかと同宮すれば成立（奇格の地盤乙・丙・丁）。
  */
@@ -392,7 +398,7 @@ function pairScan(input: KyokakuInput, tian: DiPanStem, di: DiPanStem | readonly
  * 天盤干と宮だけで成立する格局の判定（中宮寄宮 Phase 3I・2026-10-16）。適用する格局:
  *   乙奇入墓・丙奇入墓・丁奇入墓・三奇受刑・六儀撃刑。
  *   年・月・日・時悖格（Phase 4C）も、天盤丙の側だけこの関数で寄宮干を含め、地盤の用事の干は通常干で見る。
- *   ・天盤干は芮禽同居宮の寄宮干（天禽が帯同する中五宮の干）も含める（BASIC_PAIR_POLICY の天盤側）。
+ *   ・天盤干は芮禽同居宮の天禽帯同干（天禽が帯同する中五宮の干）も含める（BASIC_PAIR_POLICY の天盤側）。
  *   ・地盤干は条件に含まないため、地盤寄宮干は参照しない。
  *   ・宮番号・刑・入墓の条件は講義案Nのまま変えない。中五宮は成立宮にしない。
  */
@@ -533,7 +539,7 @@ const RULES: readonly Rule[] = [
   },
 
   // --- 凶格４ -------------------------------------------------------
-  // 年・月・日・時悖格（中宮寄宮 Phase 4C・2026-10-16）: 天盤丙は芮禽同居宮の天盤寄宮干（天禽が帯同する
+  // 年・月・日・時悖格（中宮寄宮 Phase 4C・2026-10-16）: 天盤丙は芮禽同居宮の天禽帯同干（天禽が帯同する
   // 中五宮の干）も含める（tianScan）。地盤の用事の干は通常干のみ（坤二宮の地盤寄宮干は使わない）。
   // 根拠: 凶格例.pdf 190〜191頁『景祐遁甲符應經』原註の時悖格の例（陽遁七局丁未時、中五宮の六丙が天芮・天禽に
   // 帯同して巽四宮の地盤丁に臨む）。地盤寄宮干を用事の干とする例は資料に無く、1080.pdf「時勃」も付けない。
@@ -614,7 +620,7 @@ const RULES: readonly Rule[] = [
     source: S5,
     needs: ["天盤"],
     // 「天盤の庚が地盤の値符に臨む」＝ 天盤庚が地盤の旬首六儀と同宮（Phase 3J-2）。
-    // 天盤庚は芮禽同居宮の寄宮干も、地盤の旬首六儀は坤二宮の寄宮干も含める。
+    // 天盤庚は芮禽同居宮の天禽帯同干も、地盤の旬首六儀は坤二宮の寄宮干も含める。
     // この格に限り寄宮干どうしの組み合わせも成立させる（FUGONG_POLICY）。中五宮は成立宮にしない。
     match: (i) =>
       judgedPalaces(FUGONG_POLICY).filter(
@@ -628,7 +634,7 @@ const RULES: readonly Rule[] = [
     source: S5,
     needs: ["天盤"],
     // 「天盤の値符が地盤の庚に臨む」＝ 天盤の旬首六儀が地盤庚と同宮（Phase 3J-2）。
-    // 天盤の旬首六儀は通常干のみ（天禽が帯同する寄宮干に旬首の役割を付けない）。
+    // 天盤の旬首六儀は通常干のみ（天禽帯同干に旬首の役割を付けない）。
     // 地盤庚は坤二宮の寄宮干も含める（XUNSHOU_ROLE_POLICY）。中五宮は成立宮にしない。
     match: (i) =>
       judgedPalaces(XUNSHOU_ROLE_POLICY).filter((palace) => {
@@ -655,7 +661,7 @@ const RULES: readonly Rule[] = [
     needs: ["天盤", "値符"],
     // 「天盤丙が値符の九星と同宮」（中宮寄宮 Phase 3L・2026-10-16。凶格例.pdf 192〜193頁の陰遁三局丙子時）。
     // 値符の宮は九星値符の宮（値符が天禽なら天芮と同居する宮）。天盤丙は芮禽同居宮の
-    // 天盤寄宮干（天禽が帯同する中五宮の干）も含める。中五宮は成立宮にしない。旬の限定なし。
+    // 天禽帯同干（天禽が帯同する中五宮の干）も含める。中五宮は成立宮にしない。旬の限定なし。
     match: (i) => {
       const zp = i.zhifuPalace;
       if (zp === null || !judgedPalaces(BASIC_PAIR_POLICY).includes(zp)) return [];
@@ -856,6 +862,9 @@ const RULES: readonly Rule[] = [
 export function resolveKyokaku(input: KyokakuInput): KyokakuResult {
   const unavailable = new Set<Segment>();
   const matches: KyokakuMatch[] = [];
+  // 天禽帯同干を除いた盤（通常干による成立と区別するため）
+  const hasQin = Object.values(input.palaces).some((p) => p.qinCompanion);
+  const nativeInput: KyokakuInput = hasQin ? { ...input, palaces: withoutQinCompanion(input.palaces) } : input;
 
   for (const rule of RULES) {
     const missing = rule.needs.filter((seg) => !segmentAvailable(seg, input));
@@ -880,9 +889,12 @@ export function resolveKyokaku(input: KyokakuInput): KyokakuResult {
 
     const palaces = Array.from(new Set(rule.match(input))).sort((a, b) => a - b);
     if (palaces.length > 0) {
+      const nativePalaces = hasQin ? new Set(rule.match(nativeInput)) : null;
+      const qinOnly = nativePalaces ? palaces.filter((p) => !nativePalaces.has(p)) : [];
       matches.push({
         name: rule.name,
         palaces,
+        ...(qinOnly.length > 0 ? { qinCompanionPalaces: qinOnly } : {}),
         detail: rule.detail?.(input, palaces),
         meaning: rule.meaning,
         source: rule.source,

@@ -51,7 +51,7 @@ const dt = (h: QimenSearchHit) => [h.year, h.month, h.day, h.hour].map((x) => St
         check(`${label} ${dt(h)} 宮${s.palace} 要約`,
           JSON.stringify(s.baMen) === JSON.stringify(p.baMen) && JSON.stringify(s.jiuXing) === JSON.stringify(p.jiuXing)
           && JSON.stringify(s.baShen) === JSON.stringify(p.baShen) && s.tianPanStem === (p.tianPanStem ?? null)
-          && s.diPanStem === (p.diPanStem ?? null) && s.tianPanLodged === (p.tianPanLodged?.stem ?? null)
+          && s.diPanStem === (p.diPanStem ?? null) && !("tianPanLodged" in s) && !("qinCompanion" in s)
           && s.diPanLodged === (p.diPanLodged?.stem ?? null)
           && JSON.stringify(s.jikaku) === JSON.stringify(r.jikaku.matches.filter((m) => m.palaces.includes(s.palace)).map((m) => m.name))
           && s.kyokaku.length === r.kyokaku.matches.filter((m) => m.palaces.includes(s.palace)).length);
@@ -128,7 +128,9 @@ const dt = (h: QimenSearchHit) => [h.year, h.month, h.day, h.hour].map((x) => St
   // 候補の鑑定情報（2025-06-30 0:00 陰遁3局丙子 坤二宮: 寄宮干・吉格と凶格の同宮）
   const r = calculate({ year: 2025, month: 6, day: 30, hour: 0, minute: 0, timezone: "Asia/Tokyo" });
   const d = buildCandidateDetail(r, 2);
-  check("候補 坤二宮 寄宮干", d.tianPanStem === "己" && d.tianPanLodged === "丙" && d.diPanStem === "己" && d.diPanLodged === "丙");
+  // 天禽帯同干（丙）は候補一覧に表示しない（2026-10-30 監修者決定）。格局判定には使うので符勃格・飛鳥跌穴は成立する。
+  check("候補 坤二宮 寄宮干", d.tianPanStem === "己" && !("tianPanLodged" in d) && !("qinCompanion" in d) && d.diPanStem === "己" && d.diPanLodged === "丙");
+  check("候補 符勃格は天禽帯同干による成立（内部識別）", JSON.stringify(r.kyokaku.matches.find((m) => m.name === "符勃格")?.qinCompanionPalaces) === "[2]");
   check("候補 坤二宮 吉格・凶格の同宮", d.jikaku.includes("青龍返首") && d.jikaku.includes("飛鳥跌穴") && d.kyokaku.includes("符勃格") && d.kyokaku.includes("飛悖格"));
   check("候補 盤全体の凶格", d.boardWide.some((x) => x.startsWith("伏吟格")));
   check("候補 剋應は既存の参照と同じ", JSON.stringify(flattenKokuo(d.kokuo)) === JSON.stringify(flattenKokuo(resolveKokuoForPalace(r, 2))));

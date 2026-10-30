@@ -52,9 +52,8 @@ export interface PalaceSummaryInfo {
   baMen: string[];
   jiuXing: string[];
   baShen: string[];
+  /** 天盤干（天盤には地盤由来の寄宮干は存在しない） */
   tianPanStem: string | null;
-  /** 天禽が帯同する中五宮の干（芮禽同居宮のみ） */
-  tianPanLodged: string | null;
   diPanStem: string | null;
   /** 坤二宮に寄宮した中五宮の地盤干（坤二宮のみ） */
   diPanLodged: string | null;
@@ -80,7 +79,6 @@ export function buildPalaceSummary(result: QimenResult, palace: number): PalaceS
     jiuXing: p ? [...p.jiuXing] : [],
     baShen: p ? [...p.baShen] : [],
     tianPanStem: p?.tianPanStem ?? null,
-    tianPanLodged: p?.tianPanLodged?.stem ?? null,
     diPanStem: p?.diPanStem ?? null,
     diPanLodged: p?.diPanLodged?.stem ?? null,
     jikaku: result.jikaku.matches.filter((m) => m.palaces.includes(palace)).map((m) => m.name),
