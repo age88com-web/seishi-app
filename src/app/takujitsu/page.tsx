@@ -42,6 +42,7 @@ import { calculateDailyDirections } from "@/lib/takujitsu/dailyDirections";
 import type { DailyDirections } from "@/lib/takujitsu/dailyDirections";
 import { classifyJikaTerm, jikaHourState } from "@/lib/takujitsu/jika/hourClassification";
 import type { JikaHourState } from "@/lib/takujitsu/jika/hourClassification";
+import { resolutionDisplayText, restrictionDisplayText } from "./resolutionDisplayText";
 
 // ---------------------------------------------------------------------------
 const VERDICT_LABEL: Record<ActivityVerdict, string> = { good: "吉", bad: "凶", mixed: "吉凶混在", neutral: "中立" };
@@ -73,28 +74,10 @@ const RES_STATUS_COLOR: Record<string, string> = {
   cancelled: "#1a7f37", reduced: "#8a6d00", aggravated: "#b02a37", pending: "#555",
 };
 
-// 2026-09-11追記（神殺クリック詳細フェーズ）:
-//   resolutionのstatus（active/cancelled/reduced/aggravated/pending）を、
-//   利用者向けの定型文へ変換するだけの表示専用ロジック。神殺の判定・
-//   resolutionルール・解除条件そのものは一切変更しない。ここで使う文言は
-//   status区分ごとの一般的な意味の説明であり、個別の神殺・日付固有の
-//   理由づけはしていない（固有の理由は既存の e.reason／appliedRules の
-//   note をそのまま表示するだけで、推測で追加しない）。
-const RES_STATUS_EXPLANATION: Partial<Record<ResolvedShinsatsuEntry["status"], (name: string) => string>> = {
-  cancelled: (name) => `この日は${name}に該当しますが、解除条件が成立しているため、${name}の凶作用は解除されています。`,
-  reduced: (name) => `この日は${name}に該当しますが、条件により凶作用が弱められています（軽減）。`,
-  aggravated: (name) => `この日は${name}に該当し、条件により凶作用がさらに強まっています（増悪）。`,
-  pending: (name) => `この日は${name}に該当しますが、条件が競合している、または資料上一意に確定できないため、最終的な処理を保留しています。`,
-};
-
-// 2026-09-11追記（神殺解除説明 表示整形フェーズ）:
-//   resolution/rules.ts のnoteに残る開発用の内部種別表記（(cancel)／(reduce)／
-//   (aggravate)／(pending)、全角括弧「（）」表記を含む）を、UI表示の直前に
-//   だけ取り除く。rules.ts側のnoteデータ・status・resolutionロジックは
-//   変更しない（表示専用の文字列整形）。
-function stripInternalKindTags(text: string): string {
-  return text.replace(/[（(]\s*(cancel|reduce|aggravate|pending)\s*[）)]/gi, "").replace(/\s+([。、])/g, "$1");
-}
+// 2026-10-31（解除・軽減説明 表示文統一）:
+//   神殺の解除・軽減・増悪・判断保留の説明は resolutionDisplayText.ts の
+//   表示専用文だけを使う。resolution/rules.ts の note（原典根拠・監修決定・
+//   実装理由などの内部情報）は画面に出さない。判定ロジックは変更しない。
 
 // 2026-09-12追記（時間選択UIフェーズ）／2026-09-13整理:
 //   擇日の日付選択に「時辰（時家）」を追加するための表示専用定数。
@@ -728,7 +711,7 @@ export default function TakujitsuPage() {
                 <ul className="tj-restrict">
                   {data.activities.unresolvedRestrictions.map((r, i) => (
                     <li key={i}>
-                      {r.sourceName}（{RES_STATUS_LABEL[r.resolutionStatus] || r.resolutionStatus}）: {r.description}
+                      {r.sourceName}（{RES_STATUS_LABEL[r.resolutionStatus] || r.resolutionStatus}）: {restrictionDisplayText(r)}
                     </li>
                   ))}
                 </ul>
@@ -1192,8 +1175,6 @@ function Kv({ k, v }: { k: string; v: string }) {
   );
 }
 
-const RELATION_KIND_LABEL: Record<string, string> = { cancel: "解除", reduce: "軽減", aggravate: "増悪" };
-
 function ShinsatsuList({ entries, tone }: { entries: readonly ResolvedShinsatsuEntry[]; tone: "good" | "bad" }) {
   const [open, setOpen] = useState<Set<string>>(new Set());
   if (entries.length === 0) return <p className="tj-dash">―</p>;
@@ -1211,7 +1192,7 @@ function ShinsatsuList({ entries, tone }: { entries: readonly ResolvedShinsatsuE
     <ul className={`tj-tags tj-tags-${tone}`}>
       {entries.map((e) => {
         const statusLabel = RES_STATUS_LABEL[e.status] || "";
-        const explain = RES_STATUS_EXPLANATION[e.status];
+        const explain = resolutionDisplayText(e);
         const isOpen = open.has(e.name);
         return (
           <li key={e.name} className={`tj-tag-wrap ${isOpen ? "tj-tag-wrap-open" : ""}`}>
@@ -1239,21 +1220,7 @@ function ShinsatsuList({ entries, tone }: { entries: readonly ResolvedShinsatsuE
             )}
             {isOpen && explain && (
               <div className="tj-shinsatsu-detail">
-                <p className="tj-shinsatsu-detail-headline">{explain(e.name)}</p>
-                {(e.reason || e.note) && (
-                  <p className="tj-shinsatsu-detail-reason">{stripInternalKindTags(e.reason || e.note || "")}</p>
-                )}
-                {e.appliedRules && e.appliedRules.length > 1 && (
-                  <ul className="tj-shinsatsu-detail-rules">
-                    {e.appliedRules.map((r, i) => (
-                      <li key={i}>
-                        {RELATION_KIND_LABEL[r.kind] || r.kind}
-                        {r.pending ? "（保留扱い）" : ""}
-                        {r.note ? `：${stripInternalKindTags(r.note)}` : ""}
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                <p className="tj-shinsatsu-detail-text">{explain}</p>
               </div>
             )}
           </li>
@@ -1343,9 +1310,8 @@ const CSS = `
 .tj-tag-btn { appearance: none; -webkit-appearance: none; font: inherit; cursor: pointer; }
 .tj-tag-btn:hover { filter: brightness(0.97); }
 .tj-shinsatsu-detail { margin-top: 4px; padding: 7px 10px; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 12px; line-height: 1.6; max-width: 100%; word-break: break-word; }
-.tj-shinsatsu-detail-headline { margin: 0 0 4px; font-weight: 600; color: #333; }
+.tj-shinsatsu-detail-text { margin: 0; color: #333; }
 .tj-shinsatsu-detail-reason { margin: 0; color: #555; }
-.tj-shinsatsu-detail-rules { margin: 6px 0 0; padding-left: 16px; font-size: 11.5px; color: #666; }
 
 .tj-filter-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-bottom: 8px; }
 .tj-filter-cap { font-size: 11px; color: #999; min-width: 30px; }
